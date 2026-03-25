@@ -20,32 +20,32 @@ const { title, description = config.tagline } = Astro.props;
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Inter:wght@400;500;600&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=Inter:wght@300;400;500&display=swap"
       rel="stylesheet"
     />
   </head>
-  <body class="min-h-screen flex flex-col bg-sand-50 text-text-body">
-    <header class="bg-ocean-900 text-text-on-dark">
-      <nav class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
-        <a href="/" class="font-heading text-xl font-semibold text-text-on-dark hover:text-ocean-300 transition-colors">
+  <body class="min-h-screen flex flex-col bg-sand-50 text-text-body antialiased">
+    <header class="fixed top-0 left-0 right-0 z-50 bg-ocean-900/80 backdrop-blur-md border-b border-white/5">
+      <nav class="max-w-6xl mx-auto px-6 py-3.5 flex items-center justify-between">
+        <a href="/" class="font-heading text-lg text-white/90 hover:text-white transition-colors">
           {config.name}
         </a>
-        <ul class="flex gap-6 text-sm font-medium">
-          <li><a href="/water/" class="text-ocean-200 hover:text-white transition-colors">Water</a></li>
-          <li><a href="/pillars/" class="text-ocean-200 hover:text-white transition-colors">Pillars</a></li>
-          <li><a href="/spiral/" class="text-ocean-200 hover:text-white transition-colors">Spiral</a></li>
+        <ul class="flex gap-8 text-xs font-medium tracking-widest uppercase">
+          <li><a href="/water/" class="text-ocean-300 hover:text-white transition-colors">Water</a></li>
+          <li><a href="/water/explore" class="text-ocean-300 hover:text-white transition-colors">Explore</a></li>
+          <li><a href="/water/quiz" class="text-ocean-300 hover:text-white transition-colors">Quiz</a></li>
         </ul>
       </nav>
     </header>
 
-    <main class="flex-1">
+    <main class="flex-1 pt-[52px]">
       <slot />
     </main>
 
-    <footer class="bg-ocean-900 text-text-on-dark mt-auto">
-      <div class="max-w-6xl mx-auto px-6 py-8 text-center text-sm text-ocean-200">
-        <p>&copy; {new Date().getFullYear()} {config.name}. All rights reserved.</p>
-        <p class="mt-2 text-ocean-300">{config.domains.hub}</p>
+    <footer class="bg-ocean-900 border-t border-white/5">
+      <div class="max-w-6xl mx-auto px-6 py-10 text-center">
+        <p class="font-heading text-sm text-ocean-300/60">&copy; {new Date().getFullYear()} {config.name}</p>
+        <p class="mt-1 text-xs text-ocean-300/40 tracking-wider">{config.domains.hub}</p>
       </div>
     </footer>
   </body>

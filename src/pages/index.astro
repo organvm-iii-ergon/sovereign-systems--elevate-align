@@ -9,19 +9,22 @@ import { config } from '../data/hub.config';
 ---
 
 <Base title={config.name}>
-  <!-- 1. Hero -->
   <Hero heading={config.name} subtext={config.tagline} dark={true} />
 
-  <!-- 2. Interactive spiral -->
-  <section class="relative bg-ocean-900 overflow-hidden">
+  <!-- Spiral — continuous dark section, no gap -->
+  <section class="relative section-fade-down overflow-hidden" style="margin-top: -1px;">
     <SpiralIsland />
     <SpiralFallback />
   </section>
 
-  <!-- 3. Pillar cards -->
+  <!-- Gradient transition: dark → light -->
+  <div class="h-12" style="background: linear-gradient(180deg, var(--color-ocean-900) 0%, var(--color-sand-50) 100%);"></div>
+
+  <!-- Pillar cards -->
   <section class="py-20 px-6 bg-sand-50">
     <div class="max-w-4xl mx-auto">
-      <h2 class="font-heading text-4xl font-semibold text-text-primary text-center mb-12">
+      <p class="text-center text-xs font-medium uppercase tracking-[0.2em] text-ocean-500 mb-3">The Framework</p>
+      <h2 class="font-heading text-4xl md:text-5xl text-text-primary text-center mb-14">
         The Four Pillars
       </h2>
       <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
@@ -32,24 +35,25 @@ import { config } from '../data/hub.config';
     </div>
   </section>
 
-  <!-- 4. Positioning quote -->
-  <section class="py-20 px-6 bg-sand-100">
-    <div class="max-w-3xl mx-auto">
-      <blockquote class="text-center">
-        <p class="font-heading text-2xl md:text-3xl font-semibold text-text-primary leading-relaxed italic">
-          "Most people try to fix their mindset while their foundation is unstable. Growth isn't linear. It's spiral. But it requires a backbone."
-        </p>
+  <!-- Quote -->
+  <section class="py-24 px-6 bg-sand-100">
+    <div class="max-w-3xl mx-auto text-center">
+      <div class="w-8 h-px bg-gold mx-auto mb-8"></div>
+      <blockquote class="font-heading text-2xl md:text-3xl text-text-primary leading-relaxed italic">
+        Most people try to fix their mindset while their foundation is unstable.
+        Growth isn't linear. It's spiral. But it requires a backbone.
       </blockquote>
+      <div class="w-8 h-px bg-gold mx-auto mt-8"></div>
     </div>
   </section>
 
-  <!-- 5. CTA section -->
-  <section class="py-20 px-6 bg-ocean-900 text-center">
+  <!-- CTA — dark section with glow -->
+  <section class="py-24 px-6 section-glow text-center">
     <div class="max-w-xl mx-auto">
-      <h2 class="font-heading text-4xl font-semibold text-text-on-dark mb-4">
+      <h2 class="font-heading text-4xl md:text-5xl text-white text-glow mb-5">
         Start at the root
       </h2>
-      <p class="text-ocean-200 text-lg leading-relaxed mb-8">
+      <p class="text-ocean-200/80 text-lg leading-relaxed mb-10 font-light">
         Physical sovereignty is where everything begins. Stabilize the body first.
       </p>
       <CTAButton href="/water/" label="Begin with Water" variant="primary" />

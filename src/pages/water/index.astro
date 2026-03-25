@@ -5,8 +5,7 @@ import CTAButton from '../../components/CTAButton.astro';
 import VideoEmbed from '../../components/VideoEmbed.astro';
 ---
 
-<Base title="Water — Sovereign Systems Spiral">
-  <!-- 1. Hero -->
+<Base title="The Water Hub">
   <Hero
     heading="Water changed everything for me."
     subtext="A simple shift that impacted my health, energy, and everything I thought I knew about healing."
@@ -16,87 +15,83 @@ import VideoEmbed from '../../components/VideoEmbed.astro';
     <CTAButton href="/water/explore" label="Explore by category" variant="secondary" />
   </Hero>
 
-  <!-- 2. Documentary section -->
+  <!-- Gradient transition -->
+  <div class="h-8" style="background: linear-gradient(180deg, var(--color-ocean-900) 0%, var(--color-sand-50) 100%);"></div>
+
+  <!-- Documentary section -->
   <section class="py-16 px-6 bg-sand-50">
     <div class="max-w-3xl mx-auto">
-      <h2 class="font-heading text-3xl font-semibold text-text-primary mb-8 text-center">
-        My Water Story
-      </h2>
       <VideoEmbed placeholder={true} title="My Water Story" />
     </div>
   </section>
 
-  <!-- 3. Post-video grounding -->
-  <section class="py-16 px-6 bg-ocean-50">
+  <!-- Post-video grounding -->
+  <section class="py-16 px-6 bg-sand-50">
     <div class="max-w-2xl mx-auto text-center">
-      <h2 class="font-heading text-2xl font-semibold text-text-primary mb-6">
-        What you just watched
-      </h2>
-      <p class="text-text-body text-lg leading-relaxed">
-        This isn't a product story — it's a turning point story. Years of symptoms that doctors normalized, and one shift that started unraveling all of it. The change wasn't dramatic at first. But it was consistent, and it compounded.
+      <div class="w-8 h-px bg-ocean-500/30 mx-auto mb-8"></div>
+      <p class="text-text-body text-lg leading-[1.9] font-light">
+        This isn't a product story. It's a turning point. Years of symptoms that doctors normalized, and one shift that started unraveling all of it. The change wasn't dramatic at first. But it was consistent, and it compounded.
       </p>
-      <p class="text-text-body text-lg leading-relaxed mt-4">
-        What I didn't expect was how much of what I thought was "just aging" or "just stress" was actually my body asking for something different at the cellular level. Water was the entry point to understanding all of it.
+      <p class="text-text-body text-lg leading-[1.9] font-light mt-5">
+        What I didn't expect was how much of what I thought was "just aging" or "just stress" was actually my body asking for something different at the cellular level.
       </p>
-      <p class="text-text-body text-lg leading-relaxed mt-4">
-        This page exists because I kept being asked: where do I start? The answer is always the same — at the foundation.
-      </p>
+      <div class="w-8 h-px bg-ocean-500/30 mx-auto mt-8"></div>
     </div>
   </section>
 
-  <!-- 4. Simple education — two columns -->
-  <section class="py-16 px-6 bg-sand-50">
+  <!-- Simple education -->
+  <section class="py-16 px-6 bg-ocean-50">
     <div class="max-w-4xl mx-auto">
       <div class="grid md:grid-cols-2 gap-12">
         <div>
-          <h3 class="font-heading text-2xl font-semibold text-text-primary mb-4">
+          <h3 class="font-heading text-2xl text-text-primary mb-4">
             What is molecular hydrogen?
           </h3>
-          <p class="text-text-body leading-relaxed">
-            Molecular hydrogen (H₂) is the smallest and most bioavailable antioxidant molecule known. It passes directly into cells and mitochondria, selectively neutralizing the most damaging free radicals without disrupting beneficial oxidative processes. Unlike conventional antioxidants, it doesn't interfere with your body's natural signaling — it just removes the interference that was already there.
+          <p class="text-text-body leading-[1.8] font-light">
+            Molecular hydrogen (H2) is the smallest and most bioavailable antioxidant molecule known. It passes directly into cells and mitochondria, selectively neutralizing the most damaging free radicals without disrupting beneficial oxidative processes.
           </p>
         </div>
         <div>
-          <h3 class="font-heading text-2xl font-semibold text-text-primary mb-4">
+          <h3 class="font-heading text-2xl text-text-primary mb-4">
             Why hydration isn't just water anymore
           </h3>
-          <p class="text-text-body leading-relaxed">
-            Most water — tap, filtered, even bottled — arrives at your cells stripped of the minerals and charge it needs to actually enter them. You can drink eight glasses a day and still be chronically dehydrated at the cellular level. The quality of what you drink matters as much as the quantity. When your cells finally receive water that can actually hydrate them, the downstream effects touch everything: energy, digestion, hormone regulation, cognitive clarity.
+          <p class="text-text-body leading-[1.8] font-light">
+            Most water arrives at your cells stripped of the minerals and charge it needs to actually enter them. You can drink eight glasses a day and still be chronically dehydrated at the cellular level. The quality of what you drink matters as much as the quantity.
           </p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- 5. Primary CTA -->
-  <section class="py-16 px-6 bg-ocean-900 text-center">
+  <!-- Primary CTA -->
+  <section class="py-20 px-6 section-glow text-center">
     <div class="max-w-xl mx-auto">
-      <h2 class="font-heading text-3xl font-semibold text-text-on-dark mb-4">
+      <h2 class="font-heading text-3xl md:text-4xl text-white text-glow mb-4">
         Find what your body actually needs
       </h2>
-      <p class="text-ocean-200 text-lg mb-8 leading-relaxed">
+      <p class="text-ocean-200/80 text-lg mb-10 leading-relaxed font-light">
         Five questions. A starting point that's specific to you.
       </p>
       <CTAButton href="/water/quiz" label="Take the assessment" variant="primary" />
     </div>
   </section>
 
-  <!-- 6. Secondary CTA -->
+  <!-- Secondary CTA -->
   <section class="py-16 px-6 bg-sand-100 text-center">
     <div class="max-w-xl mx-auto">
-      <h2 class="font-heading text-2xl font-semibold text-text-primary mb-4">
+      <h2 class="font-heading text-2xl text-text-primary mb-4">
         Explore by category
       </h2>
-      <p class="text-text-body text-lg mb-8 leading-relaxed">
+      <p class="text-text-body text-lg mb-8 leading-relaxed font-light">
         Gut health, fertility, athletic performance, inflammation — find the branch that speaks to what you're navigating.
       </p>
-      <CTAButton href="/water/explore" label="Explore by category" variant="secondary" />
+      <CTAButton href="/water/explore" label="Explore branches" variant="secondary" />
     </div>
   </section>
 
-  <!-- 7. Final line -->
-  <section class="py-10 px-6 bg-sand-50 text-center">
-    <p class="italic text-text-muted text-lg max-w-xl mx-auto">
+  <!-- Final line -->
+  <section class="py-12 px-6 bg-sand-50 text-center">
+    <p class="italic text-text-muted text-lg font-light max-w-xl mx-auto">
       If something in you is curious... follow that.
     </p>
   </section>

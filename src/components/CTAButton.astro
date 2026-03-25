@@ -11,10 +11,10 @@ const { href, label, variant = 'primary' } = Astro.props;
 <a
   href={href}
   class:list={[
-    'inline-block px-8 py-3 rounded font-medium text-base transition-colors',
+    'inline-block px-8 py-3.5 rounded-full text-sm font-medium tracking-wide transition-all duration-300',
     variant === 'primary'
-      ? 'bg-ocean-500 text-white hover:bg-ocean-600'
-      : 'border-2 border-ocean-500 text-ocean-500 hover:bg-ocean-100',
+      ? 'bg-ocean-500 text-white hover:bg-ocean-400 hover:shadow-lg hover:shadow-ocean-500/25 hover:-translate-y-0.5'
+      : 'border border-ocean-400/40 text-ocean-400 hover:border-ocean-300 hover:text-ocean-300 hover:bg-ocean-400/5',
   ]}
 >
   {label}

@@ -8,7 +8,6 @@ import { config } from '../../data/hub.config';
 export async function getStaticPaths() {
   const branches = await getCollection('branches');
   return branches.map((branch) => ({
-    // branch.id includes the .md extension in Astro 5 — strip it for clean URLs
     params: { slug: branch.id.replace(/\.md$/, '') },
     props: { branch },
   }));
@@ -16,37 +15,35 @@ export async function getStaticPaths() {
 
 const { branch } = Astro.props;
 const { Content } = await branch.render();
-
 const { title, emoji, hook, status, tone } = branch.data;
 const ctaLabel = tone === 'soft' ? 'Explore gently' : 'Start with your water';
 ---
 
-<Base title={`${title} — Water — Sovereign Systems Spiral`}>
+<Base title={`${title} — Water`}>
   <!-- Branch header -->
-  <section class="py-20 px-6 bg-ocean-900">
-    <div class="max-w-3xl mx-auto text-center">
+  <section class="py-24 md:py-32 px-6 section-glow relative overflow-hidden">
+    <div class="absolute inset-0 opacity-20" style={`background: radial-gradient(ellipse at 50% 80%, ${config.pillars[0].color}30, transparent 60%);`} />
+    <div class="relative max-w-3xl mx-auto text-center">
       <div class="text-6xl mb-6" aria-hidden="true">{emoji}</div>
-      <h1 class="font-heading text-5xl md:text-6xl font-semibold text-text-on-dark leading-tight mb-6">
+      <h1 class="font-heading text-5xl md:text-6xl text-white text-glow leading-[1.1] mb-6">
         {title}
       </h1>
-      <p class="italic text-ocean-200 text-xl md:text-2xl leading-relaxed max-w-2xl mx-auto">
+      <p class="italic text-ocean-200/80 text-xl md:text-2xl leading-relaxed max-w-2xl mx-auto font-light">
         {hook}
       </p>
     </div>
   </section>
 
+  <!-- Gradient transition -->
+  <div class="h-8" style="background: linear-gradient(180deg, var(--color-ocean-900) 0%, var(--color-sand-50) 100%);"></div>
+
   <!-- Branch content or placeholder -->
   <section class="py-16 px-6 bg-sand-50">
-    <div class="max-w-3xl mx-auto">
+    <div class="max-w-2xl mx-auto">
       {status === 'placeholder' ? (
         <ComingSoon title={title} emoji={emoji} />
       ) : (
-        <div class="prose prose-lg max-w-none text-text-body leading-relaxed
-          [&_h2]:font-heading [&_h2]:text-3xl [&_h2]:font-semibold [&_h2]:text-text-primary [&_h2]:mt-12 [&_h2]:mb-4
-          [&_p]:mb-5
-          [&_ul]:mb-5 [&_ul]:pl-6 [&_li]:mb-2
-          [&_a]:text-ocean-600 [&_a]:underline hover:[&_a]:text-ocean-800
-        ">
+        <div class="branch-content text-text-body text-lg leading-relaxed">
           <Content />
         </div>
       )}
@@ -54,7 +51,7 @@ const ctaLabel = tone === 'soft' ? 'Explore gently' : 'Start with your water';
   </section>
 
   <!-- CTA section -->
-  <section class="py-16 px-6 bg-ocean-900 text-center">
+  <section class="py-20 px-6 section-glow text-center">
     <div class="max-w-xl mx-auto flex flex-col sm:flex-row gap-4 justify-center items-center">
       <CTAButton href={config.ghl.productUrl} label={ctaLabel} variant="primary" />
       <CTAButton href="/water/explore" label="Explore other branches" variant="secondary" />

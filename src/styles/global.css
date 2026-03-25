@@ -10,6 +10,7 @@
   --color-ocean-300: #8cc5d3;
   --color-ocean-200: #b8dfe6;
   --color-ocean-100: #e0f0f0;
+  --color-ocean-50: #f0f9f9;
 
   --color-sand-900: #2a2520;
   --color-sand-500: #8a7d6b;
@@ -18,11 +19,12 @@
   --color-sand-50: #faf8f5;
 
   --color-gold: #c9a96e;
+  --color-gold-light: #dfc592;
 
   --color-text-primary: #1a2a2f;
   --color-text-body: #4a5a60;
   --color-text-muted: #7a8a90;
-  --color-text-on-dark: #e8e4df;
+  --color-text-on-dark: #f0ece6;
 
   --font-heading: 'Cormorant Garamond', Georgia, serif;
   --font-body: 'Inter', system-ui, sans-serif;
@@ -32,9 +34,72 @@ html {
   font-family: var(--font-body);
   color: var(--color-text-body);
   background-color: var(--color-sand-50);
+  scroll-behavior: smooth;
 }
 
+/* Headings — only set font, NOT color. Let components control color via Tailwind. */
 h1, h2, h3, h4 {
   font-family: var(--font-heading);
-  color: var(--color-text-primary);
+}
+
+/* Gradient section transitions */
+.section-fade-down {
+  background: linear-gradient(180deg, var(--color-ocean-900) 0%, var(--color-ocean-800) 100%);
+}
+.section-fade-up {
+  background: linear-gradient(180deg, var(--color-ocean-800) 0%, var(--color-ocean-900) 100%);
+}
+.section-glow {
+  background: radial-gradient(ellipse at 50% 0%, rgba(17, 154, 158, 0.15) 0%, transparent 60%),
+              var(--color-ocean-900);
+}
+
+/* Subtle text glow for headings on dark */
+.text-glow {
+  text-shadow: 0 0 40px rgba(17, 154, 158, 0.3), 0 0 80px rgba(17, 154, 158, 0.1);
+}
+
+/* Glass card effect */
+.glass {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+/* Float animation for mobile spiral fallback */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+
+/* Prose overrides for branch page content — hide raw heading names */
+.branch-content h2 {
+  font-size: 0;
+  line-height: 0;
+  margin: 0;
+  padding: 0;
+  height: 0;
+  overflow: hidden;
+}
+.branch-content h2::after {
+  font-size: 1rem;
+  line-height: 1;
+  display: block;
+  height: 2px;
+  width: 40px;
+  margin: 3rem 0 1.5rem;
+  background: linear-gradient(90deg, var(--color-ocean-500), transparent);
+  content: '';
+}
+.branch-content p {
+  margin-bottom: 1.25rem;
+  line-height: 1.8;
+}
+.branch-content ul {
+  padding-left: 1.25rem;
+  margin-bottom: 1.25rem;
+}
+.branch-content li {
+  margin-bottom: 0.5rem;
+  line-height: 1.7;
 }
