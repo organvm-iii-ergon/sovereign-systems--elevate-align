@@ -1,0 +1,60 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import CTAButton from '../../components/CTAButton.astro';
+import ComingSoon from '../../components/ComingSoon.astro';
+
+export async function getStaticPaths() {
+  const pillars = await getCollection('pillars');
+  return pillars.map((pillar) => ({
+    // pillar.id may include .md extension in Astro 5 — strip it for clean URLs
+    params: { slug: pillar.id.replace(/\.md$/, '') },
+    props: { pillar },
+  }));
+}
+
+const { pillar } = Astro.props;
+const { Content } = await pillar.render();
+
+const { title, emoji, tagline, status } = pillar.data;
+---
+
+<Base title={`${title} — Sovereign Systems Spiral`}>
+  <!-- Pillar header -->
+  <section class="py-20 px-6 bg-ocean-900">
+    <div class="max-w-3xl mx-auto text-center">
+      <div class="text-6xl mb-6" aria-hidden="true">{emoji}</div>
+      <h1 class="font-heading text-5xl md:text-6xl font-semibold text-text-on-dark leading-tight mb-6">
+        {title}
+      </h1>
+      <p class="italic text-ocean-200 text-xl md:text-2xl leading-relaxed max-w-2xl mx-auto">
+        {tagline}
+      </p>
+    </div>
+  </section>
+
+  <!-- Pillar content or placeholder -->
+  <section class="py-16 px-6 bg-sand-50">
+    <div class="max-w-3xl mx-auto">
+      {status === 'placeholder' ? (
+        <ComingSoon title={title} emoji={emoji} />
+      ) : (
+        <div class="prose prose-lg max-w-none text-text-body leading-relaxed
+          [&_h2]:font-heading [&_h2]:text-3xl [&_h2]:font-semibold [&_h2]:text-text-primary [&_h2]:mt-12 [&_h2]:mb-4
+          [&_p]:mb-5
+          [&_ul]:mb-5 [&_ul]:pl-6 [&_li]:mb-2
+          [&_a]:text-ocean-600 [&_a]:underline hover:[&_a]:text-ocean-800
+        ">
+          <Content />
+        </div>
+      )}
+    </div>
+  </section>
+
+  <!-- Back CTA -->
+  <section class="py-16 px-6 bg-ocean-900 text-center">
+    <div class="max-w-xl mx-auto">
+      <CTAButton href="/" label="Back to the spiral" variant="secondary" />
+    </div>
+  </section>
+</Base>
