@@ -38,7 +38,7 @@ A multi-domain static website system for Maddie's Sovereign Systems Spiral brand
 |-------|------|-----------|
 | Framework | Astro 5.x | Static-first, component islands, content collections, file-based routing |
 | Styling | Tailwind CSS 4.x | Utility-first, custom theme tokens, responsive |
-| Spiral component | p5.js via React island | Canvas-based generative animation, organic motion |
+| Spiral component | Vanilla canvas + Perlin noise (~2KB) | No React wrapper needed. requestAnimationFrame + noise for organic float. Loaded via Astro `client:media="(min-width: 768px)"` — never loads on mobile. |
 | Content | Astro Content Collections (Markdown) | Type-safe, editable without code |
 | Quiz/CRM | GoHighLevel embed | Client's existing backend — tagging, workflows, follow-ups |
 | Fonts | Self-hosted (Inter + Cormorant Garamond or similar serif) | Clean sans-serif body + elegant serif headings |
@@ -58,9 +58,9 @@ sovereign-systems--elevate-align/
 │   │   └── HubLayout.astro             # Hub variant (if palette diverges later)
 │   ├── components/
 │   │   ├── spiral/
-│   │   │   ├── SpiralCanvas.tsx        # React component wrapping p5.js sketch
-│   │   │   ├── sketch.ts              # p5.js sketch: orbital animation, pillar nodes
-│   │   │   └── types.ts               # Pillar data interface
+│   │   │   ├── spiral.ts              # Vanilla canvas: orbital animation, Perlin noise, pillar nodes
+│   │   │   ├── SpiralIsland.astro     # Astro island wrapper with client:media="(min-width: 768px)"
+│   │   │   └── SpiralFallback.astro   # Mobile: CSS-animated vertical list (no canvas)
 │   │   ├── BranchSection.astro         # Single section of a branch page (hook/education/water/bridge/resources/cta)
 │   │   ├── VideoEmbed.astro            # Responsive video player (Vimeo/YouTube/self-hosted)
 │   │   ├── QuizEmbed.astro             # GHL form embed with loading state
@@ -94,8 +94,8 @@ sovereign-systems--elevate-align/
 │   │   └── business/
 │   │       └── index.astro             # Business pillar placeholder
 │   ├── data/
-│   │   ├── pillars.ts                  # Pillar definitions (name, icon, color, url, status)
-│   │   └── branches.ts                 # Branch definitions (name, icon, emoji, slug)
+│   │   ├── hub.config.ts              # Single topology file: hub name, pillars, branches, colors, domains
+│   │   │                               # (Reusable pattern: next client only changes this file + content/)
 │   └── styles/
 │       └── global.css                  # Tailwind directives + CSS custom properties
 ├── public/
@@ -105,7 +105,7 @@ sovereign-systems--elevate-align/
 ├── astro.config.mjs                    # Astro config (integrations: react, tailwind)
 ├── tailwind.config.mjs                 # Theme tokens: colors, fonts, spacing
 ├── package.json
-├── seed.yaml                           # ORGANVM ecosystem contract
+├── seed.yaml                           # ORGANVM ecosystem contract (see §12)
 ├── CLAUDE.md                           # Project-specific Claude instructions
 └── docs/
     ├── design-decisions.md             # Client-facing design summary
@@ -157,46 +157,71 @@ Teal/ocean palette, evolved from her existing sites.
 
 ## 5. Component Specifications
 
-### 5.1 Spiral (SpiralCanvas.tsx + sketch.ts)
+### 5.1 Spiral (spiral.ts + SpiralIsland.astro)
 
-**Rendering:** p5.js canvas, loaded as React island (`client:visible` directive in Astro).
+**Rendering:** Vanilla `<canvas>` with `requestAnimationFrame` loop. ~2KB script. No React, no p5.js. Perlin noise for organic drift. Loaded via `<SpiralIsland>` Astro component with `client:media="(min-width: 768px)"` — canvas never loads on mobile (zero wasted CPU/battery).
 
 **Layout:**
-- Center node: "Sovereign Systems" label with subtle pulse
+- Center node: "Sovereign Systems" label with subtle pulse (opacity oscillation via sine)
 - 4 pillar nodes orbit at different radii and speeds
-- Orbital paths drawn as faint dotted arcs
+- Orbital paths drawn as faint dotted arcs (canvas arc + setLineDash)
 - Spiral line connects center → physical → inner → identity → financial in a logarithmic spiral
 
 **Animation:**
 - Constant slow rotation (0.001 rad/frame base speed)
-- Each pillar has slight individual drift (different angular velocities)
-- Hover on pillar: node scales up 1.15x, label fades in, orbital speed slows
-- Click on pillar: navigates to pillar page or external domain
+- Each pillar has Perlin noise offset on radius + angle (organic wobble, not mechanical orbit)
+- Hover on pillar: node scales up 1.15x via lerp, label fades in, orbital speed slows
+- Click on pillar: navigates to pillar page or external domain (window.location)
 
 **Pillar Node Visual:**
-- Circle with icon/emoji inside
+- Circle with icon/emoji inside (drawn via canvas fillText for emoji, arc for circle)
 - Label below (pillar name)
-- Status indicator: filled circle = live, hollow circle = coming soon
+- Status indicator: filled circle = live, hollow circle with dashed stroke = coming soon
 - Color: each pillar gets a tint from the ocean palette
 
 **Responsive:**
-- Desktop (>768px): full canvas, orbital layout
-- Mobile (<768px): vertical list with subtle float animation (CSS), no canvas
-- Transition: Astro renders both, CSS `display:none` toggles
+- Desktop (>768px): full canvas orbital layout via `<SpiralIsland>`
+- Mobile (<768px): `<SpiralFallback>` — vertical list with CSS `@keyframes float` (translateY oscillation). Pure CSS, no JS.
+- No double-render. Astro's `client:media` prevents canvas from loading on mobile entirely. `<SpiralFallback>` is server-rendered HTML+CSS only.
 
-**Data Input:** `pillars.ts` defines:
+**Data Input:** `hub.config.ts` defines the entire site topology:
 ```ts
+interface HubConfig {
+  name: string;              // "Sovereign Systems Spiral"
+  tagline: string;           // Positioning statement
+  pillars: Pillar[];
+  branches: Branch[];        // Water pillar branches
+  domains: {
+    hub: string;             // "elevatealign.com"
+    water: string;           // "stopdrinkingacid.com"
+    business: string;        // "eaucohub.com"
+  };
+  ghl: {
+    quizFormUrl: string;     // GHL embed URL (provided by client)
+    productUrl: string;      // CTA destination for "start with your water"
+  };
+}
+
 interface Pillar {
-  name: string;           // "Physical Sovereignty"
-  slug: string;           // "physical"
-  emoji: string;          // "🌊"
-  tagline: string;        // "Control your inputs. Stabilize your body."
-  color: string;          // Tint from palette
-  url: string;            // "/pillars/physical" or "https://stopdrinkingacid.com"
+  name: string;              // "Physical Sovereignty"
+  slug: string;              // "physical"
+  emoji: string;             // "🌊"
+  tagline: string;           // "Control your inputs. Stabilize your body."
+  color: string;             // Tint from palette
+  url: string;               // "/pillars/physical" or external domain
   status: 'live' | 'coming-soon';
-  order: number;          // Orbital position (1-4)
+  order: number;             // Orbital position (1-4)
+}
+
+interface Branch {
+  name: string;              // "Gut + Hormones"
+  slug: string;              // "gut-hormones"
+  emoji: string;             // "🌿"
+  order: number;
 }
 ```
+
+This single config file is the studio's reusability hook — a future client project duplicates the repo, changes `hub.config.ts` + `src/content/`, and has a new hub-and-spoke site.
 
 ### 5.2 Branch Page Template
 
@@ -210,7 +235,10 @@ branches: defineCollection({
     emoji: z.string(),                    // "🌿"
     hook: z.string(),                     // Emotional opening line
     status: z.enum(['live', 'placeholder']),
-    tone: z.enum(['standard', 'soft']),   // 'soft' for cancer-support
+    tone: z.enum(['standard', 'soft']).default('standard'),
+    // 'soft' tone renders: muted color accent (ocean-200 instead of ocean-500),
+    // gentler CTA text ("Explore gently" vs "Start with your water"),
+    // no quiz-digging language. Used for cancer-support.
     order: z.number(),
   })
 })
@@ -256,6 +284,19 @@ Each section maps to a `<BranchSection>` component with consistent spacing, typo
 ```
 
 GHL form URL provided by Maddie. Styling of the embed controlled in GHL to match the site palette. The wrapper handles loading state and responsive sizing.
+
+**Quiz → Branch Routing (critical UX path):**
+
+After quiz submission, the user needs to land on the correct branch page. Two options depending on GHL capability:
+
+1. **GHL handles redirect** — GHL form "thank you page" URL is set per-result to `/water/gut-hormones`, `/water/fertility`, etc. Quiz routing logic lives entirely in GHL. Simplest approach if GHL supports conditional redirects.
+
+2. **Custom results page** — If GHL can't redirect conditionally, the quiz page includes a post-submission handler that reads the primary tag from the GHL response (via webhook or URL parameter) and redirects client-side. The quiz page at `/water/quiz` becomes:
+   - Show quiz (GHL embed)
+   - On submit: GHL applies tags → redirects to `/water/quiz/results?branch=gut-hormones`
+   - Results page shows personalized header + link to branch page
+
+**Maddie's existing GHL workflow (Day 0/2/4/6 follow-up sequence) triggers on form submission regardless of which approach is used — the tagging happens in GHL, not in our code.**
 
 ### 5.5 Hub Landing Page (index.astro)
 
@@ -311,12 +352,15 @@ Maddie edits content by modifying Markdown files in `src/content/`.
 - Change page layout or component structure
 - Update the spiral animation
 
-**Editing workflow:**
-1. Maddie edits a `.md` file (via GitHub web UI, or a simple text editor if we set up a CMS later)
-2. Push triggers Netlify auto-deploy
-3. Site updates in ~30 seconds
+**Day-1 editing experience (no GitHub required):**
 
-For Phase 1 MVP: direct file editing is sufficient. A headless CMS (Decap, Tina, or Keystatic) can be added later if she wants a visual editor.
+Maddie will not use GitHub. The editing flow must meet her where she is (GHL, Canva, Instagram).
+
+Phase 1 approach: **Keystatic** — a git-based CMS that gives her a visual editor at `/keystatic` on the deployed site. She opens a URL, sees her content as editable fields (title, hook, body sections), edits in a browser form, clicks save. Keystatic commits to GitHub behind the scenes, Netlify auto-deploys. She never sees git, never sees Markdown, never sees code.
+
+Setup cost: ~1 hour of configuration. Returns: she can edit content independently from day one.
+
+Fallback if Keystatic adds too much complexity to the initial build: she sends edits via text/voice note, studio updates the Markdown files. CMS added in a fast follow.
 
 ---
 
@@ -329,7 +373,18 @@ For Phase 1 MVP: direct file editing is sufficient. A headless CMS (Decap, Tina,
 | Publish directory | `dist/` |
 | Node version | 22.x |
 | Auto-deploy | On push to `main` |
-| Custom domains | Added later (elevatealign.com, stopdrinkingacid.com, eaucohub.com) |
+| Custom domains | Phase 1 deliverable (see Domain Connection below) |
+
+### Domain Connection (Phase 1, not deferred)
+
+The site on a `.netlify.app` URL is meaningless to the client. Domain connection is part of the initial build:
+
+1. **Deploy to Netlify** → get `.netlify.app` URL for development/review
+2. **Connect elevatealign.com** — requires Maddie to update DNS (she's on GoDaddy). We provide exact instructions: "Add a CNAME record pointing to X."
+3. **Connect stopdrinkingacid.com** — currently on LeadConnector. Requires DNS change. Same instructions.
+4. **eaucohub.com** — can stay on HighLevel until business pillar is built. Connect when ready.
+
+**Dependency:** Maddie must share domain registrar access or follow DNS instructions. This is a blocking dependency for launch — document it clearly and get it early.
 
 ---
 
@@ -385,6 +440,47 @@ Content that doesn't exist yet gets intentional placeholder treatment:
 - Remaining branch page copywriting
 - Downline duplication system
 - Analytics integration (Plausible/PostHog)
-- Headless CMS integration
-- Custom domain DNS configuration (needs Maddie's domain registrar access)
 - Email sequence design
+
+---
+
+## 12. Ecosystem Integration & IP Separation
+
+### seed.yaml
+
+```yaml
+organ: III
+name: sovereign-systems--elevate-align
+tier: standard
+type: client-project          # New: distinguishes from internal ORGANVM products
+client: maddie                # Client identifier (not in registry, not public)
+status: ACTIVE
+promotion: LOCAL              # Client projects do not promote through PUBLIC_PROCESS
+produces:
+  - event: client.site.deployed
+consumes: []
+```
+
+The `client-project` type signals to ORGANVM governance:
+- This repo does NOT appear in public-facing dashboards or portfolio
+- Promotion pipeline does not apply (no PUBLIC_PROCESS, no GRADUATED)
+- Content within `src/content/` is client IP, not studio IP
+
+### IP Separation
+
+Maddie's intellectual property (Sovereign Systems framework, 4 pillars, branch copy, spiral concept) lives in `src/content/` and `src/data/pillars.ts`. The studio's IP (Astro architecture, spiral rendering code, component library, deployment config) lives everywhere else.
+
+**Current approach:** Single repo, clear directory boundary. Content files are Maddie's. Code files are studio's.
+
+**Future option (if she wants formal separation):** Extract `src/content/` into a private repo she owns, pulled as a git submodule at build time. The studio repo becomes a template; her content repo becomes her property. This is available but not required for MVP.
+
+### Reusability (Studio Pattern Extraction)
+
+What feeds back into the studio is the **code architecture**, not the content:
+- `spiral.ts` → reusable orbital animation component (parameterized by config)
+- `hub.config.ts` pattern → any hub-and-spoke site defines its topology in one file
+- `BranchSection.astro` → reusable content page template
+- `QuizEmbed.astro` → GHL integration pattern
+- Netlify multi-domain redirect pattern
+
+None of these contain Maddie's framework, copy, or brand identity. The next client gets the plumbing; their content is entirely their own.
