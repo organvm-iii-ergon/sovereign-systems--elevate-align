@@ -1,30 +1,20 @@
 @import 'tailwindcss';
 
 @theme {
-  --color-ocean-900: #0a2a2f;
-  --color-ocean-800: #0f3a40;
-  --color-ocean-700: #145050;
+  --color-ocean-900: #071e22;
+  --color-ocean-800: #0c2e33;
+  --color-ocean-700: #113d42;
   --color-ocean-600: #1a6b6b;
   --color-ocean-500: #119a9e;
   --color-ocean-400: #3dbfc4;
-  --color-ocean-300: #8cc5d3;
-  --color-ocean-200: #b8dfe6;
+  --color-ocean-300: #7dd3d7;
+  --color-ocean-200: #b8e6e9;
   --color-ocean-100: #e0f0f0;
-  --color-ocean-50: #f0f9f9;
 
-  --color-sand-900: #2a2520;
-  --color-sand-500: #8a7d6b;
-  --color-sand-300: #c9b89a;
-  --color-sand-100: #f0ebe4;
   --color-sand-50: #faf8f5;
 
   --color-gold: #c9a96e;
-  --color-gold-light: #dfc592;
-
-  --color-text-primary: #1a2a2f;
-  --color-text-body: #4a5a60;
-  --color-text-muted: #7a8a90;
-  --color-text-on-dark: #f0ece6;
+  --color-gold-light: #e0c992;
 
   --font-heading: 'Cormorant Garamond', Georgia, serif;
   --font-body: 'Inter', system-ui, sans-serif;
@@ -32,68 +22,86 @@
 
 html {
   font-family: var(--font-body);
-  color: var(--color-text-body);
-  background-color: var(--color-sand-50);
+  color: rgba(255, 255, 255, 0.6);
+  background: var(--color-ocean-900);
   scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-/* Headings — only set font, NOT color. Let components control color via Tailwind. */
 h1, h2, h3, h4 {
   font-family: var(--font-heading);
 }
 
-/* Gradient section transitions */
-.section-fade-down {
-  background: linear-gradient(180deg, var(--color-ocean-900) 0%, var(--color-ocean-800) 100%);
-}
-.section-fade-up {
-  background: linear-gradient(180deg, var(--color-ocean-800) 0%, var(--color-ocean-900) 100%);
-}
-.section-glow {
-  background: radial-gradient(ellipse at 50% 0%, rgba(17, 154, 158, 0.15) 0%, transparent 60%),
-              var(--color-ocean-900);
-}
-
-/* Subtle text glow for headings on dark */
-.text-glow {
-  text-shadow: 0 0 40px rgba(17, 154, 158, 0.3), 0 0 80px rgba(17, 154, 158, 0.1);
+/* Grain texture overlay */
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0.015;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
 }
 
-/* Glass card effect */
-.glass {
-  background: rgba(255, 255, 255, 0.03);
-  backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.06);
+/* Section glow backgrounds */
+.glow-bg {
+  position: relative;
+  background: var(--color-ocean-900);
+}
+.glow-bg::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 80% 60% at 50% 40%, rgba(17, 154, 158, 0.07) 0%, transparent 70%),
+    radial-gradient(ellipse 50% 40% at 30% 70%, rgba(201, 169, 110, 0.04) 0%, transparent 60%);
+  pointer-events: none;
 }
 
-/* Float animation for mobile spiral fallback */
-@keyframes float {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-6px); }
+/* Subtle divider line */
+.divider-line {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(17, 154, 158, 0.15), transparent);
 }
 
-/* Prose overrides for branch page content — hide raw heading names */
+/* Glass card base */
+.glass-card {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 16px;
+  backdrop-filter: blur(4px);
+  transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.glass-card:hover {
+  background: rgba(255, 255, 255, 0.04);
+  border-color: rgba(17, 154, 158, 0.2);
+  transform: translateY(-4px);
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.4);
+}
+
+/* Branch content — hide raw markdown headings, use gradient separators */
 .branch-content h2 {
   font-size: 0;
   line-height: 0;
+  height: 0;
   margin: 0;
   padding: 0;
-  height: 0;
   overflow: hidden;
 }
 .branch-content h2::after {
-  font-size: 1rem;
-  line-height: 1;
+  content: '';
   display: block;
-  height: 2px;
   width: 40px;
+  height: 1px;
   margin: 3rem 0 1.5rem;
   background: linear-gradient(90deg, var(--color-ocean-500), transparent);
-  content: '';
+  font-size: 0;
 }
 .branch-content p {
   margin-bottom: 1.25rem;
-  line-height: 1.8;
+  line-height: 1.9;
+  color: rgba(255, 255, 255, 0.55);
 }
 .branch-content ul {
   padding-left: 1.25rem;
@@ -101,5 +109,10 @@ h1, h2, h3, h4 {
 }
 .branch-content li {
   margin-bottom: 0.5rem;
-  line-height: 1.7;
+  line-height: 1.8;
+  color: rgba(255, 255, 255, 0.5);
+}
+.branch-content strong {
+  color: rgba(255, 255, 255, 0.8);
+  font-weight: 500;
 }

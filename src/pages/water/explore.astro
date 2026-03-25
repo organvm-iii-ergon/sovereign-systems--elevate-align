@@ -5,26 +5,19 @@ import CTAButton from '../../components/CTAButton.astro';
 import MiniSpiral from '../../components/MiniSpiral.astro';
 ---
 
-<Base title="Explore Water — Sovereign Systems Spiral">
-  <Hero
-    heading="Explore by category"
-    subtext="Every body is different. Find the branch that speaks to what you're navigating — and let that be your starting point."
-    dark={true}
-  />
+<Base title="Explore Water">
+  <Hero heading="Explore by category" subtext="Every body is different. Find the branch that speaks to what you're navigating." />
 
-  <section class="bg-sand-50">
+  <section class="bg-ocean-900">
     <MiniSpiral />
   </section>
 
-  <section class="py-16 px-6 bg-ocean-50 text-center">
-    <div class="max-w-lg mx-auto">
-      <h2 class="font-heading text-2xl font-semibold text-text-primary mb-4">
-        Not sure where to start?
-      </h2>
-      <p class="text-text-body text-lg mb-8 leading-relaxed">
-        Answer five questions and we'll point you toward the right branch for your body and goals.
-      </p>
-      <CTAButton href="/water/quiz" label="Take the assessment" variant="secondary" />
-    </div>
+  <div class="divider-line"></div>
+  <section class="py-16 px-6 bg-ocean-900 text-center">
+    <h2 class="font-heading text-[22px] font-light text-white mb-3">Not sure where to start?</h2>
+    <p class="text-white/35 text-[15px] font-light mb-8 max-w-md mx-auto leading-relaxed">
+      Answer five questions and we'll point you toward the right branch.
+    </p>
+    <CTAButton href="/water/quiz" label="Take the assessment" variant="secondary" />
   </section>
 </Base>

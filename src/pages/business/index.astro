@@ -4,17 +4,15 @@ import ComingSoon from '../../components/ComingSoon.astro';
 import CTAButton from '../../components/CTAButton.astro';
 ---
 
-<Base title="Financial Sovereignty — Sovereign Systems Spiral">
-  <section class="py-20 px-6 bg-sand-50">
-    <div class="max-w-3xl mx-auto">
-      <ComingSoon
-        emoji="💎"
-        title="Financial Sovereignty"
-        message="The business pillar is being built. Start with your foundation first."
-      />
-      <div class="mt-8 text-center">
-        <CTAButton href="/" label="Back to the spiral" variant="secondary" />
-      </div>
+<Base title="Financial Sovereignty">
+  <section class="min-h-[60vh] flex flex-col items-center justify-center bg-ocean-900">
+    <ComingSoon
+      emoji={'\u{1F4A0}'}
+      title="Financial Sovereignty"
+      message="The business pillar is being built. Start with your foundation first."
+    />
+    <div class="mt-4">
+      <CTAButton href="/" label="Back to the spiral" variant="secondary" />
     </div>
   </section>
 </Base>

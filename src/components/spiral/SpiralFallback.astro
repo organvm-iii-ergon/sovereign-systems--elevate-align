@@ -1,10 +1,4 @@
 ---
-/**
- * SpiralFallback — Mobile-only pillar cards with CSS float animation.
- *
- * Server-rendered HTML + CSS only. No JavaScript. Visible on screens < 768px.
- * Each card floats with a staggered animation-delay for organic rhythm.
- */
 import { config } from '../../data/hub.config';
 
 const { pillars } = config;
@@ -19,19 +13,17 @@ const delays = ['0s', '0.3s', '0.6s', '0.9s'];
       <Tag
         href={isLive ? pillar.url : undefined}
         class:list={[
-          'spiral-card w-full max-w-sm flex items-center gap-4 p-4 rounded-xl transition-colors',
-          isLive
-            ? 'border-2 border-solid bg-ocean-900/50 hover:bg-ocean-800/60'
-            : 'border-2 border-dashed opacity-60 bg-ocean-900/30',
+          'spiral-card glass-card w-full max-w-sm flex items-center gap-4 p-5',
+          !isLive && 'opacity-40 hover:transform-none hover:shadow-none',
         ]}
-        style={`border-color: ${pillar.color}; animation-delay: ${delays[i]};`}
+        style={`animation-delay: ${delays[i]};`}
       >
-        <span class="text-3xl flex-shrink-0" aria-hidden="true">{pillar.emoji}</span>
+        <span class="text-3xl flex-shrink-0">{pillar.emoji}</span>
         <div>
-          <p class="font-medium text-text-on-dark text-sm">{pillar.name}</p>
-          <p class="text-ocean-300 text-xs mt-0.5">{pillar.tagline}</p>
+          <p class="font-medium text-white/80 text-sm">{pillar.name}</p>
+          <p class="text-white/30 text-xs mt-0.5">{pillar.tagline}</p>
           {!isLive && (
-            <p class="text-ocean-400 text-[10px] mt-1 uppercase tracking-wider">coming soon</p>
+            <p class="text-white/20 text-[10px] mt-1 uppercase tracking-wider">coming soon</p>
           )}
         </div>
       </Tag>
@@ -42,10 +34,9 @@ const delays = ['0s', '0.3s', '0.6s', '0.9s'];
 <style>
   @keyframes float {
     0%, 100% { transform: translateY(0); }
-    50%      { transform: translateY(-4px); }
+    50%      { transform: translateY(-5px); }
   }
-
   .spiral-card {
-    animation: float 3s ease-in-out infinite;
+    animation: float 3.5s ease-in-out infinite;
   }
 </style>

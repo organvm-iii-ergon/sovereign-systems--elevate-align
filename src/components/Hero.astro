@@ -2,42 +2,21 @@
 interface Props {
   heading: string;
   subtext?: string;
-  dark?: boolean;
 }
 
-const { heading, subtext, dark = false } = Astro.props;
+const { heading, subtext } = Astro.props;
 ---
 
-<section
-  class:list={[
-    'relative py-24 md:py-32 px-6 overflow-hidden',
-    dark ? 'section-glow text-white' : 'bg-sand-50',
-  ]}
->
-  {dark && (
-    <div class="absolute inset-0 opacity-20" style="background: radial-gradient(ellipse at 30% 80%, rgba(61, 191, 196, 0.2), transparent 50%), radial-gradient(ellipse at 70% 20%, rgba(201, 169, 110, 0.15), transparent 50%);" />
+<section class="relative min-h-[85vh] flex flex-col items-center justify-center text-center px-6 py-24 glow-bg overflow-hidden">
+  <h1 class="relative font-heading text-[clamp(42px,6vw,80px)] font-light leading-[1.08] tracking-tight text-white" style="text-shadow: 0 0 60px rgba(17,154,158,0.15);">
+    {heading}
+  </h1>
+  {subtext && (
+    <p class="relative mt-6 text-[17px] font-light leading-relaxed text-white/45 max-w-[540px]">
+      {subtext}
+    </p>
   )}
-  <div class="relative max-w-4xl mx-auto text-center">
-    <h1
-      class:list={[
-        'font-heading text-5xl md:text-7xl font-normal leading-[1.1] tracking-tight',
-        dark ? 'text-white text-glow' : 'text-text-primary',
-      ]}
-    >
-      {heading}
-    </h1>
-    {subtext && (
-      <p
-        class:list={[
-          'mt-6 text-lg md:text-xl leading-relaxed max-w-2xl mx-auto font-light',
-          dark ? 'text-ocean-200' : 'text-text-body',
-        ]}
-      >
-        {subtext}
-      </p>
-    )}
-    <div class="mt-10 flex flex-wrap gap-4 justify-center">
-      <slot />
-    </div>
+  <div class="relative mt-10 flex flex-wrap gap-4 justify-center">
+    <slot />
   </div>
 </section>

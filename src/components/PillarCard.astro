@@ -13,22 +13,18 @@ const isLive = pillar.status === 'live';
   href={isLive ? pillar.url : undefined}
   aria-disabled={!isLive}
   class:list={[
-    'group block rounded-2xl p-8 transition-all duration-300',
-    isLive
-      ? 'bg-white border border-ocean-100 hover:border-ocean-300 hover:shadow-lg hover:shadow-ocean-500/10 hover:-translate-y-1 cursor-pointer'
-      : 'bg-sand-50 border border-dashed border-ocean-200/50 opacity-50 cursor-default',
+    'glass-card block p-8',
+    !isLive && 'opacity-40 cursor-default hover:transform-none hover:shadow-none hover:bg-white/[0.02] hover:border-white/[0.05]',
   ]}
 >
-  <div class="text-4xl mb-4" aria-hidden="true">{pillar.emoji}</div>
-  <h3 class="font-heading text-2xl text-text-primary mb-2">{pillar.name}</h3>
-  <p class="text-text-muted text-sm leading-relaxed font-light">{pillar.tagline}</p>
-  {isLive ? (
-    <div class="mt-4 text-xs font-medium text-ocean-500 uppercase tracking-widest group-hover:text-ocean-400 transition-colors">
-      Explore &rarr;
-    </div>
-  ) : (
-    <div class="mt-4 text-xs font-medium text-text-muted/60 uppercase tracking-widest">
-      Coming soon
-    </div>
-  )}
+  <div class="text-[32px] mb-4">{pillar.emoji}</div>
+  <h3 class="font-heading text-[22px] font-normal text-white mb-2">{pillar.name}</h3>
+  <p class="text-[14px] font-light text-white/40 leading-relaxed">{pillar.tagline}</p>
+  <div class="mt-5 text-[12px] font-medium tracking-wide">
+    {isLive ? (
+      <span class="text-ocean-500">Explore &rarr;</span>
+    ) : (
+      <span class="text-white/20">Coming soon</span>
+    )}
+  </div>
 </a>

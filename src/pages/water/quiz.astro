@@ -4,14 +4,11 @@ import Hero from '../../components/Hero.astro';
 import QuizEmbed from '../../components/QuizEmbed.astro';
 ---
 
-<Base title="Water Assessment — Sovereign Systems Spiral">
-  <Hero
-    heading="Find what your body actually needs"
-    subtext="Five questions to help you identify where to start. No noise — just a clear direction based on what you're navigating."
-    dark={true}
-  />
+<Base title="Water Assessment">
+  <Hero heading="Find what your body actually needs" subtext="Five questions to help you identify where to start. No noise — just a clear direction." />
 
-  <section class="py-16 px-6 bg-sand-50">
+  <div class="divider-line"></div>
+  <section class="py-16 px-6 bg-ocean-900">
     <div class="max-w-3xl mx-auto">
       <QuizEmbed />
     </div>
