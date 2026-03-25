@@ -1,0 +1,31 @@
+---
+import type { Pillar } from '../data/hub.config';
+
+interface Props {
+  pillar: Pillar;
+}
+
+const { pillar } = Astro.props;
+
+const isLive = pillar.status === 'live';
+---
+
+<a
+  href={isLive ? pillar.url : undefined}
+  aria-disabled={!isLive}
+  class:list={[
+    'block rounded-lg p-6 border-2 transition-colors',
+    isLive
+      ? 'bg-white border-ocean-500 hover:border-ocean-400 hover:shadow-md cursor-pointer'
+      : 'bg-sand-50 border-dashed border-ocean-200 opacity-60 cursor-default',
+  ]}
+>
+  <div class="text-4xl mb-3" aria-hidden="true">{pillar.emoji}</div>
+  <h3 class="font-heading text-xl font-semibold text-text-primary mb-1">{pillar.name}</h3>
+  <p class="text-text-body text-sm leading-relaxed">{pillar.tagline}</p>
+  {!isLive && (
+    <span class="inline-block mt-3 text-xs font-medium text-text-muted bg-sand-100 px-2 py-1 rounded">
+      Coming soon
+    </span>
+  )}
+</a>

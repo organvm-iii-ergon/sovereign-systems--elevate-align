@@ -1,0 +1,20 @@
+---
+import { config } from '../data/hub.config';
+
+interface Props {
+  formUrl?: string;
+}
+
+const { formUrl = config.ghl.quizFormUrl } = Astro.props;
+---
+
+<div class="w-full">
+  <p id="quiz-loading" class="text-text-muted text-sm text-center py-4">Loading quiz...</p>
+  <iframe
+    src={formUrl}
+    title="Assessment Quiz"
+    class="w-full min-h-[600px] border-0"
+    loading="lazy"
+    onload="document.getElementById('quiz-loading').style.display='none'"
+  />
+</div>

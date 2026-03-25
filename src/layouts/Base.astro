@@ -1,0 +1,52 @@
+---
+import '../styles/global.css';
+import { config } from '../data/hub.config';
+
+interface Props {
+  title: string;
+  description?: string;
+}
+
+const { title, description = config.tagline } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={description} />
+    <title>{title}</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Inter:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="min-h-screen flex flex-col bg-sand-50 text-text-body">
+    <header class="bg-ocean-900 text-text-on-dark">
+      <nav class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+        <a href="/" class="font-heading text-xl font-semibold text-text-on-dark hover:text-ocean-300 transition-colors">
+          {config.name}
+        </a>
+        <ul class="flex gap-6 text-sm font-medium">
+          <li><a href="/water/" class="text-ocean-200 hover:text-white transition-colors">Water</a></li>
+          <li><a href="/pillars/" class="text-ocean-200 hover:text-white transition-colors">Pillars</a></li>
+          <li><a href="/spiral/" class="text-ocean-200 hover:text-white transition-colors">Spiral</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main class="flex-1">
+      <slot />
+    </main>
+
+    <footer class="bg-ocean-900 text-text-on-dark mt-auto">
+      <div class="max-w-6xl mx-auto px-6 py-8 text-center text-sm text-ocean-200">
+        <p>&copy; {new Date().getFullYear()} {config.name}. All rights reserved.</p>
+        <p class="mt-2 text-ocean-300">{config.domains.hub}</p>
+      </div>
+    </footer>
+  </body>
+</html>

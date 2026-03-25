@@ -1,0 +1,16 @@
+---
+interface Props {
+  tone?: 'standard' | 'soft';
+}
+
+const { tone = 'standard' } = Astro.props;
+---
+
+<section
+  class:list={[
+    'pl-6 py-6 border-l-2',
+    tone === 'standard' ? 'border-ocean-500' : 'border-ocean-200',
+  ]}
+>
+  <slot />
+</section>
