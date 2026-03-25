@@ -19,7 +19,7 @@
 | File | Responsibility |
 |------|---------------|
 | `astro.config.mjs` | Astro config: Tailwind integration, site URL |
-| `tailwind.config.mjs` | Theme tokens: ocean/sand/gold colors, fonts |
+| ~~`tailwind.config.mjs`~~ | ~~Theme tokens~~ — **Not needed in Tailwind v4.** Tokens live in `src/styles/global.css` via `@theme` block. |
 | `content.config.ts` | Astro content collection schemas for branches + pillars |
 | `src/styles/global.css` | Tailwind directives + CSS custom properties (color system) |
 | `src/data/hub.config.ts` | Site topology: pillars, branches, domains, GHL URLs |
@@ -71,7 +71,7 @@ Accept overwriting if prompted. Then install dependencies:
 
 ```bash
 npm install
-npm install @astrojs/tailwind tailwindcss @tailwindcss/vite
+npm install tailwindcss @tailwindcss/vite
 ```
 
 - [ ] **Step 2: Configure Astro**
