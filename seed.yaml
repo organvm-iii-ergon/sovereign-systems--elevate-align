@@ -1,0 +1,20 @@
+organ: III
+name: sovereign-systems--elevate-align
+tier: standard
+type: client-project
+client: maddie
+status: ACTIVE
+promotion: LOCAL
+stack:
+  - astro
+  - tailwind
+  - typescript
+produces:
+  - event: client.site.deployed
+consumes: []
+metadata:
+  description: "Sovereign Systems Spiral — hub-and-spoke website for Maddie's 4-pillar brand"
+  domains:
+    - elevatealign.com
+    - stopdrinkingacid.com
+    - eaucohub.com

@@ -1,0 +1,24 @@
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+[build.environment]
+  NODE_VERSION = "22"
+
+# Multi-domain redirects (activate when custom domains are connected)
+# [[redirects]]
+#   from = "https://stopdrinkingacid.com/*"
+#   to = "/water/:splat"
+#   status = 200
+
+# [[redirects]]
+#   from = "https://eaucohub.com/*"
+#   to = "/business/:splat"
+#   status = 200
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "SAMEORIGIN"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
