@@ -1,0 +1,42 @@
+---
+/**
+ * SpiralIsland — Desktop canvas wrapper.
+ *
+ * Uses a module <script> so Vite bundles the dynamic import of spiral.ts.
+ * Pillar data is passed via a data attribute on the canvas element.
+ * Canvas container is hidden below md breakpoint via Tailwind.
+ */
+import { config } from '../../data/hub.config';
+
+const pillarsJson = JSON.stringify(config.pillars);
+---
+
+<div class="relative w-full hidden md:block" style="height: 420px;">
+  <canvas
+    id="spiral-canvas"
+    class="absolute inset-0 w-full h-full"
+    data-pillars={pillarsJson}
+  ></canvas>
+</div>
+
+<script>
+  function boot(): void {
+    if (!window.matchMedia('(min-width: 768px)').matches) return;
+
+    const canvas = document.getElementById('spiral-canvas') as HTMLCanvasElement | null;
+    if (!canvas) return;
+
+    const raw = canvas.dataset.pillars;
+    if (!raw) return;
+
+    import('./spiral.ts').then(({ initSpiral }) => {
+      const pillars = JSON.parse(raw);
+      const cleanup = initSpiral(canvas, pillars);
+
+      // Cleanup on Astro view transition or page unload
+      document.addEventListener('astro:before-swap', cleanup, { once: true });
+    });
+  }
+
+  boot();
+</script>

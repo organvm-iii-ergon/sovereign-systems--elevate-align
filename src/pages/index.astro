@@ -1,6 +1,8 @@
 ---
 import Base from '../layouts/Base.astro';
 import Hero from '../components/Hero.astro';
+import SpiralIsland from '../components/spiral/SpiralIsland.astro';
+import SpiralFallback from '../components/spiral/SpiralFallback.astro';
 import PillarCard from '../components/PillarCard.astro';
 import CTAButton from '../components/CTAButton.astro';
 import { config } from '../data/hub.config';
@@ -10,9 +12,10 @@ import { config } from '../data/hub.config';
   <!-- 1. Hero -->
   <Hero heading={config.name} subtext={config.tagline} dark={true} />
 
-  <!-- 2. Spiral placeholder -->
-  <section id="spiral-mount" class="py-20 px-6 bg-ocean-900 text-center">
-    <p class="text-ocean-200 text-lg">Interactive spiral loading...</p>
+  <!-- 2. Interactive spiral -->
+  <section class="relative bg-ocean-900 overflow-hidden">
+    <SpiralIsland />
+    <SpiralFallback />
   </section>
 
   <!-- 3. Pillar cards -->
