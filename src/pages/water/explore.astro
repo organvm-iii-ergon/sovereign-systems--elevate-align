@@ -1,0 +1,30 @@
+---
+import Base from '../../layouts/Base.astro';
+import Hero from '../../components/Hero.astro';
+import CTAButton from '../../components/CTAButton.astro';
+import MiniSpiral from '../../components/MiniSpiral.astro';
+---
+
+<Base title="Explore Water — Sovereign Systems Spiral">
+  <Hero
+    heading="Explore by category"
+    subtext="Every body is different. Find the branch that speaks to what you're navigating — and let that be your starting point."
+    dark={true}
+  />
+
+  <section class="bg-sand-50">
+    <MiniSpiral />
+  </section>
+
+  <section class="py-16 px-6 bg-ocean-50 text-center">
+    <div class="max-w-lg mx-auto">
+      <h2 class="font-heading text-2xl font-semibold text-text-primary mb-4">
+        Not sure where to start?
+      </h2>
+      <p class="text-text-body text-lg mb-8 leading-relaxed">
+        Answer five questions and we'll point you toward the right branch for your body and goals.
+      </p>
+      <CTAButton href="/water/quiz" label="Take the assessment" variant="secondary" />
+    </div>
+  </section>
+</Base>

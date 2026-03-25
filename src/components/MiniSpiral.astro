@@ -1,0 +1,26 @@
+---
+import { config } from '../data/hub.config';
+
+const { branches } = config;
+---
+
+<div class="py-12 px-6 max-w-2xl mx-auto">
+  <div class="text-center mb-10">
+    <div class="text-4xl mb-2" aria-hidden="true">💧</div>
+    <h2 class="font-heading text-2xl font-semibold text-text-primary">The Water Hub</h2>
+  </div>
+
+  <div class="grid grid-cols-2 gap-4">
+    {branches.map((branch) => (
+      <a
+        href={`/water/${branch.slug}`}
+        class="flex items-center gap-3 p-4 rounded-lg border border-ocean-200 bg-white hover:bg-ocean-50 hover:border-ocean-400 transition-colors group"
+      >
+        <span class="text-2xl flex-shrink-0" aria-hidden="true">{branch.emoji}</span>
+        <span class="font-medium text-text-primary group-hover:text-ocean-700 text-sm leading-tight">
+          {branch.name}
+        </span>
+      </a>
+    ))}
+  </div>
+</div>
