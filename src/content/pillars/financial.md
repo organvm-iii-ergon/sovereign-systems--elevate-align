@@ -3,7 +3,7 @@ title: "Financial Sovereignty"
 emoji: "🏛️"
 tagline: "Control your income and systems. Build stability that doesn't depend on hustle."
 status: placeholder
-order: 2
+order: 4
 ---
 
 This pillar is coming soon.

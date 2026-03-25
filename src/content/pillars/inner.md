@@ -3,7 +3,7 @@ title: "Inner Sovereignty"
 emoji: "🌀"
 tagline: "Control your internal state. Build from emotional authority, not reaction."
 status: live
-order: 4
+order: 2
 ---
 
 ## What This Is
