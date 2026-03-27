@@ -1,9 +1,17 @@
 import { config, fields, collection } from '@keystatic/core';
 
 export default config({
-  storage: {
-    kind: 'local',
-  },
+  storage: import.meta.env.PROD
+    ? {
+        kind: 'github',
+        repo: {
+          owner: 'organvm-iii-ergon',
+          name: 'sovereign-systems--elevate-align',
+        },
+      }
+    : {
+        kind: 'local',
+      },
   collections: {
     branches: collection({
       label: 'Branches',
