@@ -3,6 +3,7 @@ import Base from '../../layouts/Base.astro';
 import Hero from '../../components/Hero.astro';
 import CTAButton from '../../components/CTAButton.astro';
 import VideoEmbed from '../../components/VideoEmbed.astro';
+import ResearchAccordion from '../../components/ResearchAccordion.astro';
 ---
 
 <Base title="The Water Hub">
@@ -39,13 +40,13 @@ import VideoEmbed from '../../components/VideoEmbed.astro';
       <div>
         <h3 class="font-heading text-[24px] font-light text-white mb-4">What is molecular hydrogen?</h3>
         <p class="text-white/40 text-[15px] font-light leading-[1.8]">
-          Molecular hydrogen (H2) is the smallest and most bioavailable antioxidant molecule known. It passes directly into cells and mitochondria, selectively neutralizing the most damaging free radicals without disrupting beneficial oxidative processes.
+          Molecular hydrogen (H2) is the smallest antioxidant molecule in existence. As established in the foundational 2007 *Nature Medicine* study <sup>B-01</sup>, H2 passes directly into cells and mitochondria to selectively neutralize the most damaging free radicals (hydroxyl and peroxynitrite) without disrupting beneficial oxidative signaling <sup>B-02</sup>.
         </p>
       </div>
       <div>
-        <h3 class="font-heading text-[24px] font-light text-white mb-4">Why hydration isn't just water anymore</h3>
+        <h3 class="font-heading text-[24px] font-light text-white mb-4">Why cellular hydration matters</h3>
         <p class="text-white/40 text-[15px] font-light leading-[1.8]">
-          Most water arrives at your cells stripped of the minerals and charge it needs to actually enter them. The quality of what you drink matters as much as the quantity.
+          Hydration is more than just volume. The discovery of aquaporins (the protein channels regulating water transport into cells), which earned the 2003 Nobel Prize in Chemistry <sup>B-78</sup>, proved that cells actively regulate water entry. True hydration requires a medium that your cells can actually receive and utilize.
         </p>
       </div>
     </div>
@@ -79,5 +80,9 @@ import VideoEmbed from '../../components/VideoEmbed.astro';
     <p class="font-heading italic text-white/25 text-[17px]">
       If something in you is curious... follow that.
     </p>
+    
+    <div class="max-w-2xl mx-auto text-left mt-12">
+      <ResearchAccordion ids={['B-01', 'B-02', 'B-78']} />
+    </div>
   </section>
 </Base>

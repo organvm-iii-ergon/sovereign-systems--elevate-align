@@ -27,16 +27,15 @@ Your hydration quality is a direct input into all of this. Cells that are chroni
 
 ## Where Water Fits
 
-Molecular hydrogen is one of the most potent antioxidants studied in the context of reproductive health. It specifically neutralizes the hydroxyl radical — the most destructive free radical — without disrupting the redox balance your cells need.
+Fertility is not just a biological capacity; it is a reflection of your cellular environment. When cells are stressed, the delicate processes of conception and pregnancy are the first to be deprioritized by the body. Restoring this environment starts with the most fundamental input: your hydration.
 
-For fertility support:
+Molecular hydrogen (H2) has emerged as a significant area of study in reproductive medicine due to its unique ability to penetrate cell membranes and reach the mitochondria — the energy centers of your eggs and sperm.
 
-- Reduces oxidative stress that impacts egg and sperm quality
-- Supports mitochondrial function in reproductive cells
-- Helps regulate the hormonal environment by reducing systemic inflammation
-- Provides deep cellular hydration that tap and filtered water cannot replicate
+- **Selective Protection:** As established in the foundational study published in *Nature Medicine* (2007) <sup>B-01</sup>, H2 acts as a selective antioxidant. It specifically targets the hydroxyl radical — the most destructive reactive oxygen species (ROS) known to damage sperm DNA and disrupt oocyte maturation <sup>B-21</sup>.
+- **Improved Outcomes:** A comprehensive Cochrane review of 63 randomized controlled trials involving over 7,000 women <sup>B-29</sup> found that antioxidant supplementation during fertility treatment was associated with increased clinical pregnancy and live birth rates.
+- **Mitochondrial Support:** Research published in *Antioxidants* (2019) <sup>B-24</sup> suggests that selective antioxidants like H2 may outperform broad-spectrum approaches because they protect the mitochondria without blunting the specific ROS signaling required for sperm capacitation and healthy ovulation.
 
-This is not a fertility treatment. It's cellular support — the kind of foundational work that creates better conditions for everything else you're doing.
+By reducing the systemic oxidative burden, you aren't just "trying to get pregnant." You are creating a sovereign internal territory where life is supported at the most fundamental level.
 
 ## Bridge
 

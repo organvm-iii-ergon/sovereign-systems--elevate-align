@@ -3,6 +3,7 @@ import { getCollection } from 'astro:content';
 import Base from '../../layouts/Base.astro';
 import CTAButton from '../../components/CTAButton.astro';
 import ComingSoon from '../../components/ComingSoon.astro';
+import ResearchAccordion from '../../components/ResearchAccordion.astro';
 import { config } from '../../data/hub.config';
 
 export async function getStaticPaths() {
@@ -17,6 +18,10 @@ const { branch } = Astro.props;
 const { Content } = await branch.render();
 const { title, emoji, hook, status, tone } = branch.data;
 const ctaLabel = tone === 'soft' ? 'Explore gently' : 'Start with your water';
+
+// Get citation IDs for this branch from config
+const branchConfig = config.branches.find(b => b.slug === branch.id.replace(/\.md$/, ''));
+const citationIds = branchConfig?.citationIds || [];
 ---
 
 <Base title={`${title} — Water`}>
@@ -38,18 +43,28 @@ const ctaLabel = tone === 'soft' ? 'Explore gently' : 'Start with your water';
       {status === 'placeholder' ? (
         <ComingSoon title={title} emoji={emoji} />
       ) : (
-        <div class="branch-content text-[16px] leading-[1.9]">
-          <Content />
-        </div>
+        <>
+          <div class="branch-content text-[16px] leading-[1.9]">
+            <Content />
+          </div>
+          
+          <ResearchAccordion ids={citationIds} />
+        </>
       )}
     </div>
   </section>
 
   <!-- CTA -->
-  <section class="py-20 px-6 glow-bg text-center">
+  <section class="py-20 px-6 glow-bg text-center border-t border-ocean-500/10">
     <div class="relative flex flex-col sm:flex-row gap-4 justify-center items-center">
       <CTAButton href={config.ghl.productUrl} label={ctaLabel} />
       <CTAButton href="/water/explore" label="Explore other branches" variant="secondary" />
     </div>
   </section>
 </Base>
+
+<script>
+  // Simple client-side enhancement for citations if needed
+  // (Currently handled by Citation component if used, 
+  // but for raw markdown citations we can add logic here)
+</script>

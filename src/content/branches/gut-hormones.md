@@ -25,16 +25,15 @@ This is not a mystery. It's a cascade — and it starts with what you put in you
 
 ## Where Water Fits
 
-Molecular hydrogen water works at the cellular level. It acts as a selective antioxidant, neutralizing the most damaging free radicals without disrupting beneficial oxidative processes.
+When your gut is inflamed, everything downstream suffers. You feel it in your energy, your mood, and the cyclical rhythm of your hormones. This isn't just about "drinking more water" — it's about the quality of the medium your internal systems live in.
 
-For gut and hormone health specifically:
+Molecular hydrogen (H2) works at the cellular level as a selective antioxidant, neutralizing the most damaging free radicals without disrupting the beneficial oxidative processes your body needs for signaling.
 
-- Reduces oxidative stress in the gut lining
-- Supports the environment where healthy microbiome bacteria thrive
-- Helps regulate the inflammatory signaling that disrupts hormone production
-- Hydrates cells more efficiently than regular water, supporting every downstream process
+- **Microbiome Recalibration:** A landmark 2025 study in *Nature Microbiology* <sup>B-13</sup> demonstrated that H2 cycling in the gut is a primary regulator of microbial health. It modulates the production of butyrate, metabolic processing of bile acids, and even host steroid levels.
+- **Inflammatory Regulation:** Systematic reviews, such as those published in *Clinics and Research in Hepatology and Gastroenterology* (2025) <sup>B-20</sup>, confirm that hydrogen-rich water influences gut microbiota composition, leading to measurable improvements in metabolic markers and gastrointestinal symptom scores.
+- **Cellular Protection:** Research in *Experimental & Molecular Medicine* (Nature) <sup>B-15</sup> shows that H2 protects the gut lining through specific molecular signaling pathways (like reducing MyD88 expression), helping to resolve the chronic inflammation that often precedes hormone destabilization.
 
-This is not "just drinking more water." This is upgrading what your cells actually receive.
+This is the difference between survival and sovereignty. By upgrading what your cells receive, you give your body the foundational substrate it needs to restore its own balance.
 
 ## Bridge
 

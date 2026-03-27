@@ -116,3 +116,18 @@ body::after {
   color: rgba(255, 255, 255, 0.8);
   font-weight: 500;
 }
+
+/* Superscript Citations */
+sup {
+  font-size: 10px;
+  color: var(--color-ocean-400);
+  font-weight: 600;
+  margin-left: 2px;
+  padding: 1px 4px;
+  border-radius: 2px;
+  background: rgba(17, 154, 158, 0.1);
+  vertical-align: baseline;
+  position: relative;
+  top: -0.4em;
+  cursor: help;
+}
