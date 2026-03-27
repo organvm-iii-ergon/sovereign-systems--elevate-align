@@ -3,6 +3,9 @@ import { getCollection } from 'astro:content';
 import Base from '../../layouts/Base.astro';
 import CTAButton from '../../components/CTAButton.astro';
 import ComingSoon from '../../components/ComingSoon.astro';
+import ResearchAccordion from '../../components/ResearchAccordion.astro';
+import VerticalSpine from '../../components/VerticalSpine.astro';
+import { config } from '../../data/hub.config';
 
 export async function getStaticPaths() {
   const pillars = await getCollection('pillars');
@@ -15,9 +18,12 @@ export async function getStaticPaths() {
 const { pillar } = Astro.props;
 const { Content } = await pillar.render();
 const { title, emoji, tagline, status } = pillar.data;
+const pillarConfig = config.pillars.find(p => p.slug === pillar.id.replace(/\.md$/, ''));
+const citationIds = pillarConfig?.citationIds || [];
 ---
 
 <Base title={title}>
+  <VerticalSpine />
   <section class="relative min-h-[50vh] flex flex-col items-center justify-center text-center px-6 py-24 glow-bg overflow-hidden">
     <div class="relative text-6xl mb-6">{emoji}</div>
     <h1 class="relative font-heading text-[clamp(40px,5vw,64px)] font-light text-white leading-[1.1] mb-4" style="text-shadow: 0 0 50px rgba(17,154,158,0.12);">
@@ -40,6 +46,12 @@ const { title, emoji, tagline, status } = pillar.data;
       )}
     </div>
   </section>
+
+  {status === 'live' && citationIds.length > 0 && (
+    <div class="max-w-[640px] mx-auto px-6">
+      <ResearchAccordion ids={citationIds} />
+    </div>
+  )}
 
   <section class="py-16 px-6 bg-ocean-900 text-center">
     <CTAButton href="/" label="Back to the spiral" variant="secondary" />
