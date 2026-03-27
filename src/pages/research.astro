@@ -1,5 +1,6 @@
 ---
 import Base from '../layouts/Base.astro';
+import EmailGate from '../components/EmailGate.astro';
 import { citations } from '../data/citations';
 
 const total = citations.length;
@@ -9,79 +10,83 @@ const biomedical = citations.filter(c => c.id.startsWith('B-'));
 
 <Base title="Research Bibliography">
   <div class="max-w-4xl mx-auto py-24 px-6">
-    <header class="mb-20 text-center">
+    <!-- Header — FREE (Layer 1) -->
+    <header class="mb-16 text-center">
       <h1 class="font-heading text-[clamp(32px,5vw,56px)] font-light text-white mb-6">
         The Sovereign Systems Canon
       </h1>
       <p class="text-white/40 text-[18px] font-light max-w-2xl mx-auto leading-relaxed">
-        An annotated bibliography of the {total} sacred, philosophical, and peer-reviewed sources that ground our framework of health and sovereignty.
+        {total} sacred, philosophical, and peer-reviewed sources grounding every claim in the framework.
       </p>
     </header>
 
-    <div class="space-y-24">
-      <!-- Part I: Sacred -->
-      <section>
-        <div class="flex items-center gap-4 mb-12">
-          <span class="w-12 h-px bg-ocean-500/30"></span>
-          <h2 class="font-heading text-[24px] font-light text-ocean-300 uppercase tracking-[0.2em]">
-            I. Sacred &#x26; Philosophical Foundations
-          </h2>
-        </div>
-        
-        <div class="grid gap-12">
-          {sacred.map(c => (
-            <div class="group grid md:grid-cols-[120px_1fr] gap-6 p-8 bg-ocean-500/5 border border-ocean-500/10 rounded-2xl hover:border-ocean-500/30 transition-colors">
-              <div class="text-[14px] font-mono text-ocean-500/60 font-bold">{c.id}</div>
-              <div>
-                <h3 class="text-[18px] font-medium text-white mb-3 group-hover:text-ocean-200 transition-colors">{c.source}</h3>
-                <p class="text-[16px] text-white/60 leading-relaxed italic mb-4">"{c.detail}"</p>
-                <div class="text-[13px] text-ocean-400/80 leading-relaxed border-l-2 border-ocean-500/20 pl-4 py-1">
-                  <span class="text-ocean-500/60 uppercase text-[10px] font-bold tracking-widest block mb-1">Relevance</span>
-                  {c.context}
+    <!-- Full bibliography — GATED (Layer 2) -->
+    <EmailGate preview="The full annotated bibliography — every source, every finding, every link. The evidential backbone of the Sovereign Systems Spiral.">
+      <div class="space-y-24">
+        <!-- Part I: Sacred -->
+        <section>
+          <div class="flex items-center gap-4 mb-12">
+            <span class="w-12 h-px bg-ocean-500/30"></span>
+            <h2 class="font-heading text-[24px] font-light text-ocean-300 uppercase tracking-[0.2em]">
+              I. Sacred &#x26; Philosophical Foundations
+            </h2>
+          </div>
+
+          <div class="grid gap-12">
+            {sacred.map(c => (
+              <div class="group grid md:grid-cols-[120px_1fr] gap-6 p-8 bg-ocean-500/5 border border-ocean-500/10 rounded-2xl hover:border-ocean-500/30 transition-colors">
+                <div class="text-[14px] font-mono text-ocean-500/60 font-bold">{c.id}</div>
+                <div>
+                  <h3 class="text-[18px] font-medium text-white mb-3 group-hover:text-ocean-200 transition-colors">{c.source}</h3>
+                  <p class="text-[16px] text-white/60 leading-relaxed italic mb-4">"{c.detail}"</p>
+                  <div class="text-[13px] text-ocean-400/80 leading-relaxed border-l-2 border-ocean-500/20 pl-4 py-1">
+                    <span class="text-ocean-500/60 uppercase text-[10px] font-bold tracking-widest block mb-1">Relevance</span>
+                    {c.context}
+                  </div>
                 </div>
               </div>
-            </div>
-          ))}
-        </div>
-      </section>
+            ))}
+          </div>
+        </section>
 
-      <!-- Part II: Biomedical -->
-      <section>
-        <div class="flex items-center gap-4 mb-12">
-          <span class="w-12 h-px bg-ocean-500/30"></span>
-          <h2 class="font-heading text-[24px] font-light text-ocean-300 uppercase tracking-[0.2em]">
-            II. Peer-Reviewed Biomedical Research
-          </h2>
-        </div>
-        
-        <div class="grid gap-12">
-          {biomedical.map(c => (
-            <div class="group grid md:grid-cols-[120px_1fr] gap-6 p-8 bg-ocean-500/5 border border-ocean-500/10 rounded-2xl hover:border-ocean-500/30 transition-colors">
-              <div class="text-[14px] font-mono text-ocean-500/60 font-bold">{c.id}</div>
-              <div>
-                <h3 class="text-[18px] font-medium text-white mb-3 group-hover:text-ocean-200 transition-colors">{c.source}</h3>
-                <p class="text-[16px] text-white/60 leading-relaxed italic mb-4">"{c.detail}"</p>
-                <div class="text-[13px] text-ocean-400 font-mono flex items-center gap-2">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-ocean-500"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
-                  {c.context.startsWith('http') ? (
-                    <a href={c.context} target="_blank" rel="noopener noreferrer" class="hover:text-ocean-300 transition-colors underline underline-offset-4 decoration-ocean-500/30">
-                      {c.context.replace(/^https?:\/\//, '')}
-                    </a>
-                  ) : (
-                    <span>{c.context}</span>
-                  )}
+        <!-- Part II: Biomedical -->
+        <section>
+          <div class="flex items-center gap-4 mb-12">
+            <span class="w-12 h-px bg-ocean-500/30"></span>
+            <h2 class="font-heading text-[24px] font-light text-ocean-300 uppercase tracking-[0.2em]">
+              II. Peer-Reviewed Biomedical Research
+            </h2>
+          </div>
+
+          <div class="grid gap-12">
+            {biomedical.map(c => (
+              <div class="group grid md:grid-cols-[120px_1fr] gap-6 p-8 bg-ocean-500/5 border border-ocean-500/10 rounded-2xl hover:border-ocean-500/30 transition-colors">
+                <div class="text-[14px] font-mono text-ocean-500/60 font-bold">{c.id}</div>
+                <div>
+                  <h3 class="text-[18px] font-medium text-white mb-3 group-hover:text-ocean-200 transition-colors">{c.source}</h3>
+                  <p class="text-[16px] text-white/60 leading-relaxed italic mb-4">"{c.detail}"</p>
+                  <div class="text-[13px] text-ocean-400 font-mono flex items-center gap-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-ocean-500"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+                    {c.context.startsWith('http') ? (
+                      <a href={c.context} target="_blank" rel="noopener noreferrer" class="hover:text-ocean-300 transition-colors underline underline-offset-4 decoration-ocean-500/30">
+                        {c.context.replace(/^https?:\/\//, '')}
+                      </a>
+                    ) : (
+                      <span>{c.context}</span>
+                    )}
+                  </div>
                 </div>
               </div>
-            </div>
-          ))}
-        </div>
-      </section>
-    </div>
+            ))}
+          </div>
+        </section>
+      </div>
 
-    <footer class="mt-32 pt-16 border-t border-ocean-500/20 text-center">
-      <p class="text-white/20 text-[14px] italic">
-        "Truth is the foundation of all sovereignty."
-      </p>
-    </footer>
+      <footer class="mt-32 pt-16 border-t border-ocean-500/20 text-center">
+        <p class="text-white/20 text-[14px] italic">
+          "Truth is the foundation of all sovereignty."
+        </p>
+      </footer>
+    </EmailGate>
   </div>
 </Base>

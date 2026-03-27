@@ -1,0 +1,112 @@
+---
+/**
+ * EmailGate — wraps content behind an email capture form.
+ * Checks localStorage for unlock state. On submit, POSTs to /capture
+ * (Cloudflare Pages Function) and unlocks client-side.
+ *
+ * Usage:
+ *   <EmailGate>
+ *     <div>Protected content here</div>
+ *   </EmailGate>
+ *
+ * Props:
+ *   preview — optional teaser text shown above the gate
+ */
+interface Props {
+  preview?: string;
+}
+
+const { preview } = Astro.props;
+---
+
+<div class="email-gate-wrapper">
+  <!-- Gated content (hidden until unlocked) -->
+  <div id="gated-content" class="hidden opacity-0 transition-opacity duration-700">
+    <slot />
+  </div>
+
+  <!-- Gate form (visible until unlocked) -->
+  <div id="gate-overlay" class="py-20 px-6">
+    {preview && (
+      <div class="max-w-[640px] mx-auto mb-12 text-white/35 text-[16px] font-light leading-[1.9] text-center">
+        <p>{preview}</p>
+      </div>
+    )}
+    <div class="max-w-md mx-auto">
+      <div class="glass-card p-10 text-center" style="border-color: rgba(17,154,158,0.15);">
+        <div class="w-10 h-px bg-ocean-500/30 mx-auto mb-6"></div>
+        <h2 class="font-heading text-[26px] font-light text-white mb-3">Continue reading</h2>
+        <p class="text-white/35 text-[15px] font-light mb-8 leading-relaxed">
+          Enter your email to unlock the full research-backed deep dive. Backed by 263 peer-reviewed and sacred sources.
+        </p>
+
+        <form id="gate-form" class="space-y-4">
+          <input
+            type="email"
+            required
+            placeholder="your@email.com"
+            class="w-full bg-ocean-800/50 border border-ocean-500/20 rounded-lg px-4 py-3 text-white placeholder:text-white/20 focus:outline-none focus:border-ocean-400 transition-colors text-[15px]"
+          />
+          <button
+            type="submit"
+            class="w-full bg-ocean-500 hover:bg-ocean-400 text-white font-medium py-3 rounded-lg transition-all shadow-lg shadow-ocean-500/10 active:scale-[0.98] text-[14px]"
+          >
+            Unlock
+          </button>
+        </form>
+
+        <p class="mt-6 text-[10px] text-white/15 uppercase tracking-[0.15em]">
+          No spam. Only sovereignty.
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  const content = document.getElementById('gated-content');
+  const overlay = document.getElementById('gate-overlay');
+  const form = document.getElementById('gate-form') as HTMLFormElement;
+  const UNLOCK_KEY = 'ss_unlocked';
+
+  function unlock() {
+    if (overlay && content) {
+      overlay.classList.add('hidden');
+      content.classList.remove('hidden');
+      setTimeout(() => content.classList.remove('opacity-0'), 10);
+    }
+  }
+
+  if (localStorage.getItem(UNLOCK_KEY) === 'true') {
+    unlock();
+  }
+
+  form?.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const emailInput = form.querySelector('input[type="email"]') as HTMLInputElement;
+    const button = form.querySelector('button[type="submit"]') as HTMLButtonElement;
+    const email = emailInput.value;
+
+    if (email) {
+      const originalText = button.innerText;
+      button.innerText = 'Unlocking...';
+      button.disabled = true;
+
+      try {
+        await fetch('/capture', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ email })
+        });
+        localStorage.setItem(UNLOCK_KEY, 'true');
+        unlock();
+      } catch {
+        button.innerText = originalText;
+        button.disabled = false;
+        // Still unlock on network failure — don't block the UX
+        localStorage.setItem(UNLOCK_KEY, 'true');
+        unlock();
+      }
+    }
+  });
+</script>
