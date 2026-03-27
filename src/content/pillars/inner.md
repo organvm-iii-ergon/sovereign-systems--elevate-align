@@ -12,13 +12,13 @@ Inner sovereignty is the most misunderstood pillar.
 
 People assume it's about mindset — about positive thinking, about forcing yourself to believe something different. But that's not it.
 
-Inner sovereignty is about building the capacity to respond rather than react. To see clearly rather than interpret through fear. To make decisions from authority rather than survival.
+Inner sovereignty is about building the capacity to respond rather than react. To see clearly rather than interpret through fear <sup>S-44</sup>. To make decisions from authority rather than survival <sup>B-79</sup>.
 
 It's not a mindset. It's an architecture.
 
 ## The Spiral Framework
 
-Real transformation doesn't move in a straight line. It spirals.
+Real transformation doesn't move in a straight line. It spirals <sup>S-20</sup>.
 
 You stabilize. You grow. You expand. You hit a new edge. You stabilize again — at a higher level than before.
 
@@ -26,8 +26,8 @@ Most people collapse at the edge because they interpret it as failure. It isn't.
 
 The five movements of the spiral:
 
-**Awareness** — seeing what is actually misaligned, without narrative
-**Regulation** — stabilizing the nervous system so perception clears
+**Awareness** — seeing what is actually misaligned, without narrative <sup>S-36</sup>
+**Regulation** — stabilizing the nervous system so perception clears <sup>B-89</sup>
 **Installation** — implementing new patterns, frameworks, and structures
 **Embodiment** — living it until it becomes default, not effortful
 **Expansion** — moving into the next layer from a stable base
@@ -36,7 +36,7 @@ The spiral repeats at every level of your life. The work doesn't end — it deep
 
 ## Self-Check-In
 
-Inner sovereignty requires honest self-assessment — not harsh criticism, not spiritual bypassing, but clear-eyed witnessing.
+Inner sovereignty requires honest self-assessment — not harsh criticism, not spiritual bypassing, but clear-eyed witnessing <sup>S-50</sup>.
 
 Regular questions that orient the inner work:
 

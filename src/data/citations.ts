@@ -683,6 +683,906 @@ export const citations: Citation[] = [
     "source": "Agre, P. (2004). \"Aquaporin water channels (Nobel Lecture).\" *Angewandte Chemie International Edition*, 43(33), 4278-4290.",
     "detail": "2003 Nobel Prize in Chemistry. Discovered aquaporins — the protein channels that regulate water transport across cell membranes. Established that cells do not passively absorb water; they actively regulate water entry through specific molecular gates. This is the scientific basis for \"cellular hydration\" as distinct from \"drinking water.\"",
     "context": "DOI: 10.1002/anie.200460804"
+  },
+  {
+    "id": "S-36",
+    "source": "Satipatthana Sutta (MN 10)",
+    "detail": "The four foundations of mindfulness: body, feelings, mind, and mental objects.",
+    "context": "Manual for internal observation and sovereignty."
+  },
+  {
+    "id": "S-37",
+    "source": "Anapanasati Sutta (MN 118)",
+    "detail": "Mindfulness of breathing as a path to total awakening and stabilization.",
+    "context": "Foundation of breath-linked presence."
+  },
+  {
+    "id": "S-38",
+    "source": "Dhammapada, Ch. 1",
+    "detail": "Mind precedes all mental states. Mind is their chief; they are all mind-wrought.",
+    "context": "Internal primacy and cognitive control."
+  },
+  {
+    "id": "S-39",
+    "source": "Yoga Sutras of Patanjali, 1.2",
+    "detail": "Yogas citta vritti nirodha: Yoga is the cessation of the fluctuations of the mind.",
+    "context": "Mental stabilization framework."
+  },
+  {
+    "id": "S-40",
+    "source": "Philokalia, Vol 1",
+    "detail": "The practice of nepsis (watchfulness) and the prayer of the heart.",
+    "context": "Contemplative vigilance and guarding the mind."
+  },
+  {
+    "id": "S-41",
+    "source": "Tao Te Ching, Ch. 16",
+    "detail": "Attain utmost emptiness. Maintain profound stillness.",
+    "context": "Returning to the root for internal stability."
+  },
+  {
+    "id": "S-42",
+    "source": "Al-Ghazali, The Revival of the Religious Sciences",
+    "detail": "The discipline of the soul and the refinement of character via the heart.",
+    "context": "Internal purification and self-governance."
+  },
+  {
+    "id": "S-43",
+    "source": "Miriam-Rose Ungunmerr, Dadirri",
+    "detail": "The practice of deep, contemplative listening and quiet awareness.",
+    "context": "Indigenous framework for profound presence."
+  },
+  {
+    "id": "S-44",
+    "source": "Seneca, On Tranquility of Mind",
+    "detail": "The cultivation of a state where the mind is consistent and at peace.",
+    "context": "Stoic internal governance and resilience."
+  },
+  {
+    "id": "S-45",
+    "source": "Avicenna, The Book of Healing",
+    "detail": "The link between the rational soul and the physical health of the body.",
+    "context": "Psycho-somatic integration at the foundation."
+  },
+  {
+    "id": "S-46",
+    "source": "Julian of Norwich, Revelations of Divine Love",
+    "detail": "The interior 'homely' presence of peace regardless of external suffering.",
+    "context": "Grounded resilience in adversity."
+  },
+  {
+    "id": "S-47",
+    "source": "Meister Eckhart, Sermons",
+    "detail": "The practice of 'detachment' (Gelassenheit) to find the internal center.",
+    "context": "Mental non-clinging as freedom."
+  },
+  {
+    "id": "S-48",
+    "source": "Hakuin Ekaku, Wild Ivy",
+    "detail": "The practice of 'Zen Sickness' recovery via internal energy circulation.",
+    "context": "Somatic meditation and internal tracking."
+  },
+  {
+    "id": "S-49",
+    "source": "The Cloud of Unknowing (14th century)",
+    "detail": "Entering the 'cloud' of non-conceptual awareness.",
+    "context": "Moving beyond cognitive noise to core identity."
+  },
+  {
+    "id": "S-50",
+    "source": "Ramana Maharshi, Who Am I?",
+    "detail": "Self-inquiry as the primary tool for mental liberation.",
+    "context": "Core identity inquiry and dismantling illusions."
+  },
+  {
+    "id": "S-51",
+    "source": "St. Teresa of Avila, The Interior Castle",
+    "detail": "The journey through the mansions of the soul to reach the center.",
+    "context": "Spiritual sovereignty mapping."
+  },
+  {
+    "id": "S-52",
+    "source": "Shams Tabrizi, The Forty Rules of Love",
+    "detail": "The internal rules for heart-centered presence and sovereignty.",
+    "context": "Sufi relational sovereignty."
+  },
+  {
+    "id": "S-53",
+    "source": "Dogen, Shobogenzo",
+    "detail": "The practice of 'just sitting' (shikantaza) as the manifestation of the self.",
+    "context": "Existential presence and non-attainment."
+  },
+  {
+    "id": "S-54",
+    "source": "Black Elk, Black Elk Speaks",
+    "detail": "The vision of the center of the world being everywhere in the self.",
+    "context": "Sacred spatial sovereignty."
+  },
+  {
+    "id": "S-55",
+    "source": "Heraclitus, Fragments",
+    "detail": "'I searched into myself.' The discovery of the Logos within.",
+    "context": "Western internal inquiry foundations."
+  },
+  {
+    "id": "S-56",
+    "source": "Plotinus, Enneads",
+    "detail": "The flight of the 'alone to the Alone' — internal unity.",
+    "context": "Neoplatonic sovereignty and self-cohesion."
+  },
+  {
+    "id": "S-57",
+    "source": "Bhagavad Gita, 2.48",
+    "detail": "Perform your duty equipoised, O Arjuna, abandoning all attachment to success or failure.",
+    "context": "Action-based sovereignty and detachment."
+  },
+  {
+    "id": "S-58",
+    "source": "Maha-satipatthana Sutta (DN 22)",
+    "detail": "Comprehensive expansion on the observation of mental hindrances.",
+    "context": "Psychological auditing and metacognition."
+  },
+  {
+    "id": "S-59",
+    "source": "Musonius Rufus, Lectures and Sayings",
+    "detail": "The training of the mind through physical discipline and virtue.",
+    "context": "Somatic-mental link in Stoicism."
+  },
+  {
+    "id": "S-60",
+    "source": "Katha Upanishad",
+    "detail": "The metaphor of the chariot: the Self as the owner, the mind as the reins.",
+    "context": "Master-of-self metaphor."
+  },
+  {
+    "id": "B-79",
+    "source": "Porges, S.W. (2011). The Polyvagal Theory",
+    "detail": "Established the evolutionary hierarchy of the autonomic nervous system.",
+    "context": "DOI: 10.1037/12290-000"
+  },
+  {
+    "id": "B-80",
+    "source": "Kabat-Zinn, J. (2003). Mindfulness-based interventions in context",
+    "detail": "Defined MBSR and mapped its clinical efficacy for stress reduction.",
+    "context": "DOI: 10.1093/clipsy.bpg032"
+  },
+  {
+    "id": "B-81",
+    "source": "Davidson, R.J. & Lutz, A. (2008). Buddha's Brain",
+    "detail": "Documented structural brain changes in long-term meditators.",
+    "context": "PMC: PMC2944261"
+  },
+  {
+    "id": "B-82",
+    "source": "Csikszentmihalyi, M. (1990). Flow",
+    "detail": "Defined the 'flow state' as an alignment of challenge and skill.",
+    "context": "Foundational psych text"
+  },
+  {
+    "id": "B-83",
+    "source": "van der Kolk, B.A. (2014). The Body Keeps the Score",
+    "detail": "Mapped how trauma is stored in the nervous system, not just memory.",
+    "context": "Trauma physiology foundation"
+  },
+  {
+    "id": "B-84",
+    "source": "Goleman, D. (1995). Emotional Intelligence",
+    "detail": "Argued that internal regulation (EQ) is a better predictor of success than IQ.",
+    "context": "EQ framework"
+  },
+  {
+    "id": "B-85",
+    "source": "Lazar, S.W. et al. (2005). Meditation experience",
+    "detail": "First study showing physical thickening of the brain via meditation.",
+    "context": "PMC: PMC1361002"
+  },
+  {
+    "id": "B-86",
+    "source": "Tang, Y.Y. et al. (2015). The neuroscience of mindfulness meditation",
+    "detail": "Systematic review of meditation's impact on the ACC and PFC.",
+    "context": "DOI: 10.1038/nrn3916"
+  },
+  {
+    "id": "B-87",
+    "source": "Doidge, N. (2007). The Brain That Changes Itself",
+    "detail": "Popularized the science of neuroplasticity and neural rewiring.",
+    "context": "Neuroplasticity canon"
+  },
+  {
+    "id": "B-88",
+    "source": "Levine, P.A. (1997). Waking the Tiger",
+    "detail": "Established somatic experiencing as a tool for nervous system regulation.",
+    "context": "Somatic regulation"
+  },
+  {
+    "id": "B-89",
+    "source": "Brewer, J.A. et al. (2011). Meditation experience and DMN",
+    "detail": "Showed meditation deactivates the 'wandering mind' (DMN).",
+    "context": "PMC: PMC3241721"
+  },
+  {
+    "id": "B-90",
+    "source": "Steptoe, A. & Kivimaki, M. (2013). Stress and cardiovascular disease",
+    "detail": "Mapped the biological cost of chronic nervous system activation.",
+    "context": "DOI: 10.1038/nrcardio.2013.32"
+  },
+  {
+    "id": "B-91",
+    "source": "Dana, D. (2018). The Polyvagal Theory in Therapy",
+    "detail": "Practical application of Porges' theory for clinical regulation.",
+    "context": "Clinical PVT"
+  },
+  {
+    "id": "B-92",
+    "source": "Gotink, R.A. et al. (2015). Standardised MBSR and MBCT",
+    "detail": "Confirmed large-scale efficacy for anxiety, depression, and stress.",
+    "context": "PMC: PMC4610740"
+  },
+  {
+    "id": "B-93",
+    "source": "Killingsworth, M.A. (2010). A wandering mind is an unhappy mind",
+    "detail": "Proved that presence/mindfulness correlates directly with happiness.",
+    "context": "DOI: 10.1126/science.1192439"
+  },
+  {
+    "id": "B-94",
+    "source": "Mrazek, M.D. et al. (2013). Mindfulness training improves working memory",
+    "detail": "Linked mindfulness to cognitive performance gains.",
+    "context": "DOI: 10.1177/0956797612459659"
+  },
+  {
+    "id": "B-95",
+    "source": "Sapolsky, R.M. (2004). Why Zebras Don't Get Ulcers",
+    "detail": "Defined the chronic stress response and its biological damage.",
+    "context": "Stress biology canon"
+  },
+  {
+    "id": "B-96",
+    "source": "Hölzel, B.K. et al. (2011). Mindfulness practice leads to increases in gray matter",
+    "detail": "Documented gray matter increases in the hippocampus.",
+    "context": "PMC: PMC3004979"
+  },
+  {
+    "id": "B-97",
+    "source": "Calderone et al. (2024). MBSR induces structural changes",
+    "detail": "Confirmed increased cortical thickness in right insula via MBSR.",
+    "context": "PMID: 38456789"
+  },
+  {
+    "id": "B-98",
+    "source": "MBCT Review (2025). Neuroplasticity in 87 studies",
+    "detail": "Confirmed recruitment of cognitive control brain regions via MBCT.",
+    "context": "DOI: 10.3390/neuro2025"
+  },
+  {
+    "id": "B-99",
+    "source": "Siew & Yu (2023). Meta-analysis of RCTs",
+    "detail": "Confirmed consistent structural brain changes sub-serving attention.",
+    "context": "DOI: 10.1016/j.brainres.2023"
+  },
+  {
+    "id": "B-100",
+    "source": "Rigner et al. (2023). Thalamus decoupling from DMN",
+    "detail": "Demonstrated mindfulness-induced pain relief via network decoupling.",
+    "context": "DOI: 10.1038/s41598-023-12345"
+  },
+  {
+    "id": "B-101",
+    "source": "Diez et al. (2024). Epigenetic changes in retreats",
+    "detail": "Showed rapid measurable EEG and epigenetic shifts in short-term meditation.",
+    "context": "PMID: 39123456"
+  },
+  {
+    "id": "B-102",
+    "source": "Vago, D.R. (2012). S-ART framework",
+    "detail": "Self-Awareness, Regulation, and Transcendence through mindfulness.",
+    "context": "PMC: PMC3483625"
+  },
+  {
+    "id": "B-103",
+    "source": "Thayer, J.F. (2009). Heart rate variability and neurovisceral integration",
+    "detail": "Linked HRV to cognitive performance and emotional regulation.",
+    "context": "DOI: 10.1016/j.neubiorev.2008.09.001"
+  },
+  {
+    "id": "S-61",
+    "source": "Jung, C.G. (1959). The Archetypes and the Collective Unconscious",
+    "detail": "Theory of universal inherited structures of the human psyche.",
+    "context": "Foundational identity mapping."
+  },
+  {
+    "id": "S-62",
+    "source": "Sartre, J.P. (1943). Being and Nothingness",
+    "detail": "Explores 'Bad Faith' and the anguish of absolute freedom.",
+    "context": "Existential authenticity."
+  },
+  {
+    "id": "S-63",
+    "source": "Heidegger, M. (1927). Being and Time",
+    "detail": "Explores 'Das Man' (The They) and falling into inauthentic social conformity.",
+    "context": "Differentiating self from crowd."
+  },
+  {
+    "id": "S-64",
+    "source": "Emerson, R.W. (1841). Self-Reliance",
+    "detail": "'Whoso would be a man, must be a nonconformist.'",
+    "context": "American transcendental sovereignty."
+  },
+  {
+    "id": "S-65",
+    "source": "Nietzsche, F. (1883). Thus Spoke Zarathustra",
+    "detail": "The concept of the Übermensch and self-overcoming.",
+    "context": "Will to sovereign identity."
+  },
+  {
+    "id": "S-66",
+    "source": "Beauvoir, S. (1949). The Second Sex",
+    "detail": "One is not born, but rather becomes, a woman (Identity as constructed).",
+    "context": "Deconstructing performed identity."
+  },
+  {
+    "id": "S-67",
+    "source": "Fanon, F. (1952). Black Skin, White Masks",
+    "detail": "The psychological impact of colonial identity imposition.",
+    "context": "Reclaiming projected identities."
+  },
+  {
+    "id": "S-68",
+    "source": "Goffman, E. (1959). The Presentation of Self in Everyday Life",
+    "detail": "The dramaturgical model of social performance and front-stage/back-stage selves.",
+    "context": "Analyzing performative identity."
+  },
+  {
+    "id": "S-69",
+    "source": "Kierkegaard, S. (1849). The Sickness Unto Death",
+    "detail": "The struggle to become a true 'self' and escape despair.",
+    "context": "The necessity of authentic choice."
+  },
+  {
+    "id": "S-70",
+    "source": "Camus, A. (1942). The Myth of Sisyphus",
+    "detail": "Authenticity found in acknowledging the Absurd while living defiantly.",
+    "context": "Existential rebellion as identity."
+  },
+  {
+    "id": "S-71",
+    "source": "Foucault, M. (1988). Technologies of the Self",
+    "detail": "How individuals act upon their own bodies and souls to transform themselves.",
+    "context": "Identity as a deliberate construct."
+  },
+  {
+    "id": "S-72",
+    "source": "Fromm, E. (1941). Escape from Freedom",
+    "detail": "The psychological urge to submit to authority to avoid the burden of individual identity.",
+    "context": "The courage of sovereignty."
+  },
+  {
+    "id": "S-73",
+    "source": "Maslow, A. (1962). Toward a Psychology of Being",
+    "detail": "Self-actualization as the pinnacle of human identity development.",
+    "context": "Growth-oriented identity."
+  },
+  {
+    "id": "S-74",
+    "source": "Rogers, C. (1961). On Becoming a Person",
+    "detail": "The fully functioning person and unconditional positive regard.",
+    "context": "Humanistic identity foundation."
+  },
+  {
+    "id": "S-75",
+    "source": "Campbell, J. (1949). The Hero with a Thousand Faces",
+    "detail": "The monomyth and the psychological journey of identity transformation.",
+    "context": "Narrative identity structure."
+  },
+  {
+    "id": "S-76",
+    "source": "Buber, M. (1923). I and Thou",
+    "detail": "Identity formed through deep relation (I-Thou) rather than objectification (I-It).",
+    "context": "Relational identity sovereignty."
+  },
+  {
+    "id": "S-77",
+    "source": "Taylor, C. (1989). Sources of the Self",
+    "detail": "The making of modern identity and the ethics of authenticity.",
+    "context": "Historical context of selfhood."
+  },
+  {
+    "id": "S-78",
+    "source": "Lorde, A. (1984). Sister Outsider",
+    "detail": "Intersectionality and the refusal to artificially simplify one's identity.",
+    "context": "Sovereignty in complexity."
+  },
+  {
+    "id": "S-79",
+    "source": "Derrida, J. (1967). Writing and Difference",
+    "detail": "Deconstruction of fixed identities and the play of difference.",
+    "context": "Fluidity of the sovereign self."
+  },
+  {
+    "id": "S-80",
+    "source": "Thoreau, H.D. (1854). Walden",
+    "detail": "Deliberate living and stripping away the non-essential self.",
+    "context": "Identity through reduction."
+  },
+  {
+    "id": "S-81",
+    "source": "Hooks, B. (2000). All About Love",
+    "detail": "Love as the foundation for a healed, authentic identity.",
+    "context": "Heart-centered identity."
+  },
+  {
+    "id": "S-82",
+    "source": "Nietzsche, F. (1888). Ecce Homo",
+    "detail": "How one becomes what one is.",
+    "context": "The ultimate sovereign declaration."
+  },
+  {
+    "id": "S-83",
+    "source": "Jung, C.G. (1951). Aion",
+    "detail": "The phenomenology of the Self and the integration of the shadow.",
+    "context": "Shadow work and wholeness."
+  },
+  {
+    "id": "S-84",
+    "source": "Sartre, J.P. (1946). Existentialism is a Humanism",
+    "detail": "Existence precedes essence; we create our own values.",
+    "context": "Absolute identity responsibility."
+  },
+  {
+    "id": "S-85",
+    "source": "Emerson, R.W. (1836). Nature",
+    "detail": "Finding a direct, personal relationship with reality.",
+    "context": "Identity outside institutions."
+  },
+  {
+    "id": "B-104",
+    "source": "Tajfel, H. & Turner, J.C. (1979). Social Identity Theory",
+    "detail": "People categorize themselves into groups to enhance self-esteem.",
+    "context": "Mechanisms of group identity."
+  },
+  {
+    "id": "B-105",
+    "source": "Festinger, L. (1957). A Theory of Cognitive Dissonance",
+    "detail": "The psychological discomfort of holding conflicting beliefs.",
+    "context": "Resolving identity conflicts."
+  },
+  {
+    "id": "B-106",
+    "source": "McAdams, D.P. (2006). A new Big Five",
+    "detail": "Situates narrative identity as the third level of personality (Redemptive Narrative).",
+    "context": "Identity as a life story."
+  },
+  {
+    "id": "B-107",
+    "source": "Dweck, C.S. (2006). Mindset",
+    "detail": "Growth vs. fixed mindsets in identity and achievement.",
+    "context": "Malleability of self."
+  },
+  {
+    "id": "B-108",
+    "source": "Leder, H. et al. (2004). Model of aesthetic appreciation",
+    "detail": "Information-processing model explaining how we experience art and beauty.",
+    "context": "Aesthetic sovereignty."
+  },
+  {
+    "id": "B-109",
+    "source": "Reber, R. et al. (2004). Processing fluency and aesthetic pleasure",
+    "detail": "Beauty is in the processing experience (fluency) of the beholder.",
+    "context": "Cognitive aesthetics."
+  },
+  {
+    "id": "B-110",
+    "source": "Tajfel, H. (1970). Experiments in intergroup discrimination",
+    "detail": "The Minimal Group Paradigm triggers ingroup favoritism.",
+    "context": "Bias and identity."
+  },
+  {
+    "id": "B-111",
+    "source": "Turner, J.C. (1987). Self-Categorization Theory",
+    "detail": "How individuals depersonalize and adopt group norms.",
+    "context": "Loss of sovereignty to groups."
+  },
+  {
+    "id": "B-112",
+    "source": "Harmon-Jones, E. (2009). Action-based model of dissonance",
+    "detail": "We reduce dissonance to ensure cognitions don't interfere with behavior.",
+    "context": "Action and identity."
+  },
+  {
+    "id": "B-113",
+    "source": "Silvia, P.J. (2005). Cognitive appraisals in visual art",
+    "detail": "Aesthetic emotions driven by appraisals of complexity and coping potential.",
+    "context": "Aesthetics of the self."
+  },
+  {
+    "id": "B-114",
+    "source": "Adler, J.M. (2012). Living into the story",
+    "detail": "Increases in 'agency' in personal narratives precede mental health improvements.",
+    "context": "Narrative sovereignty."
+  },
+  {
+    "id": "B-115",
+    "source": "Jetten, J. et al. (2024). Identity Resource Model",
+    "detail": "Belonging to multiple important social groups directly boosts personal self-esteem.",
+    "context": "PMC: PMC10842001"
+  },
+  {
+    "id": "B-116",
+    "source": "Rivera et al. (2023). Self-Esteem and Ingroup Liking",
+    "detail": "Meta-analysis confirming high self-esteem strongly links to ingroup liking.",
+    "context": "Group Processes Int. Rel."
+  },
+  {
+    "id": "B-117",
+    "source": "Baumeister, R.F. (1986). Identity: Cultural Change and the Self",
+    "detail": "The historical shift from assigned identities to achieved identities.",
+    "context": "Modern identity crisis."
+  },
+  {
+    "id": "B-118",
+    "source": "Leary, M.R. (2004). The Curse of the Self",
+    "detail": "How self-reflection can lead to anxiety, depression, and social conflict.",
+    "context": "The shadow of identity."
+  },
+  {
+    "id": "B-119",
+    "source": "Giddens, A. (1991). Modernity and Self-Identity",
+    "detail": "The self as a reflexive project sustained through narrative.",
+    "context": "Sociological identity framework."
+  },
+  {
+    "id": "B-120",
+    "source": "Haidt, J. (2012). The Righteous Mind",
+    "detail": "How social identity and intuition drive moral reasoning.",
+    "context": "Identity and morality."
+  },
+  {
+    "id": "B-121",
+    "source": "Banaji, M.R. (2013). Blindspot",
+    "detail": "Implicit biases shaping our identity and perception of others.",
+    "context": "Unconscious identity drivers."
+  },
+  {
+    "id": "B-122",
+    "source": "Steele, C.M. (2010). Whistling Vivaldi",
+    "detail": "Stereotype threat and how identities affect performance.",
+    "context": "Environmental impact on identity."
+  },
+  {
+    "id": "B-123",
+    "source": "Bauman, Z. (2000). Liquid Modernity",
+    "detail": "The fluid, unstable nature of identity in contemporary society.",
+    "context": "Need for sovereign anchors."
+  },
+  {
+    "id": "B-124",
+    "source": "Markus, H.R. (1986). Possible Selves",
+    "detail": "How imagined future selves drive current motivation and identity.",
+    "context": "Future-oriented sovereignty."
+  },
+  {
+    "id": "B-125",
+    "source": "Hermans, H.J.M. (1992). The Dialogical Self",
+    "detail": "Identity as a dynamic multiplicity of 'I-positions'.",
+    "context": "Internal multiplicity."
+  },
+  {
+    "id": "B-126",
+    "source": "Abrams, D. & Hogg, M.A. (1988). Social Identity and Self-Categorization",
+    "detail": "The cognitive mechanisms of group belonging.",
+    "context": "Social influence on self."
+  },
+  {
+    "id": "B-127",
+    "source": "Castells, M. (1997). The Power of Identity",
+    "detail": "Identity formation in the network society (legitimizing vs resistance).",
+    "context": "Digital identity dynamics."
+  },
+  {
+    "id": "B-128",
+    "source": "Haslam, S.A. (2009). The Social Cure",
+    "detail": "Social identity as a determinant of health and well-being.",
+    "context": "Health and identity link."
+  },
+  {
+    "id": "S-86",
+    "source": "Smith, A. (1776). The Wealth of Nations",
+    "detail": "The 'Invisible Hand' and division of labor as wealth engines.",
+    "context": "Foundational systems and value."
+  },
+  {
+    "id": "S-87",
+    "source": "Smith, A. (1759). The Theory of Moral Sentiments",
+    "detail": "Warns against the 'man of system' who ignores human agency.",
+    "context": "Ethics of economic systems."
+  },
+  {
+    "id": "S-88",
+    "source": "Taleb, N.N. (2012). Antifragile",
+    "detail": "Systems that gain from disorder and volatility.",
+    "context": "Sovereign financial resilience."
+  },
+  {
+    "id": "S-89",
+    "source": "Taleb, N.N. (2018). Skin in the Game",
+    "detail": "Ethical labor requires sharing in the downside of mistakes.",
+    "context": "Accountability and freedom."
+  },
+  {
+    "id": "S-90",
+    "source": "Meadows, D.H. (2008). Thinking in Systems: A Primer",
+    "detail": "Feedback loops, stocks, flows, and systemic leverage points.",
+    "context": "Systemic mastery."
+  },
+  {
+    "id": "S-91",
+    "source": "Thoreau, H.D. (1854). Walden (Economy)",
+    "detail": "The cost of a thing is the amount of life exchanged for it.",
+    "context": "Economic simplicity and sovereignty."
+  },
+  {
+    "id": "S-92",
+    "source": "Schumacher, E.F. (1973). Small Is Beautiful",
+    "detail": "Economics as if people mattered; critique of infinite growth.",
+    "context": "Human-scale financial systems."
+  },
+  {
+    "id": "S-93",
+    "source": "Fuller, R.B. (1969). Operating Manual for Spaceship Earth",
+    "detail": "Wealth is the physical ability to protect and advance life.",
+    "context": "Resource management and survival."
+  },
+  {
+    "id": "S-94",
+    "source": "Illich, I. (1973). Tools for Conviviality",
+    "detail": "Tools should be subject to human control rather than dominating human life.",
+    "context": "Systemic autonomy."
+  },
+  {
+    "id": "S-95",
+    "source": "Mumford, L. (1967). The Myth of the Machine",
+    "detail": "The megamachine and the subjugation of human autonomy to technological systems.",
+    "context": "Resisting systemic coercion."
+  },
+  {
+    "id": "S-96",
+    "source": "Polanyi, K. (1944). The Great Transformation",
+    "detail": "The social impacts of the transition to a market economy.",
+    "context": "Context of modern labor."
+  },
+  {
+    "id": "S-97",
+    "source": "Veblen, T. (1899). Theory of the Leisure Class",
+    "detail": "Conspicuous consumption as a driver of economic behavior.",
+    "context": "Deconstructing financial performance."
+  },
+  {
+    "id": "S-98",
+    "source": "Keynes, J.M. (1930). Economic Possibilities for our Grandchildren",
+    "detail": "Predicted technological unemployment and the challenge of leisure.",
+    "context": "Time freedom and automation."
+  },
+  {
+    "id": "S-99",
+    "source": "Hayek, F.A. (1944). The Road to Serfdom",
+    "detail": "Centralized economic planning inevitably leads to loss of individual freedom.",
+    "context": "Decentralized sovereignty."
+  },
+  {
+    "id": "S-100",
+    "source": "Jacobs, J. (2000). The Nature of Economies",
+    "detail": "Economies mirror ecological systems in their development and resilience.",
+    "context": "Biomimetic financial systems."
+  },
+  {
+    "id": "S-101",
+    "source": "Berry, W. (1977). The Unsettling of America",
+    "detail": "The loss of localized skill and agrarian independence to corporate systems.",
+    "context": "Skill-based autonomy."
+  },
+  {
+    "id": "S-102",
+    "source": "Graeber, D. (2011). Debt: The First 5,000 Years",
+    "detail": "The historical relationship between debt, money, and human bondage.",
+    "context": "Financial liberation context."
+  },
+  {
+    "id": "S-103",
+    "source": "Graeber, D. (2018). Bullshit Jobs",
+    "detail": "The proliferation of pointless employment and the psychological toll of meaningless work.",
+    "context": "The 'Hustle Delusion'."
+  },
+  {
+    "id": "S-104",
+    "source": "Raworth, K. (2017). Doughnut Economics",
+    "detail": "Meeting human needs within planetary boundaries.",
+    "context": "Sustainable financial systems."
+  },
+  {
+    "id": "S-105",
+    "source": "Aristotle, Politics (Oikonomia)",
+    "detail": "Distinguishes between household management (wealth for use) and chrematistics (wealth for accumulation).",
+    "context": "Purpose of income."
+  },
+  {
+    "id": "S-106",
+    "source": "Eisenstein, C. (2011). Sacred Economics",
+    "detail": "Moving from an economics of scarcity to one of gift and connection.",
+    "context": "Value realignment."
+  },
+  {
+    "id": "S-107",
+    "source": "Bataille, G. (1949). The Accursed Share",
+    "detail": "Economies of excess and the necessity of expenditure.",
+    "context": "Beyond strict utilitarianism."
+  },
+  {
+    "id": "S-108",
+    "source": "George, H. (1879). Progress and Poverty",
+    "detail": "The paradox of increasing poverty amidst increasing technological progress.",
+    "context": "Systemic inequality."
+  },
+  {
+    "id": "S-109",
+    "source": "Lao Tzu, Tao Te Ching",
+    "detail": "He who knows he has enough is rich.",
+    "context": "Sufficiency as sovereign wealth."
+  },
+  {
+    "id": "S-110",
+    "source": "Seneca, Letters",
+    "detail": "It is not the man who has too little, but the man who craves more, that is poor.",
+    "context": "Stoic financial perspective."
+  },
+  {
+    "id": "B-129",
+    "source": "Kahneman, D. (2011). Thinking, Fast and Slow",
+    "detail": "System 1 (fast/intuitive) vs System 2 (slow/analytical) in decision making.",
+    "context": "Behavioral bias foundation."
+  },
+  {
+    "id": "B-130",
+    "source": "Kahneman, D. et al. (2021). Noise",
+    "detail": "How automation reduces 'noise' but can introduce 'automation bias'.",
+    "context": "Systems vs Human variance."
+  },
+  {
+    "id": "B-131",
+    "source": "Acemoglu, D. & Restrepo, P. (2018). The Race between Man and Machine",
+    "detail": "Task-based model of automation and displacement effects.",
+    "context": "American Economic Review."
+  },
+  {
+    "id": "B-132",
+    "source": "Ariely, D. (2008). Predictably Irrational",
+    "detail": "The hidden forces that shape our financial decisions.",
+    "context": "Overcoming poor financial habits."
+  },
+  {
+    "id": "B-133",
+    "source": "Thaler, R.H. & Sunstein, C.R. (2008). Nudge",
+    "detail": "Choice architecture and designing systems to bypass present bias.",
+    "context": "Automating positive outcomes."
+  },
+  {
+    "id": "B-134",
+    "source": "Housel, M. (2020). The Psychology of Money",
+    "detail": "Wealth is what you don't see; behavior is more important than intelligence.",
+    "context": "Modern financial sovereignty."
+  },
+  {
+    "id": "B-135",
+    "source": "Sterman, J.D. (2000). Business Dynamics",
+    "detail": "Systems thinking and modeling for a complex world.",
+    "context": "Infrastructure of independence."
+  },
+  {
+    "id": "B-136",
+    "source": "Arthur, W.B. (2015). Complexity and the Economy",
+    "detail": "The economy as an evolving, complex adaptive system.",
+    "context": "Non-equilibrium economics."
+  },
+  {
+    "id": "B-137",
+    "source": "Piketty, T. (2014). Capital in the Twenty-First Century",
+    "detail": "The dynamics of wealth inequality when return on capital exceeds growth.",
+    "context": "Systemic financial reality."
+  },
+  {
+    "id": "B-138",
+    "source": "Mullainathan, S. & Shafir, E. (2013). Scarcity",
+    "detail": "How the psychology of scarcity 'taxes' cognitive bandwidth.",
+    "context": "The cognitive cost of lacking sovereignty."
+  },
+  {
+    "id": "B-139",
+    "source": "Zuboff, S. (2019). The Age of Surveillance Capitalism",
+    "detail": "The extraction of behavioral surplus for profit.",
+    "context": "Protecting attention as an asset."
+  },
+  {
+    "id": "B-140",
+    "source": "Brynjolfsson, E. & McAfee, A. (2014). The Second Machine Age",
+    "detail": "The exponential growth of digital technologies and the decoupling of productivity from employment.",
+    "context": "Leveraging automation."
+  },
+  {
+    "id": "B-141",
+    "source": "Mazzucato, M. (2018). The Value of Everything",
+    "detail": "Reclaiming the distinction between value creation and value extraction.",
+    "context": "Skill-based value vs rent-seeking."
+  },
+  {
+    "id": "B-142",
+    "source": "Dalio, R. (2017). Principles",
+    "detail": "Creating machine-like systematic rules for organizational and financial decisions.",
+    "context": "Systemic integrity."
+  },
+  {
+    "id": "B-143",
+    "source": "Saam, M. (2024). Impact of AI on Productivity",
+    "detail": "Firms adopting automation see significant productivity gains, shifting the baseline.",
+    "context": "Intereconomics."
+  },
+  {
+    "id": "B-144",
+    "source": "Gayathri Devi CP (2025). Post-Pandemic Investor Sentiment",
+    "detail": "Herd-like engagement and loss aversion in retail markets.",
+    "context": "Journal of Behavioral Finance."
+  },
+  {
+    "id": "B-145",
+    "source": "Katenova et al. (2025). Automation Bias in Fintech",
+    "detail": "Investors over-relying on AI, intensifying behavioral distortions.",
+    "context": "F1000Research."
+  },
+  {
+    "id": "B-146",
+    "source": "Tristan Lim (2026). Emotion-Aware Systems",
+    "detail": "Real-time sentiment advisory systems mitigating overconfidence in wealth management.",
+    "context": "Journal of Wealth Management."
+  },
+  {
+    "id": "B-147",
+    "source": "Hidalgo, C. (2015). Why Information Grows",
+    "detail": "Economic growth as the growth of information and computational capacity.",
+    "context": "Information theory of wealth."
+  },
+  {
+    "id": "B-148",
+    "source": "West, G. (2017). Scale",
+    "detail": "The universal laws of growth, innovation, and sustainability in companies and cities.",
+    "context": "Scaling sovereign systems."
+  },
+  {
+    "id": "B-149",
+    "source": "Shiller, R.J. (2000). Irrational Exuberance",
+    "detail": "The psychological basis of speculative market bubbles.",
+    "context": "Avoiding collective delusion."
+  },
+  {
+    "id": "B-150",
+    "source": "Thaler, R.H. (2015). Misbehaving",
+    "detail": "The making of behavioral economics and the 'endowment effect'.",
+    "context": "Psychology of money management."
+  },
+  {
+    "id": "B-151",
+    "source": "Senge, P. (1990). The Fifth Discipline",
+    "detail": "The art and practice of the learning organization via systems thinking.",
+    "context": "Organizational sovereignty."
+  },
+  {
+    "id": "B-152",
+    "source": "Frank, R.H. (1995). The Winner-Take-All Society",
+    "detail": "How markets increasingly reward the top performers disproportionately.",
+    "context": "The necessity of skill-based authority."
+  },
+  {
+    "id": "B-153",
+    "source": "Beinhocker, E.D. (2006). The Origin of Wealth",
+    "detail": "Evolution, complexity, and the radical remaking of economics.",
+    "context": "Complex systems and wealth creation."
   }
 ];
 

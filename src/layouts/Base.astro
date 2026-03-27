@@ -5,9 +5,16 @@ import { config } from '../data/hub.config';
 interface Props {
   title: string;
   description?: string;
+  image?: string;
 }
 
-const { title, description = config.tagline } = Astro.props;
+const { 
+  title, 
+  description = config.tagline,
+  image = '/og-image.jpg' // Placeholder for future OG image
+} = Astro.props;
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site || config.domains.hub);
 ---
 
 <!doctype html>
@@ -15,8 +22,27 @@ const { title, description = config.tagline } = Astro.props;
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content={description} />
     <title>{title}</title>
+    
+    <!-- Primary Meta Tags -->
+    <meta name="title" content={title} />
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonicalURL} />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={new URL(image, Astro.site)} />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content={canonicalURL} />
+    <meta property="twitter:title" content={title} />
+    <meta property="twitter:description" content={description} />
+    <meta property="twitter:image" content={new URL(image, Astro.site)} />
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -32,6 +58,7 @@ const { title, description = config.tagline } = Astro.props;
         </a>
         <div class="flex gap-8">
           <a href="/water/" class="text-[11px] font-medium tracking-[0.15em] uppercase text-ocean-400 hover:text-white transition-colors">Water</a>
+          <a href="/business/" class="text-[11px] font-medium tracking-[0.15em] uppercase text-ocean-400 hover:text-white transition-colors">Business</a>
           <a href="/water/explore" class="text-[11px] font-medium tracking-[0.15em] uppercase text-ocean-400 hover:text-white transition-colors">Explore</a>
           <a href="/water/quiz" class="text-[11px] font-medium tracking-[0.15em] uppercase text-ocean-400 hover:text-white transition-colors">Quiz</a>
         </div>

@@ -78,15 +78,37 @@ import MiniSpiral from '../../components/MiniSpiral.astro';
   }
 
   // Handle form submission
-  form?.addEventListener('submit', (e) => {
+  form?.addEventListener('submit', async (e) => {
     e.preventDefault();
-    const email = (form.querySelector('input[type="email"]') as HTMLInputElement).value;
+    const emailInput = form.querySelector('input[type="email"]') as HTMLInputElement;
+    const button = form.querySelector('button[type="submit"]') as HTMLButtonElement;
+    const email = emailInput.value;
     
     if (email) {
-      // In a real app, send to GHL/API here
-      console.log('Capture email:', email);
-      localStorage.setItem(UNLOCK_KEY, 'true');
-      unlock();
+      const originalText = button.innerText;
+      button.innerText = 'Unlocking...';
+      button.disabled = true;
+
+      try {
+        const res = await fetch('/api/capture', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ email })
+        });
+
+        if (res.ok) {
+          localStorage.setItem(UNLOCK_KEY, 'true');
+          unlock();
+        } else {
+          console.error('Failed to capture email');
+          button.innerText = 'Error. Try again.';
+          button.disabled = false;
+        }
+      } catch (error) {
+        console.error('Network error', error);
+        button.innerText = 'Error. Try again.';
+        button.disabled = false;
+      }
     }
   });
 </script>

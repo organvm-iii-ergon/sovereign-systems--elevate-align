@@ -7,6 +7,7 @@ export interface Pillar {
   url: string;
   status: 'live' | 'coming-soon';
   order: number;
+  citationIds?: string[];
 }
 
 export interface Branch {
@@ -46,6 +47,7 @@ export const config: HubConfig = {
       url: '/water/',
       status: 'live',
       order: 1,
+      citationIds: ['B-01', 'B-78', 'S-14', 'S-19']
     },
     {
       name: 'Inner Sovereignty',
@@ -54,8 +56,9 @@ export const config: HubConfig = {
       tagline: 'Control your internal state.',
       color: '#8cc5d3',
       url: '/pillars/inner',
-      status: 'coming-soon',
+      status: 'live',
       order: 2,
+      citationIds: ['S-36', 'S-39', 'S-44', 'B-79', 'B-80', 'B-87', 'B-91']
     },
     {
       name: 'Identity Sovereignty',
@@ -64,8 +67,9 @@ export const config: HubConfig = {
       tagline: 'Control your self-expression.',
       color: '#c9a96e',
       url: '/pillars/identity',
-      status: 'coming-soon',
+      status: 'live',
       order: 3,
+      citationIds: ['S-61', 'S-62', 'S-68', 'S-78', 'B-104', 'B-105', 'B-106']
     },
     {
       name: 'Financial Sovereignty',
@@ -74,8 +78,9 @@ export const config: HubConfig = {
       tagline: 'Control your income and systems.',
       color: '#3dbfc4',
       url: '/business/',
-      status: 'coming-soon',
+      status: 'live',
       order: 4,
+      citationIds: ['S-86', 'S-88', 'S-90', 'B-129', 'B-133', 'B-134']
     },
   ],
   branches: [
