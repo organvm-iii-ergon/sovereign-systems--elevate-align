@@ -285,7 +285,9 @@ export function initSpiral(
   // --- Main draw loop ---
 
   function draw(time: number): void {
-    ctx.clearRect(0, 0, width, height);
+    // Fill with opaque background to prevent ghost trails from translucent elements
+    ctx.fillStyle = '#071e22';
+    ctx.fillRect(0, 0, width, height);
 
     const cx = width / 2;
     const cy = height / 2;
