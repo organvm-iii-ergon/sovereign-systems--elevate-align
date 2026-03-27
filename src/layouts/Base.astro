@@ -75,5 +75,79 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site || config.domains.hu
         <p class="mt-1 text-[11px] text-white/10 tracking-[0.1em]">{config.domains.hub}</p>
       </div>
     </footer>
+
+    <script>
+      // Citation tooltips — lazy-load data on first hover
+      let citations = null;
+      let tooltip = null;
+
+      function createTooltip() {
+        const el = document.createElement('div');
+        el.id = 'cite-tooltip';
+        el.style.cssText = `
+          position:fixed; z-index:9999; pointer-events:none; opacity:0;
+          transition:opacity 0.15s; max-width:320px; padding:14px 16px;
+          background:#0c2e33; border:1px solid rgba(17,154,158,0.25);
+          border-radius:10px; box-shadow:0 12px 40px rgba(0,0,0,0.5);
+          font-family:Inter,system-ui,sans-serif;
+        `;
+        document.body.appendChild(el);
+        return el;
+      }
+
+      async function loadCitations() {
+        if (citations) return citations;
+        try {
+          const res = await fetch('/citations.json');
+          citations = await res.json();
+        } catch { citations = []; }
+        return citations;
+      }
+
+      function findCitation(id) {
+        return citations?.find(c => c.id === id);
+      }
+
+      document.addEventListener('mouseover', async (e) => {
+        const sup = e.target.closest('sup');
+        if (!sup) return;
+        const id = sup.textContent.trim();
+        if (!/^[SB]-\d+$/.test(id)) return;
+
+        await loadCitations();
+        const cite = findCitation(id);
+        if (!cite) return;
+
+        if (!tooltip) tooltip = createTooltip();
+        const isBio = id.startsWith('B-');
+        tooltip.innerHTML = `
+          <div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.12em;color:#7dd3d7;margin-bottom:6px;">
+            ${isBio ? 'Peer-Reviewed Research' : 'Sacred / Philosophical Source'}
+          </div>
+          <div style="font-size:13px;font-weight:500;color:#fff;line-height:1.4;margin-bottom:6px;">
+            ${cite.source}
+          </div>
+          <div style="font-size:12px;color:rgba(255,255,255,0.5);line-height:1.5;font-style:italic;">
+            "${cite.detail}"
+          </div>
+          ${cite.context.startsWith('http') ? `<div style="font-size:10px;color:#3dbfc4;margin-top:8px;font-family:monospace;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">${cite.context}</div>` : ''}
+        `;
+
+        const rect = sup.getBoundingClientRect();
+        let left = rect.left + rect.width / 2 - 160;
+        left = Math.max(8, Math.min(left, window.innerWidth - 336));
+        tooltip.style.left = left + 'px';
+        tooltip.style.top = (rect.top - tooltip.offsetHeight - 8) + 'px';
+        if (rect.top - tooltip.offsetHeight - 8 < 8) {
+          tooltip.style.top = (rect.bottom + 8) + 'px';
+        }
+        tooltip.style.opacity = '1';
+      });
+
+      document.addEventListener('mouseout', (e) => {
+        const sup = e.target.closest('sup');
+        if (sup && tooltip) tooltip.style.opacity = '0';
+      });
+    </script>
   </body>
 </html>
