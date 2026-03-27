@@ -4,3 +4,5 @@ dist/
 .netlify/
 .superpowers/
 .DS_Store
+# Ensure public/ assets are tracked (overrides global gitignore)
+!public/
