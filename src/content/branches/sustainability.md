@@ -9,7 +9,7 @@ order: 6
 
 ## Hook
 
-We have been taught to view water as a commodity — a product packaged in plastic and sold for convenience. but this convenience comes at a staggering cost to our ecosystems and our personal sovereignty.
+We have been taught to view water as a commodity — a product packaged in plastic and sold for convenience. But this convenience comes at a staggering cost to our ecosystems and our personal sovereignty.
 
 Sustainability isn't just about waste reduction; it's about restoring a relationship with the resources that sustain us. When you stop relying on single-use systems, you regain control over your most fundamental input.
 

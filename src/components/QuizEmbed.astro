@@ -9,12 +9,20 @@ const { formUrl = config.ghl.quizFormUrl } = Astro.props;
 ---
 
 <div class="w-full">
-  <p id="quiz-loading" class="text-text-muted text-sm text-center py-4">Loading quiz...</p>
-  <iframe
-    src={formUrl}
-    title="Assessment Quiz"
-    class="w-full min-h-[600px] border-0"
-    loading="lazy"
-    onload="document.getElementById('quiz-loading').style.display='none'"
-  />
+  {formUrl ? (
+    <>
+      <p id="quiz-loading" class="text-text-muted text-sm text-center py-4">Loading quiz...</p>
+      <iframe
+        src={formUrl}
+        title="Assessment Quiz"
+        class="w-full min-h-[600px] border-0"
+        loading="lazy"
+        onload="document.getElementById('quiz-loading').style.display='none'"
+      />
+    </>
+  ) : (
+    <div class="text-white/30 text-[14px] font-light border border-white/10 rounded-full px-9 py-3.5 inline-block">
+      Quiz coming soon — check back shortly
+    </div>
+  )}
 </div>

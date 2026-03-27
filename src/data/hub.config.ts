@@ -133,7 +133,7 @@ export const config: HubConfig = {
     business: 'eaucohub.com',
   },
   ghl: {
-    quizFormUrl: 'https://placeholder.ghl.com/form/quiz',
+    quizFormUrl: '',
     productUrl: 'https://stopdrinkingacid.com',
   },
 };

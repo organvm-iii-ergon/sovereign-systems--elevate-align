@@ -74,4 +74,4 @@ You can visit inner work at any point. But it holds differently when the foundat
 
 This is the architecture of transformation that doesn't collapse.
 
-[Understand the full framework →](/hub)
+[Understand the full framework →](/)
