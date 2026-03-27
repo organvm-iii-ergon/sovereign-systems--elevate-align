@@ -56,14 +56,46 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site || config.domains.hu
         <a href="/" class="font-heading text-base font-light text-white/70 hover:text-white transition-colors tracking-wide">
           {config.name}
         </a>
-        <div class="flex gap-8">
+        <!-- Desktop nav -->
+        <div class="hidden md:flex gap-8">
           <a href="/water/" class="text-[11px] font-medium tracking-[0.15em] uppercase text-ocean-400 hover:text-white transition-colors">Water</a>
           <a href="/business/" class="text-[11px] font-medium tracking-[0.15em] uppercase text-ocean-400 hover:text-white transition-colors">Business</a>
           <a href="/water/explore" class="text-[11px] font-medium tracking-[0.15em] uppercase text-ocean-400 hover:text-white transition-colors">Explore</a>
           <a href="/water/quiz" class="text-[11px] font-medium tracking-[0.15em] uppercase text-ocean-400 hover:text-white transition-colors">Quiz</a>
         </div>
+        <!-- Mobile hamburger -->
+        <button id="nav-toggle" class="md:hidden p-2 -mr-2 text-ocean-400" aria-label="Menu">
+          <svg id="nav-icon-open" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="17" x2="20" y2="17"/></svg>
+          <svg id="nav-icon-close" class="hidden" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><line x1="6" y1="6" x2="18" y2="18"/><line x1="6" y1="18" x2="18" y2="6"/></svg>
+        </button>
+      </div>
+      <!-- Mobile menu panel -->
+      <div id="nav-menu" class="hidden md:hidden border-t border-white/[0.04] bg-ocean-900/95 backdrop-blur-xl">
+        <div class="px-6 py-6 flex flex-col gap-5">
+          <a href="/water/" class="text-[13px] font-medium tracking-[0.12em] uppercase text-ocean-400 active:text-white py-1">Water</a>
+          <a href="/business/" class="text-[13px] font-medium tracking-[0.12em] uppercase text-ocean-400 active:text-white py-1">Business</a>
+          <a href="/water/explore" class="text-[13px] font-medium tracking-[0.12em] uppercase text-ocean-400 active:text-white py-1">Explore</a>
+          <a href="/water/quiz" class="text-[13px] font-medium tracking-[0.12em] uppercase text-ocean-400 active:text-white py-1">Quiz</a>
+        </div>
       </div>
     </nav>
+    <script>
+      const toggle = document.getElementById('nav-toggle');
+      const menu = document.getElementById('nav-menu');
+      const iconOpen = document.getElementById('nav-icon-open');
+      const iconClose = document.getElementById('nav-icon-close');
+      toggle?.addEventListener('click', () => {
+        const open = menu?.classList.toggle('hidden') === false;
+        iconOpen?.classList.toggle('hidden', open);
+        iconClose?.classList.toggle('hidden', !open);
+      });
+      // Close on link tap
+      menu?.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+        menu.classList.add('hidden');
+        iconOpen?.classList.remove('hidden');
+        iconClose?.classList.add('hidden');
+      }));
+    </script>
 
     <main class="flex-1 pt-[56px]">
       <slot />
@@ -108,19 +140,8 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site || config.domains.hu
         return citations?.find(c => c.id === id);
       }
 
-      document.addEventListener('mouseover', async (e) => {
-        const sup = e.target.closest('sup');
-        if (!sup) return;
-        const id = sup.textContent.trim();
-        if (!/^[SB]-\d+$/.test(id)) return;
-
-        await loadCitations();
-        const cite = findCitation(id);
-        if (!cite) return;
-
-        if (!tooltip) tooltip = createTooltip();
-        const isBio = id.startsWith('B-');
-        tooltip.innerHTML = `
+      function renderTooltip(cite, isBio) {
+        return `
           <div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.12em;color:#7dd3d7;margin-bottom:6px;">
             ${isBio ? 'Peer-Reviewed Research' : 'Sacred / Philosophical Source'}
           </div>
@@ -132,21 +153,65 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site || config.domains.hu
           </div>
           ${cite.context.startsWith('http') ? `<div style="font-size:10px;color:#3dbfc4;margin-top:8px;font-family:monospace;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">${cite.context}</div>` : ''}
         `;
+      }
 
+      function positionTooltip(sup) {
+        if (!tooltip) return;
         const rect = sup.getBoundingClientRect();
-        let left = rect.left + rect.width / 2 - 160;
-        left = Math.max(8, Math.min(left, window.innerWidth - 336));
+        const maxW = Math.min(320, window.innerWidth - 16);
+        tooltip.style.maxWidth = maxW + 'px';
+        let left = rect.left + rect.width / 2 - maxW / 2;
+        left = Math.max(8, Math.min(left, window.innerWidth - maxW - 8));
         tooltip.style.left = left + 'px';
         tooltip.style.top = (rect.top - tooltip.offsetHeight - 8) + 'px';
         if (rect.top - tooltip.offsetHeight - 8 < 8) {
           tooltip.style.top = (rect.bottom + 8) + 'px';
         }
         tooltip.style.opacity = '1';
+      }
+
+      function hideTooltip() {
+        if (tooltip) tooltip.style.opacity = '0';
+      }
+
+      let activeSup = null;
+
+      async function showForSup(sup) {
+        const id = sup.textContent.trim();
+        if (!/^[SB]-\d+$/.test(id)) return;
+        await loadCitations();
+        const cite = findCitation(id);
+        if (!cite) return;
+        if (!tooltip) tooltip = createTooltip();
+        tooltip.innerHTML = renderTooltip(cite, id.startsWith('B-'));
+        activeSup = sup;
+        requestAnimationFrame(() => positionTooltip(sup));
+      }
+
+      // Desktop: hover
+      document.addEventListener('mouseover', (e) => {
+        const sup = e.target.closest('sup');
+        if (sup) showForSup(sup);
+      });
+      document.addEventListener('mouseout', (e) => {
+        if (e.target.closest('sup')) hideTooltip();
       });
 
-      document.addEventListener('mouseout', (e) => {
+      // Mobile: tap to toggle
+      document.addEventListener('click', (e) => {
         const sup = e.target.closest('sup');
-        if (sup && tooltip) tooltip.style.opacity = '0';
+        if (sup) {
+          e.preventDefault();
+          if (activeSup === sup && tooltip?.style.opacity === '1') {
+            hideTooltip();
+            activeSup = null;
+          } else {
+            showForSup(sup);
+          }
+        } else if (tooltip?.style.opacity === '1') {
+          hideTooltip();
+          activeSup = null;
+        }
       });
     </script>
   </body>
