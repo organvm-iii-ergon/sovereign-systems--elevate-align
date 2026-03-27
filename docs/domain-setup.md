@@ -1,54 +1,43 @@
 # Connecting Your Domains
 
-Your site is live at: **[NETLIFY_URL — will be filled after deploy]**
+Your site is live at: **https://sovereign-systems-spiral.pages.dev**
 
-To connect your real domains, you need to update DNS records. Here are the exact steps for each domain.
+To connect your real domains, you add them in the Cloudflare Pages dashboard. Here are the steps.
 
 ---
 
 ## 1. elevatealign.com (GoDaddy)
 
-1. Log in to GoDaddy → My Products → DNS
-2. Find the existing records for your domain
-3. Add or update these records:
-
-**For the root domain (@):**
-- **Type:** A
-- **Name:** @
-- **Value:** 75.2.60.5
-- **TTL:** 1 hour
-
-**For www:**
-- **Type:** CNAME
-- **Name:** www
-- **Value:** `[NETLIFY_SITE].netlify.app`
-- **TTL:** 1 hour
-
-4. In Netlify → Domain Settings → Add custom domain → `elevatealign.com`
+1. In Cloudflare dashboard → Pages → sovereign-systems-spiral → Custom Domains → Add
+2. Enter `elevatealign.com`
+3. Cloudflare will tell you what DNS records to set
+4. In GoDaddy → My Products → DNS:
+   - Add a CNAME record: `@` → `sovereign-systems-spiral.pages.dev`
+   - Or if GoDaddy won't allow CNAME on root: add the A records Cloudflare provides
 5. Wait 5-30 minutes for DNS to propagate
-6. Netlify will automatically set up HTTPS
+6. Cloudflare handles HTTPS automatically
 
 ---
 
 ## 2. stopdrinkingacid.com
 
-1. Log in to wherever you bought this domain (may be GoDaddy, Namecheap, or another registrar)
-2. Update the DNS records the same way as above — A record for @ pointing to `75.2.60.5`, CNAME for www pointing to the Netlify site
-3. In Netlify → Domain Settings → Add custom domain → `stopdrinkingacid.com`
+1. Same process — add in Cloudflare Pages Custom Domains
+2. Update DNS at your registrar to point to Cloudflare
+3. Cloudflare Pages serves the correct content for all domains from one deployment
 
-**Important:** This will disconnect the current LeadConnector/GHL site at this domain. Your GHL forms, workflows, and tagging still work — they're backend systems, not tied to the domain. The quiz embed on the new site connects to the same GHL backend.
+**Important:** This will disconnect the current LeadConnector/GHL site at this domain. Your GHL forms, workflows, and tagging still work — they're backend systems, not tied to the domain.
 
 ---
 
 ## 3. eaucohub.com (When Ready)
 
-Same process as above. Connect when the business pillar is built out. For now it can stay on HighLevel.
+Same process. Connect when the business pillar is built out.
 
 ---
 
 ## Need Help?
 
-Send a screenshot of your DNS settings page and I'll tell you exactly what to change. Or if you can share your registrar login, I can do it directly.
+Send a screenshot of your DNS settings page and I'll tell you exactly what to change.
 
 ---
 

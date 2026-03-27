@@ -90,7 +90,7 @@ import MiniSpiral from '../../components/MiniSpiral.astro';
       button.disabled = true;
 
       try {
-        const res = await fetch('/.netlify/functions/capture', {
+        const res = await fetch('/capture', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ email })

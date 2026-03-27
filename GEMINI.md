@@ -54,10 +54,12 @@ npm run preview    # Local preview of the production build
 ## Documentation Hierarchy
 - `CLAUDE.md`: High-level summary of commands and page mapping.
 - `docs/design-decisions.md`: Record of architectural and aesthetic choices.
-- `docs/corpus-canon.md`: **Foundational Mandate.** Contains 113 sacred and biomedical citations backing every claim on the site. Every health claim must map back to an entry here.
+- `docs/corpus-canon.md`: **Foundational Mandate.** Contains 263 sacred and biomedical citations backing every claim on the site. Every health claim must map back to an entry here.
 - `docs/superpowers/`: Project-specific plans and specifications.
 
 ## Deployment Notes
+- **Platform:** Cloudflare Pages (sovereign-systems-spiral.pages.dev)
 - The site builds all routes into a single `dist/`.
-- Netlify handles multi-domain routing via `_redirects` or `netlify.toml` logic.
-- Ensure `site` in `astro.config.mjs` is set to the primary hub domain.
+- `functions/capture.ts` is a Cloudflare Pages Function for email capture.
+- Custom domains are added via Cloudflare Pages dashboard → Custom Domains.
+- `netlify.toml` is legacy — deployment is on Cloudflare, not Netlify.

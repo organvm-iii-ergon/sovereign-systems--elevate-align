@@ -63,11 +63,11 @@ Frontmatter schema is enforced by `content.config.ts` — any new file must incl
 - Edit Markdown files in `src/content/` for copy changes — no code knowledge required
 - To update pillar metadata (taglines, colors, URLs, GHL form URLs): edit `src/data/hub.config.ts`
 - To add a new branch: create `src/content/branches/<slug>.md` with correct frontmatter, then add an entry to the `branches` array in `hub.config.ts`
-- Domain redirects in `netlify.toml` are commented out — uncomment and redeploy once custom domains are connected in Netlify
-
 ## Deploy Configuration
 
-- `netlify.toml` at root — Node 22, builds `dist/`, security headers on all routes
-- Primary domain: `elevatealign.com` (connect in Netlify dashboard → Domain settings)
-- Secondary domains: `stopdrinkingacid.com` → `/water/*`, `eaucohub.com` → `/business/*` (redirects commented in `netlify.toml`, activate post-DNS)
-- Branch deploys are enabled by default — feature branches get preview URLs
+- **Platform:** Cloudflare Pages (sovereign-systems-spiral.pages.dev)
+- **Build:** `npm run build` → `dist/`
+- **Functions:** `functions/capture.ts` — Cloudflare Pages Function for email capture
+- Primary domain: `elevatealign.com` (connect via CF dashboard → Custom Domains)
+- Secondary domains: `stopdrinkingacid.com`, `eaucohub.com` (connect when ready)
+- `netlify.toml` is legacy — kept for reference but deployment is on Cloudflare

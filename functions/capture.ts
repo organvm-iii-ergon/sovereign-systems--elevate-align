@@ -1,15 +1,10 @@
-import type { Context } from "@netlify/functions";
+interface Env {
+  GHL_WEBHOOK_URL?: string;
+}
 
-export default async (request: Request, context: Context) => {
-  if (request.method !== 'POST') {
-    return new Response(JSON.stringify({ error: 'Method not allowed' }), {
-      status: 405,
-      headers: { 'Content-Type': 'application/json' },
-    });
-  }
-
+export const onRequestPost: PagesFunction<Env> = async (context) => {
   try {
-    const data = await request.json();
+    const data = await context.request.json() as { email?: string };
     const email = typeof data.email === 'string' ? data.email.trim() : '';
 
     if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
@@ -19,7 +14,7 @@ export default async (request: Request, context: Context) => {
       });
     }
 
-    const webhookUrl = Netlify.env.get('GHL_WEBHOOK_URL');
+    const webhookUrl = context.env.GHL_WEBHOOK_URL;
 
     if (webhookUrl) {
       await fetch(webhookUrl, {

@@ -12,6 +12,10 @@ stack:
 produces:
   - event: client.site.deployed
 consumes: []
+deploy:
+  platform: cloudflare-pages
+  project: sovereign-systems-spiral
+  url: https://sovereign-systems-spiral.pages.dev
 metadata:
   description: "Sovereign Systems Spiral — hub-and-spoke website for Maddie's 4-pillar brand"
   domains:
