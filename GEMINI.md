@@ -22,7 +22,7 @@
 
 ### Configuration & Data
 - `src/data/hub.config.ts`: **Single source of truth.** Defines pillars, branches, domain mapping, and external GHL (GoHighLevel) URLs.
-- `content.config.ts`: Defines Zod schemas for Astro Content Collections (`branches`, `pillars`).
+- `src/content.config.ts`: Defines Zod schemas for Astro Content Collections (`branches`, `pillars`).
 - `netlify.toml`: Manages build settings and domain-based redirects (uncomment post-DNS).
 
 ### The Spiral Component

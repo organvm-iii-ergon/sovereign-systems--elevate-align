@@ -2,6 +2,7 @@
 import Base from '../layouts/Base.astro';
 import { citations } from '../data/citations';
 
+const total = citations.length;
 const sacred = citations.filter(c => c.id.startsWith('S-'));
 const biomedical = citations.filter(c => c.id.startsWith('B-'));
 ---
@@ -13,7 +14,7 @@ const biomedical = citations.filter(c => c.id.startsWith('B-'));
         The Sovereign Systems Canon
       </h1>
       <p class="text-white/40 text-[18px] font-light max-w-2xl mx-auto leading-relaxed">
-        An annotated bibliography of the 113 sacred, philosophical, and peer-reviewed sources that ground our framework of health and sovereignty.
+        An annotated bibliography of the {total} sacred, philosophical, and peer-reviewed sources that ground our framework of health and sovereignty.
       </p>
     </header>
 
