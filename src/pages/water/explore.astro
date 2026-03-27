@@ -8,8 +8,41 @@ import MiniSpiral from '../../components/MiniSpiral.astro';
 <Base title="Explore Water">
   <Hero heading="Explore by category" subtext="Every body is different. Find the branch that speaks to what you're navigating." />
 
-  <section class="bg-ocean-900">
-    <MiniSpiral />
+  <section class="bg-ocean-900 relative min-h-[400px]">
+    <!-- Unlocked Content -->
+    <div id="explore-content" class="hidden opacity-0 transition-opacity duration-1000">
+      <MiniSpiral />
+    </div>
+
+    <!-- Locked State / Form -->
+    <div id="explore-gate" class="py-24 px-6 max-w-lg mx-auto text-center">
+      <div class="glass-card p-10 border-ocean-500/20">
+        <div class="text-3xl mb-6">🔒</div>
+        <h2 class="font-heading text-[28px] font-light text-white mb-4">Unlock the Research</h2>
+        <p class="text-white/40 text-[16px] font-light mb-8 leading-relaxed">
+          The following deep-dives are backed by over 100 peer-reviewed studies. Enter your email to unlock access to the full Sovereign Systems research database.
+        </p>
+        
+        <form id="gate-form" class="space-y-4">
+          <input 
+            type="email" 
+            required 
+            placeholder="your@email.com" 
+            class="w-full bg-ocean-800/50 border border-ocean-500/30 rounded-lg px-4 py-3 text-white placeholder:text-white/20 focus:outline-none focus:border-ocean-400 transition-colors"
+          />
+          <button 
+            type="submit"
+            class="w-full bg-ocean-500 hover:bg-ocean-400 text-white font-medium py-3 rounded-lg transition-all shadow-lg shadow-ocean-500/10 active:scale-[0.98]"
+          >
+            Unlock Deep-Dives
+          </button>
+        </form>
+        
+        <p class="mt-6 text-[11px] text-white/20 uppercase tracking-widest">
+          No spam. Only sovereignty.
+        </p>
+      </div>
+    </div>
   </section>
 
   <div class="divider-line"></div>
@@ -21,3 +54,39 @@ import MiniSpiral from '../../components/MiniSpiral.astro';
     <CTAButton href="/water/quiz" label="Take the assessment" variant="secondary" />
   </section>
 </Base>
+
+<script>
+  const content = document.getElementById('explore-content');
+  const gate = document.getElementById('explore-gate');
+  const form = document.getElementById('gate-form') as HTMLFormElement;
+
+  const UNLOCK_KEY = 'ss_explore_unlocked';
+
+  function unlock() {
+    if (gate && content) {
+      gate.classList.add('hidden');
+      content.classList.remove('hidden');
+      setTimeout(() => {
+        content.classList.remove('opacity-0');
+      }, 10);
+    }
+  }
+
+  // Check initial state
+  if (localStorage.getItem(UNLOCK_KEY) === 'true') {
+    unlock();
+  }
+
+  // Handle form submission
+  form?.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const email = (form.querySelector('input[type="email"]') as HTMLInputElement).value;
+    
+    if (email) {
+      // In a real app, send to GHL/API here
+      console.log('Capture email:', email);
+      localStorage.setItem(UNLOCK_KEY, 'true');
+      unlock();
+    }
+  });
+</script>

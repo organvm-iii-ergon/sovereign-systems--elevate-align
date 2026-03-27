@@ -4,6 +4,7 @@ import Base from '../../layouts/Base.astro';
 import CTAButton from '../../components/CTAButton.astro';
 import ComingSoon from '../../components/ComingSoon.astro';
 import ResearchAccordion from '../../components/ResearchAccordion.astro';
+import VerticalSpine from '../../components/VerticalSpine.astro';
 import { config } from '../../data/hub.config';
 
 export async function getStaticPaths() {
@@ -25,6 +26,7 @@ const citationIds = branchConfig?.citationIds || [];
 ---
 
 <Base title={`${title} — Water`}>
+  <VerticalSpine />
   <!-- Branch header -->
   <section class="relative min-h-[60vh] flex flex-col items-center justify-center text-center px-6 py-24 glow-bg overflow-hidden">
     <div class="relative text-6xl mb-6">{emoji}</div>
