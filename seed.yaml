@@ -11,7 +11,26 @@ stack:
   - typescript
 produces:
   - event: client.site.deployed
-consumes: []
+  - target: ORGAN-V
+    type: process-documentation
+    signal: case-study
+    description: "Client engagement narrative — building-in-public essay on solo-practitioner consulting model"
+  - target: ORGAN-VII
+    type: distribution-signal
+    signal: client-launch-announcement
+    description: "Launch/update announcements for POSSE distribution pipeline"
+  - target: ORGAN-VI
+    type: community-growth
+    signal: client-success-material
+    description: "Client engagement feeds community discussion and workshop material"
+  - target: ORGAN-I
+    type: research-feedback
+    signal: practice-validates-theory
+    description: "Applied consulting work generates theoretical insights on solo-practitioner model"
+consumes:
+  - source: ORGAN-III/commerce--meta
+    type: governance
+    description: "Contract templates, SOPs, and client lifecycle standards"
 deploy:
   platform: cloudflare-pages
   project: sovereign-systems-spiral
