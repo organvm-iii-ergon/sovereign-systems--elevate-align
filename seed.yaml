@@ -35,6 +35,38 @@ deploy:
   platform: cloudflare-pages
   project: sovereign-systems-spiral
   url: https://sovereign-systems-spiral.pages.dev
+telos: >-
+  The first proof that one person with constitutional governance can deliver
+  enterprise-quality client work. Not a freelance website gig — a demonstration
+  that the eight-organ model produces real commercial value for real clients.
+  If sovereign-systems succeeds, it validates D-001 (the pipeline dissertation),
+  proves the consulting-to-research feedback loop (III→I), and generates the
+  case study material (III→V) that funds the next phase via grant applications.
+  The idealized form: a client engagement that simultaneously serves the client,
+  produces publishable research, feeds community engagement, and generates
+  distribution-worthy narrative — all through the same work, not as separate tasks.
+
+pragma: >-
+  Hub-and-spoke Astro 5 site deployed to Cloudflare Pages. 15 pages across 3
+  domains (elevatealign.com, stopdrinkingacid.com, eaucohub.com). Spiral
+  visualization renders in vanilla Canvas. Email capture function operational.
+  Content architecture complete. Client IP boundary enforced (content = client's,
+  code = studio's). Operating board: 11 issues across α/β/γ/ω phases. Pricing
+  not yet sent (IRF-APP-031 P1 BLOCKING). No case study written. No distribution
+  signal emitted. No research feedback formalized. The site exists and works;
+  the signal closure obligations are declared but unfulfilled.
+
+praxis: >-
+  (1) Send pricing — $1K deposit + $200/mo retainer — unblocks revenue and
+  formalizes the engagement. (2) Write building-in-public case study for ORGAN-V
+  (III→V edge fulfillment + Creative Capital evidence). (3) Dispatch launch
+  announcement via kerygma-pipeline (III→VII edge fulfillment). (4) Formalize
+  research insight on solo-practitioner consulting model for SGO (III→I edge
+  fulfillment). (5) Domain connection: elevatealign.com → CF custom domain.
+  (6) Work through operating board ω-phase items (content polish, SEO, analytics).
+  Primary gap: the site is built but the signal closure obligations are all
+  declarations without substance. The praxis is to produce the substance.
+
 metadata:
   description: "Sovereign Systems Spiral — hub-and-spoke website for Maddie's 4-pillar brand"
   domains:
