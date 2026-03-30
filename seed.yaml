@@ -82,6 +82,48 @@ receptio: >-
   beyond its creator. Until at least one of these reception events occurs,
   this formation remains a theory of shovels.
 
+polis:
+  - role: business_critic
+    examines: "Commercial viability of the solo-practitioner consulting model"
+    findings: >-
+      Pricing not yet sent. Until money changes hands, the model is
+      hypothetical. The $1K + $200/mo structure is reasonable for a
+      first engagement but the question is whether one person can
+      deliver enterprise-quality sites while simultaneously running
+      127 repos. The client IP/studio IP boundary is clean — that's
+      the one structural decision that scales.
+  - role: systems_theorist
+    examines: "Whether the eight-organ signal closure model actually produces the entailed outputs"
+    findings: >-
+      The seed.yaml declares 4 produces edges (V, VII, VI, I) and
+      1 consumes edge (III/commerce--meta). None of the produces
+      edges have been fulfilled. The theory says consulting work
+      necessarily produces research, documentation, community material,
+      and distribution. This formation is the test case. If it can't
+      produce all four, the entailment matrix is aspirational, not
+      deductive.
+  - role: rhetorician
+    examines: "The narrative coherence of the client-facing brand architecture"
+    findings: >-
+      Hub-and-spoke across 3 domains is architecturally sound but
+      narratively fragile. 'Elevate & Align' → 'Stop Drinking Acid'
+      → 'EauCo Hub' requires the spiral visualization to do heavy
+      conceptual lifting. The spiral works as a metaphor but the
+      4-pillar structure (physical, inner, identity, financial
+      sovereignty) needs the content to prove the connections aren't
+      arbitrary. Content is placeholder-grade in pillars 2-4.
+  - role: practitioner
+    examines: "Whether the site functions as a tool for the client's actual business"
+    findings: >-
+      GHL quiz embed works. Email capture function operational.
+      Branch explorer surfaces the 6 health branches clearly. But
+      the site has no analytics, no conversion tracking, no way to
+      know if it's working. A tool that can't measure its own
+      effectiveness is a brochure, not a business instrument.
+  - role: ethicist
+    examines: "The labor model — is one person serving a client while running a 127-repo system ethical and sustainable?"
+    findings: null
+
 metadata:
   description: "Sovereign Systems Spiral — hub-and-spoke website for Maddie's 4-pillar brand"
   domains:
