@@ -63,6 +63,9 @@ Frontmatter schema is enforced by `content.config.ts` — any new file must incl
 - Edit Markdown files in `src/content/` for copy changes — no code knowledge required
 - To update pillar metadata (taglines, colors, URLs, GHL form URLs): edit `src/data/hub.config.ts`
 - To add a new branch: create `src/content/branches/<slug>.md` with correct frontmatter, then add an entry to the `branches` array in `hub.config.ts`
+## Project Board
+[Operating Board](https://github.com/orgs/organvm-iii-ergon/projects/5) — 11 issues across α/β/γ/ω phases
+
 ## Deploy Configuration
 
 - **Platform:** Cloudflare Pages (sovereign-systems-spiral.pages.dev)
