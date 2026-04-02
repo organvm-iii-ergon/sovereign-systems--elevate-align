@@ -22,6 +22,7 @@ Purpose: closure audit for the Maddie Spiral Path handoff session.
 - Treat board mutation and repo-memory reconciliation as one atomic operation: if GitHub issues move, update `seed.yaml`, `CLAUDE.md`, and the dated intake artifacts in the same session.
 - Mirror canonical external handoffs into the repo immediately instead of leaving them in another workspace and relying on path memory.
 - Run the 10-index checklist explicitly at close instead of assuming "N/A" means safe to ignore.
+- Keep numeric `DONE-*` entries in the IRF until the tooling is repaired. `organvm irf stats` does not count session-scoped completion IDs yet, so MON-008 is not only theoretical.
 
 ## 10-Index Check
 
