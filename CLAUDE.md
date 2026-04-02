@@ -6,7 +6,7 @@
 
 - **Organ:** III (Commerce / Ergon)
 - **Client IP boundary:** content = client's IP (do not distribute or reuse); code/architecture = studio IP
-- **Deploy:** Netlify, auto-deploy on push to `main`
+- **Deploy:** Cloudflare Pages, auto-deploy on push to `main`
 
 ## Tech Stack
 
@@ -46,6 +46,12 @@ src/content/
 
 Frontmatter schema is enforced by `content.config.ts` — any new file must include all required fields.
 
+## Canonical Intake
+
+- `docs/handoff-maddie-spiral-path-2026-04-01.md` — mirrored canonical handoff for the 2026-04-01 Maddie Spiral Path intake
+- `docs/superpowers/intakes/2026-04-01-maddie-spiral-path-board-atomization.md` — board translation from handoff to executable issue surface
+- `.codex/plans/2026-04-01-maddie-spiral-orchestration-assignment.md` — dated orchestration plan preserved as session history
+
 ## Page Map (15 pages total)
 
 | Route | File | Description |
@@ -64,7 +70,9 @@ Frontmatter schema is enforced by `content.config.ts` — any new file must incl
 - To update pillar metadata (taglines, colors, URLs, GHL form URLs): edit `src/data/hub.config.ts`
 - To add a new branch: create `src/content/branches/<slug>.md` with correct frontmatter, then add an entry to the `branches` array in `hub.config.ts`
 ## Project Board
-[Operating Board](https://github.com/orgs/organvm-iii-ergon/projects/5) — 11 issues across α/β/γ/ω phases
+[Operating Board](https://github.com/orgs/organvm-iii-ergon/projects/5) — 19 issues after the 2026-04-01 Maddie Spiral Path handoff
+
+Current critical path: `#13` final node architecture -> `#15` V5/V6 prototype merge -> `#6` Physical Sovereignty phase build
 
 ## Deploy Configuration
 
@@ -74,3 +82,10 @@ Frontmatter schema is enforced by `content.config.ts` — any new file must incl
 - Primary domain: `elevatealign.com` (connect via CF dashboard → Custom Domains)
 - Secondary domains: `stopdrinkingacid.com`, `eaucohub.com` (connect when ready)
 - `netlify.toml` is legacy — kept for reference but deployment is on Cloudflare
+
+## Session Close
+
+- Mirror any canonical external handoff into `docs/` before treating it as authoritative project context
+- Keep dated artifacts in `docs/superpowers/intakes/` and `.codex/plans/` additive; do not overwrite prior session records
+- If scope or board state changes, reconcile `seed.yaml` and `CLAUDE.md` in the same session
+- Commit and push before close so project memory exists locally and remotely

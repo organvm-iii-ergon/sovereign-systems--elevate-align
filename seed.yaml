@@ -50,48 +50,50 @@ pragma: >-
   Hub-and-spoke Astro 5 site deployed to Cloudflare Pages. 15 pages across 3
   domains (elevatealign.com, stopdrinkingacid.com, eaucohub.com). Spiral
   visualization renders in vanilla Canvas. Email capture function operational.
-  Content architecture complete. Client IP boundary enforced (content = client's,
-  code = studio's). Operating board: 11 issues across α/β/γ/ω phases. Pricing
-  not yet sent (IRF-APP-031 P1 BLOCKING). No case study written. No distribution
-  signal emitted. No research feedback formalized. The site exists and works;
-  the signal closure obligations are declared but unfulfilled.
+  Client IP boundary enforced (content = client's, code = studio's). Pricing
+  is agreed in principle at 10% of water sales until $10K, but written
+  formalization is still pending in GH#5. Maddie's 2026-04-01 Spiral Path
+  handoff is mirrored locally and atomized on the operating board, which now
+  tracks 19 issues across α/β/γ/ω phases. Launch-critical blockers are the
+  final node architecture decision (#13), reel/video asset access (#14), and
+  the V5/V6 prototype merge (#15). No case study written. No distribution
+  signal emitted. No research feedback formalized. The site exists and works,
+  but the richer Spiral Path build and the signal-closure obligations remain
+  unfinished.
 
 praxis: >-
-  (1) Send pricing — $1K deposit + $200/mo retainer — unblocks revenue and
-  formalizes the engagement. (2) Write building-in-public case study for ORGAN-V
-  (III→V edge fulfillment + Creative Capital evidence). (3) Dispatch launch
-  announcement via kerygma-pipeline (III→VII edge fulfillment). (4) Formalize
-  research insight on solo-practitioner consulting model for SGO (III→I edge
-  fulfillment). (5) Domain connection: elevatealign.com → CF custom domain.
-  (6) Work through operating board ω-phase items (content polish, SEO, analytics).
-  Primary gap: the site is built but the signal closure obligations are all
-  declarations without substance. The praxis is to produce the substance.
+  (1) Formalize the written revenue agreement tracked in GH#5. (2) Get Maddie
+  to lock the node architecture and ordering (#13) and confirm media access and
+  quiz-routing inputs (#14, #9). (3) Merge V5 content with the V6 shell into a
+  production spiral implementation (#15) and wire it into the hub. (4) Build
+  the Physical Sovereignty phase from the verified corpus (#6), then resolve
+  subscription boundaries and the remaining architecture decisions (#7, #17,
+  #18). (5) After launch-critical work is real, produce the case study,
+  distribution signal, and research feedback promised by the declared produces
+  edges. Primary risk: governance drift between GitHub, local repo memory, and
+  external handoff artifacts. The praxis is to keep those layers synchronized
+  while advancing the actual build.
 
 receptio: >-
-  Not yet received in the constitutional sense. The site is deployed but has
-  not been publicly launched, announced, or subjected to external critique.
-  Maddie (the client) has seen it but pricing has not been sent — the
-  engagement is not yet formalized. No audience beyond creator and client.
-  Reception strategy: (1) Formal client sign-off validates the telos as
-  commercially viable. (2) Building-in-public case study (ORGAN-V) subjects
-  the engagement model to public scrutiny. (3) POSSE announcement (ORGAN-VII)
-  creates the audience that completes the formation's existence. (4) Grant
-  applications (NLnet, Creative Capital) present the engagement as evidence —
-  the grant reviewers become the first critical reception. (5) Community
-  discussion (ORGAN-VI) tests whether the solo-practitioner model resonates
-  beyond its creator. Until at least one of these reception events occurs,
-  this formation remains a theory of shovels.
+  Partially received. Maddie has not only seen the site but supplied a 127-file
+  Spiral Path handoff that materially changed scope and confirmed ongoing
+  engagement. Pricing is agreed in principle but not yet formalized in writing.
+  The work has been received internally via the operating board, not publicly
+  via launch or audience adoption. No analytics, launch signal, or outside
+  critique yet exist. Validation would come from written client agreement, live
+  funnel usage, conversion evidence, and post-launch response from audiences
+  beyond creator and client.
 
 polis:
   - role: business_critic
     examines: "Commercial viability of the solo-practitioner consulting model"
     findings: >-
-      Pricing not yet sent. Until money changes hands, the model is
-      hypothetical. The $1K + $200/mo structure is reasonable for a
-      first engagement but the question is whether one person can
-      deliver enterprise-quality sites while simultaneously running
-      127 repos. The client IP/studio IP boundary is clean — that's
-      the one structural decision that scales.
+      Pricing is no longer hypothetical; there is an agreed structure,
+      but it is still operationally weak until written terms exist and
+      payment actually flows. The board now reflects the real work
+      surface: 19 issues, with architecture lock and prototype merge as
+      the actual gating work. The client IP/studio IP boundary remains
+      the strongest scaling decision in the formation.
   - role: systems_theorist
     examines: "Whether the eight-organ signal closure model actually produces the entailed outputs"
     findings: >-
@@ -105,21 +107,22 @@ polis:
   - role: rhetorician
     examines: "The narrative coherence of the client-facing brand architecture"
     findings: >-
-      Hub-and-spoke across 3 domains is architecturally sound but
-      narratively fragile. 'Elevate & Align' → 'Stop Drinking Acid'
-      → 'EauCo Hub' requires the spiral visualization to do heavy
-      conceptual lifting. The spiral works as a metaphor but the
-      4-pillar structure (physical, inner, identity, financial
-      sovereignty) needs the content to prove the connections aren't
-      arbitrary. Content is placeholder-grade in pillars 2-4.
+      Hub-and-spoke across 3 domains is still sound, but the April 1
+      handoff shifts the narrative center from a finished 4-pillar site
+      to the Spiral Path as the organizing experience. Tone, node
+      schema, and deep-dive structure are clearer now, but the 13-node
+      document architecture and 14-node HTML prototypes still diverge.
+      Until that architecture is locked, the spiral cannot carry the
+      brand coherently.
   - role: practitioner
     examines: "Whether the site functions as a tool for the client's actual business"
     findings: >-
-      GHL quiz embed works. Email capture function operational.
-      Branch explorer surfaces the 6 health branches clearly. But
-      the site has no analytics, no conversion tracking, no way to
-      know if it's working. A tool that can't measure its own
-      effectiveness is a brochure, not a business instrument.
+      The deployed site proves the infrastructure baseline, but the
+      launch-critical experience is not done. Start Here routing,
+      prototype merge, node deep-dives, editorial review, and media
+      access all sit between the current site and a working business
+      instrument. Analytics and conversion tracking are still absent, so
+      even a live experience would remain under-measured.
   - role: ethicist
     examines: "The labor model — is one person serving a client while running a 127-repo system ethical and sustainable?"
     findings: null
