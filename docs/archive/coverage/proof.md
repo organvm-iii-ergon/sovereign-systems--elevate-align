@@ -1,50 +1,50 @@
 # Coverage Proof
 
-Generated: 2026-04-03T20:48:03Z
+Generated: 2026-04-03T20:59:11Z
 Source: docs/archive/extracted/**/*.md
 
 ## Summary
 
 | Metric | Count |
 |--------|-------|
-| Total atoms registered | 730 |
-| EXISTS (fully in build) | 240 |
-| PARTIAL (partially in build) | 206 |
-| MISSING (not in build) | 284 |
-| N/A (no build target) | 0 |
-| **Accounted** | **730** |
+| Total atoms registered | 1676 |
+| EXISTS (fully in build) | 302 |
+| PARTIAL (partially in build) | 267 |
+| MISSING (not in build) | 1066 |
+| N/A (no build target) | 41 |
+| **Accounted** | **1676** |
 | **Unaccounted** | **0** |
 
 ## By Provenance
 
 | Provenance | Count |
 |-----------|-------|
-| LOCAL | 359 |
-| HYBRID | 371 |
-| ALIEN | 0 |
+| LOCAL | 807 |
+| HYBRID | 868 |
+| ALIEN | 1 |
 
 ## By Nature
 
 | Nature | Count |
 |--------|-------|
-| CLAIM | 278 |
-| FRAMEWORK | 45 |
-| TOOL | 28 |
-| SCRIPT | 66 |
-| STATISTIC | 29 |
-| PROTOCOL | 22 |
-| NARRATIVE | 84 |
-| CITATION | 27 |
-| PRODUCT | 18 |
+| CLAIM | 347 |
+| FRAMEWORK | 199 |
+| TOOL | 110 |
+| SCRIPT | 94 |
+| STATISTIC | 38 |
+| PROTOCOL | 106 |
+| NARRATIVE | 299 |
+| CITATION | 34 |
+| PRODUCT | 20 |
 | MODEL | 3 |
-| QUESTION | 59 |
-| INSTRUCTION | 71 |
+| QUESTION | 315 |
+| INSTRUCTION | 111 |
 
 ## Editorial Flags
 
 | Flag | Count |
 |------|-------|
-| FLAGGED | 12 |
+| FLAGGED | 102 |
 
 ## Proof Status
 
