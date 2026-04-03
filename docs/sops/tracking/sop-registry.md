@@ -7,6 +7,7 @@
 | SOP-SS-PRC-001 | Meta-Process: SOP Creation | Process Engineering | 001 | ACTIVE | 2026-04-03 |
 | SOP-SS-TRK-001 | Issue Tracking Ontology | Issue Management | 001 | ACTIVE | 2026-04-03 |
 | SOP-SS-CNT-001 | Content Extraction & Node Injection | Content Operations | 001 | ACTIVE | 2026-04-03 |
+| SOP-SS-ATM-001 | Atomic Decomposition & Coverage Proof | Content Analysis | 001 | ACTIVE | 2026-04-03 |
 
 ## ID Schema
 
@@ -19,6 +20,7 @@
 | PRC | Process Engineering |
 | TRK | Issue Tracking |
 | CNT | Content Operations |
+| ATM | Content Analysis |
 
 ## Versioning
 
