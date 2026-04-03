@@ -225,3 +225,38 @@ src/
 - Keep dated artifacts in `docs/superpowers/intakes/` and `.codex/plans/`
 - If scope or board state changes, reconcile `seed.yaml` and `CLAUDE.md` in the same session
 - Commit and push before close for project memory persistence
+
+<!-- ORGANVM:AUTO:START -->
+## Agent Context (auto-generated — do not edit)
+
+This repo participates in the **ORGAN-III (Commerce)** swarm.
+
+### Active Subscriptions
+- Event: `client.site.deployed` — triggers downstream signals to V, VII, VI, I
+
+### Production Responsibilities
+- Cloudflare Pages: `sovereign-systems-spiral.pages.dev`
+- Email capture function: `functions/capture.ts`
+
+### External Dependencies
+- Consumes governance from `ORGAN-III/commerce--meta` (contract templates, SOPs, client lifecycle standards)
+
+### Governance Constraints
+- Adhere to unidirectional flow: I→II→III
+- Never commit secrets or credentials
+
+*Last synced: 2026-04-03T15:19:55Z*
+<!-- ORGANVM:AUTO:END -->
+
+## Active Handoff Protocol
+
+If `.conductor/active-handoff.md` exists, read it before starting work.
+It contains constraints you must honor, files you must not modify, and
+conventions you must follow. Violating these constraints will cause your
+work to be rejected during cross-verification.
+
+Key sections to obey:
+- **Locked Constraints** — decisions you cannot override
+- **Locked Files** — files you cannot modify
+- **Conventions** — naming/style rules to follow exactly
+- **Receiver Restrictions** — file patterns you must not touch

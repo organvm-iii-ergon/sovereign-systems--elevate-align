@@ -28,10 +28,10 @@ Track all issues requiring external decision/input from the client (Maddie). Thi
 | 5 | Formalize 10% revenue agreement | Written/text confirmation: 10% water sales, 12 months, $10K cap | P0 | PENDING | |
 | 3 | Connect custom domains (Cloudflare) | DNS registrar access (GoDaddy), confirm DNS changes | P1 | PENDING | |
 | 14 | Verify doc 1b reel/video asset access | Re-share any inaccessible Google Drive folders | P1 | PENDING | |
-| 17 | Decide Water Hub placement | Dedicated site vs nested sub-page | P2 | PENDING | |
+| 17 | Decide Water Hub placement | ~~Dedicated site vs nested sub-page~~ **UPDATE 2026-04-03:** Hydration Node funnel spec implies standalone application. Confirm: separate domain (stopdrinkingacid.com) or sub-route (/water/hydration-node)? | P1 ↑ | IN-REVIEW | |
 | 18 | Decide video hosting strategy | Choose host: Google Drive, YouTube, Vimeo, other | P2 | PENDING | |
-| 9 | Start Here quiz routing + GHL integration | GHL embed URL, routing rules by pillar | P1 | PENDING | |
-| 7 | Subscription boundary and gated content model | Define free vs email-gated vs paid per node/pillar | P2 | PENDING | |
+| 9 | Start Here quiz routing + GHL integration | GHL embed URL, routing rules by pillar. **UPDATE 2026-04-03:** Hydration Node Step 3 introduces "optional deeper health survey" — may replace or supplement quiz. Needs clarification. | P1 | PENDING | |
+| 7 | Subscription boundary and gated content model | ~~Define free vs email-gated vs paid per node/pillar~~ **UPDATE 2026-04-03:** Hydration Node defines clear split: Step 1 = free (no email), Step 2 = email-gated (filter recs), Steps 3-6 = post-conversion. Confirm this applies to water pillar only or system-wide. | P2 | IN-REVIEW | |
 | 20 | Creature Selves concept decision | Keep live, defer to future, or archive | P3 | PENDING | |
 | 19 | Inner Child Book packaging decision | Standalone product, Spiral-integrated, or deferred | P3 | PENDING | |
 
@@ -95,11 +95,16 @@ Track all issues requiring external decision/input from the client (Maddie). Thi
 
 ### Issue #17: Water Hub Placement
 
-**Current State:** PENDING - Waiting for architectural decision
+**Current State:** IN-REVIEW - Hydration Node funnel spec (2026-04-03) strongly implies standalone application
 
 **Options:**
-1. Dedicated site (`stopdrinkingacid.com` becomes full site)
-2. Nested section (`/water/` sub-section of Physical Sovereignty)
+1. ~~Dedicated site (`stopdrinkingacid.com` becomes full site)~~ → Hydration Node as standalone app at `stopdrinkingacid.com`
+2. ~~Nested section (`/water/` sub-section of Physical Sovereignty)~~ → Hydration Node as `/water/hydration-node` route within Astro site
+3. Hybrid: Astro site hosts the UI, `stopdrinkingacid.com` is a CNAME alias to the same route
+
+**New Context (2026-04-03):** Maddie's 6-step funnel spec describes a data-driven application (ZIP lookup, EWG integration, dynamic filter recommendations, email capture, cost calculator). Step 4 (contractor demo) suggests the page must work as an independent reusable tool. This leans heavily toward option 1 or 3.
+
+**Remaining Decision:** Confirm domain routing and whether contractor demo needs multi-session support.
 
 ### Issue #18: Video Hosting
 
@@ -122,12 +127,16 @@ Track all issues requiring external decision/input from the client (Maddie). Thi
 
 ### Issue #7: Subscription Boundaries
 
-**Current State:** PENDING - Waiting for content model decision
+**Current State:** IN-REVIEW - Hydration Node funnel spec (2026-04-03) defines water pillar gating
 
-**Required:** Free/Email-gated/Paid matrix by:
-- Page type
-- Pillar
-- Node
+**Defined (Water Pillar Only):**
+| Layer | Access | Content |
+|-------|--------|---------|
+| Step 1 | FREE (no email) | Contaminant data, bottled water costs, spring locator, Brita/RO check |
+| Step 2 | EMAIL-GATED (name + email) | Personalized filter recommendations, cost savings |
+| Steps 3-6 | POST-CONVERSION | Health survey, deep-dive content, upsells |
+
+**Remaining Decision:** Confirm whether this free/email-gated/paid model applies system-wide or only to the water funnel. Other pillars (Inner, Identity, Financial) still need their gating defined.
 
 ### Issue #20: Creature Selves
 
@@ -190,5 +199,12 @@ If decision remains PENDING for >7 days:
 - SOP-SS-TRK-001_001-ontology_issue_tracking.md
 
 ---
+
+## Change Log
+
+| Date | Change |
+|------|--------|
+| 2026-04-03 (PM) | Updated #17 to IN-REVIEW (Hydration Node funnel spec implies standalone app). Updated #7 to IN-REVIEW (water pillar gating defined). Added context to #9 (health survey may replace quiz). Bumped #17 to P1. Source: `docs/superpowers/intakes/2026-04-03-maddie-hydration-node-funnel-spec.md` |
+| 2026-04-03 | Initial creation |
 
 **Last Updated:** 2026-04-03
