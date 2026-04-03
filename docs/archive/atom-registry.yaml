@@ -1,8 +1,2038 @@
 # AUTO-GENERATED — do not edit. Source of truth is the in-situ markers.
 # Regenerate: bash scripts/build-atom-registry.sh
-# Generated: 2026-04-03T20:59:10Z
+# Generated: 2026-04-03T21:23:31Z
 
 atoms:
+  - id: ATM-R-033
+    source_file: "1a-master-spiral-backend-breakdown.md"
+    idea: "ChatGPT preamble: organizing Maddie's full vision into a developer-ready Spiral Master Doc covering all pillars, assessments, funnels, visuals, and brand philosophy"
+    section: "Preamble and Top Summary"
+    position: 1
+    of_total: 18
+    prev: null
+    provenance: HYBRID
+    nature: INSTRUCTION
+    nodes: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
+    pillar: "Cross-cutting"
+    build_state: PARTIAL
+    editorial: CLEAN
+    strike_phase: 1A
+  - id: ATM-R-034
+    source_file: "1a-master-spiral-backend-breakdown.md"
+    idea: "Core vision statement: interactive spiral ecosystem, exploratory first / conversion second, four pillars of sovereignty, EAU framework alignment"
+    section: "Preamble and Top Summary"
+    position: 2
+    of_total: 18
+    prev: ATM-R-033
+    provenance: HYBRID
+    nature: CLAIM
+    nodes: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
+    pillar: "Cross-cutting"
+    build_state: PARTIAL
+    editorial: CLEAN
+    strike_phase: 1A
+  - id: ATM-R-035
+    source_file: "1a-master-spiral-backend-breakdown.md"
+    idea: "Brand Vision: EAU core framework, mission/vibe statement, Feel Good First philosophy, archetypal journey"
+    section: "Brand Vision / Philosophy"
+    position: 3
+    of_total: 18
+    prev: ATM-R-034
+    provenance: HYBRID
+    nature: FRAMEWORK
+    nodes: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
+    pillar: "Cross-cutting"
+    build_state: PARTIAL
+    editorial: CLEAN
+    strike_phase: 1A
+  - id: ATM-R-036
+    source_file: "1a-master-spiral-backend-breakdown.md"
+    idea: "Foundational theories/assessments table: 11 frameworks mapped to pillars (Burnt Toast, Pancake, Lantern, Maslow, Compound Effect, Radical Forgiveness, 40/70 Rule, Chicken/Robot, Light & Fruit Test, Feel Good First, Archetypal Journey)"
+    section: "Brand Vision / Philosophy"
+    position: 4
+    of_total: 18
+    prev: ATM-R-035
+    provenance: HYBRID
+    nature: FRAMEWORK
+    nodes: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
+    pillar: "Cross-cutting"
+    build_state: PARTIAL
+    editorial: CLEAN
+    strike_phase: 1A
+  - id: ATM-R-037
+    source_file: "1a-master-spiral-backend-breakdown.md"
+    idea: "Spiral architecture: site overview (interactive hub), pillar routing table (Physical→water funnel, Inner→subscription, Identity→courses, Financial→business funnel), pages list"
+    section: "Spiral Architecture"
+    position: 5
+    of_total: 18
+    prev: ATM-R-036
+    provenance: HYBRID
+    nature: MODEL
+    nodes: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
+    pillar: "Cross-cutting"
+    build_state: PARTIAL
+    editorial: CLEAN
+    strike_phase: 1A
+  - id: ATM-R-038
+    source_file: "1a-master-spiral-backend-breakdown.md"
+    idea: "Physical Sovereignty content: water, blood sugar, minerals, lymph, gut, nervous system, sleep, hormones, autoimmune, tongue diagnostics, self-assessment tools"
+    section: "Pillars & Content"
+    position: 6
+    of_total: 18
+    prev: ATM-R-037
+    provenance: HYBRID
+    nature: FRAMEWORK
+    nodes: [1, 2, 3, 4, 5]
+    pillar: "Physical"
+    build_state: PARTIAL
+    editorial: CLEAN
+    strike_phase: 2A
+  - id: ATM-R-039
+    source_file: "1a-master-spiral-backend-breakdown.md"
+    idea: "Inner Sovereignty content: nervous system, emotional processing, subconscious reprogramming, anxiety, yin/yang, intuition + 7 frameworks"
+    section: "Pillars & Content"
+    position: 7
+    of_total: 18
+    prev: ATM-R-038
+    provenance: HYBRID
+    nature: FRAMEWORK
+    nodes: [6, 7, 8, 9]
+    pillar: "Inner"
+    build_state: PARTIAL
+    editorial: CLEAN
+    strike_phase: 1A
+  - id: ATM-R-040
+    source_file: "1a-master-spiral-backend-breakdown.md"
+    idea: "Identity Sovereignty content: self-worth, beliefs, confidence, ego awakening, personal responsibility + decision frameworks"
+    section: "Pillars & Content"
+    position: 8
+    of_total: 18
+    prev: ATM-R-039
+    provenance: HYBRID
+    nature: FRAMEWORK
+    nodes: [10, 11, 12]
+    pillar: "Identity"
+    build_state: PARTIAL
+    editorial: CLEAN
+    strike_phase: 1A
+  - id: ATM-R-041
+    source_file: "1a-master-spiral-backend-breakdown.md"
+    idea: "Financial Sovereignty content: business as self-expression, sales, content creation, brand building, wealth energetics, funnel systems + frameworks"
+    section: "Pillars & Content"
+    position: 9
+    of_total: 18
+    prev: ATM-R-040
+    provenance: HYBRID
+    nature: FRAMEWORK
+    nodes: [13]
+    pillar: "Financial"
+    build_state: PARTIAL
+    editorial: CLEAN
+    strike_phase: 1A
+  - id: ATM-R-042
+    source_file: "1a-master-spiral-backend-breakdown.md"
+    idea: "Content inventory: existing assets (reels, water demos, healing story, funnel scripts, EAU notes) and needed content (pillar pages, modules, subscription library, landing video)"
+    section: "Pillars & Content"
+    position: 10
+    of_total: 18
+    prev: ATM-R-041
+    provenance: HYBRID
+    nature: PRODUCT
+    nodes: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
+    pillar: "Cross-cutting"
+    build_state: PARTIAL
+    editorial: CLEAN
+    strike_phase: 1A
+  - id: ATM-R-043
+    source_file: "1a-master-spiral-backend-breakdown.md"
+    idea: "Three funnel flows: Water (Physical→GHL→email→purchase), Business (Financial→GHL→guidance), Subscription (Inner→hub→exclusive content); free vs paid access gates"
+    section: "Funnels & Lead Flows"
+    position: 11
+    of_total: 18
+    prev: ATM-R-042
+    provenance: HYBRID
+    nature: MODEL
+    nodes: [1, 5, 13]
+    pillar: "Cross-cutting"
+    build_state: PARTIAL
+    editorial: CLEAN
+    strike_phase: 1A
+  - id: ATM-R-044
+    source_file: "1a-master-spiral-backend-breakdown.md"
+    idea: "Homepage UX: first-time user sees interactive spiral with quiz prompt, clean minimal design, hero documentary video placeholder, embedded reels, CTA buttons at transitions"
+    section: "Homepage / Spiral Experience"
+    position: 12
+    of_total: 18
+    prev: ATM-R-043
+    provenance: HYBRID
+    nature: INSTRUCTION
+    nodes: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
+    pillar: "Cross-cutting"
+    build_state: PARTIAL
+    editorial: CLEAN
+    strike_phase: 1A
+  - id: ATM-R-045
+    source_file: "1a-master-spiral-backend-breakdown.md"
+    idea: "Instagram & video content library: reels/scripts to pull, water demos, personal story clips, educational content from drive"
+    section: "Instagram & Content Library"
+    position: 13
+    of_total: 18
+    prev: ATM-R-044
+    provenance: HYBRID
+    nature: PRODUCT
+    nodes: [1, 2, 3, 4, 5]
+    pillar: "Physical"
+    build_state: MISSING
+    editorial: CLEAN
+    strike_phase: 2A
+  - id: ATM-R-046
+    source_file: "1a-master-spiral-backend-breakdown.md"
+    idea: "Future expansion: subscription model, online store (minerals/health tools/lifestyle), deeper courses, GHL integration"
+    section: "Future Expansion"
+    position: 14
+    of_total: 18
+    prev: ATM-R-045
+    provenance: HYBRID
+    nature: PRODUCT
+    nodes: [13]
+    pillar: "Financial"
+    build_state: MISSING
+    editorial: CLEAN
+    strike_phase: 1A
+  - id: ATM-R-047
+    source_file: "1a-master-spiral-backend-breakdown.md"
+    idea: "Technical open questions: GoDaddy DNS (confirmed), GHL quiz embed (TBD), video hosting preference, subscription/store integrations (Stripe?)"
+    section: "Technical Details"
+    position: 15
+    of_total: 18
+    prev: ATM-R-046
+    provenance: LOCAL
+    nature: QUESTION
+    nodes: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
+    pillar: "Cross-cutting"
+    build_state: PARTIAL
+    editorial: FLAGGED
+    strike_phase: 1C
+  - id: ATM-R-048
+    source_file: "1a-master-spiral-backend-breakdown.md"
+    idea: "Build priority order: 1. Spiral hub, 2. Water funnel, 3. Business funnel, 4. Subscription, 5. Store"
+    section: "Timeline / Priorities"
+    position: 16
+    of_total: 18
+    prev: ATM-R-047
+    provenance: LOCAL
+    nature: INSTRUCTION
+    nodes: [1, 2, 3, 4, 5, 13]
+    pillar: "Cross-cutting"
+    build_state: PARTIAL
+    editorial: CLEAN
+    strike_phase: 1A
+  - id: ATM-R-049
+    source_file: "1a-master-spiral-backend-breakdown.md"
+    idea: "Launch deadlines: soft launch ASAP, subscription after hub and funnels live"
+    section: "Timeline / Priorities"
+    position: 17
+    of_total: 18
+    prev: ATM-R-048
+    provenance: LOCAL
+    nature: INSTRUCTION
+    nodes: [1, 2, 3, 4, 5, 13]
+    pillar: "Cross-cutting"
+    build_state: PARTIAL
+    editorial: CLEAN
+    strike_phase: 1A
+  - id: ATM-R-050
+    source_file: "1a-master-spiral-backend-breakdown.md"
+    idea: "Closing summary: this doc shows Anthony what exists, what to build, and where everything fits"
+    section: "Timeline / Priorities"
+    position: 18
+    of_total: 18
+    prev: ATM-R-049
+    provenance: HYBRID
+    nature: INSTRUCTION
+    nodes: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
+    pillar: "Cross-cutting"
+    build_state: PARTIAL
+    editorial: CLEAN
+    strike_phase: 1A
+  - id: ATM-R-091
+    source_file: "1b-spiral-dump-questionnaire.md"
+    idea: "Maddie's overview framing: doc organization (Master Blueprint first, raw chat threads for depth, content + assets), big picture vision (4-pillar spiral ecosystem, exploratory first), build priority (spiral hub, physical pillar, water funnel)"
+    section: "Maddie's Document Framing"
+    position: 1
+    of_total: 55
+    prev: null
+    provenance: LOCAL
+    nature: INSTRUCTION
+    nodes: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
+    pillar: "Cross-cutting"
+    build_state: PARTIAL
+    editorial: CLEAN
+    strike_phase: 1A
+  - id: ATM-R-092
+    source_file: "1b-spiral-dump-questionnaire.md"
+    idea: "Big picture vision detail: interactive spiral with 4 pillars, each pillar educates then routes (Physical→water funnel, Inner→subscription, Identity→transformation, Financial→business funnel), build priority order, trust in execution"
+    section: "Maddie's Document Framing"
+    position: 2
+    of_total: 55
+    prev: ATM-R-091
+    provenance: LOCAL
+    nature: INSTRUCTION
+    nodes: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
+    pillar: "Cross-cutting"
+    build_state: PARTIAL
+    editorial: CLEAN
+    strike_phase: 1A
+  - id: ATM-R-093
+    source_file: "1b-spiral-dump-questionnaire.md"
+    idea: "Architecture Q1.1: Hub site (elevatealign.com) holds spiral, pillar overviews, education, brand story, funnel entry points; GHL handles funnels, lead capture, checkout; pillar split between site and GHL"
+    section: "Questionnaire — Architecture"
+    position: 3
+    of_total: 55
+    prev: ATM-R-092
+    provenance: LOCAL
+    nature: FRAMEWORK
+    nodes: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
+    pillar: "Cross-cutting"
+    build_state: PARTIAL
+    editorial: CLEAN
+    strike_phase: 1A
+  - id: ATM-R-094
+    source_file: "1b-spiral-dump-questionnaire.md"
+    idea: "Architecture Q1.2-1.3: Physical Sovereignty lands on site page then CTA to GHL water funnel; Inner leads to subscription; Identity to future courses; Financial to GHL business funnel"
+    section: "Questionnaire — Architecture"
+    position: 4
+    of_total: 55
+    prev: ATM-R-093
+    provenance: LOCAL
+    nature: FRAMEWORK
+    nodes: [1, 5, 13]
+    pillar: "Cross-cutting"
+    build_state: PARTIAL
+    editorial: CLEAN
+    strike_phase: 1A
+  - id: ATM-R-095
+    source_file: "1b-spiral-dump-questionnaire.md"
+    idea: "Architecture Q1.4: Pages list — Home/Spiral Hub, 4 sovereignty pages, Start Here (guided entry), About/Philosophy, Free Tools/Self-Assessments, Subscription Hub (future), Store (future prints/crafts/maps/calendars)"
+    section: "Questionnaire — Architecture"
+    position: 5
+    of_total: 55
+    prev: ATM-R-094
+    provenance: LOCAL
+    nature: FRAMEWORK
+    nodes: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
+    pillar: "Cross-cutting"
+    build_state: PARTIAL
+    editorial: CLEAN
+    strike_phase: 1A
+  - id: ATM-R-096
+    source_file: "1b-spiral-dump-questionnaire.md"
+    idea: "Content Q2.1: Physical Sovereignty topics — water, breath/cells, creature selves/Maslow, absorption/efficiency, blood sugar (before nervous system), minerals, mind-gut connection, nervous system, sleep, hormones/fertility, autoimmune/lymph, females higher auto/ADHD, tongue diagnostics, symptom decoding"
+    section: "Questionnaire — Content"
+    position: 6
+    of_total: 55
+    prev: ATM-R-095
+    provenance: LOCAL
+    nature: FRAMEWORK
+    nodes: [1, 2, 3, 4, 5]
+    pillar: "Physical"
+    build_state: PARTIAL
+    editorial: CLEAN
+    strike_phase: 2A
+  - id: ATM-R-097
+    source_file: "1b-spiral-dump-questionnaire.md"
+    idea: "Content Q2.2: Topics per pillar — Inner (hydration, detox, nutrition, inflammation, energy/fatigue, nervous system, emotional processing, subconscious reprogramming, anxiety, yin/yang, intuition); Identity (awareness, self-worth, beliefs, confidence, ego, responsibility, feel good first); Financial (aligning with calling/child self, money mindset, business as self-expression, sales, brand building, wealth energetics, funnels/automation)"
+    section: "Questionnaire — Content"
+    position: 7
+    of_total: 55
+    prev: ATM-R-096
+    provenance: LOCAL
+    nature: FRAMEWORK
+    nodes: [6, 7, 8, 9, 10, 11, 12, 13]
+    pillar: "Cross-cutting"
+    build_state: PARTIAL
+    editorial: CLEAN
+    strike_phase: 1A
+  - id: ATM-R-098
+    source_file: "1b-spiral-dump-questionnaire.md"
+    idea: "Content Q2.3-2.4: Existing assets (IG reels, water demos, healing story, funnel scripts, EAU blueprint, ChatGPT notes); needed content (structured pillar pages, educational modules, subscription library, documentary landing video)"
+    section: "Questionnaire — Content"
+    position: 8
+    of_total: 55
+    prev: ATM-R-097
+    provenance: LOCAL
+    nature: PRODUCT
+    nodes: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
+    pillar: "Cross-cutting"
+    build_state: PARTIAL
+    editorial: CLEAN
+    strike_phase: 1A
+  - id: ATM-R-099
+    source_file: "1b-spiral-dump-questionnaire.md"
+    idea: "UX Q3.1-3.4: First thing = interactive spiral with quiz prompt; free depth before email (explore spiral, pillar overviews, some tools); email required for personalized results; payment unlocks full systems, deep dives, subscription content (weekly/monthly video access)"
+    section: "Questionnaire — User Experience"
+    position: 9
+    of_total: 55
+    prev: ATM-R-098
+    provenance: LOCAL
+    nature: MODEL
+    nodes: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
+    pillar: "Cross-cutting"
+    build_state: PARTIAL
+    editorial: CLEAN
+    strike_phase: 1A
+  - id: ATM-R-100
+    source_file: "1b-spiral-dump-questionnaire.md"
+    idea: "UX Q3.5-3.6: Subscription includes exclusive video library, monthly group calls, deeper teachings, possible product perks, possible snail mail with prints/letter/knick knacks; pricing $11-$44/month"
+    section: "Questionnaire — User Experience"
+    position: 10
+    of_total: 55
+    prev: ATM-R-099
+    provenance: LOCAL
+    nature: PRODUCT
+    nodes: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
+    pillar: "Cross-cutting"
+    build_state: MISSING
+    editorial: CLEAN
+    strike_phase: 1A
+  - id: ATM-R-101
+    source_file: "1b-spiral-dump-questionnaire.md"
+    idea: "Spiral Visual Q4.1-4.4: Circular spiral layout, 4 pillars along spiral, each node clickable expanding into own world/page; each pillar different color tone, same size for balance, minimal clean icons; YES clickable + animated = core experience"
+    section: "Questionnaire — Spiral Visual"
+    position: 11
+    of_total: 55
+    prev: ATM-R-100
+    provenance: LOCAL
+    nature: INSTRUCTION
+    nodes: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
+    pillar: "Cross-cutting"
+    build_state: PARTIAL
+    editorial: CLEAN
+    strike_phase: 1A
+  - id: ATM-R-102
+    source_file: "1b-spiral-dump-questionnaire.md"
+    idea: "Brand Q5.1-5.3: Store (future) — water systems, minerals/health tools, digital products, ritual/lifestyle items; priority order: 1. spiral hub, 2. water funnel, 3. subscription, 4. snail mail add-on, 5. business funnel, 6. store; reel inspiration: documentary-style, emotional + educational, personal transformation"
+    section: "Questionnaire — Brand & Monetization"
+    position: 12
+    of_total: 55
+    prev: ATM-R-101
+    provenance: LOCAL
+    nature: PRODUCT
+    nodes: [13]
+    pillar: "Financial"
+    build_state: MISSING
+    editorial: CLEAN
+    strike_phase: 1A
+  - id: ATM-R-103
+    source_file: "1b-spiral-dump-questionnaire.md"
+    idea: "Technical Q6 + Timeline Q7: GoDaddy DNS confirmed, GHL quiz embed TBD, video hosting flexible, Stripe for subscriptions; priority: spiral hub live first, subscription after foundation, soft launch ASAP"
+    section: "Questionnaire — Technical & Timeline"
+    position: 13
+    of_total: 55
+    prev: ATM-R-102
+    provenance: LOCAL
+    nature: INSTRUCTION
+    nodes: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
+    pillar: "Cross-cutting"
+    build_state: PARTIAL
+    editorial: FLAGGED
+    strike_phase: 1C
+  - id: ATM-R-104
+    source_file: "1b-spiral-dump-questionnaire.md"
+    idea: "Chat thread pull list and Google Doc structure: MUST PULL (water hub, water funnel, fertility/autoimmune, EAU blueprint, IG strategy); ALSO HELPFUL (story, scripts, brand tone); Google Doc structure (questionnaire, brand vision, pillar breakdowns, future expansion); final piece — Anthony needs clarity, structure, direction; next steps for Maddie"
+    section: "Chat Thread Pull Lists"
+    position: 14
+    of_total: 55
+    prev: ATM-R-103
+    provenance: HYBRID
+    nature: INSTRUCTION
+    nodes: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
+    pillar: "Cross-cutting"
+    build_state: N/A
+    editorial: CLEAN
+    strike_phase: 1A
+  - id: ATM-R-105
+    source_file: "1b-spiral-dump-questionnaire.md"
+    idea: "Developer-ready action checklist: spiral site build with status tables for questionnaire, brand vision (EAU framework, Feel Good First, theories/tests table with thread dates), spiral architecture (hub, routing, pages, visual), homepage experience (hero video, spiral animation, CTAs), deadlines (soft launch ASAP); reels/scripts pull list; Google Drive links for video content"
+    section: "Developer Action Checklist"
+    position: 15
+    of_total: 55
+    prev: ATM-R-104
+    provenance: HYBRID
+    nature: INSTRUCTION
+    nodes: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
+    pillar: "Cross-cutting"
+    build_state: PARTIAL
+    editorial: CLEAN
+    strike_phase: 1A
+  - id: ATM-R-106
+    source_file: "1b-spiral-dump-questionnaire.md"
+    idea: "Hydrogen benefits ebook outline: formal version (2200 words) covering H2 as energy source, antioxidant, medical/therapeutic agent, environmental applications; casual version covering same topics in accessible tone"
+    section: "Water Content — Hydrogen Ebook"
+    position: 16
+    of_total: 55
+    prev: ATM-R-105
+    provenance: ALIEN
+    nature: PRODUCT
+    nodes: [1, 2, 3, 4, 5]
+    pillar: "Physical"
+    build_state: MISSING
+    editorial: UNVERIFIED
+    strike_phase: 2A
+  - id: ATM-R-107
+    source_file: "1b-spiral-dump-questionnaire.md"
+    idea: "ERW (Electrolyzed Reduced Water) benefits overview + personal healing testimony: antioxidant properties, enhanced hydration, alkalizing effects, digestive support, sports performance, skin health; personal story of overcoming infections and autoimmune issues with ERW"
+    section: "Water Content — ERW Benefits & Testimony"
+    position: 17
+    of_total: 55
+    prev: ATM-R-106
+    provenance: HYBRID
+    nature: NARRATIVE
+    nodes: [1, 2, 3, 4, 5]
+    pillar: "Physical"
+    build_state: MISSING
+    editorial: UNVERIFIED
+    strike_phase: 2A
+  - id: ATM-R-108
+    source_file: "1b-spiral-dump-questionnaire.md"
+    idea: "Kangen water ebook chapters 1-5: Understanding Kangen Water (history, ionization process, water types), Science Behind ERW (pH, stress/acidosis/disease), Health Benefits (hydration, antioxidant, acid-base), Molecular Hydrogen benefits (cardiovascular, diabetes, joints), Real-Life Testimonials"
+    section: "Water Content — Kangen Ebook Chapters"
+    position: 18
+    of_total: 55
+    prev: ATM-R-107
+    provenance: ALIEN
+    nature: PRODUCT
+    nodes: [1, 2, 3, 4, 5]
+    pillar: "Physical"
+    build_state: MISSING
+    editorial: UNVERIFIED
+    strike_phase: 2A
+  - id: ATM-R-109
+    source_file: "1b-spiral-dump-questionnaire.md"
+    idea: "Kangen water ebook chapters 6-9 + appendix: Incorporating into daily life (recipes, maintenance), Myths & misconceptions, Holistic health integration, Making the most of experience; appendix with recommended books, online resources, glossary, references"
+    section: "Water Content — Kangen Ebook Appendix"
+    position: 19
+    of_total: 55
+    prev: ATM-R-108
+    provenance: ALIEN
+    nature: CITATION
+    nodes: [1, 2, 3, 4, 5]
+    pillar: "Physical"
+    build_state: MISSING
+    editorial: UNVERIFIED
+    strike_phase: 2A
+  - id: ATM-R-110
+    source_file: "1b-spiral-dump-questionnaire.md"
+    idea: "Citations for Kangen water ebook chapters 1-3 and 8-9: journal references for hydration, antioxidant properties, acid-base balance, stress management, community support from JCBN, IJERPH, NEJM, etc."
+    section: "Water Content — Ebook Citations"
+    position: 20
+    of_total: 55
+    prev: ATM-R-109
+    provenance: ALIEN
+    nature: CITATION
+    nodes: [1, 2, 3, 4, 5]
+    pillar: "Physical"
+    build_state: MISSING
+    editorial: UNVERIFIED
+    strike_phase: 2A
+  - id: ATM-R-111
+    source_file: "1b-spiral-dump-questionnaire.md"
+    idea: "Chat thread pull (second listing) + workbook/ebook initial planning: team perspective (psychologist, nutritionist, holistic healer) for accountability workbook; Maddie's answers — gratitude/resilience emphasis, life coach not nutritionist, breathwork/affirmations, 80/20 action vs spiritual, birth chart details (Libra Sun, Gemini Moon, Scorpio Mercury/Venus, etc.)"
+    section: "Workbook Planning — Initial Vision"
+    position: 21
+    of_total: 55
+    prev: ATM-R-110
+    provenance: LOCAL
+    nature: INSTRUCTION
+    nodes: [6, 7, 8, 9, 10, 11, 12]
+    pillar: "Inner"
+    build_state: MISSING
+    editorial: CLEAN
+    strike_phase: 1A
+  - id: ATM-R-112
+    source_file: "1b-spiral-dump-questionnaire.md"
+    idea: "Workbook outline iterations: 10-section structure (self-assessment, mind-body-spirit, resilience, energy alignment, cycle-based habits, travel/financial planning, vision setting, astrology insights, yearly/monthly tools, personalized blueprint); astrology blurbs woven throughout instead of separate section; embodiment practices added"
+    section: "Workbook Planning — Structure Iterations"
+    position: 22
+    of_total: 55
+    prev: ATM-R-111
+    provenance: HYBRID
+    nature: FRAMEWORK
+    nodes: [6, 7, 8, 9, 10, 11, 12]
+    pillar: "Inner"
+    build_state: MISSING
+    editorial: CLEAN
+    strike_phase: 1A
+  - id: ATM-R-113
+    source_file: "1b-spiral-dump-questionnaire.md"
+    idea: "Workbook sections 1-9 framework + design suggestions: title page, introduction (self-assessment, visualization), mind-body-spirit (emotional check-in, gratitude, radical forgiveness letter), resilience, daily energy/embodiment, cycle alignment, travel/financial planning, vision setting, yearly/monthly tools, conclusion; design: minimalist pastels, interactive features, flexible for reuse"
+    section: "Workbook — Framework Draft"
+    position: 23
+    of_total: 55
+    prev: ATM-R-112
+    provenance: HYBRID
+    nature: TOOL
+    nodes: [6, 7, 8, 9, 10, 11, 12]
+    pillar: "Inner"
+    build_state: MISSING
+    editorial: CLEAN
+    strike_phase: 1A
+  - id: ATM-R-114
+    source_file: "1b-spiral-dump-questionnaire.md"
+    idea: "Workbook sections 1-2 fully written: Section 1 'Start Where You Are' (self-assessment 1-10 scale across 6 life areas, visualization exercise, moon sign astrology insight); Section 2 'Listening to Yourself Fully' (emotional check-in, daily gratitude practice, radical forgiveness letter template with Venus sign insight)"
+    section: "Workbook — Sections 1-2 Written"
+    position: 24
+    of_total: 55
+    prev: ATM-R-113
+    provenance: HYBRID
+    nature: TOOL
+    nodes: [6, 7, 8, 9, 10, 11, 12]
+    pillar: "Inner"
+    build_state: MISSING
+    editorial: CLEAN
+    strike_phase: 1A
+  - id: ATM-R-115
+    source_file: "1b-spiral-dump-questionnaire.md"
+    idea: "Workbook sections 1-2 enhanced with when-to-use guidance and 'body whisper/scream' quote: each practice now includes when to use, why it helps, timing recommendations; daily alignment check-in added as bonus practice"
+    section: "Workbook — Sections 1-2 Enhanced"
+    position: 25
+    of_total: 55
+    prev: ATM-R-114
+    provenance: HYBRID
+    nature: TOOL
+    nodes: [6, 7, 8, 9, 10, 11, 12]
+    pillar: "Inner"
+    build_state: MISSING
+    editorial: CLEAN
+    strike_phase: 1A
+  - id: ATM-R-116
+    source_file: "1b-spiral-dump-questionnaire.md"
+    idea: "Workbook sections 3-5 drafted: Section 3 'Setting Intentions & Goals' (SMART goals, action steps, obstacle mapping, Jupiter/Saturn astrology); Section 4 'Building Resilience' (resilience toolkit, affirmations, mindset reframes, Mars astrology); Section 5 'Emotional Awareness & Mastery' (emotion mapping, nervous system awareness, EFT/tapping, Chiron astrology)"
+    section: "Workbook — Sections 3-5"
+    position: 26
+    of_total: 55
+    prev: ATM-R-115
+    provenance: HYBRID
+    nature: TOOL
+    nodes: [6, 7, 8, 9, 10, 11, 12]
+    pillar: "Inner"
+    build_state: MISSING
+    editorial: CLEAN
+    strike_phase: 1A
+  - id: ATM-R-117
+    source_file: "1b-spiral-dump-questionnaire.md"
+    idea: "Workbook sections 5 expanded + 6 drafted: Section 5 expanded with body scan meditation, emotional release writing, inner child letter, Saturn/Chiron integration; Section 6 'Money Mindset & Abundance' with limiting beliefs inventory, abundance affirmations, Millionaire Mind saving technique (Eker's 6-jar allocation), Jupiter/Venus astrology"
+    section: "Workbook — Sections 5-6"
+    position: 27
+    of_total: 55
+    prev: ATM-R-116
+    provenance: HYBRID
+    nature: TOOL
+    nodes: [13]
+    pillar: "Financial"
+    build_state: MISSING
+    editorial: CLEAN
+    strike_phase: 1A
+  - id: ATM-R-118
+    source_file: "1b-spiral-dump-questionnaire.md"
+    idea: "Workbook section 7 'Healthy Habits' drafted and revised 3x: daily movement (10-15 min), healthy eating & nutrient density, mindfulness/meditation, sleep & restorative practices, sustainable habits, consistency & small wins, commitment challenges (7-day, 14-day, 30-day)"
+    section: "Workbook — Section 7 (Habits)"
+    position: 28
+    of_total: 55
+    prev: ATM-R-117
+    provenance: HYBRID
+    nature: TOOL
+    nodes: [1, 2, 3, 4, 5]
+    pillar: "Physical"
+    build_state: MISSING
+    editorial: CLEAN
+    strike_phase: 2A
+  - id: ATM-R-119
+    source_file: "1b-spiral-dump-questionnaire.md"
+    idea: "Workbook sections 8-10: Section 8 'Embracing Your Journey & Celebrating Wins' (milestone tracker, self-compassion letter, celebration rituals); Section 9 'Taking Aligned Action' (time blocking, energy audit, inspired action journal); Section 10 'Celebrating Progress & Embracing Future' (year-end reflection, letter to future self); personalized version plans with birth chart integration, travel planning, embodiment practices, monthly/yearly tracking"
+    section: "Workbook — Sections 8-10 + Personalized Plans"
+    position: 29
+    of_total: 55
+    prev: ATM-R-118
+    provenance: HYBRID
+    nature: TOOL
+    nodes: [6, 7, 8, 9, 10, 11, 12, 13]
+    pillar: "Cross-cutting"
+    build_state: MISSING
+    editorial: CLEAN
+    strike_phase: 1A
+  - id: ATM-R-120
+    source_file: "1b-spiral-dump-questionnaire.md"
+    idea: "Personalized workbook sections 1-3 with Maddie's birth chart: Section 1 'Understanding Your Astrological Blueprint' (Libra Sun, Gemini Moon, Aquarius Rising decoded); Section 2 'Aligning with Goals & Values' (Saturn in Taurus discipline, Jupiter in Gemini curiosity); Section 3 'Embodying Your Vision' (Leo North Node leadership, future self embodiment); each section with breathwork, embodiment practice, astrological focus, monthly tracking"
+    section: "Workbook — Personalized Astrology Sections"
+    position: 30
+    of_total: 55
+    prev: ATM-R-119
+    provenance: HYBRID
+    nature: TOOL
+    nodes: [6, 7, 8, 9, 10, 11, 12]
+    pillar: "Inner"
+    build_state: MISSING
+    editorial: CLEAN
+    strike_phase: 1A
+  - id: ATM-R-121
+    source_file: "1b-spiral-dump-questionnaire.md"
+    idea: "Earlier website organization plan: site structure with Home (landing/guidepost), Water (generalized intro → funnel), Spiral (main signature), Thru My Eyes (about + creative/prints), Unlock (subscriber personalized spiral with birth chart/HD); page hierarchy and flow between them"
+    section: "Website Organization Plan"
+    position: 31
+    of_total: 55
+    prev: ATM-R-120
+    provenance: HYBRID
+    nature: MODEL
+    nodes: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
+    pillar: "Cross-cutting"
+    build_state: PARTIAL
+    editorial: CLEAN
+    strike_phase: 1A
+  - id: ATM-R-122
+    source_file: "1b-spiral-dump-questionnaire.md"
+    idea: "Water page content dump: Maddie's water story (COVID, antibiotics, Kangen discovery), tap water problems (steroids, hormones, contamination), ERW solution (ionized hydrogen-rich alkaline water), Enagic credibility (50 years, medical-grade, Japanese hospitals, $4980), water uses by pH level (2.5/4-6/7/8.5-9.5/11), price objections and ROI math"
+    section: "Water Content — Raw Dump"
+    position: 32
+    of_total: 55
+    prev: ATM-R-121
+    provenance: LOCAL
+    nature: PRODUCT
+    nodes: [1, 2, 3, 4, 5]
+    pillar: "Physical"
+    build_state: PARTIAL
+    editorial: UNVERIFIED
+    strike_phase: 2A
+  - id: ATM-R-123
+    source_file: "1b-spiral-dump-questionnaire.md"
+    idea: "Water page clean draft: Hero ('Not All Water Is Created Equal'), personal story hook, problem section (free radicals + oxidative stress), solution (H2 power), Enagic credibility, myth-busting, demos section, closing/invitation with CTA to quiz"
+    section: "Water Page — Clean Draft"
+    position: 33
+    of_total: 55
+    prev: ATM-R-122
+    provenance: HYBRID
+    nature: PRODUCT
+    nodes: [1, 2, 3, 4, 5]
+    pillar: "Physical"
+    build_state: PARTIAL
+    editorial: CLEAN
+    strike_phase: 2A
+  - id: ATM-R-124
+    source_file: "1b-spiral-dump-questionnaire.md"
+    idea: "Revised water page with molecular hydrogen focus: hero (deeper, scientific angle), health story as personal hook, free radicals/oxidative stress problem, H2 solution with 3 evidence bullets, Enagic credibility (6 certifications), myth-busting (3 myths debunked), demos section (noodle test, tea test, pH drops)"
+    section: "Water Page — H2 Focused Draft"
+    position: 34
+    of_total: 55
+    prev: ATM-R-123
+    provenance: HYBRID
+    nature: PRODUCT
+    nodes: [1, 2, 3, 4, 5]
+    pillar: "Physical"
+    build_state: PARTIAL
+    editorial: CLEAN
+    strike_phase: 2A
+  - id: ATM-R-125
+    source_file: "1b-spiral-dump-questionnaire.md"
+    idea: "Home page draft + roadmap: hero (spiral visual + tagline), 4 sections (Spiral as main, Water overview, Thru My Eyes/about, Unlock/subscribers), closing invitation; roadmap order: 1. Spiral, 2. Water (polish), 3. Home, 4. Thru My Eyes, 5. Unlock/subscriber portal"
+    section: "Home Page Draft + Build Roadmap"
+    position: 35
+    of_total: 55
+    prev: ATM-R-124
+    provenance: HYBRID
+    nature: MODEL
+    nodes: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
+    pillar: "Cross-cutting"
+    build_state: PARTIAL
+    editorial: CLEAN
+    strike_phase: 1A
+  - id: ATM-R-126
+    source_file: "1b-spiral-dump-questionnaire.md"
+    idea: "Spiral page flow: title/hero section, pop-up explainer (short + clear), spiral graphic as main focus, bottom section with invitation/next steps, membership tier preview; subscription breakdown note (personalized blueprint with astrology/HD for subscribers)"
+    section: "Spiral Page Flow + Subscription"
+    position: 36
+    of_total: 55
+    prev: ATM-R-125
+    provenance: HYBRID
+    nature: MODEL
+    nodes: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
+    pillar: "Cross-cutting"
+    build_state: PARTIAL
+    editorial: CLEAN
+    strike_phase: 1A
+  - id: ATM-R-127
+    source_file: "1b-spiral-dump-questionnaire.md"
+    idea: "Thread summary for organization: project = personalized life organization + alignment workbook; multi-expert integration (psychologist, life coach, holistic healer, financial coach, time management specialist, astrology); key themes (radical self-awareness, emotional intelligence, consistency, feel good first, alignment before action, structured freedom); current progress (sections 1-3 drafted)"
+    section: "Thread Summary — Workbook Project"
+    position: 37
+    of_total: 55
+    prev: ATM-R-126
+    provenance: HYBRID
+    nature: FRAMEWORK
+    nodes: [6, 7, 8, 9, 10, 11, 12, 13]
+    pillar: "Cross-cutting"
+    build_state: MISSING
+    editorial: CLEAN
+    strike_phase: 1A
+  - id: ATM-R-128
+    source_file: "1b-spiral-dump-questionnaire.md"
+    idea: "Duplicate workbook outline and section drafts (repetition of earlier content): same 10-section structure, sections 1-2 re-drafted with same content as lines 1598-2230"
+    section: "Workbook — Duplicate Draft"
+    position: 38
+    of_total: 55
+    prev: ATM-R-127
+    provenance: HYBRID
+    nature: TOOL
+    nodes: [6, 7, 8, 9, 10, 11, 12]
+    pillar: "Inner"
+    build_state: MISSING
+    editorial: CLEAN
+    strike_phase: 1A
+  - id: ATM-R-129
+    source_file: "1b-spiral-dump-questionnaire.md"
+    idea: "Workbook sections 1-2 third revision: enhanced with daily alignment check-in practice, more detailed astrology blurbs, expanded 'when to use' and 'why it helps' sections throughout"
+    section: "Workbook — Third Revision Sec 1-2"
+    position: 39
+    of_total: 55
+    prev: ATM-R-128
+    provenance: HYBRID
+    nature: TOOL
+    nodes: [6, 7, 8, 9, 10, 11, 12]
+    pillar: "Inner"
+    build_state: MISSING
+    editorial: CLEAN
+    strike_phase: 1A
+  - id: ATM-R-130
+    source_file: "1b-spiral-dump-questionnaire.md"
+    idea: "Workbook sections 3-5 revised: Section 3 'Setting Intentions & Goals' with SMART framework and obstacle mapping; Section 4 'Building Resilience' with resilience toolkit and challenge reframes; Section 5 'Emotional Awareness & Mastery' with emotion mapping and nervous system awareness"
+    section: "Workbook — Third Revision Sec 3-5"
+    position: 40
+    of_total: 55
+    prev: ATM-R-129
+    provenance: HYBRID
+    nature: TOOL
+    nodes: [6, 7, 8, 9, 10, 11, 12]
+    pillar: "Inner"
+    build_state: MISSING
+    editorial: CLEAN
+    strike_phase: 1A
+  - id: ATM-R-131
+    source_file: "1b-spiral-dump-questionnaire.md"
+    idea: "Workbook section 6 'Money Mindset & Abundance': limiting beliefs inventory, abundance affirmations, T. Harv Eker's Millionaire Mind method (6-jar % allocation), Jupiter/Venus astrology integration"
+    section: "Workbook — Revised Section 6"
+    position: 41
+    of_total: 55
+    prev: ATM-R-130
+    provenance: HYBRID
+    nature: TOOL
+    nodes: [13]
+    pillar: "Financial"
+    build_state: MISSING
+    editorial: CLEAN
+    strike_phase: 1A
+  - id: ATM-R-132
+    source_file: "1b-spiral-dump-questionnaire.md"
+    idea: "Workbook section 7 'Healthy Habits' revised (2x) + sections 8-10: daily movement, nutrient density, mindfulness, sleep, sustainability, consistency, commitment challenges; Section 8 'Embracing Journey'; Section 9 'Aligned Action' with time blocking and energy audit; Section 10 'Celebrating Progress' with year-end reflection"
+    section: "Workbook — Revised Sections 7-10"
+    position: 42
+    of_total: 55
+    prev: ATM-R-131
+    provenance: HYBRID
+    nature: TOOL
+    nodes: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
+    pillar: "Cross-cutting"
+    build_state: MISSING
+    editorial: CLEAN
+    strike_phase: 1A
+  - id: ATM-R-133
+    source_file: "1b-spiral-dump-questionnaire.md"
+    idea: "Personalized workbook for Maddie: birth chart integration (Libra Sun diplomacy, Gemini Moon curiosity, Aquarius Rising innovation), travel planning aligned to astrological transits, breathwork/embodiment practices per section, monthly/yearly tracking"
+    section: "Workbook — Personalized Version"
+    position: 43
+    of_total: 55
+    prev: ATM-R-132
+    provenance: HYBRID
+    nature: TOOL
+    nodes: [6, 7, 8, 9, 10, 11, 12]
+    pillar: "Inner"
+    build_state: MISSING
+    editorial: CLEAN
+    strike_phase: 1A
+  - id: ATM-R-134
+    source_file: "1b-spiral-dump-questionnaire.md"
+    idea: "Personalized sections 4-5: Section 4 'Time, Energy & Structure' (Mars in Virgo discipline, Saturn in Taurus patience, weekly structure template, daily non-negotiables, travel integration); Section 5 'Emotional Intelligence' (Scorpio Mercury/Venus depth, Gemini Moon processing, thought-emotion-belief loop, emotional check-in, breathwork: Feel & Release)"
+    section: "Workbook — Personalized Sec 4-5"
+    position: 44
+    of_total: 55
+    prev: ATM-R-133
+    provenance: HYBRID
+    nature: TOOL
+    nodes: [6, 7, 8, 9, 10, 11, 12]
+    pillar: "Inner"
+    build_state: MISSING
+    editorial: CLEAN
+    strike_phase: 1A
+  - id: ATM-R-135
+    source_file: "1b-spiral-dump-questionnaire.md"
+    idea: "Personalized section 6 'Money & Abundance' + calendars: Eker's money system adapted for Maddie, travel fund as priority bucket, money awareness reset practice; yearly vision calendar (quarterly themes, travel, money goals), monthly planning page (weekly breakdown, habits tracker, emotional check-in, end-of-month reflection); final note about Maddie's chart and abundance potential"
+    section: "Workbook — Personalized Sec 6 + Calendars"
+    position: 45
+    of_total: 55
+    prev: ATM-R-134
+    provenance: HYBRID
+    nature: TOOL
+    nodes: [13]
+    pillar: "Financial"
+    build_state: MISSING
+    editorial: CLEAN
+    strike_phase: 1A
+  - id: ATM-R-136
+    source_file: "1b-spiral-dump-questionnaire.md"
+    idea: "Maddie's Human Design: Projector type (guide not generator, recognize-then-share, magnetic when aligned), Emotional (Solar Plexus) authority (wait for emotional clarity, never decide in a spike), Wait for the Invitation strategy (don't chase, position yourself to be recognized)"
+    section: "Human Design — Maddie's Type & Authority"
+    position: 46
+    of_total: 55
+    prev: ATM-R-135
+    provenance: HYBRID
+    nature: MODEL
+    nodes: [6, 7, 8, 9, 10, 11, 12]
+    pillar: "Inner"
+    build_state: MISSING
+    editorial: CLEAN
+    strike_phase: 1A
+  - id: ATM-R-137
+    source_file: "1b-spiral-dump-questionnaire.md"
+    idea: "Maddie's HD deeper story: guide of emotional clarity, open vs defined energy (amplifies others' energy, needs boundaries), 4/6 Profile (Opportunist/Role Model — network-driven foundation + 3-phase life arc: trial/error → roof/observe → embodied role model at 50+)"
+    section: "Human Design — Maddie's Profile & Channels"
+    position: 47
+    of_total: 55
+    prev: ATM-R-136
+    provenance: HYBRID
+    nature: MODEL
+    nodes: [6, 7, 8, 9, 10, 11, 12]
+    pillar: "Inner"
+    build_state: MISSING
+    editorial: CLEAN
+    strike_phase: 1A
+  - id: ATM-R-138
+    source_file: "1b-spiral-dump-questionnaire.md"
+    idea: "Maddie's Astrology + HD integration: Libra Sun (harmony, beauty, justice), how Libra + Projector blend (diplomatic guide, natural mediator), shadow side (people-pleasing, over-giving, decision paralysis), highest expression (sovereign guide who teaches others to build their own systems)"
+    section: "Astrology + HD — Maddie's Integration"
+    position: 48
+    of_total: 55
+    prev: ATM-R-137
+    provenance: HYBRID
+    nature: MODEL
+    nodes: [10, 11, 12]
+    pillar: "Identity"
+    build_state: MISSING
+    editorial: CLEAN
+    strike_phase: 1A
+  - id: ATM-R-139
+    source_file: "1b-spiral-dump-questionnaire.md"
+    idea: "Spirit Song tarot reading with astrology + HD overlay: astrological energies in spread (Aries fire, Cancer nurturing, Capricorn structure), Projector overlay (guide energy, emotional authority), message for Anthony (Aries Sun leader, Projector guide); birth chart snapshot + HD profile (Projector, Emotional Solar Plexus, 4/6 Profile)"
+    section: "Spirit Song Reading + Anthony's Chart"
+    position: 49
+    of_total: 55
+    prev: ATM-R-138
+    provenance: HYBRID
+    nature: NARRATIVE
+    nodes: [6, 7, 8, 9, 10, 11, 12]
+    pillar: "Inner"
+    build_state: MISSING
+    editorial: CLEAN
+    strike_phase: 1A
+  - id: ATM-R-140
+    source_file: "1b-spiral-dump-questionnaire.md"
+    idea: "Tarot + Astrology + HD fusion for Anthony: Wheel & Aries Sun (cycles of growth), King of Acorns & Projector (strategic guide), Ace of Shells & Cancer Moon (emotional new beginning), guidance and personal mantra"
+    section: "Anthony's Reading — Tarot Fusion"
+    position: 50
+    of_total: 55
+    prev: ATM-R-139
+    provenance: HYBRID
+    nature: NARRATIVE
+    nodes: [6, 7, 8, 9, 10, 11, 12]
+    pillar: "Inner"
+    build_state: MISSING
+    editorial: CLEAN
+    strike_phase: 1A
+  - id: ATM-R-141
+    source_file: "1b-spiral-dump-questionnaire.md"
+    idea: "Human Design fundamentals: 5 Types (Manifestors, Generators, Manifesting Generators, Projectors, Reflectors) with strategies, authorities, signatures; understanding your chart components"
+    section: "Human Design — Type Fundamentals"
+    position: 51
+    of_total: 55
+    prev: ATM-R-140
+    provenance: ALIEN
+    nature: FRAMEWORK
+    nodes: [6, 7, 8, 9, 10, 11, 12]
+    pillar: "Inner"
+    build_state: MISSING
+    editorial: CLEAN
+    strike_phase: 1A
+  - id: ATM-R-142
+    source_file: "1b-spiral-dump-questionnaire.md"
+    idea: "Human Design authorities and profiles: 7 authority types (Emotional, Sacral, Splenic, Ego, Self-Projected, Mental, Lunar); 12 profiles explained with life themes"
+    section: "Human Design — Authorities & Profiles"
+    position: 52
+    of_total: 55
+    prev: ATM-R-141
+    provenance: ALIEN
+    nature: FRAMEWORK
+    nodes: [6, 7, 8, 9, 10, 11, 12]
+    pillar: "Inner"
+    build_state: MISSING
+    editorial: CLEAN
+    strike_phase: 1A
+  - id: ATM-R-143
+    source_file: "1b-spiral-dump-questionnaire.md"
+    idea: "Human Design centers, gates, and channels: 9 energy centers (defined vs undefined), gates as specific energies, channels as life themes; practical applications for daily life"
+    section: "Human Design — Centers & Channels"
+    position: 53
+    of_total: 55
+    prev: ATM-R-142
+    provenance: ALIEN
+    nature: FRAMEWORK
+    nodes: [6, 7, 8, 9, 10, 11, 12]
+    pillar: "Inner"
+    build_state: MISSING
+    editorial: CLEAN
+    strike_phase: 1A
+  - id: ATM-R-144
+    source_file: "1b-spiral-dump-questionnaire.md"
+    idea: "Thread organization guide: what to pull from each past chat (water hub, spiral structure, EAU blueprint, pillar breakdowns, Kangen info, subscription model, Sovereign Systems language, landing page/video direction); optional (brand aesthetic, sacred home concepts)"
+    section: "Thread Organization Guide"
+    position: 54
+    of_total: 55
+    prev: ATM-R-143
+    provenance: HYBRID
+    nature: INSTRUCTION
+    nodes: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
+    pillar: "Cross-cutting"
+    build_state: N/A
+    editorial: CLEAN
+    strike_phase: 1A
+  - id: ATM-R-145
+    source_file: "1b-spiral-dump-questionnaire.md"
+    idea: "Resource links and pull priorities: water resources (Drive folders for wins/testimonials, water uses doc), books/resources (6 Drive links including #1 book), spiral reference photo, raw chat thread template structure, fast priority pull list (core threads + framework threads)"
+    section: "Resource Links & Pull Priorities"
+    position: 55
+    of_total: 55
+    prev: ATM-R-144
+    provenance: LOCAL
+    nature: PRODUCT
+    nodes: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
+    pillar: "Cross-cutting"
+    build_state: N/A
+    editorial: CLEAN
+    strike_phase: 2A
+  - id: ATM-R-051
+    source_file: "2a-sovereign-systems-branding.md"
+    idea: "Maddie asks whether Sovereign Systems should be her legal business name or backend platform name"
+    section: "Sovereign Systems as Backend Name"
+    position: 1
+    of_total: 40
+    prev: null
+    provenance: LOCAL
+    nature: QUESTION
+    nodes: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
+    pillar: "Cross-cutting"
+    build_state: N/A
+    editorial: CLEAN
+    strike_phase: 1C
+  - id: ATM-R-052
+    source_file: "2a-sovereign-systems-branding.md"
+    idea: "Sovereign Systems can be: LLC, DBA, product name, course, backend platform, philosophy, or umbrella — recommendation is backend platform name, not legal entity"
+    section: "Sovereign Systems as Backend Name"
+    position: 2
+    of_total: 40
+    prev: ATM-R-051
+    provenance: HYBRID
+    nature: FRAMEWORK
+    nodes: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
+    pillar: "Cross-cutting"
+    build_state: N/A
+    editorial: CLEAN
+    strike_phase: 1A
+  - id: ATM-R-053
+    source_file: "2a-sovereign-systems-branding.md"
+    idea: "Option B recommended: Sovereign Systems as backend platform name — GHL workspace, dashboard, methodology section — with strategic take on Maddie's gift (vision, pattern recognition, energetic integration)"
+    section: "Sovereign Systems as Backend Name"
+    position: 3
+    of_total: 40
+    prev: ATM-R-052
+    provenance: HYBRID
+    nature: FRAMEWORK
+    nodes: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
+    pillar: "Cross-cutting"
+    build_state: N/A
+    editorial: CLEAN
+    strike_phase: 1A
+  - id: ATM-R-054
+    source_file: "2a-sovereign-systems-branding.md"
+    idea: "Final answer: not legal owner name, yes backend platform name — check domain/trademark only if planning public marketing in 6-12 months"
+    section: "Sovereign Systems as Backend Name"
+    position: 4
+    of_total: 40
+    prev: ATM-R-053
+    provenance: HYBRID
+    nature: CLAIM
+    nodes: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
+    pillar: "Cross-cutting"
+    build_state: N/A
+    editorial: CLEAN
+    strike_phase: 1A
+  - id: ATM-R-055
+    source_file: "2a-sovereign-systems-branding.md"
+    idea: "Maddie confirms: Sovereign Systems as 'The Operating Framework Behind EAU Co + The Spiral' — asks whether to check name/domain"
+    section: "Internal vs Public Strategy"
+    position: 5
+    of_total: 40
+    prev: ATM-R-054
+    provenance: LOCAL
+    nature: INSTRUCTION
+    nodes: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
+    pillar: "Cross-cutting"
+    build_state: N/A
+    editorial: CLEAN
+    strike_phase: 1C
+  - id: ATM-R-056
+    source_file: "2a-sovereign-systems-branding.md"
+    idea: "Internal vs public strategy: use internally immediately, soft-launch as philosophy, don't build website yet — brand hierarchy must stay clean (EAU/Water/Personal = front, Sovereign Systems = back)"
+    section: "Internal vs Public Strategy"
+    position: 6
+    of_total: 40
+    prev: ATM-R-055
+    provenance: HYBRID
+    nature: FRAMEWORK
+    nodes: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
+    pillar: "Cross-cutting"
+    build_state: N/A
+    editorial: CLEAN
+    strike_phase: 1A
+  - id: ATM-R-057
+    source_file: "2a-sovereign-systems-branding.md"
+    idea: "Smart move: phrase it as language ('Inside my world, everything runs on Sovereign Systems...') — no domain/logo/LLC needed; energetic read: structured, strategic, masculine container, expandable"
+    section: "Internal vs Public Strategy"
+    position: 7
+    of_total: 40
+    prev: ATM-R-056
+    provenance: HYBRID
+    nature: CLAIM
+    nodes: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
+    pillar: "Cross-cutting"
+    build_state: N/A
+    editorial: CLEAN
+    strike_phase: 1A
+  - id: ATM-R-058
+    source_file: "2a-sovereign-systems-branding.md"
+    idea: "Maddie confirms she loves the 'Inside my world' phrasing exactly as written"
+    section: "Sovereign Systems Phrasing Lock"
+    position: 8
+    of_total: 40
+    prev: ATM-R-057
+    provenance: LOCAL
+    nature: INSTRUCTION
+    nodes: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
+    pillar: "Cross-cutting"
+    build_state: N/A
+    editorial: CLEAN
+    strike_phase: 1C
+  - id: ATM-R-059
+    source_file: "2a-sovereign-systems-branding.md"
+    idea: "Phrasing analysis: positions as philosophy + architecture (not business), creates curiosity, unifies chaos (income + healing + freedom = one architecture); 3 refined variations offered"
+    section: "Sovereign Systems Phrasing Lock"
+    position: 9
+    of_total: 40
+    prev: ATM-R-058
+    provenance: HYBRID
+    nature: NARRATIVE
+    nodes: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
+    pillar: "Cross-cutting"
+    build_state: PARTIAL
+    editorial: CLEAN
+    strike_phase: 1A
+  - id: ATM-R-060
+    source_file: "2a-sovereign-systems-branding.md"
+    idea: "Implementation: keep simple, no logo/domain/LLC yet — let it live in bio, pinned post, webclass line, about section; building coherence not complexity"
+    section: "Sovereign Systems Phrasing Lock"
+    position: 10
+    of_total: 40
+    prev: ATM-R-059
+    provenance: HYBRID
+    nature: INSTRUCTION
+    nodes: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
+    pillar: "Cross-cutting"
+    build_state: N/A
+    editorial: CLEAN
+    strike_phase: 1A
+  - id: ATM-R-061
+    source_file: "2a-sovereign-systems-branding.md"
+    idea: "Maddie asks to check if anyone already owns/uses 'Sovereign Systems' as a name or branding"
+    section: "Name Availability Research"
+    position: 11
+    of_total: 40
+    prev: ATM-R-060
+    provenance: LOCAL
+    nature: QUESTION
+    nodes: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
+    pillar: "Cross-cutting"
+    build_state: N/A
+    editorial: CLEAN
+    strike_phase: 1C
+  - id: ATM-R-062
+    source_file: "2a-sovereign-systems-branding.md"
+    idea: "Name conflict research: multiple existing companies in tech/IT use 'Sovereign Systems'; internal/philosophical use is safe, but public branding needs domain/trademark/social handle checks"
+    section: "Name Availability Research"
+    position: 12
+    of_total: 40
+    prev: ATM-R-061
+    provenance: HYBRID
+    nature: CLAIM
+    nodes: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
+    pillar: "Cross-cutting"
+    build_state: N/A
+    editorial: CLEAN
+    strike_phase: 1C
+  - id: ATM-R-063
+    source_file: "2a-sovereign-systems-branding.md"
+    idea: "Maddie shares existing spiral visual (movable, chakra-colored stars, hover/click) and brainstorms landing page layouts — explores pillar quarters, separate spiral modes, or keeping as-is with broader themes"
+    section: "Landing Page Concept — Spiral as Core"
+    position: 13
+    of_total: 40
+    prev: ATM-R-062
+    provenance: LOCAL
+    nature: QUESTION
+    nodes: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
+    pillar: "Cross-cutting"
+    build_state: PARTIAL
+    editorial: CLEAN
+    strike_phase: 1C
+  - id: ATM-R-064
+    source_file: "2a-sovereign-systems-branding.md"
+    idea: "Keep the spiral as core — splitting into 4 categories loses the magic; Maddie's work is layered/relational/spiraling growth, not siloed; pillars are tags not structure"
+    section: "Landing Page Concept — Spiral as Core"
+    position: 14
+    of_total: 40
+    prev: ATM-R-063
+    provenance: HYBRID
+    nature: FRAMEWORK
+    nodes: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
+    pillar: "Cross-cutting"
+    build_state: PARTIAL
+    editorial: CLEAN
+    strike_phase: 1A
+  - id: ATM-R-065
+    source_file: "2a-sovereign-systems-branding.md"
+    idea: "V1 landing page concept: hero headline + Sovereign Systems line, interactive spiral with 'choose your own evolution' UX, 'System Behind the Spiral' section below, pillars as floating overlays/legend (not separate pages)"
+    section: "Landing Page Concept — Spiral as Core"
+    position: 15
+    of_total: 40
+    prev: ATM-R-064
+    provenance: HYBRID
+    nature: MODEL
+    nodes: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
+    pillar: "Cross-cutting"
+    build_state: PARTIAL
+    editorial: CLEAN
+    strike_phase: 1A
+  - id: ATM-R-066
+    source_file: "2a-sovereign-systems-branding.md"
+    idea: "Pillars as floating overlay/legend (Body/Mind/Spirit/Wealth), shown when clicking a star — not separate pages; why stacked/switched/separate layouts feel wrong; 'web of evolution' concept"
+    section: "Landing Page Concept — Spiral as Core"
+    position: 16
+    of_total: 40
+    prev: ATM-R-065
+    provenance: HYBRID
+    nature: MODEL
+    nodes: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
+    pillar: "Cross-cutting"
+    build_state: PARTIAL
+    editorial: CLEAN
+    strike_phase: 1A
+  - id: ATM-R-067
+    source_file: "2a-sovereign-systems-branding.md"
+    idea: "Maddie wants cohesion + interconnectedness, shares Google Doc links, asks for star names, pillar overview section, and big-picture connection map"
+    section: "Star Naming System and Pillar Overlay"
+    position: 17
+    of_total: 40
+    prev: ATM-R-066
+    provenance: LOCAL
+    nature: INSTRUCTION
+    nodes: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
+    pillar: "Cross-cutting"
+    build_state: N/A
+    editorial: CLEAN
+    strike_phase: 1C
+  - id: ATM-R-068
+    source_file: "2a-sovereign-systems-branding.md"
+    idea: "Star naming system: each star is an entry point into transformation ('a realization, a doorway, a wait...that's me moment'); 4 layers of candidate names across Regulation, Awareness, Responsibility, Expansion + unique Maddie nodes"
+    section: "Star Naming System and Pillar Overlay"
+    position: 18
+    of_total: 40
+    prev: ATM-R-067
+    provenance: HYBRID
+    nature: FRAMEWORK
+    nodes: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
+    pillar: "Cross-cutting"
+    build_state: PARTIAL
+    editorial: CLEAN
+    strike_phase: 1A
+  - id: ATM-R-069
+    source_file: "2a-sovereign-systems-branding.md"
+    idea: "Pillar overlay system: 4 refined pillars (Body-Regulation, Mind-Awareness, Spirit-Connection, Wealth-Systems) shown as tags when clicking a star, creating 'web of intelligence' not categories"
+    section: "Star Naming System and Pillar Overlay"
+    position: 19
+    of_total: 40
+    prev: ATM-R-068
+    provenance: HYBRID
+    nature: MODEL
+    nodes: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
+    pillar: "Cross-cutting"
+    build_state: PARTIAL
+    editorial: CLEAN
+    strike_phase: 1A
+  - id: ATM-R-070
+    source_file: "2a-sovereign-systems-branding.md"
+    idea: "Below-spiral section: 'The System Behind the Spiral' with Sovereign Systems copy and 4-pillar descriptions; connection system with 'connects to' and 'suggested path' for each node"
+    section: "Star Naming System and Pillar Overlay"
+    position: 20
+    of_total: 40
+    prev: ATM-R-069
+    provenance: HYBRID
+    nature: MODEL
+    nodes: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
+    pillar: "Cross-cutting"
+    build_state: PARTIAL
+    editorial: CLEAN
+    strike_phase: 1A
+  - id: ATM-R-071
+    source_file: "2a-sovereign-systems-branding.md"
+    idea: "Big picture locked: not a course, funnel, or website — a dynamic interactive map of human transformation powered by Sovereign Systems"
+    section: "Star Naming System and Pillar Overlay"
+    position: 21
+    of_total: 40
+    prev: ATM-R-070
+    provenance: HYBRID
+    nature: CLAIM
+    nodes: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
+    pillar: "Cross-cutting"
+    build_state: PARTIAL
+    editorial: CLEAN
+    strike_phase: 1A
+  - id: ATM-R-072
+    source_file: "2a-sovereign-systems-branding.md"
+    idea: "Maddie wants science + religion perspectives in each node AND prerequisite logic: blood sugar must be stable before nervous system work is effective"
+    section: "Node Perspective Layers and Prerequisites"
+    position: 22
+    of_total: 40
+    prev: ATM-R-071
+    provenance: LOCAL
+    nature: INSTRUCTION
+    nodes: [3, 4]
+    pillar: "Physical"
+    build_state: MISSING
+    editorial: CLEAN
+    strike_phase: 2A
+  - id: ATM-R-073
+    source_file: "2a-sovereign-systems-branding.md"
+    idea: "Three new node dimensions: 1) Perspectives layer (Science/Spiritual/Practical), 2) Prerequisite logic ('before this works, check this'), 3) Reality Check (cuts through spiritual bypassing); full example for Nervous System node with blood sugar prerequisite"
+    section: "Node Perspective Layers and Prerequisites"
+    position: 23
+    of_total: 40
+    prev: ATM-R-072
+    provenance: HYBRID
+    nature: MODEL
+    nodes: [3, 4]
+    pillar: "Physical"
+    build_state: MISSING
+    editorial: CLEAN
+    strike_phase: 2A
+  - id: ATM-R-074
+    source_file: "2a-sovereign-systems-branding.md"
+    idea: "Blood Sugar keystone node ('Stability Before Healing') fully built out with all 3 perspectives, connected nodes, and suggested path; plus integration approach (expandable tabs)"
+    section: "Node Perspective Layers and Prerequisites"
+    position: 24
+    of_total: 40
+    prev: ATM-R-073
+    provenance: HYBRID
+    nature: MODEL
+    nodes: [3]
+    pillar: "Physical"
+    build_state: MISSING
+    editorial: CLEAN
+    strike_phase: 2A
+  - id: ATM-R-075
+    source_file: "2a-sovereign-systems-branding.md"
+    idea: "What Maddie is creating: a system that says 'do this before this or this won't work' — rare in healing space; integration via expandable tabs (default: title/insight/truth, expand: science/spiritual/connections); platform evolution summary"
+    section: "Node Perspective Layers and Prerequisites"
+    position: 25
+    of_total: 40
+    prev: ATM-R-074
+    provenance: HYBRID
+    nature: CLAIM
+    nodes: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
+    pillar: "Cross-cutting"
+    build_state: PARTIAL
+    editorial: CLEAN
+    strike_phase: 1A
+  - id: ATM-R-076
+    source_file: "2a-sovereign-systems-branding.md"
+    idea: "Maddie outlines desired structure: Feel Good First entry, awareness & accountability, physical sovereignty nodes, EAU framework with Maslow in background, Untethered Soul + Radical Forgiveness references, book-inspired node pages, 13 nodes max, quiz for gentle guidance"
+    section: "Designer-Ready Site Structure"
+    position: 26
+    of_total: 40
+    prev: ATM-R-075
+    provenance: LOCAL
+    nature: INSTRUCTION
+    nodes: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
+    pillar: "Cross-cutting"
+    build_state: PARTIAL
+    editorial: CLEAN
+    strike_phase: 1C
+  - id: ATM-R-077
+    source_file: "2a-sovereign-systems-branding.md"
+    idea: "Core structure translated: Phase 1 Feel Good First (Elevate), Phase 2 Awareness & Accountability (Align), Phase 3 Expansion (Unlock); Maslow embedded underneath as logic not teaching; 7-part landing page structure for designer"
+    section: "Designer-Ready Site Structure"
+    position: 27
+    of_total: 40
+    prev: ATM-R-076
+    provenance: HYBRID
+    nature: MODEL
+    nodes: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
+    pillar: "Cross-cutting"
+    build_state: PARTIAL
+    editorial: CLEAN
+    strike_phase: 1A
+  - id: ATM-R-078
+    source_file: "2a-sovereign-systems-branding.md"
+    idea: "Node panel spec: Title, Core Insight, Reality Check, Prerequisite, Expandable Tabs (Science/Spiritual/Practical), Connections, Pillar Tags; awareness cluster as spiral nodes not a page; Maslow visual placement below spiral"
+    section: "Designer-Ready Site Structure"
+    position: 28
+    of_total: 40
+    prev: ATM-R-077
+    provenance: HYBRID
+    nature: INSTRUCTION
+    nodes: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
+    pillar: "Cross-cutting"
+    build_state: PARTIAL
+    editorial: CLEAN
+    strike_phase: 1A
+  - id: ATM-R-079
+    source_file: "2a-sovereign-systems-branding.md"
+    idea: "Maslow placement: below-spiral 'Foundation of the Spiral' section with simplified triangle in Maddie's words; Physical Sovereignty in Phase 1 but connecting upward; big picture: spiral with gravity not linear categories; 5 diagnostic questions for refinement"
+    section: "Designer-Ready Site Structure"
+    position: 29
+    of_total: 40
+    prev: ATM-R-078
+    provenance: HYBRID
+    nature: FRAMEWORK
+    nodes: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
+    pillar: "Cross-cutting"
+    build_state: PARTIAL
+    editorial: CLEAN
+    strike_phase: 1A
+  - id: ATM-R-080
+    source_file: "2a-sovereign-systems-branding.md"
+    idea: "Maddie's comprehensive decision answers: EAU embedded not front-center, hover titles on stars, book-inspired node pages (truth/science/spiritual/story), limit to ~13 nodes, shorter landing pages, subtle wealth first (money mindset + alignment), quiz for gentle guidance then explore, stronger authoritative tone, start with Feel Good First → awareness → accountability with love → physical nodes → 13 total"
+    section: "Maddie's Decisions — EAU Embedded, Nodes Limited, Book-Inspired Pages"
+    position: 30
+    of_total: 40
+    prev: ATM-R-079
+    provenance: LOCAL
+    nature: INSTRUCTION
+    nodes: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
+    pillar: "Cross-cutting"
+    build_state: PARTIAL
+    editorial: CLEAN
+    strike_phase: 1C
+  - id: ATM-R-081
+    source_file: "2a-sovereign-systems-branding.md"
+    idea: "3 high-level decisions confirmed: keep spiral as main experience, limit to ~13 nodes, embed frameworks not overwhelm; EAU embedded in hero/below spiral/node flow; Maslow as background logic in Feel Good First only; hover shows title, click opens full panel"
+    section: "Maddie's Decisions — EAU Embedded, Nodes Limited, Book-Inspired Pages"
+    position: 31
+    of_total: 40
+    prev: ATM-R-080
+    provenance: HYBRID
+    nature: FRAMEWORK
+    nodes: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
+    pillar: "Cross-cutting"
+    build_state: PARTIAL
+    editorial: CLEAN
+    strike_phase: 1A
+  - id: ATM-R-082
+    source_file: "2a-sovereign-systems-branding.md"
+    idea: "Node UX locked: hover shows title (clean, minimal), click opens full layered panel; node pages inspired by Florence Scovel Shinn trilogy: Truth, Science, Spiritual/Religious, Teaching/Story"
+    section: "Maddie's Decisions — EAU Embedded, Nodes Limited, Book-Inspired Pages"
+    position: 32
+    of_total: 40
+    prev: ATM-R-081
+    provenance: HYBRID
+    nature: MODEL
+    nodes: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
+    pillar: "Cross-cutting"
+    build_state: MISSING
+    editorial: CLEAN
+    strike_phase: 1A
+  - id: ATM-R-083
+    source_file: "2a-sovereign-systems-branding.md"
+    idea: "Phase 1 ELEVATE nodes 1-5: Feel Good First, Body Is Starting Point, Blood Sugar, Nervous System, Sleep = Physical Sovereignty cluster"
+    section: "13-Node Lock-In (Duplicate from 2b origin)"
+    position: 33
+    of_total: 40
+    prev: ATM-R-082
+    provenance: HYBRID
+    nature: FRAMEWORK
+    nodes: [1, 2, 3, 4, 5]
+    pillar: "Physical"
+    build_state: PARTIAL
+    editorial: CLEAN
+    strike_phase: 2A
+  - id: ATM-R-084
+    source_file: "2a-sovereign-systems-branding.md"
+    idea: "Phase 2 ALIGN nodes 6-9: Awareness Creates Choice, Not Your Thoughts (Untethered Soul), Patterns Run Until Seen, Reality Is Interpreted"
+    section: "13-Node Lock-In (Duplicate from 2b origin)"
+    position: 34
+    of_total: 40
+    prev: ATM-R-083
+    provenance: HYBRID
+    nature: FRAMEWORK
+    nodes: [6, 7, 8, 9]
+    pillar: "Inner"
+    build_state: PARTIAL
+    editorial: CLEAN
+    strike_phase: 1A
+  - id: ATM-R-085
+    source_file: "2a-sovereign-systems-branding.md"
+    idea: "Phase 3 ALIGN accountability nodes 10-12: Radical Responsibility (Radical Forgiveness), Acknowledgment (Keala quote), Integrity Builds Self-Trust"
+    section: "13-Node Lock-In (Duplicate from 2b origin)"
+    position: 35
+    of_total: 40
+    prev: ATM-R-084
+    provenance: HYBRID
+    nature: FRAMEWORK
+    nodes: [10, 11, 12]
+    pillar: "Identity"
+    build_state: PARTIAL
+    editorial: CLEAN
+    strike_phase: 1A
+  - id: ATM-R-086
+    source_file: "2a-sovereign-systems-branding.md"
+    idea: "Phase 4 UNLOCK node 13: Systems Create Freedom — wealth begins subtly"
+    section: "13-Node Lock-In (Duplicate from 2b origin)"
+    position: 36
+    of_total: 40
+    prev: ATM-R-085
+    provenance: HYBRID
+    nature: FRAMEWORK
+    nodes: [13]
+    pillar: "Financial"
+    build_state: PARTIAL
+    editorial: CLEAN
+    strike_phase: 1A
+  - id: ATM-R-087
+    source_file: "2a-sovereign-systems-branding.md"
+    idea: "Flow gravity map: Entry → Body stabilization → Mental clarity → Ownership → Expansion (not strict path but gravitational)"
+    section: "13-Node Lock-In (Duplicate from 2b origin)"
+    position: 37
+    of_total: 40
+    prev: ATM-R-086
+    provenance: HYBRID
+    nature: MODEL
+    nodes: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
+    pillar: "Cross-cutting"
+    build_state: PARTIAL
+    editorial: CLEAN
+    strike_phase: 1A
+  - id: ATM-R-088
+    source_file: "2a-sovereign-systems-branding.md"
+    idea: "Sovereign Systems section copy with EAU taglines; non-linear transformation statement; Maslow placed inside Feel Good First only with simplified triangle"
+    section: "13-Node Lock-In (Duplicate from 2b origin)"
+    position: 38
+    of_total: 40
+    prev: ATM-R-087
+    provenance: HYBRID
+    nature: PRODUCT
+    nodes: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
+    pillar: "Cross-cutting"
+    build_state: PARTIAL
+    editorial: CLEAN
+    strike_phase: 1A
+  - id: ATM-R-089
+    source_file: "2a-sovereign-systems-branding.md"
+    idea: "Designer instructions: spiral interaction UX, node panel 7-element spec, below-spiral Sovereign Systems section"
+    section: "13-Node Lock-In (Duplicate from 2b origin)"
+    position: 39
+    of_total: 40
+    prev: ATM-R-088
+    provenance: HYBRID
+    nature: INSTRUCTION
+    nodes: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
+    pillar: "Cross-cutting"
+    build_state: PARTIAL
+    editorial: CLEAN
+    strike_phase: 1A
+  - id: ATM-R-090
+    source_file: "2a-sovereign-systems-branding.md"
+    idea: "V1 assessment: perfect scope — not overwhelming users, not overbuilding, creating clarity + depth; next steps: full spiral flow map or write 2-3 example nodes"
+    section: "13-Node Lock-In (Duplicate from 2b origin)"
+    position: 40
+    of_total: 40
+    prev: ATM-R-089
+    provenance: HYBRID
+    nature: CLAIM
+    nodes: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
+    pillar: "Cross-cutting"
+    build_state: PARTIAL
+    editorial: CLEAN
+    strike_phase: 1A
+  - id: ATM-R-001
+    source_file: "2b-nodular-flow-refinement.md"
+    idea: "Maddie's prompt framing the nodular layout thread with pasted context of 3 high-level decisions"
+    section: "Prompt — Maddie's context and pasted thread"
+    position: 1
+    of_total: 32
+    prev: null
+    provenance: LOCAL
+    nature: INSTRUCTION
+    nodes: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
+    pillar: "Cross-cutting"
+    build_state: PARTIAL
+    editorial: CLEAN
+    strike_phase: 1A
+  - id: ATM-R-002
+    source_file: "2b-nodular-flow-refinement.md"
+    idea: "EAU framework placement: embedded in hero/below spiral, not front-and-center buttons"
+    section: "Quick Alignment Decisions"
+    position: 2
+    of_total: 32
+    prev: ATM-R-001
+    provenance: HYBRID
+    nature: FRAMEWORK
+    nodes: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
+    pillar: "Cross-cutting"
+    build_state: PARTIAL
+    editorial: CLEAN
+    strike_phase: 1A
+  - id: ATM-R-003
+    source_file: "2b-nodular-flow-refinement.md"
+    idea: "Maslow placement: background logic only, light visual in Feel Good First node"
+    section: "Quick Alignment Decisions"
+    position: 3
+    of_total: 32
+    prev: ATM-R-002
+    provenance: HYBRID
+    nature: FRAMEWORK
+    nodes: [1]
+    pillar: "Physical"
+    build_state: MISSING
+    editorial: CLEAN
+    strike_phase: 1A
+  - id: ATM-R-004
+    source_file: "2b-nodular-flow-refinement.md"
+    idea: "Node hover/click UX pattern: title on hover, full panel on click"
+    section: "Quick Alignment Decisions"
+    position: 4
+    of_total: 32
+    prev: ATM-R-003
+    provenance: HYBRID
+    nature: INSTRUCTION
+    nodes: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
+    pillar: "Cross-cutting"
+    build_state: MISSING
+    editorial: CLEAN
+    strike_phase: 1A
+  - id: ATM-R-005
+    source_file: "2b-nodular-flow-refinement.md"
+    idea: "Node page content structure: each node is a mini chapter with truth, science, spiritual, and story layers — inspired by Shinn's trilogy"
+    section: "Quick Alignment Decisions"
+    position: 5
+    of_total: 32
+    prev: ATM-R-004
+    provenance: HYBRID
+    nature: MODEL
+    nodes: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
+    pillar: "Cross-cutting"
+    build_state: MISSING
+    editorial: CLEAN
+    strike_phase: 1A
+  - id: ATM-R-006
+    source_file: "2b-nodular-flow-refinement.md"
+    idea: "Phase 1 ELEVATE nodes 1-5: Feel Good First, Body, Blood Sugar, Nervous System, Sleep = Physical Sovereignty"
+    section: "13-Node Locked Structure"
+    position: 6
+    of_total: 32
+    prev: ATM-R-005
+    provenance: HYBRID
+    nature: FRAMEWORK
+    nodes: [1, 2, 3, 4, 5]
+    pillar: "Physical"
+    build_state: PARTIAL
+    editorial: CLEAN
+    strike_phase: 2A
+  - id: ATM-R-007
+    source_file: "2b-nodular-flow-refinement.md"
+    idea: "Phase 2 ALIGN awareness nodes 6-9: Awareness Creates Choice, Not Your Thoughts, Patterns Run Until Seen, Reality Is Interpreted"
+    section: "13-Node Locked Structure"
+    position: 7
+    of_total: 32
+    prev: ATM-R-006
+    provenance: HYBRID
+    nature: FRAMEWORK
+    nodes: [6, 7, 8, 9]
+    pillar: "Inner"
+    build_state: PARTIAL
+    editorial: CLEAN
+    strike_phase: 1A
+  - id: ATM-R-008
+    source_file: "2b-nodular-flow-refinement.md"
+    idea: "Phase 3 ALIGN accountability nodes 10-12: Radical Responsibility, Acknowledgment (Keala quote), Integrity Builds Self-Trust"
+    section: "13-Node Locked Structure"
+    position: 8
+    of_total: 32
+    prev: ATM-R-007
+    provenance: HYBRID
+    nature: FRAMEWORK
+    nodes: [10, 11, 12]
+    pillar: "Identity"
+    build_state: PARTIAL
+    editorial: CLEAN
+    strike_phase: 1A
+  - id: ATM-R-009
+    source_file: "2b-nodular-flow-refinement.md"
+    idea: "Phase 4 UNLOCK node 13: Systems Create Freedom — wealth begins subtly here"
+    section: "13-Node Locked Structure"
+    position: 9
+    of_total: 32
+    prev: ATM-R-008
+    provenance: HYBRID
+    nature: FRAMEWORK
+    nodes: [13]
+    pillar: "Financial"
+    build_state: PARTIAL
+    editorial: CLEAN
+    strike_phase: 1A
+  - id: ATM-R-010
+    source_file: "2b-nodular-flow-refinement.md"
+    idea: "Flow gravity map: Entry → Body stabilization → Mental clarity → Ownership → Expansion"
+    section: "13-Node Locked Structure"
+    position: 10
+    of_total: 32
+    prev: ATM-R-009
+    provenance: HYBRID
+    nature: MODEL
+    nodes: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
+    pillar: "Cross-cutting"
+    build_state: PARTIAL
+    editorial: CLEAN
+    strike_phase: 1A
+  - id: ATM-R-011
+    source_file: "2b-nodular-flow-refinement.md"
+    idea: "Sovereign Systems section copy: EAU framework breakdown with taglines for Elevate, Align, Unlock"
+    section: "Sovereign Systems Section + Maslow Placement"
+    position: 11
+    of_total: 32
+    prev: ATM-R-010
+    provenance: HYBRID
+    nature: PRODUCT
+    nodes: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
+    pillar: "Cross-cutting"
+    build_state: PARTIAL
+    editorial: CLEAN
+    strike_phase: 1A
+  - id: ATM-R-012
+    source_file: "2b-nodular-flow-refinement.md"
+    idea: "Non-linear transformation philosophy: each layer influences the others"
+    section: "Sovereign Systems Section + Maslow Placement"
+    position: 12
+    of_total: 32
+    prev: ATM-R-011
+    provenance: HYBRID
+    nature: CLAIM
+    nodes: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
+    pillar: "Cross-cutting"
+    build_state: PARTIAL
+    editorial: CLEAN
+    strike_phase: 1A
+  - id: ATM-R-013
+    source_file: "2b-nodular-flow-refinement.md"
+    idea: "Maslow final placement: inside Feel Good First node only, simple triangle with Maddie's wording"
+    section: "Sovereign Systems Section + Maslow Placement"
+    position: 13
+    of_total: 32
+    prev: ATM-R-012
+    provenance: HYBRID
+    nature: FRAMEWORK
+    nodes: [1]
+    pillar: "Physical"
+    build_state: MISSING
+    editorial: CLEAN
+    strike_phase: 2A
+  - id: ATM-R-014
+    source_file: "2b-nodular-flow-refinement.md"
+    idea: "Designer instructions: spiral interaction UX (hover/click) and node panel component spec"
+    section: "Designer Instructions"
+    position: 14
+    of_total: 32
+    prev: ATM-R-013
+    provenance: HYBRID
+    nature: INSTRUCTION
+    nodes: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
+    pillar: "Cross-cutting"
+    build_state: PARTIAL
+    editorial: CLEAN
+    strike_phase: 1A
+  - id: ATM-R-015
+    source_file: "2b-nodular-flow-refinement.md"
+    idea: "Below-spiral section spec: Sovereign Systems + EAU breakdown; V1 assessment as perfect scope"
+    section: "Designer Instructions"
+    position: 15
+    of_total: 32
+    prev: ATM-R-014
+    provenance: HYBRID
+    nature: INSTRUCTION
+    nodes: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
+    pillar: "Cross-cutting"
+    build_state: PARTIAL
+    editorial: CLEAN
+    strike_phase: 1A
+  - id: ATM-R-016
+    source_file: "2b-nodular-flow-refinement.md"
+    idea: "Maddie's detailed tweaks: merge nodes 3-5, add stress/inflammation, split awareness, rearrange accountability, identity transition before unlock"
+    section: "Maddie's Tweaks to Node Structure"
+    position: 16
+    of_total: 32
+    prev: ATM-R-015
+    provenance: LOCAL
+    nature: INSTRUCTION
+    nodes: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
+    pillar: "Cross-cutting"
+    build_state: N/A
+    editorial: CLEAN
+    strike_phase: 1C
+  - id: ATM-R-017
+    source_file: "2b-nodular-flow-refinement.md"
+    idea: "Refined Phase 1 ELEVATE: Feel Good First + Body + Stabilize & Optimize (merged) + Stress & Inflammation (new)"
+    section: "Refined Nodular Flow (Response to Tweaks)"
+    position: 17
+    of_total: 32
+    prev: ATM-R-016
+    provenance: HYBRID
+    nature: FRAMEWORK
+    nodes: [1, 2, 3, 4, 5]
+    pillar: "Physical"
+    build_state: PARTIAL
+    editorial: CLEAN
+    strike_phase: 2A
+  - id: ATM-R-018
+    source_file: "2b-nodular-flow-refinement.md"
+    idea: "Refined Phase 2 ALIGN: Awareness split (5a/5b), Patterns, Reality Interpreted + Accountability subcluster with Radical Responsibility"
+    section: "Refined Nodular Flow (Response to Tweaks)"
+    position: 18
+    of_total: 32
+    prev: ATM-R-017
+    provenance: HYBRID
+    nature: FRAMEWORK
+    nodes: [6, 7, 8, 9, 10, 11, 12]
+    pillar: "Inner"
+    build_state: PARTIAL
+    editorial: CLEAN
+    strike_phase: 1A
+  - id: ATM-R-019
+    source_file: "2b-nodular-flow-refinement.md"
+    idea: "Refined Phase 4 UNLOCK: Systems Create Freedom, Identity & Authentic Expression (transition), Full Integration"
+    section: "Refined Nodular Flow (Response to Tweaks)"
+    position: 19
+    of_total: 32
+    prev: ATM-R-018
+    provenance: HYBRID
+    nature: FRAMEWORK
+    nodes: [11, 12, 13]
+    pillar: "Financial"
+    build_state: MISSING
+    editorial: CLEAN
+    strike_phase: 1A
+  - id: ATM-R-020
+    source_file: "2b-nodular-flow-refinement.md"
+    idea: "Simplified gravity map: Entry → Physical → Mental → Accountability → Unlock, plus designer notes"
+    section: "Refined Nodular Flow (Response to Tweaks)"
+    position: 20
+    of_total: 32
+    prev: ATM-R-019
+    provenance: HYBRID
+    nature: MODEL
+    nodes: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
+    pillar: "Cross-cutting"
+    build_state: PARTIAL
+    editorial: CLEAN
+    strike_phase: 1A
+  - id: ATM-R-021
+    source_file: "2b-nodular-flow-refinement.md"
+    idea: "Maddie requests node 9 refinement (redundant to 8), validates new-user hover flow, and approves visual mockup"
+    section: "Iterative Refinements (Prompts 3-6)"
+    position: 21
+    of_total: 32
+    prev: ATM-R-020
+    provenance: LOCAL
+    nature: INSTRUCTION
+    nodes: [8, 9]
+    pillar: "Identity"
+    build_state: N/A
+    editorial: CLEAN
+    strike_phase: 1C
+  - id: ATM-R-022
+    source_file: "2b-nodular-flow-refinement.md"
+    idea: "Node 9 refined: 'Naming & Claiming Your Truth' — distinct from Radical Responsibility, anchors ownership in actionable clarity"
+    section: "Iterative Refinements (Prompts 3-6)"
+    position: 22
+    of_total: 32
+    prev: ATM-R-021
+    provenance: HYBRID
+    nature: FRAMEWORK
+    nodes: [8, 9, 10]
+    pillar: "Identity"
+    build_state: MISSING
+    editorial: CLEAN
+    strike_phase: 1A
+  - id: ATM-R-023
+    source_file: "2b-nodular-flow-refinement.md"
+    idea: "Maddie confirms clusters should follow Sovereign Systems and EAU philosophies in the visual"
+    section: "Iterative Refinements (Prompts 3-6)"
+    position: 23
+    of_total: 32
+    prev: ATM-R-022
+    provenance: LOCAL
+    nature: INSTRUCTION
+    nodes: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
+    pillar: "Cross-cutting"
+    build_state: N/A
+    editorial: CLEAN
+    strike_phase: 1C
+  - id: ATM-R-024
+    source_file: "2b-nodular-flow-refinement.md"
+    idea: "Designer-ready spiral visual concept: Green/Blue/Gold color coding for Elevate/Align/Unlock clusters with flow and interaction specs"
+    section: "Iterative Refinements (Prompts 3-6)"
+    position: 24
+    of_total: 32
+    prev: ATM-R-023
+    provenance: HYBRID
+    nature: INSTRUCTION
+    nodes: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
+    pillar: "Cross-cutting"
+    build_state: PARTIAL
+    editorial: CLEAN
+    strike_phase: 1A
+  - id: ATM-R-025
+    source_file: "2b-nodular-flow-refinement.md"
+    idea: "Maddie moves Awareness under Elevate (not a core phase), starts Align at Accountability, leaves node 8 flexible"
+    section: "Iterative Refinements (Prompts 3-6)"
+    position: 25
+    of_total: 32
+    prev: ATM-R-024
+    provenance: LOCAL
+    nature: INSTRUCTION
+    nodes: [1, 2, 3, 4, 5, 6, 7, 8]
+    pillar: "Cross-cutting"
+    build_state: N/A
+    editorial: CLEAN
+    strike_phase: 1C
+  - id: ATM-R-026
+    source_file: "2b-nodular-flow-refinement.md"
+    idea: "Locked base: Elevate = Feel Good First + Awareness + Body + Stabilize + Stress; Align starts at Radical Responsibility; node 8 flexible"
+    section: "Iterative Refinements (Prompts 3-6)"
+    position: 26
+    of_total: 32
+    prev: ATM-R-025
+    provenance: HYBRID
+    nature: FRAMEWORK
+    nodes: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
+    pillar: "Cross-cutting"
+    build_state: PARTIAL
+    editorial: CLEAN
+    strike_phase: 1A
+  - id: ATM-R-027
+    source_file: "2b-nodular-flow-refinement.md"
+    idea: "Maddie requests 2 more nodes that fit branding but keep big picture clean for first-time visitors"
+    section: "Iterative Refinements (Prompts 3-6)"
+    position: 27
+    of_total: 32
+    prev: ATM-R-026
+    provenance: LOCAL
+    nature: QUESTION
+    nodes: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
+    pillar: "Cross-cutting"
+    build_state: N/A
+    editorial: CLEAN
+    strike_phase: 1C
+  - id: ATM-R-028
+    source_file: "2b-nodular-flow-refinement.md"
+    idea: "Diagnostic questions for 2 new nodes: cluster placement, brand tone, standalone vs reinforcement, framework hooks"
+    section: "Iterative Refinements (Prompts 3-6)"
+    position: 28
+    of_total: 32
+    prev: ATM-R-027
+    provenance: HYBRID
+    nature: QUESTION
+    nodes: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
+    pillar: "Cross-cutting"
+    build_state: N/A
+    editorial: CLEAN
+    strike_phase: 1C
+  - id: ATM-R-029
+    source_file: "2b-nodular-flow-refinement.md"
+    idea: "Maddie decides: one new node in Elevate, one in Align, pulling from existing material"
+    section: "Final Locked Layout + New Nodes"
+    position: 29
+    of_total: 32
+    prev: ATM-R-028
+    provenance: LOCAL
+    nature: INSTRUCTION
+    nodes: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
+    pillar: "Cross-cutting"
+    build_state: N/A
+    editorial: CLEAN
+    strike_phase: 1C
+  - id: ATM-R-030
+    source_file: "2b-nodular-flow-refinement.md"
+    idea: "New Elevate node: 'Energy & Flow' — energy as first currency, bridges physical foundation and awareness"
+    section: "Final Locked Layout + New Nodes"
+    position: 30
+    of_total: 32
+    prev: ATM-R-029
+    provenance: HYBRID
+    nature: FRAMEWORK
+    nodes: [3]
+    pillar: "Physical"
+    build_state: MISSING
+    editorial: CLEAN
+    strike_phase: 2A
+  - id: ATM-R-031
+    source_file: "2b-nodular-flow-refinement.md"
+    idea: "New Align node: 'Boundaries & Choice' — your yes is your power, practical step in ownership"
+    section: "Final Locked Layout + New Nodes"
+    position: 31
+    of_total: 32
+    prev: ATM-R-030
+    provenance: HYBRID
+    nature: FRAMEWORK
+    nodes: [9]
+    pillar: "Identity"
+    build_state: MISSING
+    editorial: CLEAN
+    strike_phase: 1A
+  - id: ATM-R-032
+    source_file: "2b-nodular-flow-refinement.md"
+    idea: "Final updated 13-node layout: Elevate (1-6 with Energy & Flow), Align (7-10 with Boundaries & Choice), Unlock (11-13)"
+    section: "Final Locked Layout + New Nodes"
+    position: 32
+    of_total: 32
+    prev: ATM-R-031
+    provenance: HYBRID
+    nature: FRAMEWORK
+    nodes: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
+    pillar: "Cross-cutting"
+    build_state: PARTIAL
+    editorial: CLEAN
+    strike_phase: 1A
   - id: ATM-B-001
     source_file: "business/100-sales-strategy.md"
     idea: "100 sales strategy"
