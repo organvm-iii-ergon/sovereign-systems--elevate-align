@@ -1,3 +1,30 @@
+<!-- DOC-ENVELOPE
+id: DOC-M-39
+total_sections: 1
+total_atoms: 1
+dominant_provenance: ALIEN
+dominant_nature: TOOL
+sections:
+  - name: "Content"
+    atoms: [ATM-M-664]
+-->
+
+
+<!-- ATM-M-664 IN
+idea: "Your placements want a structure that feels like: freedom choice intuition room for inspiration vari..."
+section: "Content"
+position: 1
+of_total: 1
+prev: null
+context_above: null
+provenance: ALIEN
+nature: TOOL
+nodes: []
+pillar: Cross-cutting
+build_state: N/A
+editorial: UNVERIFIED
+strike_phase: 3C
+-->
 Your placements want a structure that feels like:
 
 🔥 freedom
@@ -543,3 +570,7 @@ You're not meant to fit a system.
 You're meant to design one around your spirit, body, and creative rhythm.
 
 And you're doing it.
+<!-- ATM-M-664 OUT
+next: null
+context_below: null
+-->

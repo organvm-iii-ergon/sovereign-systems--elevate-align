@@ -1,3 +1,15 @@
+<!-- DOC-ENVELOPE
+id: DOC-M-30
+total_sections: 2
+total_atoms: 2
+dominant_provenance: LOCAL
+dominant_nature: NARRATIVE
+sections:
+  - name: "Prompt"
+    atoms: [ATM-M-618]
+  - name: "Response"
+    atoms: [ATM-M-619]
+-->
 ---
 title: "Attachment styles, self-soothing origins"
 source_file: "ChatGPT-Self-soothing in Adulthood.txt"
@@ -16,10 +28,47 @@ Updated: 3/31/2026 12:32:26
 Exported: 3/31/2026 12:32:27
 Link: https://chatgpt.com/g/g-p-681675a28d988191995dc4b68a2bc1f1-healing-spiral/c/677e0fbf-3364-8003-b380-20ecb691c41a
 
+
 ## Prompt:
+
+<!-- ATM-M-618 IN
+idea: "Can you tell as an adult if your parents let you “self soothe” as a child"
+section: "Prompt"
+position: 1
+of_total: 2
+prev: null
+context_above: null
+provenance: LOCAL
+nature: NARRATIVE
+nodes: [9, 2]
+pillar: Inner
+build_state: MISSING
+editorial: CLEAN
+strike_phase: 3A
+-->
 Can you tell as an adult if your parents let you “self soothe” as a child
+<!-- ATM-M-618 OUT
+next: ATM-M-619
+context_below: "While it can be challenging to know for sure if your parents let you 'self-soothe' as a child, certa..."
+-->
 
 ## Response:
+
+<!-- ATM-M-619 IN
+idea: "While it can be challenging to know for sure if your parents let you 'self-soothe' as a child, certa..."
+section: "Response"
+position: 2
+of_total: 2
+prev: ATM-M-618
+context_above: "Can you tell as an adult if your parents let you “self soothe” as a child"
+provenance: HYBRID
+nature: CLAIM
+nodes: [9, 2]
+pillar: Inner
+build_state: PARTIAL
+editorial: CLEAN
+strike_phase: 3A
+-->
 While it can be challenging to know for sure if your parents let you "self-soothe" as a child, certain behavioral patterns and emotional tendencies in adulthood might provide clues. Self-soothing refers to a child's ability to calm themselves without external comfort, often fostered by parenting styles during infancy and childhood.
 
 
@@ -59,7 +108,10 @@ Therapy: A therapist can help you explore patterns in your relationships and emo
 
 
 Even if you discover patterns linked to your early experiences, it's important to remember that your brain remains adaptable. You can learn new, healthy ways to soothe yourself and relate to others as an adult.
-
+<!-- ATM-M-619 OUT
+next: null
+context_below: null
+-->
 
 
 Powered by ChatGPT Exporter (https://www.chatgptexporter.com)

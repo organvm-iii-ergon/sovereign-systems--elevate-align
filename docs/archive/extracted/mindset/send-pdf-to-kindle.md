@@ -1,3 +1,11 @@
+<!-- DOC-ENVELOPE
+id: DOC-M-31
+total_sections: 0
+total_atoms: 0
+dominant_provenance: N/A
+dominant_nature: N/A
+sections: []
+-->
 ---
 title: "Technical utility"
 source_file: "ChatGPT-Send PDF to Kindle.txt"

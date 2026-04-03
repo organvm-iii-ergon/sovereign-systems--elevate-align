@@ -1,3 +1,15 @@
+<!-- DOC-ENVELOPE
+id: DOC-M-24
+total_sections: 2
+total_atoms: 8
+dominant_provenance: LOCAL
+dominant_nature: QUESTION
+sections:
+  - name: "Prompt"
+    atoms: [ATM-M-559, ATM-M-561, ATM-M-563, ATM-M-565]
+  - name: "Response"
+    atoms: [ATM-M-560, ATM-M-562, ATM-M-564, ATM-M-566]
+-->
 ---
 title: "Brain wiring, neural pruning, neurodivergent brains"
 source_file: "ChatGPT-Neuro-signatures and Pruning Explained.txt"
@@ -16,10 +28,47 @@ Updated: 3/31/2026 12:32:58
 Exported: 3/31/2026 12:32:59
 Link: https://chatgpt.com/g/g-p-681675a28d988191995dc4b68a2bc1f1-healing-spiral/c/686fe57a-59ac-8003-a04b-8d788c11d414
 
+
 ## Prompt:
+
+<!-- ATM-M-559 IN
+idea: "Can you break down neuro-signatures, pruning and neurodivergent brains how they don’t prune - is the..."
+section: "Prompt"
+position: 1
+of_total: 8
+prev: null
+context_above: null
+provenance: LOCAL
+nature: NARRATIVE
+nodes: [2, 8]
+pillar: Inner
+build_state: MISSING
+editorial: CLEAN
+strike_phase: 3A
+-->
 Can you break down neuro-signatures, pruning and neurodivergent brains how they don’t prune - is there some good visuals or videos to understand or explain better
+<!-- ATM-M-559 OUT
+next: ATM-M-560
+context_below: "Absolutely — let’s break it all down clearly first, and then I’ll give you visual/video resources to..."
+-->
 
 ## Response:
+
+<!-- ATM-M-560 IN
+idea: "Absolutely — let’s break it all down clearly first, and then I’ll give you visual/video resources to..."
+section: "Response"
+position: 2
+of_total: 8
+prev: ATM-M-559
+context_above: "Can you break down neuro-signatures, pruning and neurodivergent brains how they don’t prune - is the..."
+provenance: HYBRID
+nature: FRAMEWORK
+nodes: [2, 8]
+pillar: Inner
+build_state: EXISTS
+editorial: CLEAN
+strike_phase: 3A
+-->
 Absolutely — let’s break it all down clearly first, and then I’ll give you visual/video resources to deepen your understanding.
 
 
@@ -156,11 +205,51 @@ The neurodivergent brain in comparison?
 
 
 I can create one in a clean, visual style if helpful!
+<!-- ATM-M-560 OUT
+next: ATM-M-561
+context_below: "What is the topic or breakdown of what I’m trying to get at - can you tie it all together and explai..."
+-->
 
 ## Prompt:
+
+<!-- ATM-M-561 IN
+idea: "What is the topic or breakdown of what I’m trying to get at - can you tie it all together and explai..."
+section: "Prompt"
+position: 3
+of_total: 8
+prev: ATM-M-560
+context_above: "Absolutely — let’s break it all down clearly first, and then I’ll give you visual/video resources to..."
+provenance: LOCAL
+nature: QUESTION
+nodes: [2, 8]
+pillar: Inner
+build_state: MISSING
+editorial: CLEAN
+strike_phase: 1C
+-->
 What is the topic or breakdown of what I’m trying to get at - can you tie it all together and explain it like I’m in 3rd grade!? And then can you tie in how psychedelics helps light up the whole brain / rewire faster
+<!-- ATM-M-561 OUT
+next: ATM-M-562
+context_below: "Absolutely — let’s break this down like you're in 3rd grade, and then I’ll connect the dots with psy..."
+-->
 
 ## Response:
+
+<!-- ATM-M-562 IN
+idea: "Absolutely — let’s break this down like you're in 3rd grade, and then I’ll connect the dots with psy..."
+section: "Response"
+position: 4
+of_total: 8
+prev: ATM-M-561
+context_above: "What is the topic or breakdown of what I’m trying to get at - can you tie it all together and explai..."
+provenance: HYBRID
+nature: QUESTION
+nodes: [2, 8]
+pillar: Inner
+build_state: MISSING
+editorial: CLEAN
+strike_phase: 1C
+-->
 Absolutely — let’s break this down like you're in 3rd grade, and then I’ll connect the dots with psychedelics, neuro-signatures, pruning, and neurodivergence in a fun, simple way.
 
 
@@ -273,11 +362,51 @@ A path metaphor showing how repetition rewires
 
 
 Let me know the vibe you want (childlike, mystical, or modern?) and I’ll whip it up!
+<!-- ATM-M-562 OUT
+next: ATM-M-563
+context_below: "How does this tie into habits and the compound effect"
+-->
 
 ## Prompt:
+
+<!-- ATM-M-563 IN
+idea: "How does this tie into habits and the compound effect"
+section: "Prompt"
+position: 5
+of_total: 8
+prev: ATM-M-562
+context_above: "Absolutely — let’s break this down like you're in 3rd grade, and then I’ll connect the dots with psy..."
+provenance: LOCAL
+nature: NARRATIVE
+nodes: [2, 8]
+pillar: Inner
+build_state: MISSING
+editorial: CLEAN
+strike_phase: 3A
+-->
 How does this tie into habits and the compound effect
+<!-- ATM-M-563 OUT
+next: ATM-M-564
+context_below: "Love this question — because this is where the magic happens when you combine brain science with dai..."
+-->
 
 ## Response:
+
+<!-- ATM-M-564 IN
+idea: "Love this question — because this is where the magic happens when you combine brain science with dai..."
+section: "Response"
+position: 6
+of_total: 8
+prev: ATM-M-563
+context_above: "How does this tie into habits and the compound effect"
+provenance: HYBRID
+nature: QUESTION
+nodes: [2, 8]
+pillar: Inner
+build_state: MISSING
+editorial: CLEAN
+strike_phase: 1C
+-->
 Love this question — because this is where the magic happens when you combine brain science with daily action 🌀✨
 
 
@@ -407,11 +536,51 @@ A journal prompt sheet for post-psychedelic integration using the compound effec
 
 
 Which one would help you most right now? Or all three?
+<!-- ATM-M-564 OUT
+next: ATM-M-565
+context_below: "I need a better example that ties it together"
+-->
 
 ## Prompt:
+
+<!-- ATM-M-565 IN
+idea: "I need a better example that ties it together"
+section: "Prompt"
+position: 7
+of_total: 8
+prev: ATM-M-564
+context_above: "Love this question — because this is where the magic happens when you combine brain science with dai..."
+provenance: LOCAL
+nature: NARRATIVE
+nodes: [2, 8]
+pillar: Inner
+build_state: MISSING
+editorial: CLEAN
+strike_phase: 3A
+-->
 I need a better example that ties it together
+<!-- ATM-M-565 OUT
+next: ATM-M-566
+context_below: "Got you — let’s tie it all together in one clear, simple story that makes it click 🌲 Imagine This: T..."
+-->
 
 ## Response:
+
+<!-- ATM-M-566 IN
+idea: "Got you — let’s tie it all together in one clear, simple story that makes it click 🌲 Imagine This: T..."
+section: "Response"
+position: 8
+of_total: 8
+prev: ATM-M-565
+context_above: "I need a better example that ties it together"
+provenance: HYBRID
+nature: QUESTION
+nodes: [2, 8]
+pillar: Inner
+build_state: MISSING
+editorial: CLEAN
+strike_phase: 1C
+-->
 Got you — let’s tie it all together in one clear, simple story that makes it click 💡
 
 
@@ -543,7 +712,10 @@ Just choose your path and keep walking.
 
 
 Would you like a printable version of this forest story — like a visual map or poster you can use for journaling or explaining it to others?
-
+<!-- ATM-M-566 OUT
+next: null
+context_below: null
+-->
 
 
 Powered by ChatGPT Exporter (https://www.chatgptexporter.com)

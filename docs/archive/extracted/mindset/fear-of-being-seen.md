@@ -1,3 +1,15 @@
+<!-- DOC-ENVELOPE
+id: DOC-M-12
+total_sections: 2
+total_atoms: 8
+dominant_provenance: LOCAL
+dominant_nature: NARRATIVE
+sections:
+  - name: "Prompt"
+    atoms: [ATM-M-226, ATM-M-228, ATM-M-230, ATM-M-232]
+  - name: "Response"
+    atoms: [ATM-M-227, ATM-M-229, ATM-M-231, ATM-M-233]
+-->
 ---
 title: "Visibility wounds, witch wound, somatic healing"
 source_file: "ChatGPT-Fear of Being Seen.txt"
@@ -16,10 +28,47 @@ Updated: 3/31/2026 13:13:12
 Exported: 3/31/2026 13:13:13
 Link: https://chatgpt.com/g/g-p-681675945c108191aebfa81457898ccd-business/c/67b21778-0b38-8003-97c9-9d1e1e5fa168
 
+
 ## Prompt:
+
+<!-- ATM-M-226 IN
+idea: "What is it called when you have a problem/block when it comes to being seen? I feel like I’ve healed..."
+section: "Prompt"
+position: 1
+of_total: 8
+prev: null
+context_above: null
+provenance: LOCAL
+nature: QUESTION
+nodes: [10, 2, 9, 13]
+pillar: Identity
+build_state: MISSING
+editorial: CLEAN
+strike_phase: 1C
+-->
 What is it called when you have a problem/block when it comes to being seen? I feel like I’ve healed my money energy and taken control of my life but I think that’s holding me back is like fear of being seen
+<!-- ATM-M-226 OUT
+next: ATM-M-227
+context_below: "What you’re describing is often referred to as “visibility wounds” or a “fear of being seen."
+-->
 
 ## Response:
+
+<!-- ATM-M-227 IN
+idea: "What you’re describing is often referred to as “visibility wounds” or a “fear of being seen."
+section: "Response"
+position: 2
+of_total: 8
+prev: ATM-M-226
+context_above: "What is it called when you have a problem/block when it comes to being seen? I feel like I’ve healed..."
+provenance: HYBRID
+nature: PROTOCOL
+nodes: [10, 2, 9, 13]
+pillar: Identity
+build_state: MISSING
+editorial: CLEAN
+strike_phase: 3A
+-->
 What you’re describing is often referred to as “visibility wounds” or a “fear of being seen.” It can stem from deep-seated experiences related to shame, judgment, rejection, or even past trauma where standing out felt unsafe.
 
 
@@ -43,11 +92,51 @@ For you, with Chiron at 29° Scorpio in the 5th house, this could point to deep,
 
 
 Does any of this resonate? You might be at a point where visibility is the next energetic edge to break through.
+<!-- ATM-M-227 OUT
+next: ATM-M-228
+context_below: "Yes that resonates a lot, I’d say it’s a witch wound or childhood conditioning and then with my Scor..."
+-->
 
 ## Prompt:
+
+<!-- ATM-M-228 IN
+idea: "Yes that resonates a lot, I’d say it’s a witch wound or childhood conditioning and then with my Scor..."
+section: "Prompt"
+position: 3
+of_total: 8
+prev: ATM-M-227
+context_above: "What you’re describing is often referred to as “visibility wounds” or a “fear of being seen."
+provenance: LOCAL
+nature: NARRATIVE
+nodes: [10, 2, 9, 13]
+pillar: Identity
+build_state: MISSING
+editorial: CLEAN
+strike_phase: 3A
+-->
 Yes that resonates a lot, I’d say it’s a witch wound or childhood conditioning and then with my Scorpio placements that makes a lot of sense. How do I start working on/through that
+<!-- ATM-M-228 OUT
+next: ATM-M-229
+context_below: "Healing the witch wound, childhood conditioning, and your Scorpio placements around visibility requi..."
+-->
 
 ## Response:
+
+<!-- ATM-M-229 IN
+idea: "Healing the witch wound, childhood conditioning, and your Scorpio placements around visibility requi..."
+section: "Response"
+position: 4
+of_total: 8
+prev: ATM-M-228
+context_above: "Yes that resonates a lot, I’d say it’s a witch wound or childhood conditioning and then with my Scor..."
+provenance: HYBRID
+nature: FRAMEWORK
+nodes: [10, 2, 9, 13]
+pillar: Identity
+build_state: MISSING
+editorial: CLEAN
+strike_phase: 3A
+-->
 Healing the witch wound, childhood conditioning, and your Scorpio placements around visibility requires a mix of inner work, nervous system regulation, and intentional action to reprogram the belief that being seen is safe. Here’s a layered approach to help you start working through it:
 
 
@@ -133,14 +222,51 @@ Find a mentor or community of people also working on being seen—it’s easier 
 
 
 Would you like help crafting a first step for showing up in a way that feels safe but pushes your edge a little?
+<!-- ATM-M-229 OUT
+next: ATM-M-230
+context_below: "I’ve been working on showing up on Instagram stories consistently and I’ll go in and out of being good about posting."
+-->
 
 ## Prompt:
+
+<!-- ATM-M-230 IN
+idea: "I’ve been working on showing up on Instagram stories consistently and I’ll go in and out of being good about posting."
+section: "Prompt"
+position: 5
+of_total: 8
+prev: ATM-M-229
+context_above: "Healing the witch wound, childhood conditioning, and your Scorpio placements around visibility requi..."
+provenance: LOCAL
+nature: NARRATIVE
+nodes: [10, 2, 9, 13]
+pillar: Identity
+build_state: MISSING
+editorial: CLEAN
+strike_phase: 3A
+-->
 I’ve been working on showing up on Instagram stories consistently and I’ll go in and out of being good about posting. There for a week or so I got on lives pretty regularly too. I just feel like I’m kind of all over the place so then I get discouraged but I really want to put together a water webinar and film it so then I can post that and my website together for my official launch for Facebook
+<!-- ATM-M-230 OUT
+next: ATM-M-231
+context_below: "It sounds like you’re already pushing through the visibility barrier, which is huge!"
+-->
 
 ## Response:
-Updated saved memory
 
-
+<!-- ATM-M-231 IN
+idea: "It sounds like you’re already pushing through the visibility barrier, which is huge!"
+section: "Response"
+position: 6
+of_total: 8
+prev: ATM-M-230
+context_above: "I’ve been working on showing up on Instagram stories consistently and I’ll go in and out of being good about posting."
+provenance: HYBRID
+nature: FRAMEWORK
+nodes: [10, 2, 9, 13]
+pillar: Identity
+build_state: MISSING
+editorial: CLEAN
+strike_phase: 3A
+-->
 It sounds like you’re already pushing through the visibility barrier, which is huge! The inconsistency is likely just your nervous system adjusting—so instead of seeing it as a failure, think of it as part of the process.
 
 
@@ -186,16 +312,56 @@ Countdowns: Start a countdown for your website/webinar launch to build anticipat
 
 
 Would you like help organizing your webinar outline or planning your launch posts so it all flows together?
+<!-- ATM-M-231 OUT
+next: ATM-M-232
+context_below: "I was thinking about doing my water highlights first so I can post those as I go and am putting it t..."
+-->
 
 ## Prompt:
+
+<!-- ATM-M-232 IN
+idea: "I was thinking about doing my water highlights first so I can post those as I go and am putting it t..."
+section: "Prompt"
+position: 7
+of_total: 8
+prev: ATM-M-231
+context_above: "It sounds like you’re already pushing through the visibility barrier, which is huge!"
+provenance: LOCAL
+nature: NARRATIVE
+nodes: [10, 2, 9, 13]
+pillar: Identity
+build_state: MISSING
+editorial: CLEAN
+strike_phase: 3A
+-->
 I was thinking about doing my water highlights first so I can post those as I go and am putting it together so that’s a good teaser, I might need help with the webinar presentation in a little bit but not right now!
+<!-- ATM-M-232 OUT
+next: ATM-M-233
+context_below: "That’s a great plan! Updating your water highlights first will give people a solid foundation to exp..."
+-->
 
 ## Response:
-Updated saved memory
 
-
+<!-- ATM-M-233 IN
+idea: "That’s a great plan! Updating your water highlights first will give people a solid foundation to exp..."
+section: "Response"
+position: 8
+of_total: 8
+prev: ATM-M-232
+context_above: "I was thinking about doing my water highlights first so I can post those as I go and am putting it t..."
+provenance: HYBRID
+nature: INSTRUCTION
+nodes: [10, 2, 9, 13]
+pillar: Identity
+build_state: N/A
+editorial: CLEAN
+strike_phase: 1C
+-->
 That’s a great plan! Updating your water highlights first will give people a solid foundation to explore while you build up to the webinar. Let me know whenever you're ready for help with the webinar presentation or anything else related to your launch!
-
+<!-- ATM-M-233 OUT
+next: null
+context_below: null
+-->
 
 
 Powered by ChatGPT Exporter (https://www.chatgptexporter.com)

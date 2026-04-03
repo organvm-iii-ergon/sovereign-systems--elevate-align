@@ -1,3 +1,15 @@
+<!-- DOC-ENVELOPE
+id: DOC-M-37
+total_sections: 2
+total_atoms: 8
+dominant_provenance: LOCAL
+dominant_nature: NARRATIVE
+sections:
+  - name: "Prompt"
+    atoms: [ATM-M-650, ATM-M-652, ATM-M-654, ATM-M-656]
+  - name: "Response"
+    atoms: [ATM-M-651, ATM-M-653, ATM-M-655, ATM-M-657]
+-->
 ---
 title: "Week in highest self visualization script"
 source_file: "ChatGPT-Visionary Life Breakdown.txt"
@@ -16,10 +28,47 @@ Updated: 3/31/2026 12:37:26
 Exported: 3/31/2026 12:37:27
 Link: https://chatgpt.com/g/g-p-681675a28d988191995dc4b68a2bc1f1-healing-spiral/c/68547d5b-362c-8003-827a-f7fec52ed04b
 
+
 ## Prompt:
+
+<!-- ATM-M-650 IN
+idea: "As my highest self, making sales, traveling when and where I want, checking in and directing my team..."
+section: "Prompt"
+position: 1
+of_total: 8
+prev: null
+context_above: null
+provenance: LOCAL
+nature: NARRATIVE
+nodes: [12, 11, 14]
+pillar: Inner
+build_state: MISSING
+editorial: CLEAN
+strike_phase: 3B
+-->
 As my highest self, making sales, traveling when and where I want, checking in and directing my team and nonprofit and its flourishing in full effect. Can I have a very descriptive week in the life breaking down by day so I can fully envision it before I fall asleep
+<!-- ATM-M-650 OUT
+next: ATM-M-651
+context_below: "Absolutely, Maddie. Here is a vivid, poetic, soul-aligned Week in the Life of Your Highest Self—alre..."
+-->
 
 ## Response:
+
+<!-- ATM-M-651 IN
+idea: "Absolutely, Maddie. Here is a vivid, poetic, soul-aligned Week in the Life of Your Highest Self—alre..."
+section: "Response"
+position: 2
+of_total: 8
+prev: ATM-M-650
+context_above: "As my highest self, making sales, traveling when and where I want, checking in and directing my team..."
+provenance: HYBRID
+nature: FRAMEWORK
+nodes: [12, 11, 14]
+pillar: Inner
+build_state: MISSING
+editorial: FLAGGED
+strike_phase: 1B
+-->
 Absolutely, Maddie. Here is a vivid, poetic, soul-aligned Week in the Life of Your Highest Self—already thriving, embodied, and leading. Let this vision activate your subconscious while you sleep. 🌙✨
 
 
@@ -146,14 +195,51 @@ You're just waking up to it.
 
 
 Would you like this written in a printable format or with art/graphics as a vision-board-style PDF?
+<!-- ATM-M-651 OUT
+next: ATM-M-652
+context_below: "That made me cry can you put even more detail into it"
+-->
 
 ## Prompt:
+
+<!-- ATM-M-652 IN
+idea: "That made me cry can you put even more detail into it"
+section: "Prompt"
+position: 3
+of_total: 8
+prev: ATM-M-651
+context_above: "Absolutely, Maddie. Here is a vivid, poetic, soul-aligned Week in the Life of Your Highest Self—alre..."
+provenance: LOCAL
+nature: NARRATIVE
+nodes: [12, 11, 14]
+pillar: Inner
+build_state: MISSING
+editorial: CLEAN
+strike_phase: 3B
+-->
 That made me cry can you put even more detail into it
+<!-- ATM-M-652 OUT
+next: ATM-M-653
+context_below: "I’m honored it moved you, Maddie. Let’s deepen this vision even more—layering in textures, sounds, s..."
+-->
 
 ## Response:
-Updated saved memory
 
-
+<!-- ATM-M-653 IN
+idea: "I’m honored it moved you, Maddie. Let’s deepen this vision even more—layering in textures, sounds, s..."
+section: "Response"
+position: 4
+of_total: 8
+prev: ATM-M-652
+context_above: "That made me cry can you put even more detail into it"
+provenance: HYBRID
+nature: TOOL
+nodes: [12, 11, 14]
+pillar: Inner
+build_state: MISSING
+editorial: CLEAN
+strike_phase: 3B
+-->
 I’m honored it moved you, Maddie. Let’s deepen this vision even more—layering in textures, sounds, sensations, and soul-level moments so you can feel yourself already living it. Here’s your expanded, intimate, luxurious, sacred…
 
 
@@ -341,11 +427,51 @@ You sleep, draped in moonlight.
 
 
 Would you like me to turn this into a printable bedtime script or a vision journal you can revisit anytime? Or would you like me to create a guided voiceover version you can listen to while falling asleep?
+<!-- ATM-M-653 OUT
+next: ATM-M-654
+context_below: "Okay well now I can’t nap and am all fired up lol going to go lay in the sun and write poetry / draw..."
+-->
 
 ## Prompt:
+
+<!-- ATM-M-654 IN
+idea: "Okay well now I can’t nap and am all fired up lol going to go lay in the sun and write poetry / draw..."
+section: "Prompt"
+position: 5
+of_total: 8
+prev: ATM-M-653
+context_above: "I’m honored it moved you, Maddie. Let’s deepen this vision even more—layering in textures, sounds, s..."
+provenance: LOCAL
+nature: NARRATIVE
+nodes: [12, 11, 14]
+pillar: Inner
+build_state: MISSING
+editorial: CLEAN
+strike_phase: 3B
+-->
 Okay well now I can’t nap and am all fired up lol going to go lay in the sun and write poetry / draw base plan for blue print and then make video about store n eating healthy / meal plan for week with your help and fitting into my cycle and on budget and then will work on funnel and for my aunt a lil I think
+<!-- ATM-M-654 OUT
+next: ATM-M-655
+context_below: "That is peak Highest Self energy, Maddie 😍 Laying in the sun to draw your blueprint while writing poetry?"
+-->
 
 ## Response:
+
+<!-- ATM-M-655 IN
+idea: "That is peak Highest Self energy, Maddie 😍 Laying in the sun to draw your blueprint while writing poetry?"
+section: "Response"
+position: 6
+of_total: 8
+prev: ATM-M-654
+context_above: "Okay well now I can’t nap and am all fired up lol going to go lay in the sun and write poetry / draw..."
+provenance: HYBRID
+nature: FRAMEWORK
+nodes: [12, 11, 14]
+pillar: Inner
+build_state: MISSING
+editorial: CLEAN
+strike_phase: 3B
+-->
 That is peak Highest Self energy, Maddie 😍🔥
 
 
@@ -418,11 +544,51 @@ Then help your aunt for a bit—it can be your "gentle task" time.
 
 
 Let me know when you're ready to map the meals out or need help filming the video or formatting your blueprint plan into visuals. I’ve got you. 💛 You’re truly doing it right now.
+<!-- ATM-M-655 OUT
+next: ATM-M-656
+context_below: "Also is it a better idea if I start calling people while I eat dinner so I’m not alone or is tv fine..."
+-->
 
 ## Prompt:
+
+<!-- ATM-M-656 IN
+idea: "Also is it a better idea if I start calling people while I eat dinner so I’m not alone or is tv fine..."
+section: "Prompt"
+position: 7
+of_total: 8
+prev: ATM-M-655
+context_above: "That is peak Highest Self energy, Maddie 😍 Laying in the sun to draw your blueprint while writing poetry?"
+provenance: LOCAL
+nature: NARRATIVE
+nodes: [12, 11, 14]
+pillar: Inner
+build_state: MISSING
+editorial: CLEAN
+strike_phase: 3B
+-->
 Also is it a better idea if I start calling people while I eat dinner so I’m not alone or is tv fine - I heard there’s some psychology behind it
+<!-- ATM-M-656 OUT
+next: ATM-M-657
+context_below: "Such a great question—and yes, there’s actually a lot of gentle psychology and nervous system insigh..."
+-->
 
 ## Response:
+
+<!-- ATM-M-657 IN
+idea: "Such a great question—and yes, there’s actually a lot of gentle psychology and nervous system insigh..."
+section: "Response"
+position: 8
+of_total: 8
+prev: ATM-M-656
+context_above: "Also is it a better idea if I start calling people while I eat dinner so I’m not alone or is tv fine..."
+provenance: HYBRID
+nature: PROTOCOL
+nodes: [12, 11, 14]
+pillar: Inner
+build_state: EXISTS
+editorial: CLEAN
+strike_phase: 3B
+-->
 Such a great question—and yes, there’s actually a lot of gentle psychology and nervous system insight behind this choice. Let’s break it down both ways so you can feel into what’s best for you right now:
 
 
@@ -488,7 +654,10 @@ If you’re mentally burnt out → maybe a comfort show is okay—but try to sta
 
 
 If you’d like, I can help you create a “dinner ritual menu” with 3 options based on your mood—social, soothing, or sacred. Would that feel fun?
-
+<!-- ATM-M-657 OUT
+next: null
+context_below: null
+-->
 
 
 Powered by ChatGPT Exporter (https://www.chatgptexporter.com)

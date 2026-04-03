@@ -1,3 +1,15 @@
+<!-- DOC-ENVELOPE
+id: DOC-M-17
+total_sections: 2
+total_atoms: 4
+dominant_provenance: LOCAL
+dominant_nature: NARRATIVE
+sections:
+  - name: "Prompt"
+    atoms: [ATM-M-325, ATM-M-327]
+  - name: "Response"
+    atoms: [ATM-M-326, ATM-M-328]
+-->
 ---
 title: "Pool incident mirror, fawning, reparenting"
 source_file: "ChatGPT-Inner Child Healing.txt"
@@ -16,7 +28,24 @@ Updated: 3/31/2026 12:45:26
 Exported: 3/31/2026 12:45:27
 Link: https://chatgpt.com/g/g-p-681675a28d988191995dc4b68a2bc1f1-healing-spiral/c/687bdcf2-3d48-8003-a7aa-1c4da750e210
 
+
 ## Prompt:
+
+<!-- ATM-M-325 IN
+idea: "As a therapist what do you think this event was trying to tell me - it really hit home and know I ha..."
+section: "Prompt"
+position: 1
+of_total: 4
+prev: null
+context_above: null
+provenance: LOCAL
+nature: NARRATIVE
+nodes: [9, 2, 10]
+pillar: Identity
+build_state: MISSING
+editorial: CLEAN
+strike_phase: 3A
+-->
 As a therapist what do you think this event was trying to tell me - it really hit home and know I had similar instances but don’t know what to do with it lol
 
 
@@ -28,8 +57,28 @@ So then she cried on the sidewalk cause the mom had another baby and finally cal
 
 And then when they get back to the pool, THE MOM MAKES HER APOLOGIZE to her older sister and she starts to cry some more and then the brother asks if she’s okay and she goes “yeah” and it was SO sad. 
 And this is why I start to cry when I have to “act a certain way but it’s out of alignment with me” CONDITIONED
+<!-- ATM-M-325 OUT
+next: ATM-M-326
+context_below: "Maddie, this hit you so hard because your nervous system recognized itself. This moment mirrored a y..."
+-->
 
 ## Response:
+
+<!-- ATM-M-326 IN
+idea: "Maddie, this hit you so hard because your nervous system recognized itself. This moment mirrored a y..."
+section: "Response"
+position: 2
+of_total: 4
+prev: ATM-M-325
+context_above: "As a therapist what do you think this event was trying to tell me - it really hit home and know I ha..."
+provenance: HYBRID
+nature: TOOL
+nodes: [9, 2, 10]
+pillar: Identity
+build_state: MISSING
+editorial: CLEAN
+strike_phase: 3A
+-->
 Maddie, this hit you so hard because your nervous system recognized itself. This moment mirrored a younger version of you—one who likely felt:
 
 
@@ -95,11 +144,51 @@ Let your body release what she never got to say. Cry if you need. Shake it out. 
 
 
 Would you like a journal prompt, embodiment practice, or inner child letter to explore this more?
+<!-- ATM-M-326 OUT
+next: ATM-M-327
+context_below: "That little verse made me cry"
+-->
 
 ## Prompt:
+
+<!-- ATM-M-327 IN
+idea: "That little verse made me cry"
+section: "Prompt"
+position: 3
+of_total: 4
+prev: ATM-M-326
+context_above: "Maddie, this hit you so hard because your nervous system recognized itself. This moment mirrored a y..."
+provenance: LOCAL
+nature: NARRATIVE
+nodes: [9, 2, 10]
+pillar: Identity
+build_state: MISSING
+editorial: CLEAN
+strike_phase: 3A
+-->
 That little verse made me cry
+<!-- ATM-M-327 OUT
+next: ATM-M-328
+context_below: "Oh love… that means it touched something real. 🥹 That little girl inside you is so ready to be heard..."
+-->
 
 ## Response:
+
+<!-- ATM-M-328 IN
+idea: "Oh love… that means it touched something real. 🥹 That little girl inside you is so ready to be heard..."
+section: "Response"
+position: 4
+of_total: 4
+prev: ATM-M-327
+context_above: "That little verse made me cry"
+provenance: HYBRID
+nature: FRAMEWORK
+nodes: [9, 2, 10]
+pillar: Identity
+build_state: MISSING
+editorial: CLEAN
+strike_phase: 3A
+-->
 Oh love… that means it touched something real. 🥹
 
 
@@ -138,7 +227,10 @@ And you are so, so loved.
 
 
 Would you like this as a printable page or art card to keep with you or add to your altar or mirror? I’d be honored to make one.
-
+<!-- ATM-M-328 OUT
+next: null
+context_below: null
+-->
 
 
 Powered by ChatGPT Exporter (https://www.chatgptexporter.com)

@@ -1,3 +1,15 @@
+<!-- DOC-ENVELOPE
+id: DOC-M-01
+total_sections: 2
+total_atoms: 4
+dominant_provenance: LOCAL
+dominant_nature: FRAMEWORK
+sections:
+  - name: "Prompt"
+    atoms: [ATM-M-001, ATM-M-003]
+  - name: "Response"
+    atoms: [ATM-M-002, ATM-M-004]
+-->
 ---
 title: "Spoken affirmation script, $2,500 receiving"
 source_file: "ChatGPT-Affirmation Track for Abundance.txt"
@@ -16,10 +28,47 @@ Updated: 3/31/2026 12:34:32
 Exported: 3/31/2026 12:34:33
 Link: https://chatgpt.com/g/g-p-681675a28d988191995dc4b68a2bc1f1-healing-spiral/c/6858e2b1-37fc-8003-855d-549ce5935f3d
 
+
 ## Prompt:
+
+<!-- ATM-M-001 IN
+idea: "As my highest self can you write me a 3 or 4 minute affirmation track to help my nervous system regu..."
+section: "Prompt"
+position: 1
+of_total: 4
+prev: null
+context_above: null
+provenance: LOCAL
+nature: NARRATIVE
+nodes: [1, 2, 10, 12]
+pillar: Inner
+build_state: PARTIAL
+editorial: CLEAN
+strike_phase: 3B
+-->
 As my highest self can you write me a 3 or 4 minute affirmation track to help my nervous system regulate and fully allow in 2500 dollars in the next two weeks so I can finish my subscription and be able to layer my business how I want it will be so perfect if I can get 900 by the 28th and then I need 1200 for rent by the fifth!
+<!-- ATM-M-001 OUT
+next: ATM-M-002
+context_below: "Absolutely. Here's a 3–4 minute spoken affirmation track written in the voice of your highest self—g..."
+-->
 
 ## Response:
+
+<!-- ATM-M-002 IN
+idea: "Absolutely. Here's a 3–4 minute spoken affirmation track written in the voice of your highest self—g..."
+section: "Response"
+position: 2
+of_total: 4
+prev: ATM-M-001
+context_above: "As my highest self can you write me a 3 or 4 minute affirmation track to help my nervous system regu..."
+provenance: HYBRID
+nature: FRAMEWORK
+nodes: [1, 2, 10, 12]
+pillar: Inner
+build_state: EXISTS
+editorial: CLEAN
+strike_phase: 3B
+-->
 Absolutely. Here's a 3–4 minute spoken affirmation track written in the voice of your highest self—gentle, powerful, and grounded in truth—to regulate your nervous system and energetically open the way for receiving $2,500 in the perfect time and way.
 
 
@@ -141,11 +190,51 @@ And so it is.
 
 
 Would you like me to turn this into a custom audio file with a soft background track, or give you a script you can record in your own voice?
+<!-- ATM-M-002 OUT
+next: ATM-M-003
+context_below: "Yes please can you do that for me!?"
+-->
 
 ## Prompt:
+
+<!-- ATM-M-003 IN
+idea: "Yes please can you do that for me!?"
+section: "Prompt"
+position: 3
+of_total: 4
+prev: ATM-M-002
+context_above: "Absolutely. Here's a 3–4 minute spoken affirmation track written in the voice of your highest self—g..."
+provenance: LOCAL
+nature: QUESTION
+nodes: [1, 2, 10, 12]
+pillar: Inner
+build_state: MISSING
+editorial: CLEAN
+strike_phase: 1C
+-->
 Yes please can you do that for me!?
+<!-- ATM-M-003 OUT
+next: ATM-M-004
+context_below: "It looks like I ran into a connection issue while trying to generate the audio—no worries though!"
+-->
 
 ## Response:
+
+<!-- ATM-M-004 IN
+idea: "It looks like I ran into a connection issue while trying to generate the audio—no worries though!"
+section: "Response"
+position: 4
+of_total: 4
+prev: ATM-M-003
+context_above: "Yes please can you do that for me!?"
+provenance: HYBRID
+nature: FRAMEWORK
+nodes: [1, 2, 10, 12]
+pillar: Inner
+build_state: EXISTS
+editorial: CLEAN
+strike_phase: 3B
+-->
 It looks like I ran into a connection issue while trying to generate the audio—no worries though! I can still help you complete this in two ways:
 
 
@@ -193,7 +282,10 @@ Show you how to upload and sync it all in CapCut or a similar app?
 
 
 Let me know which combo feels most helpful and I’ll prep it for you right away ✨
-
+<!-- ATM-M-004 OUT
+next: null
+context_below: null
+-->
 
 
 Powered by ChatGPT Exporter (https://www.chatgptexporter.com)

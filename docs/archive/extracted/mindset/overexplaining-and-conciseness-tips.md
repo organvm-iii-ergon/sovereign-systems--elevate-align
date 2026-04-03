@@ -1,3 +1,15 @@
+<!-- DOC-ENVELOPE
+id: DOC-M-25
+total_sections: 2
+total_atoms: 4
+dominant_provenance: LOCAL
+dominant_nature: NARRATIVE
+sections:
+  - name: "Prompt"
+    atoms: [ATM-M-567, ATM-M-569]
+  - name: "Response"
+    atoms: [ATM-M-568, ATM-M-570]
+-->
 ---
 title: "Roots of overexplaining, 5-min confidence drill"
 source_file: "ChatGPT-Overexplaining and Conciseness Tips.txt"
@@ -16,10 +28,47 @@ Updated: 3/30/2026 21:42:51
 Exported: 3/31/2026 14:03:37
 Link: https://chatgpt.com/c/69c9eab8-6eb4-83e8-91fa-2fc698abd57a
 
+
 ## Prompt:
+
+<!-- ATM-M-567 IN
+idea: "Where does the need to over explain come from and how can I work on my posture & being more concise ..."
+section: "Prompt"
+position: 1
+of_total: 4
+prev: null
+context_above: null
+provenance: LOCAL
+nature: NARRATIVE
+nodes: [4, 13, 10]
+pillar: Identity
+build_state: MISSING
+editorial: CLEAN
+strike_phase: 3B
+-->
 Where does the need to over explain come from and how can I work on my posture & being more concise when I speak
+<!-- ATM-M-567 OUT
+next: ATM-M-568
+context_below: "Ah, yes—overexplaining is such a common pattern, and it usually comes from a mix of internal drives ..."
+-->
 
 ## Response:
+
+<!-- ATM-M-568 IN
+idea: "Ah, yes—overexplaining is such a common pattern, and it usually comes from a mix of internal drives ..."
+section: "Response"
+position: 2
+of_total: 4
+prev: ATM-M-567
+context_above: "Where does the need to over explain come from and how can I work on my posture & being more concise ..."
+provenance: HYBRID
+nature: QUESTION
+nodes: [4, 13, 10]
+pillar: Identity
+build_state: MISSING
+editorial: CLEAN
+strike_phase: 1C
+-->
 Ah, yes—overexplaining is such a common pattern, and it usually comes from a mix of internal drives and external conditioning. Let’s break it down carefully:
 
 
@@ -94,11 +143,51 @@ If you want, I can give you a 3-step daily drill that trains both posture and co
 
 
 Do you want me to do that?
+<!-- ATM-M-568 OUT
+next: ATM-M-569
+context_below: "Yes please!"
+-->
 
 ## Prompt:
+
+<!-- ATM-M-569 IN
+idea: "Yes please!"
+section: "Prompt"
+position: 3
+of_total: 4
+prev: ATM-M-568
+context_above: "Ah, yes—overexplaining is such a common pattern, and it usually comes from a mix of internal drives ..."
+provenance: LOCAL
+nature: NARRATIVE
+nodes: [4, 13, 10]
+pillar: Identity
+build_state: MISSING
+editorial: CLEAN
+strike_phase: 3B
+-->
 Yes please!
+<!-- ATM-M-569 OUT
+next: ATM-M-570
+context_below: "Perfect—this is where it clicks into embodiment, not just awareness. This 5-minute drill is designed..."
+-->
 
 ## Response:
+
+<!-- ATM-M-570 IN
+idea: "Perfect—this is where it clicks into embodiment, not just awareness. This 5-minute drill is designed..."
+section: "Response"
+position: 4
+of_total: 4
+prev: ATM-M-569
+context_above: "Yes please!"
+provenance: HYBRID
+nature: FRAMEWORK
+nodes: [4, 13, 10]
+pillar: Identity
+build_state: MISSING
+editorial: CLEAN
+strike_phase: 3B
+-->
 Perfect—this is where it clicks into embodiment, not just awareness. This 5-minute drill is designed to retrain your nervous system, your voice, and your thinking all at once.
 
 
@@ -238,7 +327,10 @@ You’re not losing depth—you’re leading with it instead of burying it.
 
 
 If you want next level: I can tailor this to your business conversations, sales calls, and content so you sound magnetic and concise (especially with your funnel + water conversations).
-
+<!-- ATM-M-570 OUT
+next: null
+context_below: null
+-->
 
 
 Powered by ChatGPT Exporter (https://www.chatgptexporter.com)

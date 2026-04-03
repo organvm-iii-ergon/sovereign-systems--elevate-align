@@ -1,3 +1,15 @@
+<!-- DOC-ENVELOPE
+id: DOC-M-03
+total_sections: 2
+total_atoms: 10
+dominant_provenance: LOCAL
+dominant_nature: NARRATIVE
+sections:
+  - name: "Prompt"
+    atoms: [ATM-M-027, ATM-M-029, ATM-M-031, ATM-M-033, ATM-M-035]
+  - name: "Response"
+    atoms: [ATM-M-028, ATM-M-030, ATM-M-032, ATM-M-034, ATM-M-036]
+-->
 ---
 title: "Feel or Free emotional sorting practice"
 source_file: "ChatGPT-Anger Processing Guide.txt"
@@ -16,10 +28,47 @@ Updated: 3/31/2026 12:42:33
 Exported: 3/31/2026 12:42:34
 Link: https://chatgpt.com/g/g-p-681675a28d988191995dc4b68a2bc1f1-healing-spiral/c/67ff2ba6-c50c-8003-8137-fa25fe3f2f3e
 
+
 ## Prompt:
+
+<!-- ATM-M-027 IN
+idea: "From a therapists and my highest self’s stand point, how do I know when it’s good to feel the anger ..."
+section: "Prompt"
+position: 1
+of_total: 10
+prev: null
+context_above: null
+provenance: LOCAL
+nature: NARRATIVE
+nodes: [2, 3, 9]
+pillar: Inner
+build_state: MISSING
+editorial: CLEAN
+strike_phase: 3A
+-->
 From a therapists and my highest self’s stand point, how do I know when it’s good to feel the anger and just let myself be mad and process through it/let it go vs when I’m holding myself there and need to get my mind off of it or just drop it cause it doesn’t mayter
+<!-- ATM-M-027 OUT
+next: ATM-M-028
+context_below: "This is such a powerful and important question, and the fact that you’re asking it shows real self-awareness."
+-->
 
 ## Response:
+
+<!-- ATM-M-028 IN
+idea: "This is such a powerful and important question, and the fact that you’re asking it shows real self-awareness."
+section: "Response"
+position: 2
+of_total: 10
+prev: ATM-M-027
+context_above: "From a therapists and my highest self’s stand point, how do I know when it’s good to feel the anger ..."
+provenance: HYBRID
+nature: TOOL
+nodes: [2, 3, 9]
+pillar: Inner
+build_state: PARTIAL
+editorial: FLAGGED
+strike_phase: 1B
+-->
 This is such a powerful and important question, and the fact that you’re asking it shows real self-awareness. Here’s a breakdown from both a therapist’s lens and your highest self’s perspective to help you distinguish between when to feel the anger vs when to let it go or redirect:
 
 
@@ -104,11 +153,51 @@ Do I want to be right… or free?
 
 
 Would you like a little “emotional sorting” practice or ritual to help you drop in and check which one it is in the moment?
+<!-- ATM-M-028 OUT
+next: ATM-M-029
+context_below: "Yes please thank you !!"
+-->
 
 ## Prompt:
+
+<!-- ATM-M-029 IN
+idea: "Yes please thank you !!"
+section: "Prompt"
+position: 3
+of_total: 10
+prev: ATM-M-028
+context_above: "This is such a powerful and important question, and the fact that you’re asking it shows real self-awareness."
+provenance: LOCAL
+nature: NARRATIVE
+nodes: [2, 3, 9]
+pillar: Inner
+build_state: MISSING
+editorial: CLEAN
+strike_phase: 3A
+-->
 Yes please thank you !!
+<!-- ATM-M-029 OUT
+next: ATM-M-030
+context_below: "You’re so welcome! Here’s a gentle emotional sorting practice you can use any time you’re unsure if ..."
+-->
 
 ## Response:
+
+<!-- ATM-M-030 IN
+idea: "You’re so welcome! Here’s a gentle emotional sorting practice you can use any time you’re unsure if ..."
+section: "Response"
+position: 4
+of_total: 10
+prev: ATM-M-029
+context_above: "Yes please thank you !!"
+provenance: HYBRID
+nature: TOOL
+nodes: [2, 3, 9]
+pillar: Inner
+build_state: MISSING
+editorial: CLEAN
+strike_phase: 3A
+-->
 You’re so welcome! Here’s a gentle emotional sorting practice you can use any time you’re unsure if it’s time to feel or free the anger. Think of it like an emotional compass that helps you tune into truth over reaction.
 
 
@@ -215,11 +304,51 @@ You can even light a candle or burn a bay leaf with the word “release” if yo
 
 
 Would you like me to turn this into a printable version or something poetic you can read in the moment?
+<!-- ATM-M-030 OUT
+next: ATM-M-031
+context_below: "So it’s okay to feel it until I understand it and then I can step back into alignment/mt power did I..."
+-->
 
 ## Prompt:
+
+<!-- ATM-M-031 IN
+idea: "So it’s okay to feel it until I understand it and then I can step back into alignment/mt power did I..."
+section: "Prompt"
+position: 5
+of_total: 10
+prev: ATM-M-030
+context_above: "You’re so welcome! Here’s a gentle emotional sorting practice you can use any time you’re unsure if ..."
+provenance: LOCAL
+nature: QUESTION
+nodes: [2, 3, 9]
+pillar: Inner
+build_state: MISSING
+editorial: CLEAN
+strike_phase: 1C
+-->
 So it’s okay to feel it until I understand it and then I can step back into alignment/mt power did I understand that right?
+<!-- ATM-M-031 OUT
+next: ATM-M-032
+context_below: "Yes—exactly right. It’s absolutely okay to feel it—fully, honestly, rawly—until you understand it, i..."
+-->
 
 ## Response:
+
+<!-- ATM-M-032 IN
+idea: "Yes—exactly right. It’s absolutely okay to feel it—fully, honestly, rawly—until you understand it, i..."
+section: "Response"
+position: 6
+of_total: 10
+prev: ATM-M-031
+context_above: "So it’s okay to feel it until I understand it and then I can step back into alignment/mt power did I..."
+provenance: HYBRID
+nature: SCRIPT
+nodes: [2, 3, 9]
+pillar: Inner
+build_state: MISSING
+editorial: CLEAN
+strike_phase: 3A
+-->
 Yes—exactly right.
 
 
@@ -240,11 +369,51 @@ And when you're in that in-between space—half-integrated but still simmering�
 “I’m not done yet, but I’m not lost either. I’m listening.”
 
 You’re doing beautifully. Want a one-liner or mantra to carry with you as a reminder?
+<!-- ATM-M-032 OUT
+next: ATM-M-033
+context_below: "I do not like being angry lol k don’t know how to feel it or what to do it feels like it consumes me..."
+-->
 
 ## Prompt:
+
+<!-- ATM-M-033 IN
+idea: "I do not like being angry lol k don’t know how to feel it or what to do it feels like it consumes me..."
+section: "Prompt"
+position: 7
+of_total: 10
+prev: ATM-M-032
+context_above: "Yes—exactly right. It’s absolutely okay to feel it—fully, honestly, rawly—until you understand it, i..."
+provenance: LOCAL
+nature: NARRATIVE
+nodes: [2, 3, 9]
+pillar: Inner
+build_state: MISSING
+editorial: CLEAN
+strike_phase: 3A
+-->
 I do not like being angry lol k don’t know how to feel it or what to do it feels like it consumes me and I can’t focus on anything else lol this has only happened two or three times now idk if it’s cause I’m so tired/triggered or if it’s cause I’m finally allowing myself to feel all the things without needing to understand or repress anything
+<!-- ATM-M-033 OUT
+next: ATM-M-034
+context_below: "That makes so much sense, and you’re not alone in this at all. Anger—especially when you’re not used..."
+-->
 
 ## Response:
+
+<!-- ATM-M-034 IN
+idea: "That makes so much sense, and you’re not alone in this at all. Anger—especially when you’re not used..."
+section: "Response"
+position: 8
+of_total: 10
+prev: ATM-M-033
+context_above: "I do not like being angry lol k don’t know how to feel it or what to do it feels like it consumes me..."
+provenance: HYBRID
+nature: FRAMEWORK
+nodes: [2, 3, 9]
+pillar: Inner
+build_state: PARTIAL
+editorial: CLEAN
+strike_phase: 3A
+-->
 That makes so much sense, and you’re not alone in this at all. Anger—especially when you’re not used to letting it fully exist—can feel overwhelming, like wildfire. It’s not logical, tidy, or easy to compartmentalize, especially if you’ve spent most of your life managing emotions instead of expressing them.
 
 
@@ -297,11 +466,51 @@ And here's a one-liner mantra for you:
 “It’s safe to feel this. I’m not broken—I’m clearing.”
 
 Want me to write that into a grounding, poetic affirmation for when you feel like it’s too much?
+<!-- ATM-M-034 OUT
+next: ATM-M-035
+context_below: "Yes please that would be perfect this is all so great"
+-->
 
 ## Prompt:
+
+<!-- ATM-M-035 IN
+idea: "Yes please that would be perfect this is all so great"
+section: "Prompt"
+position: 9
+of_total: 10
+prev: ATM-M-034
+context_above: "That makes so much sense, and you’re not alone in this at all. Anger—especially when you’re not used..."
+provenance: LOCAL
+nature: NARRATIVE
+nodes: [2, 3, 9]
+pillar: Inner
+build_state: MISSING
+editorial: CLEAN
+strike_phase: 3A
+-->
 Yes please that would be perfect this is all so great
+<!-- ATM-M-035 OUT
+next: ATM-M-036
+context_below: "I’m so glad it’s resonating—here’s a grounding, poetic affirmation for you to read (or even record f..."
+-->
 
 ## Response:
+
+<!-- ATM-M-036 IN
+idea: "I’m so glad it’s resonating—here’s a grounding, poetic affirmation for you to read (or even record f..."
+section: "Response"
+position: 10
+of_total: 10
+prev: ATM-M-035
+context_above: "Yes please that would be perfect this is all so great"
+provenance: HYBRID
+nature: SCRIPT
+nodes: [2, 3, 9]
+pillar: Inner
+build_state: MISSING
+editorial: CLEAN
+strike_phase: 3A
+-->
 I’m so glad it’s resonating—here’s a grounding, poetic affirmation for you to read (or even record for yourself) whenever the anger feels too much:
 
 
@@ -347,7 +556,10 @@ I am returning to myself.
 
 
 Would you like a short version for your Notes app or to use as a lock screen too?
-
+<!-- ATM-M-036 OUT
+next: null
+context_below: null
+-->
 
 
 Powered by ChatGPT Exporter (https://www.chatgptexporter.com)

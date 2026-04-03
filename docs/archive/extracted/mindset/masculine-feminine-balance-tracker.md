@@ -1,3 +1,15 @@
+<!-- DOC-ENVELOPE
+id: DOC-M-20
+total_sections: 2
+total_atoms: 14
+dominant_provenance: LOCAL
+dominant_nature: NARRATIVE
+sections:
+  - name: "Prompt"
+    atoms: [ATM-M-506, ATM-M-508, ATM-M-510, ATM-M-512, ATM-M-514, ATM-M-516, ATM-M-518]
+  - name: "Response"
+    atoms: [ATM-M-507, ATM-M-509, ATM-M-511, ATM-M-513, ATM-M-515, ATM-M-517, ATM-M-519]
+-->
 ---
 title: "Yang/Yin task lists, daily check-in template"
 source_file: "ChatGPT-Masculine Feminine Balance Tracker.txt"
@@ -16,10 +28,47 @@ Updated: 3/31/2026 12:35:39
 Exported: 3/31/2026 12:35:40
 Link: https://chatgpt.com/g/g-p-681675a28d988191995dc4b68a2bc1f1-healing-spiral/c/68158e07-cadc-8003-b96c-77e452e2f86f
 
+
 ## Prompt:
+
+<!-- ATM-M-506 IN
+idea: "Can you help me come up with a list of masculine based and feminine based daily tasks and a way I ca..."
+section: "Prompt"
+position: 1
+of_total: 14
+prev: null
+context_above: null
+provenance: LOCAL
+nature: NARRATIVE
+nodes: [5, 3, 11]
+pillar: Inner
+build_state: MISSING
+editorial: CLEAN
+strike_phase: 3B
+-->
 Can you help me come up with a list of masculine based and feminine based daily tasks and a way I can use it to check in with myself because I’m always too hard on myself about not doing enough but ik I need rest and nurture too just don’t know how to find that balance
+<!-- ATM-M-506 OUT
+next: ATM-M-507
+context_below: "Absolutely, Maddie — this is such a powerful step toward honoring both your drive and your softness."
+-->
 
 ## Response:
+
+<!-- ATM-M-507 IN
+idea: "Absolutely, Maddie — this is such a powerful step toward honoring both your drive and your softness."
+section: "Response"
+position: 2
+of_total: 14
+prev: ATM-M-506
+context_above: "Can you help me come up with a list of masculine based and feminine based daily tasks and a way I ca..."
+provenance: HYBRID
+nature: FRAMEWORK
+nodes: [5, 3, 11]
+pillar: Inner
+build_state: PARTIAL
+editorial: CLEAN
+strike_phase: 3B
+-->
 Absolutely, Maddie — this is such a powerful step toward honoring both your drive and your softness. Let’s create a daily check-in system that brings awareness to how you're engaging with both your masculine (yang) and feminine (yin) energies — not to “balance perfectly,” but to notice and nourish what’s needed each day.
 
 
@@ -118,11 +167,51 @@ At the beginning of each week:
 
 
 Would you like me to turn this into a printable or Notion template for you?
+<!-- ATM-M-507 OUT
+next: ATM-M-508
+context_below: "Ooo yes please I think this is so great, i definitely had a lot of the masculine led tasks in the fe..."
+-->
 
 ## Prompt:
+
+<!-- ATM-M-508 IN
+idea: "Ooo yes please I think this is so great, i definitely had a lot of the masculine led tasks in the fe..."
+section: "Prompt"
+position: 3
+of_total: 14
+prev: ATM-M-507
+context_above: "Absolutely, Maddie — this is such a powerful step toward honoring both your drive and your softness."
+provenance: LOCAL
+nature: NARRATIVE
+nodes: [5, 3, 11]
+pillar: Inner
+build_state: MISSING
+editorial: CLEAN
+strike_phase: 3B
+-->
 Ooo yes please I think this is so great, i definitely had a lot of the masculine led tasks in the feminine list in my brain and so that makes me feel better and not like I’m not lolly gagging around, content and cleaning and organizing and shopping and planning and cooking for survival are all yang based I’m too hard on myself
+<!-- ATM-M-508 OUT
+next: ATM-M-509
+context_below: "Yes, exactly — and I’m so glad this clicked. You are not lollygagging — you’re actively holding the ..."
+-->
 
 ## Response:
+
+<!-- ATM-M-509 IN
+idea: "Yes, exactly — and I’m so glad this clicked. You are not lollygagging — you’re actively holding the ..."
+section: "Response"
+position: 4
+of_total: 14
+prev: ATM-M-508
+context_above: "Ooo yes please I think this is so great, i definitely had a lot of the masculine led tasks in the fe..."
+provenance: HYBRID
+nature: SCRIPT
+nodes: [5, 3, 11]
+pillar: Inner
+build_state: PARTIAL
+editorial: CLEAN
+strike_phase: 3B
+-->
 Yes, exactly — and I’m so glad this clicked. You are not lollygagging — you’re actively holding the container for your life, and that is powerful yang energy. Just because it doesn’t “look” like hustle culture productivity doesn’t mean it’s not structured, directed, and deeply valuable.
 
 
@@ -146,11 +235,51 @@ A few soft reminders and affirmations to go easier on yourself
 
 
 Give me a moment to create that and I’ll drop the download link here! Do you want it in a minimalist style or something more soft and feminine with a little color or illustration?
+<!-- ATM-M-509 OUT
+next: ATM-M-510
+context_below: "Softer wirh a little color or illustration would be so great thank you!"
+-->
 
 ## Prompt:
+
+<!-- ATM-M-510 IN
+idea: "Softer wirh a little color or illustration would be so great thank you!"
+section: "Prompt"
+position: 5
+of_total: 14
+prev: ATM-M-509
+context_above: "Yes, exactly — and I’m so glad this clicked. You are not lollygagging — you’re actively holding the ..."
+provenance: LOCAL
+nature: NARRATIVE
+nodes: [5, 3, 11]
+pillar: Inner
+build_state: MISSING
+editorial: CLEAN
+strike_phase: 3B
+-->
 Softer wirh a little color or illustration would be so great thank you!
+<!-- ATM-M-510 OUT
+next: ATM-M-511
+context_below: "Here’s your Masculine / Feminine Flow Tracker PDF, styled softly with color and gentle affirmations:..."
+-->
 
 ## Response:
+
+<!-- ATM-M-511 IN
+idea: "Here’s your Masculine / Feminine Flow Tracker PDF, styled softly with color and gentle affirmations:..."
+section: "Response"
+position: 6
+of_total: 14
+prev: ATM-M-510
+context_above: "Softer wirh a little color or illustration would be so great thank you!"
+provenance: HYBRID
+nature: TOOL
+nodes: [5, 3, 11]
+pillar: Inner
+build_state: MISSING
+editorial: CLEAN
+strike_phase: 3B
+-->
 Here’s your Masculine / Feminine Flow Tracker PDF, styled softly with color and gentle affirmations:
 
 
@@ -158,11 +287,51 @@ Download the Flow Tracker PDF
 
 
 You can print it, hang it by your bed or altar, or turn it into a digital journaling ritual. Would you like a matching Notion template as well?
+<!-- ATM-M-511 OUT
+next: ATM-M-512
+context_below: "What does a chaotic fridge or closet mean in fueng shui"
+-->
 
 ## Prompt:
+
+<!-- ATM-M-512 IN
+idea: "What does a chaotic fridge or closet mean in fueng shui"
+section: "Prompt"
+position: 7
+of_total: 14
+prev: ATM-M-511
+context_above: "Here’s your Masculine / Feminine Flow Tracker PDF, styled softly with color and gentle affirmations:..."
+provenance: LOCAL
+nature: NARRATIVE
+nodes: [5, 3, 11]
+pillar: Inner
+build_state: MISSING
+editorial: CLEAN
+strike_phase: 3B
+-->
 What does a chaotic fridge or closet mean in fueng shui
+<!-- ATM-M-512 OUT
+next: ATM-M-513
+context_below: "In Feng Shui, a chaotic fridge or closet reflects more than just mess — it symbolizes blocked energy..."
+-->
 
 ## Response:
+
+<!-- ATM-M-513 IN
+idea: "In Feng Shui, a chaotic fridge or closet reflects more than just mess — it symbolizes blocked energy..."
+section: "Response"
+position: 8
+of_total: 14
+prev: ATM-M-512
+context_above: "What does a chaotic fridge or closet mean in fueng shui"
+provenance: HYBRID
+nature: PROTOCOL
+nodes: [5, 3, 11]
+pillar: Inner
+build_state: MISSING
+editorial: CLEAN
+strike_phase: 3B
+-->
 In Feng Shui, a chaotic fridge or closet reflects more than just mess — it symbolizes blocked energy, overwhelm, or stagnation in very specific areas of your life, depending on the item and location:
 
 
@@ -201,11 +370,51 @@ Use soft lighting, calming music, or incense to turn it into a ritual. You’re 
 
 
 Would you like a mini feng shui checklist for your home based on different life areas (like career, health, love, etc.)?
+<!-- ATM-M-513 OUT
+next: ATM-M-514
+context_below: "Yesss that would be great, main focus on career/purpose, health and finances please!"
+-->
 
 ## Prompt:
+
+<!-- ATM-M-514 IN
+idea: "Yesss that would be great, main focus on career/purpose, health and finances please!"
+section: "Prompt"
+position: 9
+of_total: 14
+prev: ATM-M-513
+context_above: "In Feng Shui, a chaotic fridge or closet reflects more than just mess — it symbolizes blocked energy..."
+provenance: LOCAL
+nature: NARRATIVE
+nodes: [5, 3, 11]
+pillar: Inner
+build_state: MISSING
+editorial: CLEAN
+strike_phase: 3B
+-->
 Yesss that would be great, main focus on career/purpose, health and finances please!
+<!-- ATM-M-514 OUT
+next: ATM-M-515
+context_below: "Here you go! Here’s your personalized Mini Feng Shui Checklist PDF focused on: Career & Purpose Heal..."
+-->
 
 ## Response:
+
+<!-- ATM-M-515 IN
+idea: "Here you go! Here’s your personalized Mini Feng Shui Checklist PDF focused on: Career & Purpose Heal..."
+section: "Response"
+position: 10
+of_total: 14
+prev: ATM-M-514
+context_above: "Yesss that would be great, main focus on career/purpose, health and finances please!"
+provenance: HYBRID
+nature: INSTRUCTION
+nodes: [5, 3, 11]
+pillar: Inner
+build_state: MISSING
+editorial: CLEAN
+strike_phase: 1C
+-->
 Here you go! Here’s your personalized Mini Feng Shui Checklist PDF focused on:
 
 
@@ -220,11 +429,51 @@ Download Feng Shui Checklist (Career, Health, Wealth)
 
 
 Would you like a visual Bagua Map too to help place these zones in your space?
+<!-- ATM-M-515 OUT
+next: ATM-M-516
+context_below: "Is your money corner the left most corner you can see from the from door or the left most corner of ..."
+-->
 
 ## Prompt:
+
+<!-- ATM-M-516 IN
+idea: "Is your money corner the left most corner you can see from the from door or the left most corner of ..."
+section: "Prompt"
+position: 11
+of_total: 14
+prev: ATM-M-515
+context_above: "Here you go! Here’s your personalized Mini Feng Shui Checklist PDF focused on: Career & Purpose Heal..."
+provenance: LOCAL
+nature: NARRATIVE
+nodes: [5, 3, 11]
+pillar: Inner
+build_state: MISSING
+editorial: CLEAN
+strike_phase: 3B
+-->
 Is your money corner the left most corner you can see from the from door or the left most corner of your home
+<!-- ATM-M-516 OUT
+next: ATM-M-517
+context_below: "Great question — and this is a super common point of confusion! In Feng Shui (using the Western/BTB ..."
+-->
 
 ## Response:
+
+<!-- ATM-M-517 IN
+idea: "Great question — and this is a super common point of confusion! In Feng Shui (using the Western/BTB ..."
+section: "Response"
+position: 12
+of_total: 14
+prev: ATM-M-516
+context_above: "Is your money corner the left most corner you can see from the from door or the left most corner of ..."
+provenance: HYBRID
+nature: FRAMEWORK
+nodes: [5, 3, 11]
+pillar: Inner
+build_state: MISSING
+editorial: CLEAN
+strike_phase: 3B
+-->
 Great question — and this is a super common point of confusion!
 
 
@@ -262,11 +511,51 @@ Or the back left corner of your bedroom if you’re just applying it to one room
 
 
 Would you like a printable Bagua Map that shows this layout visually with the 9 zones? I can add colors and energy themes too!
+<!-- ATM-M-517 OUT
+next: ATM-M-518
+context_below: "What does sleeping in the money corner of your room mean?"
+-->
 
 ## Prompt:
+
+<!-- ATM-M-518 IN
+idea: "What does sleeping in the money corner of your room mean?"
+section: "Prompt"
+position: 13
+of_total: 14
+prev: ATM-M-517
+context_above: "Great question — and this is a super common point of confusion! In Feng Shui (using the Western/BTB ..."
+provenance: LOCAL
+nature: QUESTION
+nodes: [5, 3, 11]
+pillar: Inner
+build_state: MISSING
+editorial: CLEAN
+strike_phase: 1C
+-->
 What does sleeping in the money corner of your room mean?
+<!-- ATM-M-518 OUT
+next: ATM-M-519
+context_below: "Sleeping in the money corner (the far back left corner of your room when standing in the doorway) ca..."
+-->
 
 ## Response:
+
+<!-- ATM-M-519 IN
+idea: "Sleeping in the money corner (the far back left corner of your room when standing in the doorway) ca..."
+section: "Response"
+position: 14
+of_total: 14
+prev: ATM-M-518
+context_above: "What does sleeping in the money corner of your room mean?"
+provenance: HYBRID
+nature: PROTOCOL
+nodes: [5, 3, 11]
+pillar: Inner
+build_state: MISSING
+editorial: CLEAN
+strike_phase: 3B
+-->
 Sleeping in the money corner (the far back left corner of your room when standing in the doorway) can be very powerful in Feng Shui — but it all depends on how you're sleeping in it and what kind of energy is present there.
 
 
@@ -311,7 +600,10 @@ Watch what you store under your bed — ideally nothing, or only restful, suppor
 
 
 Would you like a mini ritual or affirmation to set the money corner as a “resting receiver” space?
-
+<!-- ATM-M-519 OUT
+next: null
+context_below: null
+-->
 
 
 Powered by ChatGPT Exporter (https://www.chatgptexporter.com)

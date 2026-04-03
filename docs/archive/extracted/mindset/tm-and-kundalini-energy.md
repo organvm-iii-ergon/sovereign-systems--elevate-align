@@ -1,3 +1,15 @@
+<!-- DOC-ENVELOPE
+id: DOC-M-34
+total_sections: 2
+total_atoms: 6
+dominant_provenance: LOCAL
+dominant_nature: TOOL
+sections:
+  - name: "Prompt"
+    atoms: [ATM-M-630, ATM-M-632, ATM-M-634]
+  - name: "Response"
+    atoms: [ATM-M-631, ATM-M-633, ATM-M-635]
+-->
 ---
 title: "CIA Gateway Process, TM, Kundalini phases"
 source_file: "ChatGPT-TM and Kundalini Energy.txt"
@@ -16,10 +28,47 @@ Updated: 3/31/2026 12:36:29
 Exported: 3/31/2026 12:36:29
 Link: https://chatgpt.com/g/g-p-681675a28d988191995dc4b68a2bc1f1-healing-spiral/c/68294af0-ba54-8003-b4a1-b01b62956a32
 
+
 ## Prompt:
+
+<!-- ATM-M-630 IN
+idea: "Using the cia document and everything they know as well as info from a specialist or two that would ..."
+section: "Prompt"
+position: 1
+of_total: 6
+prev: null
+context_above: null
+provenance: LOCAL
+nature: NARRATIVE
+nodes: [12, 2, 13]
+pillar: Inner
+build_state: MISSING
+editorial: CLEAN
+strike_phase: 3B
+-->
 Using the cia document and everything they know as well as info from a specialist or two that would know the most about this question, can you tell me about Transcendental meditation - kundalini energy. How to access it and using the correct words with no confusion, will you break it down into steps that I can easily unlock/access
+<!-- ATM-M-630 OUT
+next: ATM-M-631
+context_below: "Absolutely. Let’s break down Transcendental Meditation (TM), Kundalini energy, and how they intersec..."
+-->
 
 ## Response:
+
+<!-- ATM-M-631 IN
+idea: "Absolutely. Let’s break down Transcendental Meditation (TM), Kundalini energy, and how they intersec..."
+section: "Response"
+position: 2
+of_total: 6
+prev: ATM-M-630
+context_above: "Using the cia document and everything they know as well as info from a specialist or two that would ..."
+provenance: HYBRID
+nature: TOOL
+nodes: [12, 2, 13]
+pillar: Inner
+build_state: EXISTS
+editorial: FLAGGED
+strike_phase: 1B
+-->
 Absolutely. Let’s break down Transcendental Meditation (TM), Kundalini energy, and how they intersect—from CIA research, traditional yogic sources, and contemporary specialists.
 
 
@@ -211,11 +260,51 @@ Slow down if it gets intense
 
 
 Would you like a printable version, sigil, or audio guide for this?
+<!-- ATM-M-631 OUT
+next: ATM-M-632
+context_below: "Do I need to close it after I am done? And what binaural beats or hemi sync audio do you recommend"
+-->
 
 ## Prompt:
+
+<!-- ATM-M-632 IN
+idea: "Do I need to close it after I am done? And what binaural beats or hemi sync audio do you recommend"
+section: "Prompt"
+position: 3
+of_total: 6
+prev: ATM-M-631
+context_above: "Absolutely. Let’s break down Transcendental Meditation (TM), Kundalini energy, and how they intersec..."
+provenance: LOCAL
+nature: QUESTION
+nodes: [12, 2, 13]
+pillar: Inner
+build_state: MISSING
+editorial: CLEAN
+strike_phase: 1C
+-->
 Do I need to close it after I am done? And what binaural beats or hemi sync audio do you recommend
+<!-- ATM-M-632 OUT
+next: ATM-M-633
+context_below: "Yes, closing your energy intentionally after meditation or Kundalini work is essential—especially wh..."
+-->
 
 ## Response:
+
+<!-- ATM-M-633 IN
+idea: "Yes, closing your energy intentionally after meditation or Kundalini work is essential—especially wh..."
+section: "Response"
+position: 4
+of_total: 6
+prev: ATM-M-632
+context_above: "Do I need to close it after I am done? And what binaural beats or hemi sync audio do you recommend"
+provenance: HYBRID
+nature: TOOL
+nodes: [12, 2, 13]
+pillar: Inner
+build_state: PARTIAL
+editorial: FLAGGED
+strike_phase: 1B
+-->
 Yes, closing your energy intentionally after meditation or Kundalini work is essential—especially when working with powerful practices that open your energetic field. Otherwise, you may feel spacey, overwhelmed, overly sensitive, or energetically “leaky.”
 
 
@@ -322,11 +411,51 @@ Pair headphones (must be stereo!) with your breathwork or visualization sessions
 
 
 Would you like me to create a custom 30-minute session outline with timestamps for meditation, breath, music, and closing? Or a playlist of vetted tracks to start with?
+<!-- ATM-M-633 OUT
+next: ATM-M-634
+context_below: "Is there anything else you may have missed or I forgot to ask that would make this more meaningful/i..."
+-->
 
 ## Prompt:
+
+<!-- ATM-M-634 IN
+idea: "Is there anything else you may have missed or I forgot to ask that would make this more meaningful/i..."
+section: "Prompt"
+position: 5
+of_total: 6
+prev: ATM-M-633
+context_above: "Yes, closing your energy intentionally after meditation or Kundalini work is essential—especially wh..."
+provenance: LOCAL
+nature: NARRATIVE
+nodes: [12, 2, 13]
+pillar: Inner
+build_state: MISSING
+editorial: CLEAN
+strike_phase: 3B
+-->
 Is there anything else you may have missed or I forgot to ask that would make this more meaningful/in depth
+<!-- ATM-M-634 OUT
+next: ATM-M-635
+context_below: "Incredible question—this shows you’re not just dabbling but honoring the depth and sacredness of this path."
+-->
 
 ## Response:
+
+<!-- ATM-M-635 IN
+idea: "Incredible question—this shows you’re not just dabbling but honoring the depth and sacredness of this path."
+section: "Response"
+position: 6
+of_total: 6
+prev: ATM-M-634
+context_above: "Is there anything else you may have missed or I forgot to ask that would make this more meaningful/i..."
+provenance: HYBRID
+nature: TOOL
+nodes: [12, 2, 13]
+pillar: Inner
+build_state: MISSING
+editorial: CLEAN
+strike_phase: 3B
+-->
 Incredible question—this shows you’re not just dabbling but honoring the depth and sacredness of this path. Here’s a distilled list of deeper elements that often get overlooked—but can supercharge your journey, ensure safety, and add profound meaning.
 
 
@@ -532,7 +661,10 @@ Or design your own awakening altar with intention items
 
 
 Would you like me to build a custom daily or weekly practice plan, or a mini “Kundalini Compass” PDF with everything you just learned, including steps, sounds, closings, moon guidance, and journaling prompts? You’ll be able to keep it as a sacred guide or altar piece.
-
+<!-- ATM-M-635 OUT
+next: null
+context_below: null
+-->
 
 
 Powered by ChatGPT Exporter (https://www.chatgptexporter.com)

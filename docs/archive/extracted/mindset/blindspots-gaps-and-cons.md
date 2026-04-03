@@ -1,3 +1,15 @@
+<!-- DOC-ENVELOPE
+id: DOC-M-07
+total_sections: 2
+total_atoms: 14
+dominant_provenance: LOCAL
+dominant_nature: NARRATIVE
+sections:
+  - name: "Prompt"
+    atoms: [ATM-M-107, ATM-M-109, ATM-M-111, ATM-M-113, ATM-M-115, ATM-M-117, ATM-M-119]
+  - name: "Response"
+    atoms: [ATM-M-108, ATM-M-110, ATM-M-112, ATM-M-114, ATM-M-116, ATM-M-118, ATM-M-120]
+-->
 ---
 title: "5 blindspots, 5 gaps, 5 shadows + integration"
 source_file: "ChatGPT-Blindspots Gaps and Cons.txt"
@@ -16,10 +28,47 @@ Updated: 3/31/2026 12:38:43
 Exported: 3/31/2026 12:38:45
 Link: https://chatgpt.com/g/g-p-681675a28d988191995dc4b68a2bc1f1-healing-spiral/c/686549b7-db30-8003-bdc7-fdda38f8d1c1
 
+
 ## Prompt:
+
+<!-- ATM-M-107 IN
+idea: "intitiate protocols: my blindspots, gaps, cons about me and my personality;"
+section: "Prompt"
+position: 1
+of_total: 14
+prev: null
+context_above: null
+provenance: LOCAL
+nature: NARRATIVE
+nodes: [3, 4, 10]
+pillar: Inner
+build_state: MISSING
+editorial: CLEAN
+strike_phase: 3B
+-->
 intitiate protocols: my blindspots, gaps, cons about me and my personality;
+<!-- ATM-M-107 OUT
+next: ATM-M-108
+context_below: "Alright Maddie — initiating internal protocol: 'Blindspots, Gaps, & Cons' based on everything you've..."
+-->
 
 ## Response:
+
+<!-- ATM-M-108 IN
+idea: "Alright Maddie — initiating internal protocol: 'Blindspots, Gaps, & Cons' based on everything you've..."
+section: "Response"
+position: 2
+of_total: 14
+prev: ATM-M-107
+context_above: "intitiate protocols: my blindspots, gaps, cons about me and my personality;"
+provenance: HYBRID
+nature: TOOL
+nodes: [3, 4, 10]
+pillar: Inner
+build_state: PARTIAL
+editorial: FLAGGED
+strike_phase: 1B
+-->
 Alright Maddie — initiating internal protocol: "Blindspots, Gaps, & Cons" based on everything you've shared about your journey, personality, astrology, Human Design, and how you show up. This isn’t a judgment — it’s a reflection meant to help you see what might be in the way so you can reclaim your power even more.
 
 
@@ -142,11 +191,51 @@ How can I create structure that holds me instead of restricts me?
 
 
 Would you like a more supportive mirror version next? (e.g., your gifts, strengths, and how your blindspots actually hold your superpowers?) Or do you want to explore how this affects your relationships or business specifically?
+<!-- ATM-M-108 OUT
+next: ATM-M-109
+context_below: "Yes please! I want to figure out how to blend my voids and values so that I can make money"
+-->
 
 ## Prompt:
+
+<!-- ATM-M-109 IN
+idea: "Yes please! I want to figure out how to blend my voids and values so that I can make money"
+section: "Prompt"
+position: 3
+of_total: 14
+prev: ATM-M-108
+context_above: "Alright Maddie — initiating internal protocol: 'Blindspots, Gaps, & Cons' based on everything you've..."
+provenance: LOCAL
+nature: NARRATIVE
+nodes: [3, 4, 10]
+pillar: Inner
+build_state: MISSING
+editorial: CLEAN
+strike_phase: 3B
+-->
 Yes please! I want to figure out how to blend my voids and values so that I can make money
+<!-- ATM-M-109 OUT
+next: ATM-M-110
+context_below: "Absolutely — let’s alchemize your voids + values into your value (what you offer) so you can magneti..."
+-->
 
 ## Response:
+
+<!-- ATM-M-110 IN
+idea: "Absolutely — let’s alchemize your voids + values into your value (what you offer) so you can magneti..."
+section: "Response"
+position: 4
+of_total: 14
+prev: ATM-M-109
+context_above: "Yes please! I want to figure out how to blend my voids and values so that I can make money"
+provenance: HYBRID
+nature: TOOL
+nodes: [3, 4, 10]
+pillar: Inner
+build_state: EXISTS
+editorial: FLAGGED
+strike_phase: 1B
+-->
 Absolutely — let’s alchemize your voids + values into your value (what you offer) so you can magnetize aligned money and support.
 
 
@@ -281,17 +370,54 @@ Live Masterclass Series: "The Feel Good Revolution"
 
 
 Would you like a brand-aligned visual map of this? I can also help sketch a funnel that turns your EAU spiral into a business flow using this exact void→value→offer method.
+<!-- ATM-M-110 OUT
+next: ATM-M-111
+context_below: "Yes please! I want to implement even if it’s rough in the next few days at least my landing page, we..."
+-->
 
 ## Prompt:
+
+<!-- ATM-M-111 IN
+idea: "Yes please! I want to implement even if it’s rough in the next few days at least my landing page, we..."
+section: "Prompt"
+position: 5
+of_total: 14
+prev: ATM-M-110
+context_above: "Absolutely — let’s alchemize your voids + values into your value (what you offer) so you can magneti..."
+provenance: LOCAL
+nature: NARRATIVE
+nodes: [3, 4, 10]
+pillar: Inner
+build_state: MISSING
+editorial: CLEAN
+strike_phase: 3B
+-->
 Yes please! I want to implement even if it’s rough in the next few days at least my landing page, webclass first and then the rough spiral, but having the three different clear avenues so new leads are not confused and have as least friction as possible (can start posting my puzzle and launch insta highlights and three top posts and then schedule out my puzzle) - then I can start working on the water funnel next week and then those sales are going to be my main focus and the business and spiral will just be there for who needs it
 
 
 3/3
+<!-- ATM-M-111 OUT
+next: ATM-M-112
+context_below: "Perfect — let’s lay out your next few days in a way that keeps it clear, executable, and friction-free."
+-->
 
 ## Response:
-Updated saved memory
 
-
+<!-- ATM-M-112 IN
+idea: "Perfect — let’s lay out your next few days in a way that keeps it clear, executable, and friction-free."
+section: "Response"
+position: 6
+of_total: 14
+prev: ATM-M-111
+context_above: "Yes please! I want to implement even if it’s rough in the next few days at least my landing page, we..."
+provenance: HYBRID
+nature: PROTOCOL
+nodes: [3, 4, 10]
+pillar: Inner
+build_state: PARTIAL
+editorial: CLEAN
+strike_phase: 3B
+-->
 Perfect — let’s lay out your next few days in a way that keeps it clear, executable, and friction-free. Here's the roadmap, starting with your main priority and layered intentionally:
 
 
@@ -444,11 +570,51 @@ Draft quiz or entry point to sort new leads
 
 
 Let me know which you want first and I’ll jump in 🌀
+<!-- ATM-M-112 OUT
+next: ATM-M-113
+context_below: "Can we do the first two please!"
+-->
 
 ## Prompt:
+
+<!-- ATM-M-113 IN
+idea: "Can we do the first two please!"
+section: "Prompt"
+position: 7
+of_total: 14
+prev: ATM-M-112
+context_above: "Perfect — let’s lay out your next few days in a way that keeps it clear, executable, and friction-free."
+provenance: LOCAL
+nature: NARRATIVE
+nodes: [3, 4, 10]
+pillar: Inner
+build_state: MISSING
+editorial: CLEAN
+strike_phase: 3B
+-->
 Can we do the first two please!
+<!-- ATM-M-113 OUT
+next: ATM-M-114
+context_below: "Absolutely! Let’s get your Landing Page Wireframe (Figma-style) and your Webclass Script Outline don..."
+-->
 
 ## Response:
+
+<!-- ATM-M-114 IN
+idea: "Absolutely! Let’s get your Landing Page Wireframe (Figma-style) and your Webclass Script Outline don..."
+section: "Response"
+position: 8
+of_total: 14
+prev: ATM-M-113
+context_above: "Can we do the first two please!"
+provenance: HYBRID
+nature: FRAMEWORK
+nodes: [3, 4, 10]
+pillar: Inner
+build_state: EXISTS
+editorial: FLAGGED
+strike_phase: 1B
+-->
 Absolutely! Let’s get your Landing Page Wireframe (Figma-style) and your Webclass Script Outline done first so you can implement right away. Below is everything mapped clearly — copy/paste friendly for your build or hand-off.
 
 
@@ -623,14 +789,54 @@ CTA:
 
 
 Would you like me to help you script the full 24-minute video, or give you a Canva template + sketch of the Spiral visual for your site next?
+<!-- ATM-M-114 OUT
+next: ATM-M-115
+context_below: "Should I mention the spiral on my business landing page or no for now - I want it to be very subtle ..."
+-->
 
 ## Prompt:
+
+<!-- ATM-M-115 IN
+idea: "Should I mention the spiral on my business landing page or no for now - I want it to be very subtle ..."
+section: "Prompt"
+position: 9
+of_total: 14
+prev: ATM-M-114
+context_above: "Absolutely! Let’s get your Landing Page Wireframe (Figma-style) and your Webclass Script Outline don..."
+provenance: LOCAL
+nature: NARRATIVE
+nodes: [3, 4, 10]
+pillar: Inner
+build_state: MISSING
+editorial: CLEAN
+strike_phase: 3B
+-->
 Should I mention the spiral on my business landing page or no for now - I want it to be very subtle if I do and just mention it lightly like I am working on it and you’ll get access to the spiral when you pay the $99 for the discovery process - I want to keep my landing page just super simple and about watching the webclass - paying the 99 to start business and then go to webclass - I can add the other buttons later
 
 
 2/2
+<!-- ATM-M-115 OUT
+next: ATM-M-116
+context_below: "Yes — that’s 100% the right call. Here’s what I recommend based on your goal: keep your business lan..."
+-->
 
 ## Response:
+
+<!-- ATM-M-116 IN
+idea: "Yes — that’s 100% the right call. Here’s what I recommend based on your goal: keep your business lan..."
+section: "Response"
+position: 10
+of_total: 14
+prev: ATM-M-115
+context_above: "Should I mention the spiral on my business landing page or no for now - I want it to be very subtle ..."
+provenance: HYBRID
+nature: FRAMEWORK
+nodes: [3, 4, 10]
+pillar: Inner
+build_state: PARTIAL
+editorial: CLEAN
+strike_phase: 3B
+-->
 Yes — that’s 100% the right call.
 Here’s what I recommend based on your goal: keep your business landing page laser-focused on the webclass + $99 commitment to reduce decision fatigue and increase conversions.
 
@@ -687,11 +893,51 @@ One poetic line like “The spiral begins when you choose yourself.”
 
 
 Want me to help you write that entire business landing page with just this one path for now? Or update your funnel language with this integrated spiral teaser?
+<!-- ATM-M-116 OUT
+next: ATM-M-117
+context_below: "Can you just update my next three or four days steps"
+-->
 
 ## Prompt:
+
+<!-- ATM-M-117 IN
+idea: "Can you just update my next three or four days steps"
+section: "Prompt"
+position: 11
+of_total: 14
+prev: ATM-M-116
+context_above: "Yes — that’s 100% the right call. Here’s what I recommend based on your goal: keep your business lan..."
+provenance: LOCAL
+nature: NARRATIVE
+nodes: [3, 4, 10]
+pillar: Inner
+build_state: MISSING
+editorial: CLEAN
+strike_phase: 3B
+-->
 Can you just update my next three or four days steps
+<!-- ATM-M-117 OUT
+next: ATM-M-118
+context_below: "Absolutely — here’s your updated 3–4 day execution plan based on your new clarity: CORE GOAL: Launch..."
+-->
 
 ## Response:
+
+<!-- ATM-M-118 IN
+idea: "Absolutely — here’s your updated 3–4 day execution plan based on your new clarity: CORE GOAL: Launch..."
+section: "Response"
+position: 12
+of_total: 14
+prev: ATM-M-117
+context_above: "Can you just update my next three or four days steps"
+provenance: HYBRID
+nature: FRAMEWORK
+nodes: [3, 4, 10]
+pillar: Inner
+build_state: PARTIAL
+editorial: CLEAN
+strike_phase: 3B
+-->
 Absolutely — here’s your updated 3–4 day execution plan based on your new clarity:
 
 
@@ -811,11 +1057,51 @@ Spiral can be soft and whispered for now. It will bloom once you're ready to gui
 
 
 Want me to send you a plug-and-play copy template for your business landing page next?
+<!-- ATM-M-118 OUT
+next: ATM-M-119
+context_below: "Okay then I can still be working on the spiral behind the scenes and then when it’s closer I can sta..."
+-->
 
 ## Prompt:
+
+<!-- ATM-M-119 IN
+idea: "Okay then I can still be working on the spiral behind the scenes and then when it’s closer I can sta..."
+section: "Prompt"
+position: 13
+of_total: 14
+prev: ATM-M-118
+context_above: "Absolutely — here’s your updated 3–4 day execution plan based on your new clarity: CORE GOAL: Launch..."
+provenance: LOCAL
+nature: NARRATIVE
+nodes: [3, 4, 10]
+pillar: Inner
+build_state: MISSING
+editorial: CLEAN
+strike_phase: 3B
+-->
 Okay then I can still be working on the spiral behind the scenes and then when it’s closer I can start to integrate it in and posting puzzles - then will work on the water funnel while that stuff is working
+<!-- ATM-M-119 OUT
+next: ATM-M-120
+context_below: "Exactly — that’s the aligned flow. You’re building a strong front-end offer (webclass + $99 biz star..."
+-->
 
 ## Response:
+
+<!-- ATM-M-120 IN
+idea: "Exactly — that’s the aligned flow. You’re building a strong front-end offer (webclass + $99 biz star..."
+section: "Response"
+position: 14
+of_total: 14
+prev: ATM-M-119
+context_above: "Okay then I can still be working on the spiral behind the scenes and then when it’s closer I can sta..."
+provenance: HYBRID
+nature: FRAMEWORK
+nodes: [3, 4, 10]
+pillar: Inner
+build_state: MISSING
+editorial: CLEAN
+strike_phase: 3B
+-->
 Exactly — that’s the aligned flow.
 You’re building a strong front-end offer (webclass + $99 biz start) while your deeper frameworks (Spiral + water funnel) simmer behind the scenes. Then you layer them in naturally — no rush, no pressure, just evolution.
 
@@ -876,7 +1162,10 @@ Next week: Launch water funnel + stories
 
 
 Would you like that plug-and-play business landing page template now so you can start building right away?
-
+<!-- ATM-M-120 OUT
+next: null
+context_below: null
+-->
 
 
 Powered by ChatGPT Exporter (https://www.chatgptexporter.com)
