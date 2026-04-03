@@ -24,7 +24,7 @@ This SOP applies to:
 It does NOT apply to:
 - Individual issue execution (see SOP-SS-ISS-001-001-ontology-issue-specification.md)
 - Client communication workflows
-- Content creation processes
+- Content extraction and injection (see SOP-SS-CNT-001_001-content-extraction-and-node-injection.md)
 
 ## Input
 

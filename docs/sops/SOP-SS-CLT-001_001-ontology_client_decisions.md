@@ -192,11 +192,21 @@ If decision remains PENDING for >7 days:
 2. If >14 days, escalate: offer to proceed with recommendation
 3. If >30 days, mark as BLOCKED and move to archive
 
+## Content Drop Protocol
+
+When a client sends a content drop (Drive export, iMessage, screenshots), a decision may be partially resolved by the content itself — even without explicit verbal confirmation. Follow SOP-SS-CNT-001 to archive, extract, and audit the drop. Then:
+
+1. Check each PENDING decision against the new content
+2. If the content implies a decision (e.g., a funnel spec that implies standalone architecture), move to IN-REVIEW with UPDATE annotation
+3. If the content contradicts a previous assumption, flag for escalation
+4. Never auto-resolve to RESOLVED — that requires explicit client confirmation
+
 ## Related SOPs
 
 - SOP-SS-ISS-001-001-ontology-issue-specification.md
 - SOP-SS-PRC-001_001-ontology_meta_process.md
 - SOP-SS-TRK-001_001-ontology_issue_tracking.md
+- SOP-SS-CNT-001_001-content-extraction-and-node-injection.md
 
 ---
 
@@ -204,6 +214,7 @@ If decision remains PENDING for >7 days:
 
 | Date | Change |
 |------|--------|
+| 2026-04-03 (PM-2) | Added Content Drop Protocol section linking to SOP-SS-CNT-001. Pattern discovered during Drive export extraction: content drops partially resolve decisions without explicit verbal confirmation. Added SOP-SS-CNT-001 to related SOPs. |
 | 2026-04-03 (PM) | Updated #17 to IN-REVIEW (Hydration Node funnel spec implies standalone app). Updated #7 to IN-REVIEW (water pillar gating defined). Added context to #9 (health survey may replace quiz). Bumped #17 to P1. Source: `docs/superpowers/intakes/2026-04-03-maddie-hydration-node-funnel-spec.md` |
 | 2026-04-03 | Initial creation |
 
