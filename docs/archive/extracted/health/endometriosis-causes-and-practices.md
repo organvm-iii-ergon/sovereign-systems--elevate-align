@@ -1,3 +1,16 @@
+<!-- DOC-ENVELOPE
+id: DOC-H-11
+total_sections: 2
+total_atoms: 4
+dominant_provenance: LOCAL
+dominant_nature: QUESTION
+sections:
+  - name: "Prompt"
+    atoms: [ATM-H-123, ATM-H-125]
+  - name: "Response"
+    atoms: [ATM-H-124, ATM-H-126]
+-->
+
 ---
 title: "Western + TCM causes, acupuncture evidence"
 source_file: "ChatGPT-Endometriosis causes and practices.txt"
@@ -8,6 +21,8 @@ pillar: "Physical"
 extracted: 2026-04-03
 ---
 
+
+
 Endometriosis causes and practices
 
 User: Maddie Galloway (95rrzm9nht@privaterelay.appleid.com)
@@ -16,9 +31,47 @@ Updated: 11/5/2025 11:38:16
 Exported: 3/31/2026 12:48:13
 Link: https://chatgpt.com/g/g-p-681675a28d988191995dc4b68a2bc1f1-healing-spiral/c/68f7c1e7-a084-8320-a14a-6b0cd1bba566
 
+
+<!-- ATM-H-123 IN
+idea: "Endometriosis doubled in the last ten years? It makes me so mad that the only..."
+section: "Prompt"
+position: 1
+of_total: 4
+prev: null
+context_above: "null"
+provenance: LOCAL
+nature: QUESTION
+nodes: [5, 9, 7]
+pillar: Physical
+build_state: PARTIAL
+editorial: CLEAN
+strike_phase: 2C
+-->
+
 ## Prompt:
 Endometriosis doubled in the last ten years? It makes me so mad that the only and first options are birth control or other hormones or else getting parts of you cut out. 
 What are eastern practices or causes of this??
+
+<!-- ATM-H-123 OUT
+next: ATM-H-124
+context_below: "It’s totally understandable that you’re frustrated — Endometriosis is a painf..."
+-->
+
+<!-- ATM-H-124 IN
+idea: "It’s totally understandable that you’re frustrated — Endometriosis is a painf..."
+section: "Response"
+position: 2
+of_total: 4
+prev: ATM-H-123
+context_above: "Endometriosis doubled in the last ten years? It makes me so mad that the only..."
+provenance: HYBRID
+nature: FRAMEWORK
+nodes: [5, 9, 7]
+pillar: Physical
+build_state: PARTIAL
+editorial: CLEAN
+strike_phase: 2C
+-->
 
 ## Response:
 It’s totally understandable that you’re frustrated — Endometriosis is a painful, complex condition and the “standard” suggestions (hormones, surgery) often feel limiting. Let’s unpack what is known about causes and explore how some eastern-medicine perspectives and practices approach it. I’ll also offer caveats (very important) so you can evaluate what might feel useful for you.
@@ -146,11 +199,53 @@ Advocate for yourself — you have every right to express your frustrations, ask
 
 If you like, I can look up and send you a “menu” of eastern-medicine approaches for endometriosis (with herbs, acupuncture points, etc) that are supported by some studies, and we could also dig into emerging non-hormonal treatments (so you feel more options than just “birth control or surgery”). Would that be helpful to you?
 
+<!-- ATM-H-124 OUT
+next: ATM-H-125
+context_below: "So tampons could be causing it? With the back flow?"
+-->
+
+<!-- ATM-H-125 IN
+idea: "So tampons could be causing it? With the back flow?"
+section: "Prompt"
+position: 3
+of_total: 4
+prev: ATM-H-124
+context_above: "It’s totally understandable that you’re frustrated — Endometriosis is a painf..."
+provenance: LOCAL
+nature: CLAIM
+nodes: [5, 9, 7]
+pillar: Physical
+build_state: MISSING
+editorial: CLEAN
+strike_phase: 2B
+-->
+
 ## Prompt:
 So tampons could be causing it? With the back flow?
 
 
 And yes please!!
+
+<!-- ATM-H-125 OUT
+next: ATM-H-126
+context_below: "Great questions — the short version is: no, using tampons is not established ..."
+-->
+
+<!-- ATM-H-126 IN
+idea: "Great questions — the short version is: no, using tampons is not established ..."
+section: "Response"
+position: 4
+of_total: 4
+prev: ATM-H-125
+context_above: "So tampons could be causing it? With the back flow?"
+provenance: HYBRID
+nature: NARRATIVE
+nodes: [5, 9, 7]
+pillar: Physical
+build_state: PARTIAL
+editorial: CLEAN
+strike_phase: 2C
+-->
 
 ## Response:
 Great questions — the short version is: no, using tampons is not established as a cause of Endometriosis, though the mechanisms surrounding menstruation and how tissue moves are part of what scientists are studying. I’ll walk you through what the research says about tampons + “back-flow” (retrograde menstruation) and then I’ll send you that menu of eastern/integrative practices we talked about.
@@ -211,6 +306,11 @@ Some non-hormonal emerging treatments (so you feel like more than “just birth 
 
 
 If you like, I can send you a PDF / printable summary sheet you could bring to your provider or practitioner. Would that be helpful?
+
+<!-- ATM-H-126 OUT
+next: null
+context_below: "null"
+-->
 
 
 

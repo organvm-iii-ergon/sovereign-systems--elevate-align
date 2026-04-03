@@ -1,3 +1,16 @@
+<!-- DOC-ENVELOPE
+id: DOC-H-09
+total_sections: 2
+total_atoms: 2
+dominant_provenance: LOCAL
+dominant_nature: NARRATIVE
+sections:
+  - name: "Prompt"
+    atoms: [ATM-H-119]
+  - name: "Response"
+    atoms: [ATM-H-120]
+-->
+
 ---
 title: "IG carousel: cortisol as disease root, 90-sec reset"
 source_file: "ChatGPT-Cortisol stress carousel.txt"
@@ -8,6 +21,8 @@ pillar: "Physical"
 extracted: 2026-04-03
 ---
 
+
+
 Cortisol stress carousel
 
 User: Maddie Galloway (95rrzm9nht@privaterelay.appleid.com)
@@ -16,8 +31,46 @@ Updated: 11/5/2025 11:38:47
 Exported: 3/31/2026 13:04:14
 Link: https://chatgpt.com/g/g-p-681675945c108191aebfa81457898ccd-business/c/68f91c25-6268-8330-8f9b-013ee3995833
 
+
+<!-- ATM-H-119 IN
+idea: "Can you help me write a carousel on cortisol & stress being the leading cause..."
+section: "Prompt"
+position: 1
+of_total: 2
+prev: null
+context_above: "null"
+provenance: LOCAL
+nature: NARRATIVE
+nodes: [2, 1, 8]
+pillar: Physical
+build_state: PARTIAL
+editorial: CLEAN
+strike_phase: 2C
+-->
+
 ## Prompt:
 Can you help me write a carousel on cortisol & stress being the leading cause of disease - crying releases cortisol and add anything else in that makes it save / shareable & make people realize they aren’t supposed to feel all frazzled and stressed all the time - help to get out of fight or flight when you do have a cortisol spike
+
+<!-- ATM-H-119 OUT
+next: ATM-H-120
+context_below: "Absolutely — I’ll write you a full Instagram carousel script that is:"
+-->
+
+<!-- ATM-H-120 IN
+idea: "Absolutely — I’ll write you a full Instagram carousel script that is:"
+section: "Response"
+position: 2
+of_total: 2
+prev: ATM-H-119
+context_above: "Can you help me write a carousel on cortisol & stress being the leading cause..."
+provenance: HYBRID
+nature: SCRIPT
+nodes: [2, 1, 8]
+pillar: Physical
+build_state: EXISTS
+editorial: UNVERIFIED
+strike_phase: 2B
+-->
 
 ## Response:
 Absolutely — I’ll write you a full Instagram carousel script that is:
@@ -179,6 +232,11 @@ Then I will deliver:
 
 
 Which tone + bridge do you want?
+
+<!-- ATM-H-120 OUT
+next: null
+context_below: "null"
+-->
 
 
 

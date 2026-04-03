@@ -1,3 +1,16 @@
+<!-- DOC-ENVELOPE
+id: DOC-H-19
+total_sections: 2
+total_atoms: 36
+dominant_provenance: LOCAL
+dominant_nature: CLAIM
+sections:
+  - name: "Prompt"
+    atoms: [ATM-H-263, ATM-H-265, ATM-H-267, ATM-H-269, ATM-H-271, ATM-H-273, ATM-H-275, ATM-H-277, ATM-H-279, ATM-H-281, ATM-H-283, ATM-H-285, ATM-H-287, ATM-H-289, ATM-H-291, ATM-H-293, ATM-H-295, ATM-H-297]
+  - name: "Response"
+    atoms: [ATM-H-264, ATM-H-266, ATM-H-268, ATM-H-270, ATM-H-272, ATM-H-274, ATM-H-276, ATM-H-278, ATM-H-280, ATM-H-282, ATM-H-284, ATM-H-286, ATM-H-288, ATM-H-290, ATM-H-292, ATM-H-294, ATM-H-296, ATM-H-298]
+-->
+
 ---
 title: "Free ebook outline: cycle tracking, phase nutrition"
 source_file: "ChatGPT-Hormone Cycle Guide.txt"
@@ -8,6 +21,8 @@ pillar: "Physical"
 extracted: 2026-04-03
 ---
 
+
+
 Hormone Cycle Guide
 
 User: Maddie Galloway (95rrzm9nht@privaterelay.appleid.com)
@@ -16,8 +31,46 @@ Updated: 3/31/2026 12:42:17
 Exported: 3/31/2026 12:42:18
 Link: https://chatgpt.com/g/g-p-681675a28d988191995dc4b68a2bc1f1-healing-spiral/c/67398bc2-1374-8003-ad9e-d50fdd44d602
 
+
+<!-- ATM-H-263 IN
+idea: "Will you help me write a free ebook from a health, nutrition and female hormo..."
+section: "Prompt"
+position: 1
+of_total: 36
+prev: null
+context_above: "null"
+provenance: LOCAL
+nature: NARRATIVE
+nodes: [5, 6, 7]
+pillar: Physical
+build_state: PARTIAL
+editorial: CLEAN
+strike_phase: 2C
+-->
+
 ## Prompt:
 Will you help me write a free ebook from a health, nutrition and female hormonal specials perspective on how to help them better understand their hormone cycle, how to start tracking and living within each phase of your cycle as well as what to eat, workouts/movement to do as well as a list of foods that help balance hormones and different problems like almonds help with tender breasts and should be eat the week before your period to reduce this same with carrots and removing estrogen (not sure if should eat all month or at specific times) please explain how each thing helps and when to best eat it for the most benefit, please let me know if you have any questions before getting started, thank you!
+
+<!-- ATM-H-263 OUT
+next: ATM-H-264
+context_below: "Updated saved memory"
+-->
+
+<!-- ATM-H-264 IN
+idea: "Updated saved memory"
+section: "Response"
+position: 2
+of_total: 36
+prev: ATM-H-263
+context_above: "Will you help me write a free ebook from a health, nutrition and female hormo..."
+provenance: HYBRID
+nature: CITATION
+nodes: [5, 6, 7]
+pillar: Physical
+build_state: PARTIAL
+editorial: CLEAN
+strike_phase: 2C
+-->
 
 ## Response:
 Updated saved memory
@@ -97,8 +150,50 @@ Encouragement to start small and build gradually
 
 Let me know if you’d like me to dive into any section or add more details to refine this structure!
 
+<!-- ATM-H-264 OUT
+next: ATM-H-265
+context_below: "Yes this is perfect! Can you please also add something along the lines of how..."
+-->
+
+<!-- ATM-H-265 IN
+idea: "Yes this is perfect! Can you please also add something along the lines of how..."
+section: "Prompt"
+position: 3
+of_total: 36
+prev: ATM-H-264
+context_above: "Updated saved memory"
+provenance: LOCAL
+nature: CLAIM
+nodes: [5, 6, 7]
+pillar: Physical
+build_state: PARTIAL
+editorial: CLEAN
+strike_phase: 2C
+-->
+
 ## Prompt:
 Yes this is perfect! Can you please also add something along the lines of how important it is to listen to your body and that their is different options to preventing pregnancy than hormonal birth control
+
+<!-- ATM-H-265 OUT
+next: ATM-H-266
+context_below: "Updated saved memory"
+-->
+
+<!-- ATM-H-266 IN
+idea: "Updated saved memory"
+section: "Response"
+position: 4
+of_total: 36
+prev: ATM-H-265
+context_above: "Yes this is perfect! Can you please also add something along the lines of how..."
+provenance: HYBRID
+nature: CITATION
+nodes: [5, 6, 7]
+pillar: Physical
+build_state: PARTIAL
+editorial: CLEAN
+strike_phase: 2C
+-->
 
 ## Response:
 Updated saved memory
@@ -191,8 +286,50 @@ Conclusion
 
 Would you like me to expand further on the birth control section or specific examples?
 
+<!-- ATM-H-266 OUT
+next: ATM-H-267
+context_below: "This is awesome, I think it’s perfect as is, can we dive into each chapter?"
+-->
+
+<!-- ATM-H-267 IN
+idea: "This is awesome, I think it’s perfect as is, can we dive into each chapter?"
+section: "Prompt"
+position: 5
+of_total: 36
+prev: ATM-H-266
+context_above: "Updated saved memory"
+provenance: LOCAL
+nature: CLAIM
+nodes: [5, 6, 7]
+pillar: Physical
+build_state: MISSING
+editorial: CLEAN
+strike_phase: 2B
+-->
+
 ## Prompt:
 This is awesome, I think it’s perfect as is, can we dive into each chapter?
+
+<!-- ATM-H-267 OUT
+next: ATM-H-268
+context_below: "I'm so glad you love it! Let’s dive into each chapter and start fleshing them..."
+-->
+
+<!-- ATM-H-268 IN
+idea: "I'm so glad you love it! Let’s dive into each chapter and start fleshing them..."
+section: "Response"
+position: 6
+of_total: 36
+prev: ATM-H-267
+context_above: "This is awesome, I think it’s perfect as is, can we dive into each chapter?"
+provenance: HYBRID
+nature: NARRATIVE
+nodes: [5, 6, 7]
+pillar: Physical
+build_state: EXISTS
+editorial: CLEAN
+strike_phase: 2B
+-->
 
 ## Response:
 I'm so glad you love it! Let’s dive into each chapter and start fleshing them out. Here’s a detailed breakdown of Chapter 1: Introduction to get us started. Once you're happy with the approach, I’ll move on to the next chapters.
@@ -249,8 +386,50 @@ Reduce reliance on synthetic hormones and live more in tune with your body.
 
 Does this tone and level of depth work for you? If yes, I’ll draft Chapter 2 next! Let me know if there’s anything you’d like to add or adjust.
 
+<!-- ATM-H-268 OUT
+next: ATM-H-269
+context_below: "Will you go into a little more depth or detail on how to tell when each phase..."
+-->
+
+<!-- ATM-H-269 IN
+idea: "Will you go into a little more depth or detail on how to tell when each phase..."
+section: "Prompt"
+position: 7
+of_total: 36
+prev: ATM-H-268
+context_above: "I'm so glad you love it! Let’s dive into each chapter and start fleshing them..."
+provenance: LOCAL
+nature: NARRATIVE
+nodes: [5, 6, 7]
+pillar: Physical
+build_state: MISSING
+editorial: CLEAN
+strike_phase: 2B
+-->
+
 ## Prompt:
 Will you go into a little more depth or detail on how to tell when each phase of your cycle is starting or common feelings and symptoms that are related to each?
+
+<!-- ATM-H-269 OUT
+next: ATM-H-270
+context_below: "Absolutely! Let me expand on Chapter 1 with more details about how to identif..."
+-->
+
+<!-- ATM-H-270 IN
+idea: "Absolutely! Let me expand on Chapter 1 with more details about how to identif..."
+section: "Response"
+position: 8
+of_total: 36
+prev: ATM-H-269
+context_above: "Will you go into a little more depth or detail on how to tell when each phase..."
+provenance: HYBRID
+nature: CITATION
+nodes: [5, 6, 7]
+pillar: Physical
+build_state: EXISTS
+editorial: CLEAN
+strike_phase: 2B
+-->
 
 ## Response:
 Absolutely! Let me expand on Chapter 1 with more details about how to identify each phase of your cycle, including physical and emotional signs.
@@ -349,8 +528,50 @@ Apps: Tools like Clue, Flo, or Natural Cycles can help you track symptoms and pr
 
 Would you like me to move forward with Chapter 2 or dive deeper into any part of this chapter? Let me know!
 
+<!-- ATM-H-270 OUT
+next: ATM-H-271
+context_below: "This is great! Let’s dive into chapter 2!"
+-->
+
+<!-- ATM-H-271 IN
+idea: "This is great! Let’s dive into chapter 2!"
+section: "Prompt"
+position: 9
+of_total: 36
+prev: ATM-H-270
+context_above: "Absolutely! Let me expand on Chapter 1 with more details about how to identif..."
+provenance: LOCAL
+nature: CLAIM
+nodes: [5, 6, 7]
+pillar: Physical
+build_state: MISSING
+editorial: CLEAN
+strike_phase: 2B
+-->
+
 ## Prompt:
 This is great! Let’s dive into chapter 2!
+
+<!-- ATM-H-271 OUT
+next: ATM-H-272
+context_below: "Here’s a detailed draft for Chapter 2: Understanding Your Hormone Cycle:"
+-->
+
+<!-- ATM-H-272 IN
+idea: "Here’s a detailed draft for Chapter 2: Understanding Your Hormone Cycle:"
+section: "Response"
+position: 10
+of_total: 36
+prev: ATM-H-271
+context_above: "This is great! Let’s dive into chapter 2!"
+provenance: HYBRID
+nature: PROTOCOL
+nodes: [5, 6, 7]
+pillar: Physical
+build_state: EXISTS
+editorial: CLEAN
+strike_phase: 2B
+-->
 
 ## Response:
 Here’s a detailed draft for Chapter 2: Understanding Your Hormone Cycle:
@@ -458,8 +679,50 @@ Understanding your cycle isn’t just about managing periods; it’s about creat
 
 Does this depth and tone work for you? If so, I’ll move on to Chapter 3: Living in Alignment with Your Cycle!
 
+<!-- ATM-H-272 OUT
+next: ATM-H-273
+context_below: "Yes !!"
+-->
+
+<!-- ATM-H-273 IN
+idea: "Yes !!"
+section: "Prompt"
+position: 11
+of_total: 36
+prev: ATM-H-272
+context_above: "Here’s a detailed draft for Chapter 2: Understanding Your Hormone Cycle:"
+provenance: LOCAL
+nature: CLAIM
+nodes: [5, 6, 7]
+pillar: Physical
+build_state: MISSING
+editorial: CLEAN
+strike_phase: 2B
+-->
+
 ## Prompt:
 Yes !!
+
+<!-- ATM-H-273 OUT
+next: ATM-H-274
+context_below: "Here’s the draft for Chapter 3: Living in Alignment with Your Cycle:"
+-->
+
+<!-- ATM-H-274 IN
+idea: "Here’s the draft for Chapter 3: Living in Alignment with Your Cycle:"
+section: "Response"
+position: 12
+of_total: 36
+prev: ATM-H-273
+context_above: "Yes !!"
+provenance: HYBRID
+nature: CITATION
+nodes: [5, 6, 7]
+pillar: Physical
+build_state: EXISTS
+editorial: CLEAN
+strike_phase: 2B
+-->
 
 ## Response:
 Here’s the draft for Chapter 3: Living in Alignment with Your Cycle:
@@ -576,8 +839,50 @@ Give Yourself Grace: No one is perfectly aligned all the time. Use tracking as a
 
 Would you like me to move to Chapter 4: Foods for Hormonal Balance, or is there anything else you'd like to add here?
 
+<!-- ATM-H-274 OUT
+next: ATM-H-275
+context_below: "This is amazing thank you!! Yes"
+-->
+
+<!-- ATM-H-275 IN
+idea: "This is amazing thank you!! Yes"
+section: "Prompt"
+position: 13
+of_total: 36
+prev: ATM-H-274
+context_above: "Here’s the draft for Chapter 3: Living in Alignment with Your Cycle:"
+provenance: LOCAL
+nature: CLAIM
+nodes: [5, 6, 7]
+pillar: Physical
+build_state: MISSING
+editorial: CLEAN
+strike_phase: 2B
+-->
+
 ## Prompt:
 This is amazing thank you!! Yes
+
+<!-- ATM-H-275 OUT
+next: ATM-H-276
+context_below: "Here’s the draft for Chapter 4: Foods for Hormonal Balance:"
+-->
+
+<!-- ATM-H-276 IN
+idea: "Here’s the draft for Chapter 4: Foods for Hormonal Balance:"
+section: "Response"
+position: 14
+of_total: 36
+prev: ATM-H-275
+context_above: "This is amazing thank you!! Yes"
+provenance: HYBRID
+nature: NARRATIVE
+nodes: [5, 6, 7]
+pillar: Physical
+build_state: EXISTS
+editorial: CLEAN
+strike_phase: 2B
+-->
 
 ## Response:
 Here’s the draft for Chapter 4: Foods for Hormonal Balance:
@@ -718,8 +1023,50 @@ Best for: Menstrual phase to soothe cramps and inflammation.
 
 Would you like me to expand on any of these sections or move on to Chapter 5: Movement and Workouts for Each Phase?
 
+<!-- ATM-H-276 OUT
+next: ATM-H-277
+context_below: "Perfect yes I am’"
+-->
+
+<!-- ATM-H-277 IN
+idea: "Perfect yes I am’"
+section: "Prompt"
+position: 15
+of_total: 36
+prev: ATM-H-276
+context_above: "Here’s the draft for Chapter 4: Foods for Hormonal Balance:"
+provenance: LOCAL
+nature: CLAIM
+nodes: [5, 6, 7]
+pillar: Physical
+build_state: MISSING
+editorial: CLEAN
+strike_phase: 2B
+-->
+
 ## Prompt:
 Perfect yes I am’
+
+<!-- ATM-H-277 OUT
+next: ATM-H-278
+context_below: "Here’s the draft for Chapter 5: Movement and Workouts for Each Phase:"
+-->
+
+<!-- ATM-H-278 IN
+idea: "Here’s the draft for Chapter 5: Movement and Workouts for Each Phase:"
+section: "Response"
+position: 16
+of_total: 36
+prev: ATM-H-277
+context_above: "Perfect yes I am’"
+provenance: HYBRID
+nature: NARRATIVE
+nodes: [5, 6, 7]
+pillar: Physical
+build_state: EXISTS
+editorial: CLEAN
+strike_phase: 2B
+-->
 
 ## Response:
 Here’s the draft for Chapter 5: Movement and Workouts for Each Phase:
@@ -833,8 +1180,50 @@ Luteal Phase: Low-impact exercise reduces stress, balances cortisol, and support
 
 Would you like to refine this chapter or move forward to Chapter 6: Cycle Tracking and Empowerment?
 
+<!-- ATM-H-278 OUT
+next: ATM-H-279
+context_below: "This is great, let’s move to chapter 6!"
+-->
+
+<!-- ATM-H-279 IN
+idea: "This is great, let’s move to chapter 6!"
+section: "Prompt"
+position: 17
+of_total: 36
+prev: ATM-H-278
+context_above: "Here’s the draft for Chapter 5: Movement and Workouts for Each Phase:"
+provenance: LOCAL
+nature: CLAIM
+nodes: [5, 6, 7]
+pillar: Physical
+build_state: MISSING
+editorial: CLEAN
+strike_phase: 2B
+-->
+
 ## Prompt:
 This is great, let’s move to chapter 6!
+
+<!-- ATM-H-279 OUT
+next: ATM-H-280
+context_below: "Here’s the draft for Chapter 6: Cycle Tracking and Empowerment:"
+-->
+
+<!-- ATM-H-280 IN
+idea: "Here’s the draft for Chapter 6: Cycle Tracking and Empowerment:"
+section: "Response"
+position: 18
+of_total: 36
+prev: ATM-H-279
+context_above: "This is great, let’s move to chapter 6!"
+provenance: HYBRID
+nature: PROTOCOL
+nodes: [5, 6, 7]
+pillar: Physical
+build_state: EXISTS
+editorial: CLEAN
+strike_phase: 2B
+-->
 
 ## Response:
 Here’s the draft for Chapter 6: Cycle Tracking and Empowerment:
@@ -934,14 +1323,98 @@ By tracking your cycle, you move away from the mindset that your hormones are so
 
 Would you like to expand on anything here or move to Chapter 7: Natural Alternatives to Hormonal Birth Control?
 
+<!-- ATM-H-280 OUT
+next: ATM-H-281
+context_below: "This is great!"
+-->
+
+<!-- ATM-H-281 IN
+idea: "This is great!"
+section: "Prompt"
+position: 19
+of_total: 36
+prev: ATM-H-280
+context_above: "Here’s the draft for Chapter 6: Cycle Tracking and Empowerment:"
+provenance: LOCAL
+nature: CLAIM
+nodes: [5, 6, 7]
+pillar: Physical
+build_state: MISSING
+editorial: CLEAN
+strike_phase: 2B
+-->
+
 ## Prompt:
 This is great!
+
+<!-- ATM-H-281 OUT
+next: ATM-H-282
+context_below: "Thank you! I'm so glad you’re loving it. Let me know when you’re ready to div..."
+-->
+
+<!-- ATM-H-282 IN
+idea: "Thank you! I'm so glad you’re loving it. Let me know when you’re ready to div..."
+section: "Response"
+position: 20
+of_total: 36
+prev: ATM-H-281
+context_above: "This is great!"
+provenance: HYBRID
+nature: CLAIM
+nodes: [5, 6, 7]
+pillar: Physical
+build_state: MISSING
+editorial: CLEAN
+strike_phase: 2B
+-->
 
 ## Response:
 Thank you! I'm so glad you’re loving it. Let me know when you’re ready to dive into Chapter 7 or if there’s anything else you'd like to adjust or expand upon.
 
+<!-- ATM-H-282 OUT
+next: ATM-H-283
+context_below: "Let’s go into chapter 7!"
+-->
+
+<!-- ATM-H-283 IN
+idea: "Let’s go into chapter 7!"
+section: "Prompt"
+position: 21
+of_total: 36
+prev: ATM-H-282
+context_above: "Thank you! I'm so glad you’re loving it. Let me know when you’re ready to div..."
+provenance: LOCAL
+nature: CLAIM
+nodes: [5, 6, 7]
+pillar: Physical
+build_state: MISSING
+editorial: CLEAN
+strike_phase: 2B
+-->
+
 ## Prompt:
 Let’s go into chapter 7!
+
+<!-- ATM-H-283 OUT
+next: ATM-H-284
+context_below: "Here’s the draft for Chapter 7: Natural Alternatives to Hormonal Birth Control:"
+-->
+
+<!-- ATM-H-284 IN
+idea: "Here’s the draft for Chapter 7: Natural Alternatives to Hormonal Birth Control:"
+section: "Response"
+position: 22
+of_total: 36
+prev: ATM-H-283
+context_above: "Let’s go into chapter 7!"
+provenance: HYBRID
+nature: NARRATIVE
+nodes: [5, 6, 7]
+pillar: Physical
+build_state: EXISTS
+editorial: CLEAN
+strike_phase: 2B
+-->
 
 ## Response:
 Here’s the draft for Chapter 7: Natural Alternatives to Hormonal Birth Control:
@@ -1056,8 +1529,50 @@ Choosing the right birth control method is a personal decision, and there’s no
 
 How does this chapter feel to you? Would you like to tweak or add anything before moving to Chapter 8: Final Thoughts & Next Steps?
 
+<!-- ATM-H-284 OUT
+next: ATM-H-285
+context_below: "Can you add the side effects and long term effects associated with hormonal b..."
+-->
+
+<!-- ATM-H-285 IN
+idea: "Can you add the side effects and long term effects associated with hormonal b..."
+section: "Prompt"
+position: 23
+of_total: 36
+prev: ATM-H-284
+context_above: "Here’s the draft for Chapter 7: Natural Alternatives to Hormonal Birth Control:"
+provenance: LOCAL
+nature: CLAIM
+nodes: [5, 6, 7]
+pillar: Physical
+build_state: MISSING
+editorial: CLEAN
+strike_phase: 2B
+-->
+
 ## Prompt:
 Can you add the side effects and long term effects associated with hormonal birth controls
+
+<!-- ATM-H-285 OUT
+next: ATM-H-286
+context_below: "Absolutely! Here’s the revised version of Chapter 7: Natural Alternatives to ..."
+-->
+
+<!-- ATM-H-286 IN
+idea: "Absolutely! Here’s the revised version of Chapter 7: Natural Alternatives to ..."
+section: "Response"
+position: 24
+of_total: 36
+prev: ATM-H-285
+context_above: "Can you add the side effects and long term effects associated with hormonal b..."
+provenance: HYBRID
+nature: NARRATIVE
+nodes: [5, 6, 7]
+pillar: Physical
+build_state: EXISTS
+editorial: CLEAN
+strike_phase: 2B
+-->
 
 ## Response:
 Absolutely! Here’s the revised version of Chapter 7: Natural Alternatives to Hormonal Birth Control, including the side effects and long-term effects of hormonal birth control:
@@ -1218,8 +1733,50 @@ Choosing the right birth control method is a personal decision, and there’s no
 
 How does this version feel to you? Would you like to proceed to Chapter 8: Final Thoughts & Next Steps?
 
+<!-- ATM-H-286 OUT
+next: ATM-H-287
+context_below: "Let’s go to chapter 8 this is great thank you!"
+-->
+
+<!-- ATM-H-287 IN
+idea: "Let’s go to chapter 8 this is great thank you!"
+section: "Prompt"
+position: 25
+of_total: 36
+prev: ATM-H-286
+context_above: "Absolutely! Here’s the revised version of Chapter 7: Natural Alternatives to ..."
+provenance: LOCAL
+nature: CLAIM
+nodes: [5, 6, 7]
+pillar: Physical
+build_state: MISSING
+editorial: CLEAN
+strike_phase: 2B
+-->
+
 ## Prompt:
 Let’s go to chapter 8 this is great thank you!
+
+<!-- ATM-H-287 OUT
+next: ATM-H-288
+context_below: "You're welcome! Here's Chapter 8: Final Thoughts & Next Steps:"
+-->
+
+<!-- ATM-H-288 IN
+idea: "You're welcome! Here's Chapter 8: Final Thoughts & Next Steps:"
+section: "Response"
+position: 26
+of_total: 36
+prev: ATM-H-287
+context_above: "Let’s go to chapter 8 this is great thank you!"
+provenance: HYBRID
+nature: CITATION
+nodes: [5, 6, 7]
+pillar: Physical
+build_state: EXISTS
+editorial: CLEAN
+strike_phase: 2B
+-->
 
 ## Response:
 You're welcome! Here's Chapter 8: Final Thoughts & Next Steps:
@@ -1310,8 +1867,50 @@ Thank you for taking the time to read this ebook. I’m excited for you as you s
 
 This is the final chapter! What do you think? Would you like to make any adjustments or add anything else?
 
+<!-- ATM-H-288 OUT
+next: ATM-H-289
+context_below: "No this is exactly what I wanted!! Thank you so much: will you help me turn t..."
+-->
+
+<!-- ATM-H-289 IN
+idea: "No this is exactly what I wanted!! Thank you so much: will you help me turn t..."
+section: "Prompt"
+position: 27
+of_total: 36
+prev: ATM-H-288
+context_above: "You're welcome! Here's Chapter 8: Final Thoughts & Next Steps:"
+provenance: LOCAL
+nature: SCRIPT
+nodes: [5, 6, 7]
+pillar: Physical
+build_state: MISSING
+editorial: CLEAN
+strike_phase: 2B
+-->
+
 ## Prompt:
 No this is exactly what I wanted!! Thank you so much(: will you help me turn this into 8-10 different short reels or Instagram posts with both short and long captions breaking these chapters down into bite size pieces that will have people wanting to come back for more or else check out my fancy new ebook?
+
+<!-- ATM-H-289 OUT
+next: ATM-H-290
+context_below: "Updated saved memory"
+-->
+
+<!-- ATM-H-290 IN
+idea: "Updated saved memory"
+section: "Response"
+position: 28
+of_total: 36
+prev: ATM-H-289
+context_above: "No this is exactly what I wanted!! Thank you so much: will you help me turn t..."
+provenance: HYBRID
+nature: SCRIPT
+nodes: [5, 6, 7]
+pillar: Physical
+build_state: EXISTS
+editorial: CLEAN
+strike_phase: 2B
+-->
 
 ## Response:
 Updated saved memory
@@ -1443,29 +2042,202 @@ Ready to dive deeper into your hormonal health and learn everything you need to 
 
 Would you like any adjustments or additions? Let me know, and I can help further tailor these!
 
+<!-- ATM-H-290 OUT
+next: ATM-H-291
+context_below: "This is perfect thank you!"
+-->
+
+<!-- ATM-H-291 IN
+idea: "This is perfect thank you!"
+section: "Prompt"
+position: 29
+of_total: 36
+prev: ATM-H-290
+context_above: "Updated saved memory"
+provenance: LOCAL
+nature: CLAIM
+nodes: [5, 6, 7]
+pillar: Physical
+build_state: MISSING
+editorial: CLEAN
+strike_phase: 2B
+-->
+
 ## Prompt:
 This is perfect thank you!
+
+<!-- ATM-H-291 OUT
+next: ATM-H-292
+context_below: "You're very welcome! I'm so glad you're happy with everything. If you need an..."
+-->
+
+<!-- ATM-H-292 IN
+idea: "You're very welcome! I'm so glad you're happy with everything. If you need an..."
+section: "Response"
+position: 30
+of_total: 36
+prev: ATM-H-291
+context_above: "This is perfect thank you!"
+provenance: HYBRID
+nature: NARRATIVE
+nodes: [5, 6, 7]
+pillar: Physical
+build_state: MISSING
+editorial: CLEAN
+strike_phase: 2B
+-->
 
 ## Response:
 You're very welcome! I'm so glad you're happy with everything. If you need any more help with your content or anything else, feel free to reach out. Best of luck with your ebook and Instagram posts! 😊📚✨
 
+<!-- ATM-H-292 OUT
+next: ATM-H-293
+context_below: "Can you turn my ebook into a pdf?"
+-->
+
+<!-- ATM-H-293 IN
+idea: "Can you turn my ebook into a pdf?"
+section: "Prompt"
+position: 31
+of_total: 36
+prev: ATM-H-292
+context_above: "You're very welcome! I'm so glad you're happy with everything. If you need an..."
+provenance: LOCAL
+nature: QUESTION
+nodes: [5, 6, 7]
+pillar: Physical
+build_state: MISSING
+editorial: CLEAN
+strike_phase: 2B
+-->
+
 ## Prompt:
 Can you turn my ebook into a pdf?
+
+<!-- ATM-H-293 OUT
+next: ATM-H-294
+context_below: "I can definitely help you with that! If you'd like, you can copy and paste th..."
+-->
+
+<!-- ATM-H-294 IN
+idea: "I can definitely help you with that! If you'd like, you can copy and paste th..."
+section: "Response"
+position: 32
+of_total: 36
+prev: ATM-H-293
+context_above: "Can you turn my ebook into a pdf?"
+provenance: HYBRID
+nature: CLAIM
+nodes: [5, 6, 7]
+pillar: Physical
+build_state: MISSING
+editorial: CLEAN
+strike_phase: 2B
+-->
 
 ## Response:
 I can definitely help you with that! If you'd like, you can copy and paste the content into a Word document, and I can turn it into a PDF for you. Or, if you prefer, you can upload your file here, and I can assist you in creating the PDF directly from there. Let me know which method works best for you!
 
+<!-- ATM-H-294 OUT
+next: ATM-H-295
+context_below: "If I give you a link to a Google sheet can you upload it there for me?"
+-->
+
+<!-- ATM-H-295 IN
+idea: "If I give you a link to a Google sheet can you upload it there for me?"
+section: "Prompt"
+position: 33
+of_total: 36
+prev: ATM-H-294
+context_above: "I can definitely help you with that! If you'd like, you can copy and paste th..."
+provenance: LOCAL
+nature: CLAIM
+nodes: [5, 6, 7]
+pillar: Physical
+build_state: MISSING
+editorial: CLEAN
+strike_phase: 2B
+-->
+
 ## Prompt:
 If I give you a link to a Google sheet can you upload it there for me?
+
+<!-- ATM-H-295 OUT
+next: ATM-H-296
+context_below: "Unfortunately, I don't have the ability to access or edit external links like..."
+-->
+
+<!-- ATM-H-296 IN
+idea: "Unfortunately, I don't have the ability to access or edit external links like..."
+section: "Response"
+position: 34
+of_total: 36
+prev: ATM-H-295
+context_above: "If I give you a link to a Google sheet can you upload it there for me?"
+provenance: HYBRID
+nature: CLAIM
+nodes: [5, 6, 7]
+pillar: Physical
+build_state: MISSING
+editorial: CLEAN
+strike_phase: 2B
+-->
 
 ## Response:
 Unfortunately, I don't have the ability to access or edit external links like Google Sheets. However, if you copy and paste the content into a Google Doc or Word document, I can guide you through converting it into a PDF or help with any formatting you need! Let me know what you'd prefer, and I’m happy to assist you further.
 
+<!-- ATM-H-296 OUT
+next: ATM-H-297
+context_below: "Okay thank you!"
+-->
+
+<!-- ATM-H-297 IN
+idea: "Okay thank you!"
+section: "Prompt"
+position: 35
+of_total: 36
+prev: ATM-H-296
+context_above: "Unfortunately, I don't have the ability to access or edit external links like..."
+provenance: LOCAL
+nature: CLAIM
+nodes: [5, 6, 7]
+pillar: Physical
+build_state: MISSING
+editorial: CLEAN
+strike_phase: 2B
+-->
+
 ## Prompt:
 Okay thank you!
 
+<!-- ATM-H-297 OUT
+next: ATM-H-298
+context_below: "You're welcome! If you need help with anything else, feel free to ask. Good l..."
+-->
+
+<!-- ATM-H-298 IN
+idea: "You're welcome! If you need help with anything else, feel free to ask. Good l..."
+section: "Response"
+position: 36
+of_total: 36
+prev: ATM-H-297
+context_above: "Okay thank you!"
+provenance: HYBRID
+nature: NARRATIVE
+nodes: [5, 6, 7]
+pillar: Physical
+build_state: MISSING
+editorial: CLEAN
+strike_phase: 2B
+-->
+
 ## Response:
 You're welcome! If you need help with anything else, feel free to ask. Good luck with your ebook! 😊📚
+
+<!-- ATM-H-298 OUT
+next: null
+context_below: "null"
+-->
 
 
 

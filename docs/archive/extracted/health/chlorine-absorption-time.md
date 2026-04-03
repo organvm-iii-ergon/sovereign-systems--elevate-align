@@ -1,3 +1,16 @@
+<!-- DOC-ENVELOPE
+id: DOC-H-08
+total_sections: 2
+total_atoms: 2
+dominant_provenance: LOCAL
+dominant_nature: CLAIM
+sections:
+  - name: "Prompt"
+    atoms: [ATM-H-117]
+  - name: "Response"
+    atoms: [ATM-H-118]
+-->
+
 ---
 title: "Chlorine skin absorption science, DBPs, timelines"
 source_file: "ChatGPT-Chlorine absorption time.txt"
@@ -8,6 +21,8 @@ pillar: "Physical"
 extracted: 2026-04-03
 ---
 
+
+
 Chlorine absorption time
 
 User: Maddie Galloway (95rrzm9nht@privaterelay.appleid.com)
@@ -16,8 +31,46 @@ Updated: 10/19/2025 9:21:42
 Exported: 3/31/2026 13:05:02
 Link: https://chatgpt.com/g/g-p-681675945c108191aebfa81457898ccd-business/c/68cd5e71-9410-8323-8724-54b798aee3dd
 
+
+<!-- ATM-H-117 IN
+idea: "How long does it take chlorine to reach your blood from your skin"
+section: "Prompt"
+position: 1
+of_total: 2
+prev: null
+context_above: "null"
+provenance: LOCAL
+nature: CLAIM
+nodes: [6, 8]
+pillar: Physical
+build_state: MISSING
+editorial: CLEAN
+strike_phase: 2B
+-->
+
 ## Prompt:
 How long does it take chlorine to reach your blood from your skin
+
+<!-- ATM-H-117 OUT
+next: ATM-H-118
+context_below: "Thought for 9s"
+-->
+
+<!-- ATM-H-118 IN
+idea: "Thought for 9s"
+section: "Response"
+position: 2
+of_total: 2
+prev: ATM-H-117
+context_above: "How long does it take chlorine to reach your blood from your skin"
+provenance: HYBRID
+nature: FRAMEWORK
+nodes: [6, 8]
+pillar: Physical
+build_state: MISSING
+editorial: CLEAN
+strike_phase: 2B
+-->
 
 ## Response:
 Thought for 9s
@@ -65,6 +118,11 @@ look up what specific pool-level safety recommendations are for lifeguards, comp
 
 
 Which would help you most?
+
+<!-- ATM-H-118 OUT
+next: null
+context_below: "null"
+-->
 
 
 

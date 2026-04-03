@@ -1,3 +1,16 @@
+<!-- DOC-ENVELOPE
+id: DOC-H-02
+total_sections: 2
+total_atoms: 2
+dominant_provenance: LOCAL
+dominant_nature: SCRIPT
+sections:
+  - name: "Prompt"
+    atoms: [ATM-H-027]
+  - name: "Response"
+    atoms: [ATM-H-028]
+-->
+
 ---
 title: "IG captions: chemical exposure + inflammation"
 source_file: "ChatGPT-Aerosols and cleaning products.txt"
@@ -8,6 +21,8 @@ pillar: "Physical"
 extracted: 2026-04-03
 ---
 
+
+
 Aerosols and cleaning products
 
 User: Maddie Galloway (95rrzm9nht@privaterelay.appleid.com)
@@ -16,8 +31,46 @@ Updated: 11/17/2025 14:15:56
 Exported: 3/31/2026 14:14:40
 Link: https://chatgpt.com/c/691b9e76-b0b4-832c-a69a-83ae3f58703b
 
+
+<!-- ATM-H-027 IN
+idea: "Caption about aerosols and the stuff that comes off cleaners and gets in the ..."
+section: "Prompt"
+position: 1
+of_total: 2
+prev: null
+context_above: "null"
+provenance: LOCAL
+nature: SCRIPT
+nodes: [6, 8]
+pillar: Physical
+build_state: MISSING
+editorial: CLEAN
+strike_phase: 2B
+-->
+
 ## Prompt:
 Caption about aerosols and the stuff that comes off cleaners and gets in the air and then sticks to your eyes and in your mouth & makes you sick
+
+<!-- ATM-H-027 OUT
+next: ATM-H-028
+context_below: "Here are three caption options — all in your raw, real, health-truth voice. P..."
+-->
+
+<!-- ATM-H-028 IN
+idea: "Here are three caption options — all in your raw, real, health-truth voice. P..."
+section: "Response"
+position: 2
+of_total: 2
+prev: ATM-H-027
+context_above: "Caption about aerosols and the stuff that comes off cleaners and gets in the ..."
+provenance: HYBRID
+nature: SCRIPT
+nodes: [6, 8]
+pillar: Physical
+build_state: PARTIAL
+editorial: CLEAN
+strike_phase: 2C
+-->
 
 ## Response:
 Here are three caption options — all in your raw, real, health-truth voice. Pick your vibe:
@@ -66,6 +119,11 @@ CTA: Want the swaps that healed my inflammation? Comment CLEAN.
 
 
 Want a carousel to go with this? Or a version that ties hydration + inflammation into it?
+
+<!-- ATM-H-028 OUT
+next: null
+context_below: "null"
+-->
 
 
 

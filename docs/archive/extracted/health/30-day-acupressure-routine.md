@@ -1,3 +1,16 @@
+<!-- DOC-ENVELOPE
+id: DOC-H-01
+total_sections: 2
+total_atoms: 26
+dominant_provenance: LOCAL
+dominant_nature: CLAIM
+sections:
+  - name: "Prompt"
+    atoms: [ATM-H-001, ATM-H-003, ATM-H-005, ATM-H-007, ATM-H-009, ATM-H-011, ATM-H-013, ATM-H-015, ATM-H-017, ATM-H-019, ATM-H-021, ATM-H-023, ATM-H-025]
+  - name: "Response"
+    atoms: [ATM-H-002, ATM-H-004, ATM-H-006, ATM-H-008, ATM-H-010, ATM-H-012, ATM-H-014, ATM-H-016, ATM-H-018, ATM-H-020, ATM-H-022, ATM-H-024, ATM-H-026]
+-->
+
 ---
 title: "Acupressure for money blocks, self-doubt, fear"
 source_file: "ChatGPT-30 Day Acupressure Routine.txt"
@@ -8,6 +21,8 @@ pillar: "Physical"
 extracted: 2026-04-03
 ---
 
+
+
 30 Day Acupressure Routine
 
 User: Maddie Galloway (95rrzm9nht@privaterelay.appleid.com)
@@ -16,8 +31,46 @@ Updated: 3/31/2026 12:31:58
 Exported: 3/31/2026 12:31:59
 Link: https://chatgpt.com/g/g-p-681675a28d988191995dc4b68a2bc1f1-healing-spiral/c/677308a0-57bc-8003-8299-c7eaca5bfb06
 
+
+<!-- ATM-H-001 IN
+idea: "Will you help me put together a 30 day hand foot and ear acupuncture routine ..."
+section: "Prompt"
+position: 1
+of_total: 26
+prev: null
+context_above: "null"
+provenance: LOCAL
+nature: QUESTION
+nodes: [2, 9, 10, 13]
+pillar: Physical
+build_state: MISSING
+editorial: CLEAN
+strike_phase: 2A
+-->
+
 ## Prompt:
 Will you help me put together a 30 day hand foot and ear acupuncture routine to help me clear and money blockages, self doubt and fear?
+
+<!-- ATM-H-001 OUT
+next: ATM-H-002
+context_below: "Certainly! Acupressure and acupuncture can support clearing energy blockages,..."
+-->
+
+<!-- ATM-H-002 IN
+idea: "Certainly! Acupressure and acupuncture can support clearing energy blockages,..."
+section: "Response"
+position: 2
+of_total: 26
+prev: ATM-H-001
+context_above: "Will you help me put together a 30 day hand foot and ear acupuncture routine ..."
+provenance: HYBRID
+nature: CLAIM
+nodes: [2, 9, 10, 13]
+pillar: Physical
+build_state: PARTIAL
+editorial: CLEAN
+strike_phase: 2C
+-->
 
 ## Response:
 Certainly! Acupressure and acupuncture can support clearing energy blockages, enhancing confidence, and promoting a sense of abundance. Here's a 30-day hand, foot, and ear acupressure routine designed to address money blockages, self-doubt, and fear.
@@ -130,8 +183,50 @@ Incorporate gentle stretches or yoga to further unblock energy.
 
 Would you like help tailoring this further or guidance on combining it with affirmations and other techniques?
 
+<!-- ATM-H-002 OUT
+next: ATM-H-003
+context_below: "Yes can we come up with a 30 day routine that flows and builds off of eachoth..."
+-->
+
+<!-- ATM-H-003 IN
+idea: "Yes can we come up with a 30 day routine that flows and builds off of eachoth..."
+section: "Prompt"
+position: 3
+of_total: 26
+prev: ATM-H-002
+context_above: "Certainly! Acupressure and acupuncture can support clearing energy blockages,..."
+provenance: LOCAL
+nature: CLAIM
+nodes: [2, 9, 10, 13]
+pillar: Physical
+build_state: MISSING
+editorial: CLEAN
+strike_phase: 2A
+-->
+
 ## Prompt:
 Yes can we come up with a 30 day routine that flows and builds off of eachother and please include affirmations and any other techniques you think would be useful! Maybe should I pair this with the 30 day breathing routine you came up with for me or should we leave that separate for now
+
+<!-- ATM-H-003 OUT
+next: ATM-H-004
+context_below: "We can create a synergistic 30-day routine that flows and builds off each day..."
+-->
+
+<!-- ATM-H-004 IN
+idea: "We can create a synergistic 30-day routine that flows and builds off each day..."
+section: "Response"
+position: 4
+of_total: 26
+prev: ATM-H-003
+context_above: "Yes can we come up with a 30 day routine that flows and builds off of eachoth..."
+provenance: HYBRID
+nature: PROTOCOL
+nodes: [2, 9, 10, 13]
+pillar: Physical
+build_state: PARTIAL
+editorial: CLEAN
+strike_phase: 2C
+-->
 
 ## Response:
 We can create a synergistic 30-day routine that flows and builds off each day to support clearing money blockages, self-doubt, and fear, incorporating acupuncture points, affirmations, visualization, and subtle energetic techniques. You can also weave in the breathing routine towards the end of this practice or use it as a standalone routine if you prefer to focus deeply on one practice at a time.
@@ -233,8 +328,50 @@ By Week 4: Combine breathwork and acupressure into a unified session for 30-40 m
 
 Let me know if you’d like me to integrate this further or adjust for your preferences!
 
+<!-- ATM-H-004 OUT
+next: ATM-H-005
+context_below: "Can we make the acupuncture routine more in depth and day to day or do you th..."
+-->
+
+<!-- ATM-H-005 IN
+idea: "Can we make the acupuncture routine more in depth and day to day or do you th..."
+section: "Prompt"
+position: 5
+of_total: 26
+prev: ATM-H-004
+context_above: "We can create a synergistic 30-day routine that flows and builds off each day..."
+provenance: LOCAL
+nature: CLAIM
+nodes: [2, 9, 10, 13]
+pillar: Physical
+build_state: MISSING
+editorial: CLEAN
+strike_phase: 2A
+-->
+
 ## Prompt:
 Can we make the acupuncture routine more in depth and day to day or do you think it’s better to focus on one point for a few weeks?
+
+<!-- ATM-H-005 OUT
+next: ATM-H-006
+context_below: "We can make the routine more in-depth by gradually incorporating new points e..."
+-->
+
+<!-- ATM-H-006 IN
+idea: "We can make the routine more in-depth by gradually incorporating new points e..."
+section: "Response"
+position: 6
+of_total: 26
+prev: ATM-H-005
+context_above: "Can we make the acupuncture routine more in depth and day to day or do you th..."
+provenance: HYBRID
+nature: PROTOCOL
+nodes: [2, 9, 10, 13]
+pillar: Physical
+build_state: PARTIAL
+editorial: CLEAN
+strike_phase: 2C
+-->
 
 ## Response:
 We can make the routine more in-depth by gradually incorporating new points each day or week while still focusing on a foundational set of points. This approach allows for variety and builds on the energy work progressively, helping you address different layers of fear, self-doubt, and money blockages while grounding your intentions.
@@ -382,8 +519,50 @@ Use your breathwork session before stimulating Kidney 1 (K1) or Sympathetic Poin
 
 This routine provides daily variety while building momentum. Would you like additional guidance on any points or techniques?
 
+<!-- ATM-H-006 OUT
+next: ATM-H-007
+context_below: "Can we make the acupuncture routine more in depth and day to day or do you th..."
+-->
+
+<!-- ATM-H-007 IN
+idea: "Can we make the acupuncture routine more in depth and day to day or do you th..."
+section: "Prompt"
+position: 7
+of_total: 26
+prev: ATM-H-006
+context_above: "We can make the routine more in-depth by gradually incorporating new points e..."
+provenance: LOCAL
+nature: CLAIM
+nodes: [2, 9, 10, 13]
+pillar: Physical
+build_state: MISSING
+editorial: CLEAN
+strike_phase: 2A
+-->
+
 ## Prompt:
 Can we make the acupuncture routine more in depth and day to day or do you think it’s better to focus on one point for a few weeks?
+
+<!-- ATM-H-007 OUT
+next: ATM-H-008
+context_below: "Creating a daily progression that integrates multiple acupuncture points can ..."
+-->
+
+<!-- ATM-H-008 IN
+idea: "Creating a daily progression that integrates multiple acupuncture points can ..."
+section: "Response"
+position: 8
+of_total: 26
+prev: ATM-H-007
+context_above: "Can we make the acupuncture routine more in depth and day to day or do you th..."
+provenance: HYBRID
+nature: PROTOCOL
+nodes: [2, 9, 10, 13]
+pillar: Physical
+build_state: PARTIAL
+editorial: CLEAN
+strike_phase: 2C
+-->
 
 ## Response:
 Creating a daily progression that integrates multiple acupuncture points can provide a more in-depth, transformational experience over 30 days. This approach works best when the routine evolves, with a few core points as anchors while introducing new points to address deeper emotional and energetic layers. Here's a day-by-day detailed acupuncture-inspired routine, building progressively toward clearing money blockages, self-doubt, and fear.
@@ -532,8 +711,50 @@ Advanced Work: Releasing fear and activating abundance (Weeks 3-4) clears deeper
 
 Would you like help tailoring affirmations or visualizations further? Or perhaps adding breathwork for enhanced grounding and release?
 
+<!-- ATM-H-008 OUT
+next: ATM-H-009
+context_below: "Yes maybe some affirmations and then what would you recommend for the breathw..."
+-->
+
+<!-- ATM-H-009 IN
+idea: "Yes maybe some affirmations and then what would you recommend for the breathw..."
+section: "Prompt"
+position: 9
+of_total: 26
+prev: ATM-H-008
+context_above: "Creating a daily progression that integrates multiple acupuncture points can ..."
+provenance: LOCAL
+nature: CLAIM
+nodes: [2, 9, 10, 13]
+pillar: Physical
+build_state: MISSING
+editorial: CLEAN
+strike_phase: 2A
+-->
+
 ## Prompt:
 Yes maybe some affirmations and then what would you recommend for the breathwork, do it simultaneously or after a couple of weeks
+
+<!-- ATM-H-009 OUT
+next: ATM-H-010
+context_below: "Here’s a set of affirmations tailored to each phase of the 30-day acupuncture..."
+-->
+
+<!-- ATM-H-010 IN
+idea: "Here’s a set of affirmations tailored to each phase of the 30-day acupuncture..."
+section: "Response"
+position: 10
+of_total: 26
+prev: ATM-H-009
+context_above: "Yes maybe some affirmations and then what would you recommend for the breathw..."
+provenance: HYBRID
+nature: PROTOCOL
+nodes: [2, 9, 10, 13]
+pillar: Physical
+build_state: PARTIAL
+editorial: CLEAN
+strike_phase: 2C
+-->
 
 ## Response:
 Here’s a set of affirmations tailored to each phase of the 30-day acupuncture-inspired routine. For the breathwork, I’d recommend incorporating it after Week 2 to deepen your practice as you begin addressing deeper fears and activating abundance. I’ll provide specific breathwork techniques below.
@@ -655,14 +876,98 @@ By Week 4, combine breathwork and acupressure into a seamless, deeply transforma
 
 Let me know if you'd like a guided script or more detail on specific breathwork practices!
 
+<!-- ATM-H-010 OUT
+next: ATM-H-011
+context_below: "This is perfect thank you!!"
+-->
+
+<!-- ATM-H-011 IN
+idea: "This is perfect thank you!!"
+section: "Prompt"
+position: 11
+of_total: 26
+prev: ATM-H-010
+context_above: "Here’s a set of affirmations tailored to each phase of the 30-day acupuncture..."
+provenance: LOCAL
+nature: CLAIM
+nodes: [2, 9, 10, 13]
+pillar: Physical
+build_state: MISSING
+editorial: CLEAN
+strike_phase: 2A
+-->
+
 ## Prompt:
 This is perfect thank you!!
+
+<!-- ATM-H-011 OUT
+next: ATM-H-012
+context_below: "You're so welcome! I'm thrilled this resonates with you, and I’m excited for ..."
+-->
+
+<!-- ATM-H-012 IN
+idea: "You're so welcome! I'm thrilled this resonates with you, and I’m excited for ..."
+section: "Response"
+position: 12
+of_total: 26
+prev: ATM-H-011
+context_above: "This is perfect thank you!!"
+provenance: HYBRID
+nature: NARRATIVE
+nodes: [2, 9, 10, 13]
+pillar: Physical
+build_state: MISSING
+editorial: CLEAN
+strike_phase: 2A
+-->
 
 ## Response:
 You're so welcome! I'm thrilled this resonates with you, and I’m excited for the incredible shifts you'll experience over the next 30 days. If you need any tweaks, additional guidance, or just want to share your progress, feel free to reach out anytime. You've got this! ✨
 
+<!-- ATM-H-012 OUT
+next: ATM-H-013
+context_below: "Can you help me turn this into a canva doc / guide with steps for each day so..."
+-->
+
+<!-- ATM-H-013 IN
+idea: "Can you help me turn this into a canva doc / guide with steps for each day so..."
+section: "Prompt"
+position: 13
+of_total: 26
+prev: ATM-H-012
+context_above: "You're so welcome! I'm thrilled this resonates with you, and I’m excited for ..."
+provenance: LOCAL
+nature: CLAIM
+nodes: [2, 9, 10, 13]
+pillar: Physical
+build_state: MISSING
+editorial: CLEAN
+strike_phase: 2A
+-->
+
 ## Prompt:
 Can you help me turn this into a canva doc / guide with steps for each day so I can make it pretty
+
+<!-- ATM-H-013 OUT
+next: ATM-H-014
+context_below: "Absolutely! I can help you organize the steps into a clear and visually appea..."
+-->
+
+<!-- ATM-H-014 IN
+idea: "Absolutely! I can help you organize the steps into a clear and visually appea..."
+section: "Response"
+position: 14
+of_total: 26
+prev: ATM-H-013
+context_above: "Can you help me turn this into a canva doc / guide with steps for each day so..."
+provenance: HYBRID
+nature: PROTOCOL
+nodes: [2, 9, 10, 13]
+pillar: Physical
+build_state: PARTIAL
+editorial: CLEAN
+strike_phase: 2C
+-->
 
 ## Response:
 Absolutely! I can help you organize the steps into a clear and visually appealing guide that you can format beautifully in Canva. Here's how we can structure the guide:
@@ -797,8 +1102,50 @@ Extras: Add decorative elements like lines, icons, or subtle backgrounds to keep
 
 If you want, I can provide the text in sections formatted specifically for Canva, or I can help create detailed descriptions for each section so you can copy and paste them into your design. Let me know how you'd like to proceed!
 
+<!-- ATM-H-014 OUT
+next: ATM-H-015
+context_below: "Let’s do detailed descriptions for each so I can just copy and paste it into ..."
+-->
+
+<!-- ATM-H-015 IN
+idea: "Let’s do detailed descriptions for each so I can just copy and paste it into ..."
+section: "Prompt"
+position: 15
+of_total: 26
+prev: ATM-H-014
+context_above: "Absolutely! I can help you organize the steps into a clear and visually appea..."
+provenance: LOCAL
+nature: CLAIM
+nodes: [2, 9, 10, 13]
+pillar: Physical
+build_state: MISSING
+editorial: CLEAN
+strike_phase: 2A
+-->
+
 ## Prompt:
 Let’s do detailed descriptions for each so I can just copy and paste it into my design! Thank you so much
+
+<!-- ATM-H-015 OUT
+next: ATM-H-016
+context_below: "Here are the detailed descriptions for each section, formatted so you can eas..."
+-->
+
+<!-- ATM-H-016 IN
+idea: "Here are the detailed descriptions for each section, formatted so you can eas..."
+section: "Response"
+position: 16
+of_total: 26
+prev: ATM-H-015
+context_above: "Let’s do detailed descriptions for each so I can just copy and paste it into ..."
+provenance: HYBRID
+nature: SCRIPT
+nodes: [2, 9, 10, 13]
+pillar: Physical
+build_state: PARTIAL
+editorial: CLEAN
+strike_phase: 2C
+-->
 
 ## Response:
 Here are the detailed descriptions for each section, formatted so you can easily copy and paste them into your Canva design:
@@ -998,11 +1345,53 @@ Closing Affirmation:
 
 Let me know if you’d like tweaks or help with acupressure point graphics! You’ve got this!
 
+<!-- ATM-H-016 OUT
+next: ATM-H-017
+context_below: "Can you show me what you think a page should look like?"
+-->
+
+<!-- ATM-H-017 IN
+idea: "Can you show me what you think a page should look like?"
+section: "Prompt"
+position: 17
+of_total: 26
+prev: ATM-H-016
+context_above: "Here are the detailed descriptions for each section, formatted so you can eas..."
+provenance: LOCAL
+nature: NARRATIVE
+nodes: [2, 9, 10, 13]
+pillar: Physical
+build_state: MISSING
+editorial: CLEAN
+strike_phase: 2A
+-->
+
 ## Prompt:
 Can you show me what you think a page should look like?
 
 
 And then I was also wanting to maybe share and offer this on my Instagram in case anyone wanted to start with me and hold eachother accountable or just to use for themselves, can we make some story slides for Instagram explaining what it is
+
+<!-- ATM-H-017 OUT
+next: ATM-H-018
+context_below: "Made with the old version of image generation. New version available now."
+-->
+
+<!-- ATM-H-018 IN
+idea: "Made with the old version of image generation. New version available now."
+section: "Response"
+position: 18
+of_total: 26
+prev: ATM-H-017
+context_above: "Can you show me what you think a page should look like?"
+provenance: HYBRID
+nature: SCRIPT
+nodes: [2, 9, 10, 13]
+pillar: Physical
+build_state: PARTIAL
+editorial: CLEAN
+strike_phase: 2C
+-->
 
 ## Response:
 Made with the old version of image generation. New version available now.
@@ -1097,8 +1486,50 @@ CTA: Swipe up to download the guide or DM me for the link!
 
 Let me know if you’d like help refining these slides or creating captions to share alongside them!
 
+<!-- ATM-H-018 OUT
+next: ATM-H-019
+context_below: "Should I just use the captions from above or would you recommend something el..."
+-->
+
+<!-- ATM-H-019 IN
+idea: "Should I just use the captions from above or would you recommend something el..."
+section: "Prompt"
+position: 19
+of_total: 26
+prev: ATM-H-018
+context_above: "Made with the old version of image generation. New version available now."
+provenance: LOCAL
+nature: SCRIPT
+nodes: [2, 9, 10, 13]
+pillar: Physical
+build_state: MISSING
+editorial: CLEAN
+strike_phase: 2A
+-->
+
 ## Prompt:
 Should I just use the captions from above or would you recommend something else? I just want to be able to copy and paste!
+
+<!-- ATM-H-019 OUT
+next: ATM-H-020
+context_below: "The captions above are designed to work perfectly for Instagram stories, but ..."
+-->
+
+<!-- ATM-H-020 IN
+idea: "The captions above are designed to work perfectly for Instagram stories, but ..."
+section: "Response"
+position: 20
+of_total: 26
+prev: ATM-H-019
+context_above: "Should I just use the captions from above or would you recommend something el..."
+provenance: HYBRID
+nature: SCRIPT
+nodes: [2, 9, 10, 13]
+pillar: Physical
+build_state: PARTIAL
+editorial: CLEAN
+strike_phase: 2C
+-->
 
 ## Response:
 The captions above are designed to work perfectly for Instagram stories, but I can refine them further to make them shorter, punchier, and more Instagram-friendly. Here’s a final version that you can copy and paste directly into your Instagram story slides:
@@ -1175,8 +1606,50 @@ Your transformation starts NOW.
 
 These are polished and easy to use, and they’ll work perfectly for stories. If you’d like hashtags or tags added, let me know, and I can include those too!
 
+<!-- ATM-H-020 OUT
+next: ATM-H-021
+context_below: "Yay! Thank you. I absolutely love the mock up you made, can I have those imag..."
+-->
+
+<!-- ATM-H-021 IN
+idea: "Yay! Thank you. I absolutely love the mock up you made, can I have those imag..."
+section: "Prompt"
+position: 21
+of_total: 26
+prev: ATM-H-020
+context_above: "The captions above are designed to work perfectly for Instagram stories, but ..."
+provenance: LOCAL
+nature: CLAIM
+nodes: [2, 9, 10, 13]
+pillar: Physical
+build_state: MISSING
+editorial: CLEAN
+strike_phase: 2A
+-->
+
 ## Prompt:
 Yay! Thank you. I absolutely love the mock up you made, can I have those images and guides for the acupuncture points for the hands feet and ears as well as any cute flowers or such you think apply
+
+<!-- ATM-H-021 OUT
+next: ATM-H-022
+context_below: "Made with the old version of image generation. New version available now."
+-->
+
+<!-- ATM-H-022 IN
+idea: "Made with the old version of image generation. New version available now."
+section: "Response"
+position: 22
+of_total: 26
+prev: ATM-H-021
+context_above: "Yay! Thank you. I absolutely love the mock up you made, can I have those imag..."
+provenance: HYBRID
+nature: CLAIM
+nodes: [2, 9, 10, 13]
+pillar: Physical
+build_state: MISSING
+editorial: CLEAN
+strike_phase: 2A
+-->
 
 ## Response:
 Made with the old version of image generation. New version available now.
@@ -1184,8 +1657,50 @@ Made with the old version of image generation. New version available now.
 
 Here’s a detailed and aesthetic diagram of the acupressure points for the hands, feet, and ears, complemented by floral accents to match the wellness theme. You can use this alongside the guide for a polished, beautiful presentation. If you'd like me to adjust anything or add more designs, let me know!
 
+<!-- ATM-H-022 OUT
+next: ATM-H-023
+context_below: "Can I have ones like these"
+-->
+
+<!-- ATM-H-023 IN
+idea: "Can I have ones like these"
+section: "Prompt"
+position: 23
+of_total: 26
+prev: ATM-H-022
+context_above: "Made with the old version of image generation. New version available now."
+provenance: LOCAL
+nature: CLAIM
+nodes: [2, 9, 10, 13]
+pillar: Physical
+build_state: MISSING
+editorial: CLEAN
+strike_phase: 2A
+-->
+
 ## Prompt:
 Can I have ones like these
+
+<!-- ATM-H-023 OUT
+next: ATM-H-024
+context_below: "Let me create refined diagrams focused individually on hands, feet, and ears,..."
+-->
+
+<!-- ATM-H-024 IN
+idea: "Let me create refined diagrams focused individually on hands, feet, and ears,..."
+section: "Response"
+position: 24
+of_total: 26
+prev: ATM-H-023
+context_above: "Can I have ones like these"
+provenance: HYBRID
+nature: CLAIM
+nodes: [2, 9, 10, 13]
+pillar: Physical
+build_state: MISSING
+editorial: CLEAN
+strike_phase: 2A
+-->
 
 ## Response:
 Let me create refined diagrams focused individually on hands, feet, and ears, with clear labels and floral accents. I'll make sure they align with the style you're aiming for.
@@ -1220,11 +1735,58 @@ Here is the detailed and elegant diagram for the acupressure points on the ear, 
 
 Let me know if you’d like any additional elements or further adjustments!
 
+<!-- ATM-H-024 OUT
+next: ATM-H-025
+context_below: "This is great thank you so much! So excited to start putting this all together!!"
+-->
+
+<!-- ATM-H-025 IN
+idea: "This is great thank you so much! So excited to start putting this all together!!"
+section: "Prompt"
+position: 25
+of_total: 26
+prev: ATM-H-024
+context_above: "Let me create refined diagrams focused individually on hands, feet, and ears,..."
+provenance: LOCAL
+nature: CLAIM
+nodes: [2, 9, 10, 13]
+pillar: Physical
+build_state: MISSING
+editorial: CLEAN
+strike_phase: 2A
+-->
+
 ## Prompt:
 This is great thank you so much! So excited to start putting this all together!!
 
+<!-- ATM-H-025 OUT
+next: ATM-H-026
+context_below: "You’re so welcome! I’m thrilled to hear that you’re excited—it’s going to be ..."
+-->
+
+<!-- ATM-H-026 IN
+idea: "You’re so welcome! I’m thrilled to hear that you’re excited—it’s going to be ..."
+section: "Response"
+position: 26
+of_total: 26
+prev: ATM-H-025
+context_above: "This is great thank you so much! So excited to start putting this all together!!"
+provenance: HYBRID
+nature: CLAIM
+nodes: [2, 9, 10, 13]
+pillar: Physical
+build_state: MISSING
+editorial: CLEAN
+strike_phase: 2A
+-->
+
 ## Response:
 You’re so welcome! I’m thrilled to hear that you’re excited—it’s going to be such a beautiful and impactful project. I’m confident your audience will love it, and it will help so many people. If you need any tweaks, additional visuals, or support as you design and launch, I’m here for you. Wishing you all the success and joy in putting this together! 💛✨
+
+<!-- ATM-H-026 OUT
+next: null
+context_below: "null"
+-->
 
 
 

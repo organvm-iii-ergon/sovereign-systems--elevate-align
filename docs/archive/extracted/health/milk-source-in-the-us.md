@@ -1,3 +1,16 @@
+<!-- DOC-ENVELOPE
+id: DOC-H-25
+total_sections: 2
+total_atoms: 6
+dominant_provenance: LOCAL
+dominant_nature: CLAIM
+sections:
+  - name: "Prompt"
+    atoms: [ATM-H-331, ATM-H-333, ATM-H-335]
+  - name: "Response"
+    atoms: [ATM-H-332, ATM-H-334, ATM-H-336]
+-->
+
 ---
 title: "U.S. milk/beef sourcing, import data, welfare"
 source_file: "ChatGPT-Milk source in the US.txt"
@@ -8,6 +21,8 @@ pillar: "Physical"
 extracted: 2026-04-03
 ---
 
+
+
 Milk source in the US
 
 User: Maddie Galloway (95rrzm9nht@privaterelay.appleid.com)
@@ -16,8 +31,46 @@ Updated: 11/11/2025 7:18:03
 Exported: 3/31/2026 14:11:03
 Link: https://chatgpt.com/c/69134fda-0a60-8326-8df1-b1d1e8f232ec
 
+
+<!-- ATM-H-331 IN
+idea: "Where does the milk we get come from? America? Or is it imported?"
+section: "Prompt"
+position: 1
+of_total: 6
+prev: null
+context_above: "null"
+provenance: LOCAL
+nature: CLAIM
+nodes: [6, 8]
+pillar: Physical
+build_state: MISSING
+editorial: CLEAN
+strike_phase: 2B
+-->
+
 ## Prompt:
 Where does the milk we get come from? America? Or is it imported?
+
+<!-- ATM-H-331 OUT
+next: ATM-H-332
+context_below: "Most of the milk you buy in the U.S. comes from right here at home. According..."
+-->
+
+<!-- ATM-H-332 IN
+idea: "Most of the milk you buy in the U.S. comes from right here at home. According..."
+section: "Response"
+position: 2
+of_total: 6
+prev: ATM-H-331
+context_above: "Where does the milk we get come from? America? Or is it imported?"
+provenance: HYBRID
+nature: CLAIM
+nodes: [6, 8]
+pillar: Physical
+build_state: MISSING
+editorial: CLEAN
+strike_phase: 2B
+-->
 
 ## Response:
 Most of the milk you buy in the U.S. comes from right here at home. According to the United States Department of Agriculture (USDA) & its Economic Research Service:
@@ -35,8 +88,50 @@ So yes — the milk in U.S. stores is overwhelmingly produced domestically.
 
 If you like, I can check what percentage of our milk supply is imported (or exported) and whether any milk is commonly shipped into the U.S. from abroad.
 
+<!-- ATM-H-332 OUT
+next: ATM-H-333
+context_below: "What can you tell me about beef isn’t like 87% imported from Saudi ariabia an..."
+-->
+
+<!-- ATM-H-333 IN
+idea: "What can you tell me about beef isn’t like 87% imported from Saudi ariabia an..."
+section: "Prompt"
+position: 3
+of_total: 6
+prev: ATM-H-332
+context_above: "Most of the milk you buy in the U.S. comes from right here at home. According..."
+provenance: LOCAL
+nature: CLAIM
+nodes: [6, 8]
+pillar: Physical
+build_state: MISSING
+editorial: UNVERIFIED
+strike_phase: 2B
+-->
+
 ## Prompt:
 What can you tell me about beef isn’t like 87% imported from Saudi ariabia and somewhere else
+
+<!-- ATM-H-333 OUT
+next: ATM-H-334
+context_below: "That claim — that about 87% of U.S. beef is imported from Saudi Arabia or els..."
+-->
+
+<!-- ATM-H-334 IN
+idea: "That claim — that about 87% of U.S. beef is imported from Saudi Arabia or els..."
+section: "Response"
+position: 4
+of_total: 6
+prev: ATM-H-333
+context_above: "What can you tell me about beef isn’t like 87% imported from Saudi ariabia an..."
+provenance: HYBRID
+nature: STATISTIC
+nodes: [6, 8]
+pillar: Physical
+build_state: MISSING
+editorial: CLEAN
+strike_phase: 2B
+-->
 
 ## Response:
 That claim — that about 87% of U.S. beef is imported from Saudi Arabia or elsewhere — is not accurate, based on the best available data.
@@ -92,8 +187,50 @@ If you’re sourcing beef and want to know whether it’s domestic vs imported, 
 
 If you like, I can pull the most recent year’s data for domestic U.S. beef production vs imports vs exports (in pounds or metric tons) and show you what share of U.S. consumption is imported — that will give a clearer percentage. Would that be helpful?
 
+<!-- ATM-H-334 OUT
+next: ATM-H-335
+context_below: "Yes please even slaughter houses here are awful and inhumane as well"
+-->
+
+<!-- ATM-H-335 IN
+idea: "Yes please even slaughter houses here are awful and inhumane as well"
+section: "Prompt"
+position: 5
+of_total: 6
+prev: ATM-H-334
+context_above: "That claim — that about 87% of U.S. beef is imported from Saudi Arabia or els..."
+provenance: LOCAL
+nature: CLAIM
+nodes: [6, 8]
+pillar: Physical
+build_state: MISSING
+editorial: CLEAN
+strike_phase: 2B
+-->
+
 ## Prompt:
 Yes please even slaughter houses here are awful and inhumane as well
+
+<!-- ATM-H-335 OUT
+next: ATM-H-336
+context_below: "Here are two components of your question — the trade figures for U.S. beef, a..."
+-->
+
+<!-- ATM-H-336 IN
+idea: "Here are two components of your question — the trade figures for U.S. beef, a..."
+section: "Response"
+position: 6
+of_total: 6
+prev: ATM-H-335
+context_above: "Yes please even slaughter houses here are awful and inhumane as well"
+provenance: HYBRID
+nature: STATISTIC
+nodes: [6, 8]
+pillar: Physical
+build_state: MISSING
+editorial: CLEAN
+strike_phase: 2B
+-->
 
 ## Response:
 Here are two components of your question — the trade figures for U.S. beef, and the welfare / slaughterhouse concerns — followed by what that means for you as a consumer.
@@ -188,6 +325,11 @@ Disclosure & demand: Consumer demand for higher welfare, better transparency, an
 
 
 If you like, I can pull in state-level data (for Colorado / the Mountain West) on beef production and slaughterhouse practices, and map local slaughterhouses with publicly-reported welfare records / violations (if available). Would you like me to do that?
+
+<!-- ATM-H-336 OUT
+next: null
+context_below: "null"
+-->
 
 
 

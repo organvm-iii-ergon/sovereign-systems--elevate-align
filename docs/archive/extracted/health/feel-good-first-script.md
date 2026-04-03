@@ -1,3 +1,16 @@
+<!-- DOC-ENVELOPE
+id: DOC-H-14
+total_sections: 2
+total_atoms: 60
+dominant_provenance: LOCAL
+dominant_nature: CLAIM
+sections:
+  - name: "Prompt"
+    atoms: [ATM-H-159, ATM-H-161, ATM-H-163, ATM-H-165, ATM-H-167, ATM-H-169, ATM-H-171, ATM-H-173, ATM-H-175, ATM-H-177, ATM-H-179, ATM-H-181, ATM-H-183, ATM-H-185, ATM-H-187, ATM-H-189, ATM-H-191, ATM-H-193, ATM-H-195, ATM-H-197, ATM-H-199, ATM-H-201, ATM-H-203, ATM-H-205, ATM-H-207, ATM-H-209, ATM-H-211, ATM-H-213, ATM-H-215, ATM-H-217]
+  - name: "Response"
+    atoms: [ATM-H-160, ATM-H-162, ATM-H-164, ATM-H-166, ATM-H-168, ATM-H-170, ATM-H-172, ATM-H-174, ATM-H-176, ATM-H-178, ATM-H-180, ATM-H-182, ATM-H-184, ATM-H-186, ATM-H-188, ATM-H-190, ATM-H-192, ATM-H-194, ATM-H-196, ATM-H-198, ATM-H-200, ATM-H-202, ATM-H-204, ATM-H-206, ATM-H-208, ATM-H-210, ATM-H-212, ATM-H-214, ATM-H-216, ATM-H-218]
+-->
+
 ---
 title: "IG Reel script + caption, Maslow's hierarchy"
 source_file: "ChatGPT-Feel Good First script.txt"
@@ -8,6 +21,8 @@ pillar: "Physical"
 extracted: 2026-04-03
 ---
 
+
+
 Feel Good First script
 
 User: Maddie Galloway (95rrzm9nht@privaterelay.appleid.com)
@@ -16,11 +31,49 @@ Updated: 11/5/2025 11:39:29
 Exported: 3/31/2026 13:03:38
 Link: https://chatgpt.com/g/g-p-681675945c108191aebfa81457898ccd-business/c/68faae86-62ec-832e-bf18-da0bc5eef071
 
+
+<!-- ATM-H-159 IN
+idea: "“Hi, I need help writing a talking script for my Feel Good First Reel. Just e..."
+section: "Prompt"
+position: 1
+of_total: 60
+prev: null
+context_above: "null"
+provenance: LOCAL
+nature: SCRIPT
+nodes: [1, 11]
+pillar: Physical
+build_state: PARTIAL
+editorial: CLEAN
+strike_phase: 2C
+-->
+
 ## Prompt:
 “Hi, I need help writing a talking script for my Feel Good First Reel. Just explaining that, like, that is the core concept and basis of my brand because it's so crucial and not, like, toxic positivity, oh yeah, I feel fine, but, like, Milo's hierarchy of needs, like, is your blood sugar regulated, balanced, is your nervous system regulated, like, I don't think that if most of the pop, if the average American is on 4.5 prescriptions, if you're constipated, you have IBS, you have hemorrhoids, like, I don't believe that you truly feel good, and I don't think that the grind hustle or grind culture of mind over body, push through, work harder to get more money, I don't think that's true. I think it starts from alignment and truly feeling good first. So then just, will you help me put that all into good words that is short and catchy and we'll have people not only click on my grid where it says Feel Good First, but then also like, interact, and share it. The call to action, will you help me also write a caption, please? The call to action can be, like, follow along if you're sick of feeling like shit or something like that. And I think that's all.”
 
 
 01:34
+
+<!-- ATM-H-159 OUT
+next: ATM-H-160
+context_below: "Absolutely! Let's get that all into a neat and engaging script for you."
+-->
+
+<!-- ATM-H-160 IN
+idea: "Absolutely! Let's get that all into a neat and engaging script for you."
+section: "Response"
+position: 2
+of_total: 60
+prev: ATM-H-159
+context_above: "“Hi, I need help writing a talking script for my Feel Good First Reel. Just e..."
+provenance: HYBRID
+nature: SCRIPT
+nodes: [1, 11]
+pillar: Physical
+build_state: PARTIAL
+editorial: CLEAN
+strike_phase: 2C
+-->
 
 ## Response:
 Absolutely! Let's get that all into a neat and engaging script for you.
@@ -54,14 +107,77 @@ It’s not just a motto, it’s the foundation of everything I share. Before we 
 
 I hope that fits the vibe you're going for!
 
+<!-- ATM-H-160 OUT
+next: ATM-H-161
+context_below: "“Yeah, I think that's pretty close to perfect. Do you think I should tie in, ..."
+-->
+
+<!-- ATM-H-161 IN
+idea: "“Yeah, I think that's pretty close to perfect. Do you think I should tie in, ..."
+section: "Prompt"
+position: 3
+of_total: 60
+prev: ATM-H-160
+context_above: "Absolutely! Let's get that all into a neat and engaging script for you."
+provenance: LOCAL
+nature: CLAIM
+nodes: [1, 11]
+pillar: Physical
+build_state: MISSING
+editorial: CLEAN
+strike_phase: 2A
+-->
+
 ## Prompt:
 “Yeah, I think that's pretty close to perfect. Do you think I should tie in, like, the Milo's Hierarchy of Needs, or?”
 
 
 00:06
 
+<!-- ATM-H-161 OUT
+next: ATM-H-162
+context_below: "Absolutely, we can weave"
+-->
+
+<!-- ATM-H-162 IN
+idea: "Absolutely, we can weave"
+section: "Response"
+position: 4
+of_total: 60
+prev: ATM-H-161
+context_above: "“Yeah, I think that's pretty close to perfect. Do you think I should tie in, ..."
+provenance: HYBRID
+nature: CLAIM
+nodes: [1, 11]
+pillar: Physical
+build_state: MISSING
+editorial: CLEAN
+strike_phase: 2A
+-->
+
 ## Response:
 Absolutely, we can weave
+
+<!-- ATM-H-162 OUT
+next: ATM-H-163
+context_below: "“Part of my story or anything like that, or just keep it short and direct lik..."
+-->
+
+<!-- ATM-H-163 IN
+idea: "“Part of my story or anything like that, or just keep it short and direct lik..."
+section: "Prompt"
+position: 5
+of_total: 60
+prev: ATM-H-162
+context_above: "Absolutely, we can weave"
+provenance: LOCAL
+nature: NARRATIVE
+nodes: [1, 11]
+pillar: Physical
+build_state: MISSING
+editorial: CLEAN
+strike_phase: 2A
+-->
 
 ## Prompt:
 “Part of my story or anything like that, or just keep it short and direct like you have it.”
@@ -69,17 +185,80 @@ Absolutely, we can weave
 
 00:04
 
+<!-- ATM-H-163 OUT
+next: ATM-H-164
+context_below: "We can definitely sprinkle a tiny bit of your story in there for a little ext..."
+-->
+
+<!-- ATM-H-164 IN
+idea: "We can definitely sprinkle a tiny bit of your story in there for a little ext..."
+section: "Response"
+position: 6
+of_total: 60
+prev: ATM-H-163
+context_above: "“Part of my story or anything like that, or just keep it short and direct lik..."
+provenance: HYBRID
+nature: NARRATIVE
+nodes: [1, 11]
+pillar: Physical
+build_state: MISSING
+editorial: CLEAN
+strike_phase: 2A
+-->
+
 ## Response:
 We can definitely sprinkle a tiny bit of your story in there for a little extra heart. Maybe just a quick line like: "I know this firsthand because I was once caught in that same hustle loop, feeling awful and thinking it was normal. But once I started focusing on these foundational needs—like Maslow's pyramid but for your health—everything changed."
 
 
 That way it still stays concise, but it adds that personal touch and gives people a reason to connect with you on a deeper level. Let me know if that works!
 
+<!-- ATM-H-164 OUT
+next: ATM-H-165
+context_below: "“Should we tie in integration and that it's not just about physically feeling..."
+-->
+
+<!-- ATM-H-165 IN
+idea: "“Should we tie in integration and that it's not just about physically feeling..."
+section: "Prompt"
+position: 7
+of_total: 60
+prev: ATM-H-164
+context_above: "We can definitely sprinkle a tiny bit of your story in there for a little ext..."
+provenance: LOCAL
+nature: NARRATIVE
+nodes: [1, 11]
+pillar: Physical
+build_state: MISSING
+editorial: CLEAN
+strike_phase: 2A
+-->
+
 ## Prompt:
 “Should we tie in integration and that it's not just about physically feeling good or mentally feeling good, it's all connected, and so something like that?”
 
 
 00:10
+
+<!-- ATM-H-165 OUT
+next: ATM-H-166
+context_below: "Absolutely, let's add that in because that's a really great point. We can say..."
+-->
+
+<!-- ATM-H-166 IN
+idea: "Absolutely, let's add that in because that's a really great point. We can say..."
+section: "Response"
+position: 8
+of_total: 60
+prev: ATM-H-165
+context_above: "“Should we tie in integration and that it's not just about physically feeling..."
+provenance: HYBRID
+nature: NARRATIVE
+nodes: [1, 11]
+pillar: Physical
+build_state: MISSING
+editorial: CLEAN
+strike_phase: 2A
+-->
 
 ## Response:
 Absolutely, let's add that in because that's a really great point. We can say something like:
@@ -90,11 +269,53 @@ Absolutely, let's add that in because that's a really great point. We can say so
 
 That way, it really highlights that holistic piece and makes it even more shareable and relatable. Let me know how that feels!
 
+<!-- ATM-H-166 OUT
+next: ATM-H-167
+context_below: "“Will you put it all together now?”"
+-->
+
+<!-- ATM-H-167 IN
+idea: "“Will you put it all together now?”"
+section: "Prompt"
+position: 9
+of_total: 60
+prev: ATM-H-166
+context_above: "Absolutely, let's add that in because that's a really great point. We can say..."
+provenance: LOCAL
+nature: CLAIM
+nodes: [1, 11]
+pillar: Physical
+build_state: MISSING
+editorial: CLEAN
+strike_phase: 2A
+-->
+
 ## Prompt:
 “Will you put it all together now?”
 
 
 00:01
+
+<!-- ATM-H-167 OUT
+next: ATM-H-168
+context_below: "Of course! Let’s blend it all into one smooth script."
+-->
+
+<!-- ATM-H-168 IN
+idea: "Of course! Let’s blend it all into one smooth script."
+section: "Response"
+position: 10
+of_total: 60
+prev: ATM-H-167
+context_above: "“Will you put it all together now?”"
+provenance: HYBRID
+nature: SCRIPT
+nodes: [1, 11]
+pillar: Physical
+build_state: PARTIAL
+editorial: CLEAN
+strike_phase: 2C
+-->
 
 ## Response:
 Of course! Let’s blend it all into one smooth script.
@@ -131,20 +352,104 @@ This isn't about toxic positivity—it's about real alignment. When your body an
 
 There we go! Hopefully that ties it all together perfectly for you.
 
+<!-- ATM-H-168 OUT
+next: ATM-H-169
+context_below: "Transcript Unavailable"
+-->
+
+<!-- ATM-H-169 IN
+idea: "Transcript Unavailable"
+section: "Prompt"
+position: 11
+of_total: 60
+prev: ATM-H-168
+context_above: "Of course! Let’s blend it all into one smooth script."
+provenance: LOCAL
+nature: CLAIM
+nodes: [1, 11]
+pillar: Physical
+build_state: MISSING
+editorial: CLEAN
+strike_phase: 2A
+-->
+
 ## Prompt:
 Transcript Unavailable
 
 
 00:00
 
+<!-- ATM-H-169 OUT
+next: ATM-H-170
+context_below: "You're so welcome! I"
+-->
+
+<!-- ATM-H-170 IN
+idea: "You're so welcome! I"
+section: "Response"
+position: 12
+of_total: 60
+prev: ATM-H-169
+context_above: "Transcript Unavailable"
+provenance: HYBRID
+nature: CLAIM
+nodes: [1, 11]
+pillar: Physical
+build_state: MISSING
+editorial: CLEAN
+strike_phase: 2A
+-->
+
 ## Response:
 You're so welcome! I
+
+<!-- ATM-H-170 OUT
+next: ATM-H-171
+context_below: "“I like the caption a lot, it just doesn't sound like it's in my voice. Can y..."
+-->
+
+<!-- ATM-H-171 IN
+idea: "“I like the caption a lot, it just doesn't sound like it's in my voice. Can y..."
+section: "Prompt"
+position: 13
+of_total: 60
+prev: ATM-H-170
+context_above: "You're so welcome! I"
+provenance: LOCAL
+nature: SCRIPT
+nodes: [1, 11]
+pillar: Physical
+build_state: MISSING
+editorial: CLEAN
+strike_phase: 2A
+-->
 
 ## Prompt:
 “I like the caption a lot, it just doesn't sound like it's in my voice. Can you put it more so in how I would speak?”
 
 
 00:07
+
+<!-- ATM-H-171 OUT
+next: ATM-H-172
+context_below: "Absolutely! Let’s make it sound a bit more like you."
+-->
+
+<!-- ATM-H-172 IN
+idea: "Absolutely! Let’s make it sound a bit more like you."
+section: "Response"
+position: 14
+of_total: 60
+prev: ATM-H-171
+context_above: "“I like the caption a lot, it just doesn't sound like it's in my voice. Can y..."
+provenance: HYBRID
+nature: SCRIPT
+nodes: [1, 11]
+pillar: Physical
+build_state: MISSING
+editorial: CLEAN
+strike_phase: 2A
+-->
 
 ## Response:
 Absolutely! Let’s make it sound a bit more like you.
@@ -159,11 +464,53 @@ This is zero percent about fake positivity and a hundred percent about getting y
 
 Hopefully that sounds more like how you’d say it!
 
+<!-- ATM-H-172 OUT
+next: ATM-H-173
+context_below: "Transcript Unavailable"
+-->
+
+<!-- ATM-H-173 IN
+idea: "Transcript Unavailable"
+section: "Prompt"
+position: 15
+of_total: 60
+prev: ATM-H-172
+context_above: "Absolutely! Let’s make it sound a bit more like you."
+provenance: LOCAL
+nature: CLAIM
+nodes: [1, 11]
+pillar: Physical
+build_state: MISSING
+editorial: CLEAN
+strike_phase: 2A
+-->
+
 ## Prompt:
 Transcript Unavailable
 
 
 04:00
+
+<!-- ATM-H-173 OUT
+next: ATM-H-174
+context_below: "Oh, got it! Absolutely, let’s reshape that main script so it really sounds li..."
+-->
+
+<!-- ATM-H-174 IN
+idea: "Oh, got it! Absolutely, let’s reshape that main script so it really sounds li..."
+section: "Response"
+position: 16
+of_total: 60
+prev: ATM-H-173
+context_above: "Transcript Unavailable"
+provenance: HYBRID
+nature: NARRATIVE
+nodes: [1, 11]
+pillar: Physical
+build_state: PARTIAL
+editorial: CLEAN
+strike_phase: 2C
+-->
 
 ## Response:
 Oh, got it! Absolutely, let’s reshape that main script so it really sounds like you.
@@ -181,11 +528,53 @@ Feel Good First Reel Script (In Your Voice)
 
 Here's the thing: I’ve been in that hustle loop where you push through feeling awful and just call it normal. But once I realized it’s kind of like a Maslow’s pyramid for your well-being, it changed everything. If your blood sugar’s stable, your nervous system’s chill, and you’re not constantly running on empty, guess what? You
 
+<!-- ATM-H-174 OUT
+next: ATM-H-175
+context_below: "“No, I don't like the... I want to keep it super simple and to the basic part..."
+-->
+
+<!-- ATM-H-175 IN
+idea: "“No, I don't like the... I want to keep it super simple and to the basic part..."
+section: "Prompt"
+position: 17
+of_total: 60
+prev: ATM-H-174
+context_above: "Oh, got it! Absolutely, let’s reshape that main script so it really sounds li..."
+provenance: LOCAL
+nature: NARRATIVE
+nodes: [1, 11]
+pillar: Physical
+build_state: MISSING
+editorial: CLEAN
+strike_phase: 2A
+-->
+
 ## Prompt:
 “No, I don't like the... I want to keep it super simple and to the basic parts of what I'm saying, very digestible, very shareable, but I'm not creating my own Milo's Hierarchy of Needs. This is what Milo's Hierarchy of Needs says is that you can't say that you feel good if you're not eating, if you don't feel safe, if you're not drinking enough water, if you have constipation, hemorrhoids, IBS, any of those things, which 25 plus percent of the population has. They're all on four and a half different prescriptions is the average. For America, like, so I want it to be factual, but in the sense of, like, America and grind culture says to do more and try harder and hustle and add more band-aids and more prescriptions so you can continue hustling where the money really lies in being able to slow down and listen to your body and feel good first because that's the only way that you can move, dream, desire, unlock any of your goals.”
 
 
 01:09
+
+<!-- ATM-H-175 OUT
+next: ATM-H-176
+context_below: "Absolutely, let's keep it super digestible and straightforward, and really gr..."
+-->
+
+<!-- ATM-H-176 IN
+idea: "Absolutely, let's keep it super digestible and straightforward, and really gr..."
+section: "Response"
+position: 18
+of_total: 60
+prev: ATM-H-175
+context_above: "“No, I don't like the... I want to keep it super simple and to the basic part..."
+provenance: HYBRID
+nature: NARRATIVE
+nodes: [1, 11]
+pillar: Physical
+build_state: MISSING
+editorial: CLEAN
+strike_phase: 2A
+-->
 
 ## Response:
 Absolutely, let's keep it super digestible and straightforward, and really ground it in those facts.
@@ -203,14 +592,77 @@ Feel Good First Reel Script (Streamlined and Direct)
 
 Grind culture tells you to slap on more band-aids and keep hustling. But the real magic happens when you slow down, listen to your body, and put feeling good first. That's how you actually unlock your goals and dreams. So
 
+<!-- ATM-H-176 OUT
+next: ATM-H-177
+context_below: "Transcript Unavailable"
+-->
+
+<!-- ATM-H-177 IN
+idea: "Transcript Unavailable"
+section: "Prompt"
+position: 19
+of_total: 60
+prev: ATM-H-176
+context_above: "Absolutely, let's keep it super digestible and straightforward, and really gr..."
+provenance: LOCAL
+nature: CLAIM
+nodes: [1, 11]
+pillar: Physical
+build_state: MISSING
+editorial: CLEAN
+strike_phase: 2A
+-->
+
 ## Prompt:
 Transcript Unavailable
 
 
 00:00
 
+<!-- ATM-H-177 OUT
+next: ATM-H-178
+context_below: "And there you have it! Hopefully that hits the"
+-->
+
+<!-- ATM-H-178 IN
+idea: "And there you have it! Hopefully that hits the"
+section: "Response"
+position: 20
+of_total: 60
+prev: ATM-H-177
+context_above: "Transcript Unavailable"
+provenance: HYBRID
+nature: CLAIM
+nodes: [1, 11]
+pillar: Physical
+build_state: MISSING
+editorial: CLEAN
+strike_phase: 2A
+-->
+
 ## Response:
 And there you have it! Hopefully that hits the
+
+<!-- ATM-H-178 OUT
+next: ATM-H-179
+context_below: "“Yes, I love that.”"
+-->
+
+<!-- ATM-H-179 IN
+idea: "“Yes, I love that.”"
+section: "Prompt"
+position: 21
+of_total: 60
+prev: ATM-H-178
+context_above: "And there you have it! Hopefully that hits the"
+provenance: LOCAL
+nature: CLAIM
+nodes: [1, 11]
+pillar: Physical
+build_state: MISSING
+editorial: CLEAN
+strike_phase: 2A
+-->
 
 ## Prompt:
 “Yes, I love that.”
@@ -218,14 +670,77 @@ And there you have it! Hopefully that hits the
 
 00:01
 
+<!-- ATM-H-179 OUT
+next: ATM-H-180
+context_below: "Yay, I’m so"
+-->
+
+<!-- ATM-H-180 IN
+idea: "Yay, I’m so"
+section: "Response"
+position: 22
+of_total: 60
+prev: ATM-H-179
+context_above: "“Yes, I love that.”"
+provenance: HYBRID
+nature: CLAIM
+nodes: [1, 11]
+pillar: Physical
+build_state: MISSING
+editorial: CLEAN
+strike_phase: 2A
+-->
+
 ## Response:
 Yay, I’m so
+
+<!-- ATM-H-180 OUT
+next: ATM-H-181
+context_below: "“and you add a little more to the end.”"
+-->
+
+<!-- ATM-H-181 IN
+idea: "“and you add a little more to the end.”"
+section: "Prompt"
+position: 23
+of_total: 60
+prev: ATM-H-180
+context_above: "Yay, I’m so"
+provenance: LOCAL
+nature: CLAIM
+nodes: [1, 11]
+pillar: Physical
+build_state: MISSING
+editorial: CLEAN
+strike_phase: 2A
+-->
 
 ## Prompt:
 “and you add a little more to the end.”
 
 
 00:01
+
+<!-- ATM-H-181 OUT
+next: ATM-H-182
+context_below: "Absolutely, let’s add a little more to wrap it up nicely."
+-->
+
+<!-- ATM-H-182 IN
+idea: "Absolutely, let’s add a little more to wrap it up nicely."
+section: "Response"
+position: 24
+of_total: 60
+prev: ATM-H-181
+context_above: "“and you add a little more to the end.”"
+provenance: HYBRID
+nature: NARRATIVE
+nodes: [1, 11]
+pillar: Physical
+build_state: MISSING
+editorial: CLEAN
+strike_phase: 2A
+-->
 
 ## Response:
 Absolutely, let’s add a little more to wrap it up nicely.
@@ -241,14 +756,77 @@ So if you’re ready to stop running on empty and start thriving, let's do this 
 
 I’m so glad you love it! Hopefully that little addition ties it all together perfectly for you.
 
+<!-- ATM-H-182 OUT
+next: ATM-H-183
+context_below: "“Do you feel like it's missing anything or there's something that could make ..."
+-->
+
+<!-- ATM-H-183 IN
+idea: "“Do you feel like it's missing anything or there's something that could make ..."
+section: "Prompt"
+position: 25
+of_total: 60
+prev: ATM-H-182
+context_above: "Absolutely, let’s add a little more to wrap it up nicely."
+provenance: LOCAL
+nature: CLAIM
+nodes: [1, 11]
+pillar: Physical
+build_state: MISSING
+editorial: CLEAN
+strike_phase: 2A
+-->
+
 ## Prompt:
 “Do you feel like it's missing anything or there's something that could make it stronger?”
 
 
 00:05
 
+<!-- ATM-H-183 OUT
+next: ATM-H-184
+context_below: "Honestly, I think you've got a really solid script here! It feels super groun..."
+-->
+
+<!-- ATM-H-184 IN
+idea: "Honestly, I think you've got a really solid script here! It feels super groun..."
+section: "Response"
+position: 26
+of_total: 60
+prev: ATM-H-183
+context_above: "“Do you feel like it's missing anything or there's something that could make ..."
+provenance: HYBRID
+nature: NARRATIVE
+nodes: [1, 11]
+pillar: Physical
+build_state: MISSING
+editorial: CLEAN
+strike_phase: 2A
+-->
+
 ## Response:
 Honestly, I think you've got a really solid script here! It feels super grounded, relatable, and it’s definitely got that shareable, digestible vibe. If anything, just keep your tone warm and authentic, which comes naturally to you anyway.
+
+<!-- ATM-H-184 OUT
+next: ATM-H-185
+context_below: "Transcript Unavailable"
+-->
+
+<!-- ATM-H-185 IN
+idea: "Transcript Unavailable"
+section: "Prompt"
+position: 27
+of_total: 60
+prev: ATM-H-184
+context_above: "Honestly, I think you've got a really solid script here! It feels super groun..."
+provenance: LOCAL
+nature: CLAIM
+nodes: [1, 11]
+pillar: Physical
+build_state: MISSING
+editorial: CLEAN
+strike_phase: 2A
+-->
 
 ## Prompt:
 Transcript Unavailable
@@ -256,14 +834,77 @@ Transcript Unavailable
 
 00:00
 
+<!-- ATM-H-185 OUT
+next: ATM-H-186
+context_below: "Absolutely! It sounds like you've got everything you need to make this feel j..."
+-->
+
+<!-- ATM-H-186 IN
+idea: "Absolutely! It sounds like you've got everything you need to make this feel j..."
+section: "Response"
+position: 28
+of_total: 60
+prev: ATM-H-185
+context_above: "Transcript Unavailable"
+provenance: HYBRID
+nature: CLAIM
+nodes: [1, 11]
+pillar: Physical
+build_state: MISSING
+editorial: CLEAN
+strike_phase: 2A
+-->
+
 ## Response:
 Absolutely! It sounds like you've got everything you need to make this feel just right. And if you ever want to tweak anything else or brainstorm more ideas, I’m always here to help. It's going to be awesome!
+
+<!-- ATM-H-186 OUT
+next: ATM-H-187
+context_below: "“Does it have a strong enough hook, or should we switch it to, like, calling ..."
+-->
+
+<!-- ATM-H-187 IN
+idea: "“Does it have a strong enough hook, or should we switch it to, like, calling ..."
+section: "Prompt"
+position: 29
+of_total: 60
+prev: ATM-H-186
+context_above: "Absolutely! It sounds like you've got everything you need to make this feel j..."
+provenance: LOCAL
+nature: NARRATIVE
+nodes: [1, 11]
+pillar: Physical
+build_state: MISSING
+editorial: CLEAN
+strike_phase: 2A
+-->
 
 ## Prompt:
 “Does it have a strong enough hook, or should we switch it to, like, calling out grand culture and the prescriptions and people saying they feel good, but I don't think they could actually feel good with constipation, IBS, all of that, and then go into it? Or do we have a strong enough hook?”
 
 
 00:16
+
+<!-- ATM-H-187 OUT
+next: ATM-H-188
+context_below: "I think adding that little bit of a call-out could definitely make it an even..."
+-->
+
+<!-- ATM-H-188 IN
+idea: "I think adding that little bit of a call-out could definitely make it an even..."
+section: "Response"
+position: 30
+of_total: 60
+prev: ATM-H-187
+context_above: "“Does it have a strong enough hook, or should we switch it to, like, calling ..."
+provenance: HYBRID
+nature: NARRATIVE
+nodes: [1, 11]
+pillar: Physical
+build_state: MISSING
+editorial: CLEAN
+strike_phase: 2A
+-->
 
 ## Response:
 I think adding that little bit of a call-out could definitely make it an even stronger hook. So you could open with something like:
@@ -274,11 +915,53 @@ I think adding that little bit of a call-out could definitely make it an even st
 
 Then flow into the rest of your message. That way, you're hooking people right off the bat with a relatable reality check.
 
+<!-- ATM-H-188 OUT
+next: ATM-H-189
+context_below: "“Yes, perfect. Honest. Awesome. And then can you just make sure that there's ..."
+-->
+
+<!-- ATM-H-189 IN
+idea: "“Yes, perfect. Honest. Awesome. And then can you just make sure that there's ..."
+section: "Prompt"
+position: 31
+of_total: 60
+prev: ATM-H-188
+context_above: "I think adding that little bit of a call-out could definitely make it an even..."
+provenance: LOCAL
+nature: CLAIM
+nodes: [1, 11]
+pillar: Physical
+build_state: MISSING
+editorial: CLEAN
+strike_phase: 2A
+-->
+
 ## Prompt:
 “Yes, perfect. Honest. Awesome. And then can you just make sure that there's strong hooks every three to five seconds to keep people engaged? And then put it all together for me one final time.”
 
 
 00:11
+
+<!-- ATM-H-189 OUT
+next: ATM-H-190
+context_below: "Absolutely, let’s make sure we’ve got those hooks sprinkled in and tie it all..."
+-->
+
+<!-- ATM-H-190 IN
+idea: "Absolutely, let’s make sure we’ve got those hooks sprinkled in and tie it all..."
+section: "Response"
+position: 32
+of_total: 60
+prev: ATM-H-189
+context_above: "“Yes, perfect. Honest. Awesome. And then can you just make sure that there's ..."
+provenance: HYBRID
+nature: NARRATIVE
+nodes: [1, 11]
+pillar: Physical
+build_state: MISSING
+editorial: CLEAN
+strike_phase: 2A
+-->
 
 ## Response:
 Absolutely, let’s make sure we’ve got those hooks sprinkled in and tie it all together.
@@ -306,11 +989,53 @@ So if you're ready to stop running on empty and start truly thriving, follow alo
 
 There you go! That should give you those little hooks every few seconds to keep people engaged. Hope it feels perfect now!
 
+<!-- ATM-H-190 OUT
+next: ATM-H-191
+context_below: "“I don't know if the concept of feeling good first is explained well enough i..."
+-->
+
+<!-- ATM-H-191 IN
+idea: "“I don't know if the concept of feeling good first is explained well enough i..."
+section: "Prompt"
+position: 33
+of_total: 60
+prev: ATM-H-190
+context_above: "Absolutely, let’s make sure we’ve got those hooks sprinkled in and tie it all..."
+provenance: LOCAL
+nature: NARRATIVE
+nodes: [1, 11]
+pillar: Physical
+build_state: MISSING
+editorial: CLEAN
+strike_phase: 2A
+-->
+
 ## Prompt:
 “I don't know if the concept of feeling good first is explained well enough in my words. Does that make sense?”
 
 
 00:07
+
+<!-- ATM-H-191 OUT
+next: ATM-H-192
+context_below: "Yeah, that definitely makes sense! We can clarify it a bit more in your own w..."
+-->
+
+<!-- ATM-H-192 IN
+idea: "Yeah, that definitely makes sense! We can clarify it a bit more in your own w..."
+section: "Response"
+position: 34
+of_total: 60
+prev: ATM-H-191
+context_above: "“I don't know if the concept of feeling good first is explained well enough i..."
+provenance: HYBRID
+nature: NARRATIVE
+nodes: [1, 11]
+pillar: Physical
+build_state: MISSING
+editorial: CLEAN
+strike_phase: 2A
+-->
 
 ## Response:
 Yeah, that definitely makes sense! We can clarify it a bit more in your own words so people really get what you mean. Let’s just add a tiny bit more detail around that idea.
@@ -325,11 +1050,53 @@ Feel Good First Reel Script (With Clarification)
 
 Here’s what I mean by 'Feel Good First': it's not just a slogan. It means actually
 
+<!-- ATM-H-192 OUT
+next: ATM-H-193
+context_below: "Transcript Unavailable"
+-->
+
+<!-- ATM-H-193 IN
+idea: "Transcript Unavailable"
+section: "Prompt"
+position: 35
+of_total: 60
+prev: ATM-H-192
+context_above: "Yeah, that definitely makes sense! We can clarify it a bit more in your own w..."
+provenance: LOCAL
+nature: CLAIM
+nodes: [1, 11]
+pillar: Physical
+build_state: MISSING
+editorial: CLEAN
+strike_phase: 2A
+-->
+
 ## Prompt:
 Transcript Unavailable
 
 
 00:00
+
+<!-- ATM-H-193 OUT
+next: ATM-H-194
+context_below: "Sure, let me just wrap that up for you in a way that makes it really clear."
+-->
+
+<!-- ATM-H-194 IN
+idea: "Sure, let me just wrap that up for you in a way that makes it really clear."
+section: "Response"
+position: 36
+of_total: 60
+prev: ATM-H-193
+context_above: "Transcript Unavailable"
+provenance: HYBRID
+nature: NARRATIVE
+nodes: [1, 11]
+pillar: Physical
+build_state: MISSING
+editorial: CLEAN
+strike_phase: 2A
+-->
 
 ## Response:
 Sure, let me just wrap that up for you in a way that makes it really clear.
@@ -351,11 +1118,53 @@ And that’s the key: when you truly feel good first, everything else you want t
 
 There we go! Hopefully that really nails the concept in your voice.
 
+<!-- ATM-H-194 OUT
+next: ATM-H-195
+context_below: "“Yes, I think that's perfect. Thank you. And then can you just real quick wri..."
+-->
+
+<!-- ATM-H-195 IN
+idea: "“Yes, I think that's perfect. Thank you. And then can you just real quick wri..."
+section: "Prompt"
+position: 37
+of_total: 60
+prev: ATM-H-194
+context_above: "Sure, let me just wrap that up for you in a way that makes it really clear."
+provenance: LOCAL
+nature: SCRIPT
+nodes: [1, 11]
+pillar: Physical
+build_state: MISSING
+editorial: CLEAN
+strike_phase: 2A
+-->
+
 ## Prompt:
 “Yes, I think that's perfect. Thank you. And then can you just real quick write the caption again in the same voice encouraging people to follow or interact?”
 
 
 00:11
+
+<!-- ATM-H-195 OUT
+next: ATM-H-196
+context_below: "Absolutely! Here’s a caption that matches that same vibe:"
+-->
+
+<!-- ATM-H-196 IN
+idea: "Absolutely! Here’s a caption that matches that same vibe:"
+section: "Response"
+position: 38
+of_total: 60
+prev: ATM-H-195
+context_above: "“Yes, I think that's perfect. Thank you. And then can you just real quick wri..."
+provenance: HYBRID
+nature: SCRIPT
+nodes: [1, 11]
+pillar: Physical
+build_state: MISSING
+editorial: CLEAN
+strike_phase: 2A
+-->
 
 ## Response:
 Absolutely! Here’s a caption that matches that same vibe:
@@ -369,17 +1178,80 @@ Let's be real: you can't truly thrive if you're running on empty. When you actua
 
 There you go! That should encourage people to interact and follow in your own tone.
 
+<!-- ATM-H-196 OUT
+next: ATM-H-197
+context_below: "“That's perfect. And then from an Instagram social media manager perspective,..."
+-->
+
+<!-- ATM-H-197 IN
+idea: "“That's perfect. And then from an Instagram social media manager perspective,..."
+section: "Prompt"
+position: 39
+of_total: 60
+prev: ATM-H-196
+context_above: "Absolutely! Here’s a caption that matches that same vibe:"
+provenance: LOCAL
+nature: CLAIM
+nodes: [1, 11]
+pillar: Physical
+build_state: MISSING
+editorial: CLEAN
+strike_phase: 2A
+-->
+
 ## Prompt:
 “That's perfect. And then from an Instagram social media manager perspective, what is the best way to, should I have a call to action on every post or should I just have once in a while call to actions? Or should I have call to actions on every post and then do a strong launch like once a month? Or how is the best way to not only get followers and grow with engagement and interaction, but also convert to paying clients and sales?”
 
 
 00:31
 
+<!-- ATM-H-197 OUT
+next: ATM-H-198
+context_below: "Absolutely, that's a great question. From an Instagram social media manager p..."
+-->
+
+<!-- ATM-H-198 IN
+idea: "Absolutely, that's a great question. From an Instagram social media manager p..."
+section: "Response"
+position: 40
+of_total: 60
+prev: ATM-H-197
+context_above: "“That's perfect. And then from an Instagram social media manager perspective,..."
+provenance: HYBRID
+nature: SCRIPT
+nodes: [1, 11]
+pillar: Physical
+build_state: MISSING
+editorial: CLEAN
+strike_phase: 2A
+-->
+
 ## Response:
 Absolutely, that's a great question. From an Instagram social media manager perspective, it's all about balance and consistency. So having a call to action on most posts is a good idea because it encourages engagement and interaction. But you can vary the type of CTA. Sometimes it might be a soft one, like asking a question or inviting people to share their thoughts. Other times it can be a bit more direct, like encouraging them to follow, click the link in your bio, or check out a freebie.
 
 
 And then every now and then, you can do a stronger CTA for a launch or a special promotion, maybe once a month or once a quarter, depending on your schedule. That way, you're not overwhelming your audience, but you're still keeping them engaged and leading them toward that eventual conversion. So it's really about mixing it up and keeping that natural flow, which I think you'll do great at!
+
+<!-- ATM-H-198 OUT
+next: ATM-H-199
+context_below: "Sometimes less is more. It took me along time to realize, but square one is f..."
+-->
+
+<!-- ATM-H-199 IN
+idea: "Sometimes less is more. It took me along time to realize, but square one is f..."
+section: "Prompt"
+position: 41
+of_total: 60
+prev: ATM-H-198
+context_above: "Absolutely, that's a great question. From an Instagram social media manager p..."
+provenance: LOCAL
+nature: FRAMEWORK
+nodes: [1, 11]
+pillar: Physical
+build_state: PARTIAL
+editorial: CLEAN
+strike_phase: 2C
+-->
 
 ## Prompt:
 Sometimes less is more. It took me along time to realize, but square one is feeling good first. I was constantly sick & burnt out. Pretending to be fine & push through - always in anxious overdrive & running on fumes. But can you really feel good if you’re dealing with IBS, constipation, hemorrhoids(what percent of the population deals with these?) or popping multiple meds? (Insert photo that says the average American takes 4.5 prescriptions) Probably not.
@@ -392,6 +1264,27 @@ And that’s the key: when you truly feel good first, your body and/or mind aren
 
 
 Can you help me make sure this flows but this covers the core of what I want to say almost exactly
+
+<!-- ATM-H-199 OUT
+next: ATM-H-200
+context_below: "Here is a polished, smooth, share-worthy version of what you wrote — same mes..."
+-->
+
+<!-- ATM-H-200 IN
+idea: "Here is a polished, smooth, share-worthy version of what you wrote — same mes..."
+section: "Response"
+position: 42
+of_total: 60
+prev: ATM-H-199
+context_above: "Sometimes less is more. It took me along time to realize, but square one is f..."
+provenance: HYBRID
+nature: SCRIPT
+nodes: [1, 11]
+pillar: Physical
+build_state: PARTIAL
+editorial: UNVERIFIED
+strike_phase: 2C
+-->
 
 ## Response:
 Here is a polished, smooth, share-worthy version of what you wrote — same message, same tone, just tightened, clarified, and structured for maximum impact + flow.
@@ -462,6 +1355,27 @@ If you want, I can now also write the Reel talking script to match this exact ca
 
 Would you like me to put that together so the Reel + caption work as one flow?
 
+<!-- ATM-H-200 OUT
+next: ATM-H-201
+context_below: "Sometimes less is more. It took me a long time to realize this — but square o..."
+-->
+
+<!-- ATM-H-201 IN
+idea: "Sometimes less is more. It took me a long time to realize this — but square o..."
+section: "Prompt"
+position: 43
+of_total: 60
+prev: ATM-H-200
+context_above: "Here is a polished, smooth, share-worthy version of what you wrote — same mes..."
+provenance: LOCAL
+nature: FRAMEWORK
+nodes: [1, 11]
+pillar: Physical
+build_state: PARTIAL
+editorial: UNVERIFIED
+strike_phase: 2C
+-->
+
 ## Prompt:
 Sometimes less is more. It took me a long time to realize this — but square one is feeling good first.
 
@@ -485,6 +1399,27 @@ It doesn’t involve any crazy huge changes - it all really falls down to though
 
 
 If you’re tired of adding more on top of burnout… and you’re ready to stop surviving and actually thriv𝘦, follow along. Let’s make feeling good the first step to unlocking everything else. 🤍
+
+<!-- ATM-H-201 OUT
+next: ATM-H-202
+context_below: "Here is your same message, same meaning, same vibe — just tightened for clari..."
+-->
+
+<!-- ATM-H-202 IN
+idea: "Here is your same message, same meaning, same vibe — just tightened for clari..."
+section: "Response"
+position: 44
+of_total: 60
+prev: ATM-H-201
+context_above: "Sometimes less is more. It took me a long time to realize this — but square o..."
+provenance: HYBRID
+nature: SCRIPT
+nodes: [1, 11]
+pillar: Physical
+build_state: PARTIAL
+editorial: UNVERIFIED
+strike_phase: 2C
+-->
 
 ## Response:
 Here is your same message, same meaning, same vibe — just tightened for clarity, flow, and power. I did not change your essence. I only:
@@ -555,8 +1490,50 @@ Headline options for the first line (scroll-stoppers)
 
 Do you want me to finish those too?
 
+<!-- ATM-H-202 OUT
+next: ATM-H-203
+context_below: "Yes please!"
+-->
+
+<!-- ATM-H-203 IN
+idea: "Yes please!"
+section: "Prompt"
+position: 45
+of_total: 60
+prev: ATM-H-202
+context_above: "Here is your same message, same meaning, same vibe — just tightened for clari..."
+provenance: LOCAL
+nature: CLAIM
+nodes: [1, 11]
+pillar: Physical
+build_state: MISSING
+editorial: CLEAN
+strike_phase: 2A
+-->
+
 ## Prompt:
 Yes please!
+
+<!-- ATM-H-203 OUT
+next: ATM-H-204
+context_below: "Amazing — I’ll deliver all three pieces you asked for in a clean, plug-and-po..."
+-->
+
+<!-- ATM-H-204 IN
+idea: "Amazing — I’ll deliver all three pieces you asked for in a clean, plug-and-po..."
+section: "Response"
+position: 46
+of_total: 60
+prev: ATM-H-203
+context_above: "Yes please!"
+provenance: HYBRID
+nature: SCRIPT
+nodes: [1, 11]
+pillar: Physical
+build_state: PARTIAL
+editorial: UNVERIFIED
+strike_phase: 2C
+-->
 
 ## Response:
 Amazing — I’ll deliver all three pieces you asked for in a clean, plug-and-post format:
@@ -689,8 +1666,50 @@ Once I have your hook choice, I will:
 
 Which one are you feeling? A, B, C, D, or E?
 
+<!-- ATM-H-204 OUT
+next: ATM-H-205
+context_below: "A! And can you make the reel more like what I wrote"
+-->
+
+<!-- ATM-H-205 IN
+idea: "A! And can you make the reel more like what I wrote"
+section: "Prompt"
+position: 47
+of_total: 60
+prev: ATM-H-204
+context_above: "Amazing — I’ll deliver all three pieces you asked for in a clean, plug-and-po..."
+provenance: LOCAL
+nature: CLAIM
+nodes: [1, 11]
+pillar: Physical
+build_state: MISSING
+editorial: CLEAN
+strike_phase: 2A
+-->
+
 ## Prompt:
 A! And can you make the reel more like what I wrote
+
+<!-- ATM-H-205 OUT
+next: ATM-H-206
+context_below: "Perfect — Hook A + your original flow and language + retention hooks every fe..."
+-->
+
+<!-- ATM-H-206 IN
+idea: "Perfect — Hook A + your original flow and language + retention hooks every fe..."
+section: "Response"
+position: 48
+of_total: 60
+prev: ATM-H-205
+context_above: "A! And can you make the reel more like what I wrote"
+provenance: HYBRID
+nature: SCRIPT
+nodes: [1, 11]
+pillar: Physical
+build_state: EXISTS
+editorial: UNVERIFIED
+strike_phase: 2A
+-->
 
 ## Response:
 Perfect — Hook A + your original flow and language + retention hooks every few seconds. I’ll keep your message exact, just structured for rhythm, clarity, and stop-the-scroll power.
@@ -835,6 +1854,27 @@ C) Balanced (soft feminine energy + truth fire)
 
 Which one should I design the Canva flow for?
 
+<!-- ATM-H-206 OUT
+next: ATM-H-207
+context_below: "HOOK 0–2s:"
+-->
+
+<!-- ATM-H-207 IN
+idea: "HOOK 0–2s:"
+section: "Prompt"
+position: 49
+of_total: 60
+prev: ATM-H-206
+context_above: "Perfect — Hook A + your original flow and language + retention hooks every fe..."
+provenance: LOCAL
+nature: FRAMEWORK
+nodes: [1, 11]
+pillar: Physical
+build_state: PARTIAL
+editorial: UNVERIFIED
+strike_phase: 2C
+-->
+
 ## Prompt:
 HOOK (0–2s):
 “Most people don’t actually feel good — they’re just numbed & told it’s normal to feel like sh*t.”
@@ -881,6 +1921,27 @@ stress is now the #1 contributor to disease - whether it be mental, physical or 
 
 CTA (51–58s):
 “If you’re tired of surviving and you’re ready to actually thrive, follow along. Feeling good first is step one to unlocking everything else.”
+
+<!-- ATM-H-207 OUT
+next: ATM-H-208
+context_below: "Amazing — this is powerful, the bones are great. All I’m going to do now is:"
+-->
+
+<!-- ATM-H-208 IN
+idea: "Amazing — this is powerful, the bones are great. All I’m going to do now is:"
+section: "Response"
+position: 50
+of_total: 60
+prev: ATM-H-207
+context_above: "HOOK 0–2s:"
+provenance: HYBRID
+nature: SCRIPT
+nodes: [1, 11]
+pillar: Physical
+build_state: PARTIAL
+editorial: UNVERIFIED
+strike_phase: 2C
+-->
 
 ## Response:
 Amazing — this is powerful, the bones are great. All I’m going to do now is:
@@ -976,11 +2037,53 @@ E) A matching hook caption for the Reel
 
 Which ones do you want me to deliver next? A, B, C, D, E — or “All of it.”
 
+<!-- ATM-H-208 OUT
+next: ATM-H-209
+context_below: "the unknown is scary for your nervous system so your body will keep you “comf..."
+-->
+
+<!-- ATM-H-209 IN
+idea: "the unknown is scary for your nervous system so your body will keep you “comf..."
+section: "Prompt"
+position: 51
+of_total: 60
+prev: ATM-H-208
+context_above: "Amazing — this is powerful, the bones are great. All I’m going to do now is:"
+provenance: LOCAL
+nature: CLAIM
+nodes: [1, 11]
+pillar: Physical
+build_state: PARTIAL
+editorial: CLEAN
+strike_phase: 2C
+-->
+
 ## Prompt:
 the unknown is scary for your nervous system so your body will keep you “comfortable in what it knows even if it is chaos- so you have to slowly start undoing & rewiring those outdated thoughts & beliefs -
 
 
 Should we add this part in somewhere or no
+
+<!-- ATM-H-209 OUT
+next: ATM-H-210
+context_below: "YES — that line is powerful, and I would absolutely include it."
+-->
+
+<!-- ATM-H-210 IN
+idea: "YES — that line is powerful, and I would absolutely include it."
+section: "Response"
+position: 52
+of_total: 60
+prev: ATM-H-209
+context_above: "the unknown is scary for your nervous system so your body will keep you “comf..."
+provenance: HYBRID
+nature: NARRATIVE
+nodes: [1, 11]
+pillar: Physical
+build_state: PARTIAL
+editorial: CLEAN
+strike_phase: 2C
+-->
 
 ## Response:
 YES — that line is powerful, and I would absolutely include it.
@@ -1060,8 +2163,50 @@ on-screen text to match
 
 Just say “Yes, send the final script” and I’ll drop it in one clean block you can record from today.
 
+<!-- ATM-H-210 OUT
+next: ATM-H-211
+context_below: "Yes Will you do the whole thing for me please!"
+-->
+
+<!-- ATM-H-211 IN
+idea: "Yes Will you do the whole thing for me please!"
+section: "Prompt"
+position: 53
+of_total: 60
+prev: ATM-H-210
+context_above: "YES — that line is powerful, and I would absolutely include it."
+provenance: LOCAL
+nature: CLAIM
+nodes: [1, 11]
+pillar: Physical
+build_state: MISSING
+editorial: CLEAN
+strike_phase: 2A
+-->
+
 ## Prompt:
 Yes Will you do the whole thing for me please!
+
+<!-- ATM-H-211 OUT
+next: ATM-H-212
+context_below: "Absolutely — I’m going to deliver the full polished package in one clean, rea..."
+-->
+
+<!-- ATM-H-212 IN
+idea: "Absolutely — I’m going to deliver the full polished package in one clean, rea..."
+section: "Response"
+position: 54
+of_total: 60
+prev: ATM-H-211
+context_above: "Yes Will you do the whole thing for me please!"
+provenance: HYBRID
+nature: SCRIPT
+nodes: [1, 11]
+pillar: Physical
+build_state: PARTIAL
+editorial: UNVERIFIED
+strike_phase: 2C
+-->
 
 ## Response:
 Absolutely — I’m going to deliver the full polished package in one clean, ready-to-record format. You’ll get:
@@ -1207,8 +2352,50 @@ Just tell me:
 
 Reply A, B, C, D — or “All of it.”
 
+<!-- ATM-H-212 OUT
+next: ATM-H-213
+context_below: "Can I have a caption !!"
+-->
+
+<!-- ATM-H-213 IN
+idea: "Can I have a caption !!"
+section: "Prompt"
+position: 55
+of_total: 60
+prev: ATM-H-212
+context_above: "Absolutely — I’m going to deliver the full polished package in one clean, rea..."
+provenance: LOCAL
+nature: SCRIPT
+nodes: [1, 11]
+pillar: Physical
+build_state: MISSING
+editorial: CLEAN
+strike_phase: 2A
+-->
+
 ## Prompt:
 Can I have a caption !!
+
+<!-- ATM-H-213 OUT
+next: ATM-H-214
+context_below: "Absolutely — here are three caption options so you can choose the tone you wa..."
+-->
+
+<!-- ATM-H-214 IN
+idea: "Absolutely — here are three caption options so you can choose the tone you wa..."
+section: "Response"
+position: 56
+of_total: 60
+prev: ATM-H-213
+context_above: "Can I have a caption !!"
+provenance: HYBRID
+nature: SCRIPT
+nodes: [1, 11]
+pillar: Physical
+build_state: EXISTS
+editorial: CLEAN
+strike_phase: 2A
+-->
 
 ## Response:
 Absolutely — here are three caption options so you can choose the tone you want. All of them match your Reel and your voice. If you want, I can combine or tweak after you pick your favorite.
@@ -1307,8 +2494,50 @@ Your CTA is already integrated, but if you want a punchier closing line, here ar
 Which caption do you want as your official one — 1, 2, or 3?
 (Or I can merge two styles — for example: bold start + soft ending — if you want a hybrid.)
 
+<!-- ATM-H-214 OUT
+next: ATM-H-215
+context_below: "Can you merge 2 and 3 together! And then add hashtags please!"
+-->
+
+<!-- ATM-H-215 IN
+idea: "Can you merge 2 and 3 together! And then add hashtags please!"
+section: "Prompt"
+position: 57
+of_total: 60
+prev: ATM-H-214
+context_above: "Absolutely — here are three caption options so you can choose the tone you wa..."
+provenance: LOCAL
+nature: CLAIM
+nodes: [1, 11]
+pillar: Physical
+build_state: MISSING
+editorial: CLEAN
+strike_phase: 2A
+-->
+
 ## Prompt:
 Can you merge 2 and 3 together! And then add hashtags please!
+
+<!-- ATM-H-215 OUT
+next: ATM-H-216
+context_below: "Absolutely — here is a merged version of 2 and 3: bold, truth-telling, AND nu..."
+-->
+
+<!-- ATM-H-216 IN
+idea: "Absolutely — here is a merged version of 2 and 3: bold, truth-telling, AND nu..."
+section: "Response"
+position: 58
+of_total: 60
+prev: ATM-H-215
+context_above: "Can you merge 2 and 3 together! And then add hashtags please!"
+provenance: HYBRID
+nature: SCRIPT
+nodes: [1, 11]
+pillar: Physical
+build_state: PARTIAL
+editorial: CLEAN
+strike_phase: 2C
+-->
 
 ## Response:
 Absolutely — here is a merged version of #2 and #3: bold, truth-telling, AND nurturing, with a clear CTA and hashtags included. I kept it emotionally compelling, share-worthy, and in your voice.
@@ -1373,8 +2602,50 @@ Comment THRIVE and I’ll send you my next breakdown on getting out of survival 
 
 If you want, I can also now create a matching carousel (10 slides) and a Story sequence that drives people to your Reel within the first hour for maximum reach. Want me to make those too?
 
+<!-- ATM-H-216 OUT
+next: ATM-H-217
+context_below: "Can we add in something about slowing down to be able to listen and the A CTA"
+-->
+
+<!-- ATM-H-217 IN
+idea: "Can we add in something about slowing down to be able to listen and the A CTA"
+section: "Prompt"
+position: 59
+of_total: 60
+prev: ATM-H-216
+context_above: "Absolutely — here is a merged version of 2 and 3: bold, truth-telling, AND nu..."
+provenance: LOCAL
+nature: CLAIM
+nodes: [1, 11]
+pillar: Physical
+build_state: MISSING
+editorial: CLEAN
+strike_phase: 2A
+-->
+
 ## Prompt:
 Can we add in something about slowing down to be able to listen and the A CTA
+
+<!-- ATM-H-217 OUT
+next: ATM-H-218
+context_below: "Absolutely — here is the same merged caption, now with your “slow down & list..."
+-->
+
+<!-- ATM-H-218 IN
+idea: "Absolutely — here is the same merged caption, now with your “slow down & list..."
+section: "Response"
+position: 60
+of_total: 60
+prev: ATM-H-217
+context_above: "Can we add in something about slowing down to be able to listen and the A CTA"
+provenance: HYBRID
+nature: SCRIPT
+nodes: [1, 11]
+pillar: Physical
+build_state: PARTIAL
+editorial: CLEAN
+strike_phase: 2C
+-->
 
 ## Response:
 Absolutely — here is the same merged caption, now with your “slow down & listen” concept woven in and CTA A added at the end. I kept the emotional potency and flow, and placed the slowdown line where it reinforces the nervous system message most naturally.
@@ -1434,6 +2705,11 @@ D) A follow-up post idea so this becomes a mini-series
 
 
 Which should I create next — A, B, C, D, or “All of it”?
+
+<!-- ATM-H-218 OUT
+next: null
+context_below: "null"
+-->
 
 
 

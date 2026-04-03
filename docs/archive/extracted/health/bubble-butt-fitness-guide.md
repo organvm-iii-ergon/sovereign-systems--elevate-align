@@ -1,3 +1,16 @@
+<!-- DOC-ENVELOPE
+id: DOC-H-06
+total_sections: 2
+total_atoms: 30
+dominant_provenance: LOCAL
+dominant_nature: CLAIM
+sections:
+  - name: "Prompt"
+    atoms: [ATM-H-083, ATM-H-085, ATM-H-087, ATM-H-089, ATM-H-091, ATM-H-093, ATM-H-095, ATM-H-097, ATM-H-099, ATM-H-101, ATM-H-103, ATM-H-105, ATM-H-107, ATM-H-109, ATM-H-111]
+  - name: "Response"
+    atoms: [ATM-H-084, ATM-H-086, ATM-H-088, ATM-H-090, ATM-H-092, ATM-H-094, ATM-H-096, ATM-H-098, ATM-H-100, ATM-H-102, ATM-H-104, ATM-H-106, ATM-H-108, ATM-H-110, ATM-H-112]
+-->
+
 ---
 title: "Cycle-synced glute plan, hormone-friendly meals"
 source_file: "ChatGPT-Bubble Butt Fitness Guide.txt"
@@ -8,6 +21,8 @@ pillar: "Physical"
 extracted: 2026-04-03
 ---
 
+
+
 Bubble Butt Fitness Guide
 
 User: Maddie Galloway (95rrzm9nht@privaterelay.appleid.com)
@@ -16,8 +31,46 @@ Updated: 3/31/2026 12:41:16
 Exported: 3/31/2026 12:41:17
 Link: https://chatgpt.com/g/g-p-681675a28d988191995dc4b68a2bc1f1-healing-spiral/c/682a0f56-dd30-8003-b190-eb3e20d7a14b
 
+
+<!-- ATM-H-083 IN
+idea: "As a fitness coach, how can I get a bubble butt/dump truck of an ass while st..."
+section: "Prompt"
+position: 1
+of_total: 30
+prev: null
+context_above: "null"
+provenance: LOCAL
+nature: CLAIM
+nodes: [5, 6, 13]
+pillar: Physical
+build_state: MISSING
+editorial: CLEAN
+strike_phase: 2B
+-->
+
 ## Prompt:
 As a fitness coach, how can I get a bubble butt/dump truck of an ass while still keeping toned legs and a thin waist and flat stomach!?
+
+<!-- ATM-H-083 OUT
+next: ATM-H-084
+context_below: "Love this goal—classic hourglass powerhouse vibe! As a fitness coach, you’ll ..."
+-->
+
+<!-- ATM-H-084 IN
+idea: "Love this goal—classic hourglass powerhouse vibe! As a fitness coach, you’ll ..."
+section: "Response"
+position: 2
+of_total: 30
+prev: ATM-H-083
+context_above: "As a fitness coach, how can I get a bubble butt/dump truck of an ass while st..."
+provenance: HYBRID
+nature: CLAIM
+nodes: [5, 6, 13]
+pillar: Physical
+build_state: EXISTS
+editorial: CLEAN
+strike_phase: 2B
+-->
 
 ## Response:
 Love this goal—classic hourglass powerhouse vibe! As a fitness coach, you’ll want to approach this with a smart combo of hypertrophy training, muscle balance, and nutrition/hormone support. Here's a breakdown to get you that “bubble butt + toned legs + flat stomach + small waist” look:
@@ -139,8 +192,50 @@ Don't sleep on hydration, sleep, and estrogen detox foods (like flax, broccoli, 
 
 Want a custom workout plan, hormone-friendly meal ideas, or a glute pump playlist? I got you.
 
+<!-- ATM-H-084 OUT
+next: ATM-H-085
+context_below: "Ah yes please can we do the workout plan and hormone friendly meal ideas but ..."
+-->
+
+<!-- ATM-H-085 IN
+idea: "Ah yes please can we do the workout plan and hormone friendly meal ideas but ..."
+section: "Prompt"
+position: 3
+of_total: 30
+prev: ATM-H-084
+context_above: "Love this goal—classic hourglass powerhouse vibe! As a fitness coach, you’ll ..."
+provenance: LOCAL
+nature: NARRATIVE
+nodes: [5, 6, 13]
+pillar: Physical
+build_state: PARTIAL
+editorial: CLEAN
+strike_phase: 2C
+-->
+
 ## Prompt:
 Ah yes please can we do the workout plan and hormone friendly meal ideas but tie in my hormone cycle so to really utilize and not burn myself out - I usually bleed with the full moon but was a little early this last time and started on the 7th. If my astrology chart helps will you use that as well!? And please ask me any questions you have, I am gluten free
+
+<!-- ATM-H-085 OUT
+next: ATM-H-086
+context_below: "Updated saved memory"
+-->
+
+<!-- ATM-H-086 IN
+idea: "Updated saved memory"
+section: "Response"
+position: 4
+of_total: 30
+prev: ATM-H-085
+context_above: "Ah yes please can we do the workout plan and hormone friendly meal ideas but ..."
+provenance: HYBRID
+nature: CITATION
+nodes: [5, 6, 13]
+pillar: Physical
+build_state: PARTIAL
+editorial: CLEAN
+strike_phase: 2C
+-->
 
 ## Response:
 Updated saved memory
@@ -314,8 +409,50 @@ An audio affirmation or playlist to go with each workout phase?
 
 Also—would you like me to calculate your exact ovulation day this cycle and adjust your plan accordingly?
 
+<!-- ATM-H-086 OUT
+next: ATM-H-087
+context_below: "Yes please this is so great! Thank you. ,/! We do the notion board tracker an..."
+-->
+
+<!-- ATM-H-087 IN
+idea: "Yes please this is so great! Thank you. ,/! We do the notion board tracker an..."
+section: "Prompt"
+position: 5
+of_total: 30
+prev: ATM-H-086
+context_above: "Updated saved memory"
+provenance: LOCAL
+nature: TOOL
+nodes: [5, 6, 13]
+pillar: Physical
+build_state: MISSING
+editorial: CLEAN
+strike_phase: 2D
+-->
+
 ## Prompt:
 Yes please this is so great! Thank you. ,/! We do the notion board tracker and the grocery lists as well making sure we are saving money and not wasting!
+
+<!-- ATM-H-087 OUT
+next: ATM-H-088
+context_below: "Updated saved memory"
+-->
+
+<!-- ATM-H-088 IN
+idea: "Updated saved memory"
+section: "Response"
+position: 6
+of_total: 30
+prev: ATM-H-087
+context_above: "Yes please this is so great! Thank you. ,/! We do the notion board tracker an..."
+provenance: HYBRID
+nature: TOOL
+nodes: [5, 6, 13]
+pillar: Physical
+build_state: PARTIAL
+editorial: CLEAN
+strike_phase: 2D
+-->
 
 ## Response:
 Updated saved memory
@@ -326,8 +463,50 @@ Here’s your personalized Cycle Sync Tracker, mapping each day of your current 
 
 Next up: I’ll create your budget-friendly grocery lists by phase that minimize waste and maximize hormone support. Would you prefer them grouped by weekly shopping trips, or separated strictly by cycle phase regardless of week?
 
+<!-- ATM-H-088 OUT
+next: ATM-H-089
+context_below: "Hi! I’m about to go to the grocery story, I’m just about done ovulating can y..."
+-->
+
+<!-- ATM-H-089 IN
+idea: "Hi! I’m about to go to the grocery story, I’m just about done ovulating can y..."
+section: "Prompt"
+position: 7
+of_total: 30
+prev: ATM-H-088
+context_above: "Updated saved memory"
+provenance: LOCAL
+nature: QUESTION
+nodes: [5, 6, 13]
+pillar: Physical
+build_state: MISSING
+editorial: CLEAN
+strike_phase: 2B
+-->
+
 ## Prompt:
 Hi! I’m about to go to the grocery story, I’m just about done ovulating can you help me put together a grocery list for the next week!?
+
+<!-- ATM-H-089 OUT
+next: ATM-H-090
+context_below: "Perfect timing! Since you’re just finishing ovulation approx. May 22, you’re ..."
+-->
+
+<!-- ATM-H-090 IN
+idea: "Perfect timing! Since you’re just finishing ovulation approx. May 22, you’re ..."
+section: "Response"
+position: 8
+of_total: 30
+prev: ATM-H-089
+context_above: "Hi! I’m about to go to the grocery story, I’m just about done ovulating can y..."
+provenance: HYBRID
+nature: PROTOCOL
+nodes: [5, 6, 13]
+pillar: Physical
+build_state: PARTIAL
+editorial: UNVERIFIED
+strike_phase: 2C
+-->
 
 ## Response:
 Perfect timing! Since you’re just finishing ovulation (approx. May 22), you’re entering your Luteal Phase—which lasts about 10–14 days depending on your cycle.
@@ -447,11 +626,53 @@ Snacks: Pumpkin seeds + fruit, hummus + carrots, Greek yogurt with cinnamon + nu
 
 Want me to turn this into a printable or add it to a Notion template with meal plan ideas and prep tips to minimize food waste?
 
+<!-- ATM-H-090 OUT
+next: ATM-H-091
+context_below: "Can we take out the bananas - add condensed milk so I can make caramel for ap..."
+-->
+
+<!-- ATM-H-091 IN
+idea: "Can we take out the bananas - add condensed milk so I can make caramel for ap..."
+section: "Prompt"
+position: 9
+of_total: 30
+prev: ATM-H-090
+context_above: "Perfect timing! Since you’re just finishing ovulation approx. May 22, you’re ..."
+provenance: LOCAL
+nature: CLAIM
+nodes: [5, 6, 13]
+pillar: Physical
+build_state: MISSING
+editorial: CLEAN
+strike_phase: 2B
+-->
+
 ## Prompt:
 Can we take out the bananas - add condensed milk so I can make caramel for apples!? No chickpeas or lentils I won’t eat them. quinoa no brown rice. I have eggs and chicken and shredded cheese.
 
 
 I have coconut oil and don’t want to get olive oil right now
+
+<!-- ATM-H-091 OUT
+next: ATM-H-092
+context_below: "Got it! Here’s your updated gluten-free, luteal-phase grocery list tailored t..."
+-->
+
+<!-- ATM-H-092 IN
+idea: "Got it! Here’s your updated gluten-free, luteal-phase grocery list tailored t..."
+section: "Response"
+position: 10
+of_total: 30
+prev: ATM-H-091
+context_above: "Can we take out the bananas - add condensed milk so I can make caramel for ap..."
+provenance: HYBRID
+nature: PROTOCOL
+nodes: [5, 6, 13]
+pillar: Physical
+build_state: PARTIAL
+editorial: UNVERIFIED
+strike_phase: 2C
+-->
 
 ## Response:
 Got it! Here’s your updated gluten-free, luteal-phase grocery list tailored to what you already have and what you actually like. This version keeps things simple, hormone-friendly, budget-conscious, and super comforting—while avoiding waste.
@@ -564,6 +785,27 @@ Dates + nut butter + chocolate chip
 
 Would you like this formatted as a printable or Notion grocery template now? And do you want a simple caramel recipe with condensed milk to go with your apples?
 
+<!-- ATM-H-092 OUT
+next: ATM-H-093
+context_below: "Thank you!! this is my list after I realized I had more stuff, how much do yo..."
+-->
+
+<!-- ATM-H-093 IN
+idea: "Thank you!! this is my list after I realized I had more stuff, how much do yo..."
+section: "Prompt"
+position: 11
+of_total: 30
+prev: ATM-H-092
+context_above: "Got it! Here’s your updated gluten-free, luteal-phase grocery list tailored t..."
+provenance: LOCAL
+nature: CLAIM
+nodes: [5, 6, 13]
+pillar: Physical
+build_state: MISSING
+editorial: UNVERIFIED
+strike_phase: 2B
+-->
+
 ## Prompt:
 Thank you!! this is my list after I realized I had more stuff, how much do you think it’ll be?
 
@@ -604,6 +846,27 @@ Pantry / Snacks
 Freezer (optional)
 	•	Frozen veggies 
 	•	Frozen berries
+
+<!-- ATM-H-093 OUT
+next: ATM-H-094
+context_below: "That’s a super solid luteal-phase haul! Based on average prices in the U.S., ..."
+-->
+
+<!-- ATM-H-094 IN
+idea: "That’s a super solid luteal-phase haul! Based on average prices in the U.S., ..."
+section: "Response"
+position: 12
+of_total: 30
+prev: ATM-H-093
+context_above: "Thank you!! this is my list after I realized I had more stuff, how much do yo..."
+provenance: HYBRID
+nature: MODEL
+nodes: [5, 6, 13]
+pillar: Physical
+build_state: MISSING
+editorial: UNVERIFIED
+strike_phase: 2B
+-->
 
 ## Response:
 That’s a super solid luteal-phase haul! Based on average prices (in the U.S., assuming standard grocery store pricing—not farmers markets or Whole Foods), here’s a rough estimate for your list:
@@ -702,8 +965,50 @@ If you shop smart (store brands, bulk produce, or frozen versions of things like
 
 Want me to create a printable version of this list with checkboxes or a Notion-friendly grocery board?
 
+<!-- ATM-H-094 OUT
+next: ATM-H-095
+context_below: "Yay thank you!"
+-->
+
+<!-- ATM-H-095 IN
+idea: "Yay thank you!"
+section: "Prompt"
+position: 13
+of_total: 30
+prev: ATM-H-094
+context_above: "That’s a super solid luteal-phase haul! Based on average prices in the U.S., ..."
+provenance: LOCAL
+nature: CLAIM
+nodes: [5, 6, 13]
+pillar: Physical
+build_state: MISSING
+editorial: CLEAN
+strike_phase: 2B
+-->
+
 ## Prompt:
 Yay thank you!
+
+<!-- ATM-H-095 OUT
+next: ATM-H-096
+context_below: "Yay! Here’s your printable grocery list:"
+-->
+
+<!-- ATM-H-096 IN
+idea: "Yay! Here’s your printable grocery list:"
+section: "Response"
+position: 14
+of_total: 30
+prev: ATM-H-095
+context_above: "Yay thank you!"
+provenance: HYBRID
+nature: TOOL
+nodes: [5, 6, 13]
+pillar: Physical
+build_state: MISSING
+editorial: CLEAN
+strike_phase: 2D
+-->
 
 ## Response:
 Yay! Here’s your printable grocery list:
@@ -714,8 +1019,50 @@ Download Luteal Phase Grocery List
 
 It includes everything you need this week, organized with checkboxes so you can mark things off as you go. Let me know if you'd like a matching meal prep plan or Notion template next!
 
+<!-- ATM-H-096 OUT
+next: ATM-H-097
+context_below: "Hi! I am now just about done ovulating can you please help me come up with a ..."
+-->
+
+<!-- ATM-H-097 IN
+idea: "Hi! I am now just about done ovulating can you please help me come up with a ..."
+section: "Prompt"
+position: 15
+of_total: 30
+prev: ATM-H-096
+context_above: "Yay! Here’s your printable grocery list:"
+provenance: LOCAL
+nature: CLAIM
+nodes: [5, 6, 13]
+pillar: Physical
+build_state: PARTIAL
+editorial: CLEAN
+strike_phase: 2C
+-->
+
 ## Prompt:
 Hi! I am now just about done ovulating can you please help me come up with a fresh grocery list and meal plan for the week maximizing budget and minimizing waste please!
+
+<!-- ATM-H-097 OUT
+next: ATM-H-098
+context_below: "Hi lovely! Since you're just finishing ovulation, you're now entering your Lu..."
+-->
+
+<!-- ATM-H-098 IN
+idea: "Hi lovely! Since you're just finishing ovulation, you're now entering your Lu..."
+section: "Response"
+position: 16
+of_total: 30
+prev: ATM-H-097
+context_above: "Hi! I am now just about done ovulating can you please help me come up with a ..."
+provenance: HYBRID
+nature: NARRATIVE
+nodes: [5, 6, 13]
+pillar: Physical
+build_state: PARTIAL
+editorial: CLEAN
+strike_phase: 2C
+-->
 
 ## Response:
 Hi lovely! Since you're just finishing ovulation, you're now entering your Luteal Phase—which is all about nourishment, warmth, stability, and pre-period support.
@@ -884,8 +1231,50 @@ Would you like this turned into:
 
 And do you want a quick caramel apple recipe with your condensed milk this week? 🍎🍯
 
+<!-- ATM-H-098 OUT
+next: ATM-H-099
+context_below: "Let’s not do oats but many chia seeds or quinoa?"
+-->
+
+<!-- ATM-H-099 IN
+idea: "Let’s not do oats but many chia seeds or quinoa?"
+section: "Prompt"
+position: 17
+of_total: 30
+prev: ATM-H-098
+context_above: "Hi lovely! Since you're just finishing ovulation, you're now entering your Lu..."
+provenance: LOCAL
+nature: QUESTION
+nodes: [5, 6, 13]
+pillar: Physical
+build_state: MISSING
+editorial: CLEAN
+strike_phase: 2B
+-->
+
 ## Prompt:
 Let’s not do oats but many chia seeds or quinoa?
+
+<!-- ATM-H-099 OUT
+next: ATM-H-100
+context_below: "Perfect! We’ll swap out oats and replace them with chia seeds and a little qu..."
+-->
+
+<!-- ATM-H-100 IN
+idea: "Perfect! We’ll swap out oats and replace them with chia seeds and a little qu..."
+section: "Response"
+position: 18
+of_total: 30
+prev: ATM-H-099
+context_above: "Let’s not do oats but many chia seeds or quinoa?"
+provenance: HYBRID
+nature: PROTOCOL
+nodes: [5, 6, 13]
+pillar: Physical
+build_state: PARTIAL
+editorial: CLEAN
+strike_phase: 2C
+-->
 
 ## Response:
 Perfect! We’ll swap out oats and replace them with chia seeds and a little quinoa if you’re open to that as a side or warm breakfast base. Both are gluten-free, hormone-supportive, and gentle for the luteal phase. Here’s the revised version:
@@ -1028,8 +1417,50 @@ In a Notion board layout?
 
 With a quick chia pudding or caramel apple recipe added in?
 
+<!-- ATM-H-100 OUT
+next: ATM-H-101
+context_below: "Can I make taziki with this? Or do we need to add something to the list for t..."
+-->
+
+<!-- ATM-H-101 IN
+idea: "Can I make taziki with this? Or do we need to add something to the list for t..."
+section: "Prompt"
+position: 19
+of_total: 30
+prev: ATM-H-100
+context_above: "Perfect! We’ll swap out oats and replace them with chia seeds and a little qu..."
+provenance: LOCAL
+nature: PROTOCOL
+nodes: [5, 6, 13]
+pillar: Physical
+build_state: MISSING
+editorial: CLEAN
+strike_phase: 2B
+-->
+
 ## Prompt:
 Can I make taziki with this? Or do we need to add something to the list for that? And then I really like this idea and can play around with it a bit too! Can I have a list I can copy into my notes and then can you give me some recipes too!
+
+<!-- ATM-H-101 OUT
+next: ATM-H-102
+context_below: "Yes! You can definitely make a simple tzatziki with just one or two small add..."
+-->
+
+<!-- ATM-H-102 IN
+idea: "Yes! You can definitely make a simple tzatziki with just one or two small add..."
+section: "Response"
+position: 20
+of_total: 30
+prev: ATM-H-101
+context_above: "Can I make taziki with this? Or do we need to add something to the list for t..."
+provenance: HYBRID
+nature: PROTOCOL
+nodes: [5, 6, 13]
+pillar: Physical
+build_state: MISSING
+editorial: CLEAN
+strike_phase: 2B
+-->
 
 ## Response:
 Yes! You can definitely make a simple tzatziki with just one or two small additions. Here’s what you need and what you might want to add:
@@ -1221,8 +1652,50 @@ Drizzle: tzatziki or hummus
 
 Let me know if you want this in a pretty PDF or Notion meal planner!
 
+<!-- ATM-H-102 OUT
+next: ATM-H-103
+context_below: "These all sound so good thank you!! I’m making a post about how I meal plan a..."
+-->
+
+<!-- ATM-H-103 IN
+idea: "These all sound so good thank you!! I’m making a post about how I meal plan a..."
+section: "Prompt"
+position: 21
+of_total: 30
+prev: ATM-H-102
+context_above: "Yes! You can definitely make a simple tzatziki with just one or two small add..."
+provenance: LOCAL
+nature: PROTOCOL
+nodes: [5, 6, 13]
+pillar: Physical
+build_state: MISSING
+editorial: CLEAN
+strike_phase: 2B
+-->
+
 ## Prompt:
 These all sound so good thank you!! I’m making a post about how I meal plan and prep with your help, can you help me come up with a prompt to give them so they can be as successful as we are!?
+
+<!-- ATM-H-103 OUT
+next: ATM-H-104
+context_below: "Omg yes, I love this! Let’s make this both ✨inviting and empowering✨ so your ..."
+-->
+
+<!-- ATM-H-104 IN
+idea: "Omg yes, I love this! Let’s make this both ✨inviting and empowering✨ so your ..."
+section: "Response"
+position: 22
+of_total: 30
+prev: ATM-H-103
+context_above: "These all sound so good thank you!! I’m making a post about how I meal plan a..."
+provenance: HYBRID
+nature: NARRATIVE
+nodes: [5, 6, 13]
+pillar: Physical
+build_state: PARTIAL
+editorial: CLEAN
+strike_phase: 2C
+-->
 
 ## Response:
 Omg yes, I love this! Let’s make this both ✨inviting and empowering✨ so your audience feels inspired to tune into their body, save money, and eat in sync with their cycle like you are. Here’s a prompt you can use:
@@ -1266,8 +1739,50 @@ Let me know what phase you're in and I’ll help you map it out too 🤍
 
 Want me to help you turn this into a cute graphic or Canva carousel next?
 
+<!-- ATM-H-104 OUT
+next: ATM-H-105
+context_below: "I want to give them a template that they can fill in or tweak slightly and th..."
+-->
+
+<!-- ATM-H-105 IN
+idea: "I want to give them a template that they can fill in or tweak slightly and th..."
+section: "Prompt"
+position: 23
+of_total: 30
+prev: ATM-H-104
+context_above: "Omg yes, I love this! Let’s make this both ✨inviting and empowering✨ so your ..."
+provenance: LOCAL
+nature: TOOL
+nodes: [5, 6, 13]
+pillar: Physical
+build_state: MISSING
+editorial: CLEAN
+strike_phase: 2D
+-->
+
 ## Prompt:
 I want to give them a template that they can fill in or tweak slightly and then send to you so you can help them do this like you did for me - I just want to make sure they word it correctly so they get the best results
+
+<!-- ATM-H-105 OUT
+next: ATM-H-106
+context_below: "YES, I’ve got you! Here’s a ✨copy-paste-ready prompt template✨ your audience ..."
+-->
+
+<!-- ATM-H-106 IN
+idea: "YES, I’ve got you! Here’s a ✨copy-paste-ready prompt template✨ your audience ..."
+section: "Response"
+position: 24
+of_total: 30
+prev: ATM-H-105
+context_above: "I want to give them a template that they can fill in or tweak slightly and th..."
+provenance: HYBRID
+nature: NARRATIVE
+nodes: [5, 6, 13]
+pillar: Physical
+build_state: PARTIAL
+editorial: CLEAN
+strike_phase: 2C
+-->
 
 ## Response:
 YES, I’ve got you! Here’s a ✨copy-paste-ready prompt template✨ your audience can use to message you (or submit to your site/DM) so you—or I—can help them build a customized, aligned grocery list and meal plan like we did for you.
@@ -1327,8 +1842,50 @@ If you want my help building your own cycle-aligned meal map like this each week
 
 Would you like me to design this into a fillable PDF, Canva story slide, or Google Form too?
 
+<!-- ATM-H-106 OUT
+next: ATM-H-107
+context_below: "Okay this is perfect thank you! Going to store now!"
+-->
+
+<!-- ATM-H-107 IN
+idea: "Okay this is perfect thank you! Going to store now!"
+section: "Prompt"
+position: 25
+of_total: 30
+prev: ATM-H-106
+context_above: "YES, I’ve got you! Here’s a ✨copy-paste-ready prompt template✨ your audience ..."
+provenance: LOCAL
+nature: CLAIM
+nodes: [5, 6, 13]
+pillar: Physical
+build_state: MISSING
+editorial: CLEAN
+strike_phase: 2B
+-->
+
 ## Prompt:
 Okay this is perfect thank you! Going to store now!
+
+<!-- ATM-H-107 OUT
+next: ATM-H-108
+context_below: "Yay!! You’re so welcome—have the best time at the store 🍠🍋✨ May your cart be ..."
+-->
+
+<!-- ATM-H-108 IN
+idea: "Yay!! You’re so welcome—have the best time at the store 🍠🍋✨ May your cart be ..."
+section: "Response"
+position: 26
+of_total: 30
+prev: ATM-H-107
+context_above: "Okay this is perfect thank you! Going to store now!"
+provenance: HYBRID
+nature: NARRATIVE
+nodes: [5, 6, 13]
+pillar: Physical
+build_state: MISSING
+editorial: CLEAN
+strike_phase: 2B
+-->
 
 ## Response:
 Yay!! You’re so welcome—have the best time at the store 🍠🍋✨ May your cart be aligned, your meals be nourishing, and your body feel so supported this week.
@@ -1336,8 +1893,50 @@ Yay!! You’re so welcome—have the best time at the store 🍠🍋✨ May your
 
 If you want help with meal prep visuals, storage tips, or content ideas to share the process later—just holler. You’re crushing this 💪💕
 
+<!-- ATM-H-108 OUT
+next: ATM-H-109
+context_below: "I’m okay without protein this week?"
+-->
+
+<!-- ATM-H-109 IN
+idea: "I’m okay without protein this week?"
+section: "Prompt"
+position: 27
+of_total: 30
+prev: ATM-H-108
+context_above: "Yay!! You’re so welcome—have the best time at the store 🍠🍋✨ May your cart be ..."
+provenance: LOCAL
+nature: QUESTION
+nodes: [5, 6, 13]
+pillar: Physical
+build_state: MISSING
+editorial: CLEAN
+strike_phase: 2B
+-->
+
 ## Prompt:
 I’m okay without protein this week?
+
+<!-- ATM-H-109 OUT
+next: ATM-H-110
+context_below: "Great question—and I love how in-tune you’re being with your body. Here’s the..."
+-->
+
+<!-- ATM-H-110 IN
+idea: "Great question—and I love how in-tune you’re being with your body. Here’s the..."
+section: "Response"
+position: 28
+of_total: 30
+prev: ATM-H-109
+context_above: "I’m okay without protein this week?"
+provenance: HYBRID
+nature: NARRATIVE
+nodes: [5, 6, 13]
+pillar: Physical
+build_state: PARTIAL
+editorial: CLEAN
+strike_phase: 2C
+-->
 
 ## Response:
 Great question—and I love how in-tune you’re being with your body. Here’s the deal:
@@ -1404,8 +2003,50 @@ You’re choosing intuitively, and that’s exactly the goal. 💛
 
 Let me know if you want a gentle plant-based protein snack list too!
 
+<!-- ATM-H-110 OUT
+next: ATM-H-111
+context_below: "Are these foods going to go bad it’s just me and the grocery store is close s..."
+-->
+
+<!-- ATM-H-111 IN
+idea: "Are these foods going to go bad it’s just me and the grocery store is close s..."
+section: "Prompt"
+position: 29
+of_total: 30
+prev: ATM-H-110
+context_above: "Great question—and I love how in-tune you’re being with your body. Here’s the..."
+provenance: LOCAL
+nature: CLAIM
+nodes: [5, 6, 13]
+pillar: Physical
+build_state: MISSING
+editorial: CLEAN
+strike_phase: 2B
+-->
+
 ## Prompt:
 Are these foods going to go bad it’s just me and the grocery store is close should we condense a little ?
+
+<!-- ATM-H-111 OUT
+next: ATM-H-112
+context_below: "Yes—let’s totally condense! Since it’s just you, and the grocery store is clo..."
+-->
+
+<!-- ATM-H-112 IN
+idea: "Yes—let’s totally condense! Since it’s just you, and the grocery store is clo..."
+section: "Response"
+position: 30
+of_total: 30
+prev: ATM-H-111
+context_above: "Are these foods going to go bad it’s just me and the grocery store is close s..."
+provenance: HYBRID
+nature: PROTOCOL
+nodes: [5, 6, 13]
+pillar: Physical
+build_state: PARTIAL
+editorial: CLEAN
+strike_phase: 2C
+-->
 
 ## Response:
 Yes—let’s totally condense! Since it’s just you, and the grocery store is close, it’s way smarter to buy a little now and re-up mid-week if needed. That way you waste less, save money, and keep things fresh.
@@ -1492,6 +2133,11 @@ Plan to use the most perishable stuff first: spinach, cucumber, avocado
 
 
 Would you like me to turn this into a “4-Day Grocery Mini-Plan” with mini meals to match?
+
+<!-- ATM-H-112 OUT
+next: null
+context_below: "null"
+-->
 
 
 

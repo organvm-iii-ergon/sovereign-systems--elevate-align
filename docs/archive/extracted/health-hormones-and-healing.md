@@ -1,4 +1,60 @@
+<!-- DOC-ENVELOPE
+id: DOC-H-31
+total_sections: 14
+total_atoms: 14
+dominant_provenance: LOCAL
+dominant_nature: CLAIM
+sections:
+  - name: "![](media/image1.png){width='2.625in' height='1.3553412073490814in'}"
+    atoms: [ATM-H-359]
+  - name: "INTRODUCTION: Your Body Is Not Random"
+    atoms: [ATM-H-360]
+  - name: "TABLE OF CONTENTS"
+    atoms: [ATM-H-361]
+  - name: "ACTUALLY WORKS"
+    atoms: [ATM-H-362]
+  - name: "Menstrual Phase --- Days 1--5 (Winter)"
+    atoms: [ATM-H-363]
+  - name: "Follicular Phase --- Days 6--12 (Spring)"
+    atoms: [ATM-H-364]
+  - name: "Ovulatory Phase --- Days 13--16 (Summer)"
+    atoms: [ATM-H-365]
+  - name: "Luteal Phase --- Days 17--28 (Autumn)"
+    atoms: [ATM-H-366]
+  - name: "BRAIN & MOOD EFFECTS (STUDIES)"
+    atoms: [ATM-H-367]
+  - name: "OFF BIRTH CONTROL"
+    atoms: [ATM-H-368]
+  - name: "HOW LONG IT TAKES TO REGULATE (REAL TIMELINE)"
+    atoms: [ATM-H-369]
+  - name: "A TOOL, NOT A CURE"
+    atoms: [ATM-H-370]
+  - name: "NON-HORMONAL OPTIONS"
+    atoms: [ATM-H-371]
+  - name: "TRUSTED EDUCATORS & SOURCES"
+    atoms: [ATM-H-372]
+-->
+
+
+
+<!-- ATM-H-359 IN
+idea: "!media/image1.png{width='2.625in' height='1.3553412073490814in'}"
+section: "![](media/image1.png){width="2.625in" height="1.3553412073490814in"}"
+position: 1
+of_total: 14
+prev: null
+context_above: "null"
+provenance: LOCAL
+nature: CLAIM
+nodes: []
+pillar: Physical
+build_state: PARTIAL
+editorial: CLEAN
+strike_phase: 2C
+-->
+
 # ![](media/image1.png){width="2.625in" height="1.3553412073490814in"}
+
 
 # **THE EMPOWERED WOMAN'S GUIDE TO BIRTH CONTROL & HEALING HORMONES** 
 
@@ -29,6 +85,27 @@
 #### **Maddie Galloway**
 
 #### **\@h2eau.co**
+
+<!-- ATM-H-359 OUT
+next: ATM-H-360
+context_below: "INTRODUCTION: Your Body Is Not Random"
+-->
+
+<!-- ATM-H-360 IN
+idea: "INTRODUCTION: Your Body Is Not Random"
+section: "INTRODUCTION: Your Body Is Not Random"
+position: 2
+of_total: 14
+prev: ATM-H-359
+context_above: "!media/image1.png{width='2.625in' height='1.3553412073490814in'}"
+provenance: LOCAL
+nature: CLAIM
+nodes: []
+pillar: Physical
+build_state: PARTIAL
+editorial: CLEAN
+strike_phase: 2C
+-->
 
 # **INTRODUCTION: Your Body Is Not Random**
 
@@ -61,6 +138,27 @@ NOT: Pro of full anti pill and no telling you what you "should" do
 **No shame.**
 
 **No fear. Just clarity + empowerment.**
+
+<!-- ATM-H-360 OUT
+next: ATM-H-361
+context_below: "TABLE OF CONTENTS"
+-->
+
+<!-- ATM-H-361 IN
+idea: "TABLE OF CONTENTS"
+section: "TABLE OF CONTENTS"
+position: 3
+of_total: 14
+prev: ATM-H-360
+context_above: "INTRODUCTION: Your Body Is Not Random"
+provenance: LOCAL
+nature: CLAIM
+nodes: []
+pillar: Physical
+build_state: PARTIAL
+editorial: CLEAN
+strike_phase: 2C
+-->
 
 # **TABLE OF CONTENTS**
 
@@ -110,7 +208,29 @@ NOT: Pro of full anti pill and no telling you what you "should" do
 
 # 
 
-# **HOW THE FEMALE CYCLE** 
+
+# **HOW THE FEMALE CYCLE**
+
+<!-- ATM-H-361 OUT
+next: ATM-H-362
+context_below: "ACTUALLY WORKS"
+-->
+
+<!-- ATM-H-362 IN
+idea: "ACTUALLY WORKS"
+section: "ACTUALLY WORKS"
+position: 4
+of_total: 14
+prev: ATM-H-361
+context_above: "TABLE OF CONTENTS"
+provenance: LOCAL
+nature: NARRATIVE
+nodes: []
+pillar: Physical
+build_state: PARTIAL
+editorial: CLEAN
+strike_phase: 2C
+-->
 
 # **ACTUALLY WORKS**
 
@@ -128,6 +248,27 @@ Below is a breakdown of what is happening during each phase.
 
 **Here's your natural hormonal blueprint:**
 
+<!-- ATM-H-362 OUT
+next: ATM-H-363
+context_below: "Menstrual Phase --- Days 1--5 Winter"
+-->
+
+<!-- ATM-H-363 IN
+idea: "Menstrual Phase --- Days 1--5 Winter"
+section: "Menstrual Phase --- Days 1--5 (Winter)"
+position: 5
+of_total: 14
+prev: ATM-H-362
+context_above: "ACTUALLY WORKS"
+provenance: LOCAL
+nature: CLAIM
+nodes: []
+pillar: Physical
+build_state: PARTIAL
+editorial: CLEAN
+strike_phase: 2C
+-->
+
 ## **Menstrual Phase --- Days 1--5 (Winter)**
 
 Low hormones → intuition, clarity, rest, grounded energy.
@@ -143,6 +284,27 @@ Your body is shedding and renewing.
 - ***Biology & Chemistry:** Both Estrogen and Progesterone are at their lowest point. This hormonal low leads to a clear separation between the brain's hemispheres, which is the biological basis for heightened intuition and clear introspection.*
 
 - ***Energy & Focus:** This is the phase of deep rest and strategic planning. Your energy is **grounded and internal**. **Focus on:** Reviewing the past cycle, light movement, deep rest, and strategic, internal work.*
+
+<!-- ATM-H-363 OUT
+next: ATM-H-364
+context_below: "Follicular Phase --- Days 6--12 Spring"
+-->
+
+<!-- ATM-H-364 IN
+idea: "Follicular Phase --- Days 6--12 Spring"
+section: "Follicular Phase --- Days 6--12 (Spring)"
+position: 6
+of_total: 14
+prev: ATM-H-363
+context_above: "Menstrual Phase --- Days 1--5 Winter"
+provenance: LOCAL
+nature: CLAIM
+nodes: []
+pillar: Physical
+build_state: PARTIAL
+editorial: CLEAN
+strike_phase: 2C
+-->
 
 ## **Follicular Phase --- Days 6--12 (Spring)**
 
@@ -160,6 +322,27 @@ Estrogen rises → creativity, optimism, energy returning.
 
 - **Energy & Focus:** Energy begins to feel new and outward-facing. Curiosity is back, and ideas feel exciting. **Focus on:**Learning new skills, brainstorming, starting new projects, light team collaboration, and physical training.
 
+<!-- ATM-H-364 OUT
+next: ATM-H-365
+context_below: "Ovulatory Phase --- Days 13--16 Summer"
+-->
+
+<!-- ATM-H-365 IN
+idea: "Ovulatory Phase --- Days 13--16 Summer"
+section: "Ovulatory Phase --- Days 13--16 (Summer)"
+position: 7
+of_total: 14
+prev: ATM-H-364
+context_above: "Follicular Phase --- Days 6--12 Spring"
+provenance: LOCAL
+nature: CLAIM
+nodes: []
+pillar: Physical
+build_state: PARTIAL
+editorial: CLEAN
+strike_phase: 2C
+-->
+
 ## **Ovulatory Phase --- Days 13--16 (Summer)**
 
 Estrogen peaks → communication, confidence, radiance, attraction.
@@ -173,6 +356,27 @@ Estrogen peaks → communication, confidence, radiance, attraction.
 - **Biology & Chemistry:** Estrogen is at its peak, and a surge of Luteinizing Hormone (LH) triggers ovulation. Estrogen at its peak makes the brain highly social and verbal. You are biologically primed for connection and outward engagement.
 
 - **Energy & Focus:** This is your most outward, magnetic phase with peak clarity, physical strength, and a desire to connect. **Focus on:** Public speaking, presentations, difficult conversations, networking, dating, and high-intensity workouts.
+
+<!-- ATM-H-365 OUT
+next: ATM-H-366
+context_below: "Luteal Phase --- Days 17--28 Autumn"
+-->
+
+<!-- ATM-H-366 IN
+idea: "Luteal Phase --- Days 17--28 Autumn"
+section: "Luteal Phase --- Days 17--28 (Autumn)"
+position: 8
+of_total: 14
+prev: ATM-H-365
+context_above: "Ovulatory Phase --- Days 13--16 Summer"
+provenance: LOCAL
+nature: FRAMEWORK
+nodes: []
+pillar: Physical
+build_state: PARTIAL
+editorial: CLEAN
+strike_phase: 2C
+-->
 
 ## **Luteal Phase --- Days 17--28 (Autumn)**
 
@@ -256,7 +460,28 @@ Some feel disconnected.
 
 Both are real.
 
-# 
+#
+
+<!-- ATM-H-366 OUT
+next: ATM-H-367
+context_below: "BRAIN & MOOD EFFECTS STUDIES"
+-->
+
+<!-- ATM-H-367 IN
+idea: "BRAIN & MOOD EFFECTS STUDIES"
+section: "BRAIN & MOOD EFFECTS (STUDIES)"
+position: 9
+of_total: 14
+prev: ATM-H-366
+context_above: "Luteal Phase --- Days 17--28 Autumn"
+provenance: LOCAL
+nature: CLAIM
+nodes: []
+pillar: Physical
+build_state: EXISTS
+editorial: CLEAN
+strike_phase: 2A
+-->
 
 # **BRAIN & MOOD EFFECTS (STUDIES)**
 
@@ -348,7 +573,29 @@ Not dramatic --- just biology.
 
 # 
 
-# **WHAT HAPPENS WHEN YOU COME** 
+
+# **WHAT HAPPENS WHEN YOU COME**
+
+<!-- ATM-H-367 OUT
+next: ATM-H-368
+context_below: "OFF BIRTH CONTROL"
+-->
+
+<!-- ATM-H-368 IN
+idea: "OFF BIRTH CONTROL"
+section: "OFF BIRTH CONTROL"
+position: 10
+of_total: 14
+prev: ATM-H-367
+context_above: "BRAIN & MOOD EFFECTS STUDIES"
+provenance: LOCAL
+nature: NARRATIVE
+nodes: []
+pillar: Physical
+build_state: PARTIAL
+editorial: CLEAN
+strike_phase: 2C
+-->
 
 # **OFF BIRTH CONTROL**
 
@@ -380,7 +627,28 @@ Your body isn't broken --- it's remembering how to cycle.
 
 # 
 
-# 
+#
+
+<!-- ATM-H-368 OUT
+next: ATM-H-369
+context_below: "HOW LONG IT TAKES TO REGULATE REAL TIMELINE"
+-->
+
+<!-- ATM-H-369 IN
+idea: "HOW LONG IT TAKES TO REGULATE REAL TIMELINE"
+section: "HOW LONG IT TAKES TO REGULATE (REAL TIMELINE)"
+position: 11
+of_total: 14
+prev: ATM-H-368
+context_above: "OFF BIRTH CONTROL"
+provenance: LOCAL
+nature: FRAMEWORK
+nodes: []
+pillar: Physical
+build_state: EXISTS
+editorial: CLEAN
+strike_phase: 2A
+-->
 
 # **HOW LONG IT TAKES TO REGULATE (REAL TIMELINE)**
 
@@ -442,7 +710,28 @@ The science behind the **3 to 12 month timeline for consistent ovulation** after
 
 [This is a loose but helpful rule of thumb. The longer the suppression, the longer the reboot typically takes.]{.mark} This is not failure --- it's your ecosystem rebuilding itself.
 
-# 
+#
+
+<!-- ATM-H-369 OUT
+next: ATM-H-370
+context_below: "A TOOL, NOT A CURE"
+-->
+
+<!-- ATM-H-370 IN
+idea: "A TOOL, NOT A CURE"
+section: "A TOOL, NOT A CURE"
+position: 12
+of_total: 14
+prev: ATM-H-369
+context_above: "HOW LONG IT TAKES TO REGULATE REAL TIMELINE"
+provenance: LOCAL
+nature: NARRATIVE
+nodes: []
+pillar: Physical
+build_state: MISSING
+editorial: CLEAN
+strike_phase: 2A
+-->
 
 # **A TOOL, NOT A CURE**
 
@@ -463,6 +752,27 @@ Birth Control may help with:
 ***It masks them.***
 
 Your symptoms are communication, not misbehavior.
+
+<!-- ATM-H-370 OUT
+next: ATM-H-371
+context_below: "NON-HORMONAL OPTIONS"
+-->
+
+<!-- ATM-H-371 IN
+idea: "NON-HORMONAL OPTIONS"
+section: "NON-HORMONAL OPTIONS"
+position: 13
+of_total: 14
+prev: ATM-H-370
+context_above: "A TOOL, NOT A CURE"
+provenance: LOCAL
+nature: CLAIM
+nodes: []
+pillar: Physical
+build_state: PARTIAL
+editorial: CLEAN
+strike_phase: 2C
+-->
 
 # **NON-HORMONAL OPTIONS** 
 
@@ -489,6 +799,27 @@ Science:
 ### **✔ Condoms / diaphragms -** Still valid.
 
 ### **✔ Cycle literacy -** The most empowering choice of all.
+
+<!-- ATM-H-371 OUT
+next: ATM-H-372
+context_below: "TRUSTED EDUCATORS & SOURCES"
+-->
+
+<!-- ATM-H-372 IN
+idea: "TRUSTED EDUCATORS & SOURCES"
+section: "TRUSTED EDUCATORS & SOURCES"
+position: 14
+of_total: 14
+prev: ATM-H-371
+context_above: "NON-HORMONAL OPTIONS"
+provenance: LOCAL
+nature: NARRATIVE
+nodes: []
+pillar: Physical
+build_state: PARTIAL
+editorial: CLEAN
+strike_phase: 2C
+-->
 
 # **TRUSTED EDUCATORS & SOURCES**
 
@@ -561,3 +892,8 @@ You deserve a relationship with your body that feels safe + honest.
 Your body is brilliant.
 
 You are allowed to trust it fully.
+
+<!-- ATM-H-372 OUT
+next: null
+context_below: "null"
+-->

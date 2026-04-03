@@ -1,3 +1,16 @@
+<!-- DOC-ENVELOPE
+id: DOC-H-16
+total_sections: 2
+total_atoms: 6
+dominant_provenance: LOCAL
+dominant_nature: CLAIM
+sections:
+  - name: "Prompt"
+    atoms: [ATM-H-237, ATM-H-239, ATM-H-241]
+  - name: "Response"
+    atoms: [ATM-H-238, ATM-H-240, ATM-H-242]
+-->
+
 ---
 title: "Hypermobile EDS, misdiagnosis, fascia connection"
 source_file: "ChatGPT-hEDS symptoms and diagnosis.txt"
@@ -8,6 +21,8 @@ pillar: "Physical"
 extracted: 2026-04-03
 ---
 
+
+
 hEDS symptoms and diagnosis
 
 User: Maddie Galloway (95rrzm9nht@privaterelay.appleid.com)
@@ -16,8 +31,46 @@ Updated: 12/18/2025 11:10:11
 Exported: 3/31/2026 14:04:45
 Link: https://chatgpt.com/c/69444e2a-d074-832b-acba-5a11e47905c9
 
+
+<!-- ATM-H-237 IN
+idea: "What’s hEDS, symptoms etc and how is this often missed or diagnosed as a myst..."
+section: "Prompt"
+position: 1
+of_total: 6
+prev: null
+context_above: "null"
+provenance: LOCAL
+nature: CLAIM
+nodes: [9, 13, 3]
+pillar: Physical
+build_state: PARTIAL
+editorial: CLEAN
+strike_phase: 2C
+-->
+
 ## Prompt:
 What’s hEDS, symptoms etc and how is this often missed or diagnosed as a mystery autoimmune disease or RA? And what does it have to do with fascia
+
+<!-- ATM-H-237 OUT
+next: ATM-H-238
+context_below: "This is a very good question—and one a lot of people with “mystery autoimmune..."
+-->
+
+<!-- ATM-H-238 IN
+idea: "This is a very good question—and one a lot of people with “mystery autoimmune..."
+section: "Response"
+position: 2
+of_total: 6
+prev: ATM-H-237
+context_above: "What’s hEDS, symptoms etc and how is this often missed or diagnosed as a myst..."
+provenance: HYBRID
+nature: NARRATIVE
+nodes: [9, 13, 3]
+pillar: Physical
+build_state: EXISTS
+editorial: CLEAN
+strike_phase: 2A
+-->
 
 ## Response:
 This is a very good question—and one a lot of people with “mystery autoimmune” labels eventually arrive at.
@@ -350,6 +403,27 @@ Or map how fascia + nervous system + hormones all interlock in this picture
 
 Just tell me where you want to go next 💛
 
+<!-- ATM-H-238 OUT
+next: ATM-H-239
+context_below: "Genetic meaning one of my parents had to have it? Can it be tested for? Okay ..."
+-->
+
+<!-- ATM-H-239 IN
+idea: "Genetic meaning one of my parents had to have it? Can it be tested for? Okay ..."
+section: "Prompt"
+position: 3
+of_total: 6
+prev: ATM-H-238
+context_above: "This is a very good question—and one a lot of people with “mystery autoimmune..."
+provenance: LOCAL
+nature: NARRATIVE
+nodes: [9, 13, 3]
+pillar: Physical
+build_state: PARTIAL
+editorial: CLEAN
+strike_phase: 2C
+-->
+
 ## Prompt:
 Genetic meaning one of my parents had to have it? Can it be tested for? Okay sorry saw that part but what’s the different between Eds and heds
 
@@ -381,6 +455,27 @@ Especially
 Nervous system regulation
 	•	Stabilization before stretching
 	•	Hormone-aware care
+
+<!-- ATM-H-239 OUT
+next: ATM-H-240
+context_below: "No need to apologize — these are exactly the right questions, and you’re thin..."
+-->
+
+<!-- ATM-H-240 IN
+idea: "No need to apologize — these are exactly the right questions, and you’re thin..."
+section: "Response"
+position: 4
+of_total: 6
+prev: ATM-H-239
+context_above: "Genetic meaning one of my parents had to have it? Can it be tested for? Okay ..."
+provenance: HYBRID
+nature: FRAMEWORK
+nodes: [9, 13, 3]
+pillar: Physical
+build_state: EXISTS
+editorial: UNVERIFIED
+strike_phase: 2A
+-->
 
 ## Response:
 No need to apologize — these are exactly the right questions, and you’re thinking about this in the right order. I’ll go step-by-step and then slow down on the nervous system, stabilization, and hormones, because that’s where people with hEDS actually start to feel better.
@@ -784,6 +879,27 @@ Or talk about why RA labels get stuck even when labs don’t fit
 
 Just tell me what feels most grounding right now 💛
 
+<!-- ATM-H-240 OUT
+next: ATM-H-241
+context_below: "Cause I’ve had the RA and autoimmune panels done and my inflammation is alway..."
+-->
+
+<!-- ATM-H-241 IN
+idea: "Cause I’ve had the RA and autoimmune panels done and my inflammation is alway..."
+section: "Prompt"
+position: 5
+of_total: 6
+prev: ATM-H-240
+context_above: "No need to apologize — these are exactly the right questions, and you’re thin..."
+provenance: LOCAL
+nature: CLAIM
+nodes: [9, 13, 3]
+pillar: Physical
+build_state: EXISTS
+editorial: CLEAN
+strike_phase: 2A
+-->
+
 ## Prompt:
 Cause I’ve had the RA and autoimmune panels done and my inflammation is always high but nothing autoimmune really they said - I’ve been tested twice.
 
@@ -817,6 +933,27 @@ How do I decrease my estrogen naturally? Or with food/tea?
 
 
 And yes let’s do all four please!!
+
+<!-- ATM-H-241 OUT
+next: ATM-H-242
+context_below: "You’re describing a very classic hEDS / connective-tissue pattern, and the fa..."
+-->
+
+<!-- ATM-H-242 IN
+idea: "You’re describing a very classic hEDS / connective-tissue pattern, and the fa..."
+section: "Response"
+position: 6
+of_total: 6
+prev: ATM-H-241
+context_above: "Cause I’ve had the RA and autoimmune panels done and my inflammation is alway..."
+provenance: HYBRID
+nature: FRAMEWORK
+nodes: [9, 13, 3]
+pillar: Physical
+build_state: EXISTS
+editorial: CLEAN
+strike_phase: 2A
+-->
 
 ## Response:
 You’re describing a very classic hEDS / connective-tissue pattern, and the fact that your inflammation is consistently high with negative autoimmune panels is actually one of the biggest clues that this is not RA.
@@ -1216,6 +1353,11 @@ Or discuss how to talk to doctors without being dismissed
 
 
 Just tell me which feels most helpful right now 💛
+
+<!-- ATM-H-242 OUT
+next: null
+context_below: "null"
+-->
 
 
 

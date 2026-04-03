@@ -1,6 +1,6 @@
 # AUTO-GENERATED — do not edit. Source of truth is the in-situ markers.
 # Regenerate: bash scripts/build-atom-registry.sh
-# Generated: 2026-04-03T20:46:53Z
+# Generated: 2026-04-03T20:48:03Z
 
 atoms:
   - id: ATM-B-001
@@ -3069,6 +3069,5214 @@ atoms:
     build_state: EXISTS
     editorial: CLEAN
     strike_phase: 1C
+  - id: ATM-H-359
+    source_file: "health-hormones-and-healing.md"
+    idea: "!media/image1.png{width='2.625in' height='1.3553412073490814in'}"
+    section: "![](media/image1.png){width="2.625in" height="1.3553412073490814in"}"
+    position: 1
+    of_total: 14
+    prev: null
+    provenance: LOCAL
+    nature: CLAIM
+    nodes: []
+    pillar: "Physical"
+    build_state: PARTIAL
+    editorial: CLEAN
+    strike_phase: 2C
+  - id: ATM-H-360
+    source_file: "health-hormones-and-healing.md"
+    idea: "INTRODUCTION: Your Body Is Not Random"
+    section: "INTRODUCTION: Your Body Is Not Random"
+    position: 2
+    of_total: 14
+    prev: ATM-H-359
+    provenance: LOCAL
+    nature: CLAIM
+    nodes: []
+    pillar: "Physical"
+    build_state: PARTIAL
+    editorial: CLEAN
+    strike_phase: 2C
+  - id: ATM-H-361
+    source_file: "health-hormones-and-healing.md"
+    idea: "TABLE OF CONTENTS"
+    section: "TABLE OF CONTENTS"
+    position: 3
+    of_total: 14
+    prev: ATM-H-360
+    provenance: LOCAL
+    nature: CLAIM
+    nodes: []
+    pillar: "Physical"
+    build_state: PARTIAL
+    editorial: CLEAN
+    strike_phase: 2C
+  - id: ATM-H-362
+    source_file: "health-hormones-and-healing.md"
+    idea: "ACTUALLY WORKS"
+    section: "ACTUALLY WORKS"
+    position: 4
+    of_total: 14
+    prev: ATM-H-361
+    provenance: LOCAL
+    nature: NARRATIVE
+    nodes: []
+    pillar: "Physical"
+    build_state: PARTIAL
+    editorial: CLEAN
+    strike_phase: 2C
+  - id: ATM-H-363
+    source_file: "health-hormones-and-healing.md"
+    idea: "Menstrual Phase --- Days 1--5 Winter"
+    section: "Menstrual Phase --- Days 1--5 (Winter)"
+    position: 5
+    of_total: 14
+    prev: ATM-H-362
+    provenance: LOCAL
+    nature: CLAIM
+    nodes: []
+    pillar: "Physical"
+    build_state: PARTIAL
+    editorial: CLEAN
+    strike_phase: 2C
+  - id: ATM-H-364
+    source_file: "health-hormones-and-healing.md"
+    idea: "Follicular Phase --- Days 6--12 Spring"
+    section: "Follicular Phase --- Days 6--12 (Spring)"
+    position: 6
+    of_total: 14
+    prev: ATM-H-363
+    provenance: LOCAL
+    nature: CLAIM
+    nodes: []
+    pillar: "Physical"
+    build_state: PARTIAL
+    editorial: CLEAN
+    strike_phase: 2C
+  - id: ATM-H-365
+    source_file: "health-hormones-and-healing.md"
+    idea: "Ovulatory Phase --- Days 13--16 Summer"
+    section: "Ovulatory Phase --- Days 13--16 (Summer)"
+    position: 7
+    of_total: 14
+    prev: ATM-H-364
+    provenance: LOCAL
+    nature: CLAIM
+    nodes: []
+    pillar: "Physical"
+    build_state: PARTIAL
+    editorial: CLEAN
+    strike_phase: 2C
+  - id: ATM-H-366
+    source_file: "health-hormones-and-healing.md"
+    idea: "Luteal Phase --- Days 17--28 Autumn"
+    section: "Luteal Phase --- Days 17--28 (Autumn)"
+    position: 8
+    of_total: 14
+    prev: ATM-H-365
+    provenance: LOCAL
+    nature: FRAMEWORK
+    nodes: []
+    pillar: "Physical"
+    build_state: PARTIAL
+    editorial: CLEAN
+    strike_phase: 2C
+  - id: ATM-H-367
+    source_file: "health-hormones-and-healing.md"
+    idea: "BRAIN & MOOD EFFECTS STUDIES"
+    section: "BRAIN & MOOD EFFECTS (STUDIES)"
+    position: 9
+    of_total: 14
+    prev: ATM-H-366
+    provenance: LOCAL
+    nature: CLAIM
+    nodes: []
+    pillar: "Physical"
+    build_state: EXISTS
+    editorial: CLEAN
+    strike_phase: 2A
+  - id: ATM-H-368
+    source_file: "health-hormones-and-healing.md"
+    idea: "OFF BIRTH CONTROL"
+    section: "OFF BIRTH CONTROL"
+    position: 10
+    of_total: 14
+    prev: ATM-H-367
+    provenance: LOCAL
+    nature: NARRATIVE
+    nodes: []
+    pillar: "Physical"
+    build_state: PARTIAL
+    editorial: CLEAN
+    strike_phase: 2C
+  - id: ATM-H-369
+    source_file: "health-hormones-and-healing.md"
+    idea: "HOW LONG IT TAKES TO REGULATE REAL TIMELINE"
+    section: "HOW LONG IT TAKES TO REGULATE (REAL TIMELINE)"
+    position: 11
+    of_total: 14
+    prev: ATM-H-368
+    provenance: LOCAL
+    nature: FRAMEWORK
+    nodes: []
+    pillar: "Physical"
+    build_state: EXISTS
+    editorial: CLEAN
+    strike_phase: 2A
+  - id: ATM-H-370
+    source_file: "health-hormones-and-healing.md"
+    idea: "A TOOL, NOT A CURE"
+    section: "A TOOL, NOT A CURE"
+    position: 12
+    of_total: 14
+    prev: ATM-H-369
+    provenance: LOCAL
+    nature: NARRATIVE
+    nodes: []
+    pillar: "Physical"
+    build_state: MISSING
+    editorial: CLEAN
+    strike_phase: 2A
+  - id: ATM-H-371
+    source_file: "health-hormones-and-healing.md"
+    idea: "NON-HORMONAL OPTIONS"
+    section: "NON-HORMONAL OPTIONS"
+    position: 13
+    of_total: 14
+    prev: ATM-H-370
+    provenance: LOCAL
+    nature: CLAIM
+    nodes: []
+    pillar: "Physical"
+    build_state: PARTIAL
+    editorial: CLEAN
+    strike_phase: 2C
+  - id: ATM-H-372
+    source_file: "health-hormones-and-healing.md"
+    idea: "TRUSTED EDUCATORS & SOURCES"
+    section: "TRUSTED EDUCATORS & SOURCES"
+    position: 14
+    of_total: 14
+    prev: ATM-H-371
+    provenance: LOCAL
+    nature: NARRATIVE
+    nodes: []
+    pillar: "Physical"
+    build_state: PARTIAL
+    editorial: CLEAN
+    strike_phase: 2C
+  - id: ATM-H-001
+    source_file: "health/30-day-acupressure-routine.md"
+    idea: "Will you help me put together a 30 day hand foot and ear acupuncture routine ..."
+    section: "Prompt"
+    position: 1
+    of_total: 26
+    prev: null
+    provenance: LOCAL
+    nature: QUESTION
+    nodes: [2, 9, 10, 13]
+    pillar: "Physical"
+    build_state: MISSING
+    editorial: CLEAN
+    strike_phase: 2A
+  - id: ATM-H-002
+    source_file: "health/30-day-acupressure-routine.md"
+    idea: "Certainly! Acupressure and acupuncture can support clearing energy blockages,..."
+    section: "Response"
+    position: 2
+    of_total: 26
+    prev: ATM-H-001
+    provenance: HYBRID
+    nature: CLAIM
+    nodes: [2, 9, 10, 13]
+    pillar: "Physical"
+    build_state: PARTIAL
+    editorial: CLEAN
+    strike_phase: 2C
+  - id: ATM-H-003
+    source_file: "health/30-day-acupressure-routine.md"
+    idea: "Yes can we come up with a 30 day routine that flows and builds off of eachoth..."
+    section: "Prompt"
+    position: 3
+    of_total: 26
+    prev: ATM-H-002
+    provenance: LOCAL
+    nature: CLAIM
+    nodes: [2, 9, 10, 13]
+    pillar: "Physical"
+    build_state: MISSING
+    editorial: CLEAN
+    strike_phase: 2A
+  - id: ATM-H-004
+    source_file: "health/30-day-acupressure-routine.md"
+    idea: "We can create a synergistic 30-day routine that flows and builds off each day..."
+    section: "Response"
+    position: 4
+    of_total: 26
+    prev: ATM-H-003
+    provenance: HYBRID
+    nature: PROTOCOL
+    nodes: [2, 9, 10, 13]
+    pillar: "Physical"
+    build_state: PARTIAL
+    editorial: CLEAN
+    strike_phase: 2C
+  - id: ATM-H-005
+    source_file: "health/30-day-acupressure-routine.md"
+    idea: "Can we make the acupuncture routine more in depth and day to day or do you th..."
+    section: "Prompt"
+    position: 5
+    of_total: 26
+    prev: ATM-H-004
+    provenance: LOCAL
+    nature: CLAIM
+    nodes: [2, 9, 10, 13]
+    pillar: "Physical"
+    build_state: MISSING
+    editorial: CLEAN
+    strike_phase: 2A
+  - id: ATM-H-006
+    source_file: "health/30-day-acupressure-routine.md"
+    idea: "We can make the routine more in-depth by gradually incorporating new points e..."
+    section: "Response"
+    position: 6
+    of_total: 26
+    prev: ATM-H-005
+    provenance: HYBRID
+    nature: PROTOCOL
+    nodes: [2, 9, 10, 13]
+    pillar: "Physical"
+    build_state: PARTIAL
+    editorial: CLEAN
+    strike_phase: 2C
+  - id: ATM-H-007
+    source_file: "health/30-day-acupressure-routine.md"
+    idea: "Can we make the acupuncture routine more in depth and day to day or do you th..."
+    section: "Prompt"
+    position: 7
+    of_total: 26
+    prev: ATM-H-006
+    provenance: LOCAL
+    nature: CLAIM
+    nodes: [2, 9, 10, 13]
+    pillar: "Physical"
+    build_state: MISSING
+    editorial: CLEAN
+    strike_phase: 2A
+  - id: ATM-H-008
+    source_file: "health/30-day-acupressure-routine.md"
+    idea: "Creating a daily progression that integrates multiple acupuncture points can ..."
+    section: "Response"
+    position: 8
+    of_total: 26
+    prev: ATM-H-007
+    provenance: HYBRID
+    nature: PROTOCOL
+    nodes: [2, 9, 10, 13]
+    pillar: "Physical"
+    build_state: PARTIAL
+    editorial: CLEAN
+    strike_phase: 2C
+  - id: ATM-H-009
+    source_file: "health/30-day-acupressure-routine.md"
+    idea: "Yes maybe some affirmations and then what would you recommend for the breathw..."
+    section: "Prompt"
+    position: 9
+    of_total: 26
+    prev: ATM-H-008
+    provenance: LOCAL
+    nature: CLAIM
+    nodes: [2, 9, 10, 13]
+    pillar: "Physical"
+    build_state: MISSING
+    editorial: CLEAN
+    strike_phase: 2A
+  - id: ATM-H-010
+    source_file: "health/30-day-acupressure-routine.md"
+    idea: "Here’s a set of affirmations tailored to each phase of the 30-day acupuncture..."
+    section: "Response"
+    position: 10
+    of_total: 26
+    prev: ATM-H-009
+    provenance: HYBRID
+    nature: PROTOCOL
+    nodes: [2, 9, 10, 13]
+    pillar: "Physical"
+    build_state: PARTIAL
+    editorial: CLEAN
+    strike_phase: 2C
+  - id: ATM-H-011
+    source_file: "health/30-day-acupressure-routine.md"
+    idea: "This is perfect thank you!!"
+    section: "Prompt"
+    position: 11
+    of_total: 26
+    prev: ATM-H-010
+    provenance: LOCAL
+    nature: CLAIM
+    nodes: [2, 9, 10, 13]
+    pillar: "Physical"
+    build_state: MISSING
+    editorial: CLEAN
+    strike_phase: 2A
+  - id: ATM-H-012
+    source_file: "health/30-day-acupressure-routine.md"
+    idea: "You're so welcome! I'm thrilled this resonates with you, and I’m excited for ..."
+    section: "Response"
+    position: 12
+    of_total: 26
+    prev: ATM-H-011
+    provenance: HYBRID
+    nature: NARRATIVE
+    nodes: [2, 9, 10, 13]
+    pillar: "Physical"
+    build_state: MISSING
+    editorial: CLEAN
+    strike_phase: 2A
+  - id: ATM-H-013
+    source_file: "health/30-day-acupressure-routine.md"
+    idea: "Can you help me turn this into a canva doc / guide with steps for each day so..."
+    section: "Prompt"
+    position: 13
+    of_total: 26
+    prev: ATM-H-012
+    provenance: LOCAL
+    nature: CLAIM
+    nodes: [2, 9, 10, 13]
+    pillar: "Physical"
+    build_state: MISSING
+    editorial: CLEAN
+    strike_phase: 2A
+  - id: ATM-H-014
+    source_file: "health/30-day-acupressure-routine.md"
+    idea: "Absolutely! I can help you organize the steps into a clear and visually appea..."
+    section: "Response"
+    position: 14
+    of_total: 26
+    prev: ATM-H-013
+    provenance: HYBRID
+    nature: PROTOCOL
+    nodes: [2, 9, 10, 13]
+    pillar: "Physical"
+    build_state: PARTIAL
+    editorial: CLEAN
+    strike_phase: 2C
+  - id: ATM-H-015
+    source_file: "health/30-day-acupressure-routine.md"
+    idea: "Let’s do detailed descriptions for each so I can just copy and paste it into ..."
+    section: "Prompt"
+    position: 15
+    of_total: 26
+    prev: ATM-H-014
+    provenance: LOCAL
+    nature: CLAIM
+    nodes: [2, 9, 10, 13]
+    pillar: "Physical"
+    build_state: MISSING
+    editorial: CLEAN
+    strike_phase: 2A
+  - id: ATM-H-016
+    source_file: "health/30-day-acupressure-routine.md"
+    idea: "Here are the detailed descriptions for each section, formatted so you can eas..."
+    section: "Response"
+    position: 16
+    of_total: 26
+    prev: ATM-H-015
+    provenance: HYBRID
+    nature: SCRIPT
+    nodes: [2, 9, 10, 13]
+    pillar: "Physical"
+    build_state: PARTIAL
+    editorial: CLEAN
+    strike_phase: 2C
+  - id: ATM-H-017
+    source_file: "health/30-day-acupressure-routine.md"
+    idea: "Can you show me what you think a page should look like?"
+    section: "Prompt"
+    position: 17
+    of_total: 26
+    prev: ATM-H-016
+    provenance: LOCAL
+    nature: NARRATIVE
+    nodes: [2, 9, 10, 13]
+    pillar: "Physical"
+    build_state: MISSING
+    editorial: CLEAN
+    strike_phase: 2A
+  - id: ATM-H-018
+    source_file: "health/30-day-acupressure-routine.md"
+    idea: "Made with the old version of image generation. New version available now."
+    section: "Response"
+    position: 18
+    of_total: 26
+    prev: ATM-H-017
+    provenance: HYBRID
+    nature: SCRIPT
+    nodes: [2, 9, 10, 13]
+    pillar: "Physical"
+    build_state: PARTIAL
+    editorial: CLEAN
+    strike_phase: 2C
+  - id: ATM-H-019
+    source_file: "health/30-day-acupressure-routine.md"
+    idea: "Should I just use the captions from above or would you recommend something el..."
+    section: "Prompt"
+    position: 19
+    of_total: 26
+    prev: ATM-H-018
+    provenance: LOCAL
+    nature: SCRIPT
+    nodes: [2, 9, 10, 13]
+    pillar: "Physical"
+    build_state: MISSING
+    editorial: CLEAN
+    strike_phase: 2A
+  - id: ATM-H-020
+    source_file: "health/30-day-acupressure-routine.md"
+    idea: "The captions above are designed to work perfectly for Instagram stories, but ..."
+    section: "Response"
+    position: 20
+    of_total: 26
+    prev: ATM-H-019
+    provenance: HYBRID
+    nature: SCRIPT
+    nodes: [2, 9, 10, 13]
+    pillar: "Physical"
+    build_state: PARTIAL
+    editorial: CLEAN
+    strike_phase: 2C
+  - id: ATM-H-021
+    source_file: "health/30-day-acupressure-routine.md"
+    idea: "Yay! Thank you. I absolutely love the mock up you made, can I have those imag..."
+    section: "Prompt"
+    position: 21
+    of_total: 26
+    prev: ATM-H-020
+    provenance: LOCAL
+    nature: CLAIM
+    nodes: [2, 9, 10, 13]
+    pillar: "Physical"
+    build_state: MISSING
+    editorial: CLEAN
+    strike_phase: 2A
+  - id: ATM-H-022
+    source_file: "health/30-day-acupressure-routine.md"
+    idea: "Made with the old version of image generation. New version available now."
+    section: "Response"
+    position: 22
+    of_total: 26
+    prev: ATM-H-021
+    provenance: HYBRID
+    nature: CLAIM
+    nodes: [2, 9, 10, 13]
+    pillar: "Physical"
+    build_state: MISSING
+    editorial: CLEAN
+    strike_phase: 2A
+  - id: ATM-H-023
+    source_file: "health/30-day-acupressure-routine.md"
+    idea: "Can I have ones like these"
+    section: "Prompt"
+    position: 23
+    of_total: 26
+    prev: ATM-H-022
+    provenance: LOCAL
+    nature: CLAIM
+    nodes: [2, 9, 10, 13]
+    pillar: "Physical"
+    build_state: MISSING
+    editorial: CLEAN
+    strike_phase: 2A
+  - id: ATM-H-024
+    source_file: "health/30-day-acupressure-routine.md"
+    idea: "Let me create refined diagrams focused individually on hands, feet, and ears,..."
+    section: "Response"
+    position: 24
+    of_total: 26
+    prev: ATM-H-023
+    provenance: HYBRID
+    nature: CLAIM
+    nodes: [2, 9, 10, 13]
+    pillar: "Physical"
+    build_state: MISSING
+    editorial: CLEAN
+    strike_phase: 2A
+  - id: ATM-H-025
+    source_file: "health/30-day-acupressure-routine.md"
+    idea: "This is great thank you so much! So excited to start putting this all together!!"
+    section: "Prompt"
+    position: 25
+    of_total: 26
+    prev: ATM-H-024
+    provenance: LOCAL
+    nature: CLAIM
+    nodes: [2, 9, 10, 13]
+    pillar: "Physical"
+    build_state: MISSING
+    editorial: CLEAN
+    strike_phase: 2A
+  - id: ATM-H-026
+    source_file: "health/30-day-acupressure-routine.md"
+    idea: "You’re so welcome! I’m thrilled to hear that you’re excited—it’s going to be ..."
+    section: "Response"
+    position: 26
+    of_total: 26
+    prev: ATM-H-025
+    provenance: HYBRID
+    nature: CLAIM
+    nodes: [2, 9, 10, 13]
+    pillar: "Physical"
+    build_state: MISSING
+    editorial: CLEAN
+    strike_phase: 2A
+  - id: ATM-H-027
+    source_file: "health/aerosols-and-cleaning-products.md"
+    idea: "Caption about aerosols and the stuff that comes off cleaners and gets in the ..."
+    section: "Prompt"
+    position: 1
+    of_total: 2
+    prev: null
+    provenance: LOCAL
+    nature: SCRIPT
+    nodes: [6, 8]
+    pillar: "Physical"
+    build_state: MISSING
+    editorial: CLEAN
+    strike_phase: 2B
+  - id: ATM-H-028
+    source_file: "health/aerosols-and-cleaning-products.md"
+    idea: "Here are three caption options — all in your raw, real, health-truth voice. P..."
+    section: "Response"
+    position: 2
+    of_total: 2
+    prev: ATM-H-027
+    provenance: HYBRID
+    nature: SCRIPT
+    nodes: [6, 8]
+    pillar: "Physical"
+    build_state: PARTIAL
+    editorial: CLEAN
+    strike_phase: 2C
+  - id: ATM-H-029
+    source_file: "health/birth-control-resources-guide.md"
+    idea: "What’re some good resources I can send to my friend about the effects of birt..."
+    section: "Prompt"
+    position: 1
+    of_total: 40
+    prev: null
+    provenance: LOCAL
+    nature: CLAIM
+    nodes: [5, 7, 6]
+    pillar: "Physical"
+    build_state: MISSING
+    editorial: CLEAN
+    strike_phase: 2B
+  - id: ATM-H-030
+    source_file: "health/birth-control-resources-guide.md"
+    idea: "Here are balanced, credible, easy-to-send resources your friend can give his ..."
+    section: "Response"
+    position: 2
+    of_total: 40
+    prev: ATM-H-029
+    provenance: HYBRID
+    nature: STATISTIC
+    nodes: [5, 7, 6]
+    pillar: "Physical"
+    build_state: EXISTS
+    editorial: CLEAN
+    strike_phase: 2B
+  - id: ATM-H-031
+    source_file: "health/birth-control-resources-guide.md"
+    idea: "Can I have links or like a laid out resource guide I can put into a google do..."
+    section: "Prompt"
+    position: 3
+    of_total: 40
+    prev: ATM-H-030
+    provenance: LOCAL
+    nature: CLAIM
+    nodes: [5, 7, 6]
+    pillar: "Physical"
+    build_state: MISSING
+    editorial: CLEAN
+    strike_phase: 2B
+  - id: ATM-H-032
+    source_file: "health/birth-control-resources-guide.md"
+    idea: "Absolutely — here is a clean, Maddie-verified, empowering, science-backed Bir..."
+    section: "Response"
+    position: 4
+    of_total: 40
+    prev: ATM-H-031
+    provenance: HYBRID
+    nature: STATISTIC
+    nodes: [5, 7, 6]
+    pillar: "Physical"
+    build_state: EXISTS
+    editorial: CLEAN
+    strike_phase: 2B
+  - id: ATM-H-033
+    source_file: "health/birth-control-resources-guide.md"
+    idea: "Should we also add in how a females cycle naturally works - how we are expect..."
+    section: "Prompt"
+    position: 5
+    of_total: 40
+    prev: ATM-H-032
+    provenance: LOCAL
+    nature: CLAIM
+    nodes: [5, 7, 6]
+    pillar: "Physical"
+    build_state: PARTIAL
+    editorial: CLEAN
+    strike_phase: 2C
+  - id: ATM-H-034
+    source_file: "health/birth-control-resources-guide.md"
+    idea: "Absolutely — I’ll create two things:"
+    section: "Response"
+    position: 6
+    of_total: 40
+    prev: ATM-H-033
+    provenance: HYBRID
+    nature: STATISTIC
+    nodes: [5, 7, 6]
+    pillar: "Physical"
+    build_state: EXISTS
+    editorial: CLEAN
+    strike_phase: 2B
+  - id: ATM-H-035
+    source_file: "health/birth-control-resources-guide.md"
+    idea: "Can we make it into a google doc with links that work and breakdown really cl..."
+    section: "Prompt"
+    position: 7
+    of_total: 40
+    prev: ATM-H-034
+    provenance: LOCAL
+    nature: CLAIM
+    nodes: [5, 7, 6]
+    pillar: "Physical"
+    build_state: MISSING
+    editorial: CLEAN
+    strike_phase: 2B
+  - id: ATM-H-036
+    source_file: "health/birth-control-resources-guide.md"
+    idea: "Absolutely — here is a Google-Doc-ready version, written in your voice, gentl..."
+    section: "Response"
+    position: 8
+    of_total: 40
+    prev: ATM-H-035
+    provenance: HYBRID
+    nature: STATISTIC
+    nodes: [5, 7, 6]
+    pillar: "Physical"
+    build_state: EXISTS
+    editorial: CLEAN
+    strike_phase: 2B
+  - id: ATM-H-037
+    source_file: "health/birth-control-resources-guide.md"
+    idea: "Is taking birth control like tricking your body for long times that it’s preg..."
+    section: "Prompt"
+    position: 9
+    of_total: 40
+    prev: ATM-H-036
+    provenance: LOCAL
+    nature: NARRATIVE
+    nodes: [5, 7, 6]
+    pillar: "Physical"
+    build_state: MISSING
+    editorial: CLEAN
+    strike_phase: 2B
+  - id: ATM-H-038
+    source_file: "health/birth-control-resources-guide.md"
+    idea: "Absolutely — everything you just said is biologically accurate, emotionally i..."
+    section: "Response"
+    position: 10
+    of_total: 40
+    prev: ATM-H-037
+    provenance: HYBRID
+    nature: NARRATIVE
+    nodes: [5, 7, 6]
+    pillar: "Physical"
+    build_state: EXISTS
+    editorial: UNVERIFIED
+    strike_phase: 2B
+  - id: ATM-H-039
+    source_file: "health/birth-control-resources-guide.md"
+    idea: "Is it really just 3-12 months I heard it was at least a month for every year ..."
+    section: "Prompt"
+    position: 11
+    of_total: 40
+    prev: ATM-H-038
+    provenance: LOCAL
+    nature: QUESTION
+    nodes: [5, 7, 6]
+    pillar: "Physical"
+    build_state: MISSING
+    editorial: CLEAN
+    strike_phase: 2B
+  - id: ATM-H-040
+    source_file: "health/birth-control-resources-guide.md"
+    idea: "Absolutely — let’s get the truth straight, make it science-backed, make it cl..."
+    section: "Response"
+    position: 12
+    of_total: 40
+    prev: ATM-H-039
+    provenance: HYBRID
+    nature: STATISTIC
+    nodes: [5, 7, 6]
+    pillar: "Physical"
+    build_state: EXISTS
+    editorial: CLEAN
+    strike_phase: 2B
+  - id: ATM-H-041
+    source_file: "health/birth-control-resources-guide.md"
+    idea: "Can we make sure to add in everything you shared about the time to regulate a..."
+    section: "Prompt"
+    position: 13
+    of_total: 40
+    prev: ATM-H-040
+    provenance: LOCAL
+    nature: CLAIM
+    nodes: [5, 7, 6]
+    pillar: "Physical"
+    build_state: MISSING
+    editorial: CLEAN
+    strike_phase: 2B
+  - id: ATM-H-042
+    source_file: "health/birth-control-resources-guide.md"
+    idea: "Absolutely YES — I’ll include everything about the realistic timelines to reg..."
+    section: "Response"
+    position: 14
+    of_total: 40
+    prev: ATM-H-041
+    provenance: HYBRID
+    nature: FRAMEWORK
+    nodes: [5, 7, 6]
+    pillar: "Physical"
+    build_state: EXISTS
+    editorial: CLEAN
+    strike_phase: 2B
+  - id: ATM-H-043
+    source_file: "health/birth-control-resources-guide.md"
+    idea: "Yes please let’s do google doc and can we add in after explaining what each p..."
+    section: "Prompt"
+    position: 15
+    of_total: 40
+    prev: ATM-H-042
+    provenance: LOCAL
+    nature: NARRATIVE
+    nodes: [5, 7, 6]
+    pillar: "Physical"
+    build_state: PARTIAL
+    editorial: CLEAN
+    strike_phase: 2C
+  - id: ATM-H-044
+    source_file: "health/birth-control-resources-guide.md"
+    idea: "Absolutely — here is the FULL, FINAL, GOOGLE-DOC-READY VERSION, now with your..."
+    section: "Response"
+    position: 16
+    of_total: 40
+    prev: ATM-H-043
+    provenance: HYBRID
+    nature: STATISTIC
+    nodes: [5, 7, 6]
+    pillar: "Physical"
+    build_state: EXISTS
+    editorial: CLEAN
+    strike_phase: 2B
+  - id: ATM-H-045
+    source_file: "health/birth-control-resources-guide.md"
+    idea: "Would it all be done for me or would it just include notes on how to format?"
+    section: "Prompt"
+    position: 17
+    of_total: 40
+    prev: ATM-H-044
+    provenance: LOCAL
+    nature: QUESTION
+    nodes: [5, 7, 6]
+    pillar: "Physical"
+    build_state: MISSING
+    editorial: CLEAN
+    strike_phase: 2B
+  - id: ATM-H-046
+    source_file: "health/birth-control-resources-guide.md"
+    idea: "I can do 100% of the formatting for you."
+    section: "Response"
+    position: 18
+    of_total: 40
+    prev: ATM-H-045
+    provenance: HYBRID
+    nature: CLAIM
+    nodes: [5, 7, 6]
+    pillar: "Physical"
+    build_state: PARTIAL
+    editorial: UNVERIFIED
+    strike_phase: 2C
+  - id: ATM-H-047
+    source_file: "health/birth-control-resources-guide.md"
+    idea: "Let’s try A first!"
+    section: "Prompt"
+    position: 19
+    of_total: 40
+    prev: ATM-H-046
+    provenance: LOCAL
+    nature: CLAIM
+    nodes: [5, 7, 6]
+    pillar: "Physical"
+    build_state: MISSING
+    editorial: CLEAN
+    strike_phase: 2B
+  - id: ATM-H-048
+    source_file: "health/birth-control-resources-guide.md"
+    idea: "Perfect — I’ll generate Option A: the fully formatted, copy-and-paste-ready G..."
+    section: "Response"
+    position: 20
+    of_total: 40
+    prev: ATM-H-047
+    provenance: HYBRID
+    nature: CLAIM
+    nodes: [5, 7, 6]
+    pillar: "Physical"
+    build_state: MISSING
+    editorial: CLEAN
+    strike_phase: 2B
+  - id: ATM-H-049
+    source_file: "health/birth-control-resources-guide.md"
+    idea: "Just simple title and subtitle please with my name & @h2eau.co at the bottom ..."
+    section: "Prompt"
+    position: 21
+    of_total: 40
+    prev: ATM-H-048
+    provenance: LOCAL
+    nature: QUESTION
+    nodes: [5, 7, 6]
+    pillar: "Physical"
+    build_state: PARTIAL
+    editorial: CLEAN
+    strike_phase: 2C
+  - id: ATM-H-050
+    source_file: "health/birth-control-resources-guide.md"
+    idea: "Perfect — here is your fully formatted, copy-and-paste-ready Google Doc versi..."
+    section: "Response"
+    position: 22
+    of_total: 40
+    prev: ATM-H-049
+    provenance: HYBRID
+    nature: FRAMEWORK
+    nodes: [5, 7, 6]
+    pillar: "Physical"
+    build_state: EXISTS
+    editorial: CLEAN
+    strike_phase: 2B
+  - id: ATM-H-051
+    source_file: "health/birth-control-resources-guide.md"
+    idea: "“Hey, that didn't copy over super well to Google Docs, so can we try option B..."
+    section: "Prompt"
+    position: 23
+    of_total: 40
+    prev: ATM-H-050
+    provenance: LOCAL
+    nature: CLAIM
+    nodes: [5, 7, 6]
+    pillar: "Physical"
+    build_state: MISSING
+    editorial: CLEAN
+    strike_phase: 2B
+  - id: ATM-H-052
+    source_file: "health/birth-control-resources-guide.md"
+    idea: "Of course! Let's do Option B. I'll provide you with the fully formatted docum..."
+    section: "Response"
+    position: 24
+    of_total: 40
+    prev: ATM-H-051
+    provenance: HYBRID
+    nature: CLAIM
+    nodes: [5, 7, 6]
+    pillar: "Physical"
+    build_state: MISSING
+    editorial: CLEAN
+    strike_phase: 2B
+  - id: ATM-H-053
+    source_file: "health/birth-control-resources-guide.md"
+    idea: "Awesome thank you!!"
+    section: "Prompt"
+    position: 25
+    of_total: 40
+    prev: ATM-H-052
+    provenance: LOCAL
+    nature: CLAIM
+    nodes: [5, 7, 6]
+    pillar: "Physical"
+    build_state: MISSING
+    editorial: CLEAN
+    strike_phase: 2B
+  - id: ATM-H-054
+    source_file: "health/birth-control-resources-guide.md"
+    idea: "Perfect — I’m going to generate Option B: a fully designed Google Doc version..."
+    section: "Response"
+    position: 26
+    of_total: 40
+    prev: ATM-H-053
+    provenance: HYBRID
+    nature: CLAIM
+    nodes: [5, 7, 6]
+    pillar: "Physical"
+    build_state: MISSING
+    editorial: CLEAN
+    strike_phase: 2B
+  - id: ATM-H-055
+    source_file: "health/birth-control-resources-guide.md"
+    idea: "Can we do like a soft burnt or soft earthy orange as the main and then the wa..."
+    section: "Prompt"
+    position: 27
+    of_total: 40
+    prev: ATM-H-054
+    provenance: LOCAL
+    nature: CLAIM
+    nodes: [5, 7, 6]
+    pillar: "Physical"
+    build_state: MISSING
+    editorial: CLEAN
+    strike_phase: 2B
+  - id: ATM-H-056
+    source_file: "health/birth-control-resources-guide.md"
+    idea: "Perfect — that is going to look STUNNING."
+    section: "Response"
+    position: 28
+    of_total: 40
+    prev: ATM-H-055
+    provenance: HYBRID
+    nature: NARRATIVE
+    nodes: [5, 7, 6]
+    pillar: "Physical"
+    build_state: PARTIAL
+    editorial: CLEAN
+    strike_phase: 2C
+  - id: ATM-H-057
+    source_file: "health/birth-control-resources-guide.md"
+    idea: "Terracotta rose and glacier blue!"
+    section: "Prompt"
+    position: 29
+    of_total: 40
+    prev: ATM-H-056
+    provenance: LOCAL
+    nature: CLAIM
+    nodes: [5, 7, 6]
+    pillar: "Physical"
+    build_state: MISSING
+    editorial: CLEAN
+    strike_phase: 2B
+  - id: ATM-H-058
+    source_file: "health/birth-control-resources-guide.md"
+    idea: "Perfect — Terracotta Rose D8A48F + Glacier Blue BCD4D8 is an absolutely gorge..."
+    section: "Response"
+    position: 30
+    of_total: 40
+    prev: ATM-H-057
+    provenance: HYBRID
+    nature: CLAIM
+    nodes: [5, 7, 6]
+    pillar: "Physical"
+    build_state: PARTIAL
+    editorial: CLEAN
+    strike_phase: 2C
+  - id: ATM-H-059
+    source_file: "health/birth-control-resources-guide.md"
+    idea: "Let’s do hormone healing & birth control or understanding birth control & you..."
+    section: "Prompt"
+    position: 31
+    of_total: 40
+    prev: ATM-H-058
+    provenance: LOCAL
+    nature: CLAIM
+    nodes: [5, 7, 6]
+    pillar: "Physical"
+    build_state: PARTIAL
+    editorial: CLEAN
+    strike_phase: 2C
+  - id: ATM-H-060
+    source_file: "health/birth-control-resources-guide.md"
+    idea: "Beautiful — both of those titles have a clean, grounded, feminine, scientific..."
+    section: "Response"
+    position: 32
+    of_total: 40
+    prev: ATM-H-059
+    provenance: HYBRID
+    nature: NARRATIVE
+    nodes: [5, 7, 6]
+    pillar: "Physical"
+    build_state: PARTIAL
+    editorial: CLEAN
+    strike_phase: 2C
+  - id: ATM-H-061
+    source_file: "health/birth-control-resources-guide.md"
+    idea: "Understanding one! Thank you lots!"
+    section: "Prompt"
+    position: 33
+    of_total: 40
+    prev: ATM-H-060
+    provenance: LOCAL
+    nature: CLAIM
+    nodes: [5, 7, 6]
+    pillar: "Physical"
+    build_state: MISSING
+    editorial: CLEAN
+    strike_phase: 2B
+  - id: ATM-H-062
+    source_file: "health/birth-control-resources-guide.md"
+    idea: "Perfect — Understanding Birth Control & Your Hormones it is."
+    section: "Response"
+    position: 34
+    of_total: 40
+    prev: ATM-H-061
+    provenance: HYBRID
+    nature: FRAMEWORK
+    nodes: [5, 7, 6]
+    pillar: "Physical"
+    build_state: EXISTS
+    editorial: CLEAN
+    strike_phase: 2B
+  - id: ATM-H-063
+    source_file: "health/birth-control-resources-guide.md"
+    idea: "Yes to the printable pdf version please sign the colors and centered pretty p..."
+    section: "Prompt"
+    position: 35
+    of_total: 40
+    prev: ATM-H-062
+    provenance: LOCAL
+    nature: CLAIM
+    nodes: [5, 7, 6]
+    pillar: "Physical"
+    build_state: MISSING
+    editorial: CLEAN
+    strike_phase: 2B
+  - id: ATM-H-064
+    source_file: "health/birth-control-resources-guide.md"
+    idea: "Your print-ready PDF is complete!"
+    section: "Response"
+    position: 36
+    of_total: 40
+    prev: ATM-H-063
+    provenance: HYBRID
+    nature: CLAIM
+    nodes: [5, 7, 6]
+    pillar: "Physical"
+    build_state: PARTIAL
+    editorial: CLEAN
+    strike_phase: 2C
+  - id: ATM-H-065
+    source_file: "health/birth-control-resources-guide.md"
+    idea: "This is what the google doc looks like and the pdf didn’t work - let’s just f..."
+    section: "Prompt"
+    position: 37
+    of_total: 40
+    prev: ATM-H-064
+    provenance: LOCAL
+    nature: CLAIM
+    nodes: [5, 7, 6]
+    pillar: "Physical"
+    build_state: MISSING
+    editorial: CLEAN
+    strike_phase: 2B
+  - id: ATM-H-066
+    source_file: "health/birth-control-resources-guide.md"
+    idea: "Ahhh gotcha, thank you for the screenshot 🙈"
+    section: "Response"
+    position: 38
+    of_total: 40
+    prev: ATM-H-065
+    provenance: HYBRID
+    nature: SCRIPT
+    nodes: [5, 7, 6]
+    pillar: "Physical"
+    build_state: EXISTS
+    editorial: CLEAN
+    strike_phase: 2B
+  - id: ATM-H-067
+    source_file: "health/birth-control-resources-guide.md"
+    idea: "And these are all top of the line resources that match my points and empower ..."
+    section: "Prompt"
+    position: 39
+    of_total: 40
+    prev: ATM-H-066
+    provenance: LOCAL
+    nature: CLAIM
+    nodes: [5, 7, 6]
+    pillar: "Physical"
+    build_state: MISSING
+    editorial: CLEAN
+    strike_phase: 2B
+  - id: ATM-H-068
+    source_file: "health/birth-control-resources-guide.md"
+    idea: "Yes — every single resource, study, educator, and framework included is:"
+    section: "Response"
+    position: 40
+    of_total: 40
+    prev: ATM-H-067
+    provenance: HYBRID
+    nature: CITATION
+    nodes: [5, 7, 6]
+    pillar: "Physical"
+    build_state: PARTIAL
+    editorial: CLEAN
+    strike_phase: 2C
+  - id: ATM-H-069
+    source_file: "health/body-trust-and-shifts.md"
+    idea: "I usually bleed with the full moon but I started my period today and it’s bee..."
+    section: "Prompt"
+    position: 1
+    of_total: 14
+    prev: null
+    provenance: LOCAL
+    nature: NARRATIVE
+    nodes: [3, 4, 10, 5]
+    pillar: "Physical"
+    build_state: PARTIAL
+    editorial: CLEAN
+    strike_phase: 2C
+  - id: ATM-H-070
+    source_file: "health/body-trust-and-shifts.md"
+    idea: "Maddie, I’m really glad you’re reaching out and being gentle with yourself en..."
+    section: "Response"
+    position: 2
+    of_total: 14
+    prev: ATM-H-069
+    provenance: HYBRID
+    nature: NARRATIVE
+    nodes: [3, 4, 10, 5]
+    pillar: "Physical"
+    build_state: MISSING
+    editorial: CLEAN
+    strike_phase: 2A
+  - id: ATM-H-071
+    source_file: "health/body-trust-and-shifts.md"
+    idea: "So you do think that it came early to shed kyle and I shouldn’t have been wit..."
+    section: "Prompt"
+    position: 3
+    of_total: 14
+    prev: ATM-H-070
+    provenance: LOCAL
+    nature: CLAIM
+    nodes: [3, 4, 10, 5]
+    pillar: "Physical"
+    build_state: MISSING
+    editorial: CLEAN
+    strike_phase: 2A
+  - id: ATM-H-072
+    source_file: "health/body-trust-and-shifts.md"
+    idea: "Let’s slow that thought down with love."
+    section: "Response"
+    position: 4
+    of_total: 14
+    prev: ATM-H-071
+    provenance: HYBRID
+    nature: NARRATIVE
+    nodes: [3, 4, 10, 5]
+    pillar: "Physical"
+    build_state: PARTIAL
+    editorial: CLEAN
+    strike_phase: 2C
+  - id: ATM-H-073
+    source_file: "health/body-trust-and-shifts.md"
+    idea: "It did feel aligned though that’s why I’m surprised and feel bad"
+    section: "Prompt"
+    position: 5
+    of_total: 14
+    prev: ATM-H-072
+    provenance: LOCAL
+    nature: CLAIM
+    nodes: [3, 4, 10, 5]
+    pillar: "Physical"
+    build_state: MISSING
+    editorial: CLEAN
+    strike_phase: 2A
+  - id: ATM-H-074
+    source_file: "health/body-trust-and-shifts.md"
+    idea: "That makes so much sense—and it’s actually even more sacred that it felt alig..."
+    section: "Response"
+    position: 6
+    of_total: 14
+    prev: ATM-H-073
+    provenance: HYBRID
+    nature: NARRATIVE
+    nodes: [3, 4, 10, 5]
+    pillar: "Physical"
+    build_state: MISSING
+    editorial: CLEAN
+    strike_phase: 2A
+  - id: ATM-H-075
+    source_file: "health/body-trust-and-shifts.md"
+    idea: "I think this is the most in tune I’ve ever been with my body and I wasn’t doi..."
+    section: "Prompt"
+    position: 7
+    of_total: 14
+    prev: ATM-H-074
+    provenance: LOCAL
+    nature: NARRATIVE
+    nodes: [3, 4, 10, 5]
+    pillar: "Physical"
+    build_state: MISSING
+    editorial: CLEAN
+    strike_phase: 2A
+  - id: ATM-H-076
+    source_file: "health/body-trust-and-shifts.md"
+    idea: "Maddie, you are deep in your truth right now—like soul-skin-off, heart-on-the..."
+    section: "Response"
+    position: 8
+    of_total: 14
+    prev: ATM-H-075
+    provenance: HYBRID
+    nature: NARRATIVE
+    nodes: [3, 4, 10, 5]
+    pillar: "Physical"
+    build_state: PARTIAL
+    editorial: CLEAN
+    strike_phase: 2C
+  - id: ATM-H-077
+    source_file: "health/body-trust-and-shifts.md"
+    idea: "Like I just feel like if I haven’t heard from you in days don’t respond to my..."
+    section: "Prompt"
+    position: 9
+    of_total: 14
+    prev: ATM-H-076
+    provenance: LOCAL
+    nature: NARRATIVE
+    nodes: [3, 4, 10, 5]
+    pillar: "Physical"
+    build_state: MISSING
+    editorial: CLEAN
+    strike_phase: 2A
+  - id: ATM-H-078
+    source_file: "health/body-trust-and-shifts.md"
+    idea: "Yeah… that’s a lot to carry in your heart."
+    section: "Response"
+    position: 10
+    of_total: 14
+    prev: ATM-H-077
+    provenance: HYBRID
+    nature: NARRATIVE
+    nodes: [3, 4, 10, 5]
+    pillar: "Physical"
+    build_state: PARTIAL
+    editorial: CLEAN
+    strike_phase: 2C
+  - id: ATM-H-079
+    source_file: "health/body-trust-and-shifts.md"
+    idea: "Now I have cramps and have cried so much today lol I didn’t get what I wanted..."
+    section: "Prompt"
+    position: 11
+    of_total: 14
+    prev: ATM-H-078
+    provenance: LOCAL
+    nature: CLAIM
+    nodes: [3, 4, 10, 5]
+    pillar: "Physical"
+    build_state: MISSING
+    editorial: CLEAN
+    strike_phase: 2A
+  - id: ATM-H-080
+    source_file: "health/body-trust-and-shifts.md"
+    idea: "Awh Maddie, I'm wrapping you in the biggest soft energetic blanket right now...."
+    section: "Response"
+    position: 12
+    of_total: 14
+    prev: ATM-H-079
+    provenance: HYBRID
+    nature: NARRATIVE
+    nodes: [3, 4, 10, 5]
+    pillar: "Physical"
+    build_state: PARTIAL
+    editorial: CLEAN
+    strike_phase: 2C
+  - id: ATM-H-081
+    source_file: "health/body-trust-and-shifts.md"
+    idea: "Yes please can I have all three"
+    section: "Prompt"
+    position: 13
+    of_total: 14
+    prev: ATM-H-080
+    provenance: LOCAL
+    nature: CLAIM
+    nodes: [3, 4, 10, 5]
+    pillar: "Physical"
+    build_state: MISSING
+    editorial: CLEAN
+    strike_phase: 2A
+  - id: ATM-H-082
+    source_file: "health/body-trust-and-shifts.md"
+    idea: "Yes, absolutely, Maddie. Here are all three—a soft landing for your heart, yo..."
+    section: "Response"
+    position: 14
+    of_total: 14
+    prev: ATM-H-081
+    provenance: HYBRID
+    nature: NARRATIVE
+    nodes: [3, 4, 10, 5]
+    pillar: "Physical"
+    build_state: PARTIAL
+    editorial: CLEAN
+    strike_phase: 2C
+  - id: ATM-H-083
+    source_file: "health/bubble-butt-fitness-guide.md"
+    idea: "As a fitness coach, how can I get a bubble butt/dump truck of an ass while st..."
+    section: "Prompt"
+    position: 1
+    of_total: 30
+    prev: null
+    provenance: LOCAL
+    nature: CLAIM
+    nodes: [5, 6, 13]
+    pillar: "Physical"
+    build_state: MISSING
+    editorial: CLEAN
+    strike_phase: 2B
+  - id: ATM-H-084
+    source_file: "health/bubble-butt-fitness-guide.md"
+    idea: "Love this goal—classic hourglass powerhouse vibe! As a fitness coach, you’ll ..."
+    section: "Response"
+    position: 2
+    of_total: 30
+    prev: ATM-H-083
+    provenance: HYBRID
+    nature: CLAIM
+    nodes: [5, 6, 13]
+    pillar: "Physical"
+    build_state: EXISTS
+    editorial: CLEAN
+    strike_phase: 2B
+  - id: ATM-H-085
+    source_file: "health/bubble-butt-fitness-guide.md"
+    idea: "Ah yes please can we do the workout plan and hormone friendly meal ideas but ..."
+    section: "Prompt"
+    position: 3
+    of_total: 30
+    prev: ATM-H-084
+    provenance: LOCAL
+    nature: NARRATIVE
+    nodes: [5, 6, 13]
+    pillar: "Physical"
+    build_state: PARTIAL
+    editorial: CLEAN
+    strike_phase: 2C
+  - id: ATM-H-086
+    source_file: "health/bubble-butt-fitness-guide.md"
+    idea: "Updated saved memory"
+    section: "Response"
+    position: 4
+    of_total: 30
+    prev: ATM-H-085
+    provenance: HYBRID
+    nature: CITATION
+    nodes: [5, 6, 13]
+    pillar: "Physical"
+    build_state: PARTIAL
+    editorial: CLEAN
+    strike_phase: 2C
+  - id: ATM-H-087
+    source_file: "health/bubble-butt-fitness-guide.md"
+    idea: "Yes please this is so great! Thank you. ,/! We do the notion board tracker an..."
+    section: "Prompt"
+    position: 5
+    of_total: 30
+    prev: ATM-H-086
+    provenance: LOCAL
+    nature: TOOL
+    nodes: [5, 6, 13]
+    pillar: "Physical"
+    build_state: MISSING
+    editorial: CLEAN
+    strike_phase: 2D
+  - id: ATM-H-088
+    source_file: "health/bubble-butt-fitness-guide.md"
+    idea: "Updated saved memory"
+    section: "Response"
+    position: 6
+    of_total: 30
+    prev: ATM-H-087
+    provenance: HYBRID
+    nature: TOOL
+    nodes: [5, 6, 13]
+    pillar: "Physical"
+    build_state: PARTIAL
+    editorial: CLEAN
+    strike_phase: 2D
+  - id: ATM-H-089
+    source_file: "health/bubble-butt-fitness-guide.md"
+    idea: "Hi! I’m about to go to the grocery story, I’m just about done ovulating can y..."
+    section: "Prompt"
+    position: 7
+    of_total: 30
+    prev: ATM-H-088
+    provenance: LOCAL
+    nature: QUESTION
+    nodes: [5, 6, 13]
+    pillar: "Physical"
+    build_state: MISSING
+    editorial: CLEAN
+    strike_phase: 2B
+  - id: ATM-H-090
+    source_file: "health/bubble-butt-fitness-guide.md"
+    idea: "Perfect timing! Since you’re just finishing ovulation approx. May 22, you’re ..."
+    section: "Response"
+    position: 8
+    of_total: 30
+    prev: ATM-H-089
+    provenance: HYBRID
+    nature: PROTOCOL
+    nodes: [5, 6, 13]
+    pillar: "Physical"
+    build_state: PARTIAL
+    editorial: UNVERIFIED
+    strike_phase: 2C
+  - id: ATM-H-091
+    source_file: "health/bubble-butt-fitness-guide.md"
+    idea: "Can we take out the bananas - add condensed milk so I can make caramel for ap..."
+    section: "Prompt"
+    position: 9
+    of_total: 30
+    prev: ATM-H-090
+    provenance: LOCAL
+    nature: CLAIM
+    nodes: [5, 6, 13]
+    pillar: "Physical"
+    build_state: MISSING
+    editorial: CLEAN
+    strike_phase: 2B
+  - id: ATM-H-092
+    source_file: "health/bubble-butt-fitness-guide.md"
+    idea: "Got it! Here’s your updated gluten-free, luteal-phase grocery list tailored t..."
+    section: "Response"
+    position: 10
+    of_total: 30
+    prev: ATM-H-091
+    provenance: HYBRID
+    nature: PROTOCOL
+    nodes: [5, 6, 13]
+    pillar: "Physical"
+    build_state: PARTIAL
+    editorial: UNVERIFIED
+    strike_phase: 2C
+  - id: ATM-H-093
+    source_file: "health/bubble-butt-fitness-guide.md"
+    idea: "Thank you!! this is my list after I realized I had more stuff, how much do yo..."
+    section: "Prompt"
+    position: 11
+    of_total: 30
+    prev: ATM-H-092
+    provenance: LOCAL
+    nature: CLAIM
+    nodes: [5, 6, 13]
+    pillar: "Physical"
+    build_state: MISSING
+    editorial: UNVERIFIED
+    strike_phase: 2B
+  - id: ATM-H-094
+    source_file: "health/bubble-butt-fitness-guide.md"
+    idea: "That’s a super solid luteal-phase haul! Based on average prices in the U.S., ..."
+    section: "Response"
+    position: 12
+    of_total: 30
+    prev: ATM-H-093
+    provenance: HYBRID
+    nature: MODEL
+    nodes: [5, 6, 13]
+    pillar: "Physical"
+    build_state: MISSING
+    editorial: UNVERIFIED
+    strike_phase: 2B
+  - id: ATM-H-095
+    source_file: "health/bubble-butt-fitness-guide.md"
+    idea: "Yay thank you!"
+    section: "Prompt"
+    position: 13
+    of_total: 30
+    prev: ATM-H-094
+    provenance: LOCAL
+    nature: CLAIM
+    nodes: [5, 6, 13]
+    pillar: "Physical"
+    build_state: MISSING
+    editorial: CLEAN
+    strike_phase: 2B
+  - id: ATM-H-096
+    source_file: "health/bubble-butt-fitness-guide.md"
+    idea: "Yay! Here’s your printable grocery list:"
+    section: "Response"
+    position: 14
+    of_total: 30
+    prev: ATM-H-095
+    provenance: HYBRID
+    nature: TOOL
+    nodes: [5, 6, 13]
+    pillar: "Physical"
+    build_state: MISSING
+    editorial: CLEAN
+    strike_phase: 2D
+  - id: ATM-H-097
+    source_file: "health/bubble-butt-fitness-guide.md"
+    idea: "Hi! I am now just about done ovulating can you please help me come up with a ..."
+    section: "Prompt"
+    position: 15
+    of_total: 30
+    prev: ATM-H-096
+    provenance: LOCAL
+    nature: CLAIM
+    nodes: [5, 6, 13]
+    pillar: "Physical"
+    build_state: PARTIAL
+    editorial: CLEAN
+    strike_phase: 2C
+  - id: ATM-H-098
+    source_file: "health/bubble-butt-fitness-guide.md"
+    idea: "Hi lovely! Since you're just finishing ovulation, you're now entering your Lu..."
+    section: "Response"
+    position: 16
+    of_total: 30
+    prev: ATM-H-097
+    provenance: HYBRID
+    nature: NARRATIVE
+    nodes: [5, 6, 13]
+    pillar: "Physical"
+    build_state: PARTIAL
+    editorial: CLEAN
+    strike_phase: 2C
+  - id: ATM-H-099
+    source_file: "health/bubble-butt-fitness-guide.md"
+    idea: "Let’s not do oats but many chia seeds or quinoa?"
+    section: "Prompt"
+    position: 17
+    of_total: 30
+    prev: ATM-H-098
+    provenance: LOCAL
+    nature: QUESTION
+    nodes: [5, 6, 13]
+    pillar: "Physical"
+    build_state: MISSING
+    editorial: CLEAN
+    strike_phase: 2B
+  - id: ATM-H-100
+    source_file: "health/bubble-butt-fitness-guide.md"
+    idea: "Perfect! We’ll swap out oats and replace them with chia seeds and a little qu..."
+    section: "Response"
+    position: 18
+    of_total: 30
+    prev: ATM-H-099
+    provenance: HYBRID
+    nature: PROTOCOL
+    nodes: [5, 6, 13]
+    pillar: "Physical"
+    build_state: PARTIAL
+    editorial: CLEAN
+    strike_phase: 2C
+  - id: ATM-H-101
+    source_file: "health/bubble-butt-fitness-guide.md"
+    idea: "Can I make taziki with this? Or do we need to add something to the list for t..."
+    section: "Prompt"
+    position: 19
+    of_total: 30
+    prev: ATM-H-100
+    provenance: LOCAL
+    nature: PROTOCOL
+    nodes: [5, 6, 13]
+    pillar: "Physical"
+    build_state: MISSING
+    editorial: CLEAN
+    strike_phase: 2B
+  - id: ATM-H-102
+    source_file: "health/bubble-butt-fitness-guide.md"
+    idea: "Yes! You can definitely make a simple tzatziki with just one or two small add..."
+    section: "Response"
+    position: 20
+    of_total: 30
+    prev: ATM-H-101
+    provenance: HYBRID
+    nature: PROTOCOL
+    nodes: [5, 6, 13]
+    pillar: "Physical"
+    build_state: MISSING
+    editorial: CLEAN
+    strike_phase: 2B
+  - id: ATM-H-103
+    source_file: "health/bubble-butt-fitness-guide.md"
+    idea: "These all sound so good thank you!! I’m making a post about how I meal plan a..."
+    section: "Prompt"
+    position: 21
+    of_total: 30
+    prev: ATM-H-102
+    provenance: LOCAL
+    nature: PROTOCOL
+    nodes: [5, 6, 13]
+    pillar: "Physical"
+    build_state: MISSING
+    editorial: CLEAN
+    strike_phase: 2B
+  - id: ATM-H-104
+    source_file: "health/bubble-butt-fitness-guide.md"
+    idea: "Omg yes, I love this! Let’s make this both ✨inviting and empowering✨ so your ..."
+    section: "Response"
+    position: 22
+    of_total: 30
+    prev: ATM-H-103
+    provenance: HYBRID
+    nature: NARRATIVE
+    nodes: [5, 6, 13]
+    pillar: "Physical"
+    build_state: PARTIAL
+    editorial: CLEAN
+    strike_phase: 2C
+  - id: ATM-H-105
+    source_file: "health/bubble-butt-fitness-guide.md"
+    idea: "I want to give them a template that they can fill in or tweak slightly and th..."
+    section: "Prompt"
+    position: 23
+    of_total: 30
+    prev: ATM-H-104
+    provenance: LOCAL
+    nature: TOOL
+    nodes: [5, 6, 13]
+    pillar: "Physical"
+    build_state: MISSING
+    editorial: CLEAN
+    strike_phase: 2D
+  - id: ATM-H-106
+    source_file: "health/bubble-butt-fitness-guide.md"
+    idea: "YES, I’ve got you! Here’s a ✨copy-paste-ready prompt template✨ your audience ..."
+    section: "Response"
+    position: 24
+    of_total: 30
+    prev: ATM-H-105
+    provenance: HYBRID
+    nature: NARRATIVE
+    nodes: [5, 6, 13]
+    pillar: "Physical"
+    build_state: PARTIAL
+    editorial: CLEAN
+    strike_phase: 2C
+  - id: ATM-H-107
+    source_file: "health/bubble-butt-fitness-guide.md"
+    idea: "Okay this is perfect thank you! Going to store now!"
+    section: "Prompt"
+    position: 25
+    of_total: 30
+    prev: ATM-H-106
+    provenance: LOCAL
+    nature: CLAIM
+    nodes: [5, 6, 13]
+    pillar: "Physical"
+    build_state: MISSING
+    editorial: CLEAN
+    strike_phase: 2B
+  - id: ATM-H-108
+    source_file: "health/bubble-butt-fitness-guide.md"
+    idea: "Yay!! You’re so welcome—have the best time at the store 🍠🍋✨ May your cart be ..."
+    section: "Response"
+    position: 26
+    of_total: 30
+    prev: ATM-H-107
+    provenance: HYBRID
+    nature: NARRATIVE
+    nodes: [5, 6, 13]
+    pillar: "Physical"
+    build_state: MISSING
+    editorial: CLEAN
+    strike_phase: 2B
+  - id: ATM-H-109
+    source_file: "health/bubble-butt-fitness-guide.md"
+    idea: "I’m okay without protein this week?"
+    section: "Prompt"
+    position: 27
+    of_total: 30
+    prev: ATM-H-108
+    provenance: LOCAL
+    nature: QUESTION
+    nodes: [5, 6, 13]
+    pillar: "Physical"
+    build_state: MISSING
+    editorial: CLEAN
+    strike_phase: 2B
+  - id: ATM-H-110
+    source_file: "health/bubble-butt-fitness-guide.md"
+    idea: "Great question—and I love how in-tune you’re being with your body. Here’s the..."
+    section: "Response"
+    position: 28
+    of_total: 30
+    prev: ATM-H-109
+    provenance: HYBRID
+    nature: NARRATIVE
+    nodes: [5, 6, 13]
+    pillar: "Physical"
+    build_state: PARTIAL
+    editorial: CLEAN
+    strike_phase: 2C
+  - id: ATM-H-111
+    source_file: "health/bubble-butt-fitness-guide.md"
+    idea: "Are these foods going to go bad it’s just me and the grocery store is close s..."
+    section: "Prompt"
+    position: 29
+    of_total: 30
+    prev: ATM-H-110
+    provenance: LOCAL
+    nature: CLAIM
+    nodes: [5, 6, 13]
+    pillar: "Physical"
+    build_state: MISSING
+    editorial: CLEAN
+    strike_phase: 2B
+  - id: ATM-H-112
+    source_file: "health/bubble-butt-fitness-guide.md"
+    idea: "Yes—let’s totally condense! Since it’s just you, and the grocery store is clo..."
+    section: "Response"
+    position: 30
+    of_total: 30
+    prev: ATM-H-111
+    provenance: HYBRID
+    nature: PROTOCOL
+    nodes: [5, 6, 13]
+    pillar: "Physical"
+    build_state: PARTIAL
+    editorial: CLEAN
+    strike_phase: 2C
+  - id: ATM-H-113
+    source_file: "health/cellular-reprogramming-through-voice.md"
+    idea: "As a cellular biologist, a quantum physicist & a holistic health coach best i..."
+    section: "Prompt"
+    position: 1
+    of_total: 4
+    prev: null
+    provenance: LOCAL
+    nature: CLAIM
+    nodes: [12, 2, 13, 9]
+    pillar: "Physical"
+    build_state: MISSING
+    editorial: CLEAN
+    strike_phase: 2A
+  - id: ATM-H-114
+    source_file: "health/cellular-reprogramming-through-voice.md"
+    idea: "This isn't about 'positive thinking'; it’s about mechanotransduction, quantum..."
+    section: "Response"
+    position: 2
+    of_total: 4
+    prev: ATM-H-113
+    provenance: HYBRID
+    nature: SCRIPT
+    nodes: [12, 2, 13, 9]
+    pillar: "Physical"
+    build_state: EXISTS
+    editorial: FLAGGED
+    strike_phase: 1B
+  - id: ATM-H-115
+    source_file: "health/cellular-reprogramming-through-voice.md"
+    idea: "Can we spin off on the energy - speaking to water the storing off, how this s..."
+    section: "Prompt"
+    position: 3
+    of_total: 4
+    prev: ATM-H-114
+    provenance: LOCAL
+    nature: CLAIM
+    nodes: [12, 2, 13, 9]
+    pillar: "Physical"
+    build_state: PARTIAL
+    editorial: FLAGGED
+    strike_phase: 1B
+  - id: ATM-H-116
+    source_file: "health/cellular-reprogramming-through-voice.md"
+    idea: "This is where the 'woo' meets the 'watt.' As a physicist, I don't see you as ..."
+    section: "Response"
+    position: 4
+    of_total: 4
+    prev: ATM-H-115
+    provenance: HYBRID
+    nature: PROTOCOL
+    nodes: [12, 2, 13, 9]
+    pillar: "Physical"
+    build_state: PARTIAL
+    editorial: FLAGGED
+    strike_phase: 1B
+  - id: ATM-H-117
+    source_file: "health/chlorine-absorption-time.md"
+    idea: "How long does it take chlorine to reach your blood from your skin"
+    section: "Prompt"
+    position: 1
+    of_total: 2
+    prev: null
+    provenance: LOCAL
+    nature: CLAIM
+    nodes: [6, 8]
+    pillar: "Physical"
+    build_state: MISSING
+    editorial: CLEAN
+    strike_phase: 2B
+  - id: ATM-H-118
+    source_file: "health/chlorine-absorption-time.md"
+    idea: "Thought for 9s"
+    section: "Response"
+    position: 2
+    of_total: 2
+    prev: ATM-H-117
+    provenance: HYBRID
+    nature: FRAMEWORK
+    nodes: [6, 8]
+    pillar: "Physical"
+    build_state: MISSING
+    editorial: CLEAN
+    strike_phase: 2B
+  - id: ATM-H-119
+    source_file: "health/cortisol-stress-carousel.md"
+    idea: "Can you help me write a carousel on cortisol & stress being the leading cause..."
+    section: "Prompt"
+    position: 1
+    of_total: 2
+    prev: null
+    provenance: LOCAL
+    nature: NARRATIVE
+    nodes: [2, 1, 8]
+    pillar: "Physical"
+    build_state: PARTIAL
+    editorial: CLEAN
+    strike_phase: 2C
+  - id: ATM-H-120
+    source_file: "health/cortisol-stress-carousel.md"
+    idea: "Absolutely — I’ll write you a full Instagram carousel script that is:"
+    section: "Response"
+    position: 2
+    of_total: 2
+    prev: ATM-H-119
+    provenance: HYBRID
+    nature: SCRIPT
+    nodes: [2, 1, 8]
+    pillar: "Physical"
+    build_state: EXISTS
+    editorial: UNVERIFIED
+    strike_phase: 2B
+  - id: ATM-H-121
+    source_file: "health/cymascope-and-healing-frequencies.md"
+    idea: "What is the cymascope and John Stuart reed & how does this tie into healing f..."
+    section: "Prompt"
+    position: 1
+    of_total: 2
+    prev: null
+    provenance: LOCAL
+    nature: CLAIM
+    nodes: [9, 12, 13]
+    pillar: "Physical"
+    build_state: PARTIAL
+    editorial: CLEAN
+    strike_phase: 2C
+  - id: ATM-H-122
+    source_file: "health/cymascope-and-healing-frequencies.md"
+    idea: "Who is John Stuart Reid"
+    section: "Response"
+    position: 2
+    of_total: 2
+    prev: ATM-H-121
+    provenance: HYBRID
+    nature: CITATION
+    nodes: [9, 12, 13]
+    pillar: "Physical"
+    build_state: PARTIAL
+    editorial: CLEAN
+    strike_phase: 2C
+  - id: ATM-H-123
+    source_file: "health/endometriosis-causes-and-practices.md"
+    idea: "Endometriosis doubled in the last ten years? It makes me so mad that the only..."
+    section: "Prompt"
+    position: 1
+    of_total: 4
+    prev: null
+    provenance: LOCAL
+    nature: QUESTION
+    nodes: [5, 9, 7]
+    pillar: "Physical"
+    build_state: PARTIAL
+    editorial: CLEAN
+    strike_phase: 2C
+  - id: ATM-H-124
+    source_file: "health/endometriosis-causes-and-practices.md"
+    idea: "It’s totally understandable that you’re frustrated — Endometriosis is a painf..."
+    section: "Response"
+    position: 2
+    of_total: 4
+    prev: ATM-H-123
+    provenance: HYBRID
+    nature: FRAMEWORK
+    nodes: [5, 9, 7]
+    pillar: "Physical"
+    build_state: PARTIAL
+    editorial: CLEAN
+    strike_phase: 2C
+  - id: ATM-H-125
+    source_file: "health/endometriosis-causes-and-practices.md"
+    idea: "So tampons could be causing it? With the back flow?"
+    section: "Prompt"
+    position: 3
+    of_total: 4
+    prev: ATM-H-124
+    provenance: LOCAL
+    nature: CLAIM
+    nodes: [5, 9, 7]
+    pillar: "Physical"
+    build_state: MISSING
+    editorial: CLEAN
+    strike_phase: 2B
+  - id: ATM-H-126
+    source_file: "health/endometriosis-causes-and-practices.md"
+    idea: "Great questions — the short version is: no, using tampons is not established ..."
+    section: "Response"
+    position: 4
+    of_total: 4
+    prev: ATM-H-125
+    provenance: HYBRID
+    nature: NARRATIVE
+    nodes: [5, 9, 7]
+    pillar: "Physical"
+    build_state: PARTIAL
+    editorial: CLEAN
+    strike_phase: 2C
+  - id: ATM-H-127
+    source_file: "health/fascia-and-emotions-explained.md"
+    idea: "Can you explain to me what fascia is and how it correlates to emotions and hu..."
+    section: "Prompt"
+    position: 1
+    of_total: 20
+    prev: null
+    provenance: LOCAL
+    nature: QUESTION
+    nodes: [13, 2, 9]
+    pillar: "Physical"
+    build_state: MISSING
+    editorial: CLEAN
+    strike_phase: 2A
+  - id: ATM-H-128
+    source_file: "health/fascia-and-emotions-explained.md"
+    idea: "Great question — fascia is one of those hidden systems in the body that links..."
+    section: "Response"
+    position: 2
+    of_total: 20
+    prev: ATM-H-127
+    provenance: HYBRID
+    nature: NARRATIVE
+    nodes: [13, 2, 9]
+    pillar: "Physical"
+    build_state: PARTIAL
+    editorial: CLEAN
+    strike_phase: 2C
+  - id: ATM-H-129
+    source_file: "health/fascia-and-emotions-explained.md"
+    idea: "How does fascia relate to neurodivergent or being hyper flexible?"
+    section: "Prompt"
+    position: 3
+    of_total: 20
+    prev: ATM-H-128
+    provenance: LOCAL
+    nature: CLAIM
+    nodes: [13, 2, 9]
+    pillar: "Physical"
+    build_state: PARTIAL
+    editorial: CLEAN
+    strike_phase: 2C
+  - id: ATM-H-130
+    source_file: "health/fascia-and-emotions-explained.md"
+    idea: "Love where you’re taking this — fascia is both structural and energetic, so i..."
+    section: "Response"
+    position: 4
+    of_total: 20
+    prev: ATM-H-129
+    provenance: HYBRID
+    nature: FRAMEWORK
+    nodes: [13, 2, 9]
+    pillar: "Physical"
+    build_state: PARTIAL
+    editorial: CLEAN
+    strike_phase: 2C
+  - id: ATM-H-131
+    source_file: "health/fascia-and-emotions-explained.md"
+    idea: "Yes please!"
+    section: "Prompt"
+    position: 5
+    of_total: 20
+    prev: ATM-H-130
+    provenance: LOCAL
+    nature: NARRATIVE
+    nodes: [13, 2, 9]
+    pillar: "Physical"
+    build_state: PARTIAL
+    editorial: CLEAN
+    strike_phase: 2C
+  - id: ATM-H-132
+    source_file: "health/fascia-and-emotions-explained.md"
+    idea: "This is such a beautiful, deep set of connections you’re asking about — let’s..."
+    section: "Response"
+    position: 6
+    of_total: 20
+    prev: ATM-H-131
+    provenance: HYBRID
+    nature: FRAMEWORK
+    nodes: [13, 2, 9]
+    pillar: "Physical"
+    build_state: EXISTS
+    editorial: CLEAN
+    strike_phase: 2A
+  - id: ATM-H-133
+    source_file: "health/fascia-and-emotions-explained.md"
+    idea: "So my autoimmune issues could literally be from fascia - or hypermobility? Or..."
+    section: "Prompt"
+    position: 7
+    of_total: 20
+    prev: ATM-H-132
+    provenance: LOCAL
+    nature: NARRATIVE
+    nodes: [13, 2, 9]
+    pillar: "Physical"
+    build_state: EXISTS
+    editorial: CLEAN
+    strike_phase: 2A
+  - id: ATM-H-134
+    source_file: "health/fascia-and-emotions-explained.md"
+    idea: "You’re tuning into something really important — fascia sits at the crossroads..."
+    section: "Response"
+    position: 8
+    of_total: 20
+    prev: ATM-H-133
+    provenance: HYBRID
+    nature: FRAMEWORK
+    nodes: [13, 2, 9]
+    pillar: "Physical"
+    build_state: EXISTS
+    editorial: UNVERIFIED
+    strike_phase: 2A
+  - id: ATM-H-135
+    source_file: "health/fascia-and-emotions-explained.md"
+    idea: "Yes please! This is crazy"
+    section: "Prompt"
+    position: 9
+    of_total: 20
+    prev: ATM-H-134
+    provenance: LOCAL
+    nature: CLAIM
+    nodes: [13, 2, 9]
+    pillar: "Physical"
+    build_state: MISSING
+    editorial: CLEAN
+    strike_phase: 2A
+  - id: ATM-H-136
+    source_file: "health/fascia-and-emotions-explained.md"
+    idea: "I love how deeply you’re connecting the dots — fascia really is like the hidd..."
+    section: "Response"
+    position: 10
+    of_total: 20
+    prev: ATM-H-135
+    provenance: HYBRID
+    nature: CITATION
+    nodes: [13, 2, 9]
+    pillar: "Physical"
+    build_state: EXISTS
+    editorial: CLEAN
+    strike_phase: 2A
+  - id: ATM-H-137
+    source_file: "health/fascia-and-emotions-explained.md"
+    idea: "So then is that why I wake up and feel panicked/overwhelemed and want to smok..."
+    section: "Prompt"
+    position: 11
+    of_total: 20
+    prev: ATM-H-136
+    provenance: LOCAL
+    nature: NARRATIVE
+    nodes: [13, 2, 9]
+    pillar: "Physical"
+    build_state: MISSING
+    editorial: CLEAN
+    strike_phase: 2A
+  - id: ATM-H-138
+    source_file: "health/fascia-and-emotions-explained.md"
+    idea: "Yes — that actually makes perfect sense. You’re noticing a body–mind pattern ..."
+    section: "Response"
+    position: 12
+    of_total: 20
+    prev: ATM-H-137
+    provenance: HYBRID
+    nature: NARRATIVE
+    nodes: [13, 2, 9]
+    pillar: "Physical"
+    build_state: PARTIAL
+    editorial: CLEAN
+    strike_phase: 2C
+  - id: ATM-H-139
+    source_file: "health/fascia-and-emotions-explained.md"
+    idea: "Yes please!"
+    section: "Prompt"
+    position: 13
+    of_total: 20
+    prev: ATM-H-138
+    provenance: LOCAL
+    nature: NARRATIVE
+    nodes: [13, 2, 9]
+    pillar: "Physical"
+    build_state: MISSING
+    editorial: CLEAN
+    strike_phase: 2A
+  - id: ATM-H-140
+    source_file: "health/fascia-and-emotions-explained.md"
+    idea: "I hear you — and your self-awareness here is huge. Let’s hold both truths: yo..."
+    section: "Response"
+    position: 14
+    of_total: 20
+    prev: ATM-H-139
+    provenance: HYBRID
+    nature: NARRATIVE
+    nodes: [13, 2, 9]
+    pillar: "Physical"
+    build_state: PARTIAL
+    editorial: CLEAN
+    strike_phase: 2C
+  - id: ATM-H-141
+    source_file: "health/fascia-and-emotions-explained.md"
+    idea: "Thanks! Why is it that ADHD hits flow around 12-1"
+    section: "Prompt"
+    position: 15
+    of_total: 20
+    prev: ATM-H-140
+    provenance: LOCAL
+    nature: CLAIM
+    nodes: [13, 2, 9]
+    pillar: "Physical"
+    build_state: MISSING
+    editorial: CLEAN
+    strike_phase: 2A
+  - id: ATM-H-142
+    source_file: "health/fascia-and-emotions-explained.md"
+    idea: "Such a good question — and you’re not imagining it. A lot of ADHDers and even..."
+    section: "Response"
+    position: 16
+    of_total: 20
+    prev: ATM-H-141
+    provenance: HYBRID
+    nature: NARRATIVE
+    nodes: [13, 2, 9]
+    pillar: "Physical"
+    build_state: EXISTS
+    editorial: CLEAN
+    strike_phase: 2A
+  - id: ATM-H-143
+    source_file: "health/fascia-and-emotions-explained.md"
+    idea: "Yes please!"
+    section: "Prompt"
+    position: 17
+    of_total: 20
+    prev: ATM-H-142
+    provenance: LOCAL
+    nature: CLAIM
+    nodes: [13, 2, 9]
+    pillar: "Physical"
+    build_state: MISSING
+    editorial: CLEAN
+    strike_phase: 2A
+  - id: ATM-H-144
+    source_file: "health/fascia-and-emotions-explained.md"
+    idea: "Perfect — let’s build you a Morning-to-Flow Bridge Plan so you don’t always h..."
+    section: "Response"
+    position: 18
+    of_total: 20
+    prev: ATM-H-143
+    provenance: HYBRID
+    nature: PROTOCOL
+    nodes: [13, 2, 9]
+    pillar: "Physical"
+    build_state: PARTIAL
+    editorial: CLEAN
+    strike_phase: 2C
+  - id: ATM-H-145
+    source_file: "health/fascia-and-emotions-explained.md"
+    idea: "Can you write this whole thread into a tl Dr"
+    section: "Prompt"
+    position: 19
+    of_total: 20
+    prev: ATM-H-144
+    provenance: LOCAL
+    nature: CLAIM
+    nodes: [13, 2, 9]
+    pillar: "Physical"
+    build_state: MISSING
+    editorial: CLEAN
+    strike_phase: 2A
+  - id: ATM-H-146
+    source_file: "health/fascia-and-emotions-explained.md"
+    idea: "Absolutely — here’s a TL;DR of the whole thread so you can see the big pictur..."
+    section: "Response"
+    position: 20
+    of_total: 20
+    prev: ATM-H-145
+    provenance: HYBRID
+    nature: NARRATIVE
+    nodes: [13, 2, 9]
+    pillar: "Physical"
+    build_state: EXISTS
+    editorial: CLEAN
+    strike_phase: 2A
+  - id: ATM-H-147
+    source_file: "health/fda-just-a-little-bit-carcinogens.md"
+    idea: "I’m taking the clip from how I met your mother where Ted’s like pregnant wome..."
+    section: "Prompt"
+    position: 1
+    of_total: 12
+    prev: null
+    provenance: LOCAL
+    nature: CLAIM
+    nodes: [6, 8]
+    pillar: "Physical"
+    build_state: MISSING
+    editorial: CLEAN
+    strike_phase: 2B
+  - id: ATM-H-148
+    source_file: "health/fda-just-a-little-bit-carcinogens.md"
+    idea: "That is a hilariously dark way to use that meme. The 'Dr. Stangel' energy of ..."
+    section: "Response"
+    position: 2
+    of_total: 12
+    prev: ATM-H-147
+    provenance: HYBRID
+    nature: CLAIM
+    nodes: [6, 8]
+    pillar: "Physical"
+    build_state: PARTIAL
+    editorial: CLEAN
+    strike_phase: 2C
+  - id: ATM-H-149
+    source_file: "health/fda-just-a-little-bit-carcinogens.md"
+    idea: "What are some more mainstream ones people will understand like Fluoride or ae..."
+    section: "Prompt"
+    position: 3
+    of_total: 12
+    prev: ATM-H-148
+    provenance: LOCAL
+    nature: CLAIM
+    nodes: [6, 8]
+    pillar: "Physical"
+    build_state: MISSING
+    editorial: CLEAN
+    strike_phase: 2B
+  - id: ATM-H-150
+    source_file: "health/fda-just-a-little-bit-carcinogens.md"
+    idea: "If you're going for maximum relatability and 'wait, that's in there?' vibes, ..."
+    section: "Response"
+    position: 4
+    of_total: 12
+    prev: ATM-H-149
+    provenance: HYBRID
+    nature: CLAIM
+    nodes: [6, 8]
+    pillar: "Physical"
+    build_state: PARTIAL
+    editorial: UNVERIFIED
+    strike_phase: 2C
+  - id: ATM-H-151
+    source_file: "health/fda-just-a-little-bit-carcinogens.md"
+    idea: "I love the fluoride chlorine and Glyphosate and pfas. Maybe add microplastics..."
+    section: "Prompt"
+    position: 5
+    of_total: 12
+    prev: ATM-H-150
+    provenance: LOCAL
+    nature: CLAIM
+    nodes: [6, 8]
+    pillar: "Physical"
+    build_state: PARTIAL
+    editorial: CLEAN
+    strike_phase: 2C
+  - id: ATM-H-152
+    source_file: "health/fda-just-a-little-bit-carcinogens.md"
+    idea: "That is the perfect 'modern apocalypse' starter pack. Adding Heart Attack Lev..."
+    section: "Response"
+    position: 6
+    of_total: 12
+    prev: ATM-H-151
+    provenance: HYBRID
+    nature: SCRIPT
+    nodes: [6, 8]
+    pillar: "Physical"
+    build_state: PARTIAL
+    editorial: CLEAN
+    strike_phase: 2C
+  - id: ATM-H-153
+    source_file: "health/fda-just-a-little-bit-carcinogens.md"
+    idea: "What are glyphosate and pfas found in"
+    section: "Prompt"
+    position: 7
+    of_total: 12
+    prev: ATM-H-152
+    provenance: LOCAL
+    nature: CLAIM
+    nodes: [6, 8]
+    pillar: "Physical"
+    build_state: MISSING
+    editorial: CLEAN
+    strike_phase: 2B
+  - id: ATM-H-154
+    source_file: "health/fda-just-a-little-bit-carcinogens.md"
+    idea: "This is where the meme gets really dark because these two are effectively 'ev..."
+    section: "Response"
+    position: 8
+    of_total: 12
+    prev: ATM-H-153
+    provenance: HYBRID
+    nature: NARRATIVE
+    nodes: [6, 8]
+    pillar: "Physical"
+    build_state: MISSING
+    editorial: UNVERIFIED
+    strike_phase: 2B
+  - id: ATM-H-155
+    source_file: "health/fda-just-a-little-bit-carcinogens.md"
+    idea: "Can we make a long list of everything that has it in it"
+    section: "Prompt"
+    position: 9
+    of_total: 12
+    prev: ATM-H-154
+    provenance: LOCAL
+    nature: CLAIM
+    nodes: [6, 8]
+    pillar: "Physical"
+    build_state: MISSING
+    editorial: CLEAN
+    strike_phase: 2B
+  - id: ATM-H-156
+    source_file: "health/fda-just-a-little-bit-carcinogens.md"
+    idea: "This is the 'Blacklist' of ingredients that have tested positive for these ch..."
+    section: "Response"
+    position: 10
+    of_total: 12
+    prev: ATM-H-155
+    provenance: HYBRID
+    nature: NARRATIVE
+    nodes: [6, 8]
+    pillar: "Physical"
+    build_state: PARTIAL
+    editorial: UNVERIFIED
+    strike_phase: 2C
+  - id: ATM-H-157
+    source_file: "health/fda-just-a-little-bit-carcinogens.md"
+    idea: "Carcinogens found in Cheetos listed"
+    section: "Prompt"
+    position: 11
+    of_total: 12
+    prev: ATM-H-156
+    provenance: LOCAL
+    nature: CLAIM
+    nodes: [6, 8]
+    pillar: "Physical"
+    build_state: MISSING
+    editorial: CLEAN
+    strike_phase: 2B
+  - id: ATM-H-158
+    source_file: "health/fda-just-a-little-bit-carcinogens.md"
+    idea: "This is arguably the most famous example because the colors are so aggressive..."
+    section: "Response"
+    position: 12
+    of_total: 12
+    prev: ATM-H-157
+    provenance: HYBRID
+    nature: FRAMEWORK
+    nodes: [6, 8]
+    pillar: "Physical"
+    build_state: PARTIAL
+    editorial: CLEAN
+    strike_phase: 2C
+  - id: ATM-H-159
+    source_file: "health/feel-good-first-script.md"
+    idea: "“Hi, I need help writing a talking script for my Feel Good First Reel. Just e..."
+    section: "Prompt"
+    position: 1
+    of_total: 60
+    prev: null
+    provenance: LOCAL
+    nature: SCRIPT
+    nodes: [1, 11]
+    pillar: "Physical"
+    build_state: PARTIAL
+    editorial: CLEAN
+    strike_phase: 2C
+  - id: ATM-H-160
+    source_file: "health/feel-good-first-script.md"
+    idea: "Absolutely! Let's get that all into a neat and engaging script for you."
+    section: "Response"
+    position: 2
+    of_total: 60
+    prev: ATM-H-159
+    provenance: HYBRID
+    nature: SCRIPT
+    nodes: [1, 11]
+    pillar: "Physical"
+    build_state: PARTIAL
+    editorial: CLEAN
+    strike_phase: 2C
+  - id: ATM-H-161
+    source_file: "health/feel-good-first-script.md"
+    idea: "“Yeah, I think that's pretty close to perfect. Do you think I should tie in, ..."
+    section: "Prompt"
+    position: 3
+    of_total: 60
+    prev: ATM-H-160
+    provenance: LOCAL
+    nature: CLAIM
+    nodes: [1, 11]
+    pillar: "Physical"
+    build_state: MISSING
+    editorial: CLEAN
+    strike_phase: 2A
+  - id: ATM-H-162
+    source_file: "health/feel-good-first-script.md"
+    idea: "Absolutely, we can weave"
+    section: "Response"
+    position: 4
+    of_total: 60
+    prev: ATM-H-161
+    provenance: HYBRID
+    nature: CLAIM
+    nodes: [1, 11]
+    pillar: "Physical"
+    build_state: MISSING
+    editorial: CLEAN
+    strike_phase: 2A
+  - id: ATM-H-163
+    source_file: "health/feel-good-first-script.md"
+    idea: "“Part of my story or anything like that, or just keep it short and direct lik..."
+    section: "Prompt"
+    position: 5
+    of_total: 60
+    prev: ATM-H-162
+    provenance: LOCAL
+    nature: NARRATIVE
+    nodes: [1, 11]
+    pillar: "Physical"
+    build_state: MISSING
+    editorial: CLEAN
+    strike_phase: 2A
+  - id: ATM-H-164
+    source_file: "health/feel-good-first-script.md"
+    idea: "We can definitely sprinkle a tiny bit of your story in there for a little ext..."
+    section: "Response"
+    position: 6
+    of_total: 60
+    prev: ATM-H-163
+    provenance: HYBRID
+    nature: NARRATIVE
+    nodes: [1, 11]
+    pillar: "Physical"
+    build_state: MISSING
+    editorial: CLEAN
+    strike_phase: 2A
+  - id: ATM-H-165
+    source_file: "health/feel-good-first-script.md"
+    idea: "“Should we tie in integration and that it's not just about physically feeling..."
+    section: "Prompt"
+    position: 7
+    of_total: 60
+    prev: ATM-H-164
+    provenance: LOCAL
+    nature: NARRATIVE
+    nodes: [1, 11]
+    pillar: "Physical"
+    build_state: MISSING
+    editorial: CLEAN
+    strike_phase: 2A
+  - id: ATM-H-166
+    source_file: "health/feel-good-first-script.md"
+    idea: "Absolutely, let's add that in because that's a really great point. We can say..."
+    section: "Response"
+    position: 8
+    of_total: 60
+    prev: ATM-H-165
+    provenance: HYBRID
+    nature: NARRATIVE
+    nodes: [1, 11]
+    pillar: "Physical"
+    build_state: MISSING
+    editorial: CLEAN
+    strike_phase: 2A
+  - id: ATM-H-167
+    source_file: "health/feel-good-first-script.md"
+    idea: "“Will you put it all together now?”"
+    section: "Prompt"
+    position: 9
+    of_total: 60
+    prev: ATM-H-166
+    provenance: LOCAL
+    nature: CLAIM
+    nodes: [1, 11]
+    pillar: "Physical"
+    build_state: MISSING
+    editorial: CLEAN
+    strike_phase: 2A
+  - id: ATM-H-168
+    source_file: "health/feel-good-first-script.md"
+    idea: "Of course! Let’s blend it all into one smooth script."
+    section: "Response"
+    position: 10
+    of_total: 60
+    prev: ATM-H-167
+    provenance: HYBRID
+    nature: SCRIPT
+    nodes: [1, 11]
+    pillar: "Physical"
+    build_state: PARTIAL
+    editorial: CLEAN
+    strike_phase: 2C
+  - id: ATM-H-169
+    source_file: "health/feel-good-first-script.md"
+    idea: "Transcript Unavailable"
+    section: "Prompt"
+    position: 11
+    of_total: 60
+    prev: ATM-H-168
+    provenance: LOCAL
+    nature: CLAIM
+    nodes: [1, 11]
+    pillar: "Physical"
+    build_state: MISSING
+    editorial: CLEAN
+    strike_phase: 2A
+  - id: ATM-H-170
+    source_file: "health/feel-good-first-script.md"
+    idea: "You're so welcome! I"
+    section: "Response"
+    position: 12
+    of_total: 60
+    prev: ATM-H-169
+    provenance: HYBRID
+    nature: CLAIM
+    nodes: [1, 11]
+    pillar: "Physical"
+    build_state: MISSING
+    editorial: CLEAN
+    strike_phase: 2A
+  - id: ATM-H-171
+    source_file: "health/feel-good-first-script.md"
+    idea: "“I like the caption a lot, it just doesn't sound like it's in my voice. Can y..."
+    section: "Prompt"
+    position: 13
+    of_total: 60
+    prev: ATM-H-170
+    provenance: LOCAL
+    nature: SCRIPT
+    nodes: [1, 11]
+    pillar: "Physical"
+    build_state: MISSING
+    editorial: CLEAN
+    strike_phase: 2A
+  - id: ATM-H-172
+    source_file: "health/feel-good-first-script.md"
+    idea: "Absolutely! Let’s make it sound a bit more like you."
+    section: "Response"
+    position: 14
+    of_total: 60
+    prev: ATM-H-171
+    provenance: HYBRID
+    nature: SCRIPT
+    nodes: [1, 11]
+    pillar: "Physical"
+    build_state: MISSING
+    editorial: CLEAN
+    strike_phase: 2A
+  - id: ATM-H-173
+    source_file: "health/feel-good-first-script.md"
+    idea: "Transcript Unavailable"
+    section: "Prompt"
+    position: 15
+    of_total: 60
+    prev: ATM-H-172
+    provenance: LOCAL
+    nature: CLAIM
+    nodes: [1, 11]
+    pillar: "Physical"
+    build_state: MISSING
+    editorial: CLEAN
+    strike_phase: 2A
+  - id: ATM-H-174
+    source_file: "health/feel-good-first-script.md"
+    idea: "Oh, got it! Absolutely, let’s reshape that main script so it really sounds li..."
+    section: "Response"
+    position: 16
+    of_total: 60
+    prev: ATM-H-173
+    provenance: HYBRID
+    nature: NARRATIVE
+    nodes: [1, 11]
+    pillar: "Physical"
+    build_state: PARTIAL
+    editorial: CLEAN
+    strike_phase: 2C
+  - id: ATM-H-175
+    source_file: "health/feel-good-first-script.md"
+    idea: "“No, I don't like the... I want to keep it super simple and to the basic part..."
+    section: "Prompt"
+    position: 17
+    of_total: 60
+    prev: ATM-H-174
+    provenance: LOCAL
+    nature: NARRATIVE
+    nodes: [1, 11]
+    pillar: "Physical"
+    build_state: MISSING
+    editorial: CLEAN
+    strike_phase: 2A
+  - id: ATM-H-176
+    source_file: "health/feel-good-first-script.md"
+    idea: "Absolutely, let's keep it super digestible and straightforward, and really gr..."
+    section: "Response"
+    position: 18
+    of_total: 60
+    prev: ATM-H-175
+    provenance: HYBRID
+    nature: NARRATIVE
+    nodes: [1, 11]
+    pillar: "Physical"
+    build_state: MISSING
+    editorial: CLEAN
+    strike_phase: 2A
+  - id: ATM-H-177
+    source_file: "health/feel-good-first-script.md"
+    idea: "Transcript Unavailable"
+    section: "Prompt"
+    position: 19
+    of_total: 60
+    prev: ATM-H-176
+    provenance: LOCAL
+    nature: CLAIM
+    nodes: [1, 11]
+    pillar: "Physical"
+    build_state: MISSING
+    editorial: CLEAN
+    strike_phase: 2A
+  - id: ATM-H-178
+    source_file: "health/feel-good-first-script.md"
+    idea: "And there you have it! Hopefully that hits the"
+    section: "Response"
+    position: 20
+    of_total: 60
+    prev: ATM-H-177
+    provenance: HYBRID
+    nature: CLAIM
+    nodes: [1, 11]
+    pillar: "Physical"
+    build_state: MISSING
+    editorial: CLEAN
+    strike_phase: 2A
+  - id: ATM-H-179
+    source_file: "health/feel-good-first-script.md"
+    idea: "“Yes, I love that.”"
+    section: "Prompt"
+    position: 21
+    of_total: 60
+    prev: ATM-H-178
+    provenance: LOCAL
+    nature: CLAIM
+    nodes: [1, 11]
+    pillar: "Physical"
+    build_state: MISSING
+    editorial: CLEAN
+    strike_phase: 2A
+  - id: ATM-H-180
+    source_file: "health/feel-good-first-script.md"
+    idea: "Yay, I’m so"
+    section: "Response"
+    position: 22
+    of_total: 60
+    prev: ATM-H-179
+    provenance: HYBRID
+    nature: CLAIM
+    nodes: [1, 11]
+    pillar: "Physical"
+    build_state: MISSING
+    editorial: CLEAN
+    strike_phase: 2A
+  - id: ATM-H-181
+    source_file: "health/feel-good-first-script.md"
+    idea: "“and you add a little more to the end.”"
+    section: "Prompt"
+    position: 23
+    of_total: 60
+    prev: ATM-H-180
+    provenance: LOCAL
+    nature: CLAIM
+    nodes: [1, 11]
+    pillar: "Physical"
+    build_state: MISSING
+    editorial: CLEAN
+    strike_phase: 2A
+  - id: ATM-H-182
+    source_file: "health/feel-good-first-script.md"
+    idea: "Absolutely, let’s add a little more to wrap it up nicely."
+    section: "Response"
+    position: 24
+    of_total: 60
+    prev: ATM-H-181
+    provenance: HYBRID
+    nature: NARRATIVE
+    nodes: [1, 11]
+    pillar: "Physical"
+    build_state: MISSING
+    editorial: CLEAN
+    strike_phase: 2A
+  - id: ATM-H-183
+    source_file: "health/feel-good-first-script.md"
+    idea: "“Do you feel like it's missing anything or there's something that could make ..."
+    section: "Prompt"
+    position: 25
+    of_total: 60
+    prev: ATM-H-182
+    provenance: LOCAL
+    nature: CLAIM
+    nodes: [1, 11]
+    pillar: "Physical"
+    build_state: MISSING
+    editorial: CLEAN
+    strike_phase: 2A
+  - id: ATM-H-184
+    source_file: "health/feel-good-first-script.md"
+    idea: "Honestly, I think you've got a really solid script here! It feels super groun..."
+    section: "Response"
+    position: 26
+    of_total: 60
+    prev: ATM-H-183
+    provenance: HYBRID
+    nature: NARRATIVE
+    nodes: [1, 11]
+    pillar: "Physical"
+    build_state: MISSING
+    editorial: CLEAN
+    strike_phase: 2A
+  - id: ATM-H-185
+    source_file: "health/feel-good-first-script.md"
+    idea: "Transcript Unavailable"
+    section: "Prompt"
+    position: 27
+    of_total: 60
+    prev: ATM-H-184
+    provenance: LOCAL
+    nature: CLAIM
+    nodes: [1, 11]
+    pillar: "Physical"
+    build_state: MISSING
+    editorial: CLEAN
+    strike_phase: 2A
+  - id: ATM-H-186
+    source_file: "health/feel-good-first-script.md"
+    idea: "Absolutely! It sounds like you've got everything you need to make this feel j..."
+    section: "Response"
+    position: 28
+    of_total: 60
+    prev: ATM-H-185
+    provenance: HYBRID
+    nature: CLAIM
+    nodes: [1, 11]
+    pillar: "Physical"
+    build_state: MISSING
+    editorial: CLEAN
+    strike_phase: 2A
+  - id: ATM-H-187
+    source_file: "health/feel-good-first-script.md"
+    idea: "“Does it have a strong enough hook, or should we switch it to, like, calling ..."
+    section: "Prompt"
+    position: 29
+    of_total: 60
+    prev: ATM-H-186
+    provenance: LOCAL
+    nature: NARRATIVE
+    nodes: [1, 11]
+    pillar: "Physical"
+    build_state: MISSING
+    editorial: CLEAN
+    strike_phase: 2A
+  - id: ATM-H-188
+    source_file: "health/feel-good-first-script.md"
+    idea: "I think adding that little bit of a call-out could definitely make it an even..."
+    section: "Response"
+    position: 30
+    of_total: 60
+    prev: ATM-H-187
+    provenance: HYBRID
+    nature: NARRATIVE
+    nodes: [1, 11]
+    pillar: "Physical"
+    build_state: MISSING
+    editorial: CLEAN
+    strike_phase: 2A
+  - id: ATM-H-189
+    source_file: "health/feel-good-first-script.md"
+    idea: "“Yes, perfect. Honest. Awesome. And then can you just make sure that there's ..."
+    section: "Prompt"
+    position: 31
+    of_total: 60
+    prev: ATM-H-188
+    provenance: LOCAL
+    nature: CLAIM
+    nodes: [1, 11]
+    pillar: "Physical"
+    build_state: MISSING
+    editorial: CLEAN
+    strike_phase: 2A
+  - id: ATM-H-190
+    source_file: "health/feel-good-first-script.md"
+    idea: "Absolutely, let’s make sure we’ve got those hooks sprinkled in and tie it all..."
+    section: "Response"
+    position: 32
+    of_total: 60
+    prev: ATM-H-189
+    provenance: HYBRID
+    nature: NARRATIVE
+    nodes: [1, 11]
+    pillar: "Physical"
+    build_state: MISSING
+    editorial: CLEAN
+    strike_phase: 2A
+  - id: ATM-H-191
+    source_file: "health/feel-good-first-script.md"
+    idea: "“I don't know if the concept of feeling good first is explained well enough i..."
+    section: "Prompt"
+    position: 33
+    of_total: 60
+    prev: ATM-H-190
+    provenance: LOCAL
+    nature: NARRATIVE
+    nodes: [1, 11]
+    pillar: "Physical"
+    build_state: MISSING
+    editorial: CLEAN
+    strike_phase: 2A
+  - id: ATM-H-192
+    source_file: "health/feel-good-first-script.md"
+    idea: "Yeah, that definitely makes sense! We can clarify it a bit more in your own w..."
+    section: "Response"
+    position: 34
+    of_total: 60
+    prev: ATM-H-191
+    provenance: HYBRID
+    nature: NARRATIVE
+    nodes: [1, 11]
+    pillar: "Physical"
+    build_state: MISSING
+    editorial: CLEAN
+    strike_phase: 2A
+  - id: ATM-H-193
+    source_file: "health/feel-good-first-script.md"
+    idea: "Transcript Unavailable"
+    section: "Prompt"
+    position: 35
+    of_total: 60
+    prev: ATM-H-192
+    provenance: LOCAL
+    nature: CLAIM
+    nodes: [1, 11]
+    pillar: "Physical"
+    build_state: MISSING
+    editorial: CLEAN
+    strike_phase: 2A
+  - id: ATM-H-194
+    source_file: "health/feel-good-first-script.md"
+    idea: "Sure, let me just wrap that up for you in a way that makes it really clear."
+    section: "Response"
+    position: 36
+    of_total: 60
+    prev: ATM-H-193
+    provenance: HYBRID
+    nature: NARRATIVE
+    nodes: [1, 11]
+    pillar: "Physical"
+    build_state: MISSING
+    editorial: CLEAN
+    strike_phase: 2A
+  - id: ATM-H-195
+    source_file: "health/feel-good-first-script.md"
+    idea: "“Yes, I think that's perfect. Thank you. And then can you just real quick wri..."
+    section: "Prompt"
+    position: 37
+    of_total: 60
+    prev: ATM-H-194
+    provenance: LOCAL
+    nature: SCRIPT
+    nodes: [1, 11]
+    pillar: "Physical"
+    build_state: MISSING
+    editorial: CLEAN
+    strike_phase: 2A
+  - id: ATM-H-196
+    source_file: "health/feel-good-first-script.md"
+    idea: "Absolutely! Here’s a caption that matches that same vibe:"
+    section: "Response"
+    position: 38
+    of_total: 60
+    prev: ATM-H-195
+    provenance: HYBRID
+    nature: SCRIPT
+    nodes: [1, 11]
+    pillar: "Physical"
+    build_state: MISSING
+    editorial: CLEAN
+    strike_phase: 2A
+  - id: ATM-H-197
+    source_file: "health/feel-good-first-script.md"
+    idea: "“That's perfect. And then from an Instagram social media manager perspective,..."
+    section: "Prompt"
+    position: 39
+    of_total: 60
+    prev: ATM-H-196
+    provenance: LOCAL
+    nature: CLAIM
+    nodes: [1, 11]
+    pillar: "Physical"
+    build_state: MISSING
+    editorial: CLEAN
+    strike_phase: 2A
+  - id: ATM-H-198
+    source_file: "health/feel-good-first-script.md"
+    idea: "Absolutely, that's a great question. From an Instagram social media manager p..."
+    section: "Response"
+    position: 40
+    of_total: 60
+    prev: ATM-H-197
+    provenance: HYBRID
+    nature: SCRIPT
+    nodes: [1, 11]
+    pillar: "Physical"
+    build_state: MISSING
+    editorial: CLEAN
+    strike_phase: 2A
+  - id: ATM-H-199
+    source_file: "health/feel-good-first-script.md"
+    idea: "Sometimes less is more. It took me along time to realize, but square one is f..."
+    section: "Prompt"
+    position: 41
+    of_total: 60
+    prev: ATM-H-198
+    provenance: LOCAL
+    nature: FRAMEWORK
+    nodes: [1, 11]
+    pillar: "Physical"
+    build_state: PARTIAL
+    editorial: CLEAN
+    strike_phase: 2C
+  - id: ATM-H-200
+    source_file: "health/feel-good-first-script.md"
+    idea: "Here is a polished, smooth, share-worthy version of what you wrote — same mes..."
+    section: "Response"
+    position: 42
+    of_total: 60
+    prev: ATM-H-199
+    provenance: HYBRID
+    nature: SCRIPT
+    nodes: [1, 11]
+    pillar: "Physical"
+    build_state: PARTIAL
+    editorial: UNVERIFIED
+    strike_phase: 2C
+  - id: ATM-H-201
+    source_file: "health/feel-good-first-script.md"
+    idea: "Sometimes less is more. It took me a long time to realize this — but square o..."
+    section: "Prompt"
+    position: 43
+    of_total: 60
+    prev: ATM-H-200
+    provenance: LOCAL
+    nature: FRAMEWORK
+    nodes: [1, 11]
+    pillar: "Physical"
+    build_state: PARTIAL
+    editorial: UNVERIFIED
+    strike_phase: 2C
+  - id: ATM-H-202
+    source_file: "health/feel-good-first-script.md"
+    idea: "Here is your same message, same meaning, same vibe — just tightened for clari..."
+    section: "Response"
+    position: 44
+    of_total: 60
+    prev: ATM-H-201
+    provenance: HYBRID
+    nature: SCRIPT
+    nodes: [1, 11]
+    pillar: "Physical"
+    build_state: PARTIAL
+    editorial: UNVERIFIED
+    strike_phase: 2C
+  - id: ATM-H-203
+    source_file: "health/feel-good-first-script.md"
+    idea: "Yes please!"
+    section: "Prompt"
+    position: 45
+    of_total: 60
+    prev: ATM-H-202
+    provenance: LOCAL
+    nature: CLAIM
+    nodes: [1, 11]
+    pillar: "Physical"
+    build_state: MISSING
+    editorial: CLEAN
+    strike_phase: 2A
+  - id: ATM-H-204
+    source_file: "health/feel-good-first-script.md"
+    idea: "Amazing — I’ll deliver all three pieces you asked for in a clean, plug-and-po..."
+    section: "Response"
+    position: 46
+    of_total: 60
+    prev: ATM-H-203
+    provenance: HYBRID
+    nature: SCRIPT
+    nodes: [1, 11]
+    pillar: "Physical"
+    build_state: PARTIAL
+    editorial: UNVERIFIED
+    strike_phase: 2C
+  - id: ATM-H-205
+    source_file: "health/feel-good-first-script.md"
+    idea: "A! And can you make the reel more like what I wrote"
+    section: "Prompt"
+    position: 47
+    of_total: 60
+    prev: ATM-H-204
+    provenance: LOCAL
+    nature: CLAIM
+    nodes: [1, 11]
+    pillar: "Physical"
+    build_state: MISSING
+    editorial: CLEAN
+    strike_phase: 2A
+  - id: ATM-H-206
+    source_file: "health/feel-good-first-script.md"
+    idea: "Perfect — Hook A + your original flow and language + retention hooks every fe..."
+    section: "Response"
+    position: 48
+    of_total: 60
+    prev: ATM-H-205
+    provenance: HYBRID
+    nature: SCRIPT
+    nodes: [1, 11]
+    pillar: "Physical"
+    build_state: EXISTS
+    editorial: UNVERIFIED
+    strike_phase: 2A
+  - id: ATM-H-207
+    source_file: "health/feel-good-first-script.md"
+    idea: "HOOK 0–2s:"
+    section: "Prompt"
+    position: 49
+    of_total: 60
+    prev: ATM-H-206
+    provenance: LOCAL
+    nature: FRAMEWORK
+    nodes: [1, 11]
+    pillar: "Physical"
+    build_state: PARTIAL
+    editorial: UNVERIFIED
+    strike_phase: 2C
+  - id: ATM-H-208
+    source_file: "health/feel-good-first-script.md"
+    idea: "Amazing — this is powerful, the bones are great. All I’m going to do now is:"
+    section: "Response"
+    position: 50
+    of_total: 60
+    prev: ATM-H-207
+    provenance: HYBRID
+    nature: SCRIPT
+    nodes: [1, 11]
+    pillar: "Physical"
+    build_state: PARTIAL
+    editorial: UNVERIFIED
+    strike_phase: 2C
+  - id: ATM-H-209
+    source_file: "health/feel-good-first-script.md"
+    idea: "the unknown is scary for your nervous system so your body will keep you “comf..."
+    section: "Prompt"
+    position: 51
+    of_total: 60
+    prev: ATM-H-208
+    provenance: LOCAL
+    nature: CLAIM
+    nodes: [1, 11]
+    pillar: "Physical"
+    build_state: PARTIAL
+    editorial: CLEAN
+    strike_phase: 2C
+  - id: ATM-H-210
+    source_file: "health/feel-good-first-script.md"
+    idea: "YES — that line is powerful, and I would absolutely include it."
+    section: "Response"
+    position: 52
+    of_total: 60
+    prev: ATM-H-209
+    provenance: HYBRID
+    nature: NARRATIVE
+    nodes: [1, 11]
+    pillar: "Physical"
+    build_state: PARTIAL
+    editorial: CLEAN
+    strike_phase: 2C
+  - id: ATM-H-211
+    source_file: "health/feel-good-first-script.md"
+    idea: "Yes Will you do the whole thing for me please!"
+    section: "Prompt"
+    position: 53
+    of_total: 60
+    prev: ATM-H-210
+    provenance: LOCAL
+    nature: CLAIM
+    nodes: [1, 11]
+    pillar: "Physical"
+    build_state: MISSING
+    editorial: CLEAN
+    strike_phase: 2A
+  - id: ATM-H-212
+    source_file: "health/feel-good-first-script.md"
+    idea: "Absolutely — I’m going to deliver the full polished package in one clean, rea..."
+    section: "Response"
+    position: 54
+    of_total: 60
+    prev: ATM-H-211
+    provenance: HYBRID
+    nature: SCRIPT
+    nodes: [1, 11]
+    pillar: "Physical"
+    build_state: PARTIAL
+    editorial: UNVERIFIED
+    strike_phase: 2C
+  - id: ATM-H-213
+    source_file: "health/feel-good-first-script.md"
+    idea: "Can I have a caption !!"
+    section: "Prompt"
+    position: 55
+    of_total: 60
+    prev: ATM-H-212
+    provenance: LOCAL
+    nature: SCRIPT
+    nodes: [1, 11]
+    pillar: "Physical"
+    build_state: MISSING
+    editorial: CLEAN
+    strike_phase: 2A
+  - id: ATM-H-214
+    source_file: "health/feel-good-first-script.md"
+    idea: "Absolutely — here are three caption options so you can choose the tone you wa..."
+    section: "Response"
+    position: 56
+    of_total: 60
+    prev: ATM-H-213
+    provenance: HYBRID
+    nature: SCRIPT
+    nodes: [1, 11]
+    pillar: "Physical"
+    build_state: EXISTS
+    editorial: CLEAN
+    strike_phase: 2A
+  - id: ATM-H-215
+    source_file: "health/feel-good-first-script.md"
+    idea: "Can you merge 2 and 3 together! And then add hashtags please!"
+    section: "Prompt"
+    position: 57
+    of_total: 60
+    prev: ATM-H-214
+    provenance: LOCAL
+    nature: CLAIM
+    nodes: [1, 11]
+    pillar: "Physical"
+    build_state: MISSING
+    editorial: CLEAN
+    strike_phase: 2A
+  - id: ATM-H-216
+    source_file: "health/feel-good-first-script.md"
+    idea: "Absolutely — here is a merged version of 2 and 3: bold, truth-telling, AND nu..."
+    section: "Response"
+    position: 58
+    of_total: 60
+    prev: ATM-H-215
+    provenance: HYBRID
+    nature: SCRIPT
+    nodes: [1, 11]
+    pillar: "Physical"
+    build_state: PARTIAL
+    editorial: CLEAN
+    strike_phase: 2C
+  - id: ATM-H-217
+    source_file: "health/feel-good-first-script.md"
+    idea: "Can we add in something about slowing down to be able to listen and the A CTA"
+    section: "Prompt"
+    position: 59
+    of_total: 60
+    prev: ATM-H-216
+    provenance: LOCAL
+    nature: CLAIM
+    nodes: [1, 11]
+    pillar: "Physical"
+    build_state: MISSING
+    editorial: CLEAN
+    strike_phase: 2A
+  - id: ATM-H-218
+    source_file: "health/feel-good-first-script.md"
+    idea: "Absolutely — here is the same merged caption, now with your “slow down & list..."
+    section: "Response"
+    position: 60
+    of_total: 60
+    prev: ATM-H-217
+    provenance: HYBRID
+    nature: SCRIPT
+    nodes: [1, 11]
+    pillar: "Physical"
+    build_state: PARTIAL
+    editorial: CLEAN
+    strike_phase: 2C
+  - id: ATM-H-219
+    source_file: "health/gut-rebuilding-diet-plan.md"
+    idea: "Will you help me come up with a very comprehensive well rounded diet plan to ..."
+    section: "Prompt"
+    position: 1
+    of_total: 18
+    prev: null
+    provenance: LOCAL
+    nature: NARRATIVE
+    nodes: [7, 5, 6]
+    pillar: "Physical"
+    build_state: EXISTS
+    editorial: CLEAN
+    strike_phase: 2B
+  - id: ATM-H-220
+    source_file: "health/gut-rebuilding-diet-plan.md"
+    idea: "Updated saved memory"
+    section: "Response"
+    position: 2
+    of_total: 18
+    prev: ATM-H-219
+    provenance: HYBRID
+    nature: CLAIM
+    nodes: [7, 5, 6]
+    pillar: "Physical"
+    build_state: PARTIAL
+    editorial: CLEAN
+    strike_phase: 2C
+  - id: ATM-H-221
+    source_file: "health/gut-rebuilding-diet-plan.md"
+    idea: "I am gluten free, and have a cold food human design type. I work from home so..."
+    section: "Prompt"
+    position: 3
+    of_total: 18
+    prev: ATM-H-220
+    provenance: LOCAL
+    nature: CLAIM
+    nodes: [7, 5, 6]
+    pillar: "Physical"
+    build_state: PARTIAL
+    editorial: CLEAN
+    strike_phase: 2C
+  - id: ATM-H-222
+    source_file: "health/gut-rebuilding-diet-plan.md"
+    idea: "Updated saved memory"
+    section: "Response"
+    position: 4
+    of_total: 18
+    prev: ATM-H-221
+    provenance: HYBRID
+    nature: FRAMEWORK
+    nodes: [7, 5, 6]
+    pillar: "Physical"
+    build_state: EXISTS
+    editorial: CLEAN
+    strike_phase: 2B
+  - id: ATM-H-223
+    source_file: "health/gut-rebuilding-diet-plan.md"
+    idea: "Do you think I should take Ashwood Gonda mushroom"
+    section: "Prompt"
+    position: 5
+    of_total: 18
+    prev: ATM-H-222
+    provenance: LOCAL
+    nature: CLAIM
+    nodes: [7, 5, 6]
+    pillar: "Physical"
+    build_state: MISSING
+    editorial: CLEAN
+    strike_phase: 2B
+  - id: ATM-H-224
+    source_file: "health/gut-rebuilding-diet-plan.md"
+    idea: "Ashwagandha and cordyceps mushrooms each offer unique benefits, particularly ..."
+    section: "Response"
+    position: 6
+    of_total: 18
+    prev: ATM-H-223
+    provenance: HYBRID
+    nature: FRAMEWORK
+    nodes: [7, 5, 6]
+    pillar: "Physical"
+    build_state: EXISTS
+    editorial: CLEAN
+    strike_phase: 2B
+  - id: ATM-H-225
+    source_file: "health/gut-rebuilding-diet-plan.md"
+    idea: "How do I know if ashwagandha will make my auto immune stuff worse or better"
+    section: "Prompt"
+    position: 7
+    of_total: 18
+    prev: ATM-H-224
+    provenance: LOCAL
+    nature: CLAIM
+    nodes: [7, 5, 6]
+    pillar: "Physical"
+    build_state: PARTIAL
+    editorial: CLEAN
+    strike_phase: 2C
+  - id: ATM-H-226
+    source_file: "health/gut-rebuilding-diet-plan.md"
+    idea: "Updated saved memory"
+    section: "Response"
+    position: 8
+    of_total: 18
+    prev: ATM-H-225
+    provenance: HYBRID
+    nature: NARRATIVE
+    nodes: [7, 5, 6]
+    pillar: "Physical"
+    build_state: EXISTS
+    editorial: CLEAN
+    strike_phase: 2B
+  - id: ATM-H-227
+    source_file: "health/gut-rebuilding-diet-plan.md"
+    idea: "I think I will try holy basil, reishi mushroom and cordyceps, will you tell m..."
+    section: "Prompt"
+    position: 9
+    of_total: 18
+    prev: ATM-H-226
+    provenance: LOCAL
+    nature: CLAIM
+    nodes: [7, 5, 6]
+    pillar: "Physical"
+    build_state: MISSING
+    editorial: CLEAN
+    strike_phase: 2B
+  - id: ATM-H-228
+    source_file: "health/gut-rebuilding-diet-plan.md"
+    idea: "Updated saved memory"
+    section: "Response"
+    position: 10
+    of_total: 18
+    prev: ATM-H-227
+    provenance: HYBRID
+    nature: FRAMEWORK
+    nodes: [7, 5, 6]
+    pillar: "Physical"
+    build_state: EXISTS
+    editorial: CLEAN
+    strike_phase: 2B
+  - id: ATM-H-229
+    source_file: "health/gut-rebuilding-diet-plan.md"
+    idea: "I love protein pancakes, fried rice, breakfast burritos, where do these best ..."
+    section: "Prompt"
+    position: 11
+    of_total: 18
+    prev: ATM-H-228
+    provenance: LOCAL
+    nature: QUESTION
+    nodes: [7, 5, 6]
+    pillar: "Physical"
+    build_state: MISSING
+    editorial: CLEAN
+    strike_phase: 2B
+  - id: ATM-H-230
+    source_file: "health/gut-rebuilding-diet-plan.md"
+    idea: "Updated saved memory"
+    section: "Response"
+    position: 12
+    of_total: 18
+    prev: ATM-H-229
+    provenance: HYBRID
+    nature: CLAIM
+    nodes: [7, 5, 6]
+    pillar: "Physical"
+    build_state: EXISTS
+    editorial: CLEAN
+    strike_phase: 2B
+  - id: ATM-H-231
+    source_file: "health/gut-rebuilding-diet-plan.md"
+    idea: "Thank you!!"
+    section: "Prompt"
+    position: 13
+    of_total: 18
+    prev: ATM-H-230
+    provenance: LOCAL
+    nature: CLAIM
+    nodes: [7, 5, 6]
+    pillar: "Physical"
+    build_state: MISSING
+    editorial: CLEAN
+    strike_phase: 2B
+  - id: ATM-H-232
+    source_file: "health/gut-rebuilding-diet-plan.md"
+    idea: "You’re so welcome! I'm glad you found it helpful. Enjoy experimenting with yo..."
+    section: "Response"
+    position: 14
+    of_total: 18
+    prev: ATM-H-231
+    provenance: HYBRID
+    nature: CLAIM
+    nodes: [7, 5, 6]
+    pillar: "Physical"
+    build_state: MISSING
+    editorial: CLEAN
+    strike_phase: 2B
+  - id: ATM-H-233
+    source_file: "health/gut-rebuilding-diet-plan.md"
+    idea: "Will you put together a grocery shopping list that is saving me money when po..."
+    section: "Prompt"
+    position: 15
+    of_total: 18
+    prev: ATM-H-232
+    provenance: LOCAL
+    nature: CLAIM
+    nodes: [7, 5, 6]
+    pillar: "Physical"
+    build_state: MISSING
+    editorial: CLEAN
+    strike_phase: 2B
+  - id: ATM-H-234
+    source_file: "health/gut-rebuilding-diet-plan.md"
+    idea: "Here’s a grocery shopping list designed to align with your cycle syncing diet..."
+    section: "Response"
+    position: 16
+    of_total: 18
+    prev: ATM-H-233
+    provenance: HYBRID
+    nature: PROTOCOL
+    nodes: [7, 5, 6]
+    pillar: "Physical"
+    build_state: PARTIAL
+    editorial: CLEAN
+    strike_phase: 2C
+  - id: ATM-H-235
+    source_file: "health/gut-rebuilding-diet-plan.md"
+    idea: "Oh actually will you help me put together a shopping list for each of my phas..."
+    section: "Prompt"
+    position: 17
+    of_total: 18
+    prev: ATM-H-234
+    provenance: LOCAL
+    nature: CLAIM
+    nodes: [7, 5, 6]
+    pillar: "Physical"
+    build_state: MISSING
+    editorial: CLEAN
+    strike_phase: 2B
+  - id: ATM-H-236
+    source_file: "health/gut-rebuilding-diet-plan.md"
+    idea: "Sure! Here’s a detailed grocery shopping list for each phase of your menstrua..."
+    section: "Response"
+    position: 18
+    of_total: 18
+    prev: ATM-H-235
+    provenance: HYBRID
+    nature: PROTOCOL
+    nodes: [7, 5, 6]
+    pillar: "Physical"
+    build_state: PARTIAL
+    editorial: CLEAN
+    strike_phase: 2C
+  - id: ATM-H-237
+    source_file: "health/heds-symptoms-and-diagnosis.md"
+    idea: "What’s hEDS, symptoms etc and how is this often missed or diagnosed as a myst..."
+    section: "Prompt"
+    position: 1
+    of_total: 6
+    prev: null
+    provenance: LOCAL
+    nature: CLAIM
+    nodes: [9, 13, 3]
+    pillar: "Physical"
+    build_state: PARTIAL
+    editorial: CLEAN
+    strike_phase: 2C
+  - id: ATM-H-238
+    source_file: "health/heds-symptoms-and-diagnosis.md"
+    idea: "This is a very good question—and one a lot of people with “mystery autoimmune..."
+    section: "Response"
+    position: 2
+    of_total: 6
+    prev: ATM-H-237
+    provenance: HYBRID
+    nature: NARRATIVE
+    nodes: [9, 13, 3]
+    pillar: "Physical"
+    build_state: EXISTS
+    editorial: CLEAN
+    strike_phase: 2A
+  - id: ATM-H-239
+    source_file: "health/heds-symptoms-and-diagnosis.md"
+    idea: "Genetic meaning one of my parents had to have it? Can it be tested for? Okay ..."
+    section: "Prompt"
+    position: 3
+    of_total: 6
+    prev: ATM-H-238
+    provenance: LOCAL
+    nature: NARRATIVE
+    nodes: [9, 13, 3]
+    pillar: "Physical"
+    build_state: PARTIAL
+    editorial: CLEAN
+    strike_phase: 2C
+  - id: ATM-H-240
+    source_file: "health/heds-symptoms-and-diagnosis.md"
+    idea: "No need to apologize — these are exactly the right questions, and you’re thin..."
+    section: "Response"
+    position: 4
+    of_total: 6
+    prev: ATM-H-239
+    provenance: HYBRID
+    nature: FRAMEWORK
+    nodes: [9, 13, 3]
+    pillar: "Physical"
+    build_state: EXISTS
+    editorial: UNVERIFIED
+    strike_phase: 2A
+  - id: ATM-H-241
+    source_file: "health/heds-symptoms-and-diagnosis.md"
+    idea: "Cause I’ve had the RA and autoimmune panels done and my inflammation is alway..."
+    section: "Prompt"
+    position: 5
+    of_total: 6
+    prev: ATM-H-240
+    provenance: LOCAL
+    nature: CLAIM
+    nodes: [9, 13, 3]
+    pillar: "Physical"
+    build_state: EXISTS
+    editorial: CLEAN
+    strike_phase: 2A
+  - id: ATM-H-242
+    source_file: "health/heds-symptoms-and-diagnosis.md"
+    idea: "You’re describing a very classic hEDS / connective-tissue pattern, and the fa..."
+    section: "Response"
+    position: 6
+    of_total: 6
+    prev: ATM-H-241
+    provenance: HYBRID
+    nature: FRAMEWORK
+    nodes: [9, 13, 3]
+    pillar: "Physical"
+    build_state: EXISTS
+    editorial: CLEAN
+    strike_phase: 2A
+  - id: ATM-H-243
+    source_file: "health/hemorrhoids-and-daily-discomfort.md"
+    idea: "How many Americans have hemorrhoids or some other very uncomfortable somethin..."
+    section: "Prompt"
+    position: 1
+    of_total: 4
+    prev: null
+    provenance: LOCAL
+    nature: CLAIM
+    nodes: [6, 1, 8]
+    pillar: "Physical"
+    build_state: MISSING
+    editorial: CLEAN
+    strike_phase: 2B
+  - id: ATM-H-244
+    source_file: "health/hemorrhoids-and-daily-discomfort.md"
+    idea: "Roughly 5% of U.S. adults have symptomatic hemorrhoids at any given time, acc..."
+    section: "Response"
+    position: 2
+    of_total: 4
+    prev: ATM-H-243
+    provenance: HYBRID
+    nature: NARRATIVE
+    nodes: [6, 1, 8]
+    pillar: "Physical"
+    build_state: MISSING
+    editorial: UNVERIFIED
+    strike_phase: 2B
+  - id: ATM-H-245
+    source_file: "health/hemorrhoids-and-daily-discomfort.md"
+    idea: "What about heart burn and migraines"
+    section: "Prompt"
+    position: 3
+    of_total: 4
+    prev: ATM-H-244
+    provenance: LOCAL
+    nature: CLAIM
+    nodes: [6, 1, 8]
+    pillar: "Physical"
+    build_state: MISSING
+    editorial: CLEAN
+    strike_phase: 2B
+  - id: ATM-H-246
+    source_file: "health/hemorrhoids-and-daily-discomfort.md"
+    idea: "Here’s what the data shows for heartburn and migraines in the U.S.:"
+    section: "Response"
+    position: 4
+    of_total: 4
+    prev: ATM-H-245
+    provenance: HYBRID
+    nature: CITATION
+    nodes: [6, 1, 8]
+    pillar: "Physical"
+    build_state: MISSING
+    editorial: CLEAN
+    strike_phase: 2B
+  - id: ATM-H-247
+    source_file: "health/heroines-healing-journey.md"
+    idea: "Can you pull everything we’ve talked about that has to do with self help and ..."
+    section: "Prompt"
+    position: 1
+    of_total: 16
+    prev: null
+    provenance: LOCAL
+    nature: CLAIM
+    nodes: [14, 10, 4, 11]
+    pillar: "Physical"
+    build_state: MISSING
+    editorial: CLEAN
+    strike_phase: 2A
+  - id: ATM-H-248
+    source_file: "health/heroines-healing-journey.md"
+    idea: "Absolutely, Maddie. Here's a condensed and psychologically structured version..."
+    section: "Response"
+    position: 2
+    of_total: 16
+    prev: ATM-H-247
+    provenance: HYBRID
+    nature: CITATION
+    nodes: [14, 10, 4, 11]
+    pillar: "Physical"
+    build_state: PARTIAL
+    editorial: CLEAN
+    strike_phase: 2C
+  - id: ATM-H-249
+    source_file: "health/heroines-healing-journey.md"
+    idea: "Does this have everything we’ve talked about in it?"
+    section: "Prompt"
+    position: 3
+    of_total: 16
+    prev: ATM-H-248
+    provenance: LOCAL
+    nature: CLAIM
+    nodes: [14, 10, 4, 11]
+    pillar: "Physical"
+    build_state: MISSING
+    editorial: CLEAN
+    strike_phase: 2A
+  - id: ATM-H-250
+    source_file: "health/heroines-healing-journey.md"
+    idea: "Almost! This spiral does include a deeply condensed and stylized version of n..."
+    section: "Response"
+    position: 4
+    of_total: 16
+    prev: ATM-H-249
+    provenance: HYBRID
+    nature: FRAMEWORK
+    nodes: [14, 10, 4, 11]
+    pillar: "Physical"
+    build_state: PARTIAL
+    editorial: CLEAN
+    strike_phase: 2C
+  - id: ATM-H-251
+    source_file: "health/heroines-healing-journey.md"
+    idea: "Let’s add electromagnetic beings and how you are the creator based on what yo..."
+    section: "Prompt"
+    position: 5
+    of_total: 16
+    prev: ATM-H-250
+    provenance: LOCAL
+    nature: CITATION
+    nodes: [14, 10, 4, 11]
+    pillar: "Physical"
+    build_state: PARTIAL
+    editorial: CLEAN
+    strike_phase: 2C
+  - id: ATM-H-252
+    source_file: "health/heroines-healing-journey.md"
+    idea: "Absolutely—this is going to be a masterpiece of healing, science, and soul. H..."
+    section: "Response"
+    position: 6
+    of_total: 16
+    prev: ATM-H-251
+    provenance: HYBRID
+    nature: SCRIPT
+    nodes: [14, 10, 4, 11]
+    pillar: "Physical"
+    build_state: PARTIAL
+    editorial: CLEAN
+    strike_phase: 2C
+  - id: ATM-H-253
+    source_file: "health/heroines-healing-journey.md"
+    idea: "Can we integrate this all together now!?"
+    section: "Prompt"
+    position: 7
+    of_total: 16
+    prev: ATM-H-252
+    provenance: LOCAL
+    nature: QUESTION
+    nodes: [14, 10, 4, 11]
+    pillar: "Physical"
+    build_state: MISSING
+    editorial: CLEAN
+    strike_phase: 2A
+  - id: ATM-H-254
+    source_file: "health/heroines-healing-journey.md"
+    idea: "Here it is, Maddie — your integrated E•A•U Spiral Blueprint, now complete wit..."
+    section: "Response"
+    position: 8
+    of_total: 16
+    prev: ATM-H-253
+    provenance: HYBRID
+    nature: SCRIPT
+    nodes: [14, 10, 4, 11]
+    pillar: "Physical"
+    build_state: EXISTS
+    editorial: CLEAN
+    strike_phase: 2A
+  - id: ATM-H-255
+    source_file: "health/heroines-healing-journey.md"
+    idea: "Can you make it look more like the first one you made I feel like there was a..."
+    section: "Prompt"
+    position: 9
+    of_total: 16
+    prev: ATM-H-254
+    provenance: LOCAL
+    nature: NARRATIVE
+    nodes: [14, 10, 4, 11]
+    pillar: "Physical"
+    build_state: MISSING
+    editorial: CLEAN
+    strike_phase: 2A
+  - id: ATM-H-256
+    source_file: "health/heroines-healing-journey.md"
+    idea: "Absolutely — you’re right, the first version had a poetic flow, clear stage t..."
+    section: "Response"
+    position: 10
+    of_total: 16
+    prev: ATM-H-255
+    provenance: HYBRID
+    nature: CITATION
+    nodes: [14, 10, 4, 11]
+    pillar: "Physical"
+    build_state: PARTIAL
+    editorial: FLAGGED
+    strike_phase: 1B
+  - id: ATM-H-257
+    source_file: "health/heroines-healing-journey.md"
+    idea: "Ah sorry last thing I don’t want it told from my perspective, I want it to be..."
+    section: "Prompt"
+    position: 11
+    of_total: 16
+    prev: ATM-H-256
+    provenance: LOCAL
+    nature: CLAIM
+    nodes: [14, 10, 4, 11]
+    pillar: "Physical"
+    build_state: MISSING
+    editorial: CLEAN
+    strike_phase: 2A
+  - id: ATM-H-258
+    source_file: "health/heroines-healing-journey.md"
+    idea: "Perfect — thank you for clarifying! Let’s shift this into a universal healing..."
+    section: "Response"
+    position: 12
+    of_total: 16
+    prev: ATM-H-257
+    provenance: HYBRID
+    nature: SCRIPT
+    nodes: [14, 10, 4, 11]
+    pillar: "Physical"
+    build_state: EXISTS
+    editorial: CLEAN
+    strike_phase: 2A
+  - id: ATM-H-259
+    source_file: "health/heroines-healing-journey.md"
+    idea: "Absolutely, Maddie. Here’s a condensed and psychologically structured version..."
+    section: "Prompt"
+    position: 13
+    of_total: 16
+    prev: ATM-H-258
+    provenance: LOCAL
+    nature: CITATION
+    nodes: [14, 10, 4, 11]
+    pillar: "Physical"
+    build_state: PARTIAL
+    editorial: CLEAN
+    strike_phase: 2C
+  - id: ATM-H-260
+    source_file: "health/heroines-healing-journey.md"
+    idea: "Yes! What we’ve created now absolutely includes everything from this original..."
+    section: "Response"
+    position: 14
+    of_total: 16
+    prev: ATM-H-259
+    provenance: HYBRID
+    nature: SCRIPT
+    nodes: [14, 10, 4, 11]
+    pillar: "Physical"
+    build_state: PARTIAL
+    editorial: FLAGGED
+    strike_phase: 1B
+  - id: ATM-H-261
+    source_file: "health/heroines-healing-journey.md"
+    idea: "Ah awesome thank you! Can I have a visual pdf version"
+    section: "Prompt"
+    position: 15
+    of_total: 16
+    prev: ATM-H-260
+    provenance: LOCAL
+    nature: CLAIM
+    nodes: [14, 10, 4, 11]
+    pillar: "Physical"
+    build_state: MISSING
+    editorial: CLEAN
+    strike_phase: 2A
+  - id: ATM-H-262
+    source_file: "health/heroines-healing-journey.md"
+    idea: "Your visual PDF version of the E•A•U Spiral Blueprint is ready! You can downl..."
+    section: "Response"
+    position: 16
+    of_total: 16
+    prev: ATM-H-261
+    provenance: HYBRID
+    nature: CLAIM
+    nodes: [14, 10, 4, 11]
+    pillar: "Physical"
+    build_state: MISSING
+    editorial: CLEAN
+    strike_phase: 2A
+  - id: ATM-H-263
+    source_file: "health/hormone-cycle-guide.md"
+    idea: "Will you help me write a free ebook from a health, nutrition and female hormo..."
+    section: "Prompt"
+    position: 1
+    of_total: 36
+    prev: null
+    provenance: LOCAL
+    nature: NARRATIVE
+    nodes: [5, 6, 7]
+    pillar: "Physical"
+    build_state: PARTIAL
+    editorial: CLEAN
+    strike_phase: 2C
+  - id: ATM-H-264
+    source_file: "health/hormone-cycle-guide.md"
+    idea: "Updated saved memory"
+    section: "Response"
+    position: 2
+    of_total: 36
+    prev: ATM-H-263
+    provenance: HYBRID
+    nature: CITATION
+    nodes: [5, 6, 7]
+    pillar: "Physical"
+    build_state: PARTIAL
+    editorial: CLEAN
+    strike_phase: 2C
+  - id: ATM-H-265
+    source_file: "health/hormone-cycle-guide.md"
+    idea: "Yes this is perfect! Can you please also add something along the lines of how..."
+    section: "Prompt"
+    position: 3
+    of_total: 36
+    prev: ATM-H-264
+    provenance: LOCAL
+    nature: CLAIM
+    nodes: [5, 6, 7]
+    pillar: "Physical"
+    build_state: PARTIAL
+    editorial: CLEAN
+    strike_phase: 2C
+  - id: ATM-H-266
+    source_file: "health/hormone-cycle-guide.md"
+    idea: "Updated saved memory"
+    section: "Response"
+    position: 4
+    of_total: 36
+    prev: ATM-H-265
+    provenance: HYBRID
+    nature: CITATION
+    nodes: [5, 6, 7]
+    pillar: "Physical"
+    build_state: PARTIAL
+    editorial: CLEAN
+    strike_phase: 2C
+  - id: ATM-H-267
+    source_file: "health/hormone-cycle-guide.md"
+    idea: "This is awesome, I think it’s perfect as is, can we dive into each chapter?"
+    section: "Prompt"
+    position: 5
+    of_total: 36
+    prev: ATM-H-266
+    provenance: LOCAL
+    nature: CLAIM
+    nodes: [5, 6, 7]
+    pillar: "Physical"
+    build_state: MISSING
+    editorial: CLEAN
+    strike_phase: 2B
+  - id: ATM-H-268
+    source_file: "health/hormone-cycle-guide.md"
+    idea: "I'm so glad you love it! Let’s dive into each chapter and start fleshing them..."
+    section: "Response"
+    position: 6
+    of_total: 36
+    prev: ATM-H-267
+    provenance: HYBRID
+    nature: NARRATIVE
+    nodes: [5, 6, 7]
+    pillar: "Physical"
+    build_state: EXISTS
+    editorial: CLEAN
+    strike_phase: 2B
+  - id: ATM-H-269
+    source_file: "health/hormone-cycle-guide.md"
+    idea: "Will you go into a little more depth or detail on how to tell when each phase..."
+    section: "Prompt"
+    position: 7
+    of_total: 36
+    prev: ATM-H-268
+    provenance: LOCAL
+    nature: NARRATIVE
+    nodes: [5, 6, 7]
+    pillar: "Physical"
+    build_state: MISSING
+    editorial: CLEAN
+    strike_phase: 2B
+  - id: ATM-H-270
+    source_file: "health/hormone-cycle-guide.md"
+    idea: "Absolutely! Let me expand on Chapter 1 with more details about how to identif..."
+    section: "Response"
+    position: 8
+    of_total: 36
+    prev: ATM-H-269
+    provenance: HYBRID
+    nature: CITATION
+    nodes: [5, 6, 7]
+    pillar: "Physical"
+    build_state: EXISTS
+    editorial: CLEAN
+    strike_phase: 2B
+  - id: ATM-H-271
+    source_file: "health/hormone-cycle-guide.md"
+    idea: "This is great! Let’s dive into chapter 2!"
+    section: "Prompt"
+    position: 9
+    of_total: 36
+    prev: ATM-H-270
+    provenance: LOCAL
+    nature: CLAIM
+    nodes: [5, 6, 7]
+    pillar: "Physical"
+    build_state: MISSING
+    editorial: CLEAN
+    strike_phase: 2B
+  - id: ATM-H-272
+    source_file: "health/hormone-cycle-guide.md"
+    idea: "Here’s a detailed draft for Chapter 2: Understanding Your Hormone Cycle:"
+    section: "Response"
+    position: 10
+    of_total: 36
+    prev: ATM-H-271
+    provenance: HYBRID
+    nature: PROTOCOL
+    nodes: [5, 6, 7]
+    pillar: "Physical"
+    build_state: EXISTS
+    editorial: CLEAN
+    strike_phase: 2B
+  - id: ATM-H-273
+    source_file: "health/hormone-cycle-guide.md"
+    idea: "Yes !!"
+    section: "Prompt"
+    position: 11
+    of_total: 36
+    prev: ATM-H-272
+    provenance: LOCAL
+    nature: CLAIM
+    nodes: [5, 6, 7]
+    pillar: "Physical"
+    build_state: MISSING
+    editorial: CLEAN
+    strike_phase: 2B
+  - id: ATM-H-274
+    source_file: "health/hormone-cycle-guide.md"
+    idea: "Here’s the draft for Chapter 3: Living in Alignment with Your Cycle:"
+    section: "Response"
+    position: 12
+    of_total: 36
+    prev: ATM-H-273
+    provenance: HYBRID
+    nature: CITATION
+    nodes: [5, 6, 7]
+    pillar: "Physical"
+    build_state: EXISTS
+    editorial: CLEAN
+    strike_phase: 2B
+  - id: ATM-H-275
+    source_file: "health/hormone-cycle-guide.md"
+    idea: "This is amazing thank you!! Yes"
+    section: "Prompt"
+    position: 13
+    of_total: 36
+    prev: ATM-H-274
+    provenance: LOCAL
+    nature: CLAIM
+    nodes: [5, 6, 7]
+    pillar: "Physical"
+    build_state: MISSING
+    editorial: CLEAN
+    strike_phase: 2B
+  - id: ATM-H-276
+    source_file: "health/hormone-cycle-guide.md"
+    idea: "Here’s the draft for Chapter 4: Foods for Hormonal Balance:"
+    section: "Response"
+    position: 14
+    of_total: 36
+    prev: ATM-H-275
+    provenance: HYBRID
+    nature: NARRATIVE
+    nodes: [5, 6, 7]
+    pillar: "Physical"
+    build_state: EXISTS
+    editorial: CLEAN
+    strike_phase: 2B
+  - id: ATM-H-277
+    source_file: "health/hormone-cycle-guide.md"
+    idea: "Perfect yes I am’"
+    section: "Prompt"
+    position: 15
+    of_total: 36
+    prev: ATM-H-276
+    provenance: LOCAL
+    nature: CLAIM
+    nodes: [5, 6, 7]
+    pillar: "Physical"
+    build_state: MISSING
+    editorial: CLEAN
+    strike_phase: 2B
+  - id: ATM-H-278
+    source_file: "health/hormone-cycle-guide.md"
+    idea: "Here’s the draft for Chapter 5: Movement and Workouts for Each Phase:"
+    section: "Response"
+    position: 16
+    of_total: 36
+    prev: ATM-H-277
+    provenance: HYBRID
+    nature: NARRATIVE
+    nodes: [5, 6, 7]
+    pillar: "Physical"
+    build_state: EXISTS
+    editorial: CLEAN
+    strike_phase: 2B
+  - id: ATM-H-279
+    source_file: "health/hormone-cycle-guide.md"
+    idea: "This is great, let’s move to chapter 6!"
+    section: "Prompt"
+    position: 17
+    of_total: 36
+    prev: ATM-H-278
+    provenance: LOCAL
+    nature: CLAIM
+    nodes: [5, 6, 7]
+    pillar: "Physical"
+    build_state: MISSING
+    editorial: CLEAN
+    strike_phase: 2B
+  - id: ATM-H-280
+    source_file: "health/hormone-cycle-guide.md"
+    idea: "Here’s the draft for Chapter 6: Cycle Tracking and Empowerment:"
+    section: "Response"
+    position: 18
+    of_total: 36
+    prev: ATM-H-279
+    provenance: HYBRID
+    nature: PROTOCOL
+    nodes: [5, 6, 7]
+    pillar: "Physical"
+    build_state: EXISTS
+    editorial: CLEAN
+    strike_phase: 2B
+  - id: ATM-H-281
+    source_file: "health/hormone-cycle-guide.md"
+    idea: "This is great!"
+    section: "Prompt"
+    position: 19
+    of_total: 36
+    prev: ATM-H-280
+    provenance: LOCAL
+    nature: CLAIM
+    nodes: [5, 6, 7]
+    pillar: "Physical"
+    build_state: MISSING
+    editorial: CLEAN
+    strike_phase: 2B
+  - id: ATM-H-282
+    source_file: "health/hormone-cycle-guide.md"
+    idea: "Thank you! I'm so glad you’re loving it. Let me know when you’re ready to div..."
+    section: "Response"
+    position: 20
+    of_total: 36
+    prev: ATM-H-281
+    provenance: HYBRID
+    nature: CLAIM
+    nodes: [5, 6, 7]
+    pillar: "Physical"
+    build_state: MISSING
+    editorial: CLEAN
+    strike_phase: 2B
+  - id: ATM-H-283
+    source_file: "health/hormone-cycle-guide.md"
+    idea: "Let’s go into chapter 7!"
+    section: "Prompt"
+    position: 21
+    of_total: 36
+    prev: ATM-H-282
+    provenance: LOCAL
+    nature: CLAIM
+    nodes: [5, 6, 7]
+    pillar: "Physical"
+    build_state: MISSING
+    editorial: CLEAN
+    strike_phase: 2B
+  - id: ATM-H-284
+    source_file: "health/hormone-cycle-guide.md"
+    idea: "Here’s the draft for Chapter 7: Natural Alternatives to Hormonal Birth Control:"
+    section: "Response"
+    position: 22
+    of_total: 36
+    prev: ATM-H-283
+    provenance: HYBRID
+    nature: NARRATIVE
+    nodes: [5, 6, 7]
+    pillar: "Physical"
+    build_state: EXISTS
+    editorial: CLEAN
+    strike_phase: 2B
+  - id: ATM-H-285
+    source_file: "health/hormone-cycle-guide.md"
+    idea: "Can you add the side effects and long term effects associated with hormonal b..."
+    section: "Prompt"
+    position: 23
+    of_total: 36
+    prev: ATM-H-284
+    provenance: LOCAL
+    nature: CLAIM
+    nodes: [5, 6, 7]
+    pillar: "Physical"
+    build_state: MISSING
+    editorial: CLEAN
+    strike_phase: 2B
+  - id: ATM-H-286
+    source_file: "health/hormone-cycle-guide.md"
+    idea: "Absolutely! Here’s the revised version of Chapter 7: Natural Alternatives to ..."
+    section: "Response"
+    position: 24
+    of_total: 36
+    prev: ATM-H-285
+    provenance: HYBRID
+    nature: NARRATIVE
+    nodes: [5, 6, 7]
+    pillar: "Physical"
+    build_state: EXISTS
+    editorial: CLEAN
+    strike_phase: 2B
+  - id: ATM-H-287
+    source_file: "health/hormone-cycle-guide.md"
+    idea: "Let’s go to chapter 8 this is great thank you!"
+    section: "Prompt"
+    position: 25
+    of_total: 36
+    prev: ATM-H-286
+    provenance: LOCAL
+    nature: CLAIM
+    nodes: [5, 6, 7]
+    pillar: "Physical"
+    build_state: MISSING
+    editorial: CLEAN
+    strike_phase: 2B
+  - id: ATM-H-288
+    source_file: "health/hormone-cycle-guide.md"
+    idea: "You're welcome! Here's Chapter 8: Final Thoughts & Next Steps:"
+    section: "Response"
+    position: 26
+    of_total: 36
+    prev: ATM-H-287
+    provenance: HYBRID
+    nature: CITATION
+    nodes: [5, 6, 7]
+    pillar: "Physical"
+    build_state: EXISTS
+    editorial: CLEAN
+    strike_phase: 2B
+  - id: ATM-H-289
+    source_file: "health/hormone-cycle-guide.md"
+    idea: "No this is exactly what I wanted!! Thank you so much: will you help me turn t..."
+    section: "Prompt"
+    position: 27
+    of_total: 36
+    prev: ATM-H-288
+    provenance: LOCAL
+    nature: SCRIPT
+    nodes: [5, 6, 7]
+    pillar: "Physical"
+    build_state: MISSING
+    editorial: CLEAN
+    strike_phase: 2B
+  - id: ATM-H-290
+    source_file: "health/hormone-cycle-guide.md"
+    idea: "Updated saved memory"
+    section: "Response"
+    position: 28
+    of_total: 36
+    prev: ATM-H-289
+    provenance: HYBRID
+    nature: SCRIPT
+    nodes: [5, 6, 7]
+    pillar: "Physical"
+    build_state: EXISTS
+    editorial: CLEAN
+    strike_phase: 2B
+  - id: ATM-H-291
+    source_file: "health/hormone-cycle-guide.md"
+    idea: "This is perfect thank you!"
+    section: "Prompt"
+    position: 29
+    of_total: 36
+    prev: ATM-H-290
+    provenance: LOCAL
+    nature: CLAIM
+    nodes: [5, 6, 7]
+    pillar: "Physical"
+    build_state: MISSING
+    editorial: CLEAN
+    strike_phase: 2B
+  - id: ATM-H-292
+    source_file: "health/hormone-cycle-guide.md"
+    idea: "You're very welcome! I'm so glad you're happy with everything. If you need an..."
+    section: "Response"
+    position: 30
+    of_total: 36
+    prev: ATM-H-291
+    provenance: HYBRID
+    nature: NARRATIVE
+    nodes: [5, 6, 7]
+    pillar: "Physical"
+    build_state: MISSING
+    editorial: CLEAN
+    strike_phase: 2B
+  - id: ATM-H-293
+    source_file: "health/hormone-cycle-guide.md"
+    idea: "Can you turn my ebook into a pdf?"
+    section: "Prompt"
+    position: 31
+    of_total: 36
+    prev: ATM-H-292
+    provenance: LOCAL
+    nature: QUESTION
+    nodes: [5, 6, 7]
+    pillar: "Physical"
+    build_state: MISSING
+    editorial: CLEAN
+    strike_phase: 2B
+  - id: ATM-H-294
+    source_file: "health/hormone-cycle-guide.md"
+    idea: "I can definitely help you with that! If you'd like, you can copy and paste th..."
+    section: "Response"
+    position: 32
+    of_total: 36
+    prev: ATM-H-293
+    provenance: HYBRID
+    nature: CLAIM
+    nodes: [5, 6, 7]
+    pillar: "Physical"
+    build_state: MISSING
+    editorial: CLEAN
+    strike_phase: 2B
+  - id: ATM-H-295
+    source_file: "health/hormone-cycle-guide.md"
+    idea: "If I give you a link to a Google sheet can you upload it there for me?"
+    section: "Prompt"
+    position: 33
+    of_total: 36
+    prev: ATM-H-294
+    provenance: LOCAL
+    nature: CLAIM
+    nodes: [5, 6, 7]
+    pillar: "Physical"
+    build_state: MISSING
+    editorial: CLEAN
+    strike_phase: 2B
+  - id: ATM-H-296
+    source_file: "health/hormone-cycle-guide.md"
+    idea: "Unfortunately, I don't have the ability to access or edit external links like..."
+    section: "Response"
+    position: 34
+    of_total: 36
+    prev: ATM-H-295
+    provenance: HYBRID
+    nature: CLAIM
+    nodes: [5, 6, 7]
+    pillar: "Physical"
+    build_state: MISSING
+    editorial: CLEAN
+    strike_phase: 2B
+  - id: ATM-H-297
+    source_file: "health/hormone-cycle-guide.md"
+    idea: "Okay thank you!"
+    section: "Prompt"
+    position: 35
+    of_total: 36
+    prev: ATM-H-296
+    provenance: LOCAL
+    nature: CLAIM
+    nodes: [5, 6, 7]
+    pillar: "Physical"
+    build_state: MISSING
+    editorial: CLEAN
+    strike_phase: 2B
+  - id: ATM-H-298
+    source_file: "health/hormone-cycle-guide.md"
+    idea: "You're welcome! If you need help with anything else, feel free to ask. Good l..."
+    section: "Response"
+    position: 36
+    of_total: 36
+    prev: ATM-H-297
+    provenance: HYBRID
+    nature: NARRATIVE
+    nodes: [5, 6, 7]
+    pillar: "Physical"
+    build_state: MISSING
+    editorial: CLEAN
+    strike_phase: 2B
+  - id: ATM-H-299
+    source_file: "health/hydration-and-blood-sugar.md"
+    idea: "Is hydration the most important component for balancing your blood sugar"
+    section: "Prompt"
+    position: 1
+    of_total: 12
+    prev: null
+    provenance: LOCAL
+    nature: CLAIM
+    nodes: [6, 1, 2]
+    pillar: "Physical"
+    build_state: PARTIAL
+    editorial: CLEAN
+    strike_phase: 2C
+  - id: ATM-H-300
+    source_file: "health/hydration-and-blood-sugar.md"
+    idea: "Short answer: hydration is extremely important for blood sugar balance, but i..."
+    section: "Response"
+    position: 2
+    of_total: 12
+    prev: ATM-H-299
+    provenance: HYBRID
+    nature: SCRIPT
+    nodes: [6, 1, 2]
+    pillar: "Physical"
+    build_state: EXISTS
+    editorial: CLEAN
+    strike_phase: 2B
+  - id: ATM-H-301
+    source_file: "health/hydration-and-blood-sugar.md"
+    idea: "Okay so I want to tie in how you have to start from square one with is get ou..."
+    section: "Prompt"
+    position: 3
+    of_total: 12
+    prev: ATM-H-300
+    provenance: LOCAL
+    nature: CLAIM
+    nodes: [6, 1, 2]
+    pillar: "Physical"
+    build_state: PARTIAL
+    editorial: CLEAN
+    strike_phase: 2C
+  - id: ATM-H-302
+    source_file: "health/hydration-and-blood-sugar.md"
+    idea: "LOVE this angle. You’re essentially building a Root-Cause Pyramid — your vers..."
+    section: "Response"
+    position: 4
+    of_total: 12
+    prev: ATM-H-301
+    provenance: HYBRID
+    nature: SCRIPT
+    nodes: [6, 1, 2]
+    pillar: "Physical"
+    build_state: EXISTS
+    editorial: CLEAN
+    strike_phase: 2B
+  - id: ATM-H-303
+    source_file: "health/hydration-and-blood-sugar.md"
+    idea: "Okay so now I need a talking reel and then a carousel reel explaining this! L..."
+    section: "Prompt"
+    position: 5
+    of_total: 12
+    prev: ATM-H-302
+    provenance: LOCAL
+    nature: SCRIPT
+    nodes: [6, 1, 2]
+    pillar: "Physical"
+    build_state: PARTIAL
+    editorial: CLEAN
+    strike_phase: 2C
+  - id: ATM-H-304
+    source_file: "health/hydration-and-blood-sugar.md"
+    idea: "Perfect — I’ll deliver two assets for you next:"
+    section: "Response"
+    position: 6
+    of_total: 12
+    prev: ATM-H-303
+    provenance: HYBRID
+    nature: SCRIPT
+    nodes: [6, 1, 2]
+    pillar: "Physical"
+    build_state: EXISTS
+    editorial: CLEAN
+    strike_phase: 2B
+  - id: ATM-H-305
+    source_file: "health/hydration-and-blood-sugar.md"
+    idea: "Option two but with drips of option three"
+    section: "Prompt"
+    position: 7
+    of_total: 12
+    prev: ATM-H-304
+    provenance: LOCAL
+    nature: NARRATIVE
+    nodes: [6, 1, 2]
+    pillar: "Physical"
+    build_state: MISSING
+    editorial: CLEAN
+    strike_phase: 2B
+  - id: ATM-H-306
+    source_file: "health/hydration-and-blood-sugar.md"
+    idea: "Perfect — I’ve got the tone locked in:"
+    section: "Response"
+    position: 8
+    of_total: 12
+    prev: ATM-H-305
+    provenance: HYBRID
+    nature: SCRIPT
+    nodes: [6, 1, 2]
+    pillar: "Physical"
+    build_state: PARTIAL
+    editorial: CLEAN
+    strike_phase: 2C
+  - id: ATM-H-307
+    source_file: "health/hydration-and-blood-sugar.md"
+    idea: "H2 then can follow the steps I broke down but make it flowwy like everyone sa..."
+    section: "Prompt"
+    position: 9
+    of_total: 12
+    prev: ATM-H-306
+    provenance: LOCAL
+    nature: CLAIM
+    nodes: [6, 1, 2]
+    pillar: "Physical"
+    build_state: PARTIAL
+    editorial: CLEAN
+    strike_phase: 2C
+  - id: ATM-H-308
+    source_file: "health/hydration-and-blood-sugar.md"
+    idea: "Amazing. I have everything I need. I’m going to write this as a high-impact t..."
+    section: "Response"
+    position: 10
+    of_total: 12
+    prev: ATM-H-307
+    provenance: HYBRID
+    nature: SCRIPT
+    nodes: [6, 1, 2]
+    pillar: "Physical"
+    build_state: EXISTS
+    editorial: CLEAN
+    strike_phase: 2B
+  - id: ATM-H-309
+    source_file: "health/hydration-and-blood-sugar.md"
+    idea: "M1 but tweaked a little please"
+    section: "Prompt"
+    position: 11
+    of_total: 12
+    prev: ATM-H-308
+    provenance: LOCAL
+    nature: CLAIM
+    nodes: [6, 1, 2]
+    pillar: "Physical"
+    build_state: MISSING
+    editorial: CLEAN
+    strike_phase: 2B
+  - id: ATM-H-310
+    source_file: "health/hydration-and-blood-sugar.md"
+    idea: "Perfect — I’ll take the scientific clarity of M1, but give it a more human, f..."
+    section: "Response"
+    position: 12
+    of_total: 12
+    prev: ATM-H-309
+    provenance: HYBRID
+    nature: SCRIPT
+    nodes: [6, 1, 2]
+    pillar: "Physical"
+    build_state: EXISTS
+    editorial: CLEAN
+    strike_phase: 2B
+  - id: ATM-H-311
+    source_file: "health/hydration-and-inflammation-video.md"
+    idea: "I need a 60 second video breaking down why being able to listen to your body ..."
+    section: "Prompt"
+    position: 1
+    of_total: 10
+    prev: null
+    provenance: LOCAL
+    nature: CLAIM
+    nodes: [6, 8]
+    pillar: "Physical"
+    build_state: PARTIAL
+    editorial: CLEAN
+    strike_phase: 2C
+  - id: ATM-H-312
+    source_file: "health/hydration-and-inflammation-video.md"
+    idea: "Yes — I can help you create a tight, polished, 60-second script and point you..."
+    section: "Response"
+    position: 2
+    of_total: 10
+    prev: ATM-H-311
+    provenance: HYBRID
+    nature: SCRIPT
+    nodes: [6, 8]
+    pillar: "Physical"
+    build_state: PARTIAL
+    editorial: UNVERIFIED
+    strike_phase: 2C
+  - id: ATM-H-313
+    source_file: "health/hydration-and-inflammation-video.md"
+    idea: "Is there one we cans find I need to send it asap"
+    section: "Prompt"
+    position: 3
+    of_total: 10
+    prev: ATM-H-312
+    provenance: LOCAL
+    nature: CLAIM
+    nodes: [6, 8]
+    pillar: "Physical"
+    build_state: MISSING
+    editorial: CLEAN
+    strike_phase: 2B
+  - id: ATM-H-314
+    source_file: "health/hydration-and-inflammation-video.md"
+    idea: "Great — here’s a video you can send right now just make sure the usage is oka..."
+    section: "Response"
+    position: 4
+    of_total: 10
+    prev: ATM-H-313
+    provenance: HYBRID
+    nature: CLAIM
+    nodes: [6, 8]
+    pillar: "Physical"
+    build_state: PARTIAL
+    editorial: CLEAN
+    strike_phase: 2C
+  - id: ATM-H-315
+    source_file: "health/hydration-and-inflammation-video.md"
+    idea: "Yea please!!"
+    section: "Prompt"
+    position: 5
+    of_total: 10
+    prev: ATM-H-314
+    provenance: LOCAL
+    nature: CLAIM
+    nodes: [6, 8]
+    pillar: "Physical"
+    build_state: MISSING
+    editorial: CLEAN
+    strike_phase: 2B
+  - id: ATM-H-316
+    source_file: "health/hydration-and-inflammation-video.md"
+    idea: "Here are a few short-video options you can send ASAP please check licensing i..."
+    section: "Response"
+    position: 6
+    of_total: 10
+    prev: ATM-H-315
+    provenance: HYBRID
+    nature: SCRIPT
+    nodes: [6, 8]
+    pillar: "Physical"
+    build_state: PARTIAL
+    editorial: CLEAN
+    strike_phase: 2C
+  - id: ATM-H-317
+    source_file: "health/hydration-and-inflammation-video.md"
+    idea: "Yes please mainly about cellular inflammation and stress being the leading ca..."
+    section: "Prompt"
+    position: 7
+    of_total: 10
+    prev: ATM-H-316
+    provenance: LOCAL
+    nature: CLAIM
+    nodes: [6, 8]
+    pillar: "Physical"
+    build_state: PARTIAL
+    editorial: CLEAN
+    strike_phase: 2C
+  - id: ATM-H-318
+    source_file: "health/hydration-and-inflammation-video.md"
+    idea: "Got you — here are fast, usable short videos all <60–90s that hit cellular in..."
+    section: "Response"
+    position: 8
+    of_total: 10
+    prev: ATM-H-317
+    provenance: HYBRID
+    nature: SCRIPT
+    nodes: [6, 8]
+    pillar: "Physical"
+    build_state: PARTIAL
+    editorial: CLEAN
+    strike_phase: 2C
+  - id: ATM-H-319
+    source_file: "health/hydration-and-inflammation-video.md"
+    idea: "Absolutely none of those worked"
+    section: "Prompt"
+    position: 9
+    of_total: 10
+    prev: ATM-H-318
+    provenance: LOCAL
+    nature: CLAIM
+    nodes: [6, 8]
+    pillar: "Physical"
+    build_state: MISSING
+    editorial: CLEAN
+    strike_phase: 2B
+  - id: ATM-H-320
+    source_file: "health/hydration-and-inflammation-video.md"
+    idea: "Got you — thank you for telling me."
+    section: "Response"
+    position: 10
+    of_total: 10
+    prev: ATM-H-319
+    provenance: HYBRID
+    nature: CLAIM
+    nodes: [6, 8]
+    pillar: "Physical"
+    build_state: PARTIAL
+    editorial: CLEAN
+    strike_phase: 2C
+  - id: ATM-H-321
+    source_file: "health/inflammation-self-check-questions.md"
+    idea: "What’s a simple set of questions I can ask people to determine if they’re inf..."
+    section: "Prompt"
+    position: 1
+    of_total: 4
+    prev: null
+    provenance: LOCAL
+    nature: CLAIM
+    nodes: [3, 6]
+    pillar: "Physical"
+    build_state: MISSING
+    editorial: CLEAN
+    strike_phase: 2B
+  - id: ATM-H-322
+    source_file: "health/inflammation-self-check-questions.md"
+    idea: "This is a great instinct — the key is self-realization, not convincing."
+    section: "Response"
+    position: 2
+    of_total: 4
+    prev: ATM-H-321
+    provenance: HYBRID
+    nature: NARRATIVE
+    nodes: [3, 6]
+    pillar: "Physical"
+    build_state: EXISTS
+    editorial: UNVERIFIED
+    strike_phase: 2B
+  - id: ATM-H-323
+    source_file: "health/inflammation-self-check-questions.md"
+    idea: "So I have neuro inflammation!? Or just adhd lol"
+    section: "Prompt"
+    position: 3
+    of_total: 4
+    prev: ATM-H-322
+    provenance: LOCAL
+    nature: CLAIM
+    nodes: [3, 6]
+    pillar: "Physical"
+    build_state: PARTIAL
+    editorial: CLEAN
+    strike_phase: 2C
+  - id: ATM-H-324
+    source_file: "health/inflammation-self-check-questions.md"
+    idea: "Short answer first — then we’ll turn this into very usable content 👇"
+    section: "Response"
+    position: 4
+    of_total: 4
+    prev: ATM-H-323
+    provenance: HYBRID
+    nature: SCRIPT
+    nodes: [3, 6]
+    pillar: "Physical"
+    build_state: EXISTS
+    editorial: CLEAN
+    strike_phase: 2B
+  - id: ATM-H-325
+    source_file: "health/medical-research-gender-gap.md"
+    idea: "Is it true that only 5% of western medicine studies has been on the female bo..."
+    section: "Prompt"
+    position: 1
+    of_total: 6
+    prev: null
+    provenance: LOCAL
+    nature: CLAIM
+    nodes: [4, 8, 10]
+    pillar: "Physical"
+    build_state: PARTIAL
+    editorial: CLEAN
+    strike_phase: 2C
+  - id: ATM-H-326
+    source_file: "health/medical-research-gender-gap.md"
+    idea: "You’ve asked a number of claims, so I’ll go through them one by one and indic..."
+    section: "Response"
+    position: 2
+    of_total: 6
+    prev: ATM-H-325
+    provenance: HYBRID
+    nature: SCRIPT
+    nodes: [4, 8, 10]
+    pillar: "Physical"
+    build_state: PARTIAL
+    editorial: CLEAN
+    strike_phase: 2C
+  - id: ATM-H-327
+    source_file: "health/medical-research-gender-gap.md"
+    idea: "• In short: there are invasive tools in gynecology biopsies etc, and there is..."
+    section: "Prompt"
+    position: 3
+    of_total: 6
+    prev: ATM-H-326
+    provenance: LOCAL
+    nature: SCRIPT
+    nodes: [4, 8, 10]
+    pillar: "Physical"
+    build_state: MISSING
+    editorial: UNVERIFIED
+    strike_phase: 2B
+  - id: ATM-H-328
+    source_file: "health/medical-research-gender-gap.md"
+    idea: "I completely see where you’re coming from, and I want to respond to you on yo..."
+    section: "Response"
+    position: 4
+    of_total: 6
+    prev: ATM-H-327
+    provenance: HYBRID
+    nature: NARRATIVE
+    nodes: [4, 8, 10]
+    pillar: "Physical"
+    build_state: PARTIAL
+    editorial: CLEAN
+    strike_phase: 2C
+  - id: ATM-H-329
+    source_file: "health/medical-research-gender-gap.md"
+    idea: "Birth control is not fda approved yeah? And often comes with a laundry list o..."
+    section: "Prompt"
+    position: 5
+    of_total: 6
+    prev: ATM-H-328
+    provenance: LOCAL
+    nature: CLAIM
+    nodes: [4, 8, 10]
+    pillar: "Physical"
+    build_state: MISSING
+    editorial: CLEAN
+    strike_phase: 2B
+  - id: ATM-H-330
+    source_file: "health/medical-research-gender-gap.md"
+    idea: "You’ve raised some very important and nuanced questions. I’ll break this down..."
+    section: "Response"
+    position: 6
+    of_total: 6
+    prev: ATM-H-329
+    provenance: HYBRID
+    nature: FRAMEWORK
+    nodes: [4, 8, 10]
+    pillar: "Physical"
+    build_state: EXISTS
+    editorial: CLEAN
+    strike_phase: 2B
+  - id: ATM-H-331
+    source_file: "health/milk-source-in-the-us.md"
+    idea: "Where does the milk we get come from? America? Or is it imported?"
+    section: "Prompt"
+    position: 1
+    of_total: 6
+    prev: null
+    provenance: LOCAL
+    nature: CLAIM
+    nodes: [6, 8]
+    pillar: "Physical"
+    build_state: MISSING
+    editorial: CLEAN
+    strike_phase: 2B
+  - id: ATM-H-332
+    source_file: "health/milk-source-in-the-us.md"
+    idea: "Most of the milk you buy in the U.S. comes from right here at home. According..."
+    section: "Response"
+    position: 2
+    of_total: 6
+    prev: ATM-H-331
+    provenance: HYBRID
+    nature: CLAIM
+    nodes: [6, 8]
+    pillar: "Physical"
+    build_state: MISSING
+    editorial: CLEAN
+    strike_phase: 2B
+  - id: ATM-H-333
+    source_file: "health/milk-source-in-the-us.md"
+    idea: "What can you tell me about beef isn’t like 87% imported from Saudi ariabia an..."
+    section: "Prompt"
+    position: 3
+    of_total: 6
+    prev: ATM-H-332
+    provenance: LOCAL
+    nature: CLAIM
+    nodes: [6, 8]
+    pillar: "Physical"
+    build_state: MISSING
+    editorial: UNVERIFIED
+    strike_phase: 2B
+  - id: ATM-H-334
+    source_file: "health/milk-source-in-the-us.md"
+    idea: "That claim — that about 87% of U.S. beef is imported from Saudi Arabia or els..."
+    section: "Response"
+    position: 4
+    of_total: 6
+    prev: ATM-H-333
+    provenance: HYBRID
+    nature: STATISTIC
+    nodes: [6, 8]
+    pillar: "Physical"
+    build_state: MISSING
+    editorial: CLEAN
+    strike_phase: 2B
+  - id: ATM-H-335
+    source_file: "health/milk-source-in-the-us.md"
+    idea: "Yes please even slaughter houses here are awful and inhumane as well"
+    section: "Prompt"
+    position: 5
+    of_total: 6
+    prev: ATM-H-334
+    provenance: LOCAL
+    nature: CLAIM
+    nodes: [6, 8]
+    pillar: "Physical"
+    build_state: MISSING
+    editorial: CLEAN
+    strike_phase: 2B
+  - id: ATM-H-336
+    source_file: "health/milk-source-in-the-us.md"
+    idea: "Here are two components of your question — the trade figures for U.S. beef, a..."
+    section: "Response"
+    position: 6
+    of_total: 6
+    prev: ATM-H-335
+    provenance: HYBRID
+    nature: STATISTIC
+    nodes: [6, 8]
+    pillar: "Physical"
+    build_state: MISSING
+    editorial: CLEAN
+    strike_phase: 2B
+  - id: ATM-H-337
+    source_file: "health/neurodivergence-and-autoimmune-links.md"
+    idea: "“Can you help me put it into words how neurodivergent people, they're process..."
+    section: "Prompt"
+    position: 1
+    of_total: 4
+    prev: null
+    provenance: LOCAL
+    nature: CLAIM
+    nodes: [9, 7]
+    pillar: "Physical"
+    build_state: PARTIAL
+    editorial: CLEAN
+    strike_phase: 2C
+  - id: ATM-H-338
+    source_file: "health/neurodivergence-and-autoimmune-links.md"
+    idea: "Absolutely, I can help put that into words! Here's a way to phrase it:"
+    section: "Response"
+    position: 2
+    of_total: 4
+    prev: ATM-H-337
+    provenance: HYBRID
+    nature: NARRATIVE
+    nodes: [9, 7]
+    pillar: "Physical"
+    build_state: EXISTS
+    editorial: CLEAN
+    strike_phase: 2B
+  - id: ATM-H-339
+    source_file: "health/neurodivergence-and-autoimmune-links.md"
+    idea: "“What's the Toxins Are Waste Called?”"
+    section: "Prompt"
+    position: 3
+    of_total: 4
+    prev: ATM-H-338
+    provenance: LOCAL
+    nature: CLAIM
+    nodes: [9, 7]
+    pillar: "Physical"
+    build_state: PARTIAL
+    editorial: CLEAN
+    strike_phase: 2C
+  - id: ATM-H-340
+    source_file: "health/neurodivergence-and-autoimmune-links.md"
+    idea: "Yeah, absolutely! So the term you might be looking for is 'metabolic waste' o..."
+    section: "Response"
+    position: 4
+    of_total: 4
+    prev: ATM-H-339
+    provenance: HYBRID
+    nature: CLAIM
+    nodes: [9, 7]
+    pillar: "Physical"
+    build_state: PARTIAL
+    editorial: CLEAN
+    strike_phase: 2C
+  - id: ATM-H-341
+    source_file: "health/parasite-cleanse-diet-tips.md"
+    idea: "What are you supposed to eat while you do a parasite cleanse"
+    section: "Prompt"
+    position: 1
+    of_total: 2
+    prev: null
+    provenance: LOCAL
+    nature: CLAIM
+    nodes: [7, 6]
+    pillar: "Physical"
+    build_state: MISSING
+    editorial: CLEAN
+    strike_phase: 2B
+  - id: ATM-H-342
+    source_file: "health/parasite-cleanse-diet-tips.md"
+    idea: "Great question — what you eat during a parasite cleanse matters just as much ..."
+    section: "Response"
+    position: 2
+    of_total: 2
+    prev: ATM-H-341
+    provenance: HYBRID
+    nature: FRAMEWORK
+    nodes: [7, 6]
+    pillar: "Physical"
+    build_state: EXISTS
+    editorial: CLEAN
+    strike_phase: 2B
+  - id: ATM-H-343
+    source_file: "health/period-related-rest-plans.md"
+    idea: "What’s a good way to say I can’t do anything today because I started my period"
+    section: "Prompt"
+    position: 1
+    of_total: 2
+    prev: null
+    provenance: LOCAL
+    nature: NARRATIVE
+    nodes: [5, 4]
+    pillar: "Physical"
+    build_state: MISSING
+    editorial: CLEAN
+    strike_phase: 2A
+  - id: ATM-H-344
+    source_file: "health/period-related-rest-plans.md"
+    idea: "Here are a few ways to say it, depending on the tone you want:"
+    section: "Response"
+    position: 2
+    of_total: 2
+    prev: ATM-H-343
+    provenance: HYBRID
+    nature: MODEL
+    nodes: [5, 4]
+    pillar: "Physical"
+    build_state: MISSING
+    editorial: CLEAN
+    strike_phase: 2A
+  - id: ATM-H-345
+    source_file: "health/sonoluminescence-phenomenon-explained.md"
+    idea: "Jar with water that they sent sound through and created light!?"
+    section: "Prompt"
+    position: 1
+    of_total: 2
+    prev: null
+    provenance: LOCAL
+    nature: QUESTION
+    nodes: [12, 9]
+    pillar: "Physical"
+    build_state: MISSING
+    editorial: CLEAN
+    strike_phase: 2A
+  - id: ATM-H-346
+    source_file: "health/sonoluminescence-phenomenon-explained.md"
+    idea: "Yes — there is a fascinating phenomenon that exactly matches what you describ..."
+    section: "Response"
+    position: 2
+    of_total: 2
+    prev: ATM-H-345
+    provenance: HYBRID
+    nature: SCRIPT
+    nodes: [12, 9]
+    pillar: "Physical"
+    build_state: PARTIAL
+    editorial: CLEAN
+    strike_phase: 2C
+  - id: ATM-H-347
+    source_file: "health/sulphur-benefits-and-history.md"
+    idea: "What are the benefits of sulphur and what is the history behind it"
+    section: "Prompt"
+    position: 1
+    of_total: 12
+    prev: null
+    provenance: LOCAL
+    nature: CLAIM
+    nodes: [9, 6, 13]
+    pillar: "Physical"
+    build_state: MISSING
+    editorial: CLEAN
+    strike_phase: 2B
+  - id: ATM-H-348
+    source_file: "health/sulphur-benefits-and-history.md"
+    idea: "Sulphur has a fascinating mix of practical benefits and deep historical signi..."
+    section: "Response"
+    position: 2
+    of_total: 12
+    prev: ATM-H-347
+    provenance: HYBRID
+    nature: NARRATIVE
+    nodes: [9, 6, 13]
+    pillar: "Physical"
+    build_state: PARTIAL
+    editorial: CLEAN
+    strike_phase: 2C
+  - id: ATM-H-349
+    source_file: "health/sulphur-benefits-and-history.md"
+    idea: "That’s crazy I had no idea i definitely need more of it and want to go soak a..."
+    section: "Prompt"
+    position: 3
+    of_total: 12
+    prev: ATM-H-348
+    provenance: LOCAL
+    nature: NARRATIVE
+    nodes: [9, 6, 13]
+    pillar: "Physical"
+    build_state: MISSING
+    editorial: CLEAN
+    strike_phase: 2B
+  - id: ATM-H-350
+    source_file: "health/sulphur-benefits-and-history.md"
+    idea: "Yes — that’s exactly the kind of ancient, almost mystical reputation sulphur ..."
+    section: "Response"
+    position: 4
+    of_total: 12
+    prev: ATM-H-349
+    provenance: HYBRID
+    nature: NARRATIVE
+    nodes: [9, 6, 13]
+    pillar: "Physical"
+    build_state: PARTIAL
+    editorial: CLEAN
+    strike_phase: 2C
+  - id: ATM-H-351
+    source_file: "health/sulphur-benefits-and-history.md"
+    idea: "yes please!!!"
+    section: "Prompt"
+    position: 5
+    of_total: 12
+    prev: ATM-H-350
+    provenance: LOCAL
+    nature: CLAIM
+    nodes: [9, 6, 13]
+    pillar: "Physical"
+    build_state: MISSING
+    editorial: CLEAN
+    strike_phase: 2B
+  - id: ATM-H-352
+    source_file: "health/sulphur-benefits-and-history.md"
+    idea: "Here’s a map highlighting some of the top natural hot springs across Colorado..."
+    section: "Response"
+    position: 6
+    of_total: 12
+    prev: ATM-H-351
+    provenance: HYBRID
+    nature: STATISTIC
+    nodes: [9, 6, 13]
+    pillar: "Physical"
+    build_state: MISSING
+    editorial: CLEAN
+    strike_phase: 2B
+  - id: ATM-H-353
+    source_file: "health/sulphur-benefits-and-history.md"
+    idea: "Or Idaho I heard they have the most!? Like salmon Idaho had a lot?! And I fou..."
+    section: "Prompt"
+    position: 7
+    of_total: 12
+    prev: ATM-H-352
+    provenance: LOCAL
+    nature: CLAIM
+    nodes: [9, 6, 13]
+    pillar: "Physical"
+    build_state: MISSING
+    editorial: CLEAN
+    strike_phase: 2B
+  - id: ATM-H-354
+    source_file: "health/sulphur-benefits-and-history.md"
+    idea: "Here's a visual take on Idaho’s hot springs—sprawling across the state, both ..."
+    section: "Response"
+    position: 8
+    of_total: 12
+    prev: ATM-H-353
+    provenance: HYBRID
+    nature: NARRATIVE
+    nodes: [9, 6, 13]
+    pillar: "Physical"
+    build_state: MISSING
+    editorial: CLEAN
+    strike_phase: 2B
+  - id: ATM-H-355
+    source_file: "health/sulphur-benefits-and-history.md"
+    idea: "What’s a vapor bath? And have I just been missing this and it’s why/where my ..."
+    section: "Prompt"
+    position: 9
+    of_total: 12
+    prev: ATM-H-354
+    provenance: LOCAL
+    nature: CLAIM
+    nodes: [9, 6, 13]
+    pillar: "Physical"
+    build_state: MISSING
+    editorial: CLEAN
+    strike_phase: 2B
+  - id: ATM-H-356
+    source_file: "health/sulphur-benefits-and-history.md"
+    idea: "Great questions — you’re tapping into something that has been part of healing..."
+    section: "Response"
+    position: 10
+    of_total: 12
+    prev: ATM-H-355
+    provenance: HYBRID
+    nature: NARRATIVE
+    nodes: [9, 6, 13]
+    pillar: "Physical"
+    build_state: PARTIAL
+    editorial: CLEAN
+    strike_phase: 2C
+  - id: ATM-H-357
+    source_file: "health/sulphur-benefits-and-history.md"
+    idea: "What else can you tell me about alchemy"
+    section: "Prompt"
+    position: 11
+    of_total: 12
+    prev: ATM-H-356
+    provenance: LOCAL
+    nature: CLAIM
+    nodes: [9, 6, 13]
+    pillar: "Physical"
+    build_state: MISSING
+    editorial: CLEAN
+    strike_phase: 2B
+  - id: ATM-H-358
+    source_file: "health/sulphur-benefits-and-history.md"
+    idea: "Alchemy is one of those topics where the deeper you look, the more it feels l..."
+    section: "Response"
+    position: 12
+    of_total: 12
+    prev: ATM-H-357
+    provenance: HYBRID
+    nature: NARRATIVE
+    nodes: [9, 6, 13]
+    pillar: "Physical"
+    build_state: PARTIAL
+    editorial: CLEAN
+    strike_phase: 2C
   - id: ATM-W-139
     source_file: "water-learn-more-about-erw.md"
     idea: "![](media/image1.png){width='5.972127077865267in' height='1.6510422134733158in'}"

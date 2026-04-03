@@ -1,3 +1,12 @@
+<!-- DOC-ENVELOPE
+id: DOC-H-20
+total_sections: 0
+total_atoms: 0
+dominant_provenance: LOCAL
+dominant_nature: N/A
+sections:
+-->
+
 ---
 title: "Empty export"
 source_file: "ChatGPT-Hormones ! eating ! cycles.txt"

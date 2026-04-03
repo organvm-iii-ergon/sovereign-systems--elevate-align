@@ -1,3 +1,16 @@
+<!-- DOC-ENVELOPE
+id: DOC-H-27
+total_sections: 2
+total_atoms: 2
+dominant_provenance: LOCAL
+dominant_nature: CLAIM
+sections:
+  - name: "Prompt"
+    atoms: [ATM-H-341]
+  - name: "Response"
+    atoms: [ATM-H-342]
+-->
+
 ---
 title: "Diet protocol during cleanse, anti-parasite foods"
 source_file: "ChatGPT-Parasite cleanse diet tips.txt"
@@ -8,6 +21,8 @@ pillar: "Physical"
 extracted: 2026-04-03
 ---
 
+
+
 Parasite cleanse diet tips
 
 User: Maddie Galloway (95rrzm9nht@privaterelay.appleid.com)
@@ -16,8 +31,46 @@ Updated: 10/24/2025 18:13:12
 Exported: 3/31/2026 14:10:41
 Link: https://chatgpt.com/c/68fc2413-9924-832c-861e-b86563871425
 
+
+<!-- ATM-H-341 IN
+idea: "What are you supposed to eat while you do a parasite cleanse"
+section: "Prompt"
+position: 1
+of_total: 2
+prev: null
+context_above: "null"
+provenance: LOCAL
+nature: CLAIM
+nodes: [7, 6]
+pillar: Physical
+build_state: MISSING
+editorial: CLEAN
+strike_phase: 2B
+-->
+
 ## Prompt:
 What are you supposed to eat while you do a parasite cleanse
+
+<!-- ATM-H-341 OUT
+next: ATM-H-342
+context_below: "Great question — what you eat during a parasite cleanse matters just as much ..."
+-->
+
+<!-- ATM-H-342 IN
+idea: "Great question — what you eat during a parasite cleanse matters just as much ..."
+section: "Response"
+position: 2
+of_total: 2
+prev: ATM-H-341
+context_above: "What are you supposed to eat while you do a parasite cleanse"
+provenance: HYBRID
+nature: FRAMEWORK
+nodes: [7, 6]
+pillar: Physical
+build_state: EXISTS
+editorial: CLEAN
+strike_phase: 2B
+-->
 
 ## Response:
 Great question — what you eat during a parasite cleanse matters just as much as the cleanse itself. The goal is to weaken the parasites, starve them, support elimination, and repair the gut — not feed them or inflame your system.
@@ -195,6 +248,11 @@ D) A version tailored to gluten-free + hormone support (which I know matters to 
 
 
 Which one do you want next?
+
+<!-- ATM-H-342 OUT
+next: null
+context_below: "null"
+-->
 
 
 

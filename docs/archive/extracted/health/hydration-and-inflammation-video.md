@@ -1,3 +1,16 @@
+<!-- DOC-ENVELOPE
+id: DOC-H-22
+total_sections: 2
+total_atoms: 10
+dominant_provenance: LOCAL
+dominant_nature: CLAIM
+sections:
+  - name: "Prompt"
+    atoms: [ATM-H-311, ATM-H-313, ATM-H-315, ATM-H-317, ATM-H-319]
+  - name: "Response"
+    atoms: [ATM-H-312, ATM-H-314, ATM-H-316, ATM-H-318, ATM-H-320]
+-->
+
 ---
 title: "60-sec video script for sales"
 source_file: "ChatGPT-Hydration and Inflammation Video.txt"
@@ -8,6 +21,8 @@ pillar: "Physical"
 extracted: 2026-04-03
 ---
 
+
+
 Hydration and Inflammation Video
 
 User: Maddie Galloway (95rrzm9nht@privaterelay.appleid.com)
@@ -16,8 +31,46 @@ Updated: 11/17/2025 14:02:48
 Exported: 3/31/2026 14:14:29
 Link: https://chatgpt.com/c/691b5d76-d0fc-8332-b88a-0c53bce6d4c3
 
+
+<!-- ATM-H-311 IN
+idea: "I need a 60 second video breaking down why being able to listen to your body ..."
+section: "Prompt"
+position: 1
+of_total: 10
+prev: null
+context_above: "null"
+provenance: LOCAL
+nature: CLAIM
+nodes: [6, 8]
+pillar: Physical
+build_state: PARTIAL
+editorial: CLEAN
+strike_phase: 2C
+-->
+
 ## Prompt:
 I need a 60 second video breaking down why being able to listen to your body - inflammation & proper hydration I can send to a lead quick is there anything you can help me find?!
+
+<!-- ATM-H-311 OUT
+next: ATM-H-312
+context_below: "Yes — I can help you create a tight, polished, 60-second script and point you..."
+-->
+
+<!-- ATM-H-312 IN
+idea: "Yes — I can help you create a tight, polished, 60-second script and point you..."
+section: "Response"
+position: 2
+of_total: 10
+prev: ATM-H-311
+context_above: "I need a 60 second video breaking down why being able to listen to your body ..."
+provenance: HYBRID
+nature: SCRIPT
+nodes: [6, 8]
+pillar: Physical
+build_state: PARTIAL
+editorial: UNVERIFIED
+strike_phase: 2C
+-->
 
 ## Response:
 Yes — I can help you create a tight, polished, 60-second script and point you to AI tools that will generate the full video for you (voiceover + visuals + captions) in minutes.
@@ -138,8 +191,50 @@ make a version specifically for your water funnel
 
 Just tell me which format you want — and if you want it aesthetic, scientific, bold, soothing, or more “water truth–exposing” style.
 
+<!-- ATM-H-312 OUT
+next: ATM-H-313
+context_below: "Is there one we cans find I need to send it asap"
+-->
+
+<!-- ATM-H-313 IN
+idea: "Is there one we cans find I need to send it asap"
+section: "Prompt"
+position: 3
+of_total: 10
+prev: ATM-H-312
+context_above: "Yes — I can help you create a tight, polished, 60-second script and point you..."
+provenance: LOCAL
+nature: CLAIM
+nodes: [6, 8]
+pillar: Physical
+build_state: MISSING
+editorial: CLEAN
+strike_phase: 2B
+-->
+
 ## Prompt:
 Is there one we cans find I need to send it asap
+
+<!-- ATM-H-313 OUT
+next: ATM-H-314
+context_below: "Great — here’s a video you can send right now just make sure the usage is oka..."
+-->
+
+<!-- ATM-H-314 IN
+idea: "Great — here’s a video you can send right now just make sure the usage is oka..."
+section: "Response"
+position: 4
+of_total: 10
+prev: ATM-H-313
+context_above: "Is there one we cans find I need to send it asap"
+provenance: HYBRID
+nature: CLAIM
+nodes: [6, 8]
+pillar: Physical
+build_state: PARTIAL
+editorial: CLEAN
+strike_phase: 2C
+-->
 
 ## Response:
 Great — here’s a video you can send right now (just make sure the usage is okay for your lead):
@@ -152,8 +247,50 @@ Also helpful article: “Altus Biologics: The Relationship Between Hydration & I
 
 If you like, I can find 2–3 video clips specifically under 60 seconds, pre-edited for this exact message, and send you direct download links (so you can brand them and send immediately). Would you like that?
 
+<!-- ATM-H-314 OUT
+next: ATM-H-315
+context_below: "Yea please!!"
+-->
+
+<!-- ATM-H-315 IN
+idea: "Yea please!!"
+section: "Prompt"
+position: 5
+of_total: 10
+prev: ATM-H-314
+context_above: "Great — here’s a video you can send right now just make sure the usage is oka..."
+provenance: LOCAL
+nature: CLAIM
+nodes: [6, 8]
+pillar: Physical
+build_state: MISSING
+editorial: CLEAN
+strike_phase: 2B
+-->
+
 ## Prompt:
 Yea please!!
+
+<!-- ATM-H-315 OUT
+next: ATM-H-316
+context_below: "Here are a few short-video options you can send ASAP please check licensing i..."
+-->
+
+<!-- ATM-H-316 IN
+idea: "Here are a few short-video options you can send ASAP please check licensing i..."
+section: "Response"
+position: 6
+of_total: 10
+prev: ATM-H-315
+context_above: "Yea please!!"
+provenance: HYBRID
+nature: SCRIPT
+nodes: [6, 8]
+pillar: Physical
+build_state: PARTIAL
+editorial: CLEAN
+strike_phase: 2C
+-->
 
 ## Response:
 Here are a few short-video options you can send ASAP (please check licensing if it’s for commercial use).
@@ -183,8 +320,50 @@ Send to your lead via DM, email, or your preferred channel.
 
 If you like, I can find 5 more — all 60 secs or less, with inflammation + hydration specifically, and provide download-links + licensing status. Would that be helpful?
 
+<!-- ATM-H-316 OUT
+next: ATM-H-317
+context_below: "Yes please mainly about cellular inflammation and stress being the leading ca..."
+-->
+
+<!-- ATM-H-317 IN
+idea: "Yes please mainly about cellular inflammation and stress being the leading ca..."
+section: "Prompt"
+position: 7
+of_total: 10
+prev: ATM-H-316
+context_above: "Here are a few short-video options you can send ASAP please check licensing i..."
+provenance: LOCAL
+nature: CLAIM
+nodes: [6, 8]
+pillar: Physical
+build_state: PARTIAL
+editorial: CLEAN
+strike_phase: 2C
+-->
+
 ## Prompt:
 Yes please mainly about cellular inflammation and stress being the leading cause of disease and why all water is not created equal
+
+<!-- ATM-H-317 OUT
+next: ATM-H-318
+context_below: "Got you — here are fast, usable short videos all <60–90s that hit cellular in..."
+-->
+
+<!-- ATM-H-318 IN
+idea: "Got you — here are fast, usable short videos all <60–90s that hit cellular in..."
+section: "Response"
+position: 8
+of_total: 10
+prev: ATM-H-317
+context_above: "Yes please mainly about cellular inflammation and stress being the leading ca..."
+provenance: HYBRID
+nature: SCRIPT
+nodes: [6, 8]
+pillar: Physical
+build_state: PARTIAL
+editorial: CLEAN
+strike_phase: 2C
+-->
 
 ## Response:
 Got you — here are fast, usable short videos (all <60–90s) that hit cellular inflammation, stress → disease, and water quality differences.
@@ -330,8 +509,50 @@ why not all water is equal
 Just tell me:
 Do you want more videos OR do you want me to make you a script/storyboard for your own video right now?
 
+<!-- ATM-H-318 OUT
+next: ATM-H-319
+context_below: "Absolutely none of those worked"
+-->
+
+<!-- ATM-H-319 IN
+idea: "Absolutely none of those worked"
+section: "Prompt"
+position: 9
+of_total: 10
+prev: ATM-H-318
+context_above: "Got you — here are fast, usable short videos all <60–90s that hit cellular in..."
+provenance: LOCAL
+nature: CLAIM
+nodes: [6, 8]
+pillar: Physical
+build_state: MISSING
+editorial: CLEAN
+strike_phase: 2B
+-->
+
 ## Prompt:
 Absolutely none of those worked
+
+<!-- ATM-H-319 OUT
+next: ATM-H-320
+context_below: "Got you — thank you for telling me."
+-->
+
+<!-- ATM-H-320 IN
+idea: "Got you — thank you for telling me."
+section: "Response"
+position: 10
+of_total: 10
+prev: ATM-H-319
+context_above: "Absolutely none of those worked"
+provenance: HYBRID
+nature: CLAIM
+nodes: [6, 8]
+pillar: Physical
+build_state: PARTIAL
+editorial: CLEAN
+strike_phase: 2C
+-->
 
 ## Response:
 Got you — thank you for telling me.
@@ -402,6 +623,11 @@ Something clean, already edited, matching your talking points.
 
 Reply with the # and any specific vibe (aesthetic, scientific, feminine, bold, simple, etc.)
 And I’ll pull only the videos that match that exact style, no wasted time.
+
+<!-- ATM-H-320 OUT
+next: null
+context_below: "null"
+-->
 
 
 

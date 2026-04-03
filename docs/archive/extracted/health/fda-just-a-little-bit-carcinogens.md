@@ -1,3 +1,16 @@
+<!-- DOC-ENVELOPE
+id: DOC-H-13
+total_sections: 2
+total_atoms: 12
+dominant_provenance: LOCAL
+dominant_nature: CLAIM
+sections:
+  - name: "Prompt"
+    atoms: [ATM-H-147, ATM-H-149, ATM-H-151, ATM-H-153, ATM-H-155, ATM-H-157]
+  - name: "Response"
+    atoms: [ATM-H-148, ATM-H-150, ATM-H-152, ATM-H-154, ATM-H-156, ATM-H-158]
+-->
+
 ---
 title: "HIMYM meme: FDA-approved carcinogens"
 source_file: "Gemini-FDA_s _Just a Little Bit_ Carcinogens.md"
@@ -8,13 +21,53 @@ pillar: "Physical"
 extracted: 2026-04-03
 ---
 
+
+
 # FDA's "Just a Little Bit" Carcinogens
 
 **Exported:** 3/31/2026 14:02:17  
 **Link:** [https://gemini.google.com/app/98394a26e329def1?is_sa=1&is_sa=1&android-min-version=301356232&ios-min-version=322.0&campaign_id=bkws&utm_source=sem&utm_medium=paid-media&utm_campaign=bkws&pt=9008&mt=8&ct=p-growth-sem-bkws&gclsrc=aw.ds&gad_source=1&gad_campaignid=20108148196&gbraid=0AAAAApk5BhltUVZN2Eq5RDbAJnOdEvLzL&gclid=Cj0KCQjw4a3OBhCHARIsAChaqJNoxJNPrYg7dc6Sv7w0LPPOxufP6tPGGJNCUpzwr3cIl1sY3YDc14kaAj0VEALw_wcB](https://gemini.google.com/app/98394a26e329def1?is_sa=1&is_sa=1&android-min-version=301356232&ios-min-version=322.0&campaign_id=bkws&utm_source=sem&utm_medium=paid-media&utm_campaign=bkws&pt=9008&mt=8&ct=p-growth-sem-bkws&gclsrc=aw.ds&gad_source=1&gad_campaignid=20108148196&gbraid=0AAAAApk5BhltUVZN2Eq5RDbAJnOdEvLzL&gclid=Cj0KCQjw4a3OBhCHARIsAChaqJNoxJNPrYg7dc6Sv7w0LPPOxufP6tPGGJNCUpzwr3cIl1sY3YDc14kaAj0VEALw_wcB)
 
+
+<!-- ATM-H-147 IN
+idea: "I’m taking the clip from how I met your mother where Ted’s like pregnant wome..."
+section: "Prompt"
+position: 1
+of_total: 12
+prev: null
+context_above: "null"
+provenance: LOCAL
+nature: CLAIM
+nodes: [6, 8]
+pillar: Physical
+build_state: MISSING
+editorial: CLEAN
+strike_phase: 2B
+-->
+
 ## Prompt:
 I’m taking the clip from how I met your mother where Ted’s like pregnant women can’t have alcohol or sushi and lily goes no my doctor says it’s fine and then it shows the doctor going “just a little bit”. I want it to say humans can’t have “” and then list carinogens that we consume in America regularly that the fda is like ah “just a little bit is fine” even though it’s not lol
+
+<!-- ATM-H-147 OUT
+next: ATM-H-148
+context_below: "That is a hilariously dark way to use that meme. The 'Dr. Stangel' energy of ..."
+-->
+
+<!-- ATM-H-148 IN
+idea: "That is a hilariously dark way to use that meme. The 'Dr. Stangel' energy of ..."
+section: "Response"
+position: 2
+of_total: 12
+prev: ATM-H-147
+context_above: "I’m taking the clip from how I met your mother where Ted’s like pregnant wome..."
+provenance: HYBRID
+nature: CLAIM
+nodes: [6, 8]
+pillar: Physical
+build_state: PARTIAL
+editorial: CLEAN
+strike_phase: 2C
+-->
 
 ## Response:
 That is a hilariously dark way to use that meme. The "Dr. Stangel" energy of dismissive medical advice fits perfectly with the reality of food additives that are banned in other countries but considered "GRAS" (Generally Recognized As Safe) in the U.S.
@@ -42,8 +95,50 @@ The FDA typically operates on a **risk-based assessment** rather than the **prec
 
 Would you like me to help you draft the specific text overlays for your video clip to make sure the timing hits the punchline?
 
+<!-- ATM-H-148 OUT
+next: ATM-H-149
+context_below: "What are some more mainstream ones people will understand like Fluoride or ae..."
+-->
+
+<!-- ATM-H-149 IN
+idea: "What are some more mainstream ones people will understand like Fluoride or ae..."
+section: "Prompt"
+position: 3
+of_total: 12
+prev: ATM-H-148
+context_above: "That is a hilariously dark way to use that meme. The 'Dr. Stangel' energy of ..."
+provenance: LOCAL
+nature: CLAIM
+nodes: [6, 8]
+pillar: Physical
+build_state: MISSING
+editorial: CLEAN
+strike_phase: 2B
+-->
+
 ## Prompt:
 What are some more mainstream ones people will understand like Fluoride or aerosols
+
+<!-- ATM-H-149 OUT
+next: ATM-H-150
+context_below: "If you're going for maximum relatability and 'wait, that's in there?' vibes, ..."
+-->
+
+<!-- ATM-H-150 IN
+idea: "If you're going for maximum relatability and 'wait, that's in there?' vibes, ..."
+section: "Response"
+position: 4
+of_total: 12
+prev: ATM-H-149
+context_above: "What are some more mainstream ones people will understand like Fluoride or ae..."
+provenance: HYBRID
+nature: CLAIM
+nodes: [6, 8]
+pillar: Physical
+build_state: PARTIAL
+editorial: UNVERIFIED
+strike_phase: 2C
+-->
 
 ## Response:
 If you're going for maximum relatability and "wait, that's in there?" vibes, you want the stuff people see on labels or interact with daily. While "carcinogen" is a specific medical term, the public usually lumps it in with general "toxins" or endocrine disruptors that the FDA/EPA clears in small doses.
@@ -98,8 +193,50 @@ To make the HIMYM clip work, you could have the text pop up like this:
 
 Would you like me to generate a script with the specific time-stamps for when these names should flash on screen?
 
+<!-- ATM-H-150 OUT
+next: ATM-H-151
+context_below: "I love the fluoride chlorine and Glyphosate and pfas. Maybe add microplastics..."
+-->
+
+<!-- ATM-H-151 IN
+idea: "I love the fluoride chlorine and Glyphosate and pfas. Maybe add microplastics..."
+section: "Prompt"
+position: 5
+of_total: 12
+prev: ATM-H-150
+context_above: "If you're going for maximum relatability and 'wait, that's in there?' vibes, ..."
+provenance: LOCAL
+nature: CLAIM
+nodes: [6, 8]
+pillar: Physical
+build_state: PARTIAL
+editorial: CLEAN
+strike_phase: 2C
+-->
+
 ## Prompt:
 I love the fluoride chlorine and Glyphosate and pfas. Maybe add microplastics and heart attack level stress loads lol
+
+<!-- ATM-H-151 OUT
+next: ATM-H-152
+context_below: "That is the perfect 'modern apocalypse' starter pack. Adding Heart Attack Lev..."
+-->
+
+<!-- ATM-H-152 IN
+idea: "That is the perfect 'modern apocalypse' starter pack. Adding Heart Attack Lev..."
+section: "Response"
+position: 6
+of_total: 12
+prev: ATM-H-151
+context_above: "I love the fluoride chlorine and Glyphosate and pfas. Maybe add microplastics..."
+provenance: HYBRID
+nature: SCRIPT
+nodes: [6, 8]
+pillar: Physical
+build_state: PARTIAL
+editorial: CLEAN
+strike_phase: 2C
+-->
 
 ## Response:
 That is the perfect "modern apocalypse" starter pack. Adding **Heart Attack Level Stress** as a carcinogen is actually scientifically spot-on—chronic cortisol spikes are basically fuel for systemic inflammation.
@@ -134,8 +271,50 @@ If you're using a video editor (like CapCut or Premiere), try this pacing to mat
 
 **Would you like me to generate a specific "caption" or title for the video to help it go viral on TikTok or Reels?**
 
+<!-- ATM-H-152 OUT
+next: ATM-H-153
+context_below: "What are glyphosate and pfas found in"
+-->
+
+<!-- ATM-H-153 IN
+idea: "What are glyphosate and pfas found in"
+section: "Prompt"
+position: 7
+of_total: 12
+prev: ATM-H-152
+context_above: "That is the perfect 'modern apocalypse' starter pack. Adding Heart Attack Lev..."
+provenance: LOCAL
+nature: CLAIM
+nodes: [6, 8]
+pillar: Physical
+build_state: MISSING
+editorial: CLEAN
+strike_phase: 2B
+-->
+
 ## Prompt:
 What are glyphosate and pfas found in
+
+<!-- ATM-H-153 OUT
+next: ATM-H-154
+context_below: "This is where the meme gets really dark because these two are effectively 'ev..."
+-->
+
+<!-- ATM-H-154 IN
+idea: "This is where the meme gets really dark because these two are effectively 'ev..."
+section: "Response"
+position: 8
+of_total: 12
+prev: ATM-H-153
+context_above: "What are glyphosate and pfas found in"
+provenance: HYBRID
+nature: NARRATIVE
+nodes: [6, 8]
+pillar: Physical
+build_state: MISSING
+editorial: UNVERIFIED
+strike_phase: 2B
+-->
 
 ## Response:
 This is where the meme gets really dark because these two are effectively "everywhere" chemicals. While the FDA and EPA set "safe" parts-per-billion (ppb) limits, the list of products they are in is basically a catalog of a standard American home.
@@ -179,8 +358,50 @@ If you want to make the HIMYM clip specific to these, you could have the text sc
 
 **Would you like me to help you find the specific "parts per billion" numbers for certain brands to add as "fine print" in the corner of your video?**
 
+<!-- ATM-H-154 OUT
+next: ATM-H-155
+context_below: "Can we make a long list of everything that has it in it"
+-->
+
+<!-- ATM-H-155 IN
+idea: "Can we make a long list of everything that has it in it"
+section: "Prompt"
+position: 9
+of_total: 12
+prev: ATM-H-154
+context_above: "This is where the meme gets really dark because these two are effectively 'ev..."
+provenance: LOCAL
+nature: CLAIM
+nodes: [6, 8]
+pillar: Physical
+build_state: MISSING
+editorial: CLEAN
+strike_phase: 2B
+-->
+
 ## Prompt:
 Can we make a long list of everything that has it in it
+
+<!-- ATM-H-155 OUT
+next: ATM-H-156
+context_below: "This is the 'Blacklist' of ingredients that have tested positive for these ch..."
+-->
+
+<!-- ATM-H-156 IN
+idea: "This is the 'Blacklist' of ingredients that have tested positive for these ch..."
+section: "Response"
+position: 10
+of_total: 12
+prev: ATM-H-155
+context_above: "Can we make a long list of everything that has it in it"
+provenance: HYBRID
+nature: NARRATIVE
+nodes: [6, 8]
+pillar: Physical
+build_state: PARTIAL
+editorial: UNVERIFIED
+strike_phase: 2C
+-->
 
 ## Response:
 This is the "Blacklist" of ingredients that have tested positive for these chemicals. To keep with your meme's energy, you can imagine Ted rattling these off while Lily holds a box of "organic-looking" crackers.
@@ -252,8 +473,50 @@ You know those memes where the text just scrolls incredibly fast over the screen
 
 **Would you like me to condense this into a "Top 10" list of the most shocking ones to keep the video punchy?**
 
+<!-- ATM-H-156 OUT
+next: ATM-H-157
+context_below: "Carcinogens found in Cheetos listed"
+-->
+
+<!-- ATM-H-157 IN
+idea: "Carcinogens found in Cheetos listed"
+section: "Prompt"
+position: 11
+of_total: 12
+prev: ATM-H-156
+context_above: "This is the 'Blacklist' of ingredients that have tested positive for these ch..."
+provenance: LOCAL
+nature: CLAIM
+nodes: [6, 8]
+pillar: Physical
+build_state: MISSING
+editorial: CLEAN
+strike_phase: 2B
+-->
+
 ## Prompt:
 Carcinogens found in Cheetos listed
+
+<!-- ATM-H-157 OUT
+next: ATM-H-158
+context_below: "This is arguably the most famous example because the colors are so aggressive..."
+-->
+
+<!-- ATM-H-158 IN
+idea: "This is arguably the most famous example because the colors are so aggressive..."
+section: "Response"
+position: 12
+of_total: 12
+prev: ATM-H-157
+context_above: "Carcinogens found in Cheetos listed"
+provenance: HYBRID
+nature: FRAMEWORK
+nodes: [6, 8]
+pillar: Physical
+build_state: PARTIAL
+editorial: CLEAN
+strike_phase: 2C
+-->
 
 ## Response:
 This is arguably the most famous example because the colors are so aggressive they stay on your fingers for days. To be clear, the FDA currently classifies these as "Safe," but they are some of the most contested chemicals in the American diet.
@@ -297,6 +560,15 @@ You could have Ted holding a single Flamin' Hot Cheeto like it's a piece of radi
 **Ted:** "You're eating **Petroleum-based Red 40, Benzidine, and Acrylamide** for lunch?!" **Lily:** "It's just a snack, Ted! The FDA says the levels are negligible!" **The Doctor:** _"Just a little bit..."_
 
 **Would you like me to help you find the "banned list" for other snacks like Takis or Doritos to add to your video?**
+
+
+
+---
+
+<!-- ATM-H-158 OUT
+next: null
+context_below: "null"
+-->
 
 
 

@@ -1,3 +1,16 @@
+<!-- DOC-ENVELOPE
+id: DOC-H-15
+total_sections: 2
+total_atoms: 18
+dominant_provenance: LOCAL
+dominant_nature: CLAIM
+sections:
+  - name: "Prompt"
+    atoms: [ATM-H-219, ATM-H-221, ATM-H-223, ATM-H-225, ATM-H-227, ATM-H-229, ATM-H-231, ATM-H-233, ATM-H-235]
+  - name: "Response"
+    atoms: [ATM-H-220, ATM-H-222, ATM-H-224, ATM-H-226, ATM-H-228, ATM-H-230, ATM-H-232, ATM-H-234, ATM-H-236]
+-->
+
 ---
 title: "Cycle-based gut rebuild, supplements, exercise"
 source_file: "ChatGPT-Gut Rebuilding Diet Plan.txt"
@@ -8,6 +21,8 @@ pillar: "Physical"
 extracted: 2026-04-03
 ---
 
+
+
 Gut Rebuilding Diet Plan
 
 User: Maddie Galloway (95rrzm9nht@privaterelay.appleid.com)
@@ -16,8 +31,46 @@ Updated: 3/31/2026 12:41:59
 Exported: 3/31/2026 12:42:00
 Link: https://chatgpt.com/g/g-p-681675a28d988191995dc4b68a2bc1f1-healing-spiral/c/671ed5cd-e134-8003-8a8a-7162d76fb9db
 
+
+<!-- ATM-H-219 IN
+idea: "Will you help me come up with a very comprehensive well rounded diet plan to ..."
+section: "Prompt"
+position: 1
+of_total: 18
+prev: null
+context_above: "null"
+provenance: LOCAL
+nature: NARRATIVE
+nodes: [7, 5, 6]
+pillar: Physical
+build_state: EXISTS
+editorial: CLEAN
+strike_phase: 2B
+-->
+
 ## Prompt:
 Will you help me come up with a very comprehensive well rounded diet plan to help rebuild my gut microbiome after a lot of antibiotics. For a female with is 24, trying to regulate her hormones and eat within her cycle. I need to keep my blood sugar balanced and make sure I’m taking the right supplements if I’m not getting them from my food. Please include research/findings and a few different options/recommendations so I can see what feels best to me personally - please ask any questions that will help you!
+
+<!-- ATM-H-219 OUT
+next: ATM-H-220
+context_below: "Updated saved memory"
+-->
+
+<!-- ATM-H-220 IN
+idea: "Updated saved memory"
+section: "Response"
+position: 2
+of_total: 18
+prev: ATM-H-219
+context_above: "Will you help me come up with a very comprehensive well rounded diet plan to ..."
+provenance: HYBRID
+nature: CLAIM
+nodes: [7, 5, 6]
+pillar: Physical
+build_state: PARTIAL
+editorial: CLEAN
+strike_phase: 2C
+-->
 
 ## Response:
 Updated saved memory
@@ -37,12 +90,54 @@ Lifestyle Factors: Anything else relevant to your energy needs or physical activ
 
 Once I have a bit more info, I’ll dive into specifics for each phase of your cycle, meal and snack ideas, and key nutrients that support gut health, hormone regulation, and blood sugar balance.
 
+<!-- ATM-H-220 OUT
+next: ATM-H-221
+context_below: "I am gluten free, and have a cold food human design type. I work from home so..."
+-->
+
+<!-- ATM-H-221 IN
+idea: "I am gluten free, and have a cold food human design type. I work from home so..."
+section: "Prompt"
+position: 3
+of_total: 18
+prev: ATM-H-220
+context_above: "Updated saved memory"
+provenance: LOCAL
+nature: CLAIM
+nodes: [7, 5, 6]
+pillar: Physical
+build_state: PARTIAL
+editorial: CLEAN
+strike_phase: 2C
+-->
+
 ## Prompt:
 I am gluten free, and have a cold food human design type. I work from home so can be flexible with my schedule and want to prioritize my gut and regulations my hormones. 
 3. I don’t take any supplements right now but thinking I want to take b2, d3 and k2(or maybe it’s 12) and a probiotic/magnesium if that’s what you recommend!
 
 
 I want to start doing Pilates or yoga in the morning and walking at night with maybe a lunch time walk thrown in there so if you have ways I can stay consistent with that I’m open to hearing it as well!
+
+<!-- ATM-H-221 OUT
+next: ATM-H-222
+context_below: "Updated saved memory"
+-->
+
+<!-- ATM-H-222 IN
+idea: "Updated saved memory"
+section: "Response"
+position: 4
+of_total: 18
+prev: ATM-H-221
+context_above: "I am gluten free, and have a cold food human design type. I work from home so..."
+provenance: HYBRID
+nature: FRAMEWORK
+nodes: [7, 5, 6]
+pillar: Physical
+build_state: EXISTS
+editorial: CLEAN
+strike_phase: 2B
+-->
 
 ## Response:
 Updated saved memory
@@ -163,8 +258,50 @@ Track Progress: Use a simple tracker to mark each workout or walk. This small st
 
 This plan should provide flexibility for you to try different combinations and see what works best. Let me know if you want to dig deeper into any of these areas!
 
+<!-- ATM-H-222 OUT
+next: ATM-H-223
+context_below: "Do you think I should take Ashwood Gonda mushroom"
+-->
+
+<!-- ATM-H-223 IN
+idea: "Do you think I should take Ashwood Gonda mushroom"
+section: "Prompt"
+position: 5
+of_total: 18
+prev: ATM-H-222
+context_above: "Updated saved memory"
+provenance: LOCAL
+nature: CLAIM
+nodes: [7, 5, 6]
+pillar: Physical
+build_state: MISSING
+editorial: CLEAN
+strike_phase: 2B
+-->
+
 ## Prompt:
 Do you think I should take Ashwood Gonda mushroom
+
+<!-- ATM-H-223 OUT
+next: ATM-H-224
+context_below: "Ashwagandha and cordyceps mushrooms each offer unique benefits, particularly ..."
+-->
+
+<!-- ATM-H-224 IN
+idea: "Ashwagandha and cordyceps mushrooms each offer unique benefits, particularly ..."
+section: "Response"
+position: 6
+of_total: 18
+prev: ATM-H-223
+context_above: "Do you think I should take Ashwood Gonda mushroom"
+provenance: HYBRID
+nature: FRAMEWORK
+nodes: [7, 5, 6]
+pillar: Physical
+build_state: EXISTS
+editorial: CLEAN
+strike_phase: 2B
+-->
 
 ## Response:
 Ashwagandha and cordyceps mushrooms each offer unique benefits, particularly for stress, energy, and hormone regulation. Here’s a quick breakdown of each to help you decide if either (or both) could be helpful for you:
@@ -210,8 +347,50 @@ If you're looking to boost energy and support blood sugar, cordyceps could be a 
 
 You could even try a combination if both sound beneficial; some people find they complement each other well. Let me know if you'd like more specific guidance on dosages or when to take them for optimal benefit.
 
+<!-- ATM-H-224 OUT
+next: ATM-H-225
+context_below: "How do I know if ashwagandha will make my auto immune stuff worse or better"
+-->
+
+<!-- ATM-H-225 IN
+idea: "How do I know if ashwagandha will make my auto immune stuff worse or better"
+section: "Prompt"
+position: 7
+of_total: 18
+prev: ATM-H-224
+context_above: "Ashwagandha and cordyceps mushrooms each offer unique benefits, particularly ..."
+provenance: LOCAL
+nature: CLAIM
+nodes: [7, 5, 6]
+pillar: Physical
+build_state: PARTIAL
+editorial: CLEAN
+strike_phase: 2C
+-->
+
 ## Prompt:
 How do I know if ashwagandha will make my auto immune stuff worse or better
+
+<!-- ATM-H-225 OUT
+next: ATM-H-226
+context_below: "Updated saved memory"
+-->
+
+<!-- ATM-H-226 IN
+idea: "Updated saved memory"
+section: "Response"
+position: 8
+of_total: 18
+prev: ATM-H-225
+context_above: "How do I know if ashwagandha will make my auto immune stuff worse or better"
+provenance: HYBRID
+nature: NARRATIVE
+nodes: [7, 5, 6]
+pillar: Physical
+build_state: EXISTS
+editorial: CLEAN
+strike_phase: 2B
+-->
 
 ## Response:
 Updated saved memory
@@ -231,8 +410,50 @@ Consider Other Adaptogens: If you’re unsure, consider gentler adaptogens like 
 
 It's always a good idea to consult with a healthcare provider experienced in both adaptogens and autoimmune health, as they can help you track your response safely.
 
+<!-- ATM-H-226 OUT
+next: ATM-H-227
+context_below: "I think I will try holy basil, reishi mushroom and cordyceps, will you tell m..."
+-->
+
+<!-- ATM-H-227 IN
+idea: "I think I will try holy basil, reishi mushroom and cordyceps, will you tell m..."
+section: "Prompt"
+position: 9
+of_total: 18
+prev: ATM-H-226
+context_above: "Updated saved memory"
+provenance: LOCAL
+nature: CLAIM
+nodes: [7, 5, 6]
+pillar: Physical
+build_state: MISSING
+editorial: CLEAN
+strike_phase: 2B
+-->
+
 ## Prompt:
 I think I will try holy basil, reishi mushroom and cordyceps, will you tell me more about the holy basil and the reishi!
+
+<!-- ATM-H-227 OUT
+next: ATM-H-228
+context_below: "Updated saved memory"
+-->
+
+<!-- ATM-H-228 IN
+idea: "Updated saved memory"
+section: "Response"
+position: 10
+of_total: 18
+prev: ATM-H-227
+context_above: "I think I will try holy basil, reishi mushroom and cordyceps, will you tell m..."
+provenance: HYBRID
+nature: FRAMEWORK
+nodes: [7, 5, 6]
+pillar: Physical
+build_state: EXISTS
+editorial: CLEAN
+strike_phase: 2B
+-->
 
 ## Response:
 Updated saved memory
@@ -283,8 +504,50 @@ Synergistic Benefits: Together, these adaptogens may provide a well-rounded supp
 
 Feel free to check in on how they’re working for you or if you need adjustments based on your response!
 
+<!-- ATM-H-228 OUT
+next: ATM-H-229
+context_below: "I love protein pancakes, fried rice, breakfast burritos, where do these best ..."
+-->
+
+<!-- ATM-H-229 IN
+idea: "I love protein pancakes, fried rice, breakfast burritos, where do these best ..."
+section: "Prompt"
+position: 11
+of_total: 18
+prev: ATM-H-228
+context_above: "Updated saved memory"
+provenance: LOCAL
+nature: QUESTION
+nodes: [7, 5, 6]
+pillar: Physical
+build_state: MISSING
+editorial: CLEAN
+strike_phase: 2B
+-->
+
 ## Prompt:
 I love protein pancakes, fried rice, breakfast burritos, where do these best fit into my cycle syncing diet plan?
+
+<!-- ATM-H-229 OUT
+next: ATM-H-230
+context_below: "Updated saved memory"
+-->
+
+<!-- ATM-H-230 IN
+idea: "Updated saved memory"
+section: "Response"
+position: 12
+of_total: 18
+prev: ATM-H-229
+context_above: "I love protein pancakes, fried rice, breakfast burritos, where do these best ..."
+provenance: HYBRID
+nature: CLAIM
+nodes: [7, 5, 6]
+pillar: Physical
+build_state: EXISTS
+editorial: CLEAN
+strike_phase: 2B
+-->
 
 ## Response:
 Updated saved memory
@@ -328,14 +591,98 @@ Luteal Phase: Pack the burrito with ingredients like sweet potatoes or black bea
 
 You could easily rotate these through different phases by changing up the ingredients to match each phase’s needs!
 
+<!-- ATM-H-230 OUT
+next: ATM-H-231
+context_below: "Thank you!!"
+-->
+
+<!-- ATM-H-231 IN
+idea: "Thank you!!"
+section: "Prompt"
+position: 13
+of_total: 18
+prev: ATM-H-230
+context_above: "Updated saved memory"
+provenance: LOCAL
+nature: CLAIM
+nodes: [7, 5, 6]
+pillar: Physical
+build_state: MISSING
+editorial: CLEAN
+strike_phase: 2B
+-->
+
 ## Prompt:
 Thank you!!
+
+<!-- ATM-H-231 OUT
+next: ATM-H-232
+context_below: "You’re so welcome! I'm glad you found it helpful. Enjoy experimenting with yo..."
+-->
+
+<!-- ATM-H-232 IN
+idea: "You’re so welcome! I'm glad you found it helpful. Enjoy experimenting with yo..."
+section: "Response"
+position: 14
+of_total: 18
+prev: ATM-H-231
+context_above: "Thank you!!"
+provenance: HYBRID
+nature: CLAIM
+nodes: [7, 5, 6]
+pillar: Physical
+build_state: MISSING
+editorial: CLEAN
+strike_phase: 2B
+-->
 
 ## Response:
 You’re so welcome! I'm glad you found it helpful. Enjoy experimenting with your meals, and let me know if you need more ideas along the way. Happy cycle syncing! 😊
 
+<!-- ATM-H-232 OUT
+next: ATM-H-233
+context_below: "Will you put together a grocery shopping list that is saving me money when po..."
+-->
+
+<!-- ATM-H-233 IN
+idea: "Will you put together a grocery shopping list that is saving me money when po..."
+section: "Prompt"
+position: 15
+of_total: 18
+prev: ATM-H-232
+context_above: "You’re so welcome! I'm glad you found it helpful. Enjoy experimenting with yo..."
+provenance: LOCAL
+nature: CLAIM
+nodes: [7, 5, 6]
+pillar: Physical
+build_state: MISSING
+editorial: CLEAN
+strike_phase: 2B
+-->
+
 ## Prompt:
 Will you put together a grocery shopping list that is saving me money when possible and not wasting food but will let me eat in accordance to your diet/plan!
+
+<!-- ATM-H-233 OUT
+next: ATM-H-234
+context_below: "Here’s a grocery shopping list designed to align with your cycle syncing diet..."
+-->
+
+<!-- ATM-H-234 IN
+idea: "Here’s a grocery shopping list designed to align with your cycle syncing diet..."
+section: "Response"
+position: 16
+of_total: 18
+prev: ATM-H-233
+context_above: "Will you put together a grocery shopping list that is saving me money when po..."
+provenance: HYBRID
+nature: PROTOCOL
+nodes: [7, 5, 6]
+pillar: Physical
+build_state: PARTIAL
+editorial: CLEAN
+strike_phase: 2C
+-->
 
 ## Response:
 Here’s a grocery shopping list designed to align with your cycle syncing diet plan while emphasizing cost-effectiveness and minimizing food waste. I’ll categorize the items based on the meals and nutrients discussed, focusing on ingredients that can be used across multiple dishes.
@@ -446,8 +793,50 @@ Dinner: Quinoa bowls with roasted veggies and chickpeas.
 
 By focusing on versatile ingredients, you can enjoy a variety of meals throughout the week while staying aligned with your dietary goals. Let me know if you want any more specific ideas or adjustments!
 
+<!-- ATM-H-234 OUT
+next: ATM-H-235
+context_below: "Oh actually will you help me put together a shopping list for each of my phas..."
+-->
+
+<!-- ATM-H-235 IN
+idea: "Oh actually will you help me put together a shopping list for each of my phas..."
+section: "Prompt"
+position: 17
+of_total: 18
+prev: ATM-H-234
+context_above: "Here’s a grocery shopping list designed to align with your cycle syncing diet..."
+provenance: LOCAL
+nature: CLAIM
+nodes: [7, 5, 6]
+pillar: Physical
+build_state: MISSING
+editorial: CLEAN
+strike_phase: 2B
+-->
+
 ## Prompt:
 Oh actually will you help me put together a shopping list for each of my phases so I can go shopping on the day before and then eat accordingly
+
+<!-- ATM-H-235 OUT
+next: ATM-H-236
+context_below: "Sure! Here’s a detailed grocery shopping list for each phase of your menstrua..."
+-->
+
+<!-- ATM-H-236 IN
+idea: "Sure! Here’s a detailed grocery shopping list for each phase of your menstrua..."
+section: "Response"
+position: 18
+of_total: 18
+prev: ATM-H-235
+context_above: "Oh actually will you help me put together a shopping list for each of my phas..."
+provenance: HYBRID
+nature: PROTOCOL
+nodes: [7, 5, 6]
+pillar: Physical
+build_state: PARTIAL
+editorial: CLEAN
+strike_phase: 2C
+-->
 
 ## Response:
 Sure! Here’s a detailed grocery shopping list for each phase of your menstrual cycle, allowing you to shop before each phase starts. This list will help you focus on foods that align with your nutritional needs during each phase while minimizing waste.
@@ -626,6 +1015,11 @@ Meal Prep: Consider prepping meals in advance based on this list, which can save
 
 
 This approach should give you the flexibility to enjoy nutritious meals tailored to your hormonal needs while keeping your grocery shopping efficient. Let me know if you need any adjustments or additional information!
+
+<!-- ATM-H-236 OUT
+next: null
+context_below: "null"
+-->
 
 
 
