@@ -1,3 +1,17 @@
+<!-- DOC-ENVELOPE
+id: DOC-W-06
+total_sections: 3
+total_atoms: 3
+dominant_provenance: LOCAL
+dominant_nature: CLAIM
+sections:
+  - name: "Main"
+    atoms: [ATM-W-059]
+  - name: "Prompt"
+    atoms: [ATM-W-060]
+  - name: "Response"
+    atoms: [ATM-W-061]
+-->
 ---
 title: "Ear protocol (no ear canal use, safer alts)"
 source_file: "ChatGPT-Kangen Water and Ear Aches.txt"
@@ -8,6 +22,24 @@ pillar: "Physical"
 extracted: 2026-04-03
 ---
 
+<!-- ATM-W-059 IN
+idea: "Kangen Water and Ear Aches"
+section: "Main"
+position: 1
+of_total: 3
+prev: null
+context_above: null
+provenance: LOCAL
+nature: CLAIM
+nodes: [9]
+pillar: Physical
+build_state: MISSING
+editorial: CLEAN
+strike_phase: 2C
+-->
+
+
+
 Kangen Water and Ear Aches
 
 User: Maddie Galloway (95rrzm9nht@privaterelay.appleid.com)
@@ -16,8 +48,52 @@ Updated: 3/30/2026 21:38:11
 Exported: 3/31/2026 12:49:45
 Link: https://chatgpt.com/g/g-p-681675a28d988191995dc4b68a2bc1f1-healing-spiral/c/698e0c86-ed24-832f-bf88-31b8810b84c1
 
+
+<!-- ATM-W-059 OUT
+next: ATM-W-060
+context_below: "Is there a 2.5 or 11.5 kangen water protocol for ear aches or fluid in the middl..."
+-->
+
+<!-- ATM-W-060 IN
+idea: "Is there a 2.5 or 11.5 kangen water protocol for ear aches or fluid in the middl..."
+section: "Prompt"
+position: 2
+of_total: 3
+prev: ATM-W-059
+context_above: "Kangen Water and Ear Aches"
+provenance: LOCAL
+nature: QUESTION
+nodes: [9]
+pillar: Physical
+build_state: PARTIAL
+editorial: CLEAN
+strike_phase: 2C
+-->
+
 ## Prompt:
 Is there a 2.5 or 11.5 kangen water protocol for ear aches or fluid in the middle ear?
+
+
+<!-- ATM-W-060 OUT
+next: ATM-W-061
+context_below: "Short answer: there isn’t an official, medically recognized “2.5 or 11.5 Kangen..."
+-->
+
+<!-- ATM-W-061 IN
+idea: "Short answer: there isn’t an official, medically recognized “2.5 or 11.5 Kangen..."
+section: "Response"
+position: 3
+of_total: 3
+prev: ATM-W-060
+context_above: "Is there a 2.5 or 11.5 kangen water protocol for ear aches or fluid in the middl..."
+provenance: HYBRID
+nature: INSTRUCTION
+nodes: [9]
+pillar: Physical
+build_state: EXISTS
+editorial: FLAGGED
+strike_phase: 1B
+-->
 
 ## Response:
 Short answer: there isn’t an official, medically recognized “2.5 or 11.5 Kangen ear protocol” — and it’s important to be careful here because the ear is delicate, especially if there’s fluid or a possible infection.
@@ -144,4 +220,8 @@ If you want, tell me:
 
 
 
-Powered by ChatGPT Exporter (https://www.chatgptexporter.com)
+
+<!-- ATM-W-061 OUT
+next: null
+context_below: null
+-->

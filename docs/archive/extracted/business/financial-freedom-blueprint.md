@@ -1,3 +1,17 @@
+<!-- DOC-ENVELOPE
+id: DOC-B-06
+total_sections: 3
+total_atoms: 5
+dominant_provenance: LOCAL
+dominant_nature: INSTRUCTION
+sections:
+  - name: "Main"
+    atoms: [ATM-B-125]
+  - name: "Prompt"
+    atoms: [ATM-B-126, ATM-B-128]
+  - name: "Response"
+    atoms: [ATM-B-127, ATM-B-129]
+-->
 ---
 title: "12-step phased path to independence"
 source_file: "ChatGPT-Financial Freedom Blueprint.txt"
@@ -8,6 +22,24 @@ pillar: "Financial"
 extracted: 2026-04-03
 ---
 
+<!-- ATM-B-125 IN
+idea: "Financial Freedom Blueprint"
+section: "Main"
+position: 1
+of_total: 5
+prev: null
+context_above: null
+provenance: LOCAL
+nature: MODEL
+nodes: [4, 6, 10]
+pillar: Financial
+build_state: MISSING
+editorial: CLEAN
+strike_phase: 4A
+-->
+
+
+
 Financial Freedom Blueprint
 
 User: Maddie Galloway (95rrzm9nht@privaterelay.appleid.com)
@@ -16,8 +48,52 @@ Updated: 3/31/2026 13:11:43
 Exported: 3/31/2026 13:11:44
 Link: https://chatgpt.com/g/g-p-681675945c108191aebfa81457898ccd-business/c/686c87f2-c4c4-8003-856a-2a2969583e32
 
+
+<!-- ATM-B-125 OUT
+next: ATM-B-126
+context_below: "What are the steps to financially free"
+-->
+
+<!-- ATM-B-126 IN
+idea: "What are the steps to financially free"
+section: "Prompt"
+position: 2
+of_total: 5
+prev: ATM-B-125
+context_above: "Financial Freedom Blueprint"
+provenance: LOCAL
+nature: CLAIM
+nodes: [4, 6, 10]
+pillar: Financial
+build_state: MISSING
+editorial: CLEAN
+strike_phase: 4A
+-->
+
 ## Prompt:
 What are the steps to financially free
+
+
+<!-- ATM-B-126 OUT
+next: ATM-B-127
+context_below: "Becoming financially free means having enough income (typically passive or flexi..."
+-->
+
+<!-- ATM-B-127 IN
+idea: "Becoming financially free means having enough income (typically passive or flexi..."
+section: "Response"
+position: 3
+of_total: 5
+prev: ATM-B-126
+context_above: "What are the steps to financially free"
+provenance: HYBRID
+nature: INSTRUCTION
+nodes: [4, 6, 10]
+pillar: Financial
+build_state: EXISTS
+editorial: CLEAN
+strike_phase: 1C
+-->
 
 ## Response:
 Becoming financially free means having enough income (typically passive or flexible) to cover your living expenses without depending on a job you don’t want. It's different for everyone, but here’s a grounded and empowering path you can follow—adaptable to your unique values, skills, and energy:
@@ -161,8 +237,52 @@ Whether that means living in a van, running a nonprofit, raising a family, or be
 
 Want me to turn this into a printable checklist or create a version that integrates Human Design or spiritual alignment with your strategy?
 
+
+<!-- ATM-B-127 OUT
+next: ATM-B-128
+context_below: "So financial freedom’s is when you 10x your survival number right? Or what’s is..."
+-->
+
+<!-- ATM-B-128 IN
+idea: "So financial freedom’s is when you 10x your survival number right? Or what’s is..."
+section: "Prompt"
+position: 4
+of_total: 5
+prev: ATM-B-127
+context_above: "Becoming financially free means having enough income (typically passive or flexi..."
+provenance: LOCAL
+nature: QUESTION
+nodes: [4, 6, 10]
+pillar: Financial
+build_state: PARTIAL
+editorial: CLEAN
+strike_phase: 1C
+-->
+
 ## Prompt:
 So financial freedom’s is when you 10x your survival number right? Or what’s is financial stability and there’s one other
+
+
+<!-- ATM-B-128 OUT
+next: ATM-B-129
+context_below: "Great question—and yes, you're tapping into something powerful."
+-->
+
+<!-- ATM-B-129 IN
+idea: "Great question—and yes, you're tapping into something powerful."
+section: "Response"
+position: 5
+of_total: 5
+prev: ATM-B-128
+context_above: "So financial freedom’s is when you 10x your survival number right? Or what’s is..."
+provenance: HYBRID
+nature: INSTRUCTION
+nodes: [4, 6, 10]
+pillar: Financial
+build_state: EXISTS
+editorial: CLEAN
+strike_phase: 1C
+-->
 
 ## Response:
 Great question—and yes, you're tapping into something powerful.
@@ -242,4 +362,8 @@ Would you like a personalized breakdown of these numbers based on your own lifes
 
 
 
-Powered by ChatGPT Exporter (https://www.chatgptexporter.com)
+
+<!-- ATM-B-129 OUT
+next: null
+context_below: null
+-->

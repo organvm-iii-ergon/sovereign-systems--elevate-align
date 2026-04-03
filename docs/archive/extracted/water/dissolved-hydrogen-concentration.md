@@ -1,3 +1,17 @@
+<!-- DOC-ENVELOPE
+id: DOC-W-02
+total_sections: 3
+total_atoms: 3
+dominant_provenance: LOCAL
+dominant_nature: PRODUCT
+sections:
+  - name: "Main"
+    atoms: [ATM-W-004]
+  - name: "Prompt"
+    atoms: [ATM-W-005]
+  - name: "Response"
+    atoms: [ATM-W-006]
+-->
 ---
 title: "K8 H2 levels, independent vs manufacturer claims"
 source_file: "ChatGPT-Dissolved hydrogen concentration.txt"
@@ -8,6 +22,24 @@ pillar: "Physical"
 extracted: 2026-04-03
 ---
 
+<!-- ATM-W-004 IN
+idea: "Dissolved hydrogen concentration"
+section: "Main"
+position: 1
+of_total: 3
+prev: null
+context_above: null
+provenance: LOCAL
+nature: CLAIM
+nodes: [7]
+pillar: Physical
+build_state: MISSING
+editorial: CLEAN
+strike_phase: 2C
+-->
+
+
+
 Dissolved hydrogen concentration
 
 User: Maddie Galloway (95rrzm9nht@privaterelay.appleid.com)
@@ -16,8 +48,52 @@ Updated: 10/19/2025 9:21:00
 Exported: 3/31/2026 13:05:21
 Link: https://chatgpt.com/g/g-p-681675945c108191aebfa81457898ccd-business/c/68deb709-ae74-8324-8efa-6d9b25b7ae4a
 
+
+<!-- ATM-W-004 OUT
+next: ATM-W-005
+context_below: "Can you tell me how much dissolved hydrogen gas concentration enagic water has"
+-->
+
+<!-- ATM-W-005 IN
+idea: "Can you tell me how much dissolved hydrogen gas concentration enagic water has"
+section: "Prompt"
+position: 2
+of_total: 3
+prev: ATM-W-004
+context_above: "Dissolved hydrogen concentration"
+provenance: LOCAL
+nature: PRODUCT
+nodes: [7]
+pillar: Physical
+build_state: PARTIAL
+editorial: CLEAN
+strike_phase: 2C
+-->
+
 ## Prompt:
 Can you tell me how much dissolved hydrogen gas concentration enagic water has
+
+
+<!-- ATM-W-005 OUT
+next: ATM-W-006
+context_below: "I couldn’t find a definitive, reliably measured value published by Enagic for th..."
+-->
+
+<!-- ATM-W-006 IN
+idea: "I couldn’t find a definitive, reliably measured value published by Enagic for th..."
+section: "Response"
+position: 3
+of_total: 3
+prev: ATM-W-005
+context_above: "Can you tell me how much dissolved hydrogen gas concentration enagic water has"
+provenance: HYBRID
+nature: PRODUCT
+nodes: [7]
+pillar: Physical
+build_state: EXISTS
+editorial: CLEAN
+strike_phase: 2C
+-->
 
 ## Response:
 I couldn’t find a definitive, reliably measured value published by Enagic for the dissolved hydrogen (H₂) concentration in their water under all operating conditions. However, here’s what the available information suggests, along with caveats and ranges:
@@ -60,4 +136,8 @@ If you like, I can dig up independent test reports (lab measurements) on Enagic 
 
 
 
-Powered by ChatGPT Exporter (https://www.chatgptexporter.com)
+
+<!-- ATM-W-006 OUT
+next: null
+context_below: null
+-->

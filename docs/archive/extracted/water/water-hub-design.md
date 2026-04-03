@@ -1,3 +1,19 @@
+<!-- DOC-ENVELOPE
+id: DOC-W-10
+total_sections: 4
+total_atoms: 26
+dominant_provenance: HYBRID
+dominant_nature: CLAIM
+sections:
+  - name: "Main"
+    atoms: [ATM-W-089]
+  - name: "Prompt-Response"
+    atoms: [ATM-W-090, ATM-W-091, ATM-W-092, ATM-W-093, ATM-W-094, ATM-W-095, ATM-W-096, ATM-W-097, ATM-W-098, ATM-W-099, ATM-W-100, ATM-W-101, ATM-W-102, ATM-W-103, ATM-W-104]
+  - name: "Prompt"
+    atoms: [ATM-W-105, ATM-W-107, ATM-W-109, ATM-W-111, ATM-W-113]
+  - name: "Response"
+    atoms: [ATM-W-106, ATM-W-108, ATM-W-110, ATM-W-112, ATM-W-114]
+-->
 ---
 title: "Full Water Hub architecture: quiz, 5 branches"
 source_file: "ChatGPT-Water hub design.txt"
@@ -8,6 +24,24 @@ pillar: "Physical"
 extracted: 2026-04-03
 ---
 
+<!-- ATM-W-089 IN
+idea: "Water hub design"
+section: "Main"
+position: 1
+of_total: 26
+prev: null
+context_above: null
+provenance: LOCAL
+nature: CLAIM
+nodes: [11, 12]
+pillar: Physical
+build_state: MISSING
+editorial: CLEAN
+strike_phase: 2C
+-->
+
+
+
 Water hub design
 
 User: Maddie Galloway (95rrzm9nht@privaterelay.appleid.com)
@@ -16,14 +50,59 @@ Updated: 3/30/2026 21:41:40
 Exported: 3/31/2026 12:52:23
 Link: https://chatgpt.com/g/g-p-681675a28d988191995dc4b68a2bc1f1-healing-spiral/c/69c42bd0-5188-83e8-beb4-c39cc4cd8f1e
 
+
+<!-- ATM-W-089 OUT
+next: ATM-W-090
+context_below: "“okay, so branching off my sovereign systems, the first thing I want to focus on..."
+-->
+
+<!-- ATM-W-090 IN
+idea: "“okay, so branching off my sovereign systems, the first thing I want to focus on..."
+section: "Prompt-Response"
+position: 2
+of_total: 26
+prev: ATM-W-089
+context_above: "Water hub design"
+provenance: HYBRID
+nature: NARRATIVE
+nodes: [11, 12]
+pillar: Physical
+build_state: EXISTS
+editorial: CLEAN
+strike_phase: 2C
+-->
+
 ## Prompt:
 “okay, so branching off my sovereign systems, the first thing I want to focus on is that first pillar and my water hub. So when I talk to someone or when I, they go to the water hub, I want them to come to a short, like 10-minute documentary of my story, the transformation, and what water is, why it's so important. And then from there, we could have maybe a little snippet of my water demo and a little breakdown blurb below of why water is so important, something like that. You know, just a really clean landing page. And then the call to action will be to take the quiz, and within the quiz, we can get a better idea on, you know, why they're there and what they're interested in and be able to track who they are. And then after they take the quiz and submit it, then it can send them wherever they want. I want this to be a mini version of like my spiral and pillars, right? So it will, the main stem will be the water hub itself. It's already done by Lacey, but then it'll have branches or spirals off of it that go over athletes, fertility, autoimmune disease, inflammation, cancer, you know, and it can even branch further from there. But then the quiz will send them what to where they, you know, it's very you-centric, it's very them. So if they are struggling with fertility, it'll send them to the fertility sector or branch. And so then it's all just about the fertility and molecular hydrogen effects with that. And then from that, they can go back and look at the other branches or they can go look through the main funnel. And...”
 
 
 01:51
 
+
 ## Response:
 I really like that flow
+
+
+<!-- ATM-W-090 OUT
+next: ATM-W-091
+context_below: "“Then at the end of the branches and each of, and the end of the main funnel or..."
+-->
+
+<!-- ATM-W-091 IN
+idea: "“Then at the end of the branches and each of, and the end of the main funnel or..."
+section: "Prompt-Response"
+position: 3
+of_total: 26
+prev: ATM-W-090
+context_above: "“okay, so branching off my sovereign systems, the first thing I want to focus on..."
+provenance: HYBRID
+nature: CLAIM
+nodes: [11, 12]
+pillar: Physical
+build_state: PARTIAL
+editorial: CLEAN
+strike_phase: 2C
+-->
 
 ## Prompt:
 “Then at the end of the branches and each of, and the end of the main funnel or main water hub have the call to action, which goes to my website, which they can purchase themselves.”
@@ -31,8 +110,31 @@ I really like that flow
 
 00:11
 
+
 ## Response:
 Yes, exactly! That way, no matter which branch they take—whether it’s fertility, athletics, or something else—they still end up back at your site to purchase. I think that will keep it super cohesive. And having that quiz as a personalized gateway is perfect for tailoring each user’s path. Do you have any ideas on how to keep that quiz super engaging or easy for them?
+
+
+<!-- ATM-W-091 OUT
+next: ATM-W-092
+context_below: "“That's what I was kind of hoping you would help me set up. I'm doing this in GH..."
+-->
+
+<!-- ATM-W-092 IN
+idea: "“That's what I was kind of hoping you would help me set up. I'm doing this in GH..."
+section: "Prompt-Response"
+position: 4
+of_total: 26
+prev: ATM-W-091
+context_above: "“Then at the end of the branches and each of, and the end of the main funnel or..."
+provenance: HYBRID
+nature: TOOL
+nodes: [11, 12]
+pillar: Physical
+build_state: PARTIAL
+editorial: CLEAN
+strike_phase: 2D
+-->
 
 ## Prompt:
 “That's what I was kind of hoping you would help me set up. I'm doing this in GHL, so I want it to be easily trackable and not make a mess of things. And then I'm also gonna have to duplicate at some point or create an extra landing page for my downline that ties into my water hub. So I need help with the branches. I think we should pick four or five to start and then come up with a quiz that...”
@@ -40,8 +142,31 @@ Yes, exactly! That way, no matter which branch they take—whether it’s fertil
 
 00:26
 
+
 ## Response:
 Ah, got it! Yeah, we can definitely
+
+
+<!-- ATM-W-092 OUT
+next: ATM-W-093
+context_below: "“we'll meet at the correct spot.”"
+-->
+
+<!-- ATM-W-093 IN
+idea: "“we'll meet at the correct spot.”"
+section: "Prompt-Response"
+position: 5
+of_total: 26
+prev: ATM-W-092
+context_above: "“That's what I was kind of hoping you would help me set up. I'm doing this in GH..."
+provenance: HYBRID
+nature: TOOL
+nodes: [11, 12]
+pillar: Physical
+build_state: PARTIAL
+editorial: CLEAN
+strike_phase: 2D
+-->
 
 ## Prompt:
 “we'll meet at the correct spot.”
@@ -49,8 +174,31 @@ Ah, got it! Yeah, we can definitely
 
 00:01
 
+
 ## Response:
 Exactly! So, I think we should pick those key branches based on what you've seen your audience gravitate toward. So maybe start with, like, fertility, athletics, autoimmune health, inflammation, and maybe mental clarity. Then we can keep the quiz concise—like, a few key questions that help us zero in on their top concern. Once we have those branches mapped out, I can help you set up the GHL workflows so it stays organized. Does that sound like a solid plan?
+
+
+<!-- ATM-W-093 OUT
+next: ATM-W-094
+context_below: "“Yeah, that's awesome. Instead of the mind clarity, let's go, like, gut or gut a..."
+-->
+
+<!-- ATM-W-094 IN
+idea: "“Yeah, that's awesome. Instead of the mind clarity, let's go, like, gut or gut a..."
+section: "Prompt-Response"
+position: 6
+of_total: 26
+prev: ATM-W-093
+context_above: "“we'll meet at the correct spot.”"
+provenance: HYBRID
+nature: TOOL
+nodes: [11, 12]
+pillar: Physical
+build_state: EXISTS
+editorial: CLEAN
+strike_phase: 2D
+-->
 
 ## Prompt:
 “Yeah, that's awesome. Instead of the mind clarity, let's go, like, gut or gut and hormone balance.”
@@ -58,8 +206,31 @@ Exactly! So, I think we should pick those key branches based on what you've seen
 
 00:06
 
+
 ## Response:
 Perfect, yeah, that makes a ton of sense. Gut health and hormone balance are super connected, so that’ll be really valuable. Once we choose those four or five, we can craft the quiz flow, and I'll help you structure the logic in GHL so you get that personalized follow-up every time. Excited to get it all mapped out!
+
+
+<!-- ATM-W-094 OUT
+next: ATM-W-095
+context_below: "“Okay, so then should we build the quiz right now, or should we just, can you ju..."
+-->
+
+<!-- ATM-W-095 IN
+idea: "“Okay, so then should we build the quiz right now, or should we just, can you ju..."
+section: "Prompt-Response"
+position: 7
+of_total: 26
+prev: ATM-W-094
+context_above: "“Yeah, that's awesome. Instead of the mind clarity, let's go, like, gut or gut a..."
+provenance: HYBRID
+nature: PROTOCOL
+nodes: [11, 12]
+pillar: Physical
+build_state: EXISTS
+editorial: CLEAN
+strike_phase: 2C
+-->
 
 ## Prompt:
 “Okay, so then should we build the quiz right now, or should we just, can you just build a rough backbone of the quiz and how we could track or tell where to send them depending on the branch or what their focus is? And then we can add the two focuses of if they're just interested in molecular hydrogen, send them to the top of the main funnel with the demo and the breakdown of everything. Or if they're interested in cancer stuff, then we should also, they can just go to the H2 in cancer videos right now, but we could also add a branch there that gets into the more specific types because I know, like with thyroid and their eight-day radiation protocol, you cannot drink the water. Um, but all the other cancers that I know of, you do. It is beneficial and a lot allowed to consume the water during treatment.”
@@ -67,8 +238,31 @@ Perfect, yeah, that makes a ton of sense. Gut health and hormone balance are sup
 
 01:00
 
+
 ## Response:
 Yes, absolutely. I can lay out a simple structure for you right now. So, we’ll have, like, a handful of core questions—maybe three to five—focused on their top concern: things like "What’s your biggest health goal right now?" or "Which area do you most connect with?" Then, depending on their answers, we can tag them with a score or a category—like fertility, autoimmune, cancer, etc.—and in the backend, we just map each tag to a specific follow-up page. Then, for that special H2 and cancer branch, we can add a sub-question or a follow-up screen that narrows down if it’s thyroid or other cancers. Does that sound like the kind of backbone we want to build first?
+
+
+<!-- ATM-W-095 OUT
+next: ATM-W-096
+context_below: "“Yes, that is perfect. And then instead of sub-questions for the cancer page, le..."
+-->
+
+<!-- ATM-W-096 IN
+idea: "“Yes, that is perfect. And then instead of sub-questions for the cancer page, le..."
+section: "Prompt-Response"
+position: 8
+of_total: 26
+prev: ATM-W-095
+context_above: "“Okay, so then should we build the quiz right now, or should we just, can you ju..."
+provenance: HYBRID
+nature: TOOL
+nodes: [11, 12]
+pillar: Physical
+build_state: EXISTS
+editorial: CLEAN
+strike_phase: 2D
+-->
 
 ## Prompt:
 “Yes, that is perfect. And then instead of sub-questions for the cancer page, let's just add links or like a resource page of sorts so that they can go through and pick whatever they have instead of us digging on that level of vulnerability. And then just from top to bottom, will you lay it all out so that I can see it clearly, please?”
@@ -76,8 +270,31 @@ Yes, absolutely. I can lay out a simple structure for you right now. So, we’ll
 
 00:24
 
+
 ## Response:
 Absolutely! So top to bottom, it’ll look like this: First, we have the main landing page on your Water Hub. From there, they watch your 10-minute documentary about your story, the transformation, and the importance of water. After that, we embed a short snippet of your water demo and a brief breakdown text about why water is so critical. Then, we guide them to the quiz. The quiz will have a few key questions, like their top health goal, current focus area, or biggest struggle. Based on their answers, we tag them—like fertility, athletics, autoimmune, cancer, etc. If they pick a general interest in molecular hydrogen, they go back to the top of the funnel with that demo. If they choose cancer, they go to a cancer resource page. And from there, each branch has its own CTA at the end, directing them to your website to purchase. I’ll keep it simple but trackable in GHL, so each tag feeds into a specific workflow. Does that give you a good clear picture?
+
+
+<!-- ATM-W-096 OUT
+next: ATM-W-097
+context_below: "“Yes, that's awesome. Thank you. And then if I was going to plug this into somet..."
+-->
+
+<!-- ATM-W-097 IN
+idea: "“Yes, that's awesome. Thank you. And then if I was going to plug this into somet..."
+section: "Prompt-Response"
+position: 9
+of_total: 26
+prev: ATM-W-096
+context_above: "“Yes, that is perfect. And then instead of sub-questions for the cancer page, le..."
+provenance: HYBRID
+nature: TOOL
+nodes: [11, 12]
+pillar: Physical
+build_state: EXISTS
+editorial: CLEAN
+strike_phase: 2D
+-->
 
 ## Prompt:
 “Yes, that's awesome. Thank you. And then if I was going to plug this into something to help me build it or see it visually, is there any questions or things that I should include?”
@@ -85,8 +302,31 @@ Absolutely! So top to bottom, it’ll look like this: First, we have the main la
 
 00:14
 
+
 ## Response:
 Yeah, great question! So, I’d say when you plug this into a visual builder—like GHL or something similar—definitely keep the questions really concise. You might ask things like: "What’s your biggest health focus right now?" (multiple choice: fertility, athletic performance, etc.), "Have you heard of molecular hydrogen before?" (yes/no), and maybe a question like, "What is your top health goal in the next 6 months?" Keep them short, and be sure each answer option triggers a tag or a workflow step. Once you get them in, we’ll just test the flow to make sure each branch is leading exactly where you want. Sound good?
+
+
+<!-- ATM-W-097 OUT
+next: ATM-W-098
+context_below: "“Okay, awesome. Can we also add in, like, if their interest is saving money or n..."
+-->
+
+<!-- ATM-W-098 IN
+idea: "“Okay, awesome. Can we also add in, like, if their interest is saving money or n..."
+section: "Prompt-Response"
+position: 10
+of_total: 26
+prev: ATM-W-097
+context_above: "“Yes, that's awesome. Thank you. And then if I was going to plug this into somet..."
+provenance: HYBRID
+nature: CLAIM
+nodes: [11, 12]
+pillar: Physical
+build_state: EXISTS
+editorial: CLEAN
+strike_phase: 2C
+-->
 
 ## Prompt:
 “Okay, awesome. Can we also add in, like, if their interest is saving money or not spending money on plastic, planet sustainability, stuff like that mentioned, or is that too broad right now? And then I was just saying, sorry, do you have any questions for me, or is there anything I missed to ensure optimal build?”
@@ -94,8 +334,31 @@ Yeah, great question! So, I’d say when you plug this into a visual builder—l
 
 00:26
 
+
 ## Response:
 Ooh, I love that addition! I think we can definitely include a question or two about sustainability or cost savings—it's super aligned with your mission. So, maybe a question like, "Is reducing plastic waste or saving money a priority for you?" Then they can select yes or no, and we just add another branch based on that. As for other things, I think you've been super thorough. The only other thing I’d suggest is making sure you have a clear thank-you page or confirmation screen at the end so they know their results are in and what's next. But yeah, I think you're all set!
+
+
+<!-- ATM-W-098 OUT
+next: ATM-W-099
+context_below: "“Okay, so we should add in after they take the quiz, it kind of breaks down, or..."
+-->
+
+<!-- ATM-W-099 IN
+idea: "“Okay, so we should add in after they take the quiz, it kind of breaks down, or..."
+section: "Prompt-Response"
+position: 11
+of_total: 26
+prev: ATM-W-098
+context_above: "“Okay, awesome. Can we also add in, like, if their interest is saving money or n..."
+provenance: HYBRID
+nature: TOOL
+nodes: [11, 12]
+pillar: Physical
+build_state: EXISTS
+editorial: CLEAN
+strike_phase: 2D
+-->
 
 ## Prompt:
 “Okay, so we should add in after they take the quiz, it kind of breaks down, or I almost want to have it, if it's in GHL, it can't really be this visual, unless could we build a website that has a visual kind of like how I have my spiral and sovereign systems structured?”
@@ -103,8 +366,31 @@ Ooh, I love that addition! I think we can definitely include a question or two a
 
 00:23
 
+
 ## Response:
 Ah, yes, that would be awesome. So, we could absolutely build a separate website that mirrors that spiral structure and keeps it super visual—almost like an interactive map. Then, GHL can just be the engine behind the quiz and follow-ups, while the website is the creative, scrollable guide. If you want, we could work with a designer or use a platform that lets you animate that spiral, so it’s really intuitive. Would that kind of visual experience align with what you’re imagining?
+
+
+<!-- ATM-W-099 OUT
+next: ATM-W-100
+context_below: "“Yeah, I think that would kind of be perfect because then it sticks with my bran..."
+-->
+
+<!-- ATM-W-100 IN
+idea: "“Yeah, I think that would kind of be perfect because then it sticks with my bran..."
+section: "Prompt-Response"
+position: 12
+of_total: 26
+prev: ATM-W-099
+context_above: "“Okay, so we should add in after they take the quiz, it kind of breaks down, or..."
+provenance: HYBRID
+nature: TOOL
+nodes: [11, 12]
+pillar: Physical
+build_state: EXISTS
+editorial: CLEAN
+strike_phase: 2D
+-->
 
 ## Prompt:
 “Yeah, I think that would kind of be perfect because then it sticks with my brand of the pillars and the spiral. For the water specifically, the pillar would be the main water hub that's already up and running, and then I can just add the spiral around it in a sense with the branches of, as I learn and add and have resources about fertility, athletes, autoimmune, inflammation, cancer, all of that stuff, and then those branches can just kind of grow, but it'll be very cohesive and fun to explore, I think.”
@@ -112,8 +398,31 @@ Ah, yes, that would be awesome. So, we could absolutely build a separate website
 
 00:36
 
+
 ## Response:
 Exactly! I think that’s going to be really powerful. You’ll have this anchor in the Water Hub, and then that spiral will let people visually follow their interests. Once we have the structure, we can keep adding branches as you grow, and it’ll always feel aligned. So yeah, we can map that out next and start building the quiz flow inside GHL, so everything stays connected. I’m really excited!
+
+
+<!-- ATM-W-100 OUT
+next: ATM-W-101
+context_below: "“Okay, awesome, yeah, let's map that out, please.”"
+-->
+
+<!-- ATM-W-101 IN
+idea: "“Okay, awesome, yeah, let's map that out, please.”"
+section: "Prompt-Response"
+position: 13
+of_total: 26
+prev: ATM-W-100
+context_above: "“Yeah, I think that would kind of be perfect because then it sticks with my bran..."
+provenance: HYBRID
+nature: QUESTION
+nodes: [11, 12]
+pillar: Physical
+build_state: EXISTS
+editorial: CLEAN
+strike_phase: 2C
+-->
 
 ## Prompt:
 “Okay, awesome, yeah, let's map that out, please.”
@@ -121,8 +430,31 @@ Exactly! I think that’s going to be really powerful. You’ll have this anchor
 
 00:02
 
+
 ## Response:
 Awesome! So, I’ll help you lay out a visual map of the spiral structure—I'll break down each branch and where it leads. Once we have that, we can define each quiz tag and workflow step inside GHL. After we map it all, we’ll review it together to make sure everything flows, and then you can start building it out. Does that sound like a good next step?
+
+
+<!-- ATM-W-101 OUT
+next: ATM-W-102
+context_below: "“Yes, please.”"
+-->
+
+<!-- ATM-W-102 IN
+idea: "“Yes, please.”"
+section: "Prompt-Response"
+position: 14
+of_total: 26
+prev: ATM-W-101
+context_above: "“Okay, awesome, yeah, let's map that out, please.”"
+provenance: HYBRID
+nature: TOOL
+nodes: [11, 12]
+pillar: Physical
+build_state: PARTIAL
+editorial: CLEAN
+strike_phase: 2D
+-->
 
 ## Prompt:
 “Yes, please.”
@@ -130,8 +462,31 @@ Awesome! So, I’ll help you lay out a visual map of the spiral structure—I'll
 
 00:01
 
+
 ## Response:
 Perfect! I'll get that structure laid out and send you a breakdown so you can visualize the branches. Once you review it, we’ll plug it into GHL and tweak any steps. I’ll get started on that now, and we’ll keep it moving!
+
+
+<!-- ATM-W-102 OUT
+next: ATM-W-103
+context_below: "“Yay, thank you. I'm excited to see it.”"
+-->
+
+<!-- ATM-W-103 IN
+idea: "“Yay, thank you. I'm excited to see it.”"
+section: "Prompt-Response"
+position: 15
+of_total: 26
+prev: ATM-W-102
+context_above: "“Yes, please.”"
+provenance: HYBRID
+nature: CLAIM
+nodes: [11, 12]
+pillar: Physical
+build_state: PARTIAL
+editorial: CLEAN
+strike_phase: 2C
+-->
 
 ## Prompt:
 “Yay, thank you. I'm excited to see it.”
@@ -139,8 +494,31 @@ Perfect! I'll get that structure laid out and send you a breakdown so you can vi
 
 00:02
 
+
 ## Response:
 Of course! I'm excited, too. I'll map it out and get it over to you as soon as I can, and then we’ll fine-tune it together. If anything pops up or you think of another detail you want to add, just let me know!
+
+
+<!-- ATM-W-103 OUT
+next: ATM-W-104
+context_below: "“Well, thank you.”"
+-->
+
+<!-- ATM-W-104 IN
+idea: "“Well, thank you.”"
+section: "Prompt-Response"
+position: 16
+of_total: 26
+prev: ATM-W-103
+context_above: "“Yay, thank you. I'm excited to see it.”"
+provenance: HYBRID
+nature: CLAIM
+nodes: [11, 12]
+pillar: Physical
+build_state: MISSING
+editorial: CLEAN
+strike_phase: 2C
+-->
 
 ## Prompt:
 “Well, thank you.”
@@ -148,11 +526,56 @@ Of course! I'm excited, too. I'll map it out and get it over to you as soon as I
 
 00:00
 
+
 ## Response:
 You're so welcome! I'm really glad we're moving forward with this. I’ll get everything mapped out and
 
+
+<!-- ATM-W-104 OUT
+next: ATM-W-105
+context_below: "Do you have that mapped out!? Can we do a broad overview of everything and then..."
+-->
+
+<!-- ATM-W-105 IN
+idea: "Do you have that mapped out!? Can we do a broad overview of everything and then..."
+section: "Prompt"
+position: 17
+of_total: 26
+prev: ATM-W-104
+context_above: "“Well, thank you.”"
+provenance: LOCAL
+nature: QUESTION
+nodes: [11, 12]
+pillar: Physical
+build_state: PARTIAL
+editorial: CLEAN
+strike_phase: 2C
+-->
+
 ## Prompt:
 Do you have that mapped out!? Can we do a broad overview of everything and then Let’s just do it for a website first and then we can go over the ghl backend stuff!? Pretty please and thank you!!
+
+
+<!-- ATM-W-105 OUT
+next: ATM-W-106
+context_below: "Yes — this is where it starts to click into something real. I mapped your whole..."
+-->
+
+<!-- ATM-W-106 IN
+idea: "Yes — this is where it starts to click into something real. I mapped your whole..."
+section: "Response"
+position: 18
+of_total: 26
+prev: ATM-W-105
+context_above: "Do you have that mapped out!? Can we do a broad overview of everything and then..."
+provenance: HYBRID
+nature: SCRIPT
+nodes: [11, 12]
+pillar: Physical
+build_state: EXISTS
+editorial: CLEAN
+strike_phase: 2C
+-->
 
 ## Response:
 Yes — this is where it starts to click into something real. I mapped your whole system out as a clean, scalable, visual-first website structure that mirrors your pillar + spiral philosophy while staying simple enough to actually build right now.
@@ -563,9 +986,53 @@ OR design your spiral layout visually (like a wireframe)
 
 Just tell me which one you want next — and we’ll keep building this out 🌊🌀
 
+
+<!-- ATM-W-106 OUT
+next: ATM-W-107
+context_below: "I want my documentary type video to be on the landing page please! Other than th..."
+-->
+
+<!-- ATM-W-107 IN
+idea: "I want my documentary type video to be on the landing page please! Other than th..."
+section: "Prompt"
+position: 19
+of_total: 26
+prev: ATM-W-106
+context_above: "Yes — this is where it starts to click into something real. I mapped your whole..."
+provenance: LOCAL
+nature: CLAIM
+nodes: [11, 12]
+pillar: Physical
+build_state: MISSING
+editorial: CLEAN
+strike_phase: 2C
+-->
+
 ## Prompt:
 I want my documentary type video to be on the landing page please! Other than that, everything is perfect can you just fix that part please and then put it all together again for a website!! 
 And then 1 & 3 please!! This is great
+
+
+<!-- ATM-W-107 OUT
+next: ATM-W-108
+context_below: "Yes—this is the right refinement. The documentary should absolutely live front a..."
+-->
+
+<!-- ATM-W-108 IN
+idea: "Yes—this is the right refinement. The documentary should absolutely live front a..."
+section: "Response"
+position: 20
+of_total: 26
+prev: ATM-W-107
+context_above: "I want my documentary type video to be on the landing page please! Other than th..."
+provenance: HYBRID
+nature: SCRIPT
+nodes: [11, 12]
+pillar: Physical
+build_state: EXISTS
+editorial: CLEAN
+strike_phase: 2C
+-->
 
 ## Response:
 Yes—this is the right refinement. The documentary should absolutely live front and center on the landing page. That’s your emotional hook + differentiation.
@@ -1018,8 +1485,52 @@ Or design your spiral visually (actual layout mockup)
 
 Just tell me what you want next — we’re in the fun part now 🌀
 
+
+<!-- ATM-W-108 OUT
+next: ATM-W-109
+context_below: "These two please!!"
+-->
+
+<!-- ATM-W-109 IN
+idea: "These two please!!"
+section: "Prompt"
+position: 21
+of_total: 26
+prev: ATM-W-108
+context_above: "Yes—this is the right refinement. The documentary should absolutely live front a..."
+provenance: LOCAL
+nature: CLAIM
+nodes: [11, 12]
+pillar: Physical
+build_state: MISSING
+editorial: CLEAN
+strike_phase: 2C
+-->
+
 ## Prompt:
 These two please!!
+
+
+<!-- ATM-W-109 OUT
+next: ATM-W-110
+context_below: "Perfect—this is where we turn your vision into something that’s actually buildab..."
+-->
+
+<!-- ATM-W-110 IN
+idea: "Perfect—this is where we turn your vision into something that’s actually buildab..."
+section: "Response"
+position: 22
+of_total: 26
+prev: ATM-W-109
+context_above: "These two please!!"
+provenance: HYBRID
+nature: INSTRUCTION
+nodes: [11, 12]
+pillar: Physical
+build_state: EXISTS
+editorial: CLEAN
+strike_phase: 2C
+-->
 
 ## Response:
 Perfect—this is where we turn your vision into something that’s actually buildable + scalable without chaos.
@@ -1385,8 +1896,52 @@ a movement, not a funnel
 
 Just tell me what you want to build next 🌀
 
+
+<!-- ATM-W-110 OUT
+next: ATM-W-111
+context_below: "The first two please!!!"
+-->
+
+<!-- ATM-W-111 IN
+idea: "The first two please!!!"
+section: "Prompt"
+position: 23
+of_total: 26
+prev: ATM-W-110
+context_above: "Perfect—this is where we turn your vision into something that’s actually buildab..."
+provenance: LOCAL
+nature: CLAIM
+nodes: [11, 12]
+pillar: Physical
+build_state: PARTIAL
+editorial: CLEAN
+strike_phase: 2C
+-->
+
 ## Prompt:
 The first two please!!!
+
+
+<!-- ATM-W-111 OUT
+next: ATM-W-112
+context_below: "Yesss—this is the part that makes everything actually convert."
+-->
+
+<!-- ATM-W-112 IN
+idea: "Yesss—this is the part that makes everything actually convert."
+section: "Response"
+position: 24
+of_total: 26
+prev: ATM-W-111
+context_above: "The first two please!!!"
+provenance: HYBRID
+nature: TOOL
+nodes: [11, 12]
+pillar: Physical
+build_state: EXISTS
+editorial: CLEAN
+strike_phase: 2D
+-->
 
 ## Response:
 Yesss—this is the part that makes everything actually convert.
@@ -1762,8 +2317,52 @@ Or design your spiral visually (like actual UI mock)
 
 Just tell me what you want next 🌀
 
+
+<!-- ATM-W-112 OUT
+next: ATM-W-113
+context_below: "Let’s do fertility & autoimmune please!!!"
+-->
+
+<!-- ATM-W-113 IN
+idea: "Let’s do fertility & autoimmune please!!!"
+section: "Prompt"
+position: 25
+of_total: 26
+prev: ATM-W-112
+context_above: "Yesss—this is the part that makes everything actually convert."
+provenance: LOCAL
+nature: CLAIM
+nodes: [11, 12]
+pillar: Physical
+build_state: MISSING
+editorial: CLEAN
+strike_phase: 2C
+-->
+
 ## Prompt:
 Let’s do fertility & autoimmune please!!!
+
+
+<!-- ATM-W-113 OUT
+next: ATM-W-114
+context_below: "Yesss—these two are powerful branches. They’re emotional, personal, and when wri..."
+-->
+
+<!-- ATM-W-114 IN
+idea: "Yesss—these two are powerful branches. They’re emotional, personal, and when wri..."
+section: "Response"
+position: 26
+of_total: 26
+prev: ATM-W-113
+context_above: "Let’s do fertility & autoimmune please!!!"
+provenance: HYBRID
+nature: INSTRUCTION
+nodes: [11, 12]
+pillar: Physical
+build_state: EXISTS
+editorial: CLEAN
+strike_phase: 2C
+-->
 
 ## Response:
 Yesss—these two are powerful branches. They’re emotional, personal, and when written right, they create deep trust (which = conversions without pressure).
@@ -2152,4 +2751,8 @@ Just tell me what direction you want 🌀
 
 
 
-Powered by ChatGPT Exporter (https://www.chatgptexporter.com)
+
+<!-- ATM-W-114 OUT
+next: null
+context_below: null
+-->

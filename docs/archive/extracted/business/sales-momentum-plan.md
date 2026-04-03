@@ -1,3 +1,19 @@
+<!-- DOC-ENVELOPE
+id: DOC-B-13
+total_sections: 4
+total_atoms: 4
+dominant_provenance: LOCAL
+dominant_nature: CLAIM
+sections:
+  - name: "Main"
+    atoms: [ATM-B-205]
+  - name: "Prompt-Response"
+    atoms: [ATM-B-206]
+  - name: "Prompt"
+    atoms: [ATM-B-207]
+  - name: "Response"
+    atoms: [ATM-B-208]
+-->
 ---
 title: "3-phase: foundation/GHL, soft launch, follow-up"
 source_file: "ChatGPT-Sales momentum plan.txt"
@@ -8,6 +24,24 @@ pillar: "Financial"
 extracted: 2026-04-03
 ---
 
+<!-- ATM-B-205 IN
+idea: "Sales momentum plan"
+section: "Main"
+position: 1
+of_total: 4
+prev: null
+context_above: null
+provenance: LOCAL
+nature: CLAIM
+nodes: [11]
+pillar: Financial
+build_state: MISSING
+editorial: CLEAN
+strike_phase: 4A
+-->
+
+
+
 Sales momentum plan
 
 User: Maddie Galloway (95rrzm9nht@privaterelay.appleid.com)
@@ -16,8 +50,31 @@ Updated: 11/11/2025 5:47:27
 Exported: 3/31/2026 14:10:57
 Link: https://chatgpt.com/c/69133d02-0bd8-8325-8499-01dd837aded5
 
+
+<!-- ATM-B-205 OUT
+next: ATM-B-206
+context_below: "Ahhh okay I really just gotta start cranking out the water sales I’m so ready"
+-->
+
+<!-- ATM-B-206 IN
+idea: "Ahhh okay I really just gotta start cranking out the water sales I’m so ready"
+section: "Prompt-Response"
+position: 2
+of_total: 4
+prev: ATM-B-205
+context_above: "Sales momentum plan"
+provenance: HYBRID
+nature: CLAIM
+nodes: [11]
+pillar: Financial
+build_state: EXISTS
+editorial: CLEAN
+strike_phase: 4A
+-->
+
 ## Prompt:
 Ahhh okay I really just gotta start cranking out the water sales I’m so ready
+
 
 ## Response:
 YES 🔥 that’s the energy — you’re right on time. You’ve done all the prep, now it’s about action and flow.
@@ -35,8 +92,52 @@ Follow-up plan: Re-engage everyone who ever showed interest — even if it’s b
 
 Would you like me to help you map out a 3-day sales push plan (stories, posts, DMs + follow-up flow) so you can move that momentum into results starting today?
 
+
+<!-- ATM-B-206 OUT
+next: ATM-B-207
+context_below: "Just need a clean and clear structure to follow and then have things or place to..."
+-->
+
+<!-- ATM-B-207 IN
+idea: "Just need a clean and clear structure to follow and then have things or place to..."
+section: "Prompt"
+position: 3
+of_total: 4
+prev: ATM-B-206
+context_above: "Ahhh okay I really just gotta start cranking out the water sales I’m so ready"
+provenance: LOCAL
+nature: TOOL
+nodes: [11]
+pillar: Financial
+build_state: MISSING
+editorial: CLEAN
+strike_phase: 4A
+-->
+
 ## Prompt:
 Just need a clean and clear structure to follow and then have things or place to send them and then strong follow up structure & need to be posting about it more. And I have this and my content plan all ready to go I just don’t know how to activate or maybe today isn’t for activation yet idk I still need to finish setting up GHL and then set up the water funnel and biz hub
+
+
+<!-- ATM-B-207 OUT
+next: ATM-B-208
+context_below: "That makes total sense — and you’re actually right on track."
+-->
+
+<!-- ATM-B-208 IN
+idea: "That makes total sense — and you’re actually right on track."
+section: "Response"
+position: 4
+of_total: 4
+prev: ATM-B-207
+context_above: "Just need a clean and clear structure to follow and then have things or place to..."
+provenance: HYBRID
+nature: INSTRUCTION
+nodes: [11]
+pillar: Financial
+build_state: EXISTS
+editorial: CLEAN
+strike_phase: 1C
+-->
 
 ## Response:
 That makes total sense — and you’re actually right on track.
@@ -128,4 +229,8 @@ Would you like me to start with the DM follow-up tracker (so you can see your fl
 
 
 
-Powered by ChatGPT Exporter (https://www.chatgptexporter.com)
+
+<!-- ATM-B-208 OUT
+next: null
+context_below: null
+-->

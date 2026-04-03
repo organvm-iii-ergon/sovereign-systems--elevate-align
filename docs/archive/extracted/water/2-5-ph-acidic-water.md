@@ -1,3 +1,17 @@
+<!-- DOC-ENVELOPE
+id: DOC-W-01
+total_sections: 3
+total_atoms: 3
+dominant_provenance: LOCAL
+dominant_nature: PROTOCOL
+sections:
+  - name: "Main"
+    atoms: [ATM-W-001]
+  - name: "Prompt"
+    atoms: [ATM-W-002]
+  - name: "Response"
+    atoms: [ATM-W-003]
+-->
 ---
 title: "Hypochlorous acid IG slides, strep story"
 source_file: "ChatGPT-2.5 pH Acidic Water.txt"
@@ -8,6 +22,24 @@ pillar: "Physical"
 extracted: 2026-04-03
 ---
 
+<!-- ATM-W-001 IN
+idea: "2.5 pH Acidic Water"
+section: "Main"
+position: 1
+of_total: 3
+prev: null
+context_above: null
+provenance: LOCAL
+nature: PROTOCOL
+nodes: [7, 9]
+pillar: Physical
+build_state: MISSING
+editorial: CLEAN
+strike_phase: 2C
+-->
+
+
+
 2.5 pH Acidic Water
 
 User: Maddie Galloway (95rrzm9nht@privaterelay.appleid.com)
@@ -16,8 +48,52 @@ Updated: 3/31/2026 13:14:29
 Exported: 3/31/2026 13:14:30
 Link: https://chatgpt.com/g/g-p-681675945c108191aebfa81457898ccd-business/c/6796d964-eac8-8003-bcd1-9e67f7e2901a
 
+
+<!-- ATM-W-001 OUT
+next: ATM-W-002
+context_below: "Can you help me come up with sometime to add to my Instagram highlights about 2...."
+-->
+
+<!-- ATM-W-002 IN
+idea: "Can you help me come up with sometime to add to my Instagram highlights about 2...."
+section: "Prompt"
+position: 2
+of_total: 3
+prev: ATM-W-001
+context_above: "2.5 pH Acidic Water"
+provenance: LOCAL
+nature: QUESTION
+nodes: [7, 9]
+pillar: Physical
+build_state: MISSING
+editorial: CLEAN
+strike_phase: 2C
+-->
+
 ## Prompt:
 Can you help me come up with sometime to add to my Instagram highlights about 2.5 oh water or hydrochloric acid, what it does and why it killed my strep throat!?
+
+
+<!-- ATM-W-002 OUT
+next: ATM-W-003
+context_below: "Here’s an idea for an Instagram Highlight about 2.5 pH acidic water (hypochlorou..."
+-->
+
+<!-- ATM-W-003 IN
+idea: "Here’s an idea for an Instagram Highlight about 2.5 pH acidic water (hypochlorou..."
+section: "Response"
+position: 3
+of_total: 3
+prev: ATM-W-002
+context_above: "Can you help me come up with sometime to add to my Instagram highlights about 2...."
+provenance: HYBRID
+nature: SCRIPT
+nodes: [7, 9]
+pillar: Physical
+build_state: EXISTS
+editorial: CLEAN
+strike_phase: 2C
+-->
 
 ## Response:
 Here’s an idea for an Instagram Highlight about 2.5 pH acidic water (hypochlorous acid) and how it helped with your strep throat:
@@ -65,4 +141,8 @@ Would you like help customizing this further or designing visuals for it?
 
 
 
-Powered by ChatGPT Exporter (https://www.chatgptexporter.com)
+
+<!-- ATM-W-003 OUT
+next: null
+context_below: null
+-->

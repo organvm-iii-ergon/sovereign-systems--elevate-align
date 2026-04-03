@@ -1,3 +1,31 @@
+<!-- DOC-ENVELOPE
+id: DOC-W-16
+total_sections: 1
+total_atoms: 1
+dominant_provenance: LOCAL
+dominant_nature: PRODUCT
+sections:
+  - name: "Main"
+    atoms: [ATM-W-139]
+-->
+
+
+<!-- ATM-W-139 IN
+idea: "![](media/image1.png){width='5.972127077865267in' height='1.6510422134733158in'}"
+section: "Main"
+position: 1
+of_total: 1
+prev: null
+context_above: null
+provenance: LOCAL
+nature: PRODUCT
+nodes: []
+pillar: Physical
+build_state: EXISTS
+editorial: CLEAN
+strike_phase: 2C
+-->
+
 ![](media/image1.png){width="5.972127077865267in" height="1.6510422134733158in"}
 
 *Please note that we are not claiming that electrolyzed reduced water will cure any disease. Please do not use it in place of your health care professional directives. We recommend adding it to your current regimen to help your body create a more alkaline environment, where it is able to heal itself!*
@@ -119,3 +147,9 @@ I got my Kangen water machine (K8) shortly after my surgery had been cancelled\.
 After struggling since high school with eczema and other acidosis symptoms like acid reflux, digestive issues, and acne, I was desperately searching for a holistic solution. Within 3 weeks of drinking Kangen Water my eczema cleared up completely! And so did my other acidosis symptoms, I was also able to stop taking 3 prescription medications. Kangen Water has been a life changer for me and I'm so happy I can travel with my machine so I don't have to be without my 9.5! **(Shannon Megan)**
 
 After having my first baby I was diagnosed with a thyroid disorder which I later learned was hypothyroidism. I refused meds and then felt worse and worse. When I took my meds I felt fine but I really didn't like the idea of taking them forever. Once I started drinking my Kangen water I felt changes happen in my body and quickly, after just 2 weeks, was able to wean off of my meds and haven't had to take them at all since then!! **(Kelsie Crane)**
+
+
+<!-- ATM-W-139 OUT
+next: null
+context_below: null
+-->

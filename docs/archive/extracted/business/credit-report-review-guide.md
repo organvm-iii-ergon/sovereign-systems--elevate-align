@@ -1,3 +1,17 @@
+<!-- DOC-ENVELOPE
+id: DOC-B-04
+total_sections: 3
+total_atoms: 3
+dominant_provenance: LOCAL
+dominant_nature: CLAIM
+sections:
+  - name: "Main"
+    atoms: [ATM-B-056]
+  - name: "Prompt"
+    atoms: [ATM-B-057]
+  - name: "Response"
+    atoms: [ATM-B-058]
+-->
 ---
 title: "Pull credit, dispute errors, utilization"
 source_file: "ChatGPT-Credit Report Review Guide.txt"
@@ -8,6 +22,24 @@ pillar: "Financial"
 extracted: 2026-04-03
 ---
 
+<!-- ATM-B-056 IN
+idea: "Credit Report Review Guide"
+section: "Main"
+position: 1
+of_total: 3
+prev: null
+context_above: null
+provenance: LOCAL
+nature: CLAIM
+nodes: [6, 10]
+pillar: Financial
+build_state: MISSING
+editorial: CLEAN
+strike_phase: 4A
+-->
+
+
+
 Credit Report Review Guide
 
 User: Maddie Galloway (95rrzm9nht@privaterelay.appleid.com)
@@ -16,8 +48,52 @@ Updated: 3/30/2026 21:41:08
 Exported: 3/31/2026 13:02:03
 Link: https://chatgpt.com/g/g-p-681675945c108191aebfa81457898ccd-business/c/69bc51a4-ffb4-83e8-b439-9338757be829
 
+
+<!-- ATM-B-056 OUT
+next: ATM-B-057
+context_below: "How do you see what’s on or hurting your credit to try to get them off"
+-->
+
+<!-- ATM-B-057 IN
+idea: "How do you see what’s on or hurting your credit to try to get them off"
+section: "Prompt"
+position: 2
+of_total: 3
+prev: ATM-B-056
+context_above: "Credit Report Review Guide"
+provenance: LOCAL
+nature: CLAIM
+nodes: [6, 10]
+pillar: Financial
+build_state: PARTIAL
+editorial: CLEAN
+strike_phase: 4A
+-->
+
 ## Prompt:
 How do you see what’s on or hurting your credit to try to get them off
+
+
+<!-- ATM-B-057 OUT
+next: ATM-B-058
+context_below: "Getting clear on what’s actually affecting your credit is the first powerful mov..."
+-->
+
+<!-- ATM-B-058 IN
+idea: "Getting clear on what’s actually affecting your credit is the first powerful mov..."
+section: "Response"
+position: 3
+of_total: 3
+prev: ATM-B-057
+context_above: "How do you see what’s on or hurting your credit to try to get them off"
+provenance: HYBRID
+nature: INSTRUCTION
+nodes: [6, 10]
+pillar: Financial
+build_state: EXISTS
+editorial: CLEAN
+strike_phase: 1C
+-->
 
 ## Response:
 Getting clear on what’s actually affecting your credit is the first powerful move—most people are guessing, but you can literally see everything and start cleaning it up step-by-step.
@@ -184,4 +260,8 @@ If you want, you can tell me what’s showing up (collections, late payments, ca
 
 
 
-Powered by ChatGPT Exporter (https://www.chatgptexporter.com)
+
+<!-- ATM-B-058 OUT
+next: null
+context_below: null
+-->

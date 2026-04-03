@@ -1,3 +1,17 @@
+<!-- DOC-ENVELOPE
+id: DOC-W-09
+total_sections: 3
+total_atoms: 5
+dominant_provenance: LOCAL
+dominant_nature: QUESTION
+sections:
+  - name: "Main"
+    atoms: [ATM-W-084]
+  - name: "Prompt"
+    atoms: [ATM-W-085, ATM-W-087]
+  - name: "Response"
+    atoms: [ATM-W-086, ATM-W-088]
+-->
 ---
 title: "Emoto critique + metaphorical value"
 source_file: "Gemini-Water Crystals, Love, and Pseudoscience.md"
@@ -8,13 +22,75 @@ pillar: "Physical"
 extracted: 2026-04-03
 ---
 
+<!-- ATM-W-084 IN
+idea: "**Exported:** 3/31/2026 14:02:25"
+section: "Main"
+position: 1
+of_total: 5
+prev: null
+context_above: null
+provenance: LOCAL
+nature: CLAIM
+nodes: [12]
+pillar: Physical
+build_state: MISSING
+editorial: FLAGGED
+strike_phase: 1B
+-->
+
+
+
 # Water Crystals, Love, and Pseudoscience
 
 **Exported:** 3/31/2026 14:02:25  
 **Link:** [https://gemini.google.com/app/590b5defa1f104dc?is_sa=1&is_sa=1&android-min-version=301356232&ios-min-version=322.0&campaign_id=bkws&utm_source=sem&utm_medium=paid-media&utm_campaign=bkws&pt=9008&mt=8&ct=p-growth-sem-bkws&gclsrc=aw.ds&gad_source=1&gad_campaignid=20108148196&gbraid=0AAAAApk5BhltUVZN2Eq5RDbAJnOdEvLzL&gclid=Cj0KCQjw4a3OBhCHARIsAChaqJNoxJNPrYg7dc6Sv7w0LPPOxufP6tPGGJNCUpzwr3cIl1sY3YDc14kaAj0VEALw_wcB](https://gemini.google.com/app/590b5defa1f104dc?is_sa=1&is_sa=1&android-min-version=301356232&ios-min-version=322.0&campaign_id=bkws&utm_source=sem&utm_medium=paid-media&utm_campaign=bkws&pt=9008&mt=8&ct=p-growth-sem-bkws&gclsrc=aw.ds&gad_source=1&gad_campaignid=20108148196&gbraid=0AAAAApk5BhltUVZN2Eq5RDbAJnOdEvLzL&gclid=Cj0KCQjw4a3OBhCHARIsAChaqJNoxJNPrYg7dc6Sv7w0LPPOxufP6tPGGJNCUpzwr3cIl1sY3YDc14kaAj0VEALw_wcB)
 
+
+<!-- ATM-W-084 OUT
+next: ATM-W-085
+context_below: "Can you help me find the study they did with water and frequency where they sent..."
+-->
+
+<!-- ATM-W-085 IN
+idea: "Can you help me find the study they did with water and frequency where they sent..."
+section: "Prompt"
+position: 2
+of_total: 5
+prev: ATM-W-084
+context_above: "**Exported:** 3/31/2026 14:02:25"
+provenance: LOCAL
+nature: QUESTION
+nodes: [12]
+pillar: Physical
+build_state: EXISTS
+editorial: CLEAN
+strike_phase: 2C
+-->
+
 ## Prompt:
 Can you help me find the study they did with water and frequency where they sent the water love and froze it and then did it with hate and you can see those frequency after you cut the frozen water!?
+
+
+<!-- ATM-W-085 OUT
+next: ATM-W-086
+context_below: "That is a fascinating topic that gained a lot of popularity through the 2004 doc..."
+-->
+
+<!-- ATM-W-086 IN
+idea: "That is a fascinating topic that gained a lot of popularity through the 2004 doc..."
+section: "Response"
+position: 3
+of_total: 5
+prev: ATM-W-085
+context_above: "Can you help me find the study they did with water and frequency where they sent..."
+provenance: HYBRID
+nature: CITATION
+nodes: [12]
+pillar: Physical
+build_state: EXISTS
+editorial: FLAGGED
+strike_phase: 1B
+-->
 
 ## Response:
 That is a fascinating topic that gained a lot of popularity through the 2004 documentary _What the Bleep Do We Know!?_ The study you’re thinking of was conducted by **Dr. Masaru Emoto**, a Japanese author and researcher. He claimed that human consciousness, thoughts, and words could physically alter the molecular structure of water.
@@ -48,8 +124,52 @@ Even if the science is debated, many people find value in the **metaphor**—the
 
 **Would you like me to find some instructions on how to try the Rice Experiment yourself at home?**
 
+
+<!-- ATM-W-086 OUT
+next: ATM-W-087
+context_below: "Does the rice work? What about the plants one? And there was another one with ch..."
+-->
+
+<!-- ATM-W-087 IN
+idea: "Does the rice work? What about the plants one? And there was another one with ch..."
+section: "Prompt"
+position: 4
+of_total: 5
+prev: ATM-W-086
+context_above: "That is a fascinating topic that gained a lot of popularity through the 2004 doc..."
+provenance: LOCAL
+nature: QUESTION
+nodes: [12]
+pillar: Physical
+build_state: PARTIAL
+editorial: CLEAN
+strike_phase: 2C
+-->
+
 ## Prompt:
 Does the rice work? What about the plants one? And there was another one with chicks and a robot
+
+
+<!-- ATM-W-087 OUT
+next: ATM-W-088
+context_below: "It is truly wild how these experiments capture our imagination! While they make..."
+-->
+
+<!-- ATM-W-088 IN
+idea: "It is truly wild how these experiments capture our imagination! While they make..."
+section: "Response"
+position: 5
+of_total: 5
+prev: ATM-W-087
+context_above: "Does the rice work? What about the plants one? And there was another one with ch..."
+provenance: HYBRID
+nature: CITATION
+nodes: [12]
+pillar: Physical
+build_state: EXISTS
+editorial: FLAGGED
+strike_phase: 1B
+-->
 
 ## Response:
 It is truly wild how these experiments capture our imagination! While they make for great viral videos and school science projects, the results are usually more about **biology** and **random chance** than the "power of thoughts."
@@ -91,4 +211,8 @@ The reason these experiments stay popular is because of the **Placebo Effect** a
 
 
 ---
-Powered by [Gemini Exporter](https://www.ai-chat-exporter.com)
+
+<!-- ATM-W-088 OUT
+next: null
+context_below: null
+-->

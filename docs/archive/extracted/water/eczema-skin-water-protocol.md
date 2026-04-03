@@ -1,3 +1,17 @@
+<!-- DOC-ENVELOPE
+id: DOC-W-03
+total_sections: 3
+total_atoms: 4
+dominant_provenance: LOCAL
+dominant_nature: PROTOCOL
+sections:
+  - name: "Main"
+    atoms: [ATM-W-007]
+  - name: "Prompt"
+    atoms: [ATM-W-008, ATM-W-010]
+  - name: "Response"
+    atoms: [ATM-W-009]
+-->
 ---
 title: "Step-by-step eczema water protocol"
 source_file: "ChatGPT-Eczema Skin Water Protocol.txt"
@@ -8,6 +22,24 @@ pillar: "Physical"
 extracted: 2026-04-03
 ---
 
+<!-- ATM-W-007 IN
+idea: "Eczema Skin Water Protocol"
+section: "Main"
+position: 1
+of_total: 4
+prev: null
+context_above: null
+provenance: LOCAL
+nature: PROTOCOL
+nodes: [6, 9]
+pillar: Physical
+build_state: MISSING
+editorial: CLEAN
+strike_phase: 2C
+-->
+
+
+
 Eczema Skin Water Protocol
 
 User: Maddie Galloway (95rrzm9nht@privaterelay.appleid.com)
@@ -16,8 +48,52 @@ Updated: 12/29/2025 17:02:54
 Exported: 3/31/2026 14:04:33
 Link: https://chatgpt.com/c/69532409-de74-832d-9f4a-ac681c8b498b
 
+
+<!-- ATM-W-007 OUT
+next: ATM-W-008
+context_below: "For dry skin that is very eczema prone what water protocol should I give them? J..."
+-->
+
+<!-- ATM-W-008 IN
+idea: "For dry skin that is very eczema prone what water protocol should I give them? J..."
+section: "Prompt"
+position: 2
+of_total: 4
+prev: ATM-W-007
+context_above: "Eczema Skin Water Protocol"
+provenance: LOCAL
+nature: QUESTION
+nodes: [6, 9]
+pillar: Physical
+build_state: PARTIAL
+editorial: CLEAN
+strike_phase: 2C
+-->
+
 ## Prompt:
 For dry skin that is very eczema prone what water protocol should I give them? Just 11.5 to keep it clean and then 6.0 maybe?!
+
+
+<!-- ATM-W-008 OUT
+next: ATM-W-009
+context_below: "Great question — and yes, you’re thinking in the right direction. For very dry,..."
+-->
+
+<!-- ATM-W-009 IN
+idea: "Great question — and yes, you’re thinking in the right direction. For very dry,..."
+section: "Response"
+position: 3
+of_total: 4
+prev: ATM-W-008
+context_above: "For dry skin that is very eczema prone what water protocol should I give them? J..."
+provenance: HYBRID
+nature: PROTOCOL
+nodes: [6, 9]
+pillar: Physical
+build_state: EXISTS
+editorial: CLEAN
+strike_phase: 2C
+-->
 
 ## Response:
 Great question — and yes, you’re thinking in the right direction. For very dry, eczema-prone skin, the goal is clean + barrier-protective + non-irritating, not over-stripping or over-alkalizing.
@@ -157,9 +233,35 @@ Create a printable protocol card
 
 Help you explain why this works in a non-salesy, science-backed way for clients 💧
 
+
+<!-- ATM-W-009 OUT
+next: ATM-W-010
+context_below: "So when does 2.5 come in just when the exams is flaring"
+-->
+
+<!-- ATM-W-010 IN
+idea: "So when does 2.5 come in just when the exams is flaring"
+section: "Prompt"
+position: 4
+of_total: 4
+prev: ATM-W-009
+context_above: "Great question — and yes, you’re thinking in the right direction. For very dry,..."
+provenance: LOCAL
+nature: CLAIM
+nodes: [6, 9]
+pillar: Physical
+build_state: PARTIAL
+editorial: CLEAN
+strike_phase: 2C
+-->
+
 ## Prompt:
 So when does 2.5 come in just when the exams is flaring
 
 
 
-Powered by ChatGPT Exporter (https://www.chatgptexporter.com)
+
+<!-- ATM-W-010 OUT
+next: null
+context_below: null
+-->

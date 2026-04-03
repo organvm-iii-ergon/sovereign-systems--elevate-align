@@ -1,3 +1,19 @@
+<!-- DOC-ENVELOPE
+id: DOC-B-07
+total_sections: 4
+total_atoms: 4
+dominant_provenance: LOCAL
+dominant_nature: CLAIM
+sections:
+  - name: "Main"
+    atoms: [ATM-B-130]
+  - name: "Prompt"
+    atoms: [ATM-B-131]
+  - name: "Response"
+    atoms: [ATM-B-132]
+  - name: "Prompt-Response"
+    atoms: [ATM-B-133]
+-->
 ---
 title: "Vision-to-action: MVV, parking lot, 30-day sprint"
 source_file: "ChatGPT-Idea Implementation Strategies.txt"
@@ -8,6 +24,24 @@ pillar: "Financial"
 extracted: 2026-04-03
 ---
 
+<!-- ATM-B-130 IN
+idea: "Idea Implementation Strategies"
+section: "Main"
+position: 1
+of_total: 4
+prev: null
+context_above: null
+provenance: LOCAL
+nature: CLAIM
+nodes: [5, 8, 11]
+pillar: Financial
+build_state: MISSING
+editorial: CLEAN
+strike_phase: 4A
+-->
+
+
+
 Idea Implementation Strategies
 
 User: Maddie Galloway (95rrzm9nht@privaterelay.appleid.com)
@@ -16,8 +50,52 @@ Updated: 3/31/2026 12:53:29
 Exported: 3/31/2026 12:53:30
 Link: https://chatgpt.com/g/g-p-681675a28d988191995dc4b68a2bc1f1-healing-spiral/c/686d5622-12ac-8003-b4f7-39d1086f5fbd
 
+
+<!-- ATM-B-130 OUT
+next: ATM-B-131
+context_below: "Out of everything I’ve talked to you about personally and then as well as the sp..."
+-->
+
+<!-- ATM-B-131 IN
+idea: "Out of everything I’ve talked to you about personally and then as well as the sp..."
+section: "Prompt"
+position: 2
+of_total: 4
+prev: ATM-B-130
+context_above: "Idea Implementation Strategies"
+provenance: LOCAL
+nature: CLAIM
+nodes: [5, 8, 11]
+pillar: Financial
+build_state: EXISTS
+editorial: CLEAN
+strike_phase: 4A
+-->
+
 ## Prompt:
 Out of everything I’ve talked to you about personally and then as well as the spiral and anything you think could add to it, how do you get your ideas implemented - not get stuck cause my friend has so many cool ideas but then he gets a new one and gets sidetracked or starts attacking that and so I’ve been trying to tell him to stick with the simplest one he doesn’t really care about but understands the full concept and has finders to help and run it all the way through so he can see the data, get the systems and then just be able to plug and play from there but then he goes off about his new idea for human design lol and I don’t know how to make it click that like tackle one and the rest will flowwwe
+
+
+<!-- ATM-B-131 OUT
+next: ATM-B-132
+context_below: "This is so real, and you’ve actually hit on something really profound that most..."
+-->
+
+<!-- ATM-B-132 IN
+idea: "This is so real, and you’ve actually hit on something really profound that most..."
+section: "Response"
+position: 3
+of_total: 4
+prev: ATM-B-131
+context_above: "Out of everything I’ve talked to you about personally and then as well as the sp..."
+provenance: HYBRID
+nature: INSTRUCTION
+nodes: [5, 8, 11]
+pillar: Financial
+build_state: EXISTS
+editorial: CLEAN
+strike_phase: 1C
+-->
 
 ## Response:
 This is so real, and you’ve actually hit on something really profound that most visionary creators wrestle with: the tension between inspiration and implementation.
@@ -132,8 +210,31 @@ Then pitch the Spiral Blueprint as the “sacred container.”
 
 Would you like a visual tool or printable checklist for this that both of you could use? Something like a “Vision-to-Action Spiral Tracker”?
 
+
+<!-- ATM-B-132 OUT
+next: ATM-B-133
+context_below: "Yes please!!"
+-->
+
+<!-- ATM-B-133 IN
+idea: "Yes please!!"
+section: "Prompt-Response"
+position: 4
+of_total: 4
+prev: ATM-B-132
+context_above: "This is so real, and you’ve actually hit on something really profound that most..."
+provenance: HYBRID
+nature: QUESTION
+nodes: [5, 8, 11]
+pillar: Financial
+build_state: PARTIAL
+editorial: CLEAN
+strike_phase: 1C
+-->
+
 ## Prompt:
 Yes please!!
+
 
 ## Response:
 Here’s your Vision-to-Action Spiral Tracker as a printable guide you can use or share with your friend:
@@ -149,4 +250,8 @@ Would you like a visual version too (poster-style or spiral layout)?
 
 
 
-Powered by ChatGPT Exporter (https://www.chatgptexporter.com)
+
+<!-- ATM-B-133 OUT
+next: null
+context_below: null
+-->

@@ -1,3 +1,17 @@
+<!-- DOC-ENVELOPE
+id: DOC-W-15
+total_sections: 3
+total_atoms: 3
+dominant_provenance: LOCAL
+dominant_nature: CLAIM
+sections:
+  - name: "Main"
+    atoms: [ATM-W-136]
+  - name: "Prompt"
+    atoms: [ATM-W-137]
+  - name: "Response"
+    atoms: [ATM-W-138]
+-->
 ---
 title: "Well economics"
 source_file: "ChatGPT-Well Water Costs.txt"
@@ -8,6 +22,24 @@ pillar: "Physical"
 extracted: 2026-04-03
 ---
 
+<!-- ATM-W-136 IN
+idea: "Well Water Costs"
+section: "Main"
+position: 1
+of_total: 3
+prev: null
+context_above: null
+provenance: LOCAL
+nature: CLAIM
+nodes: [6]
+pillar: Physical
+build_state: MISSING
+editorial: CLEAN
+strike_phase: 2C
+-->
+
+
+
 Well Water Costs
 
 User: Maddie Galloway (95rrzm9nht@privaterelay.appleid.com)
@@ -16,8 +48,52 @@ Updated: 3/30/2026 21:45:03
 Exported: 3/31/2026 13:02:13
 Link: https://chatgpt.com/g/g-p-681675945c108191aebfa81457898ccd-business/c/698e9444-c884-832c-8d37-97f926bdc340
 
+
+<!-- ATM-W-136 OUT
+next: ATM-W-137
+context_below: "Do you have to pay for water if you’re on a well?"
+-->
+
+<!-- ATM-W-137 IN
+idea: "Do you have to pay for water if you’re on a well?"
+section: "Prompt"
+position: 2
+of_total: 3
+prev: ATM-W-136
+context_above: "Well Water Costs"
+provenance: LOCAL
+nature: QUESTION
+nodes: [6]
+pillar: Physical
+build_state: PARTIAL
+editorial: CLEAN
+strike_phase: 2C
+-->
+
 ## Prompt:
 Do you have to pay for water if you’re on a well?
+
+
+<!-- ATM-W-137 OUT
+next: ATM-W-138
+context_below: "Short answer: you don’t get a monthly water bill — but a well is definitely not..."
+-->
+
+<!-- ATM-W-138 IN
+idea: "Short answer: you don’t get a monthly water bill — but a well is definitely not..."
+section: "Response"
+position: 3
+of_total: 3
+prev: ATM-W-137
+context_above: "Do you have to pay for water if you’re on a well?"
+provenance: HYBRID
+nature: INSTRUCTION
+nodes: [6]
+pillar: Physical
+build_state: EXISTS
+editorial: CLEAN
+strike_phase: 2C
+-->
 
 ## Response:
 Short answer: you don’t get a monthly water bill — but a well is definitely not free water.
@@ -89,4 +165,8 @@ If you want, tell me what sparked the question — are you looking at property, 
 
 
 
-Powered by ChatGPT Exporter (https://www.chatgptexporter.com)
+
+<!-- ATM-W-138 OUT
+next: null
+context_below: null
+-->

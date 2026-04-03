@@ -1,3 +1,19 @@
+<!-- DOC-ENVELOPE
+id: DOC-W-14
+total_sections: 4
+total_atoms: 10
+dominant_provenance: LOCAL
+dominant_nature: CLAIM
+sections:
+  - name: "Main"
+    atoms: [ATM-W-126]
+  - name: "Prompt"
+    atoms: [ATM-W-127, ATM-W-129, ATM-W-131, ATM-W-133]
+  - name: "Response"
+    atoms: [ATM-W-128, ATM-W-130, ATM-W-132, ATM-W-134]
+  - name: "Prompt-Response"
+    atoms: [ATM-W-135]
+-->
 ---
 title: "Full sales system: content, DM scripts, cold calls"
 source_file: "ChatGPT-Water Sales Strategy Plan.txt"
@@ -8,6 +24,24 @@ pillar: "Financial"
 extracted: 2026-04-03
 ---
 
+<!-- ATM-W-126 IN
+idea: "Water Sales Strategy Plan"
+section: "Main"
+position: 1
+of_total: 10
+prev: null
+context_above: null
+provenance: LOCAL
+nature: CLAIM
+nodes: [11]
+pillar: Financial
+build_state: MISSING
+editorial: CLEAN
+strike_phase: 2B
+-->
+
+
+
 Water Sales Strategy Plan
 
 User: Maddie Galloway (95rrzm9nht@privaterelay.appleid.com)
@@ -16,8 +50,52 @@ Updated: 3/31/2026 13:10:29
 Exported: 3/31/2026 13:10:31
 Link: https://chatgpt.com/g/g-p-681675945c108191aebfa81457898ccd-business/c/678191c7-d48c-8003-9857-f22d29b8da70
 
+
+<!-- ATM-W-126 OUT
+next: ATM-W-127
+context_below: "This is my plan. I started with my big overall goal and then broke it down into..."
+-->
+
+<!-- ATM-W-127 IN
+idea: "This is my plan. I started with my big overall goal and then broke it down into..."
+section: "Prompt"
+position: 2
+of_total: 10
+prev: ATM-W-126
+context_above: "Water Sales Strategy Plan"
+provenance: LOCAL
+nature: CLAIM
+nodes: [11]
+pillar: Financial
+build_state: EXISTS
+editorial: CLEAN
+strike_phase: 2B
+-->
+
 ## Prompt:
 This is my plan. I started with my big overall goal and then broke it down into tangible steps. I need to first get to 100 direct/water sales. I think I need to consistently share about the water online using the content plans we came up with and then I need to really figure out the resources and my process as to how I can best deliver the info and get sales. Not sure if just videos in the DM’s are the way to go or if I should work on like a document or ebook or come up with a water funnel maybe? Can you help me come up with the best way to keep it simple but help me have a solid plan so I can start making water sales? After I have a good resource and system down I want to reach out to everyone I know about the health aspect to see if it might help them or anyone they know they can pass it along too. Or else maybe ask their advice about whatever system I choose for the people I know don’t struggle or care for their health?
+
+
+<!-- ATM-W-127 OUT
+next: ATM-W-128
+context_below: "Your plan is well-structured and shows clear direction toward achieving your goa..."
+-->
+
+<!-- ATM-W-128 IN
+idea: "Your plan is well-structured and shows clear direction toward achieving your goa..."
+section: "Response"
+position: 3
+of_total: 10
+prev: ATM-W-127
+context_above: "This is my plan. I started with my big overall goal and then broke it down into..."
+provenance: HYBRID
+nature: INSTRUCTION
+nodes: [11]
+pillar: Financial
+build_state: EXISTS
+editorial: CLEAN
+strike_phase: 2B
+-->
 
 ## Response:
 Your plan is well-structured and shows clear direction toward achieving your goal. Here's a refined step-by-step system you can implement to keep things simple and effective while focusing on the best resources and processes for water sales:
@@ -117,8 +195,52 @@ Measure what content is performing well online and tweak accordingly.
 
 This system keeps things simple while giving you flexibility. It builds on your strengths (sharing your story authentically) while creating a clear path to scale as you approach your first 100 sales. Let me know if you want help drafting scripts or creating a specific resource!
 
+
+<!-- ATM-W-128 OUT
+next: ATM-W-129
+context_below: "Oh and then I also want to come up with a cold call reach out about it as well o..."
+-->
+
+<!-- ATM-W-129 IN
+idea: "Oh and then I also want to come up with a cold call reach out about it as well o..."
+section: "Prompt"
+position: 4
+of_total: 10
+prev: ATM-W-128
+context_above: "Your plan is well-structured and shows clear direction toward achieving your goa..."
+provenance: LOCAL
+nature: CLAIM
+nodes: [11]
+pillar: Financial
+build_state: MISSING
+editorial: CLEAN
+strike_phase: 2B
+-->
+
 ## Prompt:
 Oh and then I also want to come up with a cold call reach out about it as well on Instagram. Can you help me organize my thoughts please lol
+
+
+<!-- ATM-W-129 OUT
+next: ATM-W-130
+context_below: "Implementing a cold outreach strategy on Instagram can effectively expand your c..."
+-->
+
+<!-- ATM-W-130 IN
+idea: "Implementing a cold outreach strategy on Instagram can effectively expand your c..."
+section: "Response"
+position: 5
+of_total: 10
+prev: ATM-W-129
+context_above: "Oh and then I also want to come up with a cold call reach out about it as well o..."
+provenance: HYBRID
+nature: CITATION
+nodes: [11]
+pillar: Financial
+build_state: PARTIAL
+editorial: CLEAN
+strike_phase: 2B
+-->
 
 ## Response:
 Implementing a cold outreach strategy on Instagram can effectively expand your customer base and boost water sales. Here's a structured approach to help you organize your thoughts and execute this plan:
@@ -195,8 +317,52 @@ Respect Boundaries: If someone isn't interested, thank them for their time and a
 
 By following this structured approach, you can effectively organize your cold outreach efforts on Instagram, fostering genuine connections that can lead to increased water sales.
 
+
+<!-- ATM-W-130 OUT
+next: ATM-W-131
+context_below: "Can you help me consolidate and organize my thoughts about it all!"
+-->
+
+<!-- ATM-W-131 IN
+idea: "Can you help me consolidate and organize my thoughts about it all!"
+section: "Prompt"
+position: 6
+of_total: 10
+prev: ATM-W-130
+context_above: "Implementing a cold outreach strategy on Instagram can effectively expand your c..."
+provenance: LOCAL
+nature: CLAIM
+nodes: [11]
+pillar: Financial
+build_state: MISSING
+editorial: CLEAN
+strike_phase: 2B
+-->
+
 ## Prompt:
 Can you help me consolidate and organize my thoughts about it all!
+
+
+<!-- ATM-W-131 OUT
+next: ATM-W-132
+context_below: "Absolutely! Here’s a consolidated and organized outline for your Instagram cold..."
+-->
+
+<!-- ATM-W-132 IN
+idea: "Absolutely! Here’s a consolidated and organized outline for your Instagram cold..."
+section: "Response"
+position: 7
+of_total: 10
+prev: ATM-W-131
+context_above: "Can you help me consolidate and organize my thoughts about it all!"
+provenance: HYBRID
+nature: SCRIPT
+nodes: [11]
+pillar: Financial
+build_state: EXISTS
+editorial: CLEAN
+strike_phase: 2B
+-->
 
 ## Response:
 Absolutely! Here’s a consolidated and organized outline for your Instagram cold outreach strategy, blending the ideas you’ve mentioned and keeping it simple:
@@ -318,8 +484,52 @@ Refine Messaging: Test different approaches and adjust based on what works best.
 
 This organized strategy allows you to reach out confidently while keeping the process simple and manageable. Let me know if you need help refining your messaging or creating templates for tracking!
 
+
+<!-- ATM-W-132 OUT
+next: ATM-W-133
+context_below: "Thank you! I meant about this entire chat including steps to get to my 100 water..."
+-->
+
+<!-- ATM-W-133 IN
+idea: "Thank you! I meant about this entire chat including steps to get to my 100 water..."
+section: "Prompt"
+position: 8
+of_total: 10
+prev: ATM-W-132
+context_above: "Absolutely! Here’s a consolidated and organized outline for your Instagram cold..."
+provenance: LOCAL
+nature: CLAIM
+nodes: [11]
+pillar: Financial
+build_state: MISSING
+editorial: CLEAN
+strike_phase: 2B
+-->
+
 ## Prompt:
 Thank you! I meant about this entire chat including steps to get to my 100 water sales
+
+
+<!-- ATM-W-133 OUT
+next: ATM-W-134
+context_below: "Got it! Here’s an organized and consolidated action plan that ties everything we..."
+-->
+
+<!-- ATM-W-134 IN
+idea: "Got it! Here’s an organized and consolidated action plan that ties everything we..."
+section: "Response"
+position: 9
+of_total: 10
+prev: ATM-W-133
+context_above: "Thank you! I meant about this entire chat including steps to get to my 100 water..."
+provenance: HYBRID
+nature: INSTRUCTION
+nodes: [11]
+pillar: Financial
+build_state: EXISTS
+editorial: CLEAN
+strike_phase: 2B
+-->
 
 ## Response:
 Got it! Here’s an organized and consolidated action plan that ties everything we’ve discussed into a clear roadmap for reaching your goal of 100 direct water sales and building from there:
@@ -480,12 +690,39 @@ Adjust strategies based on what worked during the first 100 sales.
 
 This roadmap simplifies the process while giving you a solid foundation to start making sales, stay consistent, and hit your goal. Let me know if you want me to help create specific content ideas, scripts, or templates!
 
+
+<!-- ATM-W-134 OUT
+next: ATM-W-135
+context_below: "Thank you!!"
+-->
+
+<!-- ATM-W-135 IN
+idea: "Thank you!!"
+section: "Prompt-Response"
+position: 10
+of_total: 10
+prev: ATM-W-134
+context_above: "Got it! Here’s an organized and consolidated action plan that ties everything we..."
+provenance: HYBRID
+nature: STATISTIC
+nodes: [11]
+pillar: Financial
+build_state: MISSING
+editorial: CLEAN
+strike_phase: 2B
+-->
+
 ## Prompt:
 Thank you!!
+
 
 ## Response:
 You're so welcome! You've got this! If you need help along the way—whether it's refining content, creating resources, or brainstorming new ideas—just let me know. I'm here to support you every step of the way. Wishing you massive success with your 100 sales! 🚀
 
 
 
-Powered by ChatGPT Exporter (https://www.chatgptexporter.com)
+
+<!-- ATM-W-135 OUT
+next: null
+context_below: null
+-->
