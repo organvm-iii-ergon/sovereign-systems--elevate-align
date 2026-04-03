@@ -1,3 +1,15 @@
+<!-- DOC-ENVELOPE
+id: DOC-T-09
+total_sections: 2
+total_atoms: 2
+dominant_provenance: LOCAL
+dominant_nature: QUESTION
+sections:
+  - name: "Client Query"
+    atoms: [ATM-T-177]
+  - name: "Response"
+    atoms: [ATM-T-178]
+-->
 ---
 title: "Saturn/Ketu, karma processing, Dec 2025"
 source_file: "ChatGPT-Vedic astrology energy analysis.txt"
@@ -16,11 +28,44 @@ Updated: 12/16/2025 10:33:06
 Exported: 3/31/2026 14:05:56
 Link: https://chatgpt.com/c/6941a57f-3b5c-8331-b3e1-69d18d8e7d55
 
-## Prompt:
+
+<!-- ATM-T-177 IN
+idea: "Acting as a Vedic astrologer, what is the energy today and this week? It feels heavy Please also inc"
+section: "Client Query"
+position: 1
+of_total: 2
+prev: null
+context_above: "null"
+provenance: LOCAL
+nature: QUESTION
+nodes: [2, 3]
+pillar: Cross-cutting
+build_state: MISSING
+editorial: CLEAN
+strike_phase: 1B
+-->
 Acting as a Vedic astrologer, what is the energy today and this week? It feels heavy 
 Please also incorporate my chart (oct 17, 2000 3:12pm afton Wyoming USA)
+<!-- ATM-T-177 OUT
+next: ATM-T-178
+context_below: "I hear you — this is a heavy stretch, and in Vedic astrology the weight you’re f"
+-->
 
-## Response:
+<!-- ATM-T-178 IN
+idea: "I hear you — this is a heavy stretch, and in Vedic astrology the weight you’re feeling actually make"
+section: "Response"
+position: 2
+of_total: 2
+prev: ATM-T-177
+context_above: "Acting as a Vedic astrologer, what is the energy today and this week? It feels h"
+provenance: HYBRID
+nature: FRAMEWORK
+nodes: [2, 3]
+pillar: Cross-cutting
+build_state: MISSING
+editorial: UNVERIFIED
+strike_phase: 1B
+-->
 I hear you — this is a heavy stretch, and in Vedic astrology the weight you’re feeling actually makes a lot of sense, especially for your chart.
 
 
@@ -312,7 +357,9 @@ or explore a Vedic remedy (very practical, very grounding)
 
 
 Just tell me where you want to go 💛
-
-
+<!-- ATM-T-178 OUT
+next: null
+context_below: "null"
+-->
 
 Powered by ChatGPT Exporter (https://www.chatgptexporter.com)

@@ -1,3 +1,11 @@
+<!-- DOC-ENVELOPE
+id: DOC-C-11
+total_sections: 0
+total_atoms: 0
+dominant_provenance: N/A
+dominant_nature: N/A
+sections: []
+-->
 ---
 title: "Empty"
 source_file: "ChatGPT-Research.txt"

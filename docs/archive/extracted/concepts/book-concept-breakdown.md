@@ -1,3 +1,15 @@
+<!-- DOC-ENVELOPE
+id: DOC-C-01
+total_sections: 2
+total_atoms: 2
+dominant_provenance: LOCAL
+dominant_nature: QUESTION
+sections:
+  - name: "Client Query"
+    atoms: [ATM-C-001]
+  - name: "Response"
+    atoms: [ATM-C-002]
+-->
 ---
 title: "Compound Effect + Radical Forgiveness + Happy Pocket distilled"
 source_file: "ChatGPT-Book Concept Breakdown.txt"
@@ -16,13 +28,43 @@ Updated: 3/31/2026 12:32:41
 Exported: 3/31/2026 12:32:42
 Link: https://chatgpt.com/g/g-p-681675a28d988191995dc4b68a2bc1f1-healing-spiral/c/686ecb00-eec0-8003-a2b4-a67d022c211d
 
-## Prompt:
+
+<!-- ATM-C-001 IN
+idea: "Using the books - the compound effect, radical forgiveness and a happy pocket full of money will you"
+section: "Client Query"
+position: 1
+of_total: 2
+prev: null
+context_above: "null"
+provenance: LOCAL
+nature: QUESTION
+nodes: [4, 8, 10, 12]
+pillar: Cross-cutting
+build_state: MISSING
+editorial: CLEAN
+strike_phase: 2A
+-->
 Using the books - the compound effect, radical forgiveness and a happy pocket full of money will you break down all the concepts in an easy to understand and implement way
+<!-- ATM-C-001 OUT
+next: ATM-C-002
+context_below: "Absolutely! Here's a clear, digestible breakdown of the core concepts from each "
+-->
 
-## Response:
-Updated saved memory
-
-
+<!-- ATM-C-002 IN
+idea: "Absolutely! Here's a clear, digestible breakdown of the core concepts from each book and how to impl"
+section: "Response"
+position: 2
+of_total: 2
+prev: ATM-C-001
+context_above: "Using the books - the compound effect, radical forgiveness and a happy pocket fu"
+provenance: HYBRID
+nature: PROTOCOL
+nodes: [4, 8, 10, 12]
+pillar: Cross-cutting
+build_state: MISSING
+editorial: UNVERIFIED
+strike_phase: 2A
+-->
 Absolutely! Here's a clear, digestible breakdown of the core concepts from each book and how to implement them step by step:
 
 
@@ -191,7 +233,9 @@ Gratitude journal + micro-celebration (all 3)
 
 
 Would you like this turned into a printable mini-guide, checklist, or Notion template?
-
-
+<!-- ATM-C-002 OUT
+next: null
+context_below: "null"
+-->
 
 Powered by ChatGPT Exporter (https://www.chatgptexporter.com)

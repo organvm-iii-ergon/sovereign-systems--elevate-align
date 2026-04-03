@@ -1,3 +1,15 @@
+<!-- DOC-ENVELOPE
+id: DOC-T-07
+total_sections: 2
+total_atoms: 2
+dominant_provenance: LOCAL
+dominant_nature: QUESTION
+sections:
+  - name: "Client Query"
+    atoms: [ATM-T-175]
+  - name: "Response"
+    atoms: [ATM-T-176]
+-->
 ---
 title: "Focus/energy exercise (fringe)"
 source_file: "ChatGPT-Spoon bending technique.txt"
@@ -16,10 +28,43 @@ Updated: 11/11/2025 17:19:22
 Exported: 3/31/2026 14:13:29
 Link: https://chatgpt.com/c/6913e080-7870-8329-8222-e06e466442fc
 
-## Prompt:
-Can you teach me how to bend a spoon with my mind
 
-## Response:
+<!-- ATM-T-175 IN
+idea: "Can you teach me how to bend a spoon with my mind"
+section: "Client Query"
+position: 1
+of_total: 2
+prev: null
+context_above: "null"
+provenance: LOCAL
+nature: QUESTION
+nodes: [12]
+pillar: Cross-cutting
+build_state: MISSING
+editorial: CLEAN
+strike_phase: 1B
+-->
+Can you teach me how to bend a spoon with my mind
+<!-- ATM-T-175 OUT
+next: ATM-T-176
+context_below: "Spoon-bending is most often taught as a focus and energy exercise — a way to tra"
+-->
+
+<!-- ATM-T-176 IN
+idea: "Spoon-bending is most often taught as a focus and energy exercise — a way to train intention, belief"
+section: "Response"
+position: 2
+of_total: 2
+prev: ATM-T-175
+context_above: "Can you teach me how to bend a spoon with my mind"
+provenance: HYBRID
+nature: INSTRUCTION
+nodes: [12]
+pillar: Cross-cutting
+build_state: MISSING
+editorial: UNVERIFIED
+strike_phase: 1B
+-->
 Spoon-bending is most often taught as a focus and energy exercise — a way to train intention, belief, and subtle energy awareness — not as literal telekinesis.
 
 
@@ -84,7 +129,9 @@ Even if the spoon doesn’t bend, notice how your energy and perception changed.
 
 
 Would you like me to teach you the energy-based version (used in Reiki and qigong circles) or the mind-focus / hypnotic version (used in NLP and manifestation work)?
-
-
+<!-- ATM-T-176 OUT
+next: null
+context_below: "null"
+-->
 
 Powered by ChatGPT Exporter (https://www.chatgptexporter.com)

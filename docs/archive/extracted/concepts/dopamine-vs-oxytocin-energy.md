@@ -1,3 +1,15 @@
+<!-- DOC-ENVELOPE
+id: DOC-C-06
+total_sections: 2
+total_atoms: 22
+dominant_provenance: LOCAL
+dominant_nature: QUESTION
+sections:
+  - name: "Client Query"
+    atoms: [ATM-C-045, ATM-C-047, ATM-C-048, ATM-C-050, ATM-C-051, ATM-C-053, ATM-C-055, ATM-C-057, ATM-C-059, ATM-C-061, ATM-C-063, ATM-C-065]
+  - name: "Response"
+    atoms: [ATM-C-046, ATM-C-049, ATM-C-052, ATM-C-054, ATM-C-056, ATM-C-058, ATM-C-060, ATM-C-062, ATM-C-064, ATM-C-066]
+-->
 ---
 title: "Life-domain yin/yang checklist"
 source_file: "ChatGPT-Dopamine vs Oxytocin Energy.txt"
@@ -16,10 +28,43 @@ Updated: 3/31/2026 12:39:42
 Exported: 3/31/2026 12:39:43
 Link: https://chatgpt.com/g/g-p-681675a28d988191995dc4b68a2bc1f1-healing-spiral/c/681c1b80-35e4-8003-9bb7-a7e76fb75102
 
-## Prompt:
-Is dopamine like masculine or yang and oxytocin is like feminine or yang?
 
-## Response:
+<!-- ATM-C-045 IN
+idea: "Is dopamine like masculine or yang and oxytocin is like feminine or yang?"
+section: "Client Query"
+position: 1
+of_total: 22
+prev: null
+context_above: "null"
+provenance: LOCAL
+nature: QUESTION
+nodes: [3, 5]
+pillar: Cross-cutting
+build_state: MISSING
+editorial: CLEAN
+strike_phase: 2A
+-->
+Is dopamine like masculine or yang and oxytocin is like feminine or yang?
+<!-- ATM-C-045 OUT
+next: ATM-C-046
+context_below: "Great question — and you're spot on in sensing an energetic polarity between dop"
+-->
+
+<!-- ATM-C-046 IN
+idea: "Great question — and you're spot on in sensing an energetic polarity between dopamine and oxytocin. "
+section: "Response"
+position: 2
+of_total: 22
+prev: ATM-C-045
+context_above: "Is dopamine like masculine or yang and oxytocin is like feminine or yang?"
+provenance: HYBRID
+nature: FRAMEWORK
+nodes: [3, 5]
+pillar: Cross-cutting
+build_state: MISSING
+editorial: UNVERIFIED
+strike_phase: 2A
+-->
 Great question — and you're spot on in sensing an energetic polarity between dopamine and oxytocin.
 
 
@@ -62,23 +107,68 @@ Too much oxytocin without dopamine can feel overly passive, co-dependent, or lac
 
 
 Want a diagram or visual of this polarity?
+<!-- ATM-C-046 OUT
+next: ATM-C-047
+context_below: "Yes please!"
+-->
 
-## Prompt:
+<!-- ATM-C-047 IN
+idea: "Yes please!"
+section: "Client Query"
+position: 3
+of_total: 22
+prev: ATM-C-046
+context_above: "Great question — and you're spot on in sensing an energetic polarity between dop"
+provenance: LOCAL
+nature: QUESTION
+nodes: [3, 5]
+pillar: Cross-cutting
+build_state: MISSING
+editorial: CLEAN
+strike_phase: 2A
+-->
 Yes please!
+<!-- ATM-C-047 OUT
+next: ATM-C-048
+context_below: "And then can we also come up with a list of yin/feminine and yang/masculine list"
+-->
 
-## Response:
-.cc440d50ba-express-entrypoint-button { display: flex; flex-direction: row; height: 32px; border-radius: 16px; position: relative; cursor: pointer; background-color: #E8E8E8; color: rgba(0, 0, 0, 0.84); align-items: center; box-sizing: border-box; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; } .cc440d50ba-express-entrypoint-button:hover { background-color: #E0E0E0; } .cc440d50ba-express-entrypoint-button .cc440d50ba-express-entrypoint-button-icon { display: flex; width: 40px; height: 32px; padding: 7px 8px 7px 14px; box-sizing: border-box; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; } .cc440d50ba-express-entrypoint-button .cc440d50ba-express-entrypoint-button-icon img { width: 18px; height: auto; } .cc440d50ba-express-entrypoint-button .cc440d50ba-express-entrypoint-button-text { font-family: "Adobe Clean", adobe-clean, "AdobeClean-Regular", sans-serif !important; display: flex; padding: 6px 16px 8px 0; font-size: 14px; font-weight: 700; line-height: 100%; box-sizing: border-box; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; } .gmailNativeViewer .cc440d50ba-express-entrypoint-button { display: none; background-color: rgba(0, 0, 0, 0.75); color: rgba(235, 235, 235, 1); border: 2px solid rgba(75, 75, 75, 1); } @media screen and (min-width: 800px) { .gmailNativeViewer .cc440d50ba-express-entrypoint-button { display: flex; } } .gmailNativeViewer .cc440d50ba-express-entrypoint-button:hover { background: rgba(75, 75, 75, 1); } .gmailNativeViewer .cc440d50ba-express-entrypoint-button-icon svg path { fill: #FFFFFF; } .gmailNativeViewer.cc440d50ba-tooltiptext { background-color: #DBDBDB; color: #111111; } .gmailNativeViewer.cc440d50ba-tooltiptext-bottom::after { border-color: transparent transparent #DBDBDB transparent; } .whatsappHover .cc440d50ba-express-entrypoint-button { border: 2px solid #C6C6C6; } .whatsappPreview .cc440d50ba-express-entrypoint-button:focus-visible { outline: rgb(0, 95, 204) solid 2px; } .gmailMessageView .cc440d50ba-express-entrypoint-button { border: 2px solid #C6C6C6; } .gdriveNativeViewer .cc440d50ba-express-entrypoint-button, .googleChatNativeViewer .cc440d50ba-express-entrypoint-button { display: none; background-color: rgba(0, 0, 0, 0.75); color: rgba(235, 235, 235, 1); border: 2px solid rgba(75, 75, 75, 1); } .gdriveNativeViewer .cc440d50ba-express-entrypoint-button:hover, .googleChatNativeViewer .cc440d50ba-express-entrypoint-button:hover { background: rgba(75, 75, 75, 1); } .gdriveNativeViewer .cc440d50ba-express-entrypoint-button-icon svg path, .googleChatNativeViewer .cc440d50ba-express-entrypoint-button-icon svg path { fill: #FFFFFF; } .googleImagePreview.cc440d50ba-express-entrypoint-wrapper { position: relative; } .gdriveNativeViewer.cc440d50ba-tooltiptext, .googleChatNativeViewer.cc440d50ba-tooltiptext { background-color: #DBDBDB; color: #111111; } .gdriveNativeViewer.cc440d50ba-tooltiptext-bottom::after, .googleChatNativeViewer.cc440d50ba-tooltiptext-bottom::after { border-color: transparent transparent #DBDBDB transparent; } /* align the button to the center of the container as there are gaps in the facebook image preview header */ .facebookPreview { display: flex; align-items: center; padding-right: 6px; } .facebookPreview.facebookMarketPlacePreview { position: absolute; top: 12px; right: 12px; z-index: 2; } .facebookPreview .cc440d50ba-express-entrypoint-button { height: 36px; border-radius: 20px; background: #1C1C1D99; border: 2px solid #393939; color: #DBDBDB; overflow: hidden; box-sizing: unset; -webkit-box-sizing: unset; -moz-box-sizing: unset; } .facebookPreview .cc440d50ba-express-entrypoint-button:hover { background: #4B4B4B99; } .facebookPreview .cc440d50ba-express-entrypoint-button .cc440d50ba-express-entrypoint-button-icon { display: flex; width: 38px; height: 36px; padding: 9px 6px 9px 14px; box-sizing: border-box; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; } .facebookPreview .cc440d50ba-express-entrypoint-button .cc440d50ba-express-entrypoint-button-icon img { width: 20px; height: auto; } .facebookPreview .cc440d50ba-express-entrypoint-button .cc440d50ba-express-entrypoint-button-text { transition: all 0.3s; transition-behavior: allow-discrete; } .facebookPreview .cc440d50ba-express-entrypoint-button .cc440d50ba-express-entrypoint-button-text.minified { transform: translateX(100%); width: 0; padding: 0; } .facebookPreview .cc440d50ba-express-entrypoint-button:hover .cc440d50ba-express-entrypoint-button-text.minified { transition-delay: 1s; transform: translateX(0%); width: auto; padding: 6px 16px 8px 0; } .facebookPreview .cc440d50ba-express-entrypoint-button .cc440d50ba-express-entrypoint-button-icon { transition: all 0.3s; transition-behavior: allow-discrete; } .facebookPreview .cc440d50ba-express-entrypoint-button .cc440d50ba-express-entrypoint-button-icon.minified { width: 36px; padding: 8px; } .facebookPreview .cc440d50ba-express-entrypoint-button:hover .cc440d50ba-express-entrypoint-button-icon.minified { transition-delay: 1s; width: 38px; padding: 9px 6px 9px 14px; } .facebookPreview.cc440d50ba-tooltiptext { background-color: #DBDBDB; color: #111111; } .facebookPreview.cc440d50ba-tooltiptext-bottom::after { border-color: transparent transparent #DBDBDB transparent; } @media screen and (min-width: 880px) { .gdriveNativeViewer .cc440d50ba-express-entrypoint-button, .googleChatNativeViewer .cc440d50ba-express-entrypoint-button { display: flex; } } .cc440d50ba-tooltiptext { font-family: "Adobe Clean", adobe-clean, "AdobeClean-Bold", sans-serif !important; pointer-events: none; cursor: default; font-weight: 400; font-size: 12px; visibility: hidden; width: 200px; top: 119%; line-height: 15px; background-color: #292929; color: #fff; text-align: left; border-radius: 7px; padding: 4px 9px 5px 9px; position: absolute; z-index: 10000; box-sizing: border-box; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; } .cc440d50ba-tooltiptext-bottom::after { content: ""; position: absolute; bottom: 100%; left: 50%; margin-left: -5px; border-width: 5px; border-style: solid; border-color: transparent transparent #292929 transparent; } .cc440d50ba-tooltiptext-top::after { content: ""; position: absolute; top: 100%; left: 50%; margin-left: -5px; border-width: 5px; border-style: solid; border-color: #292929 transparent transparent transparent; } .cc440d50ba-tooltiptext-left::after { content: ""; position: absolute; top: 50%; left: 100%; margin-top: -5px; border-width: 5px; border-style: solid; border-color: transparent transparent transparent #292929; } .cc440d50ba-tooltiptext-right::after { content: ""; position: absolute; top: 50%; right: 100%; margin-top: -5px; border-width: 5px; border-style: solid; border-color: transparent #292929 transparent transparent; } .chatgptPreview .cc440d50ba-express-entrypoint-button { top: 2.5px; background-color: #FFFFFF; border: 2px solid #DADADA; } .chatgptWebImagesPreview { grid-column: 3; grid-row: 1; justify-self: end; align-self: center; width: auto; } .chatgptChatView .cc440d50ba-express-entrypoint-button { background-color: #FFFFFF; border: 2px solid #DADADA; } .chatgptWebImagesPreview .cc440d50ba-express-entrypoint-button, .chatgptWebImagesPreviewGreyBackground .cc440d50ba-express-entrypoint-button { background-color: transparent; border: 2px solid #DBDBDB; color: #DBDBDB; } .chatgptWebImagesPreview.cc440d50ba-tooltiptext { background-color: #DBDBDB; color: #111111; width: 200px !important; transform: translateX(-70%) !important; } .chatgptWebImagesPreview.cc440d50ba-tooltiptext-bottom::after { border-color: transparent transparent #DBDBDB transparent; left: 70%; } .chatgptPreview .cc440d50ba-express-entrypoint-button:hover, .chatgptChatView .cc440d50ba-express-entrypoint-button:hover { background-color: #E0E0E0; } .chatgptWebImagesPreview .cc440d50ba-express-entrypoint-button:hover, .chatgptWebImagesPreviewGreyBackground .cc440d50ba-express-entrypoint-button:hover { background-color: #E9E9E9; border: 2px solid #131313; color: #131313; } /* Outlook Native Viewer styles */ .outlookNativeViewer .cc440d50ba-express-entrypoint-button { background-color: transparent; border: 1px solid transparent; border-radius: 2px; height: 32px; padding: 6px 4px 6px 0px; } .outlookNativeViewer .cc440d50ba-express-entrypoint-button:hover { background-color: rgba(0, 0, 0, 0.05); } .outlookNativeViewer .cc440d50ba-express-entrypoint-button .cc440d50ba-express-entrypoint-button-icon { width: 32px; height: 32px; padding: 6px; display: flex; align-items: center; justify-content: center; } .outlookNativeViewer .cc440d50ba-express-entrypoint-button .cc440d50ba-express-entrypoint-button-icon img { width: 20px; height: 20px; } .outlookNativeViewer .cc440d50ba-express-entrypoint-button .cc440d50ba-express-entrypoint-button-text, .outlookAttachmentView .cc440d50ba-express-entrypoint-button .cc440d50ba-express-entrypoint-button-text { padding: 0px 2px 0px 2px; font-size: 14px; font-weight: 400; line-height: 20px; font-family: "Segoe UI", "Segoe UI Web (West European)", sans-serif !important; color: rgba(66, 66, 66); } .outlookNativeViewer.cc440d50ba-tooltiptext { z-index: 10000001; /* to tackle the issue of tooltip being hidden by the outlook native viewer */ background-color: #DBDBDB; color: #111111; } .outlookNativeViewer.cc440d50ba-tooltiptext-bottom::after { border-color: transparent transparent #DBDBDB transparent; } /* Outlook Native Viewer dark mode */ .outlookNativeViewer.outlookDark .cc440d50ba-express-entrypoint-button:hover { background-color: rgba(255, 255, 255, 0.25); } .outlookNativeViewer.outlookDark .cc440d50ba-express-entrypoint-button .cc440d50ba-express-entrypoint-button-text, .outlookAttachmentView.outlookDark .cc440d50ba-express-entrypoint-button .cc440d50ba-express-entrypoint-button-text { color: rgba(255, 255, 255, 0.9); } /* Outlook Attachment View styles */ .outlookAttachmentView .cc440d50ba-express-entrypoint-button { background-color: transparent; border: 1px solid transparent; border-radius: 2px; height: 36px; padding: 0px; } .outlookAttachmentView .cc440d50ba-express-entrypoint-button:hover { background-color: rgba(0, 0, 0, 0.05); } .outlookAttachmentView .cc440d50ba-express-entrypoint-button .cc440d50ba-express-entrypoint-button-icon { width: 28px; height: 28px; padding: 0px; display: flex; align-items: center; justify-content: center; } .outlookAttachmentView .cc440d50ba-express-entrypoint-button .cc440d50ba-express-entrypoint-button-icon img { width: 18px; height: 18px; padding-left: 2px; } .outlookAttachmentView .cc440d50ba-express-entrypoint-button .cc440d50ba-express-entrypoint-button-text { padding: 0 4px; } .outlookAttachmentView.cc440d50ba-tooltiptext { z-index: 10000001; /* to tackle the issue of tooltip being hidden by the outlook native viewer */ } /* Outlook Attachment View dark mode */ .outlookAttachmentView.outlookDark .cc440d50ba-express-entrypoint-button:hover { background-color: #000; } .outlookAttachmentView.outlookDark.cc440d50ba-tooltiptext { background-color: #DBDBDB; color: #111111; } .outlookAttachmentView.outlookDark.cc440d50ba-tooltiptext-left::after { border-color: transparent transparent transparent #DBDBDB; } /* Dark mode styles */ @media (prefers-color-scheme: dark) { .cc440d50ba-express-entrypoint-button { background-color: #2C2C2C; color: rgba(255, 255, 255, 0.9); border: 2px solid #4B4B4B; } .cc440d50ba-express-entrypoint-button:hover { background-color: #3A3A3A; } .cc440d50ba-tooltiptext { background-color: #DBDBDB; color: #111111; } .cc440d50ba-tooltiptext-bottom::after { border-color: transparent transparent #DBDBDB transparent; } .cc440d50ba-tooltiptext-top::after { border-color: #DBDBDB transparent transparent transparent; } .cc440d50ba-tooltiptext-left::after { border-color: transparent transparent transparent #DBDBDB; } .cc440d50ba-tooltiptext-right::after { border-color: transparent #DBDBDB transparent transparent; } /* ChatGPT specific dark mode overrides */ .chatgptPreview .cc440d50ba-express-entrypoint-button, .chatgptChatView .cc440d50ba-express-entrypoint-button { background-color: #2C2C2C; border: 2px solid #4B4B4B; color: rgba(255, 255, 255, 0.9); } .chatgptPreview .cc440d50ba-express-entrypoint-button:hover, .chatgptChatView .cc440d50ba-express-entrypoint-button:hover { background-color: #3A3A3A; } /* WhatsApp dark mode */ .whatsappHover .cc440d50ba-express-entrypoint-button { border: 2px solid #4B4B4B; } .whatsappPreview .cc440d50ba-express-entrypoint-button:focus-visible { outline: rgb(153, 200, 255) solid 2px; } }
-
-
-
-
-
-Edit Image
-
-## Prompt:
+<!-- ATM-C-048 IN
+idea: "And then can we also come up with a list of yin/feminine and yang/masculine lists for every aspect o"
+section: "Client Query"
+position: 4
+of_total: 22
+prev: ATM-C-047
+context_above: "Yes please!"
+provenance: LOCAL
+nature: QUESTION
+nodes: [3, 5]
+pillar: Cross-cutting
+build_state: MISSING
+editorial: CLEAN
+strike_phase: 2A
+-->
 And then can we also come up with a list of yin/feminine and yang/masculine lists for every aspect of lives you think it applies or it would help to have a check in for
+<!-- ATM-C-048 OUT
+next: ATM-C-049
+context_below: "Absolutely — here's a detailed list of Yin (Feminine) vs. Yang (Masculine) acros"
+-->
 
-## Response:
+<!-- ATM-C-049 IN
+idea: "Absolutely — here's a detailed list of Yin (Feminine) vs. Yang (Masculine) across multiple areas of "
+section: "Response"
+position: 5
+of_total: 22
+prev: ATM-C-048
+context_above: "And then can we also come up with a list of yin/feminine and yang/masculine list"
+provenance: HYBRID
+nature: FRAMEWORK
+nodes: [3, 5]
+pillar: Cross-cutting
+build_state: MISSING
+editorial: UNVERIFIED
+strike_phase: 2A
+-->
 Absolutely — here's a detailed list of Yin (Feminine) vs. Yang (Masculine) across multiple areas of life, designed as a holistic check-in system for self-awareness, balance, and embodiment:
 
 
@@ -196,23 +286,68 @@ Conceptual clarity
 
 
 Would you like this in a printable visual layout or check-in journal format?
+<!-- ATM-C-049 OUT
+next: ATM-C-050
+context_below: "Yess can we do visual layout please!"
+-->
 
-## Prompt:
+<!-- ATM-C-050 IN
+idea: "Yess can we do visual layout please!"
+section: "Client Query"
+position: 6
+of_total: 22
+prev: ATM-C-049
+context_above: "Absolutely — here's a detailed list of Yin (Feminine) vs. Yang (Masculine) acros"
+provenance: LOCAL
+nature: QUESTION
+nodes: [3, 5]
+pillar: Cross-cutting
+build_state: MISSING
+editorial: CLEAN
+strike_phase: 2A
+-->
 Yess can we do visual layout please!
+<!-- ATM-C-050 OUT
+next: ATM-C-051
+context_below: "Ooo and then also a check in guide would be great!!!"
+-->
 
-## Response:
-.cc440d50ba-express-entrypoint-button { display: flex; flex-direction: row; height: 32px; border-radius: 16px; position: relative; cursor: pointer; background-color: #E8E8E8; color: rgba(0, 0, 0, 0.84); align-items: center; box-sizing: border-box; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; } .cc440d50ba-express-entrypoint-button:hover { background-color: #E0E0E0; } .cc440d50ba-express-entrypoint-button .cc440d50ba-express-entrypoint-button-icon { display: flex; width: 40px; height: 32px; padding: 7px 8px 7px 14px; box-sizing: border-box; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; } .cc440d50ba-express-entrypoint-button .cc440d50ba-express-entrypoint-button-icon img { width: 18px; height: auto; } .cc440d50ba-express-entrypoint-button .cc440d50ba-express-entrypoint-button-text { font-family: "Adobe Clean", adobe-clean, "AdobeClean-Regular", sans-serif !important; display: flex; padding: 6px 16px 8px 0; font-size: 14px; font-weight: 700; line-height: 100%; box-sizing: border-box; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; } .gmailNativeViewer .cc440d50ba-express-entrypoint-button { display: none; background-color: rgba(0, 0, 0, 0.75); color: rgba(235, 235, 235, 1); border: 2px solid rgba(75, 75, 75, 1); } @media screen and (min-width: 800px) { .gmailNativeViewer .cc440d50ba-express-entrypoint-button { display: flex; } } .gmailNativeViewer .cc440d50ba-express-entrypoint-button:hover { background: rgba(75, 75, 75, 1); } .gmailNativeViewer .cc440d50ba-express-entrypoint-button-icon svg path { fill: #FFFFFF; } .gmailNativeViewer.cc440d50ba-tooltiptext { background-color: #DBDBDB; color: #111111; } .gmailNativeViewer.cc440d50ba-tooltiptext-bottom::after { border-color: transparent transparent #DBDBDB transparent; } .whatsappHover .cc440d50ba-express-entrypoint-button { border: 2px solid #C6C6C6; } .whatsappPreview .cc440d50ba-express-entrypoint-button:focus-visible { outline: rgb(0, 95, 204) solid 2px; } .gmailMessageView .cc440d50ba-express-entrypoint-button { border: 2px solid #C6C6C6; } .gdriveNativeViewer .cc440d50ba-express-entrypoint-button, .googleChatNativeViewer .cc440d50ba-express-entrypoint-button { display: none; background-color: rgba(0, 0, 0, 0.75); color: rgba(235, 235, 235, 1); border: 2px solid rgba(75, 75, 75, 1); } .gdriveNativeViewer .cc440d50ba-express-entrypoint-button:hover, .googleChatNativeViewer .cc440d50ba-express-entrypoint-button:hover { background: rgba(75, 75, 75, 1); } .gdriveNativeViewer .cc440d50ba-express-entrypoint-button-icon svg path, .googleChatNativeViewer .cc440d50ba-express-entrypoint-button-icon svg path { fill: #FFFFFF; } .googleImagePreview.cc440d50ba-express-entrypoint-wrapper { position: relative; } .gdriveNativeViewer.cc440d50ba-tooltiptext, .googleChatNativeViewer.cc440d50ba-tooltiptext { background-color: #DBDBDB; color: #111111; } .gdriveNativeViewer.cc440d50ba-tooltiptext-bottom::after, .googleChatNativeViewer.cc440d50ba-tooltiptext-bottom::after { border-color: transparent transparent #DBDBDB transparent; } /* align the button to the center of the container as there are gaps in the facebook image preview header */ .facebookPreview { display: flex; align-items: center; padding-right: 6px; } .facebookPreview.facebookMarketPlacePreview { position: absolute; top: 12px; right: 12px; z-index: 2; } .facebookPreview .cc440d50ba-express-entrypoint-button { height: 36px; border-radius: 20px; background: #1C1C1D99; border: 2px solid #393939; color: #DBDBDB; overflow: hidden; box-sizing: unset; -webkit-box-sizing: unset; -moz-box-sizing: unset; } .facebookPreview .cc440d50ba-express-entrypoint-button:hover { background: #4B4B4B99; } .facebookPreview .cc440d50ba-express-entrypoint-button .cc440d50ba-express-entrypoint-button-icon { display: flex; width: 38px; height: 36px; padding: 9px 6px 9px 14px; box-sizing: border-box; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; } .facebookPreview .cc440d50ba-express-entrypoint-button .cc440d50ba-express-entrypoint-button-icon img { width: 20px; height: auto; } .facebookPreview .cc440d50ba-express-entrypoint-button .cc440d50ba-express-entrypoint-button-text { transition: all 0.3s; transition-behavior: allow-discrete; } .facebookPreview .cc440d50ba-express-entrypoint-button .cc440d50ba-express-entrypoint-button-text.minified { transform: translateX(100%); width: 0; padding: 0; } .facebookPreview .cc440d50ba-express-entrypoint-button:hover .cc440d50ba-express-entrypoint-button-text.minified { transition-delay: 1s; transform: translateX(0%); width: auto; padding: 6px 16px 8px 0; } .facebookPreview .cc440d50ba-express-entrypoint-button .cc440d50ba-express-entrypoint-button-icon { transition: all 0.3s; transition-behavior: allow-discrete; } .facebookPreview .cc440d50ba-express-entrypoint-button .cc440d50ba-express-entrypoint-button-icon.minified { width: 36px; padding: 8px; } .facebookPreview .cc440d50ba-express-entrypoint-button:hover .cc440d50ba-express-entrypoint-button-icon.minified { transition-delay: 1s; width: 38px; padding: 9px 6px 9px 14px; } .facebookPreview.cc440d50ba-tooltiptext { background-color: #DBDBDB; color: #111111; } .facebookPreview.cc440d50ba-tooltiptext-bottom::after { border-color: transparent transparent #DBDBDB transparent; } @media screen and (min-width: 880px) { .gdriveNativeViewer .cc440d50ba-express-entrypoint-button, .googleChatNativeViewer .cc440d50ba-express-entrypoint-button { display: flex; } } .cc440d50ba-tooltiptext { font-family: "Adobe Clean", adobe-clean, "AdobeClean-Bold", sans-serif !important; pointer-events: none; cursor: default; font-weight: 400; font-size: 12px; visibility: hidden; width: 200px; top: 119%; line-height: 15px; background-color: #292929; color: #fff; text-align: left; border-radius: 7px; padding: 4px 9px 5px 9px; position: absolute; z-index: 10000; box-sizing: border-box; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; } .cc440d50ba-tooltiptext-bottom::after { content: ""; position: absolute; bottom: 100%; left: 50%; margin-left: -5px; border-width: 5px; border-style: solid; border-color: transparent transparent #292929 transparent; } .cc440d50ba-tooltiptext-top::after { content: ""; position: absolute; top: 100%; left: 50%; margin-left: -5px; border-width: 5px; border-style: solid; border-color: #292929 transparent transparent transparent; } .cc440d50ba-tooltiptext-left::after { content: ""; position: absolute; top: 50%; left: 100%; margin-top: -5px; border-width: 5px; border-style: solid; border-color: transparent transparent transparent #292929; } .cc440d50ba-tooltiptext-right::after { content: ""; position: absolute; top: 50%; right: 100%; margin-top: -5px; border-width: 5px; border-style: solid; border-color: transparent #292929 transparent transparent; } .chatgptPreview .cc440d50ba-express-entrypoint-button { top: 2.5px; background-color: #FFFFFF; border: 2px solid #DADADA; } .chatgptWebImagesPreview { grid-column: 3; grid-row: 1; justify-self: end; align-self: center; width: auto; } .chatgptChatView .cc440d50ba-express-entrypoint-button { background-color: #FFFFFF; border: 2px solid #DADADA; } .chatgptWebImagesPreview .cc440d50ba-express-entrypoint-button, .chatgptWebImagesPreviewGreyBackground .cc440d50ba-express-entrypoint-button { background-color: transparent; border: 2px solid #DBDBDB; color: #DBDBDB; } .chatgptWebImagesPreview.cc440d50ba-tooltiptext { background-color: #DBDBDB; color: #111111; width: 200px !important; transform: translateX(-70%) !important; } .chatgptWebImagesPreview.cc440d50ba-tooltiptext-bottom::after { border-color: transparent transparent #DBDBDB transparent; left: 70%; } .chatgptPreview .cc440d50ba-express-entrypoint-button:hover, .chatgptChatView .cc440d50ba-express-entrypoint-button:hover { background-color: #E0E0E0; } .chatgptWebImagesPreview .cc440d50ba-express-entrypoint-button:hover, .chatgptWebImagesPreviewGreyBackground .cc440d50ba-express-entrypoint-button:hover { background-color: #E9E9E9; border: 2px solid #131313; color: #131313; } /* Outlook Native Viewer styles */ .outlookNativeViewer .cc440d50ba-express-entrypoint-button { background-color: transparent; border: 1px solid transparent; border-radius: 2px; height: 32px; padding: 6px 4px 6px 0px; } .outlookNativeViewer .cc440d50ba-express-entrypoint-button:hover { background-color: rgba(0, 0, 0, 0.05); } .outlookNativeViewer .cc440d50ba-express-entrypoint-button .cc440d50ba-express-entrypoint-button-icon { width: 32px; height: 32px; padding: 6px; display: flex; align-items: center; justify-content: center; } .outlookNativeViewer .cc440d50ba-express-entrypoint-button .cc440d50ba-express-entrypoint-button-icon img { width: 20px; height: 20px; } .outlookNativeViewer .cc440d50ba-express-entrypoint-button .cc440d50ba-express-entrypoint-button-text, .outlookAttachmentView .cc440d50ba-express-entrypoint-button .cc440d50ba-express-entrypoint-button-text { padding: 0px 2px 0px 2px; font-size: 14px; font-weight: 400; line-height: 20px; font-family: "Segoe UI", "Segoe UI Web (West European)", sans-serif !important; color: rgba(66, 66, 66); } .outlookNativeViewer.cc440d50ba-tooltiptext { z-index: 10000001; /* to tackle the issue of tooltip being hidden by the outlook native viewer */ background-color: #DBDBDB; color: #111111; } .outlookNativeViewer.cc440d50ba-tooltiptext-bottom::after { border-color: transparent transparent #DBDBDB transparent; } /* Outlook Native Viewer dark mode */ .outlookNativeViewer.outlookDark .cc440d50ba-express-entrypoint-button:hover { background-color: rgba(255, 255, 255, 0.25); } .outlookNativeViewer.outlookDark .cc440d50ba-express-entrypoint-button .cc440d50ba-express-entrypoint-button-text, .outlookAttachmentView.outlookDark .cc440d50ba-express-entrypoint-button .cc440d50ba-express-entrypoint-button-text { color: rgba(255, 255, 255, 0.9); } /* Outlook Attachment View styles */ .outlookAttachmentView .cc440d50ba-express-entrypoint-button { background-color: transparent; border: 1px solid transparent; border-radius: 2px; height: 36px; padding: 0px; } .outlookAttachmentView .cc440d50ba-express-entrypoint-button:hover { background-color: rgba(0, 0, 0, 0.05); } .outlookAttachmentView .cc440d50ba-express-entrypoint-button .cc440d50ba-express-entrypoint-button-icon { width: 28px; height: 28px; padding: 0px; display: flex; align-items: center; justify-content: center; } .outlookAttachmentView .cc440d50ba-express-entrypoint-button .cc440d50ba-express-entrypoint-button-icon img { width: 18px; height: 18px; padding-left: 2px; } .outlookAttachmentView .cc440d50ba-express-entrypoint-button .cc440d50ba-express-entrypoint-button-text { padding: 0 4px; } .outlookAttachmentView.cc440d50ba-tooltiptext { z-index: 10000001; /* to tackle the issue of tooltip being hidden by the outlook native viewer */ } /* Outlook Attachment View dark mode */ .outlookAttachmentView.outlookDark .cc440d50ba-express-entrypoint-button:hover { background-color: #000; } .outlookAttachmentView.outlookDark.cc440d50ba-tooltiptext { background-color: #DBDBDB; color: #111111; } .outlookAttachmentView.outlookDark.cc440d50ba-tooltiptext-left::after { border-color: transparent transparent transparent #DBDBDB; } /* Dark mode styles */ @media (prefers-color-scheme: dark) { .cc440d50ba-express-entrypoint-button { background-color: #2C2C2C; color: rgba(255, 255, 255, 0.9); border: 2px solid #4B4B4B; } .cc440d50ba-express-entrypoint-button:hover { background-color: #3A3A3A; } .cc440d50ba-tooltiptext { background-color: #DBDBDB; color: #111111; } .cc440d50ba-tooltiptext-bottom::after { border-color: transparent transparent #DBDBDB transparent; } .cc440d50ba-tooltiptext-top::after { border-color: #DBDBDB transparent transparent transparent; } .cc440d50ba-tooltiptext-left::after { border-color: transparent transparent transparent #DBDBDB; } .cc440d50ba-tooltiptext-right::after { border-color: transparent #DBDBDB transparent transparent; } /* ChatGPT specific dark mode overrides */ .chatgptPreview .cc440d50ba-express-entrypoint-button, .chatgptChatView .cc440d50ba-express-entrypoint-button { background-color: #2C2C2C; border: 2px solid #4B4B4B; color: rgba(255, 255, 255, 0.9); } .chatgptPreview .cc440d50ba-express-entrypoint-button:hover, .chatgptChatView .cc440d50ba-express-entrypoint-button:hover { background-color: #3A3A3A; } /* WhatsApp dark mode */ .whatsappHover .cc440d50ba-express-entrypoint-button { border: 2px solid #4B4B4B; } .whatsappPreview .cc440d50ba-express-entrypoint-button:focus-visible { outline: rgb(153, 200, 255) solid 2px; } }
-
-
-
-
-
-Edit Image
-
-## Prompt:
+<!-- ATM-C-051 IN
+idea: "Ooo and then also a check in guide would be great!!!"
+section: "Client Query"
+position: 7
+of_total: 22
+prev: ATM-C-050
+context_above: "Yess can we do visual layout please!"
+provenance: LOCAL
+nature: QUESTION
+nodes: [3, 5]
+pillar: Cross-cutting
+build_state: MISSING
+editorial: CLEAN
+strike_phase: 2A
+-->
 Ooo and then also a check in guide would be great!!!
+<!-- ATM-C-051 OUT
+next: ATM-C-052
+context_below: "Yes! Here’s a Yin/Yang Daily Check-In Guide you can use to stay balanced, ground"
+-->
 
-## Response:
+<!-- ATM-C-052 IN
+idea: "Yes! Here’s a Yin/Yang Daily Check-In Guide you can use to stay balanced, grounded, and intentional "
+section: "Response"
+position: 8
+of_total: 22
+prev: ATM-C-051
+context_above: "Ooo and then also a check in guide would be great!!!"
+provenance: HYBRID
+nature: FRAMEWORK
+nodes: [3, 5]
+pillar: Cross-cutting
+build_state: MISSING
+editorial: UNVERIFIED
+strike_phase: 2A
+-->
 Yes! Here’s a Yin/Yang Daily Check-In Guide you can use to stay balanced, grounded, and intentional across your life. This can be turned into a journal page, digital planner section, or even a printable poster for your wall.
 
 
@@ -291,11 +426,47 @@ What area needs a dose of clarity and momentum?
 
 
 Would you like this turned into a fillable digital template or printable PDF version?
+<!-- ATM-C-052 OUT
+next: ATM-C-053
+context_below: "Ahhh yes please this is so great can we do both please!"
+-->
 
-## Prompt:
+<!-- ATM-C-053 IN
+idea: "Ahhh yes please this is so great can we do both please!"
+section: "Client Query"
+position: 9
+of_total: 22
+prev: ATM-C-052
+context_above: "Yes! Here’s a Yin/Yang Daily Check-In Guide you can use to stay balanced, ground"
+provenance: LOCAL
+nature: QUESTION
+nodes: [3, 5]
+pillar: Cross-cutting
+build_state: MISSING
+editorial: CLEAN
+strike_phase: 2A
+-->
 Ahhh yes please this is so great can we do both please!
+<!-- ATM-C-053 OUT
+next: ATM-C-054
+context_below: "Here’s your Yin/Yang Daily Check-In Guide as a fillable Word document: Download "
+-->
 
-## Response:
+<!-- ATM-C-054 IN
+idea: "Here’s your Yin/Yang Daily Check-In Guide as a fillable Word document: Download Yin/Yang Check-In Gu"
+section: "Response"
+position: 10
+of_total: 22
+prev: ATM-C-053
+context_above: "Ahhh yes please this is so great can we do both please!"
+provenance: HYBRID
+nature: FRAMEWORK
+nodes: [3, 5]
+pillar: Cross-cutting
+build_state: MISSING
+editorial: UNVERIFIED
+strike_phase: 2A
+-->
 Here’s your Yin/Yang Daily Check-In Guide as a fillable Word document:
 
 
@@ -312,11 +483,47 @@ Download PDF Version
 
 
 Let me know if you want it in a Canva or Notion template format too!
+<!-- ATM-C-054 OUT
+next: ATM-C-055
+context_below: "Thank you! I just have such a hard time grasping the two and how to find balance"
+-->
 
-## Prompt:
+<!-- ATM-C-055 IN
+idea: "Thank you! I just have such a hard time grasping the two and how to find balance in masculine based "
+section: "Client Query"
+position: 11
+of_total: 22
+prev: ATM-C-054
+context_above: "Here’s your Yin/Yang Daily Check-In Guide as a fillable Word document: Download "
+provenance: LOCAL
+nature: QUESTION
+nodes: [3, 5]
+pillar: Cross-cutting
+build_state: MISSING
+editorial: CLEAN
+strike_phase: 2A
+-->
 Thank you! I just have such a hard time grasping the two and how to find balance in masculine based worded with female cycle
+<!-- ATM-C-055 OUT
+next: ATM-C-056
+context_below: "That makes so much sense — especially as a cyclical being trying to navigate a l"
+-->
 
-## Response:
+<!-- ATM-C-056 IN
+idea: "That makes so much sense — especially as a cyclical being trying to navigate a linear world. Here’s "
+section: "Response"
+position: 12
+of_total: 22
+prev: ATM-C-055
+context_above: "Thank you! I just have such a hard time grasping the two and how to find balance"
+provenance: HYBRID
+nature: FRAMEWORK
+nodes: [3, 5]
+pillar: Cross-cutting
+build_state: MISSING
+editorial: UNVERIFIED
+strike_phase: 2A
+-->
 That makes so much sense — especially as a cyclical being trying to navigate a linear world.
 
 
@@ -397,11 +604,47 @@ Productivity → Purposeful flow
 
 
 Would a cycle syncing calendar with aligned yin/yang check-ins help you bridge the gap day to day? I can create one for your next cycle.
+<!-- ATM-C-056 OUT
+next: ATM-C-057
+context_below: "No that’s okay for right now, what are some feminine things I can do I feel like"
+-->
 
-## Prompt:
+<!-- ATM-C-057 IN
+idea: "No that’s okay for right now, what are some feminine things I can do I feel like that’s the one I st"
+section: "Client Query"
+position: 13
+of_total: 22
+prev: ATM-C-056
+context_above: "That makes so much sense — especially as a cyclical being trying to navigate a l"
+provenance: LOCAL
+nature: QUESTION
+nodes: [3, 5]
+pillar: Cross-cutting
+build_state: MISSING
+editorial: CLEAN
+strike_phase: 2A
+-->
 No that’s okay for right now, what are some feminine things I can do I feel like that’s the one I struggle with and am always stuck in my yang so need to work on bringing in divine feminine and then through that it’s not hard or sticky it’s just flowwy aligned action
+<!-- ATM-C-057 OUT
+next: ATM-C-058
+context_below: "Yes — exactly! When you reconnect with your feminine (yin) essence, everything s"
+-->
 
-## Response:
+<!-- ATM-C-058 IN
+idea: "Yes — exactly! When you reconnect with your feminine (yin) essence, everything starts to feel magnet"
+section: "Response"
+position: 14
+of_total: 22
+prev: ATM-C-057
+context_above: "No that’s okay for right now, what are some feminine things I can do I feel like"
+provenance: HYBRID
+nature: FRAMEWORK
+nodes: [3, 5]
+pillar: Cross-cutting
+build_state: MISSING
+editorial: UNVERIFIED
+strike_phase: 2A
+-->
 Yes — exactly! When you reconnect with your feminine (yin) essence, everything starts to feel magnetic, soft, and self-led instead of forceful or draining. Especially as someone with a strong yang presence, feminine practices aren’t about doing less — they’re about doing from a place of deep embodiment.
 
 
@@ -491,11 +734,47 @@ Mantras to Anchor Into
 
 
 Would you like a printable version or a “Divine Feminine Day” ritual plan you can try when you feel stuck in yang?
+<!-- ATM-C-058 OUT
+next: ATM-C-059
+context_below: "Thank you this is so helpful so connecting with self is main theme maybe? How ca"
+-->
 
-## Prompt:
+<!-- ATM-C-059 IN
+idea: "Thank you this is so helpful so connecting with self is main theme maybe? How can I increase oxytoci"
+section: "Client Query"
+position: 15
+of_total: 22
+prev: ATM-C-058
+context_above: "Yes — exactly! When you reconnect with your feminine (yin) essence, everything s"
+provenance: LOCAL
+nature: QUESTION
+nodes: [3, 5]
+pillar: Cross-cutting
+build_state: MISSING
+editorial: CLEAN
+strike_phase: 2A
+-->
 Thank you this is so helpful so connecting with self is main theme maybe? How can I increase oxytocin is there even simpler ways or is this the best way to do as you described above?
+<!-- ATM-C-059 OUT
+next: ATM-C-060
+context_below: "Yes — you nailed it. The core of feminine energy and oxytocin activation is: Con"
+-->
 
-## Response:
+<!-- ATM-C-060 IN
+idea: "Yes — you nailed it. The core of feminine energy and oxytocin activation is: Connection. Safety. Pre"
+section: "Response"
+position: 16
+of_total: 22
+prev: ATM-C-059
+context_above: "Thank you this is so helpful so connecting with self is main theme maybe? How ca"
+provenance: HYBRID
+nature: FRAMEWORK
+nodes: [3, 5]
+pillar: Cross-cutting
+build_state: MISSING
+editorial: UNVERIFIED
+strike_phase: 2A
+-->
 Yes — you nailed it.
 The core of feminine energy and oxytocin activation is:
 Connection. Safety. Presence. Receiving.
@@ -558,12 +837,48 @@ You’re in oxytocin territory.
 
 
 Would you like a 3-day “oxytocin reset” plan that eases you back into feminine flow?
+<!-- ATM-C-060 OUT
+next: ATM-C-061
+context_below: "Yes please that would be perfect! So the only way to get Connection. Safety. Pre"
+-->
 
-## Prompt:
+<!-- ATM-C-061 IN
+idea: "Yes please that would be perfect! So the only way to get Connection. Safety. Presence. Receiving. Is"
+section: "Client Query"
+position: 17
+of_total: 22
+prev: ATM-C-060
+context_above: "Yes — you nailed it. The core of feminine energy and oxytocin activation is: Con"
+provenance: LOCAL
+nature: QUESTION
+nodes: [3, 5]
+pillar: Cross-cutting
+build_state: MISSING
+editorial: CLEAN
+strike_phase: 2A
+-->
 Yes please that would be perfect! 
 So the only way to get Connection. Safety. Presence. Receiving. Is by practice and patience?
+<!-- ATM-C-061 OUT
+next: ATM-C-062
+context_below: "Yes — exactly. Connection. Safety. Presence. Receiving. These aren’t things we h"
+-->
 
-## Response:
+<!-- ATM-C-062 IN
+idea: "Yes — exactly. Connection. Safety. Presence. Receiving. These aren’t things we hustle for or force —"
+section: "Response"
+position: 18
+of_total: 22
+prev: ATM-C-061
+context_above: "Yes please that would be perfect! So the only way to get Connection. Safety. Pre"
+provenance: HYBRID
+nature: PROTOCOL
+nodes: [3, 5]
+pillar: Cross-cutting
+build_state: MISSING
+editorial: UNVERIFIED
+strike_phase: 2A
+-->
 Yes — exactly.
 Connection. Safety. Presence. Receiving.
 These aren’t things we hustle for or force — they’re cultivated gently through repeated permission and practice.
@@ -671,11 +986,47 @@ Say: “I open to life. I open to love. I open to receiving.”
 
 
 Would you like this in a printable version or styled like a journal or ritual tracker?
+<!-- ATM-C-062 OUT
+next: ATM-C-063
+context_below: "So by letting myself sleep rn instead of forcing self care or creativity I’m hon"
+-->
 
-## Prompt:
+<!-- ATM-C-063 IN
+idea: "So by letting myself sleep rn instead of forcing self care or creativity I’m honoring divine feminin"
+section: "Client Query"
+position: 19
+of_total: 22
+prev: ATM-C-062
+context_above: "Yes — exactly. Connection. Safety. Presence. Receiving. These aren’t things we h"
+provenance: LOCAL
+nature: QUESTION
+nodes: [3, 5]
+pillar: Cross-cutting
+build_state: MISSING
+editorial: CLEAN
+strike_phase: 2A
+-->
 So by letting myself sleep rn instead of forcing self care or creativity I’m honoring divine feminine
+<!-- ATM-C-063 OUT
+next: ATM-C-064
+context_below: "Yes, absolutely. Letting yourself sleep when you’re tired is one of the most sac"
+-->
 
-## Response:
+<!-- ATM-C-064 IN
+idea: "Yes, absolutely. Letting yourself sleep when you’re tired is one of the most sacred, embodied acts o"
+section: "Response"
+position: 20
+of_total: 22
+prev: ATM-C-063
+context_above: "So by letting myself sleep rn instead of forcing self care or creativity I’m hon"
+provenance: HYBRID
+nature: NARRATIVE
+nodes: [3, 5]
+pillar: Cross-cutting
+build_state: MISSING
+editorial: UNVERIFIED
+strike_phase: 2A
+-->
 Yes, absolutely.
 Letting yourself sleep when you’re tired is one of the most sacred, embodied acts of divine feminine self-love.
 
@@ -694,11 +1045,47 @@ And rest is creation in disguise.
 
 
 Would you like a gentle affirmation or sleep ritual poem to hold you as you drift off?
+<!-- ATM-C-064 OUT
+next: ATM-C-065
+context_below: "Ah thank you!! Yes both please"
+-->
 
-## Prompt:
+<!-- ATM-C-065 IN
+idea: "Ah thank you!! Yes both please"
+section: "Client Query"
+position: 21
+of_total: 22
+prev: ATM-C-064
+context_above: "Yes, absolutely. Letting yourself sleep when you’re tired is one of the most sac"
+provenance: LOCAL
+nature: QUESTION
+nodes: [3, 5]
+pillar: Cross-cutting
+build_state: MISSING
+editorial: CLEAN
+strike_phase: 2A
+-->
 Ah thank you!! Yes both please
+<!-- ATM-C-065 OUT
+next: ATM-C-066
+context_below: "I’m so glad you’re honoring your need for rest. Here’s both a divine feminine af"
+-->
 
-## Response:
+<!-- ATM-C-066 IN
+idea: "I’m so glad you’re honoring your need for rest. Here’s both a divine feminine affirmation and a slee"
+section: "Response"
+position: 22
+of_total: 22
+prev: ATM-C-065
+context_above: "Ah thank you!! Yes both please"
+provenance: HYBRID
+nature: NARRATIVE
+nodes: [3, 5]
+pillar: Cross-cutting
+build_state: MISSING
+editorial: UNVERIFIED
+strike_phase: 2A
+-->
 I’m so glad you’re honoring your need for rest. Here’s both a divine feminine affirmation and a sleep ritual poem to wrap you in softness tonight:
 
 
@@ -744,7 +1131,9 @@ just sacred reprieve.
 
 Sleep well, love.
 You’re not falling behind — you’re falling into alignment.
-
-
+<!-- ATM-C-066 OUT
+next: null
+context_below: "null"
+-->
 
 Powered by ChatGPT Exporter (https://www.chatgptexporter.com)

@@ -1,3 +1,15 @@
+<!-- DOC-ENVELOPE
+id: DOC-C-08
+total_sections: 2
+total_atoms: 4
+dominant_provenance: LOCAL
+dominant_nature: QUESTION
+sections:
+  - name: "Client Query"
+    atoms: [ATM-C-079, ATM-C-081]
+  - name: "Response"
+    atoms: [ATM-C-080, ATM-C-082]
+-->
 ---
 title: "What Gallup is, 1000-person validity"
 source_file: "ChatGPT-Gallup Poll usage today.txt"
@@ -16,10 +28,43 @@ Updated: 10/19/2025 9:21:46
 Exported: 3/31/2026 13:04:48
 Link: https://chatgpt.com/g/g-p-681675945c108191aebfa81457898ccd-business/c/68bd1752-5750-8331-9873-284bf902e214
 
-## Prompt:
-Is the Gallup poll still used today  and what is it
 
-## Response:
+<!-- ATM-C-079 IN
+idea: "Is the Gallup poll still used today  and what is it"
+section: "Client Query"
+position: 1
+of_total: 4
+prev: null
+context_above: "null"
+provenance: LOCAL
+nature: QUESTION
+nodes: [4]
+pillar: Cross-cutting
+build_state: MISSING
+editorial: CLEAN
+strike_phase: 2A
+-->
+Is the Gallup poll still used today  and what is it
+<!-- ATM-C-079 OUT
+next: ATM-C-080
+context_below: "Absolutely—yes, the Gallup Poll is very much still in use today. Here's what it "
+-->
+
+<!-- ATM-C-080 IN
+idea: "Absolutely—yes, the Gallup Poll is very much still in use today. Here's what it is and how it's used"
+section: "Response"
+position: 2
+of_total: 4
+prev: ATM-C-079
+context_above: "Is the Gallup poll still used today  and what is it"
+provenance: HYBRID
+nature: STATISTIC
+nodes: [4]
+pillar: Cross-cutting
+build_state: MISSING
+editorial: UNVERIFIED
+strike_phase: 2A
+-->
 Absolutely—yes, the Gallup Poll is very much still in use today. Here's what it is and how it's used:
 
 
@@ -116,11 +161,47 @@ Feb 20, 2025
 
 
 ](https://www.them.us/story/gallup-lgbtq-population-nine-percent-increase-united-states?utm_source=chatgpt.com)
+<!-- ATM-C-080 OUT
+next: ATM-C-081
+context_below: "Is it true that they take the answers from 1005 people and that’s the answers fo"
+-->
 
-## Prompt:
+<!-- ATM-C-081 IN
+idea: "Is it true that they take the answers from 1005 people and that’s the answers for americas 280 milli"
+section: "Client Query"
+position: 3
+of_total: 4
+prev: ATM-C-080
+context_above: "Absolutely—yes, the Gallup Poll is very much still in use today. Here's what it "
+provenance: LOCAL
+nature: QUESTION
+nodes: [4]
+pillar: Cross-cutting
+build_state: MISSING
+editorial: CLEAN
+strike_phase: 2A
+-->
 Is it true that they take the answers from 1005 people and that’s the answers for americas 280 million people - is that still correct today numbers wise?
+<!-- ATM-C-081 OUT
+next: ATM-C-082
+context_below: "Great question — this gets to the heart of how polling actually works. 📊 Why 1,0"
+-->
 
-## Response:
+<!-- ATM-C-082 IN
+idea: "Great question — this gets to the heart of how polling actually works. 📊 Why 1,000 People Can Repres"
+section: "Response"
+position: 4
+of_total: 4
+prev: ATM-C-081
+context_above: "Is it true that they take the answers from 1005 people and that’s the answers fo"
+provenance: HYBRID
+nature: STATISTIC
+nodes: [4]
+pillar: Cross-cutting
+build_state: MISSING
+editorial: UNVERIFIED
+strike_phase: 2A
+-->
 Great question — this gets to the heart of how polling actually works.
 
 
@@ -160,7 +241,9 @@ Population Growth: Even though the U.S. has grown from ~280 million (early 2000s
 
 
 Do you want me to show you how they weight those 1,000 answers to make sure they actually reflect the full U.S. population?
-
-
+<!-- ATM-C-082 OUT
+next: null
+context_below: "null"
+-->
 
 Powered by ChatGPT Exporter (https://www.chatgptexporter.com)
