@@ -70,8 +70,10 @@ npm run preview    # Local preview of the production build
 **Organ:** ORGAN-III (Commerce) | **Tier:** standard | **Status:** LOCAL
 **Org:** `organvm-iii-ergon` | **Repo:** `sovereign-systems--elevate-align`
 
-### Edges
-- *No inter-repo edges declared in seed.yaml*
+### Edges (from seed.yaml)
+- **Produces →** ORGAN-V (case-study process-documentation), ORGAN-VII (client-launch-announcement distribution-signal), ORGAN-VI (client-success-material community-growth), ORGAN-I (practice-validates-theory research-feedback)
+- **Consumes ←** ORGAN-III/commerce--meta (governance: contract templates, SOPs, client lifecycle standards)
+- **Event:** `client.site.deployed`
 
 ### Siblings in Commerce
 `classroom-rpg-aetheria`, `gamified-coach-interface`, `trade-perpetual-future`, `fetch-familiar-friends`, `sovereign-ecosystem--real-estate-luxury`, `public-record-data-scrapper`, `search-local--happy-hour`, `multi-camera--livestream--framework`, `universal-mail--automation`, `mirror-mirror`, `the-invisible-ledger`, `enterprise-plugin`, `virgil-training-overlay`, `tab-bookmark-manager`, `a-i-chat--exporter` ... and 15 more
