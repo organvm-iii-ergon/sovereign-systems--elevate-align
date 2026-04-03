@@ -1,3 +1,125 @@
+<!-- DOC-ENVELOPE
+id: DOC-R-04
+total_sections: 49
+total_atoms: 55
+dominant_provenance: LOCAL
+dominant_nature: FRAMEWORK
+sections:
+  - name: "Maddie's Document Framing"
+    atoms: [ATM-R-091, ATM-R-092]
+  - name: "Questionnaire — Architecture"
+    atoms: [ATM-R-093, ATM-R-094, ATM-R-095]
+  - name: "Questionnaire — Content"
+    atoms: [ATM-R-096, ATM-R-097, ATM-R-098]
+  - name: "Questionnaire — User Experience"
+    atoms: [ATM-R-099, ATM-R-100]
+  - name: "Questionnaire — Spiral Visual"
+    atoms: [ATM-R-101]
+  - name: "Questionnaire — Brand & Monetization"
+    atoms: [ATM-R-102]
+  - name: "Questionnaire — Technical & Timeline"
+    atoms: [ATM-R-103]
+  - name: "Chat Thread Pull Lists"
+    atoms: [ATM-R-104]
+  - name: "Developer Action Checklist"
+    atoms: [ATM-R-105]
+  - name: "Water Content — Hydrogen Ebook"
+    atoms: [ATM-R-106]
+  - name: "Water Content — ERW Benefits & Testimony"
+    atoms: [ATM-R-107]
+  - name: "Water Content — Kangen Ebook Chapters"
+    atoms: [ATM-R-108]
+  - name: "Water Content — Kangen Ebook Appendix"
+    atoms: [ATM-R-109]
+  - name: "Water Content — Ebook Citations"
+    atoms: [ATM-R-110]
+  - name: "Workbook Planning — Initial Vision"
+    atoms: [ATM-R-111]
+  - name: "Workbook Planning — Structure Iterations"
+    atoms: [ATM-R-112]
+  - name: "Workbook — Framework Draft"
+    atoms: [ATM-R-113]
+  - name: "Workbook — Sections 1-2 Written"
+    atoms: [ATM-R-114]
+  - name: "Workbook — Sections 1-2 Enhanced"
+    atoms: [ATM-R-115]
+  - name: "Workbook — Sections 3-5"
+    atoms: [ATM-R-116]
+  - name: "Workbook — Sections 5-6"
+    atoms: [ATM-R-117]
+  - name: "Workbook — Section 7 (Habits)"
+    atoms: [ATM-R-118]
+  - name: "Workbook — Sections 8-10 + Personalized Plans"
+    atoms: [ATM-R-119]
+  - name: "Workbook — Personalized Astrology Sections"
+    atoms: [ATM-R-120]
+  - name: "Website Organization Plan"
+    atoms: [ATM-R-121]
+  - name: "Water Content — Raw Dump"
+    atoms: [ATM-R-122]
+  - name: "Water Page — Clean Draft"
+    atoms: [ATM-R-123]
+  - name: "Water Page — H2 Focused Draft"
+    atoms: [ATM-R-124]
+  - name: "Home Page Draft + Build Roadmap"
+    atoms: [ATM-R-125]
+  - name: "Spiral Page Flow + Subscription"
+    atoms: [ATM-R-126]
+  - name: "Thread Summary — Workbook Project"
+    atoms: [ATM-R-127]
+  - name: "Workbook — Duplicate Draft"
+    atoms: [ATM-R-128]
+  - name: "Workbook — Third Revision Sec 1-2"
+    atoms: [ATM-R-129]
+  - name: "Workbook — Third Revision Sec 3-5"
+    atoms: [ATM-R-130]
+  - name: "Workbook — Revised Section 6"
+    atoms: [ATM-R-131]
+  - name: "Workbook — Revised Sections 7-10"
+    atoms: [ATM-R-132]
+  - name: "Workbook — Personalized Version"
+    atoms: [ATM-R-133]
+  - name: "Workbook — Personalized Sec 4-5"
+    atoms: [ATM-R-134]
+  - name: "Workbook — Personalized Sec 6 + Calendars"
+    atoms: [ATM-R-135]
+  - name: "Human Design — Maddie's Type & Authority"
+    atoms: [ATM-R-136]
+  - name: "Human Design — Maddie's Profile & Channels"
+    atoms: [ATM-R-137]
+  - name: "Astrology + HD — Maddie's Integration"
+    atoms: [ATM-R-138]
+  - name: "Spirit Song Reading + Anthony's Chart"
+    atoms: [ATM-R-139]
+  - name: "Anthony's Reading — Tarot Fusion"
+    atoms: [ATM-R-140]
+  - name: "Human Design — Type Fundamentals"
+    atoms: [ATM-R-141]
+  - name: "Human Design — Authorities & Profiles"
+    atoms: [ATM-R-142]
+  - name: "Human Design — Centers & Channels"
+    atoms: [ATM-R-143]
+  - name: "Thread Organization Guide"
+    atoms: [ATM-R-144]
+  - name: "Resource Links & Pull Priorities"
+    atoms: [ATM-R-145]
+-->
+
+<!-- ATM-R-091 IN
+idea: "Maddie's overview framing: doc organization (Master Blueprint first, raw chat threads for depth, content + assets), big picture vision (4-pillar spiral ecosystem, exploratory first), build priority (spiral hub, physical pillar, water funnel)"
+section: "Maddie's Document Framing"
+position: 1
+of_total: 55
+prev: null
+context_above: null
+provenance: LOCAL
+nature: INSTRUCTION
+nodes: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
+pillar: Cross-cutting
+build_state: PARTIAL
+editorial: CLEAN
+strike_phase: 1A
+-->
 **COMPLETED QUESTIONNAIRE (POLISHED)**
 
 Hey!! I'm so excited about this --- I pulled everything together so you have both the structure and the full context to build from.
@@ -28,6 +150,26 @@ I'm also pulling together:
 
 These are to plug into the structure from the main doc.
 
+<!-- ATM-R-091 OUT
+next: ATM-R-092
+context_below: "Big picture vision detail: interactive spiral with 4 pillars, each pillar educat"
+-->
+
+<!-- ATM-R-092 IN
+idea: "Big picture vision detail: interactive spiral with 4 pillars, each pillar educates then routes (Physical→water funnel, Inner→subscription, Identity→transformation, Financial→business funnel), build priority order, trust in execution"
+section: "Maddie's Document Framing"
+position: 2
+of_total: 55
+prev: ATM-R-091
+context_above: "Maddie's overview framing: doc organization (Master Blueprint first, raw chat th"
+provenance: LOCAL
+nature: INSTRUCTION
+nodes: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
+pillar: Cross-cutting
+build_state: PARTIAL
+editorial: CLEAN
+strike_phase: 1A
+-->
 \-\--
 
 Big Picture Vision (quick context):
@@ -67,7 +209,26 @@ Everything else can layer in after.
 Let me know how you want to approach the build from here --- happy to walk through anything together or clarify as you go. I trust your eye on the execution side, I just want to make sure the flow + feeling stays aligned with this vision
 
 So excited for this 🌀
+<!-- ATM-R-092 OUT
+next: ATM-R-093
+context_below: "Architecture Q1.1: Hub site (elevatealign.com) holds spiral, pillar overviews, e"
+-->
 
+<!-- ATM-R-093 IN
+idea: "Architecture Q1.1: Hub site (elevatealign.com) holds spiral, pillar overviews, education, brand story, funnel entry points; GHL handles funnels, lead capture, checkout; pillar split between site and GHL"
+section: "Questionnaire — Architecture"
+position: 3
+of_total: 55
+prev: ATM-R-092
+context_above: "Big picture vision detail: interactive spiral with 4 pillars, each pillar educat"
+provenance: LOCAL
+nature: FRAMEWORK
+nodes: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
+pillar: Cross-cutting
+build_state: PARTIAL
+editorial: CLEAN
+strike_phase: 1A
+-->
 ## **1. Architecture**
 
 ### **1.1 What lives on the spiral hub site vs GHL?**
@@ -94,6 +255,26 @@ GHL (Go High Level) is used for:
 
 - Checkout + conversions
 
+<!-- ATM-R-093 OUT
+next: ATM-R-094
+context_below: "Architecture Q1.2-1.3: Physical Sovereignty lands on site page then CTA to GHL w"
+-->
+
+<!-- ATM-R-094 IN
+idea: "Architecture Q1.2-1.3: Physical Sovereignty lands on site page then CTA to GHL water funnel; Inner leads to subscription; Identity to future courses; Financial to GHL business funnel"
+section: "Questionnaire — Architecture"
+position: 4
+of_total: 55
+prev: ATM-R-093
+context_above: "Architecture Q1.1: Hub site (elevatealign.com) holds spiral, pillar overviews, e"
+provenance: LOCAL
+nature: FRAMEWORK
+nodes: [1, 5, 13]
+pillar: Cross-cutting
+build_state: PARTIAL
+editorial: CLEAN
+strike_phase: 1A
+-->
 Pillar Breakdown:
 
 - Physical Sovereignty → Both\
@@ -141,6 +322,26 @@ Pillar Breakdown:
   - Page on site with free education & awareness / self assessment tools
 
   - CTA → GHL business funnel
+<!-- ATM-R-094 OUT
+next: ATM-R-095
+context_below: "Architecture Q1.4: Pages list — Home/Spiral Hub, 4 sovereignty pages, Start Here"
+-->
+
+<!-- ATM-R-095 IN
+idea: "Architecture Q1.4: Pages list — Home/Spiral Hub, 4 sovereignty pages, Start Here (guided entry), About/Philosophy, Free Tools/Self-Assessments, Subscription Hub (future), Store (future prints/crafts/maps/calendars)"
+section: "Questionnaire — Architecture"
+position: 5
+of_total: 55
+prev: ATM-R-094
+context_above: "Architecture Q1.2-1.3: Physical Sovereignty lands on site page then CTA to GHL w"
+provenance: LOCAL
+nature: FRAMEWORK
+nodes: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
+pillar: Cross-cutting
+build_state: PARTIAL
+editorial: CLEAN
+strike_phase: 1A
+-->
 
 ### **1.4 Pages that should exist see doc 2a.** 
 
@@ -163,7 +364,26 @@ Pillar Breakdown:
 - Subscription Hub (future)
 
 - Store (future for photography prints & crafts - MAPS & calendars (that we talked about before but can come back around down the line!))
+<!-- ATM-R-095 OUT
+next: ATM-R-096
+context_below: "Content Q2.1: Physical Sovereignty topics — water, breath/cells, creature selves"
+-->
 
+<!-- ATM-R-096 IN
+idea: "Content Q2.1: Physical Sovereignty topics — water, breath/cells, creature selves/Maslow, absorption/efficiency, blood sugar (before nervous system), minerals, mind-gut connection, nervous system, sleep, hormones/fertility, autoimmune/lymph, females higher auto/ADHD, tongue diagnostics, symptom decoding"
+section: "Questionnaire — Content"
+position: 6
+of_total: 55
+prev: ATM-R-095
+context_above: "Architecture Q1.4: Pages list — Home/Spiral Hub, 4 sovereignty pages, Start Here"
+provenance: LOCAL
+nature: FRAMEWORK
+nodes: [1, 2, 3, 4, 5]
+pillar: Physical
+build_state: PARTIAL
+editorial: CLEAN
+strike_phase: 2A
+-->
 ## **2. Content**
 
 ### **2.1 Physical Sovereignty Topics**
@@ -196,6 +416,26 @@ Pillar Breakdown:
 
 - Self-assessment tools (symptom decoding)
 
+<!-- ATM-R-096 OUT
+next: ATM-R-097
+context_below: "Content Q2.2: Topics per pillar — Inner (hydration, detox, nutrition, inflammati"
+-->
+
+<!-- ATM-R-097 IN
+idea: "Content Q2.2: Topics per pillar — Inner (hydration, detox, nutrition, inflammation, energy/fatigue, nervous system, emotional processing, subconscious reprogramming, anxiety, yin/yang, intuition); Identity (awareness, self-worth, beliefs, confidence, ego, responsibility, feel good first); Financial (aligning with calling/child self, money mindset, business as self-expression, sales, brand building, wealth energetics, funnels/automation)"
+section: "Questionnaire — Content"
+position: 7
+of_total: 55
+prev: ATM-R-096
+context_above: "Content Q2.1: Physical Sovereignty topics — water, breath/cells, creature selves"
+provenance: LOCAL
+nature: FRAMEWORK
+nodes: [6, 7, 8, 9, 10, 11, 12, 13]
+pillar: Cross-cutting
+build_state: PARTIAL
+editorial: CLEAN
+strike_phase: 1A
+-->
 ### **2.2 Topics per pillar**
 
 Physical
@@ -258,6 +498,26 @@ Financial
 
 - Funnel & automated systems that work for you !!
 
+<!-- ATM-R-097 OUT
+next: ATM-R-098
+context_below: "Content Q2.3-2.4: Existing assets (IG reels, water demos, healing story, funnel "
+-->
+
+<!-- ATM-R-098 IN
+idea: "Content Q2.3-2.4: Existing assets (IG reels, water demos, healing story, funnel scripts, EAU blueprint, ChatGPT notes); needed content (structured pillar pages, educational modules, subscription library, documentary landing video)"
+section: "Questionnaire — Content"
+position: 8
+of_total: 55
+prev: ATM-R-097
+context_above: "Content Q2.2: Topics per pillar — Inner (hydration, detox, nutrition, inflammati"
+provenance: LOCAL
+nature: PRODUCT
+nodes: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
+pillar: Cross-cutting
+build_state: PARTIAL
+editorial: CLEAN
+strike_phase: 1A
+-->
 ### **2.3 Content you already have**
 
 - Instagram reels (education + storytelling)
@@ -281,7 +541,26 @@ Financial
 - Subscription content library
 
 - Refined documentary-style landing video
+<!-- ATM-R-098 OUT
+next: ATM-R-099
+context_below: "UX Q3.1-3.4: First thing = interactive spiral with quiz prompt; free depth befor"
+-->
 
+<!-- ATM-R-099 IN
+idea: "UX Q3.1-3.4: First thing = interactive spiral with quiz prompt; free depth before email (explore spiral, pillar overviews, some tools); email required for personalized results; payment unlocks full systems, deep dives, subscription content (weekly/monthly video access)"
+section: "Questionnaire — User Experience"
+position: 9
+of_total: 55
+prev: ATM-R-098
+context_above: "Content Q2.3-2.4: Existing assets (IG reels, water demos, healing story, funnel "
+provenance: LOCAL
+nature: MODEL
+nodes: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
+pillar: Cross-cutting
+build_state: PARTIAL
+editorial: CLEAN
+strike_phase: 1A
+-->
 ## **3. User Experience**
 
 ### **3.1 First thing user sees**
@@ -322,6 +601,26 @@ Email required for:
 
   - Subscription content (access to me via video weekly or monthly)
 
+<!-- ATM-R-099 OUT
+next: ATM-R-100
+context_below: "UX Q3.5-3.6: Subscription includes exclusive video library, monthly group calls,"
+-->
+
+<!-- ATM-R-100 IN
+idea: "UX Q3.5-3.6: Subscription includes exclusive video library, monthly group calls, deeper teachings, possible product perks, possible snail mail with prints/letter/knick knacks; pricing $11-$44/month"
+section: "Questionnaire — User Experience"
+position: 10
+of_total: 55
+prev: ATM-R-099
+context_above: "UX Q3.1-3.4: First thing = interactive spiral with quiz prompt; free depth befor"
+provenance: LOCAL
+nature: PRODUCT
+nodes: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
+pillar: Cross-cutting
+build_state: MISSING
+editorial: CLEAN
+strike_phase: 1A
+-->
 ### **3.4 Free vs Paid**
 
 Free:
@@ -361,7 +660,26 @@ Includes:
 - Starter: \$11-\$44/month
 
 - Expand later
+<!-- ATM-R-100 OUT
+next: ATM-R-101
+context_below: "Spiral Visual Q4.1-4.4: Circular spiral layout, 4 pillars along spiral, each nod"
+-->
 
+<!-- ATM-R-101 IN
+idea: "Spiral Visual Q4.1-4.4: Circular spiral layout, 4 pillars along spiral, each node clickable expanding into own world/page; each pillar different color tone, same size for balance, minimal clean icons; YES clickable + animated = core experience"
+section: "Questionnaire — Spiral Visual"
+position: 11
+of_total: 55
+prev: ATM-R-100
+context_above: "UX Q3.5-3.6: Subscription includes exclusive video library, monthly group calls,"
+provenance: LOCAL
+nature: INSTRUCTION
+nodes: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
+pillar: Cross-cutting
+build_state: PARTIAL
+editorial: CLEAN
+strike_phase: 1A
+-->
 ## **[4. The Spiral Visual]{.mark}**
 
 ### **4.1 Description**
@@ -392,6 +710,26 @@ Includes:
 
 - This is the core experience
 
+<!-- ATM-R-101 OUT
+next: ATM-R-102
+context_below: "Brand Q5.1-5.3: Store (future) — water systems, minerals/health tools, digital p"
+-->
+
+<!-- ATM-R-102 IN
+idea: "Brand Q5.1-5.3: Store (future) — water systems, minerals/health tools, digital products, ritual/lifestyle items; priority order: 1. spiral hub, 2. water funnel, 3. subscription, 4. snail mail add-on, 5. business funnel, 6. store; reel inspiration: documentary-style, emotional + educational, personal transformation"
+section: "Questionnaire — Brand & Monetization"
+position: 12
+of_total: 55
+prev: ATM-R-101
+context_above: "Spiral Visual Q4.1-4.4: Circular spiral layout, 4 pillars along spiral, each nod"
+provenance: LOCAL
+nature: PRODUCT
+nodes: [13]
+pillar: Financial
+build_state: MISSING
+editorial: CLEAN
+strike_phase: 1A
+-->
 ## **5. Brand & Monetization**
 
 ### **5.1 Store (future)**
@@ -426,6 +764,26 @@ Includes:
 
 - Personal transformation narrative
 
+<!-- ATM-R-102 OUT
+next: ATM-R-103
+context_below: "Technical Q6 + Timeline Q7: GoDaddy DNS confirmed, GHL quiz embed TBD, video hos"
+-->
+
+<!-- ATM-R-103 IN
+idea: "Technical Q6 + Timeline Q7: GoDaddy DNS confirmed, GHL quiz embed TBD, video hosting flexible, Stripe for subscriptions; priority: spiral hub live first, subscription after foundation, soft launch ASAP"
+section: "Questionnaire — Technical & Timeline"
+position: 13
+of_total: 55
+prev: ATM-R-102
+context_above: "Brand Q5.1-5.3: Store (future) — water systems, minerals/health tools, digital p"
+provenance: LOCAL
+nature: INSTRUCTION
+nodes: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
+pillar: Cross-cutting
+build_state: PARTIAL
+editorial: FLAGGED
+strike_phase: 1C
+-->
 ## **6. Technical**
 
 Yes have access to godaddy & DNS!
@@ -449,7 +807,26 @@ It's not pretty or ready to go yet though!
 ### **7.3 Deadline**
 
 → Soft launch ASAP, refine after
+<!-- ATM-R-103 OUT
+next: ATM-R-104
+context_below: "Chat thread pull list and Google Doc structure: MUST PULL (water hub, water funn"
+-->
 
+<!-- ATM-R-104 IN
+idea: "Chat thread pull list and Google Doc structure: MUST PULL (water hub, water funnel, fertility/autoimmune, EAU blueprint, IG strategy); ALSO HELPFUL (story, scripts, brand tone); Google Doc structure (questionnaire, brand vision, pillar breakdowns, future expansion); final piece — Anthony needs clarity, structure, direction; next steps for Maddie"
+section: "Chat Thread Pull Lists"
+position: 14
+of_total: 55
+prev: ATM-R-103
+context_above: "Technical Q6 + Timeline Q7: GoDaddy DNS confirmed, GHL quiz embed TBD, video hos"
+provenance: HYBRID
+nature: INSTRUCTION
+nodes: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
+pillar: Cross-cutting
+build_state: N/A
+editorial: CLEAN
+strike_phase: 1A
+-->
 # **✨ PART 2 --- CHAT THREADS YOU NEED TO PULL**
 
 Go grab these from your past chats:
@@ -526,6 +903,26 @@ If you want next:
 
 Maddie working on
 
+<!-- ATM-R-104 OUT
+next: ATM-R-105
+context_below: "Developer-ready action checklist: spiral site build with status tables for quest"
+-->
+
+<!-- ATM-R-105 IN
+idea: "Developer-ready action checklist: spiral site build with status tables for questionnaire, brand vision (EAU framework, Feel Good First, theories/tests table with thread dates), spiral architecture (hub, routing, pages, visual), homepage experience (hero video, spiral animation, CTAs), deadlines (soft launch ASAP); reels/scripts pull list; Google Drive links for video content"
+section: "Developer Action Checklist"
+position: 15
+of_total: 55
+prev: ATM-R-104
+context_above: "Chat thread pull list and Google Doc structure: MUST PULL (water hub, water funn"
+provenance: HYBRID
+nature: INSTRUCTION
+nodes: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
+pillar: Cross-cutting
+build_state: PARTIAL
+editorial: CLEAN
+strike_phase: 1A
+-->
 # **[Next Steps for You]{.mark}**
 
 1.  [Add all Instagram reel/video links in Section 7\
@@ -660,6 +1057,26 @@ If you want, I can also make a visual version with color-coded sections + checkb
 
 Do you want me to make that visual checklist next?
 
+<!-- ATM-R-105 OUT
+next: ATM-R-106
+context_below: "Hydrogen benefits ebook outline: formal version (2200 words) covering H2 as ener"
+-->
+
+<!-- ATM-R-106 IN
+idea: "Hydrogen benefits ebook outline: formal version (2200 words) covering H2 as energy source, antioxidant, medical/therapeutic agent, environmental applications; casual version covering same topics in accessible tone"
+section: "Water Content — Hydrogen Ebook"
+position: 16
+of_total: 55
+prev: ATM-R-105
+context_above: "Developer-ready action checklist: spiral site build with status tables for quest"
+provenance: ALIEN
+nature: PRODUCT
+nodes: [1, 2, 3, 4, 5]
+pillar: Physical
+build_state: MISSING
+editorial: UNVERIFIED
+strike_phase: 2A
+-->
 Reels
 
 [Reels & Scripts:]{.mark}
@@ -729,6 +1146,26 @@ The exploration of molecular hydrogen\'s benefits represents a promising frontie
 
 As we venture into the future, the integration of molecular hydrogen in various industries and domains has the potential to revolutionize energy production, improve health outcomes, and address pressing environmental challenges. By embracing the power of this simple molecule, we can pave the way for a sustainable and healthier future for generations to come.
 
+<!-- ATM-R-106 OUT
+next: ATM-R-107
+context_below: "ERW (Electrolyzed Reduced Water) benefits overview + personal healing testimony:"
+-->
+
+<!-- ATM-R-107 IN
+idea: "ERW (Electrolyzed Reduced Water) benefits overview + personal healing testimony: antioxidant properties, enhanced hydration, alkalizing effects, digestive support, sports performance, skin health; personal story of overcoming infections and autoimmune issues with ERW"
+section: "Water Content — ERW Benefits & Testimony"
+position: 17
+of_total: 55
+prev: ATM-R-106
+context_above: "Hydrogen benefits ebook outline: formal version (2200 words) covering H2 as ener"
+provenance: HYBRID
+nature: NARRATIVE
+nodes: [1, 2, 3, 4, 5]
+pillar: Physical
+build_state: MISSING
+editorial: UNVERIFIED
+strike_phase: 2A
+-->
 Note: The word count for each section is an approximation and can be adjusted to fit the desired length of 2200 words.
 
 Title: The Incredible Advantages of Molecular Hydrogen: Unveiling its Mind-Blowing Benefits
@@ -823,6 +1260,26 @@ Remember, healing is a personal journey, and what works for one person may not w
 
 Disclaimer: This personal testimony is not meant to replace professional medical advice. Always consult with healthcare professionals regarding your specific health concerns and treatment options.
 
+<!-- ATM-R-107 OUT
+next: ATM-R-108
+context_below: "Kangen water ebook chapters 1-5: Understanding Kangen Water (history, ionization"
+-->
+
+<!-- ATM-R-108 IN
+idea: "Kangen water ebook chapters 1-5: Understanding Kangen Water (history, ionization process, water types), Science Behind ERW (pH, stress/acidosis/disease), Health Benefits (hydration, antioxidant, acid-base), Molecular Hydrogen benefits (cardiovascular, diabetes, joints), Real-Life Testimonials"
+section: "Water Content — Kangen Ebook Chapters"
+position: 18
+of_total: 55
+prev: ATM-R-107
+context_above: "ERW (Electrolyzed Reduced Water) benefits overview + personal healing testimony:"
+provenance: ALIEN
+nature: PRODUCT
+nodes: [1, 2, 3, 4, 5]
+pillar: Physical
+build_state: MISSING
+editorial: UNVERIFIED
+strike_phase: 2A
+-->
 "Learn more about ERW" [[https://docs.google.com/document/d/1L0-uLxU50yCDjxEnzwwFMhUt3zb5iwN_XYa8_NdbmpA/edit?usp=sharing]{.underline}](https://docs.google.com/document/d/1L0-uLxU50yCDjxEnzwwFMhUt3zb5iwN_XYa8_NdbmpA/edit?usp=sharing)
 
 ebook - freebie when sign up for water funnel
@@ -1091,6 +1548,26 @@ Several case studies have highlighted the potential health benefits of Kangen wa
 
 In addition to formal studies, many individuals share personal stories of how Kangen water and molecular hydrogen have positively impacted their health. These anecdotal accounts often highlight improvements in energy levels, digestion, skin health, and overall well-being.
 
+<!-- ATM-R-108 OUT
+next: ATM-R-109
+context_below: "Kangen water ebook chapters 6-9 + appendix: Incorporating into daily life (recip"
+-->
+
+<!-- ATM-R-109 IN
+idea: "Kangen water ebook chapters 6-9 + appendix: Incorporating into daily life (recipes, maintenance), Myths & misconceptions, Holistic health integration, Making the most of experience; appendix with recommended books, online resources, glossary, references"
+section: "Water Content — Kangen Ebook Appendix"
+position: 19
+of_total: 55
+prev: ATM-R-108
+context_above: "Kangen water ebook chapters 1-5: Understanding Kangen Water (history, ionization"
+provenance: ALIEN
+nature: CITATION
+nodes: [1, 2, 3, 4, 5]
+pillar: Physical
+build_state: MISSING
+editorial: UNVERIFIED
+strike_phase: 2A
+-->
 Feel free to adjust or add any details to these chapters!
 
 Certainly! Here's how Chapters 6 and 7 might look, along with a section for citations and resources:
@@ -1266,6 +1743,26 @@ Certainly! Here's how Chapters 6 and 7 might look, along with a section for cita
     - [[American Journal of Clinical Nutrition]{.underline}](https://academic.oup.com/ajcn/article/80/6/1436/4690) - Article on the impact of diet on body acid-base balance.
 
 Feel free to adjust or add more references based on your preferences or additional research. How do these chapters look to you?
+<!-- ATM-R-109 OUT
+next: ATM-R-110
+context_below: "Citations for Kangen water ebook chapters 1-3 and 8-9: journal references for hy"
+-->
+
+<!-- ATM-R-110 IN
+idea: "Citations for Kangen water ebook chapters 1-3 and 8-9: journal references for hydration, antioxidant properties, acid-base balance, stress management, community support from JCBN, IJERPH, NEJM, etc."
+section: "Water Content — Ebook Citations"
+position: 20
+of_total: 55
+prev: ATM-R-109
+context_above: "Kangen water ebook chapters 6-9 + appendix: Incorporating into daily life (recip"
+provenance: ALIEN
+nature: CITATION
+nodes: [1, 2, 3, 4, 5]
+pillar: Physical
+build_state: MISSING
+editorial: UNVERIFIED
+strike_phase: 2A
+-->
 
 Certainly! Here are citations for Chapters 1 through 3:
 
@@ -1357,6 +1854,26 @@ Certainly! Here are citations for Chapters 1 through 3:
 
 Feel free to review these citations and let me know if you need any additional information or adjustments!
 
+<!-- ATM-R-110 OUT
+next: ATM-R-111
+context_below: "Chat thread pull (second listing) + workbook/ebook initial planning: team perspe"
+-->
+
+<!-- ATM-R-111 IN
+idea: "Chat thread pull (second listing) + workbook/ebook initial planning: team perspective (psychologist, nutritionist, holistic healer) for accountability workbook; Maddie's answers — gratitude/resilience emphasis, life coach not nutritionist, breathwork/affirmations, 80/20 action vs spiritual, birth chart details (Libra Sun, Gemini Moon, Scorpio Mercury/Venus, etc.)"
+section: "Workbook Planning — Initial Vision"
+position: 21
+of_total: 55
+prev: ATM-R-110
+context_above: "Citations for Kangen water ebook chapters 1-3 and 8-9: journal references for hy"
+provenance: LOCAL
+nature: INSTRUCTION
+nodes: [6, 7, 8, 9, 10, 11, 12]
+pillar: Inner
+build_state: MISSING
+editorial: CLEAN
+strike_phase: 1A
+-->
 From chat
 
 # **CHAT THREADS YOU NEED TO PULL**
@@ -1443,6 +1960,26 @@ This sounds like a meaningful and transformative project! Here\'s a proposed str
 
 Let me know your thoughts on the structure and additional details you'd like to include. We can also dive into how to adapt this specifically to your birth chart when you\'re ready!
 
+<!-- ATM-R-111 OUT
+next: ATM-R-112
+context_below: "Workbook outline iterations: 10-section structure (self-assessment, mind-body-sp"
+-->
+
+<!-- ATM-R-112 IN
+idea: "Workbook outline iterations: 10-section structure (self-assessment, mind-body-spirit, resilience, energy alignment, cycle-based habits, travel/financial planning, vision setting, astrology insights, yearly/monthly tools, personalized blueprint); astrology blurbs woven throughout instead of separate section; embodiment practices added"
+section: "Workbook Planning — Structure Iterations"
+position: 22
+of_total: 55
+prev: ATM-R-111
+context_above: "Chat thread pull (second listing) + workbook/ebook initial planning: team perspe"
+provenance: HYBRID
+nature: FRAMEWORK
+nodes: [6, 7, 8, 9, 10, 11, 12]
+pillar: Inner
+build_state: MISSING
+editorial: CLEAN
+strike_phase: 1A
+-->
 This is a great start! and yes please do add those two too the team they seem like spectacular additions! let me answer your questions and then we can tweak the outline just a little bit and then we can dive in! 1. I don\'t know specifically, but I like what you have so far about stress management but more emphasis on gratitude and building resilience and mental toughness, also want to emphasize listening to your body and emotions and really letting yourself feel them - maybe radical forgiveness and accepting yourself fully. 2. lets change it from health nutritionist to life coach, maybe just note that men and women have different hormonal cycles and so they should tailor their habits to that for the best results and for the girls to hit me up about the cycles and syncing free ebook I have if they are wanting more info on that and recipes etc 3. I think Breathwork, affirmations and energy healing techniques sound great! lets try to go with 80% aligned inspired action and 20% personal values, mindset and spiritual practices to make sure we are in that high vibe and that the action part can be that much easier 4. Sun - Libra, 24°48\' Moon - Gemini, 22°43\' Mercury - Scorpio, 15°46\' Venus - Scorpio, 28°19\' Mars - Virgo, 19°21\' Jupiter - Gemini, 10°40\' R Saturn - Taurus, 29°54\' R Uranus - Aquarius, 16°56\' R Neptune - Aquarius, 3°48\' Pluto - Sagittarius, 11°3\' Node - Cancer, 19°23\' R Lilith (BM) - Capricorn, 25°40\' Pallas A. - Libra, 20°28\' Chiron - Sagittarius, 14°17\' AC - Aquarius, 2°11\'52\" МС - Scorpio, 26°3\'38\" do you think we should add something to help the collective on my instagram with their astro to this workbook or should we hold off and do a separate one on astrology? or do you think just putting in the most insightful placements or transits for each day or just a lil blurb like \"depending on where your mercury is \... \" things like that maybe? whatever you think is best just don\'t want to overwhelm them! thank you and let me know if you have any other questions!
 
 Thank you for your detailed responses and your birth chart information! Here's how we can refine the outline based on your input and address your question about incorporating astrology for your audience:
@@ -1595,6 +2132,27 @@ Would you like me to focus on a particular section of the workbook (e.g., planne
 
 okay gotcha, no worries at all! let\'s do a comprehensive framework to get started please!
 
+Here's a comprehensive framework for your workbook! It's designed with clear sections and includes suggestions for layout and functionality to make it easy to translate into Canva or any other design tool.
+<!-- ATM-R-112 OUT
+next: ATM-R-113
+context_below: "Workbook sections 1-9 framework + design suggestions: title page, introduction ("
+-->
+
+<!-- ATM-R-113 IN
+idea: "Workbook sections 1-9 framework + design suggestions: title page, introduction (self-assessment, visualization), mind-body-spirit (emotional check-in, gratitude, radical forgiveness letter), resilience, daily energy/embodiment, cycle alignment, travel/financial planning, vision setting, yearly/monthly tools, conclusion; design: minimalist pastels, interactive features, flexible for reuse"
+section: "Workbook — Framework Draft"
+position: 23
+of_total: 55
+prev: ATM-R-112
+context_above: "Workbook outline iterations: 10-section structure (self-assessment, mind-body-sp"
+provenance: HYBRID
+nature: TOOL
+nodes: [6, 7, 8, 9, 10, 11, 12]
+pillar: Inner
+build_state: MISSING
+editorial: CLEAN
+strike_phase: 1A
+-->
 Here's a comprehensive framework for your workbook! It's designed with clear sections and includes suggestions for layout and functionality to make it easy to translate into Canva or any other design tool.
 
 ### **Title Page**
@@ -1768,6 +2326,26 @@ Here's a comprehensive framework for your workbook! It's designed with clear sec
 3.  **Flexibility:** Design pages that are easy to duplicate for ongoing use (e.g., daily or monthly trackers).
 
 Does this framework feel aligned with your vision? If yes, I can start building out sample text for specific sections!
+<!-- ATM-R-113 OUT
+next: ATM-R-114
+context_below: "Workbook sections 1-2 fully written: Section 1 'Start Where You Are' (self-asses"
+-->
+
+<!-- ATM-R-114 IN
+idea: "Workbook sections 1-2 fully written: Section 1 'Start Where You Are' (self-assessment 1-10 scale across 6 life areas, visualization exercise, moon sign astrology insight); Section 2 'Listening to Yourself Fully' (emotional check-in, daily gratitude practice, radical forgiveness letter template with Venus sign insight)"
+section: "Workbook — Sections 1-2 Written"
+position: 24
+of_total: 55
+prev: ATM-R-113
+context_above: "Workbook sections 1-9 framework + design suggestions: title page, introduction ("
+provenance: HYBRID
+nature: TOOL
+nodes: [6, 7, 8, 9, 10, 11, 12]
+pillar: Inner
+build_state: MISSING
+editorial: CLEAN
+strike_phase: 1A
+-->
 
 will you not do section 8 and instead just throughout the entire workbook put in little information and blurbs about the most significant astrological placement regarding that subject? and then my biggest goal for this is to help people get a really drawn out picture of where they are at, where they want to go and how to best get there with flow and ease, do you feel the layout of the sections and info we are providing will support and assist in that?
 
@@ -2030,6 +2608,26 @@ Got it! I'll enhance each section with insights about when and why to use the pr
 
 Here's the revised version for the second section:
 
+<!-- ATM-R-114 OUT
+next: ATM-R-115
+context_below: "Workbook sections 1-2 enhanced with when-to-use guidance and 'body whisper/screa"
+-->
+
+<!-- ATM-R-115 IN
+idea: "Workbook sections 1-2 enhanced with when-to-use guidance and 'body whisper/scream' quote: each practice now includes when to use, why it helps, timing recommendations; daily alignment check-in added as bonus practice"
+section: "Workbook — Sections 1-2 Enhanced"
+position: 25
+of_total: 55
+prev: ATM-R-114
+context_above: "Workbook sections 1-2 fully written: Section 1 'Start Where You Are' (self-asses"
+provenance: HYBRID
+nature: TOOL
+nodes: [6, 7, 8, 9, 10, 11, 12]
+pillar: Inner
+build_state: MISSING
+editorial: CLEAN
+strike_phase: 1A
+-->
 ### **Section 2: Mind-Body-Spirit Connection**
 
 #### **Theme: Listening to Yourself Fully**
@@ -2228,6 +2826,26 @@ Ask yourself these three questions each day:
 *\"Your Moon sign reflects your emotional needs and inner world. When assessing your current state, consider how your Moon placement influences what makes you feel safe, nurtured, and fulfilled. This can guide your self-assessment and daily alignment practices.\"*
 
 Let me know if this fully captures the tone and depth you\'re looking for! Should I continue with the remaining sections in this style?
+<!-- ATM-R-115 OUT
+next: ATM-R-116
+context_below: "Workbook sections 3-5 drafted: Section 3 'Setting Intentions & Goals' (SMART goa"
+-->
+
+<!-- ATM-R-116 IN
+idea: "Workbook sections 3-5 drafted: Section 3 'Setting Intentions & Goals' (SMART goals, action steps, obstacle mapping, Jupiter/Saturn astrology); Section 4 'Building Resilience' (resilience toolkit, affirmations, mindset reframes, Mars astrology); Section 5 'Emotional Awareness & Mastery' (emotion mapping, nervous system awareness, EFT/tapping, Chiron astrology)"
+section: "Workbook — Sections 3-5"
+position: 26
+of_total: 55
+prev: ATM-R-115
+context_above: "Workbook sections 1-2 enhanced with when-to-use guidance and 'body whisper/screa"
+provenance: HYBRID
+nature: TOOL
+nodes: [6, 7, 8, 9, 10, 11, 12]
+pillar: Inner
+build_state: MISSING
+editorial: CLEAN
+strike_phase: 1A
+-->
 
 this is great! let\'s keep going!
 
@@ -2528,6 +3146,26 @@ this is great! will you expand on how this is just brushing the surface but the 
 
 I\'m so glad you\'re happy with it! I absolutely love the idea of expanding on the awareness of emotions and reframing them. Here\'s how I would integrate that:
 
+<!-- ATM-R-116 OUT
+next: ATM-R-117
+context_below: "Workbook sections 5 expanded + 6 drafted: Section 5 expanded with body scan medi"
+-->
+
+<!-- ATM-R-117 IN
+idea: "Workbook sections 5 expanded + 6 drafted: Section 5 expanded with body scan meditation, emotional release writing, inner child letter, Saturn/Chiron integration; Section 6 'Money Mindset & Abundance' with limiting beliefs inventory, abundance affirmations, Millionaire Mind saving technique (Eker's 6-jar allocation), Jupiter/Venus astrology"
+section: "Workbook — Sections 5-6"
+position: 27
+of_total: 55
+prev: ATM-R-116
+context_above: "Workbook sections 3-5 drafted: Section 3 'Setting Intentions & Goals' (SMART goa"
+provenance: HYBRID
+nature: TOOL
+nodes: [13]
+pillar: Financial
+build_state: MISSING
+editorial: CLEAN
+strike_phase: 1A
+-->
 ### **Section 5: Emotional Awareness & Mastery (Expanded)**
 
 #### **Theme: Cultivating Emotional Intelligence**
@@ -2868,6 +3506,26 @@ I\'m so glad you liked it! Let\'s move on to **Section 7: Healthy Habits for Liv
 This section will focus on the importance of building consistent, supportive habits that align with your goals. Here\'s a breakdown and draft:
 
 ### **Section 7: Healthy Habits for Living Your Best Life**
+<!-- ATM-R-117 OUT
+next: ATM-R-118
+context_below: "Workbook section 7 'Healthy Habits' drafted and revised 3x: daily movement (10-1"
+-->
+
+<!-- ATM-R-118 IN
+idea: "Workbook section 7 'Healthy Habits' drafted and revised 3x: daily movement (10-15 min), healthy eating & nutrient density, mindfulness/meditation, sleep & restorative practices, sustainable habits, consistency & small wins, commitment challenges (7-day, 14-day, 30-day)"
+section: "Workbook — Section 7 (Habits)"
+position: 28
+of_total: 55
+prev: ATM-R-117
+context_above: "Workbook sections 5 expanded + 6 drafted: Section 5 expanded with body scan medi"
+provenance: HYBRID
+nature: TOOL
+nodes: [1, 2, 3, 4, 5]
+pillar: Physical
+build_state: MISSING
+editorial: CLEAN
+strike_phase: 2A
+-->
 
 #### **Theme:**
 
@@ -3293,6 +3951,26 @@ can we do section 8?
 
 Absolutely! Here\'s a draft for Section 8 based on our earlier framework:
 
+<!-- ATM-R-118 OUT
+next: ATM-R-119
+context_below: "Workbook sections 8-10: Section 8 'Embracing Your Journey & Celebrating Wins' (m"
+-->
+
+<!-- ATM-R-119 IN
+idea: "Workbook sections 8-10: Section 8 'Embracing Your Journey & Celebrating Wins' (milestone tracker, self-compassion letter, celebration rituals); Section 9 'Taking Aligned Action' (time blocking, energy audit, inspired action journal); Section 10 'Celebrating Progress & Embracing Future' (year-end reflection, letter to future self); personalized version plans with birth chart integration, travel planning, embodiment practices, monthly/yearly tracking"
+section: "Workbook — Sections 8-10 + Personalized Plans"
+position: 29
+of_total: 55
+prev: ATM-R-118
+context_above: "Workbook section 7 'Healthy Habits' drafted and revised 3x: daily movement (10-1"
+provenance: HYBRID
+nature: TOOL
+nodes: [6, 7, 8, 9, 10, 11, 12, 13]
+pillar: Cross-cutting
+build_state: MISSING
+editorial: CLEAN
+strike_phase: 1A
+-->
 ### **Section 8: Embracing Your Journey & Celebrating Wins**
 
 **Theme Explanation:\**
@@ -3656,6 +4334,26 @@ yay thank you! can you do my entire workbook now based on my birth chart, it doe
 Got it! I'll dive into creating your personalized workbook with all the details and clarity you're looking for. Here's how I'll approach it:
 
 ### **1. Personalized Birth Chart Integration:**
+<!-- ATM-R-119 OUT
+next: ATM-R-120
+context_below: "Personalized workbook sections 1-3 with Maddie's birth chart: Section 1 'Underst"
+-->
+
+<!-- ATM-R-120 IN
+idea: "Personalized workbook sections 1-3 with Maddie's birth chart: Section 1 'Understanding Your Astrological Blueprint' (Libra Sun, Gemini Moon, Aquarius Rising decoded); Section 2 'Aligning with Goals & Values' (Saturn in Taurus discipline, Jupiter in Gemini curiosity); Section 3 'Embodying Your Vision' (Leo North Node leadership, future self embodiment); each section with breathwork, embodiment practice, astrological focus, monthly tracking"
+section: "Workbook — Personalized Astrology Sections"
+position: 30
+of_total: 55
+prev: ATM-R-119
+context_above: "Workbook sections 8-10: Section 8 'Embracing Your Journey & Celebrating Wins' (m"
+provenance: HYBRID
+nature: TOOL
+nodes: [6, 7, 8, 9, 10, 11, 12]
+pillar: Inner
+build_state: MISSING
+editorial: CLEAN
+strike_phase: 1A
+-->
 
 - **Astrological Insights**: Each section will include relevant insights from your birth chart, which will guide how to approach your goals, emotions, and energy at different times.
 
@@ -3938,6 +4636,26 @@ website organization plan
 This is from the last time i tried to work on the spiral!
 
 Mads:"can you help me organize my website a bit - I want to do the water page first I think. I also have to do my landing/home page that explains and breaks down the different pages and where to go - I have the basis of the spiral but need to do more there but we can do that after the rest is set up - I want the home page and the water page to be very generalized so then the water funnel will break it down a little bit more if they are interested in - the spiral will be the main focus of this page mainly and then the \"thru my eyes\" will be about me and then also be a place to share my photos and sell prints and other arts and creatives etc - and then the unlock is going to be for the subscribers that pay and it will be their pwn personalized spiral with they birth chart and human design weaved into it "
+<!-- ATM-R-120 OUT
+next: ATM-R-121
+context_below: "Earlier website organization plan: site structure with Home (landing/guidepost),"
+-->
+
+<!-- ATM-R-121 IN
+idea: "Earlier website organization plan: site structure with Home (landing/guidepost), Water (generalized intro → funnel), Spiral (main signature), Thru My Eyes (about + creative/prints), Unlock (subscriber personalized spiral with birth chart/HD); page hierarchy and flow between them"
+section: "Website Organization Plan"
+position: 31
+of_total: 55
+prev: ATM-R-120
+context_above: "Personalized workbook sections 1-3 with Maddie's birth chart: Section 1 'Underst"
+provenance: HYBRID
+nature: MODEL
+nodes: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
+pillar: Cross-cutting
+build_state: PARTIAL
+editorial: CLEAN
+strike_phase: 1A
+-->
 
 Perfect, thanks for sharing the screenshot and your vision --- this gives me a clear picture of where you want to go. Here's a way we can organize your site so that each page flows naturally and gives visitors a clear path depending on their interest level:
 
@@ -4018,6 +4736,26 @@ Perfect, thanks for sharing the screenshot and your vision --- this gives me a c
   - Exclusive practices, meditations, and journaling prompts.
 
   - Possible community/forum/chat area if you want future expansion.
+<!-- ATM-R-121 OUT
+next: ATM-R-122
+context_below: "Water page content dump: Maddie's water story (COVID, antibiotics, Kangen discov"
+-->
+
+<!-- ATM-R-122 IN
+idea: "Water page content dump: Maddie's water story (COVID, antibiotics, Kangen discovery), tap water problems (steroids, hormones, contamination), ERW solution (ionized hydrogen-rich alkaline water), Enagic credibility (50 years, medical-grade, Japanese hospitals, $4980), water uses by pH level (2.5/4-6/7/8.5-9.5/11), price objections and ROI math"
+section: "Water Content — Raw Dump"
+position: 32
+of_total: 55
+prev: ATM-R-121
+context_above: "Earlier website organization plan: site structure with Home (landing/guidepost),"
+provenance: LOCAL
+nature: PRODUCT
+nodes: [1, 2, 3, 4, 5]
+pillar: Physical
+build_state: PARTIAL
+editorial: UNVERIFIED
+strike_phase: 2A
+-->
 
 ### **Next Steps to Build in Order**
 
@@ -4497,6 +5235,26 @@ medical grade and gold sealed
 
 hundreds of hospitals all over Japan as well as spas, clinics and retreats!
 
+<!-- ATM-R-122 OUT
+next: ATM-R-123
+context_below: "Water page clean draft: Hero ('Not All Water Is Created Equal'), personal story "
+-->
+
+<!-- ATM-R-123 IN
+idea: "Water page clean draft: Hero ('Not All Water Is Created Equal'), personal story hook, problem section (free radicals + oxidative stress), solution (H2 power), Enagic credibility, myth-busting, demos section, closing/invitation with CTA to quiz"
+section: "Water Page — Clean Draft"
+position: 33
+of_total: 55
+prev: ATM-R-122
+context_above: "Water page content dump: Maddie's water story (COVID, antibiotics, Kangen discov"
+provenance: HYBRID
+nature: PRODUCT
+nodes: [1, 2, 3, 4, 5]
+pillar: Physical
+build_state: PARTIAL
+editorial: CLEAN
+strike_phase: 2A
+-->
 Enagic\'s water ionizers are the only medical grade water ionizers on the market. Not only that, but they are also Japanese-certified medical equipment, which has the most rigorous testing and standards! They are assembled from start to finish by ONE person and are manufactured entirely by Enagic--no outsourcing! The company has been around for almost 50 years, and these water ionizers have been used all over Japanese hospitals (and are a common household appliance there!) to help treat cancer patients as well aid healing in all forms. The cost of the machine before taxes is \$4,980 USD. Even though it may feel like a big investment upfront, let\'s do a lil math. If you buy one case of bottled water a week, in two years you make your money back. If you have more than one person in the house, you definitely need more than one case a week. They last about 25-30 years so they end up saving you quite the sum of money in the long run!
 
 Your health is everything, and for me, investing in my health is a no brainer! Not only that, there are also different payment plans/financing options available, making it super affordable to invest in your health now. Email, text or call me and I\'d be happy to get you a quote based on your area!
@@ -4708,6 +5466,26 @@ Mads: "we can also add in videos and demos as well to shorten it cause I don\'t 
 Got it --- love where you're going with this. Perfect balance of **visual-first + short, punchy copy** so it feels interactive and digestible on mobile. We can structure your **Water page** more like a **scrolling experience**, almost like a mini-story with demos sprinkled in.
 
 Here's a suggested **Water Page Flow (mobile-first, visual-heavy):**
+<!-- ATM-R-123 OUT
+next: ATM-R-124
+context_below: "Revised water page with molecular hydrogen focus: hero (deeper, scientific angle"
+-->
+
+<!-- ATM-R-124 IN
+idea: "Revised water page with molecular hydrogen focus: hero (deeper, scientific angle), health story as personal hook, free radicals/oxidative stress problem, H2 solution with 3 evidence bullets, Enagic credibility (6 certifications), myth-busting (3 myths debunked), demos section (noodle test, tea test, pH drops)"
+section: "Water Page — H2 Focused Draft"
+position: 34
+of_total: 55
+prev: ATM-R-123
+context_above: "Water page clean draft: Hero ('Not All Water Is Created Equal'), personal story "
+provenance: HYBRID
+nature: PRODUCT
+nodes: [1, 2, 3, 4, 5]
+pillar: Physical
+build_state: PARTIAL
+editorial: CLEAN
+strike_phase: 2A
+-->
 
 ### **Water Page Structure**
 
@@ -4898,6 +5676,26 @@ This isn't just water --- it's a tool for healing, energy, and long-term health.
 - \[Learn More About Enagic\]
 
 ✨ This way the **header grabs attention**, your **story builds connection**, and the rest of the page educates + excites without feeling like a textbook.
+<!-- ATM-R-124 OUT
+next: ATM-R-125
+context_below: "Home page draft + roadmap: hero (spiral visual + tagline), 4 sections (Spiral as"
+-->
+
+<!-- ATM-R-125 IN
+idea: "Home page draft + roadmap: hero (spiral visual + tagline), 4 sections (Spiral as main, Water overview, Thru My Eyes/about, Unlock/subscribers), closing invitation; roadmap order: 1. Spiral, 2. Water (polish), 3. Home, 4. Thru My Eyes, 5. Unlock/subscriber portal"
+section: "Home Page Draft + Build Roadmap"
+position: 35
+of_total: 55
+prev: ATM-R-124
+context_above: "Revised water page with molecular hydrogen focus: hero (deeper, scientific angle"
+provenance: HYBRID
+nature: MODEL
+nodes: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
+pillar: Cross-cutting
+build_state: PARTIAL
+editorial: CLEAN
+strike_phase: 1A
+-->
 
 Would you like me to also map out **what visuals/videos/demos go with each section** so you'll have a clear content plan (almost like a storyboard) when building it out?
 
@@ -5028,6 +5826,26 @@ Here's how I'd recommend tackling it step by step so you don't get overwhelmed a
   3.  Decide whether this lives *inside your site* (WordPress plugin / Webflow gated area) or on a separate membership platform.
 
 ## **🌟 TL;DR Order**
+<!-- ATM-R-125 OUT
+next: ATM-R-126
+context_below: "Spiral page flow: title/hero section, pop-up explainer (short + clear), spiral g"
+-->
+
+<!-- ATM-R-126 IN
+idea: "Spiral page flow: title/hero section, pop-up explainer (short + clear), spiral graphic as main focus, bottom section with invitation/next steps, membership tier preview; subscription breakdown note (personalized blueprint with astrology/HD for subscribers)"
+section: "Spiral Page Flow + Subscription"
+position: 36
+of_total: 55
+prev: ATM-R-125
+context_above: "Home page draft + roadmap: hero (spiral visual + tagline), 4 sections (Spiral as"
+provenance: HYBRID
+nature: MODEL
+nodes: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
+pillar: Cross-cutting
+build_state: PARTIAL
+editorial: CLEAN
+strike_phase: 1A
+-->
 
 **Finish the Spiral → Polish Water → Launch Home → Add Thru My Eyes → Build Unlock.**
 
@@ -5106,6 +5924,26 @@ At the bottom, you can tease the 3 tiers without overwhelming:
 
 Would you like me to **draft the actual pop-up text** (short explanation + options), so you can copy/paste that in right away and see how it feels with your design?
 
+<!-- ATM-R-126 OUT
+next: ATM-R-127
+context_below: "Thread summary for organization: project = personalized life organization + alig"
+-->
+
+<!-- ATM-R-127 IN
+idea: "Thread summary for organization: project = personalized life organization + alignment workbook; multi-expert integration (psychologist, life coach, holistic healer, financial coach, time management specialist, astrology); key themes (radical self-awareness, emotional intelligence, consistency, feel good first, alignment before action, structured freedom); current progress (sections 1-3 drafted)"
+section: "Thread Summary — Workbook Project"
+position: 37
+of_total: 55
+prev: ATM-R-126
+context_above: "Spiral page flow: title/hero section, pop-up explainer (short + clear), spiral g"
+provenance: HYBRID
+nature: FRAMEWORK
+nodes: [6, 7, 8, 9, 10, 11, 12, 13]
+pillar: Cross-cutting
+build_state: MISSING
+editorial: CLEAN
+strike_phase: 1A
+-->
 subscription options/breakdown
 
 SUBSCRIBERS PERSOANLIZED BLUE PRINT/STEP/CALENDAR (tying in their personal astrology and human design - still need to lock in this process but eventually want to add - not in the first phase, but have example of mine below!)
@@ -5188,6 +6026,26 @@ This sounds like a meaningful and transformative project! Here\'s a proposed str
 
     - What specific areas of emotional understanding and mindfulness do you want to focus on? For example, stress management, gratitude practices, or building resilience?
 
+<!-- ATM-R-127 OUT
+next: ATM-R-128
+context_below: "Duplicate workbook outline and section drafts (repetition of earlier content): s"
+-->
+
+<!-- ATM-R-128 IN
+idea: "Duplicate workbook outline and section drafts (repetition of earlier content): same 10-section structure, sections 1-2 re-drafted with same content as lines 1598-2230"
+section: "Workbook — Duplicate Draft"
+position: 38
+of_total: 55
+prev: ATM-R-127
+context_above: "Thread summary for organization: project = personalized life organization + alig"
+provenance: HYBRID
+nature: TOOL
+nodes: [6, 7, 8, 9, 10, 11, 12]
+pillar: Inner
+build_state: MISSING
+editorial: CLEAN
+strike_phase: 1A
+-->
 2.  **Health Nutritionist\'s Input**
 
     - Do you want meal plans tailored by cycle phases (e.g., follicular, luteal, etc.), or would you prefer general nutrient-dense meal guidelines?
@@ -5598,6 +6456,26 @@ Mads: will you not do section 8 and instead just throughout the entire workbook 
 
 Yes, integrating astrology blurbs throughout the workbook rather than isolating them in a section aligns perfectly with your goal. This approach will create a seamless flow, gently weaving in insights without overwhelming the user. For example:
 
+<!-- ATM-R-128 OUT
+next: ATM-R-129
+context_below: "Workbook sections 1-2 third revision: enhanced with daily alignment check-in pra"
+-->
+
+<!-- ATM-R-129 IN
+idea: "Workbook sections 1-2 third revision: enhanced with daily alignment check-in practice, more detailed astrology blurbs, expanded 'when to use' and 'why it helps' sections throughout"
+section: "Workbook — Third Revision Sec 1-2"
+position: 39
+of_total: 55
+prev: ATM-R-128
+context_above: "Duplicate workbook outline and section drafts (repetition of earlier content): s"
+provenance: HYBRID
+nature: TOOL
+nodes: [6, 7, 8, 9, 10, 11, 12]
+pillar: Inner
+build_state: MISSING
+editorial: CLEAN
+strike_phase: 1A
+-->
 - In the **self-assessment section**, a note about how their Moon placement reflects emotional needs.
 
 - In the **travel and financial planning section**, a reference to Jupiter's influence on growth and abundance.
@@ -5953,6 +6831,26 @@ Here's the revised version for the second section:
 
 ### **Let me know if this fully captures the tone and depth you\'re looking for! Should I continue with the remaining sections in this style?**
 
+<!-- ATM-R-129 OUT
+next: ATM-R-130
+context_below: "Workbook sections 3-5 revised: Section 3 'Setting Intentions & Goals' with SMART"
+-->
+
+<!-- ATM-R-130 IN
+idea: "Workbook sections 3-5 revised: Section 3 'Setting Intentions & Goals' with SMART framework and obstacle mapping; Section 4 'Building Resilience' with resilience toolkit and challenge reframes; Section 5 'Emotional Awareness & Mastery' with emotion mapping and nervous system awareness"
+section: "Workbook — Third Revision Sec 3-5"
+position: 40
+of_total: 55
+prev: ATM-R-129
+context_above: "Workbook sections 1-2 third revision: enhanced with daily alignment check-in pra"
+provenance: HYBRID
+nature: TOOL
+nodes: [6, 7, 8, 9, 10, 11, 12]
+pillar: Inner
+build_state: MISSING
+editorial: CLEAN
+strike_phase: 1A
+-->
 ### **Section 2: Mind-Body-Spirit Connection**
 
 #### **Theme: Listening to Yourself Fully**
@@ -6458,6 +7356,26 @@ Self-compassion is a cornerstone of emotional mastery. This practice helps to qu
 
 Let me know if there's anything you'd like to tweak or add!
 
+<!-- ATM-R-130 OUT
+next: ATM-R-131
+context_below: "Workbook section 6 'Money Mindset & Abundance': limiting beliefs inventory, abun"
+-->
+
+<!-- ATM-R-131 IN
+idea: "Workbook section 6 'Money Mindset & Abundance': limiting beliefs inventory, abundance affirmations, T. Harv Eker's Millionaire Mind method (6-jar % allocation), Jupiter/Venus astrology integration"
+section: "Workbook — Revised Section 6"
+position: 41
+of_total: 55
+prev: ATM-R-130
+context_above: "Workbook sections 3-5 revised: Section 3 'Setting Intentions & Goals' with SMART"
+provenance: HYBRID
+nature: TOOL
+nodes: [13]
+pillar: Financial
+build_state: MISSING
+editorial: CLEAN
+strike_phase: 1A
+-->
 You\'re welcome! Let\'s dive into **Section 6: Money Mindset & Abundance**.
 
 ### **Section 6: Money Mindset & Abundance**
@@ -6648,6 +7566,26 @@ Habits are the foundation of our daily lives. They dictate how we approach our g
 
 Building healthy habits doesn\'t happen overnight, but with intention, you can create lasting, life-changing routines. The key is to make these habits easy, sustainable, and aligned with your goals. Small, consistent actions compound over time, leading to big transformations.
 
+<!-- ATM-R-131 OUT
+next: ATM-R-132
+context_below: "Workbook section 7 'Healthy Habits' revised (2x) + sections 8-10: daily movement"
+-->
+
+<!-- ATM-R-132 IN
+idea: "Workbook section 7 'Healthy Habits' revised (2x) + sections 8-10: daily movement, nutrient density, mindfulness, sleep, sustainability, consistency, commitment challenges; Section 8 'Embracing Journey'; Section 9 'Aligned Action' with time blocking and energy audit; Section 10 'Celebrating Progress' with year-end reflection"
+section: "Workbook — Revised Sections 7-10"
+position: 42
+of_total: 55
+prev: ATM-R-131
+context_above: "Workbook section 6 'Money Mindset & Abundance': limiting beliefs inventory, abun"
+provenance: HYBRID
+nature: TOOL
+nodes: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
+pillar: Cross-cutting
+build_state: MISSING
+editorial: CLEAN
+strike_phase: 1A
+-->
 #### **When to Use These Practices:**
 
 Healthy habits are foundational and should be used every day to reinforce your goals and mindset. The best time to adopt these habits is when you're feeling ready to make lasting changes. Even if you start small---by doing just one thing differently every day---you're laying the groundwork for a healthier, more fulfilling life.
@@ -7148,6 +8086,26 @@ I\'ll put it together in a way that gives you the structure but also leaves room
 
 Great! I\'ll integrate embodiment and breathwork practices tailored to your astrological chart and the overall theme of aligning with your energy. These practices will help you connect with your body, process emotions, and build confidence as you move through your goals and plans. I'll also emphasize when it's best to use these practices for maximum benefit, as some may be more effective depending on your current mood or transiting energies.
 
+<!-- ATM-R-132 OUT
+next: ATM-R-133
+context_below: "Personalized workbook for Maddie: birth chart integration (Libra Sun diplomacy, "
+-->
+
+<!-- ATM-R-133 IN
+idea: "Personalized workbook for Maddie: birth chart integration (Libra Sun diplomacy, Gemini Moon curiosity, Aquarius Rising innovation), travel planning aligned to astrological transits, breathwork/embodiment practices per section, monthly/yearly tracking"
+section: "Workbook — Personalized Version"
+position: 43
+of_total: 55
+prev: ATM-R-132
+context_above: "Workbook section 7 'Healthy Habits' revised (2x) + sections 8-10: daily movement"
+provenance: HYBRID
+nature: TOOL
+nodes: [6, 7, 8, 9, 10, 11, 12]
+pillar: Inner
+build_state: MISSING
+editorial: CLEAN
+strike_phase: 1A
+-->
 Let's dive into the next phase---I\'ll start creating your personalized workbook, complete with astrological insights, travel planning, embodiment practices, and breathwork techniques! I'll let you know once it's ready or if I need more specifics. Thank you for trusting me with this!
 
 Got it! I'll dive into creating your personalized workbook with all the details and clarity you're looking for. Here's how I'll approach it:
@@ -7538,6 +8496,26 @@ Your **Mars in Virgo** is about to feel seen, organized, and deeply satisfied.
 
 This section is where your life starts to *click*.
 
+<!-- ATM-R-133 OUT
+next: ATM-R-134
+context_below: "Personalized sections 4-5: Section 4 'Time, Energy & Structure' (Mars in Virgo d"
+-->
+
+<!-- ATM-R-134 IN
+idea: "Personalized sections 4-5: Section 4 'Time, Energy & Structure' (Mars in Virgo discipline, Saturn in Taurus patience, weekly structure template, daily non-negotiables, travel integration); Section 5 'Emotional Intelligence' (Scorpio Mercury/Venus depth, Gemini Moon processing, thought-emotion-belief loop, emotional check-in, breathwork: Feel & Release)"
+section: "Workbook — Personalized Sec 4-5"
+position: 44
+of_total: 55
+prev: ATM-R-133
+context_above: "Personalized workbook for Maddie: birth chart integration (Libra Sun diplomacy, "
+provenance: HYBRID
+nature: TOOL
+nodes: [6, 7, 8, 9, 10, 11, 12]
+pillar: Inner
+build_state: MISSING
+editorial: CLEAN
+strike_phase: 1A
+-->
 Not through pressure.\
 Not through burnout.\
 But through **intentional structure that supports your energy**.
@@ -7858,6 +8836,26 @@ Let's go step by step:
 
 # **✨ Section 5: Emotional Intelligence & Feeling Your Emotions (Your Superpower)**
 
+<!-- ATM-R-134 OUT
+next: ATM-R-135
+context_below: "Personalized section 6 'Money & Abundance' + calendars: Eker's money system adap"
+-->
+
+<!-- ATM-R-135 IN
+idea: "Personalized section 6 'Money & Abundance' + calendars: Eker's money system adapted for Maddie, travel fund as priority bucket, money awareness reset practice; yearly vision calendar (quarterly themes, travel, money goals), monthly planning page (weekly breakdown, habits tracker, emotional check-in, end-of-month reflection); final note about Maddie's chart and abundance potential"
+section: "Workbook — Personalized Sec 6 + Calendars"
+position: 45
+of_total: 55
+prev: ATM-R-134
+context_above: "Personalized sections 4-5: Section 4 'Time, Energy & Structure' (Mars in Virgo d"
+provenance: HYBRID
+nature: TOOL
+nodes: [13]
+pillar: Financial
+build_state: MISSING
+editorial: CLEAN
+strike_phase: 1A
+-->
 ### **Theme:**
 
 This is where you stop running from your emotions---and start using them.
@@ -8168,6 +9166,26 @@ Feel it. Even if it feels new.
 - Where can I be more consistent?
 
 # **🗓️✨ YOUR CALENDARS (Simple + Powerful)**
+<!-- ATM-R-135 OUT
+next: ATM-R-136
+context_below: "Maddie's Human Design: Projector type (guide not generator, recognize-then-share"
+-->
+
+<!-- ATM-R-136 IN
+idea: "Maddie's Human Design: Projector type (guide not generator, recognize-then-share, magnetic when aligned), Emotional (Solar Plexus) authority (wait for emotional clarity, never decide in a spike), Wait for the Invitation strategy (don't chase, position yourself to be recognized)"
+section: "Human Design — Maddie's Type & Authority"
+position: 46
+of_total: 55
+prev: ATM-R-135
+context_above: "Personalized section 6 'Money & Abundance' + calendars: Eker's money system adap"
+provenance: HYBRID
+nature: MODEL
+nodes: [6, 7, 8, 9, 10, 11, 12]
+pillar: Inner
+build_state: MISSING
+editorial: CLEAN
+strike_phase: 1A
+-->
 
 ## **🌟 YEARLY VISION CALENDAR**
 
@@ -8298,6 +9316,26 @@ Maddie... this is going to feel like coming home to yourself. 🌀✨\
 Your chart has a really beautiful, powerful energetic signature---there's depth, sensitivity, intuition, and a quiet kind of leadership that isn't meant to force... but to *magnetize*.
 
 Let's walk through it the same way we did for Anthony---story first, then grounded understanding you can actually *use*.
+<!-- ATM-R-136 OUT
+next: ATM-R-137
+context_below: "Maddie's HD deeper story: guide of emotional clarity, open vs defined energy (am"
+-->
+
+<!-- ATM-R-137 IN
+idea: "Maddie's HD deeper story: guide of emotional clarity, open vs defined energy (amplifies others' energy, needs boundaries), 4/6 Profile (Opportunist/Role Model — network-driven foundation + 3-phase life arc: trial/error → roof/observe → embodied role model at 50+)"
+section: "Human Design — Maddie's Profile & Channels"
+position: 47
+of_total: 55
+prev: ATM-R-136
+context_above: "Maddie's Human Design: Projector type (guide not generator, recognize-then-share"
+provenance: HYBRID
+nature: MODEL
+nodes: [6, 7, 8, 9, 10, 11, 12]
+pillar: Inner
+build_state: MISSING
+editorial: CLEAN
+strike_phase: 1A
+-->
 
 ## **🌊 Your Human Design Essence**
 
@@ -8498,6 +9536,26 @@ I'll break this into 3 parts:
 1.  **Your Profile (core personality/life path)**
 
 2.  **Channels & Gates (what they mean in a simple, usable way)**
+<!-- ATM-R-137 OUT
+next: ATM-R-138
+context_below: "Maddie's Astrology + HD integration: Libra Sun (harmony, beauty, justice), how L"
+-->
+
+<!-- ATM-R-138 IN
+idea: "Maddie's Astrology + HD integration: Libra Sun (harmony, beauty, justice), how Libra + Projector blend (diplomatic guide, natural mediator), shadow side (people-pleasing, over-giving, decision paralysis), highest expression (sovereign guide who teaches others to build their own systems)"
+section: "Astrology + HD — Maddie's Integration"
+position: 48
+of_total: 55
+prev: ATM-R-137
+context_above: "Maddie's HD deeper story: guide of emotional clarity, open vs defined energy (am"
+provenance: HYBRID
+nature: MODEL
+nodes: [10, 11, 12]
+pillar: Identity
+build_state: MISSING
+editorial: CLEAN
+strike_phase: 1A
+-->
 
 3.  **Integration with your astrology (this is where it all clicks together)**
 
@@ -8698,6 +9756,26 @@ You become:
 Now this is where it gets 🔥
 
 ## **☀️ Sun in Libra**
+<!-- ATM-R-138 OUT
+next: ATM-R-139
+context_below: "Spirit Song tarot reading with astrology + HD overlay: astrological energies in "
+-->
+
+<!-- ATM-R-139 IN
+idea: "Spirit Song tarot reading with astrology + HD overlay: astrological energies in spread (Aries fire, Cancer nurturing, Capricorn structure), Projector overlay (guide energy, emotional authority), message for Anthony (Aries Sun leader, Projector guide); birth chart snapshot + HD profile (Projector, Emotional Solar Plexus, 4/6 Profile)"
+section: "Spirit Song Reading + Anthony's Chart"
+position: 49
+of_total: 55
+prev: ATM-R-138
+context_above: "Maddie's Astrology + HD integration: Libra Sun (harmony, beauty, justice), how L"
+provenance: HYBRID
+nature: NARRATIVE
+nodes: [6, 7, 8, 9, 10, 11, 12]
+pillar: Inner
+build_state: MISSING
+editorial: CLEAN
+strike_phase: 1A
+-->
 
 Your core essence:
 
@@ -8868,6 +9946,26 @@ If you want a full Human Design + Astrology read tied specifically to his exact 
 And I'll give you a full download that integrates beautifully with the Spirit Song reading. Would you like to do that?
 
 Here's a tailored integration of Anthony's **astrology**, **Human Design**, and the **Spirit Song tarot**---all woven together to meet him exactly where he is:
+<!-- ATM-R-139 OUT
+next: ATM-R-140
+context_below: "Tarot + Astrology + HD fusion for Anthony: Wheel & Aries Sun (cycles of growth),"
+-->
+
+<!-- ATM-R-140 IN
+idea: "Tarot + Astrology + HD fusion for Anthony: Wheel & Aries Sun (cycles of growth), King of Acorns & Projector (strategic guide), Ace of Shells & Cancer Moon (emotional new beginning), guidance and personal mantra"
+section: "Anthony's Reading — Tarot Fusion"
+position: 50
+of_total: 55
+prev: ATM-R-139
+context_above: "Spirit Song tarot reading with astrology + HD overlay: astrological energies in "
+provenance: HYBRID
+nature: NARRATIVE
+nodes: [6, 7, 8, 9, 10, 11, 12]
+pillar: Inner
+build_state: MISSING
+editorial: CLEAN
+strike_phase: 1A
+-->
 
 ## **🌟 Birth Chart Snapshot**
 
@@ -8958,6 +10056,26 @@ It combines elements of:
 
 - **I Ching** ☯️ (hexagrams / 64 gates)
 
+<!-- ATM-R-140 OUT
+next: ATM-R-141
+context_below: "Human Design fundamentals: 5 Types (Manifestors, Generators, Manifesting Generat"
+-->
+
+<!-- ATM-R-141 IN
+idea: "Human Design fundamentals: 5 Types (Manifestors, Generators, Manifesting Generators, Projectors, Reflectors) with strategies, authorities, signatures; understanding your chart components"
+section: "Human Design — Type Fundamentals"
+position: 51
+of_total: 55
+prev: ATM-R-140
+context_above: "Tarot + Astrology + HD fusion for Anthony: Wheel & Aries Sun (cycles of growth),"
+provenance: ALIEN
+nature: FRAMEWORK
+nodes: [6, 7, 8, 9, 10, 11, 12]
+pillar: Inner
+build_state: MISSING
+editorial: CLEAN
+strike_phase: 1A
+-->
 - **Chakras** 🌀 (energy centers)
 
 - **Kabbalah Tree of Life** 🌿
@@ -9298,6 +10416,26 @@ Here are some thought-provoking questions to help you gain clarity on what you w
 
 10. How do I define success, and what does it look like for me personally?
 
+<!-- ATM-R-141 OUT
+next: ATM-R-142
+context_below: "Human Design authorities and profiles: 7 authority types (Emotional, Sacral, Spl"
+-->
+
+<!-- ATM-R-142 IN
+idea: "Human Design authorities and profiles: 7 authority types (Emotional, Sacral, Splenic, Ego, Self-Projected, Mental, Lunar); 12 profiles explained with life themes"
+section: "Human Design — Authorities & Profiles"
+position: 52
+of_total: 55
+prev: ATM-R-141
+context_above: "Human Design fundamentals: 5 Types (Manifestors, Generators, Manifesting Generat"
+provenance: ALIEN
+nature: FRAMEWORK
+nodes: [6, 7, 8, 9, 10, 11, 12]
+pillar: Inner
+build_state: MISSING
+editorial: CLEAN
+strike_phase: 1A
+-->
 ### **Relationships and Social Life**
 
 11. What kind of relationships do I want to cultivate with family, friends, and partners?
@@ -9598,6 +10736,26 @@ Think:
 This workbook can naturally evolve into:
 
 - A course
+<!-- ATM-R-142 OUT
+next: ATM-R-143
+context_below: "Human Design centers, gates, and channels: 9 energy centers (defined vs undefine"
+-->
+
+<!-- ATM-R-143 IN
+idea: "Human Design centers, gates, and channels: 9 energy centers (defined vs undefined), gates as specific energies, channels as life themes; practical applications for daily life"
+section: "Human Design — Centers & Channels"
+position: 53
+of_total: 55
+prev: ATM-R-142
+context_above: "Human Design authorities and profiles: 7 authority types (Emotional, Sacral, Spl"
+provenance: ALIEN
+nature: FRAMEWORK
+nodes: [6, 7, 8, 9, 10, 11, 12]
+pillar: Inner
+build_state: MISSING
+editorial: CLEAN
+strike_phase: 1A
+-->
 
 - A guided journal series
 
@@ -9998,6 +11156,26 @@ This is about:
 
 ### **🌿 Prompt:**
 
+<!-- ATM-R-143 OUT
+next: ATM-R-144
+context_below: "Thread organization guide: what to pull from each past chat (water hub, spiral s"
+-->
+
+<!-- ATM-R-144 IN
+idea: "Thread organization guide: what to pull from each past chat (water hub, spiral structure, EAU blueprint, pillar breakdowns, Kangen info, subscription model, Sovereign Systems language, landing page/video direction); optional (brand aesthetic, sacred home concepts)"
+section: "Thread Organization Guide"
+position: 54
+of_total: 55
+prev: ATM-R-143
+context_above: "Human Design centers, gates, and channels: 9 energy centers (defined vs undefine"
+provenance: HYBRID
+nature: INSTRUCTION
+nodes: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
+pillar: Cross-cutting
+build_state: N/A
+editorial: CLEAN
+strike_phase: 1A
+-->
 - How do I want to *feel* this year?
 
 - What kind of life am I building?
@@ -10198,6 +11376,26 @@ At the beginning of this section, include:
 > It's here to support you.
 
 If you want next, I can:
+<!-- ATM-R-144 OUT
+next: ATM-R-145
+context_below: "Resource links and pull priorities: water resources (Drive folders for wins/test"
+-->
+
+<!-- ATM-R-145 IN
+idea: "Resource links and pull priorities: water resources (Drive folders for wins/testimonials, water uses doc), books/resources (6 Drive links including #1 book), spiral reference photo, raw chat thread template structure, fast priority pull list (core threads + framework threads)"
+section: "Resource Links & Pull Priorities"
+position: 55
+of_total: 55
+prev: ATM-R-144
+context_above: "Thread organization guide: what to pull from each past chat (water hub, spiral s"
+provenance: LOCAL
+nature: PRODUCT
+nodes: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
+pillar: Cross-cutting
+build_state: N/A
+editorial: CLEAN
+strike_phase: 2A
+-->
 
 - Turn this into **printable page layouts (exact formatting)**
 
@@ -10391,3 +11589,8 @@ If you're doing this quickly, grab:
 - 40/70 Rule
 
 - Reset plan / Light & Fruit test
+
+<!-- ATM-R-145 OUT
+next: null
+context_below: null
+-->
