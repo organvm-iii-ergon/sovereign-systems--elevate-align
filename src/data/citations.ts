@@ -1148,7 +1148,7 @@ export const citations: Citation[] = [
   },
   {
     "id": "B-106",
-    "source": "McAdams, D.P. (2006). A new Big Five",
+    "source": "McAdams, D.P. (1995). A new Big Five",
     "detail": "Situates narrative identity as the third level of personality (Redemptive Narrative).",
     "context": "Identity as a life story."
   },

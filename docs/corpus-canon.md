@@ -432,7 +432,7 @@ Every major claim made on the Sovereign Systems Spiral site, mapped to its suppo
 |---|----------|---------|------|
 | B-104 | **Tajfel, H. & Turner, J.C. (1979). Social Identity Theory** | People categorize themselves into groups to enhance self-esteem. | Mechanisms of group identity. |
 | B-105 | **Festinger, L. (1957). A Theory of Cognitive Dissonance** | The psychological discomfort of holding conflicting beliefs. | Resolving identity conflicts. |
-| B-106 | **McAdams, D.P. (2006). A new Big Five** | Situates narrative identity as the third level of personality (Redemptive Narrative). | Identity as a life story. |
+| B-106 | **McAdams, D.P. (1995). A new Big Five** | Situates narrative identity as the third level of personality (Redemptive Narrative). | Identity as a life story. |
 | B-107 | **Dweck, C.S. (2006). Mindset** | Growth vs. fixed mindsets in identity and achievement. | Malleability of self. |
 | B-108 | **Leder, H. et al. (2004). Model of aesthetic appreciation** | Information-processing model explaining how we experience art and beauty. | Aesthetic sovereignty. |
 | B-109 | **Reber, R. et al. (2004). Processing fluency and aesthetic pleasure** | Beauty is in the processing experience (fluency) of the beholder. | Cognitive aesthetics. |
