@@ -39,6 +39,7 @@ nodes: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
 pillar: Cross-cutting
 build_state: PARTIAL
 editorial: CLEAN
+tier: CONTEXT
 strike_phase: 1A
 -->
 Absolutely --- let's go full deep-dive mode. I'll take everything we've discussed so far, everything you've tested, theorized, or built into your frameworks, and make a fully organized, developer-ready Spiral Master Doc. I'll make sure nothing critical gets left behind, including:
@@ -80,6 +81,7 @@ nodes: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
 pillar: Cross-cutting
 build_state: PARTIAL
 editorial: CLEAN
+tier: SIGNAL
 strike_phase: 1A
 -->
 > This is an interactive spiral-based ecosystem designed to guide users through four pillars of sovereignty (Physical, Inner, Identity, Financial).
@@ -117,6 +119,7 @@ nodes: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
 pillar: Cross-cutting
 build_state: PARTIAL
 editorial: CLEAN
+tier: SIGNAL
 strike_phase: 1A
 -->
 Core framework: Elevate • Align • Unlock (EAU)
@@ -150,6 +153,7 @@ nodes: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
 pillar: Cross-cutting
 build_state: PARTIAL
 editorial: CLEAN
+tier: SIGNAL
 strike_phase: 1A
 -->
 Foundational Theories & Assessments:
@@ -203,6 +207,7 @@ nodes: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
 pillar: Cross-cutting
 build_state: PARTIAL
 editorial: CLEAN
+tier: SIGNAL
 strike_phase: 1A
 -->
 Site Overview:
@@ -260,6 +265,7 @@ nodes: [1, 2, 3, 4, 5]
 pillar: Physical
 build_state: PARTIAL
 editorial: CLEAN
+tier: SIGNAL
 strike_phase: 2A
 -->
 - Water (structured, hydrogen, filtration)
@@ -311,6 +317,7 @@ nodes: [6, 7, 8, 9]
 pillar: Inner
 build_state: PARTIAL
 editorial: CLEAN
+tier: SIGNAL
 strike_phase: 1A
 -->
 - Nervous system regulation
@@ -360,6 +367,7 @@ nodes: [10, 11, 12]
 pillar: Identity
 build_state: PARTIAL
 editorial: CLEAN
+tier: SIGNAL
 strike_phase: 1A
 -->
 - Self-worth & self-love
@@ -401,6 +409,7 @@ nodes: [13]
 pillar: Financial
 build_state: PARTIAL
 editorial: CLEAN
+tier: SIGNAL
 strike_phase: 1A
 -->
 - Business as self-expression
@@ -438,6 +447,7 @@ nodes: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
 pillar: Cross-cutting
 build_state: PARTIAL
 editorial: CLEAN
+tier: SIGNAL
 strike_phase: 1A
 -->
 Content Already Created:
@@ -483,6 +493,7 @@ nodes: [1, 5, 13]
 pillar: Cross-cutting
 build_state: PARTIAL
 editorial: CLEAN
+tier: SIGNAL
 strike_phase: 1A
 -->
 Water Funnel: CTA from Physical pillar → GHL funnel → lead capture → email sequence → purchase
@@ -516,6 +527,7 @@ nodes: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
 pillar: Cross-cutting
 build_state: PARTIAL
 editorial: CLEAN
+tier: CONTEXT
 strike_phase: 1A
 -->
 - First-time user sees interactive spiral
@@ -557,6 +569,7 @@ nodes: [1, 2, 3, 4, 5]
 pillar: Physical
 build_state: MISSING
 editorial: CLEAN
+tier: SIGNAL
 strike_phase: 2A
 -->
 Reels & Scripts: (working on this!
@@ -594,6 +607,7 @@ nodes: [13]
 pillar: Financial
 build_state: MISSING
 editorial: CLEAN
+tier: SIGNAL
 strike_phase: 1A
 -->
 - Subscription model (monthly content + calls + possible product perks)
@@ -623,6 +637,7 @@ nodes: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
 pillar: Cross-cutting
 build_state: PARTIAL
 editorial: FLAGGED
+tier: CONTEXT
 strike_phase: 1C
 -->
 - GoDaddy access / DNS ready - yes I have access!
@@ -652,6 +667,7 @@ nodes: [1, 2, 3, 4, 5, 13]
 pillar: Cross-cutting
 build_state: PARTIAL
 editorial: CLEAN
+tier: CONTEXT
 strike_phase: 1A
 -->
 1.  Spiral hub live & polished
@@ -681,6 +697,7 @@ nodes: [1, 2, 3, 4, 5, 13]
 pillar: Cross-cutting
 build_state: PARTIAL
 editorial: CLEAN
+tier: CONTEXT
 strike_phase: 1A
 -->
 Launch / Deadlines:
@@ -706,6 +723,7 @@ nodes: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
 pillar: Cross-cutting
 build_state: PARTIAL
 editorial: CLEAN
+tier: CONTEXT
 strike_phase: 1A
 -->
 ✅ This is a complete, deep-dive version. Every pillar, every framework, every assessment you've mentioned is mapped. Anthony can now see:

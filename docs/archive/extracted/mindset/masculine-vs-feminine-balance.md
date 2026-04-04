@@ -44,6 +44,7 @@ nodes: [5, 1, 13]
 pillar: Inner
 build_state: MISSING
 editorial: CLEAN
+tier: CONTEXT
 strike_phase: 1C
 -->
 Okays I just stopped working, which would be like 10+ hours of masculine or yang energy yeah? I don’t feel like I did enough though, but now just laying in the sun and not doing anything and it’s a lil tricky lolol but I think i got a lot done today and if I just do my start here highlight and buy the funnel today then I can have the rest of the night to just do whatever I please with no agenda, is that the yin or feminine energy in a balanced way? I always feel like I have to be doing something like a mask or cleaning or coloring
@@ -67,6 +68,7 @@ nodes: [5, 1, 13]
 pillar: Inner
 build_state: PARTIAL
 editorial: CLEAN
+tier: SIGNAL
 strike_phase: 3A
 -->
 Yes—working for 10+ hours is definitely deep in your masculine/yang energy: structured, productive, goal-oriented, doing.
@@ -106,6 +108,7 @@ nodes: [5, 1, 13]
 pillar: Inner
 build_state: MISSING
 editorial: CLEAN
+tier: SIGNAL
 strike_phase: 3A
 -->
 Yes please! Or maybe a way to help me check in and see what’s most aligned for me to do, or do I already know that and just need to trust and surrender fully
@@ -129,6 +132,7 @@ nodes: [5, 1, 13]
 pillar: Inner
 build_state: PARTIAL
 editorial: CLEAN
+tier: SIGNAL
 strike_phase: 4C
 -->
 Ooh yes. You’re already so attuned—this isn’t about finding the answer, it’s about letting yourself trust the one that’s already whispering.
@@ -187,6 +191,7 @@ nodes: [5, 1, 13]
 pillar: Inner
 build_state: MISSING
 editorial: CLEAN
+tier: CONTEXT
 strike_phase: 1C
 -->
 Ah yes please that would be so great, maybe one for my wall and then one I can post to Instagram !?
@@ -210,6 +215,7 @@ nodes: [5, 1, 13]
 pillar: Inner
 build_state: MISSING
 editorial: CLEAN
+tier: CONTEXT
 strike_phase: 1C
 -->
 Here you go! Let me know if you’d like a second version with a different style or layout for your wall or IG grid.
@@ -242,6 +248,7 @@ nodes: [5, 1, 13]
 pillar: Inner
 build_state: MISSING
 editorial: CLEAN
+tier: SIGNAL
 strike_phase: 3A
 -->
 Thank you so much!
@@ -265,6 +272,7 @@ nodes: [5, 1, 13]
 pillar: Inner
 build_state: N/A
 editorial: CLEAN
+tier: CONTEXT
 strike_phase: 1C
 -->
 You’re so welcome! Let me know anytime you want to make more affirmations like this or turn your own words into art—I’m always here for it. Want help setting up a little ritual or rhythm to check in with your yin each evening?

@@ -44,6 +44,7 @@ nodes: [6, 7]
 pillar: Physical
 build_state: N/A
 editorial: CLEAN
+tier: CONTEXT
 strike_phase: 1C
 -->
 Hi! I’m trying to meal plan and budget better, if I gave you a list of the staples as well as some meal ideas could you help me come up with the most cost efficient way to make as many meals as possible with my food so it won’t go to waste?!
@@ -67,6 +68,7 @@ nodes: [6, 7]
 pillar: Physical
 build_state: N/A
 editorial: CLEAN
+tier: CONTEXT
 strike_phase: 3A
 -->
 I'd love to help you with that! Go ahead and share your list of staples and meal ideas, and we can work out the most cost-efficient plan for using them effectively.
@@ -90,6 +92,7 @@ nodes: [6, 7]
 pillar: Physical
 build_state: N/A
 editorial: CLEAN
+tier: SIGNAL
 strike_phase: 3A
 -->
 Yay thank you!
@@ -131,6 +134,7 @@ nodes: [6, 7]
 pillar: Physical
 build_state: N/A
 editorial: CLEAN
+tier: SIGNAL
 strike_phase: 3A
 -->
 Great list! Here are some suggestions to help you make the most out of your staples while incorporating more veggies and fruits into your meals:
@@ -234,6 +238,7 @@ nodes: [6, 7]
 pillar: Physical
 build_state: N/A
 editorial: CLEAN
+tier: CONTEXT
 strike_phase: 1C
 -->
 Yes I love those ideas!! Will you help me come up with a cost efficient grocery list that will help me not waste any food and save some money if possible!?
@@ -257,6 +262,7 @@ nodes: [6, 7]
 pillar: Physical
 build_state: N/A
 editorial: CLEAN
+tier: SIGNAL
 strike_phase: 3A
 -->
 Of course! Here's a cost-efficient grocery list based on your staples and meal ideas, with an emphasis on minimizing waste and maximizing versatility. I'll also include notes on how to use everything efficiently.

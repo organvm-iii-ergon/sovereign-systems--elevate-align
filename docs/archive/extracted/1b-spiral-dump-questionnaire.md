@@ -118,6 +118,7 @@ nodes: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
 pillar: Cross-cutting
 build_state: PARTIAL
 editorial: CLEAN
+tier: CONTEXT
 strike_phase: 1A
 -->
 **COMPLETED QUESTIONNAIRE (POLISHED)**
@@ -168,6 +169,7 @@ nodes: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
 pillar: Cross-cutting
 build_state: PARTIAL
 editorial: CLEAN
+tier: CONTEXT
 strike_phase: 1A
 -->
 \-\--
@@ -227,6 +229,7 @@ nodes: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
 pillar: Cross-cutting
 build_state: PARTIAL
 editorial: CLEAN
+tier: SIGNAL
 strike_phase: 1A
 -->
 ## **1. Architecture**
@@ -273,6 +276,7 @@ nodes: [1, 5, 13]
 pillar: Cross-cutting
 build_state: PARTIAL
 editorial: CLEAN
+tier: SIGNAL
 strike_phase: 1A
 -->
 Pillar Breakdown:
@@ -340,6 +344,7 @@ nodes: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
 pillar: Cross-cutting
 build_state: PARTIAL
 editorial: CLEAN
+tier: SIGNAL
 strike_phase: 1A
 -->
 
@@ -382,6 +387,7 @@ nodes: [1, 2, 3, 4, 5]
 pillar: Physical
 build_state: PARTIAL
 editorial: CLEAN
+tier: SIGNAL
 strike_phase: 2A
 -->
 ## **2. Content**
@@ -434,6 +440,7 @@ nodes: [6, 7, 8, 9, 10, 11, 12, 13]
 pillar: Cross-cutting
 build_state: PARTIAL
 editorial: CLEAN
+tier: SIGNAL
 strike_phase: 1A
 -->
 ### **2.2 Topics per pillar**
@@ -516,6 +523,7 @@ nodes: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
 pillar: Cross-cutting
 build_state: PARTIAL
 editorial: CLEAN
+tier: SIGNAL
 strike_phase: 1A
 -->
 ### **2.3 Content you already have**
@@ -559,6 +567,7 @@ nodes: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
 pillar: Cross-cutting
 build_state: PARTIAL
 editorial: CLEAN
+tier: SIGNAL
 strike_phase: 1A
 -->
 ## **3. User Experience**
@@ -619,6 +628,7 @@ nodes: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
 pillar: Cross-cutting
 build_state: MISSING
 editorial: CLEAN
+tier: SIGNAL
 strike_phase: 1A
 -->
 ### **3.4 Free vs Paid**
@@ -678,6 +688,7 @@ nodes: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
 pillar: Cross-cutting
 build_state: PARTIAL
 editorial: CLEAN
+tier: CONTEXT
 strike_phase: 1A
 -->
 ## **[4. The Spiral Visual]{.mark}**
@@ -728,6 +739,7 @@ nodes: [13]
 pillar: Financial
 build_state: MISSING
 editorial: CLEAN
+tier: SIGNAL
 strike_phase: 1A
 -->
 ## **5. Brand & Monetization**
@@ -782,6 +794,7 @@ nodes: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
 pillar: Cross-cutting
 build_state: PARTIAL
 editorial: FLAGGED
+tier: CONTEXT
 strike_phase: 1C
 -->
 ## **6. Technical**
@@ -825,6 +838,7 @@ nodes: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
 pillar: Cross-cutting
 build_state: N/A
 editorial: CLEAN
+tier: CONTEXT
 strike_phase: 1A
 -->
 # **✨ PART 2 --- CHAT THREADS YOU NEED TO PULL**
@@ -921,6 +935,7 @@ nodes: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
 pillar: Cross-cutting
 build_state: PARTIAL
 editorial: CLEAN
+tier: CONTEXT
 strike_phase: 1A
 -->
 # **[Next Steps for You]{.mark}**
@@ -1075,6 +1090,7 @@ nodes: [1, 2, 3, 4, 5]
 pillar: Physical
 build_state: MISSING
 editorial: UNVERIFIED
+tier: SIGNAL
 strike_phase: 2A
 -->
 Reels
@@ -1164,6 +1180,7 @@ nodes: [1, 2, 3, 4, 5]
 pillar: Physical
 build_state: MISSING
 editorial: UNVERIFIED
+tier: SIGNAL
 strike_phase: 2A
 -->
 Note: The word count for each section is an approximation and can be adjusted to fit the desired length of 2200 words.
@@ -1278,6 +1295,7 @@ nodes: [1, 2, 3, 4, 5]
 pillar: Physical
 build_state: MISSING
 editorial: UNVERIFIED
+tier: SIGNAL
 strike_phase: 2A
 -->
 "Learn more about ERW" [[https://docs.google.com/document/d/1L0-uLxU50yCDjxEnzwwFMhUt3zb5iwN_XYa8_NdbmpA/edit?usp=sharing]{.underline}](https://docs.google.com/document/d/1L0-uLxU50yCDjxEnzwwFMhUt3zb5iwN_XYa8_NdbmpA/edit?usp=sharing)
@@ -1566,6 +1584,7 @@ nodes: [1, 2, 3, 4, 5]
 pillar: Physical
 build_state: MISSING
 editorial: UNVERIFIED
+tier: SIGNAL
 strike_phase: 2A
 -->
 Feel free to adjust or add any details to these chapters!
@@ -1761,6 +1780,7 @@ nodes: [1, 2, 3, 4, 5]
 pillar: Physical
 build_state: MISSING
 editorial: UNVERIFIED
+tier: SIGNAL
 strike_phase: 2A
 -->
 
@@ -1872,6 +1892,7 @@ nodes: [6, 7, 8, 9, 10, 11, 12]
 pillar: Inner
 build_state: MISSING
 editorial: CLEAN
+tier: CONTEXT
 strike_phase: 1A
 -->
 From chat
@@ -1978,6 +1999,7 @@ nodes: [6, 7, 8, 9, 10, 11, 12]
 pillar: Inner
 build_state: MISSING
 editorial: CLEAN
+tier: SIGNAL
 strike_phase: 1A
 -->
 This is a great start! and yes please do add those two too the team they seem like spectacular additions! let me answer your questions and then we can tweak the outline just a little bit and then we can dive in! 1. I don\'t know specifically, but I like what you have so far about stress management but more emphasis on gratitude and building resilience and mental toughness, also want to emphasize listening to your body and emotions and really letting yourself feel them - maybe radical forgiveness and accepting yourself fully. 2. lets change it from health nutritionist to life coach, maybe just note that men and women have different hormonal cycles and so they should tailor their habits to that for the best results and for the girls to hit me up about the cycles and syncing free ebook I have if they are wanting more info on that and recipes etc 3. I think Breathwork, affirmations and energy healing techniques sound great! lets try to go with 80% aligned inspired action and 20% personal values, mindset and spiritual practices to make sure we are in that high vibe and that the action part can be that much easier 4. Sun - Libra, 24°48\' Moon - Gemini, 22°43\' Mercury - Scorpio, 15°46\' Venus - Scorpio, 28°19\' Mars - Virgo, 19°21\' Jupiter - Gemini, 10°40\' R Saturn - Taurus, 29°54\' R Uranus - Aquarius, 16°56\' R Neptune - Aquarius, 3°48\' Pluto - Sagittarius, 11°3\' Node - Cancer, 19°23\' R Lilith (BM) - Capricorn, 25°40\' Pallas A. - Libra, 20°28\' Chiron - Sagittarius, 14°17\' AC - Aquarius, 2°11\'52\" МС - Scorpio, 26°3\'38\" do you think we should add something to help the collective on my instagram with their astro to this workbook or should we hold off and do a separate one on astrology? or do you think just putting in the most insightful placements or transits for each day or just a lil blurb like \"depending on where your mercury is \... \" things like that maybe? whatever you think is best just don\'t want to overwhelm them! thank you and let me know if you have any other questions!
@@ -2151,6 +2173,7 @@ nodes: [6, 7, 8, 9, 10, 11, 12]
 pillar: Inner
 build_state: MISSING
 editorial: CLEAN
+tier: SIGNAL
 strike_phase: 1A
 -->
 Here's a comprehensive framework for your workbook! It's designed with clear sections and includes suggestions for layout and functionality to make it easy to translate into Canva or any other design tool.
@@ -2344,6 +2367,7 @@ nodes: [6, 7, 8, 9, 10, 11, 12]
 pillar: Inner
 build_state: MISSING
 editorial: CLEAN
+tier: SIGNAL
 strike_phase: 1A
 -->
 
@@ -2626,6 +2650,7 @@ nodes: [6, 7, 8, 9, 10, 11, 12]
 pillar: Inner
 build_state: MISSING
 editorial: CLEAN
+tier: SIGNAL
 strike_phase: 1A
 -->
 ### **Section 2: Mind-Body-Spirit Connection**
@@ -2844,6 +2869,7 @@ nodes: [6, 7, 8, 9, 10, 11, 12]
 pillar: Inner
 build_state: MISSING
 editorial: CLEAN
+tier: SIGNAL
 strike_phase: 1A
 -->
 
@@ -3164,6 +3190,7 @@ nodes: [13]
 pillar: Financial
 build_state: MISSING
 editorial: CLEAN
+tier: SIGNAL
 strike_phase: 1A
 -->
 ### **Section 5: Emotional Awareness & Mastery (Expanded)**
@@ -3524,6 +3551,7 @@ nodes: [1, 2, 3, 4, 5]
 pillar: Physical
 build_state: MISSING
 editorial: CLEAN
+tier: SIGNAL
 strike_phase: 2A
 -->
 
@@ -3969,6 +3997,7 @@ nodes: [6, 7, 8, 9, 10, 11, 12, 13]
 pillar: Cross-cutting
 build_state: MISSING
 editorial: CLEAN
+tier: SIGNAL
 strike_phase: 1A
 -->
 ### **Section 8: Embracing Your Journey & Celebrating Wins**
@@ -4352,6 +4381,7 @@ nodes: [6, 7, 8, 9, 10, 11, 12]
 pillar: Inner
 build_state: MISSING
 editorial: CLEAN
+tier: SIGNAL
 strike_phase: 1A
 -->
 
@@ -4654,6 +4684,7 @@ nodes: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
 pillar: Cross-cutting
 build_state: PARTIAL
 editorial: CLEAN
+tier: SIGNAL
 strike_phase: 1A
 -->
 
@@ -4754,6 +4785,7 @@ nodes: [1, 2, 3, 4, 5]
 pillar: Physical
 build_state: PARTIAL
 editorial: UNVERIFIED
+tier: SIGNAL
 strike_phase: 2A
 -->
 
@@ -5253,6 +5285,7 @@ nodes: [1, 2, 3, 4, 5]
 pillar: Physical
 build_state: PARTIAL
 editorial: CLEAN
+tier: SIGNAL
 strike_phase: 2A
 -->
 Enagic\'s water ionizers are the only medical grade water ionizers on the market. Not only that, but they are also Japanese-certified medical equipment, which has the most rigorous testing and standards! They are assembled from start to finish by ONE person and are manufactured entirely by Enagic--no outsourcing! The company has been around for almost 50 years, and these water ionizers have been used all over Japanese hospitals (and are a common household appliance there!) to help treat cancer patients as well aid healing in all forms. The cost of the machine before taxes is \$4,980 USD. Even though it may feel like a big investment upfront, let\'s do a lil math. If you buy one case of bottled water a week, in two years you make your money back. If you have more than one person in the house, you definitely need more than one case a week. They last about 25-30 years so they end up saving you quite the sum of money in the long run!
@@ -5484,6 +5517,7 @@ nodes: [1, 2, 3, 4, 5]
 pillar: Physical
 build_state: PARTIAL
 editorial: CLEAN
+tier: SIGNAL
 strike_phase: 2A
 -->
 
@@ -5694,6 +5728,7 @@ nodes: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
 pillar: Cross-cutting
 build_state: PARTIAL
 editorial: CLEAN
+tier: SIGNAL
 strike_phase: 1A
 -->
 
@@ -5844,6 +5879,7 @@ nodes: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
 pillar: Cross-cutting
 build_state: PARTIAL
 editorial: CLEAN
+tier: SIGNAL
 strike_phase: 1A
 -->
 
@@ -5942,6 +5978,7 @@ nodes: [6, 7, 8, 9, 10, 11, 12, 13]
 pillar: Cross-cutting
 build_state: MISSING
 editorial: CLEAN
+tier: SIGNAL
 strike_phase: 1A
 -->
 subscription options/breakdown
@@ -6044,6 +6081,7 @@ nodes: [6, 7, 8, 9, 10, 11, 12]
 pillar: Inner
 build_state: MISSING
 editorial: CLEAN
+tier: SIGNAL
 strike_phase: 1A
 -->
 2.  **Health Nutritionist\'s Input**
@@ -6474,6 +6512,7 @@ nodes: [6, 7, 8, 9, 10, 11, 12]
 pillar: Inner
 build_state: MISSING
 editorial: CLEAN
+tier: SIGNAL
 strike_phase: 1A
 -->
 - In the **self-assessment section**, a note about how their Moon placement reflects emotional needs.
@@ -6849,6 +6888,7 @@ nodes: [6, 7, 8, 9, 10, 11, 12]
 pillar: Inner
 build_state: MISSING
 editorial: CLEAN
+tier: SIGNAL
 strike_phase: 1A
 -->
 ### **Section 2: Mind-Body-Spirit Connection**
@@ -7374,6 +7414,7 @@ nodes: [13]
 pillar: Financial
 build_state: MISSING
 editorial: CLEAN
+tier: SIGNAL
 strike_phase: 1A
 -->
 You\'re welcome! Let\'s dive into **Section 6: Money Mindset & Abundance**.
@@ -7584,6 +7625,7 @@ nodes: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
 pillar: Cross-cutting
 build_state: MISSING
 editorial: CLEAN
+tier: SIGNAL
 strike_phase: 1A
 -->
 #### **When to Use These Practices:**
@@ -8104,6 +8146,7 @@ nodes: [6, 7, 8, 9, 10, 11, 12]
 pillar: Inner
 build_state: MISSING
 editorial: CLEAN
+tier: SIGNAL
 strike_phase: 1A
 -->
 Let's dive into the next phase---I\'ll start creating your personalized workbook, complete with astrological insights, travel planning, embodiment practices, and breathwork techniques! I'll let you know once it's ready or if I need more specifics. Thank you for trusting me with this!
@@ -8514,6 +8557,7 @@ nodes: [6, 7, 8, 9, 10, 11, 12]
 pillar: Inner
 build_state: MISSING
 editorial: CLEAN
+tier: SIGNAL
 strike_phase: 1A
 -->
 Not through pressure.\
@@ -8854,6 +8898,7 @@ nodes: [13]
 pillar: Financial
 build_state: MISSING
 editorial: CLEAN
+tier: SIGNAL
 strike_phase: 1A
 -->
 ### **Theme:**
@@ -9184,6 +9229,7 @@ nodes: [6, 7, 8, 9, 10, 11, 12]
 pillar: Inner
 build_state: MISSING
 editorial: CLEAN
+tier: SIGNAL
 strike_phase: 1A
 -->
 
@@ -9334,6 +9380,7 @@ nodes: [6, 7, 8, 9, 10, 11, 12]
 pillar: Inner
 build_state: MISSING
 editorial: CLEAN
+tier: SIGNAL
 strike_phase: 1A
 -->
 
@@ -9554,6 +9601,7 @@ nodes: [10, 11, 12]
 pillar: Identity
 build_state: MISSING
 editorial: CLEAN
+tier: SIGNAL
 strike_phase: 1A
 -->
 
@@ -9774,6 +9822,7 @@ nodes: [6, 7, 8, 9, 10, 11, 12]
 pillar: Inner
 build_state: MISSING
 editorial: CLEAN
+tier: SIGNAL
 strike_phase: 1A
 -->
 
@@ -9964,6 +10013,7 @@ nodes: [6, 7, 8, 9, 10, 11, 12]
 pillar: Inner
 build_state: MISSING
 editorial: CLEAN
+tier: SIGNAL
 strike_phase: 1A
 -->
 
@@ -10074,6 +10124,7 @@ nodes: [6, 7, 8, 9, 10, 11, 12]
 pillar: Inner
 build_state: MISSING
 editorial: CLEAN
+tier: SIGNAL
 strike_phase: 1A
 -->
 - **Chakras** 🌀 (energy centers)
@@ -10434,6 +10485,7 @@ nodes: [6, 7, 8, 9, 10, 11, 12]
 pillar: Inner
 build_state: MISSING
 editorial: CLEAN
+tier: SIGNAL
 strike_phase: 1A
 -->
 ### **Relationships and Social Life**
@@ -10754,6 +10806,7 @@ nodes: [6, 7, 8, 9, 10, 11, 12]
 pillar: Inner
 build_state: MISSING
 editorial: CLEAN
+tier: SIGNAL
 strike_phase: 1A
 -->
 
@@ -11174,6 +11227,7 @@ nodes: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
 pillar: Cross-cutting
 build_state: N/A
 editorial: CLEAN
+tier: CONTEXT
 strike_phase: 1A
 -->
 - How do I want to *feel* this year?
@@ -11394,6 +11448,7 @@ nodes: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
 pillar: Cross-cutting
 build_state: N/A
 editorial: CLEAN
+tier: SIGNAL
 strike_phase: 2A
 -->
 

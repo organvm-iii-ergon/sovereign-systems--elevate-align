@@ -42,6 +42,7 @@ nodes: [9, 13]
 pillar: Cross-cutting
 build_state: MISSING
 editorial: CLEAN
+tier: CONTEXT
 strike_phase: 3A
 -->
 From a spiritual perspective or someone who reads Ayurvedic records, what does having a very prominent hunched back from a young age mean. Also how would you best recommend connecting with or understand your past lives before going to get your records read? Or is that the best way to do it
@@ -63,6 +64,7 @@ nodes: [9, 13]
 pillar: Cross-cutting
 build_state: MISSING
 editorial: UNVERIFIED
+tier: SIGNAL
 strike_phase: 3A
 -->
 From a spiritual and Ayurvedic perspective, a prominent hunched back from a young age can hold layered meanings—physical, energetic, karmic, and even symbolic:
@@ -184,6 +186,7 @@ nodes: [9, 13]
 pillar: Cross-cutting
 build_state: MISSING
 editorial: CLEAN
+tier: CONTEXT
 strike_phase: 3A
 -->
 Can you expand on each of these further
@@ -205,6 +208,7 @@ nodes: [9, 13]
 pillar: Cross-cutting
 build_state: MISSING
 editorial: UNVERIFIED
+tier: SIGNAL
 strike_phase: 3A
 -->
 Absolutely. Let’s go deeper into each layer—spiritual symbolism, Ayurvedic understanding, and then how to connect with your past lives (including practices, tools, and how they work). I’ll keep the expansion intuitive, grounded, and mystical where needed.
@@ -409,6 +413,7 @@ nodes: [9, 13]
 pillar: Cross-cutting
 build_state: MISSING
 editorial: CLEAN
+tier: CONTEXT
 strike_phase: 3A
 -->
 Okay this is super intriguing to me i definitely need to balance my Vata and bone joint emotional health as I have struggled with all of these things.
@@ -453,6 +458,7 @@ nodes: [9, 13]
 pillar: Cross-cutting
 build_state: MISSING
 editorial: UNVERIFIED
+tier: SIGNAL
 strike_phase: 3A
 -->
 Absolutely—this is a beautiful direction for healing, and I’d love to walk you through it. Below is a clear step-by-step breakdown for balancing each layer: Vata Dosha, Asthi Dhatu, and Samskaric/Karmic residue—plus a follow-up on generational trauma at the end.
@@ -678,6 +684,7 @@ nodes: [9, 13]
 pillar: Cross-cutting
 build_state: MISSING
 editorial: CLEAN
+tier: CONTEXT
 strike_phase: 3A
 -->
 It’s all clicking but it also feels like too much for my brain to comprehend lol I just want to read it over and over.
@@ -711,6 +718,7 @@ nodes: [9, 13]
 pillar: Cross-cutting
 build_state: MISSING
 editorial: UNVERIFIED
+tier: SIGNAL
 strike_phase: 3A
 -->
 Yes—this is exactly how this kind of truth lands: it doesn’t always make logical sense at first, but your body and soul recognize it. There’s no rush to “get it all”—just feel it, revisit it slowly, and let it settle. It’s like watering deep roots.

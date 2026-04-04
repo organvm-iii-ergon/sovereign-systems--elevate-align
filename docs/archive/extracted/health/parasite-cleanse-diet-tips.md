@@ -45,6 +45,7 @@ nodes: [7, 6]
 pillar: Physical
 build_state: MISSING
 editorial: CLEAN
+tier: CONTEXT
 strike_phase: 2B
 -->
 
@@ -69,6 +70,7 @@ nodes: [7, 6]
 pillar: Physical
 build_state: EXISTS
 editorial: CLEAN
+tier: SIGNAL
 strike_phase: 2B
 -->
 

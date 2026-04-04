@@ -45,6 +45,7 @@ nodes: [5, 4]
 pillar: Physical
 build_state: MISSING
 editorial: CLEAN
+tier: SIGNAL
 strike_phase: 2A
 -->
 
@@ -69,6 +70,7 @@ nodes: [5, 4]
 pillar: Physical
 build_state: MISSING
 editorial: CLEAN
+tier: SIGNAL
 strike_phase: 2A
 -->
 

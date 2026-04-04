@@ -44,6 +44,7 @@ nodes: [12]
 pillar: Inner
 build_state: MISSING
 editorial: CLEAN
+tier: CONTEXT
 strike_phase: 3B
 -->
 Can you explain rendering
@@ -67,6 +68,7 @@ nodes: [12]
 pillar: Inner
 build_state: MISSING
 editorial: CLEAN
+tier: SIGNAL
 strike_phase: 3B
 -->
 Absolutely! In simple terms:
@@ -139,6 +141,7 @@ nodes: [12]
 pillar: Inner
 build_state: MISSING
 editorial: CLEAN
+tier: CONTEXT
 strike_phase: 1C
 -->
 In the sense of consciousness?
@@ -162,6 +165,7 @@ nodes: [12]
 pillar: Inner
 build_state: PARTIAL
 editorial: FLAGGED
+tier: CONTEXT
 strike_phase: 1B
 -->
 Ah, yes—rendering in the context of consciousness is a more philosophical or cognitive science concept. It refers to how the brain (or awareness) “renders” reality—like how a computer renders a 3D scene into a visible image.

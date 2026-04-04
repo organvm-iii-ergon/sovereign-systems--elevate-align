@@ -44,6 +44,7 @@ nodes: [2, 3, 9]
 pillar: Inner
 build_state: MISSING
 editorial: CLEAN
+tier: SIGNAL
 strike_phase: 3A
 -->
 From a therapists and my highest self’s stand point, how do I know when it’s good to feel the anger and just let myself be mad and process through it/let it go vs when I’m holding myself there and need to get my mind off of it or just drop it cause it doesn’t mayter
@@ -67,6 +68,7 @@ nodes: [2, 3, 9]
 pillar: Inner
 build_state: PARTIAL
 editorial: FLAGGED
+tier: SIGNAL
 strike_phase: 1B
 -->
 This is such a powerful and important question, and the fact that you’re asking it shows real self-awareness. Here’s a breakdown from both a therapist’s lens and your highest self’s perspective to help you distinguish between when to feel the anger vs when to let it go or redirect:
@@ -173,6 +175,7 @@ nodes: [2, 3, 9]
 pillar: Inner
 build_state: MISSING
 editorial: CLEAN
+tier: SIGNAL
 strike_phase: 3A
 -->
 Yes please thank you !!
@@ -196,6 +199,7 @@ nodes: [2, 3, 9]
 pillar: Inner
 build_state: MISSING
 editorial: CLEAN
+tier: SIGNAL
 strike_phase: 3A
 -->
 You’re so welcome! Here’s a gentle emotional sorting practice you can use any time you’re unsure if it’s time to feel or free the anger. Think of it like an emotional compass that helps you tune into truth over reaction.
@@ -324,6 +328,7 @@ nodes: [2, 3, 9]
 pillar: Inner
 build_state: MISSING
 editorial: CLEAN
+tier: CONTEXT
 strike_phase: 1C
 -->
 So it’s okay to feel it until I understand it and then I can step back into alignment/mt power did I understand that right?
@@ -347,6 +352,7 @@ nodes: [2, 3, 9]
 pillar: Inner
 build_state: MISSING
 editorial: CLEAN
+tier: SIGNAL
 strike_phase: 3A
 -->
 Yes—exactly right.
@@ -389,6 +395,7 @@ nodes: [2, 3, 9]
 pillar: Inner
 build_state: MISSING
 editorial: CLEAN
+tier: SIGNAL
 strike_phase: 3A
 -->
 I do not like being angry lol k don’t know how to feel it or what to do it feels like it consumes me and I can’t focus on anything else lol this has only happened two or three times now idk if it’s cause I’m so tired/triggered or if it’s cause I’m finally allowing myself to feel all the things without needing to understand or repress anything
@@ -412,6 +419,7 @@ nodes: [2, 3, 9]
 pillar: Inner
 build_state: PARTIAL
 editorial: CLEAN
+tier: SIGNAL
 strike_phase: 3A
 -->
 That makes so much sense, and you’re not alone in this at all. Anger—especially when you’re not used to letting it fully exist—can feel overwhelming, like wildfire. It’s not logical, tidy, or easy to compartmentalize, especially if you’ve spent most of your life managing emotions instead of expressing them.
@@ -486,6 +494,7 @@ nodes: [2, 3, 9]
 pillar: Inner
 build_state: MISSING
 editorial: CLEAN
+tier: SIGNAL
 strike_phase: 3A
 -->
 Yes please that would be perfect this is all so great
@@ -509,6 +518,7 @@ nodes: [2, 3, 9]
 pillar: Inner
 build_state: MISSING
 editorial: CLEAN
+tier: SIGNAL
 strike_phase: 3A
 -->
 I’m so glad it’s resonating—here’s a grounding, poetic affirmation for you to read (or even record for yourself) whenever the anger feels too much:

@@ -1,6 +1,6 @@
 # Strike Plan: Phase 2 — Physical Sovereignty
 
-Generated: 2026-04-03T21:27:02Z
+Generated: 2026-04-04T18:13:26Z
 
 **Blocked by:** GH#13 (final node architecture), GH#17 (water funnel spec)
 

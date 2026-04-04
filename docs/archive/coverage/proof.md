@@ -1,6 +1,6 @@
 # Coverage Proof
 
-Generated: 2026-04-04T00:51:30Z
+Generated: 2026-04-04T18:12:01Z
 Source: docs/archive/extracted/**/*.md
 
 ## Summary
@@ -39,6 +39,14 @@ Source: docs/archive/extracted/**/*.md
 | MODEL | 24 |
 | QUESTION | 321 |
 | INSTRUCTION | 143 |
+
+## By Tier
+
+| Tier | Count |
+|------|-------|
+| SIGNAL | 1153 |
+| CONTEXT | 557 |
+| NOISE | 111 |
 
 ## Editorial Flags
 

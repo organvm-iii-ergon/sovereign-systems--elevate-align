@@ -44,6 +44,7 @@ nodes: [10, 2, 9, 13]
 pillar: Identity
 build_state: MISSING
 editorial: CLEAN
+tier: CONTEXT
 strike_phase: 1C
 -->
 What is it called when you have a problem/block when it comes to being seen? I feel like I’ve healed my money energy and taken control of my life but I think that’s holding me back is like fear of being seen
@@ -67,6 +68,7 @@ nodes: [10, 2, 9, 13]
 pillar: Identity
 build_state: MISSING
 editorial: CLEAN
+tier: SIGNAL
 strike_phase: 3A
 -->
 What you’re describing is often referred to as “visibility wounds” or a “fear of being seen.” It can stem from deep-seated experiences related to shame, judgment, rejection, or even past trauma where standing out felt unsafe.
@@ -112,6 +114,7 @@ nodes: [10, 2, 9, 13]
 pillar: Identity
 build_state: MISSING
 editorial: CLEAN
+tier: SIGNAL
 strike_phase: 3A
 -->
 Yes that resonates a lot, I’d say it’s a witch wound or childhood conditioning and then with my Scorpio placements that makes a lot of sense. How do I start working on/through that
@@ -135,6 +138,7 @@ nodes: [10, 2, 9, 13]
 pillar: Identity
 build_state: MISSING
 editorial: CLEAN
+tier: SIGNAL
 strike_phase: 3A
 -->
 Healing the witch wound, childhood conditioning, and your Scorpio placements around visibility requires a mix of inner work, nervous system regulation, and intentional action to reprogram the belief that being seen is safe. Here’s a layered approach to help you start working through it:
@@ -242,6 +246,7 @@ nodes: [10, 2, 9, 13]
 pillar: Identity
 build_state: MISSING
 editorial: CLEAN
+tier: SIGNAL
 strike_phase: 3A
 -->
 I’ve been working on showing up on Instagram stories consistently and I’ll go in and out of being good about posting. There for a week or so I got on lives pretty regularly too. I just feel like I’m kind of all over the place so then I get discouraged but I really want to put together a water webinar and film it so then I can post that and my website together for my official launch for Facebook
@@ -265,6 +270,7 @@ nodes: [10, 2, 9, 13]
 pillar: Identity
 build_state: MISSING
 editorial: CLEAN
+tier: SIGNAL
 strike_phase: 3A
 -->
 It sounds like you’re already pushing through the visibility barrier, which is huge! The inconsistency is likely just your nervous system adjusting—so instead of seeing it as a failure, think of it as part of the process.
@@ -332,6 +338,7 @@ nodes: [10, 2, 9, 13]
 pillar: Identity
 build_state: MISSING
 editorial: CLEAN
+tier: SIGNAL
 strike_phase: 3A
 -->
 I was thinking about doing my water highlights first so I can post those as I go and am putting it together so that’s a good teaser, I might need help with the webinar presentation in a little bit but not right now!
@@ -355,6 +362,7 @@ nodes: [10, 2, 9, 13]
 pillar: Identity
 build_state: N/A
 editorial: CLEAN
+tier: CONTEXT
 strike_phase: 1C
 -->
 That’s a great plan! Updating your water highlights first will give people a solid foundation to explore while you build up to the webinar. Let me know whenever you're ready for help with the webinar presentation or anything else related to your launch!

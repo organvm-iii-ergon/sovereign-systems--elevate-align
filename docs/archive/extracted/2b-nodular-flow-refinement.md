@@ -56,6 +56,7 @@ nodes: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
 pillar: Cross-cutting
 build_state: PARTIAL
 editorial: CLEAN
+tier: CONTEXT
 strike_phase: 1A
 -->
 Notes below but couldn't respond to the chat thread before so continuing here for nodular layout !!
@@ -94,6 +95,7 @@ nodes: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
 pillar: Cross-cutting
 build_state: PARTIAL
 editorial: CLEAN
+tier: SIGNAL
 strike_phase: 1A
 -->
 🔹 Elevate • Align • Unlock
@@ -131,6 +133,7 @@ nodes: [1]
 pillar: Physical
 build_state: MISSING
 editorial: CLEAN
+tier: SIGNAL
 strike_phase: 1A
 -->
 🔹 Maslow
@@ -168,6 +171,7 @@ nodes: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
 pillar: Cross-cutting
 build_state: MISSING
 editorial: CLEAN
+tier: CONTEXT
 strike_phase: 1A
 -->
 🔹 Node Hover
@@ -205,6 +209,7 @@ nodes: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
 pillar: Cross-cutting
 build_state: MISSING
 editorial: CLEAN
+tier: SIGNAL
 strike_phase: 1A
 -->
 🔹 Node Pages (Your Book Inspiration)
@@ -252,6 +257,7 @@ nodes: [1, 2, 3, 4, 5]
 pillar: Physical
 build_state: PARTIAL
 editorial: CLEAN
+tier: SIGNAL
 strike_phase: 2A
 -->
 We're building a guided spiral progression
@@ -335,6 +341,7 @@ nodes: [6, 7, 8, 9]
 pillar: Inner
 build_state: PARTIAL
 editorial: CLEAN
+tier: SIGNAL
 strike_phase: 1A
 -->
 🧠 PHASE 2 — ALIGN (Awareness)
@@ -396,6 +403,7 @@ nodes: [10, 11, 12]
 pillar: Identity
 build_state: PARTIAL
 editorial: CLEAN
+tier: SIGNAL
 strike_phase: 1A
 -->
 🔥 PHASE 3 — ALIGN (Accountability with Love)
@@ -454,6 +462,7 @@ nodes: [13]
 pillar: Financial
 build_state: PARTIAL
 editorial: CLEAN
+tier: SIGNAL
 strike_phase: 1A
 -->
 🌊 PHASE 4 — UNLOCK (Expansion – soft entry)
@@ -488,6 +497,7 @@ nodes: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
 pillar: Cross-cutting
 build_state: PARTIAL
 editorial: CLEAN
+tier: SIGNAL
 strike_phase: 1A
 -->
 🧭 FLOW (How they connect — simple version)
@@ -559,6 +569,7 @@ nodes: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
 pillar: Cross-cutting
 build_state: PARTIAL
 editorial: CLEAN
+tier: SIGNAL
 strike_phase: 1A
 -->
 🏛️ "SYSTEM BEHIND THE SPIRAL" SECTION (Updated to your vision)
@@ -618,6 +629,7 @@ nodes: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
 pillar: Cross-cutting
 build_state: PARTIAL
 editorial: CLEAN
+tier: SIGNAL
 strike_phase: 1A
 -->
 Then:
@@ -648,6 +660,7 @@ nodes: [1]
 pillar: Physical
 build_state: MISSING
 editorial: CLEAN
+tier: SIGNAL
 strike_phase: 2A
 -->
 🔺 WHERE MASLOW GOES NOW (Final Placement)
@@ -689,6 +702,7 @@ nodes: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
 pillar: Cross-cutting
 build_state: PARTIAL
 editorial: CLEAN
+tier: CONTEXT
 strike_phase: 1A
 -->
 🧠 DESIGNER INSTRUCTIONS (SUPER CLEAR)
@@ -743,6 +757,7 @@ nodes: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
 pillar: Cross-cutting
 build_state: PARTIAL
 editorial: CLEAN
+tier: CONTEXT
 strike_phase: 1A
 -->
 BELOW SPIRAL:
@@ -813,6 +828,7 @@ nodes: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
 pillar: Cross-cutting
 build_state: N/A
 editorial: CLEAN
+tier: CONTEXT
 strike_phase: 1C
 -->
 And here are my thoughts and tweaks
@@ -860,6 +876,7 @@ nodes: [1, 2, 3, 4, 5]
 pillar: Physical
 build_state: PARTIAL
 editorial: CLEAN
+tier: SIGNAL
 strike_phase: 2A
 -->
 Perfect — I see exactly what you're doing here. Let's translate your tweaks into a refined nodular flow for the Spiral, keeping the integrity of the V1 but folding in your adjustments. I'll also note where nodes can be combined or shifted, and highlight opportunities for new ones. Here's a structured proposal:
@@ -930,6 +947,7 @@ nodes: [6, 7, 8, 9, 10, 11, 12]
 pillar: Inner
 build_state: PARTIAL
 editorial: CLEAN
+tier: SIGNAL
 strike_phase: 1A
 -->
 🧠 PHASE 2 — ALIGN (Awareness / Building Momentum)
@@ -1006,6 +1024,7 @@ nodes: [11, 12, 13]
 pillar: Financial
 build_state: MISSING
 editorial: CLEAN
+tier: SIGNAL
 strike_phase: 1A
 -->
 🌊 PHASE 4 — UNLOCK (Expansion / Integration)
@@ -1043,6 +1062,7 @@ nodes: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
 pillar: Cross-cutting
 build_state: PARTIAL
 editorial: CLEAN
+tier: SIGNAL
 strike_phase: 1A
 -->
 ⚡ Node Flow (Simplified Gravity Map)
@@ -1105,6 +1125,7 @@ nodes: [8, 9]
 pillar: Identity
 build_state: N/A
 editorial: CLEAN
+tier: CONTEXT
 strike_phase: 1C
 -->
 Maybe change 9 around a bit it seems redundant to 8.
@@ -1133,6 +1154,7 @@ nodes: [8, 9, 10]
 pillar: Identity
 build_state: MISSING
 editorial: CLEAN
+tier: SIGNAL
 strike_phase: 1A
 -->
 Perfect — I see what you mean about 9. Right now it does feel like an extension of 8, so we can tweak it to make it distinct but complementary, something like:
@@ -1217,6 +1239,7 @@ nodes: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
 pillar: Cross-cutting
 build_state: N/A
 editorial: CLEAN
+tier: CONTEXT
 strike_phase: 1C
 -->
 YES I LOVE THAT - I want the clusters to follow the sovereign and Eleveat align unlock philosophies
@@ -1239,6 +1262,7 @@ nodes: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
 pillar: Cross-cutting
 build_state: PARTIAL
 editorial: CLEAN
+tier: CONTEXT
 strike_phase: 1A
 -->
 Perfect — then we'll lock in the clusters along the Elevate / Align / Unlock pillars so the visual spiral communicates the philosophy as soon as someone looks at it. Here's how I'd structure the designer-ready nodular map conceptually before sketching it:
@@ -1355,6 +1379,7 @@ nodes: [1, 2, 3, 4, 5, 6, 7, 8]
 pillar: Cross-cutting
 build_state: N/A
 editorial: CLEAN
+tier: CONTEXT
 strike_phase: 1C
 -->
 Awareness needs to be under elevate I think not be a core step it's the second node to feel good first and then accountability starts the align (have to know where you are if you want to get where you're going) can we change 8 or leave it blank for now and just move it into or under the 5/6/7.
@@ -1380,6 +1405,7 @@ nodes: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
 pillar: Cross-cutting
 build_state: PARTIAL
 editorial: CLEAN
+tier: SIGNAL
 strike_phase: 1A
 -->
 Perfect — that actually makes the flow much cleaner. If we treat Awareness as part of Elevate, it becomes the first mental "check-in" after stabilizing your body, and then Align really starts with Accountability. Here's the revised, locked-in nodular layout as our base for the mockup:
@@ -1521,6 +1547,7 @@ nodes: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
 pillar: Cross-cutting
 build_state: N/A
 editorial: CLEAN
+tier: CONTEXT
 strike_phase: 1C
 -->
 We need two more nodes now that fit into my framework / branding but keep the big picture clean for first time visitors, can you ask me some questions or what would you recommend?
@@ -1543,6 +1570,7 @@ nodes: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
 pillar: Cross-cutting
 build_state: N/A
 editorial: CLEAN
+tier: SIGNAL
 strike_phase: 1C
 -->
 Absolutely — let's make sure the two new nodes feel purposeful, branded, and don't overwhelm first-time visitors. Since we're keeping the big picture clean, the new nodes should either deepen Elevate/Align or start the Unlock bridge without creating extra complexity.
@@ -1644,6 +1672,7 @@ nodes: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
 pillar: Cross-cutting
 build_state: N/A
 editorial: CLEAN
+tier: CONTEXT
 strike_phase: 1C
 -->
 Let's add one to elevate and one to align! Not sure on 2 whatever you recommend. Can be new idea or theory !! But it's all connected so ideally just deepens whole thing!
@@ -1669,6 +1698,7 @@ nodes: [3]
 pillar: Physical
 build_state: MISSING
 editorial: CLEAN
+tier: SIGNAL
 strike_phase: 2A
 -->
 Perfect — here's what I'd recommend for the two new nodes, pulling directly from your existing Spiral language, philosophy, and frameworks so they feel connected, deepening, but not overwhelming:
@@ -1737,6 +1767,7 @@ nodes: [9]
 pillar: Identity
 build_state: MISSING
 editorial: CLEAN
+tier: SIGNAL
 strike_phase: 1A
 -->
 🧠 Align — New Node
@@ -1801,6 +1832,7 @@ nodes: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
 pillar: Cross-cutting
 build_state: PARTIAL
 editorial: CLEAN
+tier: SIGNAL
 strike_phase: 1A
 -->
 ✅ Updated Spiral Node Layout with Two New Nodes

@@ -535,6 +535,151 @@ def generate_by_nature(atoms):
 
 
 # ---------------------------------------------------------------------------
+# Coverage Map: By Tier
+# ---------------------------------------------------------------------------
+def generate_by_tier(atoms):
+    TIER_ORDER = ["SIGNAL", "CONTEXT", "NOISE"]
+    TIER_DESC = {
+        "SIGNAL": "Build-worthy content — can appear on a page, calendar, or product",
+        "CONTEXT": "Intent/direction markers — informs decisions, not page content",
+        "NOISE": "Archive-only — acks, pleasantries, broken fragments",
+    }
+
+    tier_atoms = defaultdict(list)
+    for atom in atoms:
+        tier = atom.get("tier", "SIGNAL")  # default to SIGNAL for legacy atoms
+        tier_atoms[tier].append(atom)
+
+    lines = [
+        "# Coverage Map: By Tier",
+        "",
+        f"Generated: {timestamp()}",
+        f"Total atoms in registry: {len(atoms)}",
+        "",
+        "## Summary",
+        "",
+        "| Tier | Total | % | EXISTS | PARTIAL | MISSING | N/A | Description |",
+        "|------|-------|---|--------|---------|---------|-----|-------------|",
+    ]
+
+    for tier in TIER_ORDER:
+        group = tier_atoms.get(tier, [])
+        total = len(group)
+        pct = f"{total * 100 / len(atoms):.1f}" if atoms else "0"
+        exists = sum(1 for a in group if a.get("build_state") == "EXISTS")
+        partial = sum(1 for a in group if a.get("build_state") == "PARTIAL")
+        missing = sum(1 for a in group if a.get("build_state") == "MISSING")
+        na = sum(1 for a in group if a.get("build_state") == "N/A")
+        desc = TIER_DESC.get(tier, "")
+        lines.append(
+            f"| **{tier}** | {total} | {pct}% | {exists} | {partial} | {missing} | {na} | {desc} |"
+        )
+
+    # Unknown tiers
+    other_tiers = sorted(set(tier_atoms.keys()) - set(TIER_ORDER))
+    for tier in other_tiers:
+        group = tier_atoms[tier]
+        total = len(group)
+        pct = f"{total * 100 / len(atoms):.1f}" if atoms else "0"
+        lines.append(f"| {tier} | {total} | {pct}% | | | | | |")
+
+    lines.extend(["", "---", ""])
+
+    # Detail per tier
+    all_tiers = TIER_ORDER + other_tiers
+    for tier in all_tiers:
+        group = tier_atoms.get(tier, [])
+        if not group:
+            continue
+
+        lines.append(f"## {tier}")
+        lines.append(f"Total: {len(group)} | {TIER_DESC.get(tier, '')}")
+        lines.append("")
+
+        # Nature breakdown
+        nature_counts = defaultdict(int)
+        for a in group:
+            nature_counts[a.get("nature", "UNKNOWN")] += 1
+
+        lines.append("### Nature Distribution")
+        lines.append("")
+        lines.append("| Nature | Count |")
+        lines.append("|--------|-------|")
+        for nature, count in sorted(nature_counts.items(), key=lambda x: -x[1]):
+            lines.append(f"| {nature} | {count} |")
+        lines.append("")
+
+        # Provenance breakdown
+        prov_counts = defaultdict(int)
+        for a in group:
+            prov_counts[a.get("provenance", "UNKNOWN")] += 1
+
+        lines.append("### Provenance Distribution")
+        lines.append("")
+        lines.append("| Provenance | Count |")
+        lines.append("|------------|-------|")
+        for prov, count in sorted(prov_counts.items(), key=lambda x: -x[1]):
+            lines.append(f"| {prov} | {count} |")
+        lines.append("")
+
+        # For SIGNAL: show by pillar
+        if tier == "SIGNAL":
+            pillar_counts = defaultdict(int)
+            for a in group:
+                pillar_counts[a.get("pillar", "Unknown")] += 1
+
+            lines.append("### Pillar Distribution (SIGNAL only)")
+            lines.append("")
+            lines.append("| Pillar | Count |")
+            lines.append("|--------|-------|")
+            for pillar in PILLAR_ORDER:
+                lines.append(f"| {pillar} | {pillar_counts.get(pillar, 0)} |")
+            other_pillars = sorted(set(pillar_counts.keys()) - set(PILLAR_ORDER))
+            for pillar in other_pillars:
+                lines.append(f"| {pillar} | {pillar_counts[pillar]} |")
+            lines.append("")
+
+        # For CONTEXT: show top 20 (useful for intent register)
+        if tier == "CONTEXT":
+            lines.append("### Sample CONTEXT Atoms (first 30)")
+            lines.append("")
+            lines.append("| ID | Source | Idea | Nature | Provenance |")
+            lines.append("|-----|--------|------|--------|------------|")
+            for a in group[:30]:
+                lines.append(
+                    f"| {a.get('id', '')} "
+                    f"| {esc(a.get('source_file', ''))} "
+                    f"| {truncate(a.get('idea', ''))} "
+                    f"| {a.get('nature', '')} "
+                    f"| {a.get('provenance', '')} |"
+                )
+            if len(group) > 30:
+                lines.append(f"| ... | ... | *({len(group) - 30} more)* | ... | ... |")
+            lines.append("")
+
+        # For NOISE: show all (small count)
+        if tier == "NOISE":
+            lines.append("### All NOISE Atoms")
+            lines.append("")
+            lines.append("| ID | Source | Idea | Nature | Provenance |")
+            lines.append("|-----|--------|------|--------|------------|")
+            for a in group:
+                lines.append(
+                    f"| {a.get('id', '')} "
+                    f"| {esc(a.get('source_file', ''))} "
+                    f"| {truncate(a.get('idea', ''))} "
+                    f"| {a.get('nature', '')} "
+                    f"| {a.get('provenance', '')} |"
+                )
+            lines.append("")
+
+        lines.append("---")
+        lines.append("")
+
+    return "\n".join(lines)
+
+
+# ---------------------------------------------------------------------------
 # Strike Plans
 # ---------------------------------------------------------------------------
 def atom_row(a):
@@ -1155,6 +1300,7 @@ def main():
         os.path.join(COVERAGE_DIR, "by-pillar.md"): generate_by_pillar,
         os.path.join(COVERAGE_DIR, "by-provenance.md"): generate_by_provenance,
         os.path.join(COVERAGE_DIR, "by-nature.md"): generate_by_nature,
+        os.path.join(COVERAGE_DIR, "by-tier.md"): generate_by_tier,
     }
 
     for path, generator in files.items():
@@ -1180,7 +1326,7 @@ def main():
             f.write(content)
             f.write("\n")
 
-    print(f"\nDone. Generated 4 coverage maps + 5 strike plans from {len(atoms)} atoms.")
+    print(f"\nDone. Generated 5 coverage maps + 5 strike plans from {len(atoms)} atoms.")
 
 
 if __name__ == "__main__":

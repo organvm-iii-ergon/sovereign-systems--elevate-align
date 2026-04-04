@@ -42,6 +42,7 @@ nodes: [12]
 pillar: Cross-cutting
 build_state: MISSING
 editorial: CLEAN
+tier: CONTEXT
 strike_phase: 1B
 -->
 Can you teach me how to bend a spoon with my mind
@@ -63,6 +64,7 @@ nodes: [12]
 pillar: Cross-cutting
 build_state: MISSING
 editorial: UNVERIFIED
+tier: CONTEXT
 strike_phase: 1B
 -->
 Spoon-bending is most often taught as a focus and energy exercise — a way to train intention, belief, and subtle energy awareness — not as literal telekinesis.

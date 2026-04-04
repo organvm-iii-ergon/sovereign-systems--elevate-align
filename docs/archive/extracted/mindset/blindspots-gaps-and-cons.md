@@ -44,6 +44,7 @@ nodes: [3, 4, 10]
 pillar: Inner
 build_state: MISSING
 editorial: CLEAN
+tier: SIGNAL
 strike_phase: 3B
 -->
 intitiate protocols: my blindspots, gaps, cons about me and my personality;
@@ -67,6 +68,7 @@ nodes: [3, 4, 10]
 pillar: Inner
 build_state: PARTIAL
 editorial: FLAGGED
+tier: SIGNAL
 strike_phase: 1B
 -->
 Alright Maddie — initiating internal protocol: "Blindspots, Gaps, & Cons" based on everything you've shared about your journey, personality, astrology, Human Design, and how you show up. This isn’t a judgment — it’s a reflection meant to help you see what might be in the way so you can reclaim your power even more.
@@ -211,6 +213,7 @@ nodes: [3, 4, 10]
 pillar: Inner
 build_state: MISSING
 editorial: CLEAN
+tier: SIGNAL
 strike_phase: 3B
 -->
 Yes please! I want to figure out how to blend my voids and values so that I can make money
@@ -234,6 +237,7 @@ nodes: [3, 4, 10]
 pillar: Inner
 build_state: EXISTS
 editorial: FLAGGED
+tier: SIGNAL
 strike_phase: 1B
 -->
 Absolutely — let’s alchemize your voids + values into your value (what you offer) so you can magnetize aligned money and support.
@@ -390,6 +394,7 @@ nodes: [3, 4, 10]
 pillar: Inner
 build_state: MISSING
 editorial: CLEAN
+tier: SIGNAL
 strike_phase: 3B
 -->
 Yes please! I want to implement even if it’s rough in the next few days at least my landing page, webclass first and then the rough spiral, but having the three different clear avenues so new leads are not confused and have as least friction as possible (can start posting my puzzle and launch insta highlights and three top posts and then schedule out my puzzle) - then I can start working on the water funnel next week and then those sales are going to be my main focus and the business and spiral will just be there for who needs it
@@ -416,6 +421,7 @@ nodes: [3, 4, 10]
 pillar: Inner
 build_state: PARTIAL
 editorial: CLEAN
+tier: SIGNAL
 strike_phase: 3B
 -->
 Perfect — let’s lay out your next few days in a way that keeps it clear, executable, and friction-free. Here's the roadmap, starting with your main priority and layered intentionally:
@@ -590,6 +596,7 @@ nodes: [3, 4, 10]
 pillar: Inner
 build_state: MISSING
 editorial: CLEAN
+tier: CONTEXT
 strike_phase: 3B
 -->
 Can we do the first two please!
@@ -613,6 +620,7 @@ nodes: [3, 4, 10]
 pillar: Inner
 build_state: EXISTS
 editorial: FLAGGED
+tier: SIGNAL
 strike_phase: 1B
 -->
 Absolutely! Let’s get your Landing Page Wireframe (Figma-style) and your Webclass Script Outline done first so you can implement right away. Below is everything mapped clearly — copy/paste friendly for your build or hand-off.
@@ -809,6 +817,7 @@ nodes: [3, 4, 10]
 pillar: Inner
 build_state: MISSING
 editorial: CLEAN
+tier: SIGNAL
 strike_phase: 3B
 -->
 Should I mention the spiral on my business landing page or no for now - I want it to be very subtle if I do and just mention it lightly like I am working on it and you’ll get access to the spiral when you pay the $99 for the discovery process - I want to keep my landing page just super simple and about watching the webclass - paying the 99 to start business and then go to webclass - I can add the other buttons later
@@ -835,6 +844,7 @@ nodes: [3, 4, 10]
 pillar: Inner
 build_state: PARTIAL
 editorial: CLEAN
+tier: SIGNAL
 strike_phase: 3B
 -->
 Yes — that’s 100% the right call.
@@ -913,6 +923,7 @@ nodes: [3, 4, 10]
 pillar: Inner
 build_state: MISSING
 editorial: CLEAN
+tier: CONTEXT
 strike_phase: 3B
 -->
 Can you just update my next three or four days steps
@@ -936,6 +947,7 @@ nodes: [3, 4, 10]
 pillar: Inner
 build_state: PARTIAL
 editorial: CLEAN
+tier: SIGNAL
 strike_phase: 3B
 -->
 Absolutely — here’s your updated 3–4 day execution plan based on your new clarity:
@@ -1077,6 +1089,7 @@ nodes: [3, 4, 10]
 pillar: Inner
 build_state: MISSING
 editorial: CLEAN
+tier: CONTEXT
 strike_phase: 3B
 -->
 Okay then I can still be working on the spiral behind the scenes and then when it’s closer I can start to integrate it in and posting puzzles - then will work on the water funnel while that stuff is working
@@ -1100,6 +1113,7 @@ nodes: [3, 4, 10]
 pillar: Inner
 build_state: MISSING
 editorial: CLEAN
+tier: SIGNAL
 strike_phase: 3B
 -->
 Exactly — that’s the aligned flow.

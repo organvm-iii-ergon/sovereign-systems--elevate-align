@@ -33,6 +33,7 @@ nodes: [11, 12]
 pillar: Physical
 build_state: MISSING
 editorial: CLEAN
+tier: SIGNAL
 strike_phase: 2C
 -->
 
@@ -65,6 +66,7 @@ nodes: [11, 12]
 pillar: Physical
 build_state: EXISTS
 editorial: CLEAN
+tier: SIGNAL
 strike_phase: 2C
 -->
 
@@ -97,6 +99,7 @@ nodes: [11, 12]
 pillar: Physical
 build_state: EXISTS
 editorial: CLEAN
+tier: SIGNAL
 strike_phase: 2C
 -->
 
@@ -129,6 +132,7 @@ nodes: [11, 12]
 pillar: Physical
 build_state: EXISTS
 editorial: CLEAN
+tier: SIGNAL
 strike_phase: 2C
 -->
 

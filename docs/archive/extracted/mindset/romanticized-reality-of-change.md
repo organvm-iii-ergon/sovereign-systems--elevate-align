@@ -44,6 +44,7 @@ nodes: [14, 4]
 pillar: Inner
 build_state: MISSING
 editorial: CLEAN
+tier: SIGNAL
 strike_phase: 3A
 -->
 “what would what would you call it like what's a word for america how like for example in america they think that the metamorphosis and turning into a butterfly they like beautify it and just like oh it's this pretty you go to sleep and wake up but in all reality like you literally the caterpillar almost it completely dies and then the butterfly rebirth it rebirths itself and it had all the answers in it the whole time and i feel like america they like almost rose-colored glasses or like fake is a bad word but they aren't realistic but i feel like there's a certain word for that can you help me find it”
@@ -67,6 +68,7 @@ nodes: [14, 4]
 pillar: Inner
 build_state: MISSING
 editorial: CLEAN
+tier: CONTEXT
 strike_phase: 3A
 -->
 Sure! It sounds like you're describing a kind of "romanticization" or "idealization" of the metamorphosis process. Another way to put it might be that the reality is "sugarcoated" or that there's a "glossed-over" perception of it. Essentially, it's the idea that the deeper, more challenging truths are being overlooked in favor of a prettier, more palatable narrative. Does that capture what you're thinking of?
@@ -90,6 +92,7 @@ nodes: [14, 4]
 pillar: Inner
 build_state: MISSING
 editorial: CLEAN
+tier: SIGNAL
 strike_phase: 3A
 -->
 “Yes, exactly.”
@@ -113,6 +116,7 @@ nodes: [14, 4]
 pillar: Inner
 build_state: N/A
 editorial: CLEAN
+tier: CONTEXT
 strike_phase: 1C
 -->
 Awesome! It’s like the difference between the raw, intense transformation and the neat, tidy story we tell. If you need to weave this concept into something you're working on, let me know!
@@ -136,6 +140,7 @@ nodes: [14, 4]
 pillar: Inner
 build_state: MISSING
 editorial: CLEAN
+tier: SIGNAL
 strike_phase: 3A
 -->
 “Yeah, I'm trying to figure out how to put it into words for Instagram.”
@@ -159,6 +164,7 @@ nodes: [14, 4]
 pillar: Inner
 build_state: MISSING
 editorial: CLEAN
+tier: SIGNAL
 strike_phase: 3A
 -->
 Got it! How about something like this:

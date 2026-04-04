@@ -42,6 +42,7 @@ nodes: [13, 14]
 pillar: Cross-cutting
 build_state: MISSING
 editorial: CLEAN
+tier: CONTEXT
 strike_phase: 1B
 -->
 Is there anything about “creature selves” or anything along those lines for courses or websites?
@@ -63,6 +64,7 @@ nodes: [13, 14]
 pillar: Cross-cutting
 build_state: MISSING
 editorial: UNVERIFIED
+tier: SIGNAL
 strike_phase: 1B
 -->
 It sounds like you’re exploring a philosophical or conceptual idea around “creature selves”—perhaps something involving the notion of creatures possessing a self, self-awareness, or course content framed around that idea. While there's no widely recognized term exactly called “creature selves,” a few related philosophical and educational threads might be of interest to you:
@@ -145,6 +147,7 @@ nodes: [13, 14]
 pillar: Cross-cutting
 build_state: MISSING
 editorial: CLEAN
+tier: CONTEXT
 strike_phase: 1B
 -->
 I want to do a course or have my catch phrase be something about our creature selves or embodying creature selves / self  but not if it’s already been done
@@ -166,6 +169,7 @@ nodes: [13, 14]
 pillar: Cross-cutting
 build_state: MISSING
 editorial: UNVERIFIED
+tier: SIGNAL
 strike_phase: 1B
 -->
 You're thinking about using the unique phrase “creature selves” or “embodying creature selves” as a course theme or catchphrase—and you’re curious whether it’s already out there. Here's what I found:
@@ -259,6 +263,7 @@ nodes: [13, 14]
 pillar: Cross-cutting
 build_state: MISSING
 editorial: CLEAN
+tier: CONTEXT
 strike_phase: 1B
 -->
 Enagic motto is return to origin and I feel like as a whole we are so disconnected from our light/true beings which is inately creature and if we went back to listening to our bodies / return to our creature selves then we wouldn’t be so sick and tired all the time
@@ -280,6 +285,7 @@ nodes: [13, 14]
 pillar: Cross-cutting
 build_state: MISSING
 editorial: UNVERIFIED
+tier: SIGNAL
 strike_phase: 1B
 -->
 Ahh yes, I see exactly where you’re going with this 🌿—and it’s powerful. You’re linking Enagic’s “Return to Origin” to something deeper: the idea that our true origin isn’t just clean water, but our innate creature selves—the raw, primal, instinctive part of us that knows how to heal, rest, play, eat, and live in sync with the earth.
@@ -362,6 +368,7 @@ nodes: [13, 14]
 pillar: Cross-cutting
 build_state: MISSING
 editorial: CLEAN
+tier: CONTEXT
 strike_phase: 1B
 -->
 There’s a quote about how man created time, but the birds always know exactly when to migrate and the bears to hibernate - can you help me find it
@@ -383,6 +390,7 @@ nodes: [13, 14]
 pillar: Cross-cutting
 build_state: MISSING
 editorial: UNVERIFIED
+tier: SIGNAL
 strike_phase: 1B
 -->
 That quote you're thinking of echoes a timeless idea—humans devised clocks and timekeeping, but the natural world—birds, bears, seasons—responds to rhythms far older and wiser.
@@ -451,6 +459,7 @@ nodes: [13, 14]
 pillar: Cross-cutting
 build_state: MISSING
 editorial: CLEAN
+tier: CONTEXT
 strike_phase: 1B
 -->
 There’s a poem
@@ -472,6 +481,7 @@ nodes: [13, 14]
 pillar: Cross-cutting
 build_state: MISSING
 editorial: UNVERIFIED
+tier: SIGNAL
 strike_phase: 1B
 -->
 I wasn’t able to locate a specific published poem that directly asserts, “Man created time, but birds know when to migrate, and bears know when to hibernate.” However, the sentiment you're drawn to echoes several poetic and proverbial themes that express nature’s internal rhythms versus human constructs of time. Here are a few that resonate:

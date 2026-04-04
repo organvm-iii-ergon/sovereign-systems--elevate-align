@@ -48,6 +48,7 @@ nodes: [3, 5, 11]
 pillar: Cross-cutting
 build_state: MISSING
 editorial: CLEAN
+tier: CONTEXT
 strike_phase: 3A
 -->
 Acting as my astrologer and energetic guide, what’s going on with my chart (oct 17 2000 3:12pm afton wyoming) and the current transits today using western astrology first please as well as the new year, from now until may probably signifying any big themes I should take advantage of within my own chart and the current transits to see success with my water business - my business funnel is all done I have to revamp my insta and launch the new web class tomorrow - finish the water funnel and then start getting out and pitching people, small businesses and housing development sites with cards and brochures
@@ -69,6 +70,7 @@ nodes: [3, 5, 11]
 pillar: Cross-cutting
 build_state: MISSING
 editorial: UNVERIFIED
+tier: SIGNAL
 strike_phase: 3A
 -->
 Alright — I’m going to hold this clean, grounded, Western-astrology–first, and strategic for business. No fluff, no panic astrology. You’re actually in a very supportive launch window if you use it correctly.
@@ -178,6 +180,7 @@ nodes: [3, 5, 11]
 pillar: Cross-cutting
 build_state: MISSING
 editorial: UNVERIFIED
+tier: SIGNAL
 strike_phase: 3A
 -->
 The Bigger Player: Pluto in Aquarius (2024–2044)
@@ -420,6 +423,7 @@ nodes: [3, 5, 11]
 pillar: Cross-cutting
 build_state: MISSING
 editorial: UNVERIFIED
+tier: SIGNAL
 strike_phase: 3A
 -->
 The Big Theme to Lean Into (Now → May)
@@ -501,6 +505,7 @@ nodes: [3, 5, 11]
 pillar: Cross-cutting
 build_state: MISSING
 editorial: CLEAN
+tier: CONTEXT
 strike_phase: 3A
 -->
 What about relationship wise as well and when would be the best time to make my move to Panama? Should I make two trips? And should I do the water subscriptions where I charge people 50/month to come get water whenever they want until they move? Also want to still be posting (need to get into a flow with this) and work on my stickers/astro/journal stuff for residual income and my cookie recipes too
@@ -531,6 +536,7 @@ nodes: [3, 5, 11]
 pillar: Cross-cutting
 build_state: MISSING
 editorial: UNVERIFIED
+tier: SIGNAL
 strike_phase: 3A
 -->
 Okay — this is actually a beautiful convergence moment for you. I’m going to answer this in layers so it stays clear, grounded, and usable, not overwhelming.
@@ -918,6 +924,7 @@ nodes: [3, 5, 11]
 pillar: Cross-cutting
 build_state: MISSING
 editorial: UNVERIFIED
+tier: SIGNAL
 strike_phase: 3A
 -->
 The Big Reframe (This Ties Everything Together)
@@ -967,6 +974,7 @@ nodes: [3, 5, 11]
 pillar: Cross-cutting
 build_state: MISSING
 editorial: CLEAN
+tier: CONTEXT
 strike_phase: 3A
 -->
 Okay I deleted bumble lol. Can you give me examples 
@@ -1002,6 +1010,7 @@ nodes: [3, 5, 11]
 pillar: Cross-cutting
 build_state: MISSING
 editorial: UNVERIFIED
+tier: SIGNAL
 strike_phase: 3C
 -->
 Absolutely — let’s break this down in clear, practical, and astrologically grounded language, starting with your request about today & this week’s astrology, then move into your K8/Ukon question, and follow up with example sentences you can use now that feel confident and direct.
@@ -1247,6 +1256,7 @@ nodes: [3, 5, 11]
 pillar: Cross-cutting
 build_state: MISSING
 editorial: CLEAN
+tier: CONTEXT
 strike_phase: 3A
 -->
 Okay so my k8 is my primary and then I sold myself the ukon in my first 1a lane. Completed one subscription and then it started me a new one and I didn’t realize so I paid for the first one. Then I couldn’t pay for June or October and so my ukon acxount is inactive - I’m not sure if this also inactivates my top k8 account as well or if I can keep making sales with my k8 account until I can pay back my ukon to reinstate it? Does that make sense or is there any insight you can give me there
@@ -1268,6 +1278,7 @@ nodes: [3, 5, 11]
 pillar: Cross-cutting
 build_state: MISSING
 editorial: UNVERIFIED
+tier: SIGNAL
 strike_phase: 3A
 -->
 Yes, that does make sense, and I’m really glad you explained it clearly — because this is one of those Enagic situations that feels confusing but actually has a pretty clean underlying structure.
@@ -1557,6 +1568,7 @@ nodes: [3, 5, 11]
 pillar: Cross-cutting
 build_state: MISSING
 editorial: CLEAN
+tier: CONTEXT
 strike_phase: 3A
 -->
 The first 14 days! I do need to go through the business launch course, the sales summit and the 4a in 44 days and 40k in 30 days - but then need to work on water funnel to get that rolling. Cards and brochures and revamp my insta to match and explain everything cleanly. Lacey is doing the webclass tomorrow so I just have to market it and get people there
@@ -1578,6 +1590,7 @@ nodes: [3, 5, 11]
 pillar: Cross-cutting
 build_state: MISSING
 editorial: UNVERIFIED
+tier: SIGNAL
 strike_phase: 3A
 -->
 Perfect. This is actually a very workable moment because you already have the assets — now we’re sequencing them so you don’t burn out or scatter your energy.
@@ -1615,6 +1628,7 @@ nodes: [3, 5, 11]
 pillar: Cross-cutting
 build_state: MISSING
 editorial: UNVERIFIED
+tier: SIGNAL
 strike_phase: 3A
 -->
 🔹 THE 14-DAY PLAN (REALISTIC + ALIGNED)
@@ -1860,6 +1874,7 @@ nodes: [3, 5, 11]
 pillar: Cross-cutting
 build_state: MISSING
 editorial: UNVERIFIED
+tier: SIGNAL
 strike_phase: 3A
 -->
 🔹 WEEKLY RHYTHM (ANTI-BURNOUT)

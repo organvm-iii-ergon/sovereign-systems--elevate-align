@@ -42,6 +42,7 @@ nodes: [1, 5, 13]
 pillar: Cross-cutting
 build_state: MISSING
 editorial: CLEAN
+tier: CONTEXT
 strike_phase: 2A
 -->
 Will you help me write a day or week in my life from my most aligned divine feminine state or perspective
@@ -63,6 +64,7 @@ nodes: [1, 5, 13]
 pillar: Cross-cutting
 build_state: MISSING
 editorial: UNVERIFIED
+tier: CONTEXT
 strike_phase: 2A
 -->
 Absolutely, Maddie. Here’s a poetic and grounded version of “A Day in My Life: Divine Feminine Edition,” written from your most aligned, embodied perspective. You can use this as a post, journal entry, or part of your creative projects:
@@ -146,6 +148,7 @@ nodes: [1, 5, 13]
 pillar: Cross-cutting
 build_state: MISSING
 editorial: CLEAN
+tier: CONTEXT
 strike_phase: 2A
 -->
 This was perfect thank you so much
@@ -167,6 +170,7 @@ nodes: [1, 5, 13]
 pillar: Cross-cutting
 build_state: MISSING
 editorial: UNVERIFIED
+tier: SIGNAL
 strike_phase: 2A
 -->
 You’re so welcome, Maddie—I’m so glad it resonated! If you ever want to turn this into a printable ritual guide, IG carousel, or mini voiceover script for a reel, I’d love to help bring it to life visually or audibly too. Would you like that next?

@@ -42,6 +42,7 @@ nodes: [4, 8, 10, 12]
 pillar: Cross-cutting
 build_state: MISSING
 editorial: CLEAN
+tier: CONTEXT
 strike_phase: 2A
 -->
 Using the books - the compound effect, radical forgiveness and a happy pocket full of money will you break down all the concepts in an easy to understand and implement way
@@ -63,6 +64,7 @@ nodes: [4, 8, 10, 12]
 pillar: Cross-cutting
 build_state: MISSING
 editorial: UNVERIFIED
+tier: SIGNAL
 strike_phase: 2A
 -->
 Absolutely! Here's a clear, digestible breakdown of the core concepts from each book and how to implement them step by step:

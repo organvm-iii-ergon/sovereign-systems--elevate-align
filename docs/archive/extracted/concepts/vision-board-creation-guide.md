@@ -42,6 +42,7 @@ nodes: [10, 12]
 pillar: Cross-cutting
 build_state: MISSING
 editorial: CLEAN
+tier: CONTEXT
 strike_phase: 3B
 -->
 “Hi, will you help me create... I want to make a vision board, but I want to be, like, super, super clear and specific, and I have a lot that I want to go on there, so can you help me kind of make sense of it all? And it doesn't necessarily have to be timelined or anything like that, but I just want super clear, super specific, instead of just thoughts kind of roaming around in my brain. So I don't know, maybe just a list, and then I can go through and find the specific pictures and stuff. But I do... I want a truck, and it's just hard because I have specific things that I want, but then I don't know the exact place or the bigger location, if that makes sense. Because I want a truck and a camper. I want the ability to book a trip and travel whenever and wherever I want. I want my own house. And then, like, I have my bed plans all ready and how I want my room to look. And what was I thinking? Oh, now I can't remember. Great. This is why I wanted to write it all down. Darn it. Hold on. It'll come back to me.”
@@ -66,6 +67,7 @@ nodes: [10, 12]
 pillar: Cross-cutting
 build_state: MISSING
 editorial: UNVERIFIED
+tier: NOISE
 strike_phase: 3B
 -->
 Absolutely, I’d love to help you get all those pieces out of your head and into something clear! We can definitely start with a list first and then later you can pick images that match. So let's just brain dump the specifics you do remember, and then if the other stuff comes back to you, we’ll add it in.
@@ -90,6 +92,7 @@ nodes: [10, 12]
 pillar: Cross-cutting
 build_state: MISSING
 editorial: CLEAN
+tier: CONTEXT
 strike_phase: 3B
 -->
 “Okay, I don't know why I can't remember now, but I definitely want my own land. I want a horse. I want to be able to buy whatever I want. Anytime I go into the grocery store without having to worry or check my bank account, I want to be able to fill up my gas tank and maintain my car without any worries there. Oh! I want to start selling my art and doing monthly handwritten letter subscriptions. It'll be one of my prints and then an article or my little blog blurb of the week. And then I want to be making $10,000 a month is my first goal. I want a coffee shop. And I had such specific visions, I don't know why I can't remember them right now. So maybe if you're going to ask me questions, that would spark it, or I'll just come back and add to it when I remember.”
@@ -114,6 +117,7 @@ nodes: [10, 12]
 pillar: Cross-cutting
 build_state: MISSING
 editorial: UNVERIFIED
+tier: SIGNAL
 strike_phase: 3B
 -->
 Absolutely, no worries at all. This is exactly why we’re doing this kind of brain dump. So let’s just keep it flowing, and I can totally ask a few questions to help jog your memory.
@@ -141,6 +145,7 @@ nodes: [10, 12]
 pillar: Cross-cutting
 build_state: MISSING
 editorial: CLEAN
+tier: CONTEXT
 strike_phase: 3B
 -->
 “I don't know. See, that's just kind of hard because I do love Colorado. I want three houses, so I don't think I need to just define. Obviously, I'm in Colorado right now. I'm trying to get the house for my non-profit, which would be ideal. And then, right, that's my home base, and that's my land. I can get animals, things like that, and then I have people that can help me take care of them. And then it can also, we can use the funding from the non-profit to start the coffee shop, and then that can employ people, things like that. But that's, it's just kind of getting off-topic. That's not really what I wanted to necessarily focus on. It was, ugh, now I don't know. I'm frustrated. So, keeping it vague enough that, right, the universe can work its magic, but specific enough that I am staying on track, and I'm working towards my goals with not only the water and the business stuff, but also, like, the non-profit stuff, and then chasing my passion projects of, like, the art and the subscriptions, and that kind of stuff. And then I have the spiral to work on. I don't know. This is just all overwhelming me now.”
@@ -165,6 +170,7 @@ nodes: [10, 12]
 pillar: Cross-cutting
 build_state: MISSING
 editorial: UNVERIFIED
+tier: SIGNAL
 strike_phase: 4B
 -->
 Totally understandable. It’s a lot of layers, and we can definitely make it feel less overwhelming. Think of it as we're just making a nice "menu" of all the things that matter to you, and it doesn't have to be perfectly sorted right now.
@@ -195,6 +201,7 @@ nodes: [10, 12]
 pillar: Cross-cutting
 build_state: MISSING
 editorial: CLEAN
+tier: CONTEXT
 strike_phase: 3B
 -->
 “Yeah, thank you a lot. That helps. I just can't remember. I was thinking about something specific while I was walking out of the building, and now I can't remember it. But I like the idea of keeping it more so, or more so like feelings, aesthetic, how I look. Not necessarily how I look, but like outfit, right? I'm healthy, I'm taking care of my body. And then we can kind of expand there. I don't know.”
@@ -219,6 +226,7 @@ nodes: [10, 12]
 pillar: Cross-cutting
 build_state: MISSING
 editorial: UNVERIFIED
+tier: SIGNAL
 strike_phase: 4B
 -->
 Absolutely, that makes perfect sense. And I love that approach of focusing on the feelings and the overall vibe. That actually can make the vision board even more powerful, because you're connecting it to how you want to feel in your life. So we can definitely note that you want to feel healthy, you want to have a certain aesthetic that reflects how you're taking care of yourself, and then we can build out those details as you remember them.

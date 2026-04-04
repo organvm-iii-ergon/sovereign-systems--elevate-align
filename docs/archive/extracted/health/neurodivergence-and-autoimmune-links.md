@@ -45,6 +45,7 @@ nodes: [9, 7]
 pillar: Physical
 build_state: PARTIAL
 editorial: CLEAN
+tier: SIGNAL
 strike_phase: 2C
 -->
 
@@ -72,6 +73,7 @@ nodes: [9, 7]
 pillar: Physical
 build_state: EXISTS
 editorial: CLEAN
+tier: NOISE
 strike_phase: 2B
 -->
 
@@ -103,6 +105,7 @@ nodes: [9, 7]
 pillar: Physical
 build_state: PARTIAL
 editorial: CLEAN
+tier: SIGNAL
 strike_phase: 2C
 -->
 
@@ -130,6 +133,7 @@ nodes: [9, 7]
 pillar: Physical
 build_state: PARTIAL
 editorial: CLEAN
+tier: SIGNAL
 strike_phase: 2C
 -->
 

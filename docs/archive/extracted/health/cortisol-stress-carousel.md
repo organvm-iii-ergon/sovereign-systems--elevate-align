@@ -45,6 +45,7 @@ nodes: [2, 1, 8]
 pillar: Physical
 build_state: PARTIAL
 editorial: CLEAN
+tier: CONTEXT
 strike_phase: 2C
 -->
 
@@ -69,6 +70,7 @@ nodes: [2, 1, 8]
 pillar: Physical
 build_state: EXISTS
 editorial: UNVERIFIED
+tier: SIGNAL
 strike_phase: 2B
 -->
 

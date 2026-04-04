@@ -45,6 +45,7 @@ nodes: [9, 13, 3]
 pillar: Physical
 build_state: PARTIAL
 editorial: CLEAN
+tier: SIGNAL
 strike_phase: 2C
 -->
 
@@ -69,6 +70,7 @@ nodes: [9, 13, 3]
 pillar: Physical
 build_state: EXISTS
 editorial: CLEAN
+tier: SIGNAL
 strike_phase: 2A
 -->
 
@@ -421,6 +423,7 @@ nodes: [9, 13, 3]
 pillar: Physical
 build_state: PARTIAL
 editorial: CLEAN
+tier: SIGNAL
 strike_phase: 2C
 -->
 
@@ -474,6 +477,7 @@ nodes: [9, 13, 3]
 pillar: Physical
 build_state: EXISTS
 editorial: UNVERIFIED
+tier: SIGNAL
 strike_phase: 2A
 -->
 
@@ -897,6 +901,7 @@ nodes: [9, 13, 3]
 pillar: Physical
 build_state: EXISTS
 editorial: CLEAN
+tier: SIGNAL
 strike_phase: 2A
 -->
 
@@ -952,6 +957,7 @@ nodes: [9, 13, 3]
 pillar: Physical
 build_state: EXISTS
 editorial: CLEAN
+tier: SIGNAL
 strike_phase: 2A
 -->
 

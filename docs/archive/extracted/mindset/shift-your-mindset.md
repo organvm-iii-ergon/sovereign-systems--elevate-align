@@ -44,6 +44,7 @@ nodes: [1, 4]
 pillar: Inner
 build_state: MISSING
 editorial: CLEAN
+tier: CONTEXT
 strike_phase: 1C
 -->
 please help me make a compelling caption for my instagram reel, in my voice, not to long but touching on how i realized the importance of mindset and how your thoughts become belief which becomes your reality. you are the creator and the story you tell yourself daily matters more than i knew. the best way to start is to check in with yourself, see where your mindset is, are you anxiety prone making your thoughts more negative and worrisome? do you secretly hate everything about your life but you pretend it’s all fine? do you want more but you shut yourself down before you even get started? don’t judge, be kind to yourself. your anxiety and worry protected you and kept you safe, they are there for a purpose and only trying to help but may be out of control due to lifestyle and the level of honest you are with yourself. get real, be kind but truly see where your mind automatically goes, if it’s positive and happy, or if it’s not and you want to change i share later this week on how i was able to pivot, learn, find the good and stop my anxiety.
@@ -78,6 +79,7 @@ nodes: [1, 4]
 pillar: Inner
 build_state: MISSING
 editorial: CLEAN
+tier: SIGNAL
 strike_phase: 1C
 -->
 Mindset matters more than I ever realized. 🌟 Your thoughts become beliefs, which shape your reality. Take a moment to check in with yourself. Are you letting anxiety lead to negative thoughts and worries? Do you secretly feel stuck in a life you pretend is fine? Don't judge, be kind. Your anxiety is there to protect, but it might be out of control. Get real, be honest. Notice where your mind goes, and if it's not positive, change it. 🌈 Stay tuned for my story this week on how I pivoted, learned, and found the good, defeating my anxiety. 🙌
@@ -104,6 +106,7 @@ nodes: [1, 4]
 pillar: Inner
 build_state: MISSING
 editorial: CLEAN
+tier: SIGNAL
 strike_phase: 3A
 -->
 it can be a little bit longer
@@ -127,6 +130,7 @@ nodes: [1, 4]
 pillar: Inner
 build_state: MISSING
 editorial: CLEAN
+tier: SIGNAL
 strike_phase: 1C
 -->
 Mindset – the silent architect of your life. 🌟

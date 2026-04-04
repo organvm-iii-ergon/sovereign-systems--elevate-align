@@ -44,6 +44,7 @@ nodes: [1, 8, 13]
 pillar: Inner
 build_state: MISSING
 editorial: CLEAN
+tier: CONTEXT
 strike_phase: 1C
 -->
 What does this mean can you expand on it further so I can create a simple reel with a very trending audio and post it!? Something about how you can’t grind harder to happiness - it is a state of being. Look for the joy in everything and discover you are happy/iness
@@ -67,6 +68,7 @@ nodes: [1, 8, 13]
 pillar: Inner
 build_state: EXISTS
 editorial: CLEAN
+tier: SIGNAL
 strike_phase: 3A
 -->
 Perfect—this is a great starting point for a reel because it’s short, relatable, and has that mix of science + soul that does well with trending audios. Let me expand on the meaning in a way you can turn into a simple, engaging reel script:
@@ -141,6 +143,7 @@ nodes: [1, 8, 13]
 pillar: Inner
 build_state: MISSING
 editorial: CLEAN
+tier: CONTEXT
 strike_phase: 1C
 -->
 Where does this rule of four come from?
@@ -173,6 +176,7 @@ nodes: [1, 8, 13]
 pillar: Inner
 build_state: PARTIAL
 editorial: CLEAN
+tier: SIGNAL
 strike_phase: 3A
 -->
 You're on a great path here! Let me break this down:
@@ -287,6 +291,7 @@ nodes: [1, 8, 13]
 pillar: Inner
 build_state: PARTIAL
 editorial: CLEAN
+tier: CONTEXT
 strike_phase: 1C
 -->
 Okay so according to richard Davison’s four pillars - meditation exercise gratitude and connection
@@ -319,6 +324,7 @@ nodes: [1, 8, 13]
 pillar: Inner
 build_state: EXISTS
 editorial: CLEAN
+tier: SIGNAL
 strike_phase: 3A
 -->
 Got it — let’s map this cleanly, then layer in your Jack Sparrow compass metaphor and some scroll-stopping hooks you can test for your reel.
@@ -422,6 +428,7 @@ nodes: [1, 8, 13]
 pillar: Inner
 build_state: MISSING
 editorial: CLEAN
+tier: CONTEXT
 strike_phase: 1C
 -->
 Or can you expand on what he means by each I confusing myself I think lol idk which ones to go with so I wan gonna combine them but I think it’s making it messier but they both say the same thing? So maybe I should go with the science backed one
@@ -445,6 +452,7 @@ nodes: [1, 8, 13]
 pillar: Inner
 build_state: PARTIAL
 editorial: CLEAN
+tier: SIGNAL
 strike_phase: 3A
 -->
 Totally makes sense that you’re feeling a little tangled here — you’re mixing two great frameworks (your four practices + Davidson’s science-backed pillars), but when you try to merge them, it starts feeling muddy. Let’s clean it up by going straight to what Davidson actually means by each of his Four Pillars of Well-Being. That way you can decide if you want to stick with his science-backed version or run with your intuitive four.
@@ -540,6 +548,7 @@ nodes: [1, 8, 13]
 pillar: Inner
 build_state: MISSING
 editorial: CLEAN
+tier: SIGNAL
 strike_phase: 3A
 -->
 Yes please and I’ll work on the graphic / video!
@@ -563,6 +572,7 @@ nodes: [1, 8, 13]
 pillar: Inner
 build_state: EXISTS
 editorial: CLEAN
+tier: SIGNAL
 strike_phase: 3A
 -->
 Perfect — here are two ready-to-go reel scripts (with text overlays, flow, caption ideas, and hook lines) so you can plug into your trending audio + visuals. You can decide whether to post the science-backed or practical version (or even test both).
@@ -663,6 +673,7 @@ nodes: [1, 8, 13]
 pillar: Inner
 build_state: MISSING
 editorial: CLEAN
+tier: CONTEXT
 strike_phase: 3A
 -->
 Okay let’s tie in jack sparrow and the happiness being a state not a destination - doc said these are the four keys - save for some quick ways to boost your mood and then list what each represents and then two of three suggestions for each - movement clears fog/bad energy out etc (please use my words and concepts just fill in and make it very interesting and compelling for Instagram audience)
@@ -686,6 +697,7 @@ nodes: [1, 8, 13]
 pillar: Inner
 build_state: EXISTS
 editorial: CLEAN
+tier: SIGNAL
 strike_phase: 3A
 -->
 Got it 💡 let’s make this reel really engaging — with Jack Sparrow’s compass metaphor, Davidson’s science-backed frame, and your down-to-earth practices. Here’s a polished draft you can drop straight into your video + caption flow:
@@ -804,6 +816,7 @@ nodes: [1, 8, 13]
 pillar: Inner
 build_state: MISSING
 editorial: CLEAN
+tier: SIGNAL
 strike_phase: 3A
 -->
 Like jack sparrows compass always pointing to what he truly wanted instead of the way 
@@ -831,6 +844,7 @@ nodes: [1, 8, 13]
 pillar: Inner
 build_state: MISSING
 editorial: CLEAN
+tier: SIGNAL
 strike_phase: 3A
 -->
 Ahh I get you 🤍 you’re wanting that simple, punchy parallel — like a metaphor that lands quick and makes people go “ohhh, that’s true.” Here’s a few ways you could phrase it so it flows like your voice but stays reel-ready:
@@ -888,6 +902,7 @@ nodes: [1, 8, 13]
 pillar: Inner
 build_state: MISSING
 editorial: CLEAN
+tier: SIGNAL
 strike_phase: 3A
 -->
 “Jack Sparrow’s compass never pointed north — it pointed to what he truly wanted.
@@ -916,6 +931,7 @@ nodes: [1, 8, 13]
 pillar: Inner
 build_state: PARTIAL
 editorial: CLEAN
+tier: SIGNAL
 strike_phase: 3A
 -->
 Perfect 🙌 that’s a beautiful starting block — let’s keep that voice and weave in the rest so it feels like one flowing reel. Here’s a polished version you can drop straight into text overlay or a voiceover with your compass-style graphic:
@@ -1024,6 +1040,7 @@ nodes: [1, 8, 13]
 pillar: Inner
 build_state: MISSING
 editorial: CLEAN
+tier: CONTEXT
 strike_phase: 3A
 -->
 Okay I just need a short something to go above my compass and then caption
@@ -1047,6 +1064,7 @@ nodes: [1, 8, 13]
 pillar: Inner
 build_state: PARTIAL
 editorial: CLEAN
+tier: CONTEXT
 strike_phase: 1C
 -->
 Got it 💡 — here’s a tight pair you can use:
@@ -1100,6 +1118,7 @@ nodes: [1, 8, 13]
 pillar: Inner
 build_state: MISSING
 editorial: CLEAN
+tier: SIGNAL
 strike_phase: 3A
 -->
 can add in something about internal gauge to bring you to that state
@@ -1123,6 +1142,7 @@ nodes: [1, 8, 13]
 pillar: Inner
 build_state: PARTIAL
 editorial: CLEAN
+tier: CONTEXT
 strike_phase: 1C
 -->
 Yes! That’s the missing piece — tying it back to the inner compass / internal gauge that always brings you back to happiness. Here are a few polished options you could put above your compass graphic:
@@ -1184,6 +1204,7 @@ nodes: [1, 8, 13]
 pillar: Inner
 build_state: MISSING
 editorial: CLEAN
+tier: SIGNAL
 strike_phase: 3A
 -->
 After you’re aligned, just like jack sparrows compass always pointing to what he wants most “broken” by everyone else’s standards but the same as happiness - only you can choose that state of happiness & anytime you get out of whack come back to these four back by the doc to help you get back on track
@@ -1207,6 +1228,7 @@ nodes: [1, 8, 13]
 pillar: Inner
 build_state: PARTIAL
 editorial: CLEAN
+tier: CONTEXT
 strike_phase: 1C
 -->
 Yes!! 🔥 That’s the exact vibe — playful but deep, tying Jack Sparrow’s “broken compass” to happiness as an inner state. Here’s a cleaned-up, Insta-ready version of what you just said:
@@ -1262,6 +1284,7 @@ nodes: [1, 8, 13]
 pillar: Inner
 build_state: PARTIAL
 editorial: CLEAN
+tier: CONTEXT
 strike_phase: 1C
 -->
 Can we add this in and then the CTA to be save for next time you’re feeling out of whack - Happiness isn’t something you chase. It’s something you train. 🧠
@@ -1309,6 +1332,7 @@ nodes: [1, 8, 13]
 pillar: Inner
 build_state: EXISTS
 editorial: CLEAN
+tier: SIGNAL
 strike_phase: 3A
 -->
 Perfect — I see exactly what you mean. You want it to flow like a little story: Jack Sparrow compass → happiness as state → science-backed grounding → the 4 keys (with a touch of “what they do”) → gentle CTA. Here’s a smoothed-out version for your caption that keeps the flow without redundancy:
@@ -1382,6 +1406,7 @@ nodes: [1, 8, 13]
 pillar: Inner
 build_state: MISSING
 editorial: CLEAN
+tier: SIGNAL
 strike_phase: 3A
 -->
 What did he mean by the four without my interpretation can we add those in
@@ -1405,6 +1430,7 @@ nodes: [1, 8, 13]
 pillar: Inner
 build_state: PARTIAL
 editorial: CLEAN
+tier: CONTEXT
 strike_phase: 1C
 -->
 Yes, absolutely 🤍 let’s anchor it directly in what Dr. Richard Davidson himself means by the Four Pillars — without layering your interpretation yet. That way you’ve got his science-backed foundation in the caption, and then you can show how it connects to your practices if you want.
@@ -1468,6 +1494,7 @@ nodes: [1, 8, 13]
 pillar: Inner
 build_state: MISSING
 editorial: CLEAN
+tier: SIGNAL
 strike_phase: 3A
 -->
 This is what I have so far should we just take the jack sparrow thing out
@@ -1494,6 +1521,7 @@ nodes: [1, 8, 13]
 pillar: Inner
 build_state: MISSING
 editorial: CLEAN
+tier: CONTEXT
 strike_phase: 1C
 -->
 That depends on the tone you want to land with. Here’s the trade-off:
@@ -1555,6 +1583,7 @@ nodes: [1, 8, 13]
 pillar: Inner
 build_state: MISSING
 editorial: CLEAN
+tier: SIGNAL
 strike_phase: 3A
 -->
 Does that match his though or should I just change out my interpretation for what you said
@@ -1578,6 +1607,7 @@ nodes: [1, 8, 13]
 pillar: Inner
 build_state: PARTIAL
 editorial: CLEAN
+tier: SIGNAL
 strike_phase: 3A
 -->
 Good question ✨ — if your goal is to be fully true to Richard Davidson’s framework, then yes, you’ll want to swap your interpretation (meditation, exercise, gratitude, connection) for his original wording and meaning. That way it’s 100% aligned with what he actually teaches.
@@ -1655,6 +1685,7 @@ nodes: [1, 8, 13]
 pillar: Inner
 build_state: MISSING
 editorial: CLEAN
+tier: CONTEXT
 strike_phase: 1C
 -->
 But then am I off by saying use this as a gauge?
@@ -1678,6 +1709,7 @@ nodes: [1, 8, 13]
 pillar: Inner
 build_state: PARTIAL
 editorial: CLEAN
+tier: SIGNAL
 strike_phase: 3A
 -->
 Not at all 🤍 — you’re actually right on point with calling it a “gauge” or “compass.”
@@ -1724,6 +1756,7 @@ nodes: [1, 8, 13]
 pillar: Inner
 build_state: MISSING
 editorial: CLEAN
+tier: SIGNAL
 strike_phase: 3A
 -->
 Yes please!
@@ -1747,6 +1780,7 @@ nodes: [1, 8, 13]
 pillar: Inner
 build_state: PARTIAL
 editorial: CLEAN
+tier: CONTEXT
 strike_phase: 1C
 -->
 Perfect 🤍 here’s a polished caption you can use that blends Davidson’s exact 4 pillars, frames them as your internal gauge/compass, and gives your audience quick practices to strengthen each one:
@@ -1812,6 +1846,7 @@ nodes: [1, 8, 13]
 pillar: Inner
 build_state: MISSING
 editorial: CLEAN
+tier: SIGNAL
 strike_phase: 3A
 -->
 Yes I like that one thank you! Is there a way to tie in jacks compass or is it best to leave it out
@@ -1835,6 +1870,7 @@ nodes: [1, 8, 13]
 pillar: Inner
 build_state: PARTIAL
 editorial: CLEAN
+tier: SIGNAL
 strike_phase: 3A
 -->
 I’m so glad you like it 🤍
@@ -1903,6 +1939,7 @@ nodes: [1, 8, 13]
 pillar: Inner
 build_state: MISSING
 editorial: CLEAN
+tier: SIGNAL
 strike_phase: 3A
 -->
 Not even the comparison of jack and happiness, but like how everyone’s unique to them
@@ -1926,6 +1963,7 @@ nodes: [1, 8, 13]
 pillar: Inner
 build_state: PARTIAL
 editorial: CLEAN
+tier: CONTEXT
 strike_phase: 1C
 -->
 Ahhh got you 🤍 — not just the “Jack Sparrow’s compass = happiness” metaphor, but the deeper truth: his compass was unique to him, just like happiness (and alignment) looks unique for each of us. That’s a gorgeous angle to weave in because it personalizes the science.

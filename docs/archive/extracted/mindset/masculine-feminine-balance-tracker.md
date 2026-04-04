@@ -44,6 +44,7 @@ nodes: [5, 3, 11]
 pillar: Inner
 build_state: MISSING
 editorial: CLEAN
+tier: CONTEXT
 strike_phase: 3B
 -->
 Can you help me come up with a list of masculine based and feminine based daily tasks and a way I can use it to check in with myself because I’m always too hard on myself about not doing enough but ik I need rest and nurture too just don’t know how to find that balance
@@ -67,6 +68,7 @@ nodes: [5, 3, 11]
 pillar: Inner
 build_state: PARTIAL
 editorial: CLEAN
+tier: SIGNAL
 strike_phase: 3B
 -->
 Absolutely, Maddie — this is such a powerful step toward honoring both your drive and your softness. Let’s create a daily check-in system that brings awareness to how you're engaging with both your masculine (yang) and feminine (yin) energies — not to “balance perfectly,” but to notice and nourish what’s needed each day.
@@ -187,6 +189,7 @@ nodes: [5, 3, 11]
 pillar: Inner
 build_state: MISSING
 editorial: CLEAN
+tier: SIGNAL
 strike_phase: 3B
 -->
 Ooo yes please I think this is so great, i definitely had a lot of the masculine led tasks in the feminine list in my brain and so that makes me feel better and not like I’m not lolly gagging around, content and cleaning and organizing and shopping and planning and cooking for survival are all yang based I’m too hard on myself
@@ -210,6 +213,7 @@ nodes: [5, 3, 11]
 pillar: Inner
 build_state: PARTIAL
 editorial: CLEAN
+tier: SIGNAL
 strike_phase: 3B
 -->
 Yes, exactly — and I’m so glad this clicked. You are not lollygagging — you’re actively holding the container for your life, and that is powerful yang energy. Just because it doesn’t “look” like hustle culture productivity doesn’t mean it’s not structured, directed, and deeply valuable.
@@ -255,6 +259,7 @@ nodes: [5, 3, 11]
 pillar: Inner
 build_state: MISSING
 editorial: CLEAN
+tier: SIGNAL
 strike_phase: 3B
 -->
 Softer wirh a little color or illustration would be so great thank you!
@@ -278,6 +283,7 @@ nodes: [5, 3, 11]
 pillar: Inner
 build_state: MISSING
 editorial: CLEAN
+tier: SIGNAL
 strike_phase: 3B
 -->
 Here’s your Masculine / Feminine Flow Tracker PDF, styled softly with color and gentle affirmations:
@@ -307,6 +313,7 @@ nodes: [5, 3, 11]
 pillar: Inner
 build_state: MISSING
 editorial: CLEAN
+tier: SIGNAL
 strike_phase: 3B
 -->
 What does a chaotic fridge or closet mean in fueng shui
@@ -330,6 +337,7 @@ nodes: [5, 3, 11]
 pillar: Inner
 build_state: MISSING
 editorial: CLEAN
+tier: SIGNAL
 strike_phase: 3B
 -->
 In Feng Shui, a chaotic fridge or closet reflects more than just mess — it symbolizes blocked energy, overwhelm, or stagnation in very specific areas of your life, depending on the item and location:
@@ -390,6 +398,7 @@ nodes: [5, 3, 11]
 pillar: Inner
 build_state: MISSING
 editorial: CLEAN
+tier: SIGNAL
 strike_phase: 3B
 -->
 Yesss that would be great, main focus on career/purpose, health and finances please!
@@ -413,6 +422,7 @@ nodes: [5, 3, 11]
 pillar: Inner
 build_state: MISSING
 editorial: CLEAN
+tier: CONTEXT
 strike_phase: 1C
 -->
 Here you go! Here’s your personalized Mini Feng Shui Checklist PDF focused on:
@@ -449,6 +459,7 @@ nodes: [5, 3, 11]
 pillar: Inner
 build_state: MISSING
 editorial: CLEAN
+tier: SIGNAL
 strike_phase: 3B
 -->
 Is your money corner the left most corner you can see from the from door or the left most corner of your home
@@ -472,6 +483,7 @@ nodes: [5, 3, 11]
 pillar: Inner
 build_state: MISSING
 editorial: CLEAN
+tier: SIGNAL
 strike_phase: 3B
 -->
 Great question — and this is a super common point of confusion!
@@ -531,6 +543,7 @@ nodes: [5, 3, 11]
 pillar: Inner
 build_state: MISSING
 editorial: CLEAN
+tier: CONTEXT
 strike_phase: 1C
 -->
 What does sleeping in the money corner of your room mean?
@@ -554,6 +567,7 @@ nodes: [5, 3, 11]
 pillar: Inner
 build_state: MISSING
 editorial: CLEAN
+tier: SIGNAL
 strike_phase: 3B
 -->
 Sleeping in the money corner (the far back left corner of your room when standing in the doorway) can be very powerful in Feng Shui — but it all depends on how you're sleeping in it and what kind of energy is present there.

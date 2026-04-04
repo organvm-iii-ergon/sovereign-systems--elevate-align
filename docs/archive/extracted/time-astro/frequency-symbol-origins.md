@@ -42,6 +42,7 @@ nodes: [12]
 pillar: Cross-cutting
 build_state: MISSING
 editorial: CLEAN
+tier: CONTEXT
 strike_phase: 1B
 -->
 Are these the real symbols for each frequency?
@@ -63,6 +64,7 @@ nodes: [12]
 pillar: Cross-cutting
 build_state: MISSING
 editorial: UNVERIFIED
+tier: SIGNAL
 strike_phase: 1B
 -->
 Short truth? No — these specific symbols are not ancient or universally associated with those frequencies.

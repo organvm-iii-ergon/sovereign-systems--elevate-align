@@ -44,6 +44,7 @@ nodes: [4, 13, 10]
 pillar: Identity
 build_state: MISSING
 editorial: CLEAN
+tier: SIGNAL
 strike_phase: 3B
 -->
 Where does the need to over explain come from and how can I work on my posture & being more concise when I speak
@@ -67,6 +68,7 @@ nodes: [4, 13, 10]
 pillar: Identity
 build_state: MISSING
 editorial: CLEAN
+tier: SIGNAL
 strike_phase: 1C
 -->
 Ah, yes—overexplaining is such a common pattern, and it usually comes from a mix of internal drives and external conditioning. Let’s break it down carefully:
@@ -163,6 +165,7 @@ nodes: [4, 13, 10]
 pillar: Identity
 build_state: MISSING
 editorial: CLEAN
+tier: SIGNAL
 strike_phase: 3B
 -->
 Yes please!
@@ -186,6 +189,7 @@ nodes: [4, 13, 10]
 pillar: Identity
 build_state: MISSING
 editorial: CLEAN
+tier: SIGNAL
 strike_phase: 3B
 -->
 Perfect—this is where it clicks into embodiment, not just awareness. This 5-minute drill is designed to retrain your nervous system, your voice, and your thinking all at once.

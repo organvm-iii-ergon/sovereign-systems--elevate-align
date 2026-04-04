@@ -44,6 +44,7 @@ nodes: [5, 13]
 pillar: Inner
 build_state: MISSING
 editorial: CLEAN
+tier: SIGNAL
 strike_phase: 3A
 -->
 What is yin energy all about
@@ -67,6 +68,7 @@ nodes: [5, 13]
 pillar: Inner
 build_state: EXISTS
 editorial: CLEAN
+tier: SIGNAL
 strike_phase: 3A
 -->
 Yin energy is one half of the ancient Taoist principle of Yin and Yang — the two complementary forces that shape all existence. While Yang represents light, activity, and outward expansion, Yin embodies darkness, stillness, and inward reflection.
@@ -160,6 +162,7 @@ nodes: [5, 13]
 pillar: Inner
 build_state: MISSING
 editorial: CLEAN
+tier: CONTEXT
 strike_phase: 1C
 -->
 Can you shorten this into sometime to write on my Instagram post and then do the same for yang!?
@@ -183,6 +186,7 @@ nodes: [5, 13]
 pillar: Inner
 build_state: MISSING
 editorial: CLEAN
+tier: CONTEXT
 strike_phase: 1C
 -->
 Of course 💫 here’s a shortened, Instagram-friendly version for each — poetic but still clear:
@@ -230,6 +234,7 @@ nodes: [5, 13]
 pillar: Inner
 build_state: MISSING
 editorial: CLEAN
+tier: CONTEXT
 strike_phase: 1C
 -->
 Can we just do a call to action or question maybe throw in the actual definition of toxic masculinity (I was definitely stuck in my toxic masculine in high school) and then ask them what they’re take on it is  or something?!
@@ -253,6 +258,7 @@ nodes: [5, 13]
 pillar: Inner
 build_state: MISSING
 editorial: CLEAN
+tier: SIGNAL
 strike_phase: 1C
 -->
 Perfect — that’ll make it more engaging and real 👏 Here’s a refined caption-style version that ties your experience, the Yin/Yang theme, and the reflection question together beautifully:

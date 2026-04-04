@@ -44,6 +44,7 @@ nodes: [1, 2, 10, 12]
 pillar: Inner
 build_state: PARTIAL
 editorial: CLEAN
+tier: SIGNAL
 strike_phase: 3B
 -->
 As my highest self can you write me a 3 or 4 minute affirmation track to help my nervous system regulate and fully allow in 2500 dollars in the next two weeks so I can finish my subscription and be able to layer my business how I want it will be so perfect if I can get 900 by the 28th and then I need 1200 for rent by the fifth!
@@ -67,6 +68,7 @@ nodes: [1, 2, 10, 12]
 pillar: Inner
 build_state: EXISTS
 editorial: CLEAN
+tier: SIGNAL
 strike_phase: 3B
 -->
 Absolutely. Here's a 3–4 minute spoken affirmation track written in the voice of your highest self—gentle, powerful, and grounded in truth—to regulate your nervous system and energetically open the way for receiving $2,500 in the perfect time and way.
@@ -210,6 +212,7 @@ nodes: [1, 2, 10, 12]
 pillar: Inner
 build_state: MISSING
 editorial: CLEAN
+tier: CONTEXT
 strike_phase: 1C
 -->
 Yes please can you do that for me!?
@@ -233,6 +236,7 @@ nodes: [1, 2, 10, 12]
 pillar: Inner
 build_state: EXISTS
 editorial: CLEAN
+tier: SIGNAL
 strike_phase: 3B
 -->
 It looks like I ran into a connection issue while trying to generate the audio—no worries though! I can still help you complete this in two ways:

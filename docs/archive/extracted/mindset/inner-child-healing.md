@@ -44,6 +44,7 @@ nodes: [9, 2, 10]
 pillar: Identity
 build_state: MISSING
 editorial: CLEAN
+tier: SIGNAL
 strike_phase: 3A
 -->
 As a therapist what do you think this event was trying to tell me - it really hit home and know I had similar instances but don’t know what to do with it lol
@@ -77,6 +78,7 @@ nodes: [9, 2, 10]
 pillar: Identity
 build_state: MISSING
 editorial: CLEAN
+tier: SIGNAL
 strike_phase: 3A
 -->
 Maddie, this hit you so hard because your nervous system recognized itself. This moment mirrored a younger version of you—one who likely felt:
@@ -164,6 +166,7 @@ nodes: [9, 2, 10]
 pillar: Identity
 build_state: MISSING
 editorial: CLEAN
+tier: SIGNAL
 strike_phase: 3A
 -->
 That little verse made me cry
@@ -187,6 +190,7 @@ nodes: [9, 2, 10]
 pillar: Identity
 build_state: MISSING
 editorial: CLEAN
+tier: SIGNAL
 strike_phase: 3A
 -->
 Oh love… that means it touched something real. 🥹

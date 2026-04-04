@@ -44,6 +44,7 @@ nodes: [3, 11, 5]
 pillar: Inner
 build_state: MISSING
 editorial: CLEAN
+tier: CONTEXT
 strike_phase: 1C
 -->
 Okay am overwhelmed so going to get it all out here and then will you please help me sort it all out
@@ -97,6 +98,7 @@ nodes: [3, 11, 5]
 pillar: Inner
 build_state: EXISTS
 editorial: CLEAN
+tier: SIGNAL
 strike_phase: 3B
 -->
 Maddie.
@@ -510,6 +512,7 @@ nodes: [3, 11, 5]
 pillar: Inner
 build_state: MISSING
 editorial: CLEAN
+tier: SIGNAL
 strike_phase: 3B
 -->
 Ooo I love the stability layer & the vision layer it ties into my branding /spiral & the milo’s hierarchy of needs
@@ -537,6 +540,7 @@ nodes: [3, 11, 5]
 pillar: Inner
 build_state: EXISTS
 editorial: CLEAN
+tier: SIGNAL
 strike_phase: 3B
 -->
 YES.
@@ -736,6 +740,7 @@ nodes: [3, 11, 5]
 pillar: Inner
 build_state: MISSING
 editorial: CLEAN
+tier: SIGNAL
 strike_phase: 3B
 -->
 Even just 3 sales in the next 30 days and systems I know work would just make me feel so secure and happy
@@ -759,6 +764,7 @@ nodes: [3, 11, 5]
 pillar: Inner
 build_state: PARTIAL
 editorial: CLEAN
+tier: SIGNAL
 strike_phase: 3B
 -->
 There it is.
@@ -932,6 +938,7 @@ nodes: [3, 11, 5]
 pillar: Inner
 build_state: MISSING
 editorial: CLEAN
+tier: CONTEXT
 strike_phase: 1C
 -->
 I wrote it all out but maybe some way I can check it off / track daily to see my progress? How would you recommend maybe just a google sheet?
@@ -955,6 +962,7 @@ nodes: [3, 11, 5]
 pillar: Inner
 build_state: PARTIAL
 editorial: CLEAN
+tier: SIGNAL
 strike_phase: 3B
 -->
 YES.
@@ -1150,6 +1158,7 @@ nodes: [3, 11, 5]
 pillar: Inner
 build_state: MISSING
 editorial: CLEAN
+tier: SIGNAL
 strike_phase: 3B
 -->
 Both please!!
@@ -1173,6 +1182,7 @@ nodes: [3, 11, 5]
 pillar: Inner
 build_state: MISSING
 editorial: CLEAN
+tier: SIGNAL
 strike_phase: 3B
 -->
 YES. We’re doing this clean and strategic — not chaotic.
@@ -1197,6 +1207,7 @@ nodes: [3, 11, 5]
 pillar: Inner
 build_state: MISSING
 editorial: CLEAN
+tier: SIGNAL
 strike_phase: 3B
 -->
 PART 1: Exact Google Sheet Layout (Copy This)
@@ -1251,6 +1262,7 @@ nodes: [3, 11, 5]
 pillar: Inner
 build_state: MISSING
 editorial: CLEAN
+tier: SIGNAL
 strike_phase: 3B
 -->
 PART 2: The Automatic Totals Section (Top of Sheet)
@@ -1297,6 +1309,7 @@ nodes: [3, 11, 5]
 pillar: Inner
 build_state: MISSING
 editorial: CLEAN
+tier: SIGNAL
 strike_phase: 3B
 -->
 PART 3: The Math for 3 Sales
@@ -1371,6 +1384,7 @@ nodes: [3, 11, 5]
 pillar: Inner
 build_state: MISSING
 editorial: CLEAN
+tier: SIGNAL
 strike_phase: 3B
 -->
 PART 4: Your Daily Minimums
@@ -1405,6 +1419,7 @@ nodes: [3, 11, 5]
 pillar: Inner
 build_state: PARTIAL
 editorial: CLEAN
+tier: SIGNAL
 strike_phase: 3B
 -->
 PART 5: Visual Sales Tracker (Dopamine Boost)

@@ -42,6 +42,7 @@ nodes: [2, 3]
 pillar: Cross-cutting
 build_state: MISSING
 editorial: CLEAN
+tier: CONTEXT
 strike_phase: 1B
 -->
 Acting as a Vedic astrologer, what is the energy today and this week? It feels heavy 
@@ -64,6 +65,7 @@ nodes: [2, 3]
 pillar: Cross-cutting
 build_state: MISSING
 editorial: UNVERIFIED
+tier: SIGNAL
 strike_phase: 1B
 -->
 I hear you — this is a heavy stretch, and in Vedic astrology the weight you’re feeling actually makes a lot of sense, especially for your chart.

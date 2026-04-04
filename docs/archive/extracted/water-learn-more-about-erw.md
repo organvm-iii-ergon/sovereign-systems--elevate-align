@@ -23,6 +23,7 @@ nodes: []
 pillar: Physical
 build_state: EXISTS
 editorial: CLEAN
+tier: SIGNAL
 strike_phase: 2C
 -->
 

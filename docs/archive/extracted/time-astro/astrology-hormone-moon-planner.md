@@ -42,6 +42,7 @@ nodes: [5, 6, 12]
 pillar: Cross-cutting
 build_state: MISSING
 editorial: CLEAN
+tier: CONTEXT
 strike_phase: 3A
 -->
 Could we make a 2025 planner that is attuned to my birth chart that also has little notes and transition placements and maybe do like hormone/moon cycles as well? I usually bleed with the full moon
@@ -63,6 +64,7 @@ nodes: [5, 6, 12]
 pillar: Cross-cutting
 build_state: MISSING
 editorial: UNVERIFIED
+tier: CONTEXT
 strike_phase: 3A
 -->
 Absolutely, creating a 2025 planner customized to your birth chart, hormonal cycle, and moon phases would be a fantastic way to align your life with your natural rhythms! Here’s a detailed breakdown of what your planner could include:
@@ -142,6 +144,7 @@ nodes: [5, 6, 12]
 pillar: Cross-cutting
 build_state: MISSING
 editorial: CLEAN
+tier: CONTEXT
 strike_phase: 3A
 -->
 I loveee this idea and then want to incorporate/kinda have to spin off of this. How do you best suggest I design it all and make it duplicatable so I can sell it? https://www.popflexactive.com/products/2025-fit-planner-black-metallic
@@ -163,6 +166,7 @@ nodes: [5, 6, 12]
 pillar: Cross-cutting
 build_state: MISSING
 editorial: UNVERIFIED
+tier: SIGNAL
 strike_phase: 3A
 -->
 I’m so glad you love the idea! To create a professional, duplicatable, and marketable planner, you can draw inspiration from the design, functionality, and usability of products like the Popflex Active Fit Planner. Here's a step-by-step guide to help you design, produce, and sell your astrology- and hormone-aligned planner:
@@ -325,6 +329,7 @@ nodes: [5, 6, 12]
 pillar: Cross-cutting
 build_state: MISSING
 editorial: CLEAN
+tier: CONTEXT
 strike_phase: 3A
 -->
 Yes will you help me with the templates!
@@ -346,6 +351,7 @@ nodes: [5, 6, 12]
 pillar: Cross-cutting
 build_state: MISSING
 editorial: UNVERIFIED
+tier: SIGNAL
 strike_phase: 3C
 -->
 Absolutely! Let's start with templates for your planner layout that align with your vision. Here's a breakdown of the key sections and how we'll format them. I'll provide ideas and suggestions for each, and we can refine as we go.

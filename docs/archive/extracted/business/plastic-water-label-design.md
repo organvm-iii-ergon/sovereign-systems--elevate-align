@@ -33,6 +33,7 @@ nodes: [7]
 pillar: Financial
 build_state: MISSING
 editorial: CLEAN
+tier: NOISE
 strike_phase: 4A
 -->
 
@@ -65,6 +66,7 @@ nodes: [7]
 pillar: Financial
 build_state: EXISTS
 editorial: CLEAN
+tier: SIGNAL
 strike_phase: 4A
 -->
 

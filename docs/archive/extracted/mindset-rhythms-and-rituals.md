@@ -23,6 +23,7 @@ nodes: []
 pillar: Cross-cutting
 build_state: N/A
 editorial: UNVERIFIED
+tier: SIGNAL
 strike_phase: 3C
 -->
 Your placements want a structure that feels like:

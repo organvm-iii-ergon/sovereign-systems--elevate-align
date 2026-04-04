@@ -44,6 +44,7 @@ nodes: [8, 11]
 pillar: Inner
 build_state: MISSING
 editorial: CLEAN
+tier: SIGNAL
 strike_phase: 3A
 -->
 What is the saying about how successful people and the little habits
@@ -67,6 +68,7 @@ nodes: [8, 11]
 pillar: Inner
 build_state: MISSING
 editorial: CLEAN
+tier: SIGNAL
 strike_phase: 3A
 -->
 You might be thinking of a few popular sayings that connect success with small, consistent habits. Here are the main ones people often quote:
@@ -106,6 +108,7 @@ nodes: [8, 11]
 pillar: Inner
 build_state: MISSING
 editorial: CLEAN
+tier: CONTEXT
 strike_phase: 1C
 -->
 The little habits make the most successful people?
@@ -129,6 +132,7 @@ nodes: [8, 11]
 pillar: Inner
 build_state: MISSING
 editorial: CLEAN
+tier: SIGNAL
 strike_phase: 3A
 -->
 Yes — that’s the essence of it. The idea is that the little daily habits compound over time into massive success.
@@ -170,6 +174,7 @@ nodes: [8, 11]
 pillar: Inner
 build_state: MISSING
 editorial: CLEAN
+tier: CONTEXT
 strike_phase: 1C
 -->
 What is the compound effect say on this? I’m trying to right a caption
@@ -193,6 +198,7 @@ nodes: [8, 11]
 pillar: Inner
 build_state: MISSING
 editorial: CLEAN
+tier: CONTEXT
 strike_phase: 1C
 -->
 Got it — you’re pulling from The Compound Effect by Darren Hardy. His whole point is:

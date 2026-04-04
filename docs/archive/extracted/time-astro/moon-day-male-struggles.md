@@ -42,6 +42,7 @@ nodes: [5]
 pillar: Cross-cutting
 build_state: MISSING
 editorial: CLEAN
+tier: CONTEXT
 strike_phase: 3A
 -->
 Monday being moon-day would it make sense that men would struggle the most - and why Garfield (a man) and a cat (natural rhythms “hated” Mondays
@@ -63,6 +64,7 @@ nodes: [5]
 pillar: Cross-cutting
 build_state: MISSING
 editorial: UNVERIFIED
+tier: SIGNAL
 strike_phase: 3A
 -->
 That’s such a beautiful rabbit hole to explore — and yes, it absolutely makes sense from multiple angles (mythological, astrological, psychological, and even humorous) why Monday would feel off-kilter for many men and why Garfield, a male cat, famously hates it.

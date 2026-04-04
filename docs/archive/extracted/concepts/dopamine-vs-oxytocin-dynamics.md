@@ -42,6 +42,7 @@ nodes: [5, 2]
 pillar: Cross-cutting
 build_state: MISSING
 editorial: CLEAN
+tier: CONTEXT
 strike_phase: 2A
 -->
 Do men function off of dopamine and women’s need oxytocin? How does that go and why and what are some ways that increase both
@@ -63,6 +64,7 @@ nodes: [5, 2]
 pillar: Cross-cutting
 build_state: MISSING
 editorial: UNVERIFIED
+tier: SIGNAL
 strike_phase: 2A
 -->
 Men and women both rely on dopamine and oxytocin, but they tend to influence behavior differently due to hormonal and neurological differences.

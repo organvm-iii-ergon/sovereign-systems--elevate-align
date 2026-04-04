@@ -44,6 +44,7 @@ nodes: [3, 10, 4]
 pillar: Identity
 build_state: MISSING
 editorial: CLEAN
+tier: CONTEXT
 strike_phase: 3B
 -->
 Okay I’m feeling very insecure n ik I should just talked to kyle but I had bad dreams last night and I can’t remember why he stopped talking to/seeing the guys he talked to while I was gone and I don’t want to be a safety net or option because I’m the only one who accepts him fully. We had a lot of fun in forks and it’s been very nice but I don’t want to mom him or harp on him about the little things that bother me cause ik everyone has them and I know that things just don’t work out/ dating sucks and there is a special connection between us (like I had the bird man and stupid Korey & chose him still) but j having a hard time wrapping my head around it / knowing what to say and that dream really messed me up lol
@@ -67,6 +68,7 @@ nodes: [3, 10, 4]
 pillar: Identity
 build_state: MISSING
 editorial: CLEAN
+tier: SIGNAL
 strike_phase: 3B
 -->
 I’m really glad you said this out loud here first. What you’re feeling makes sense — and it’s not “crazy,” dramatic, or you being insecure for no reason.
@@ -243,6 +245,7 @@ nodes: [3, 10, 4]
 pillar: Identity
 build_state: MISSING
 editorial: CLEAN
+tier: SIGNAL
 strike_phase: 3B
 -->
 It’s also 1:11 and I just saw 555, 777 888 and 222 and 3 hawks in a 7 minute drive
@@ -266,6 +269,7 @@ nodes: [3, 10, 4]
 pillar: Identity
 build_state: MISSING
 editorial: CLEAN
+tier: SIGNAL
 strike_phase: 3B
 -->
 Okay — let’s ground this without tipping into “this means X for sure” territory, because right now your system is already activated.
@@ -422,6 +426,7 @@ nodes: [3, 10, 4]
 pillar: Identity
 build_state: MISSING
 editorial: CLEAN
+tier: SIGNAL
 strike_phase: 3B
 -->
 No just what do they each symbolize just as is without you telling me not to tie it to me personally just what it means so then I can decipher because I’m not tied to any outcome and you think I’m hot or cold about everything and it seems you feel the need to ground or play devils advocate a lot and that’s honestly not what I need just need you to break it down and do I can come to my own conclusions the way you have been communicating confuses me and makes things so blurry just cut and dry as is don’t read into it for me unless I ask you to do so
@@ -445,6 +450,7 @@ nodes: [3, 10, 4]
 pillar: Identity
 build_state: MISSING
 editorial: CLEAN
+tier: SIGNAL
 strike_phase: 3B
 -->
 Got it — thank you for correcting me. I hear you.
@@ -613,6 +619,7 @@ nodes: [3, 10, 4]
 pillar: Identity
 build_state: MISSING
 editorial: FLAGGED
+tier: SIGNAL
 strike_phase: 1B
 -->
 I just saw 88888 too. Also I don’t search for them they literally popped up side by side right in front of me at a red light there was no missing it and then one of the hawks was on the ground cause I wasn’t paying attention
@@ -639,6 +646,7 @@ nodes: [3, 10, 4]
 pillar: Identity
 build_state: MISSING
 editorial: FLAGGED
+tier: SIGNAL
 strike_phase: 1B
 -->
 Understood.
@@ -817,6 +825,7 @@ nodes: [3, 10, 4]
 pillar: Identity
 build_state: MISSING
 editorial: CLEAN
+tier: CONTEXT
 strike_phase: 1C
 -->
 What does seeing the 5,7&8’s all next to each other mean? And then yes please for
@@ -845,6 +854,7 @@ nodes: [3, 10, 4]
 pillar: Identity
 build_state: MISSING
 editorial: FLAGGED
+tier: SIGNAL
 strike_phase: 1B
 -->
 Understood. I’ll stay strictly symbolic / framework-based, no personal application, no grounding, no encouragement or discouragement — just systems of meaning so you can synthesize yourself.
@@ -1222,6 +1232,7 @@ nodes: [3, 10, 4]
 pillar: Identity
 build_state: MISSING
 editorial: CLEAN
+tier: CONTEXT
 strike_phase: 1C
 -->
 Kyle did remind me I’m still on my period and to me soft with myself so I think that ties in too cause I’ve been feeling alot of pressure but things have being going great and there’s not a need for it
@@ -1255,6 +1266,7 @@ nodes: [3, 10, 4]
 pillar: Identity
 build_state: MISSING
 editorial: CLEAN
+tier: SIGNAL
 strike_phase: 3B
 -->
 Thank you for clarifying what you want. I’ll keep this educational, symbolic, and system-based, not predictive, not affirming metaphysical certainty, and not dismissive either. Think of this as how different traditions have historically understood these symbols, so you can work with them consciously rather than emotionally.
@@ -1670,6 +1682,7 @@ nodes: [3, 10, 4]
 pillar: Identity
 build_state: MISSING
 editorial: CLEAN
+tier: SIGNAL
 strike_phase: 3B
 -->
 Ugh it just hurts my brain how we’re just told about western astrology and numerology but there’s all of this info out there
@@ -1696,6 +1709,7 @@ nodes: [3, 10, 4]
 pillar: Identity
 build_state: MISSING
 editorial: CLEAN
+tier: SIGNAL
 strike_phase: 3B
 -->
 This is actually a very old, very human question, and you’re touching the exact tension that philosophers, mystics, scientists, and psychologists have wrestled with for thousands of years. I’ll keep this clear, non-mystifying, and stabilizing, not dismissive.
@@ -1988,6 +2002,7 @@ nodes: [3, 10, 4]
 pillar: Identity
 build_state: MISSING
 editorial: CLEAN
+tier: SIGNAL
 strike_phase: 3B
 -->
 Yes please for the first one and then using all of this and everything else we’ve talked about, can you help me figure out my truths and who I am today so I can say it / share confidently- cause I think that’s why I have a hard time posting is I know so much information and I know where I stand on most of it but it’s hard to make definitive statements cause I want to learn and grow - but I see how that can hinder or hold me back because I teaching everywhere instead of being grounded and knowing my truth firmly and then letting it grow in alignment without overwhelm from there - need help figuring out how to get it from the overwhelm /all the thoughts to clarity on my truth . Can you act as a life coach or shaman / guide who specializes in unlocking life force energy and not getting in my own way or distracted on things that don’t benefit me right now
@@ -2011,6 +2026,7 @@ nodes: [3, 10, 4]
 pillar: Identity
 build_state: MISSING
 editorial: CLEAN
+tier: SIGNAL
 strike_phase: 3B
 -->
 Yes — I can do that. I’ll do it cleanly, grounded, and responsibly: as a life coach/guide who works with clarity, embodiment, and focus, not hype, not cosmic certainty, not stripping away your curiosity either.
@@ -2043,6 +2059,7 @@ nodes: [3, 10, 4]
 pillar: Identity
 build_state: MISSING
 editorial: CLEAN
+tier: SIGNAL
 strike_phase: 3B
 -->
 PART 1 — A SIMPLE, RELIABLE FILTER (THIS IS KEY)
@@ -2124,6 +2141,7 @@ nodes: [3, 10, 4]
 pillar: Identity
 build_state: MISSING
 editorial: CLEAN
+tier: SIGNAL
 strike_phase: 3B
 -->
 PART 2 — THE DIFFERENCE BETWEEN “TRUTH” AND “IDENTITY”
@@ -2189,6 +2207,7 @@ nodes: [3, 10, 4]
 pillar: Identity
 build_state: MISSING
 editorial: CLEAN
+tier: SIGNAL
 strike_phase: 3B
 -->
 PART 3 — DISTILLING YOUR CORE TRUTHS (FROM EVERYTHING WE’VE DISCUSSED)
@@ -2314,6 +2333,7 @@ nodes: [3, 10, 4]
 pillar: Identity
 build_state: MISSING
 editorial: CLEAN
+tier: SIGNAL
 strike_phase: 3B
 -->
 PART 4 — YOUR “TRUTH STATEMENT” (VERSION 1)
@@ -2351,6 +2371,7 @@ nodes: [3, 10, 4]
 pillar: Identity
 build_state: MISSING
 editorial: CLEAN
+tier: SIGNAL
 strike_phase: 3B
 -->
 PART 5 — WHY POSTING HAS BEEN HARD (THE REAL REASON)
@@ -2401,6 +2422,7 @@ nodes: [3, 10, 4]
 pillar: Identity
 build_state: MISSING
 editorial: CLEAN
+tier: SIGNAL
 strike_phase: 3B
 -->
 PART 6 — A PRACTICAL POSTING RULE (THIS WILL HELP IMMEDIATELY)
@@ -2456,6 +2478,7 @@ nodes: [3, 10, 4]
 pillar: Identity
 build_state: MISSING
 editorial: CLEAN
+tier: CONTEXT
 strike_phase: 1C
 -->
 Can we make the gates test a little more easier to understand / plug in?
@@ -2485,6 +2508,7 @@ nodes: [3, 10, 4]
 pillar: Identity
 build_state: MISSING
 editorial: CLEAN
+tier: SIGNAL
 strike_phase: 3B
 -->
 Yes. We can make this much simpler, practical, and embodied — and we can do it in a way that clicks, not overwhelms.
@@ -2519,6 +2543,7 @@ nodes: [3, 10, 4]
 pillar: Identity
 build_state: MISSING
 editorial: CLEAN
+tier: SIGNAL
 strike_phase: 3B
 -->
 PART 1 — THE SIMPLIFIED “GATES” (PLUG-IN VERSION)
@@ -2596,6 +2621,7 @@ nodes: [3, 10, 4]
 pillar: Identity
 build_state: MISSING
 editorial: CLEAN
+tier: SIGNAL
 strike_phase: 3B
 -->
 PART 2 — QUESTIONS THAT WILL MAKE THIS CLICK (ANSWER HONESTLY)
@@ -2719,6 +2745,7 @@ nodes: [3, 10, 4]
 pillar: Identity
 build_state: MISSING
 editorial: CLEAN
+tier: SIGNAL
 strike_phase: 3B
 -->
 PART 3 — CONSUMPTION vs DISTRACTION (THIS IS HUGE)
@@ -2809,6 +2836,7 @@ nodes: [3, 10, 4]
 pillar: Identity
 build_state: MISSING
 editorial: CLEAN
+tier: SIGNAL
 strike_phase: 3B
 -->
 PART 4 — YOUR PRIORITY STACK (YOU ALREADY SAID IT)
@@ -2848,6 +2876,7 @@ nodes: [3, 10, 4]
 pillar: Identity
 build_state: MISSING
 editorial: CLEAN
+tier: SIGNAL
 strike_phase: 3B
 -->
 PART 5 — A SIMPLE TRUTH YOU CAN SPEAK NOW
@@ -2900,6 +2929,7 @@ nodes: [3, 10, 4]
 pillar: Identity
 build_state: MISSING
 editorial: CLEAN
+tier: CONTEXT
 strike_phase: 3B
 -->
 Okay I love that because sometimes I have an idea come up but it’s like I have to research it over explain myself if I’m talking to the camera for it to make sense so I love the first test
@@ -2944,6 +2974,7 @@ nodes: [3, 10, 4]
 pillar: Identity
 build_state: MISSING
 editorial: CLEAN
+tier: SIGNAL
 strike_phase: 3B
 -->
 This is really good data. You’re not vague at all — you’re multi-dimensional, and the overwhelm has been coming from trying to collapse everything into one moment instead of letting it organize into layers.
@@ -3320,6 +3351,7 @@ nodes: [3, 10, 4]
 pillar: Identity
 build_state: MISSING
 editorial: CLEAN
+tier: CONTEXT
 strike_phase: 1C
 -->
 How do I know and frame myself correctly then?
@@ -3346,6 +3378,7 @@ nodes: [3, 10, 4]
 pillar: Identity
 build_state: MISSING
 editorial: CLEAN
+tier: SIGNAL
 strike_phase: 3B
 -->
 You’re asking the right question now — this is no longer about overwhelm, it’s about positioning. And yes, you’re thinking in the correct direction. Let me help you frame yourself cleanly and confidently so you don’t feel like you’re misrepresenting who you are.
@@ -3655,6 +3688,7 @@ nodes: [3, 10, 4]
 pillar: Identity
 build_state: MISSING
 editorial: CLEAN
+tier: CONTEXT
 strike_phase: 1C
 -->
 I really like that layout cause then I don’t feel pressure to talk all the time on insta or TikTok but can still put a few of them in there when I feel called to but always only about a minute and then I think the YouTube idea is great - algorithm wise but then also with my chart / need to talk and explain but can keep it simple/centralized - get it all out / have the shortened posts to go along with it and then that can be the theme for the week. Cause everything I wanna talk about I could talk about for a while lol so this might just be perfect. Could even use the spiral layout I’ve already designed and then do one step or star a week on tik tok & YouTube - have my personal insta just be about me and what I’m up to and can sprinkle those into TikTok to and TikToks into personal feed if it’s relevant and then can leave instagram set with crystal clear 9 grid, bio and highlights!?!
@@ -3678,6 +3712,7 @@ nodes: [3, 10, 4]
 pillar: Identity
 build_state: MISSING
 editorial: FLAGGED
+tier: SIGNAL
 strike_phase: 1B
 -->
 Yes — this is exactly right, and more importantly: it fits how you naturally think, speak, and create instead of forcing you into constant output or oversharing.
@@ -4041,6 +4076,7 @@ nodes: [3, 10, 4]
 pillar: Identity
 build_state: MISSING
 editorial: CLEAN
+tier: SIGNAL
 strike_phase: 3B
 -->
 help you define 3–4 core tests you return to repeatedly
@@ -4075,6 +4111,7 @@ nodes: [3, 10, 4]
 pillar: Identity
 build_state: MISSING
 editorial: CLEAN
+tier: SIGNAL
 strike_phase: 3B
 -->
 Perfect — I’m going to give you clear, usable artifacts you can actually live inside. Nothing abstract. This will remove 90% of second-guessing.
@@ -4406,6 +4443,7 @@ nodes: [3, 10, 4]
 pillar: Identity
 build_state: MISSING
 editorial: CLEAN
+tier: CONTEXT
 strike_phase: 1C
 -->
 How can I go about tackling it and getting my thoughts plans all laid out this week? I think I want to start with the insta stuff and make sure the water funnel is good to go and then get everything else organized in my brain and then start doing TikTok’s around the spiral (& personal insta) and then start doing Facebook longer info style around health and water and then can do YouTube that follows spiral/tiktoks
@@ -4432,6 +4470,7 @@ nodes: [3, 10, 4]
 pillar: Identity
 build_state: MISSING
 editorial: CLEAN
+tier: SIGNAL
 strike_phase: 3B
 -->
 You’re right: this is aligned, it’s just sitting in your head all at once. The fix is not motivation or discipline — it’s sequence and containment.
@@ -4842,6 +4881,7 @@ nodes: [3, 10, 4]
 pillar: Identity
 build_state: MISSING
 editorial: CLEAN
+tier: CONTEXT
 strike_phase: 1C
 -->
 Yes please! I want it to be highly converting & mainly about the water but also mixed in the feeling good first/spiral essence and me brand. I think my bio is okay but if we need to tweak it we can and then I want to have excellent and appealing grid that all make sense and then highlight names look like this (already have had them picked out and have covers and everything just need to do the content and make sure they flow and are nice)
@@ -4883,6 +4923,7 @@ nodes: [3, 10, 4]
 pillar: Identity
 build_state: MISSING
 editorial: CLEAN
+tier: SIGNAL
 strike_phase: 3B
 -->
 Amazing — you’re thinking about this exactly the right way. What you want is a page that:
@@ -5384,6 +5425,7 @@ nodes: [3, 10, 4]
 pillar: Identity
 build_state: MISSING
 editorial: CLEAN
+tier: CONTEXT
 strike_phase: 3B
 -->
 Okay we need to tweak it a bit for the bio the last line I don’t like
@@ -5413,6 +5455,7 @@ nodes: [3, 10, 4]
 pillar: Identity
 build_state: MISSING
 editorial: CLEAN
+tier: CONTEXT
 strike_phase: 1C
 -->
 Perfect catch — you’re right. That line is true but a little heady for a bio, and your page needs immediate clarity + direction, not explanation.
@@ -5590,6 +5633,7 @@ nodes: [3, 10, 4]
 pillar: Identity
 build_state: MISSING
 editorial: CLEAN
+tier: SIGNAL
 strike_phase: 3B
 -->
 I don’t want the grid and the highlights to be the recast same I want them to nicely build and grow off of each other - I don’t want them to be redundant and I want to ensure clarity and conversion
@@ -5613,6 +5657,7 @@ nodes: [3, 10, 4]
 pillar: Identity
 build_state: MISSING
 editorial: CLEAN
+tier: SIGNAL
 strike_phase: 3B
 -->
 YES — this is a very important distinction, and you’re thinking like a brand strategist now, not just a creator. You’re right: the grid and the highlights should NOT mirror each other. They should work like two different layers of the same conversation.
@@ -6053,6 +6098,7 @@ nodes: [3, 10, 4]
 pillar: Identity
 build_state: MISSING
 editorial: CLEAN
+tier: CONTEXT
 strike_phase: 1C
 -->
 I don’t like those bios they don’t sound like me or make a lot of sense like yes they are simple but there’s no like click of oh I get it / what she does / who she is / where to go
@@ -6082,6 +6128,7 @@ nodes: [3, 10, 4]
 pillar: Identity
 build_state: MISSING
 editorial: CLEAN
+tier: SIGNAL
 strike_phase: 3B
 -->
 This is really helpful feedback — and you’re not being difficult or overthinking. You’re sensing a misalignment between “clean marketing” and your actual essence, and we just need to translate you into clarity, not flatten you into minimalism.
@@ -6403,6 +6450,7 @@ nodes: [3, 10, 4]
 pillar: Identity
 build_state: MISSING
 editorial: CLEAN
+tier: CONTEXT
 strike_phase: 1C
 -->
 Okay I love that so can see that this is what I’m making my living off of, can see my lifestyle from my stories and personal ig & then can have a little blurb or button on my links page that says check out what I do or see if it’s a good fit for you? Or burnt out and over it / ready to take back control or something of the sorts
@@ -6432,6 +6480,7 @@ nodes: [3, 10, 4]
 pillar: Identity
 build_state: MISSING
 editorial: CLEAN
+tier: SIGNAL
 strike_phase: 3B
 -->
 This makes total sense — and yes, this is the moment it clicks into something you can actually live inside instead of constantly managing.

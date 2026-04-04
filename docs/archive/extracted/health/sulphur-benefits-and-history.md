@@ -45,6 +45,7 @@ nodes: [9, 6, 13]
 pillar: Physical
 build_state: MISSING
 editorial: CLEAN
+tier: CONTEXT
 strike_phase: 2B
 -->
 
@@ -69,6 +70,7 @@ nodes: [9, 6, 13]
 pillar: Physical
 build_state: PARTIAL
 editorial: CLEAN
+tier: SIGNAL
 strike_phase: 2C
 -->
 
@@ -156,6 +158,7 @@ nodes: [9, 6, 13]
 pillar: Physical
 build_state: MISSING
 editorial: CLEAN
+tier: SIGNAL
 strike_phase: 2B
 -->
 
@@ -180,6 +183,7 @@ nodes: [9, 6, 13]
 pillar: Physical
 build_state: PARTIAL
 editorial: CLEAN
+tier: SIGNAL
 strike_phase: 2C
 -->
 
@@ -282,6 +286,7 @@ nodes: [9, 6, 13]
 pillar: Physical
 build_state: MISSING
 editorial: CLEAN
+tier: NOISE
 strike_phase: 2B
 -->
 
@@ -306,6 +311,7 @@ nodes: [9, 6, 13]
 pillar: Physical
 build_state: MISSING
 editorial: CLEAN
+tier: SIGNAL
 strike_phase: 2B
 -->
 
@@ -590,6 +596,7 @@ nodes: [9, 6, 13]
 pillar: Physical
 build_state: MISSING
 editorial: CLEAN
+tier: SIGNAL
 strike_phase: 2B
 -->
 
@@ -614,6 +621,7 @@ nodes: [9, 6, 13]
 pillar: Physical
 build_state: MISSING
 editorial: CLEAN
+tier: SIGNAL
 strike_phase: 2B
 -->
 
@@ -686,6 +694,7 @@ nodes: [9, 6, 13]
 pillar: Physical
 build_state: MISSING
 editorial: CLEAN
+tier: SIGNAL
 strike_phase: 2B
 -->
 
@@ -710,6 +719,7 @@ nodes: [9, 6, 13]
 pillar: Physical
 build_state: PARTIAL
 editorial: CLEAN
+tier: NOISE
 strike_phase: 2C
 -->
 
@@ -827,6 +837,7 @@ nodes: [9, 6, 13]
 pillar: Physical
 build_state: MISSING
 editorial: CLEAN
+tier: SIGNAL
 strike_phase: 2B
 -->
 
@@ -851,6 +862,7 @@ nodes: [9, 6, 13]
 pillar: Physical
 build_state: PARTIAL
 editorial: CLEAN
+tier: SIGNAL
 strike_phase: 2C
 -->
 

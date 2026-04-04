@@ -42,6 +42,7 @@ nodes: [2, 12]
 pillar: Cross-cutting
 build_state: MISSING
 editorial: CLEAN
+tier: CONTEXT
 strike_phase: 2A
 -->
 Is there a way you can upload a sound or song and get what frequency it is and if it’s healing or detrimental!?
@@ -63,6 +64,7 @@ nodes: [2, 12]
 pillar: Cross-cutting
 build_state: MISSING
 editorial: UNVERIFIED
+tier: SIGNAL
 strike_phase: 2A
 -->
 Yes — there is a real way to analyze a sound or song, and I can help you do it 🔊✨
@@ -257,6 +259,7 @@ nodes: [2, 12]
 pillar: Cross-cutting
 build_state: MISSING
 editorial: CLEAN
+tier: CONTEXT
 strike_phase: 2A
 -->
 What happened with A and the changing of its frequency which shifted it from a positive to a negative or more detrimental hertz
@@ -278,6 +281,7 @@ nodes: [2, 12]
 pillar: Cross-cutting
 build_state: MISSING
 editorial: UNVERIFIED
+tier: SIGNAL
 strike_phase: 2A
 -->
 This question gets talked about a lot online — and there is a real historical shift — but the story is often distorted or oversimplified. Let’s separate what actually changed, what did not, and where the “negative frequency” idea comes from.
@@ -549,6 +553,7 @@ nodes: [2, 12]
 pillar: Cross-cutting
 build_state: MISSING
 editorial: CLEAN
+tier: CONTEXT
 strike_phase: 2A
 -->
 Okay then where does the “good” or healing hertz come from because I thought it was scientifically proven to calm your body vs negatively effecting the nervous system
@@ -570,6 +575,7 @@ nodes: [2, 12]
 pillar: Cross-cutting
 build_state: MISSING
 editorial: UNVERIFIED
+tier: CONTEXT
 strike_phase: 2A
 -->
 This is a really good question, because the answer is more nuanced than “the internet made it up,” and more grounded than “one magic number heals everything.”

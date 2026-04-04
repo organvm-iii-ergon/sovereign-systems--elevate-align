@@ -37,6 +37,7 @@ nodes: [12, 14]
 pillar: Financial
 build_state: MISSING
 editorial: CLEAN
+tier: NOISE
 strike_phase: 4A
 -->
 
@@ -69,6 +70,7 @@ nodes: [12, 14]
 pillar: Financial
 build_state: PARTIAL
 editorial: CLEAN
+tier: SIGNAL
 strike_phase: 4A
 -->
 
@@ -101,6 +103,7 @@ nodes: [12, 14]
 pillar: Financial
 build_state: MISSING
 editorial: CLEAN
+tier: SIGNAL
 strike_phase: 1C
 -->
 
@@ -133,6 +136,7 @@ nodes: [12, 14]
 pillar: Financial
 build_state: EXISTS
 editorial: CLEAN
+tier: SIGNAL
 strike_phase: 4A
 -->
 
@@ -165,6 +169,7 @@ nodes: [12, 14]
 pillar: Financial
 build_state: EXISTS
 editorial: CLEAN
+tier: SIGNAL
 strike_phase: 4A
 -->
 
@@ -197,6 +202,7 @@ nodes: [12, 14]
 pillar: Financial
 build_state: EXISTS
 editorial: CLEAN
+tier: SIGNAL
 strike_phase: 4A
 -->
 
@@ -229,6 +235,7 @@ nodes: [12, 14]
 pillar: Financial
 build_state: EXISTS
 editorial: CLEAN
+tier: SIGNAL
 strike_phase: 4A
 -->
 
@@ -261,6 +268,7 @@ nodes: [12, 14]
 pillar: Financial
 build_state: PARTIAL
 editorial: CLEAN
+tier: SIGNAL
 strike_phase: 4B
 -->
 
@@ -293,6 +301,7 @@ nodes: [12, 14]
 pillar: Financial
 build_state: MISSING
 editorial: CLEAN
+tier: NOISE
 strike_phase: 4A
 -->
 
@@ -325,6 +334,7 @@ nodes: [12, 14]
 pillar: Financial
 build_state: PARTIAL
 editorial: CLEAN
+tier: SIGNAL
 strike_phase: 4A
 -->
 
@@ -357,6 +367,7 @@ nodes: [12, 14]
 pillar: Financial
 build_state: EXISTS
 editorial: CLEAN
+tier: SIGNAL
 strike_phase: 4A
 -->
 
@@ -389,6 +400,7 @@ nodes: [12, 14]
 pillar: Financial
 build_state: EXISTS
 editorial: CLEAN
+tier: SIGNAL
 strike_phase: 4A
 -->
 
@@ -421,6 +433,7 @@ nodes: [12, 14]
 pillar: Financial
 build_state: EXISTS
 editorial: CLEAN
+tier: SIGNAL
 strike_phase: 4A
 -->
 
@@ -453,6 +466,7 @@ nodes: [12, 14]
 pillar: Financial
 build_state: PARTIAL
 editorial: CLEAN
+tier: SIGNAL
 strike_phase: 4A
 -->
 
@@ -485,6 +499,7 @@ nodes: [12, 14]
 pillar: Financial
 build_state: EXISTS
 editorial: CLEAN
+tier: SIGNAL
 strike_phase: 4A
 -->
 
@@ -517,6 +532,7 @@ nodes: [12, 14]
 pillar: Financial
 build_state: EXISTS
 editorial: CLEAN
+tier: SIGNAL
 strike_phase: 1C
 -->
 
@@ -549,6 +565,7 @@ nodes: [12, 14]
 pillar: Financial
 build_state: MISSING
 editorial: CLEAN
+tier: CONTEXT
 strike_phase: 1C
 -->
 
@@ -574,6 +591,7 @@ nodes: [12, 14]
 pillar: Financial
 build_state: PARTIAL
 editorial: CLEAN
+tier: SIGNAL
 strike_phase: 4A
 -->
 
@@ -617,6 +635,7 @@ nodes: [12, 14]
 pillar: Financial
 build_state: MISSING
 editorial: CLEAN
+tier: NOISE
 strike_phase: 4A
 -->
 
@@ -648,6 +667,7 @@ nodes: [12, 14]
 pillar: Financial
 build_state: MISSING
 editorial: CLEAN
+tier: NOISE
 strike_phase: 4A
 -->
 
@@ -691,6 +711,7 @@ nodes: [12, 14]
 pillar: Financial
 build_state: EXISTS
 editorial: CLEAN
+tier: SIGNAL
 strike_phase: 4A
 -->
 
@@ -723,6 +744,7 @@ nodes: [12, 14]
 pillar: Financial
 build_state: EXISTS
 editorial: CLEAN
+tier: SIGNAL
 strike_phase: 4A
 -->
 
@@ -755,6 +777,7 @@ nodes: [12, 14]
 pillar: Financial
 build_state: PARTIAL
 editorial: CLEAN
+tier: SIGNAL
 strike_phase: 4A
 -->
 
@@ -787,6 +810,7 @@ nodes: [12, 14]
 pillar: Financial
 build_state: EXISTS
 editorial: CLEAN
+tier: SIGNAL
 strike_phase: 4A
 -->
 
@@ -819,6 +843,7 @@ nodes: [12, 14]
 pillar: Financial
 build_state: PARTIAL
 editorial: CLEAN
+tier: SIGNAL
 strike_phase: 4A
 -->
 
@@ -851,6 +876,7 @@ nodes: [12, 14]
 pillar: Financial
 build_state: PARTIAL
 editorial: CLEAN
+tier: SIGNAL
 strike_phase: 4A
 -->
 
@@ -883,6 +909,7 @@ nodes: [12, 14]
 pillar: Financial
 build_state: MISSING
 editorial: CLEAN
+tier: CONTEXT
 strike_phase: 4A
 -->
 
@@ -908,6 +935,7 @@ nodes: [12, 14]
 pillar: Financial
 build_state: EXISTS
 editorial: CLEAN
+tier: CONTEXT
 strike_phase: 1C
 -->
 
@@ -1034,6 +1062,7 @@ nodes: [12, 14]
 pillar: Financial
 build_state: MISSING
 editorial: CLEAN
+tier: CONTEXT
 strike_phase: 4A
 -->
 
@@ -1059,6 +1088,7 @@ nodes: [12, 14]
 pillar: Financial
 build_state: EXISTS
 editorial: CLEAN
+tier: CONTEXT
 strike_phase: 1C
 -->
 
@@ -1167,6 +1197,7 @@ nodes: [12, 14]
 pillar: Financial
 build_state: PARTIAL
 editorial: CLEAN
+tier: CONTEXT
 strike_phase: 1C
 -->
 
@@ -1195,6 +1226,7 @@ nodes: [12, 14]
 pillar: Financial
 build_state: EXISTS
 editorial: CLEAN
+tier: SIGNAL
 strike_phase: 4C
 -->
 
@@ -1323,6 +1355,7 @@ nodes: [12, 14]
 pillar: Financial
 build_state: PARTIAL
 editorial: CLEAN
+tier: CONTEXT
 strike_phase: 4A
 -->
 
@@ -1348,6 +1381,7 @@ nodes: [12, 14]
 pillar: Financial
 build_state: EXISTS
 editorial: CLEAN
+tier: CONTEXT
 strike_phase: 1C
 -->
 
@@ -1448,6 +1482,7 @@ nodes: [12, 14]
 pillar: Financial
 build_state: MISSING
 editorial: CLEAN
+tier: CONTEXT
 strike_phase: 4A
 -->
 
@@ -1479,6 +1514,7 @@ nodes: [12, 14]
 pillar: Financial
 build_state: EXISTS
 editorial: CLEAN
+tier: CONTEXT
 strike_phase: 1C
 -->
 
@@ -1586,6 +1622,7 @@ nodes: [12, 14]
 pillar: Financial
 build_state: MISSING
 editorial: CLEAN
+tier: NOISE
 strike_phase: 4A
 -->
 
@@ -1614,6 +1651,7 @@ nodes: [12, 14]
 pillar: Financial
 build_state: EXISTS
 editorial: CLEAN
+tier: SIGNAL
 strike_phase: 4A
 -->
 
@@ -1764,6 +1802,7 @@ nodes: [12, 14]
 pillar: Financial
 build_state: MISSING
 editorial: CLEAN
+tier: CONTEXT
 strike_phase: 4A
 -->
 
@@ -1789,6 +1828,7 @@ nodes: [12, 14]
 pillar: Financial
 build_state: EXISTS
 editorial: CLEAN
+tier: SIGNAL
 strike_phase: 4C
 -->
 
@@ -1904,6 +1944,7 @@ nodes: [12, 14]
 pillar: Financial
 build_state: MISSING
 editorial: CLEAN
+tier: SIGNAL
 strike_phase: 4A
 -->
 
@@ -1929,6 +1970,7 @@ nodes: [12, 14]
 pillar: Financial
 build_state: EXISTS
 editorial: CLEAN
+tier: SIGNAL
 strike_phase: 4C
 -->
 
@@ -2070,6 +2112,7 @@ nodes: [12, 14]
 pillar: Financial
 build_state: MISSING
 editorial: CLEAN
+tier: SIGNAL
 strike_phase: 4A
 -->
 
@@ -2095,6 +2138,7 @@ nodes: [12, 14]
 pillar: Financial
 build_state: PARTIAL
 editorial: CLEAN
+tier: SIGNAL
 strike_phase: 4C
 -->
 
@@ -2198,6 +2242,7 @@ nodes: [12, 14]
 pillar: Financial
 build_state: MISSING
 editorial: CLEAN
+tier: CONTEXT
 strike_phase: 4A
 -->
 
@@ -2226,6 +2271,7 @@ nodes: [12, 14]
 pillar: Financial
 build_state: PARTIAL
 editorial: CLEAN
+tier: SIGNAL
 strike_phase: 4C
 -->
 
@@ -2336,6 +2382,7 @@ nodes: [12, 14]
 pillar: Financial
 build_state: PARTIAL
 editorial: CLEAN
+tier: CONTEXT
 strike_phase: 4A
 -->
 
@@ -2364,6 +2411,7 @@ nodes: [12, 14]
 pillar: Financial
 build_state: EXISTS
 editorial: CLEAN
+tier: SIGNAL
 strike_phase: 4C
 -->
 
@@ -2525,6 +2573,7 @@ nodes: [12, 14]
 pillar: Financial
 build_state: MISSING
 editorial: CLEAN
+tier: CONTEXT
 strike_phase: 4A
 -->
 
@@ -2553,6 +2602,7 @@ nodes: [12, 14]
 pillar: Financial
 build_state: PARTIAL
 editorial: CLEAN
+tier: SIGNAL
 strike_phase: 4A
 -->
 
@@ -2700,6 +2750,7 @@ nodes: [12, 14]
 pillar: Financial
 build_state: MISSING
 editorial: CLEAN
+tier: CONTEXT
 strike_phase: 4A
 -->
 
@@ -2725,6 +2776,7 @@ nodes: [12, 14]
 pillar: Financial
 build_state: EXISTS
 editorial: CLEAN
+tier: CONTEXT
 strike_phase: 1C
 -->
 
@@ -2848,6 +2900,7 @@ nodes: [12, 14]
 pillar: Financial
 build_state: MISSING
 editorial: CLEAN
+tier: CONTEXT
 strike_phase: 4A
 -->
 
@@ -2873,6 +2926,7 @@ nodes: [12, 14]
 pillar: Financial
 build_state: EXISTS
 editorial: CLEAN
+tier: SIGNAL
 strike_phase: 4A
 -->
 
@@ -2989,6 +3043,7 @@ nodes: [12, 14]
 pillar: Financial
 build_state: MISSING
 editorial: CLEAN
+tier: CONTEXT
 strike_phase: 4A
 -->
 
@@ -3014,6 +3069,7 @@ nodes: [12, 14]
 pillar: Financial
 build_state: EXISTS
 editorial: CLEAN
+tier: SIGNAL
 strike_phase: 4A
 -->
 
@@ -3135,6 +3191,7 @@ nodes: [12, 14]
 pillar: Financial
 build_state: PARTIAL
 editorial: CLEAN
+tier: CONTEXT
 strike_phase: 4A
 -->
 
@@ -3160,6 +3217,7 @@ nodes: [12, 14]
 pillar: Financial
 build_state: EXISTS
 editorial: CLEAN
+tier: CONTEXT
 strike_phase: 1C
 -->
 
@@ -3271,6 +3329,7 @@ nodes: [12, 14]
 pillar: Financial
 build_state: MISSING
 editorial: CLEAN
+tier: SIGNAL
 strike_phase: 4A
 -->
 
@@ -3296,6 +3355,7 @@ nodes: [12, 14]
 pillar: Financial
 build_state: PARTIAL
 editorial: CLEAN
+tier: SIGNAL
 strike_phase: 4A
 -->
 
@@ -3431,6 +3491,7 @@ nodes: [12, 14]
 pillar: Financial
 build_state: MISSING
 editorial: CLEAN
+tier: CONTEXT
 strike_phase: 4A
 -->
 
@@ -3456,6 +3517,7 @@ nodes: [12, 14]
 pillar: Financial
 build_state: EXISTS
 editorial: CLEAN
+tier: SIGNAL
 strike_phase: 4A
 -->
 
@@ -3575,6 +3637,7 @@ nodes: [12, 14]
 pillar: Financial
 build_state: PARTIAL
 editorial: CLEAN
+tier: CONTEXT
 strike_phase: 4A
 -->
 
@@ -3603,6 +3666,7 @@ nodes: [12, 14]
 pillar: Financial
 build_state: EXISTS
 editorial: CLEAN
+tier: CONTEXT
 strike_phase: 1C
 -->
 
@@ -3750,6 +3814,7 @@ nodes: [12, 14]
 pillar: Financial
 build_state: PARTIAL
 editorial: CLEAN
+tier: SIGNAL
 strike_phase: 4A
 -->
 
@@ -3775,6 +3840,7 @@ nodes: [12, 14]
 pillar: Financial
 build_state: EXISTS
 editorial: CLEAN
+tier: CONTEXT
 strike_phase: 1C
 -->
 

@@ -45,6 +45,7 @@ nodes: [9, 12, 13]
 pillar: Physical
 build_state: PARTIAL
 editorial: CLEAN
+tier: CONTEXT
 strike_phase: 2C
 -->
 
@@ -69,6 +70,7 @@ nodes: [9, 12, 13]
 pillar: Physical
 build_state: PARTIAL
 editorial: CLEAN
+tier: SIGNAL
 strike_phase: 2C
 -->
 

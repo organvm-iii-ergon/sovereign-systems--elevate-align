@@ -44,6 +44,7 @@ nodes: [12, 10]
 pillar: Financial
 build_state: MISSING
 editorial: CLEAN
+tier: CONTEXT
 strike_phase: 3B
 -->
 will you please help me convey the message about mindset and consciousness, summarize the book money and the law of attraction so that a 7th grader could comprehend it. i’m trying to turn it into a catchy reel
@@ -67,6 +68,7 @@ nodes: [12, 10]
 pillar: Financial
 build_state: MISSING
 editorial: CLEAN
+tier: SIGNAL
 strike_phase: 3B
 -->
 Sure! "Money and the Law of Attraction" is a book that talks about the power of your thoughts and feelings in attracting wealth and success. Think of it like this: If you have a positive mindset and believe in your goals, it's like a magnet that attracts good things, including money, into your life. So, just like magnets attract things, your thoughts and feelings attract what you want in life, including money. It's all about having a positive attitude and believing in yourself! 💰🧲✨

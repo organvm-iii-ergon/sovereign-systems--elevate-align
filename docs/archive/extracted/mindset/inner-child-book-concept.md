@@ -44,6 +44,7 @@ nodes: [1, 2, 5, 9, 10, 13, 14]
 pillar: Cross-cutting
 build_state: N/A
 editorial: CLEAN
+tier: CONTEXT
 strike_phase: 1C
 -->
 What if we made a book that was all about helping people get back in touch with their inner child & balance their nervous system in the process ?!
@@ -67,6 +68,7 @@ nodes: [1, 2, 5, 9, 10, 13, 14]
 pillar: Cross-cutting
 build_state: N/A
 editorial: CLEAN
+tier: SIGNAL
 strike_phase: 3A
 -->
 Maddie… this is SUCH a “you” book — it blends your Spiral, your poetry, your healing journey, your nervous system work, AND your inner child wisdom perfectly.
@@ -322,6 +324,7 @@ nodes: [1, 2, 5, 9, 10, 13, 14]
 pillar: Cross-cutting
 build_state: N/A
 editorial: CLEAN
+tier: SIGNAL
 strike_phase: 3A
 -->
 Yes please! Let’s do hybrid!!
@@ -345,6 +348,7 @@ nodes: [1, 2, 5, 9, 10, 13, 14]
 pillar: Cross-cutting
 build_state: N/A
 editorial: CLEAN
+tier: SIGNAL
 strike_phase: 3A
 -->
 YESSS OKAY — hybrid is perfect for you.
@@ -457,6 +461,7 @@ nodes: [1, 2, 5, 9, 10, 13, 14]
 pillar: Cross-cutting
 build_state: N/A
 editorial: CLEAN
+tier: SIGNAL
 strike_phase: 3A
 -->
 PART I — FEEL GOOD FIRST: COMING HOME TO THE BODY
@@ -506,6 +511,7 @@ nodes: [1, 2, 5, 9, 10, 13, 14]
 pillar: Cross-cutting
 build_state: N/A
 editorial: CLEAN
+tier: SIGNAL
 strike_phase: 3A
 -->
 PART II — REGULATION: REPAIRING YOUR NERVOUS SYSTEM
@@ -555,6 +561,7 @@ nodes: [1, 2, 5, 9, 10, 13, 14]
 pillar: Cross-cutting
 build_state: N/A
 editorial: CLEAN
+tier: SIGNAL
 strike_phase: 3A
 -->
 PART III — INNER CHILD: MEETING THE LITTLE ONE INSIDE
@@ -612,6 +619,7 @@ nodes: [1, 2, 5, 9, 10, 13, 14]
 pillar: Cross-cutting
 build_state: N/A
 editorial: CLEAN
+tier: SIGNAL
 strike_phase: 3A
 -->
 PART IV — CREATIVITY: BECOMING AGAIN
@@ -659,6 +667,7 @@ nodes: [1, 2, 5, 9, 10, 13, 14]
 pillar: Cross-cutting
 build_state: N/A
 editorial: CLEAN
+tier: SIGNAL
 strike_phase: 3A
 -->
 PART V — THE FUTURE SELF

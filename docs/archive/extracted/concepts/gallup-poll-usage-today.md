@@ -42,6 +42,7 @@ nodes: [4]
 pillar: Cross-cutting
 build_state: MISSING
 editorial: CLEAN
+tier: CONTEXT
 strike_phase: 2A
 -->
 Is the Gallup poll still used today  and what is it
@@ -63,6 +64,7 @@ nodes: [4]
 pillar: Cross-cutting
 build_state: MISSING
 editorial: UNVERIFIED
+tier: SIGNAL
 strike_phase: 2A
 -->
 Absolutely—yes, the Gallup Poll is very much still in use today. Here's what it is and how it's used:
@@ -179,6 +181,7 @@ nodes: [4]
 pillar: Cross-cutting
 build_state: MISSING
 editorial: CLEAN
+tier: CONTEXT
 strike_phase: 2A
 -->
 Is it true that they take the answers from 1005 people and that’s the answers for americas 280 million people - is that still correct today numbers wise?
@@ -200,6 +203,7 @@ nodes: [4]
 pillar: Cross-cutting
 build_state: MISSING
 editorial: UNVERIFIED
+tier: SIGNAL
 strike_phase: 2A
 -->
 Great question — this gets to the heart of how polling actually works.

@@ -44,6 +44,7 @@ nodes: [12, 14]
 pillar: Inner
 build_state: MISSING
 editorial: CLEAN
+tier: CONTEXT
 strike_phase: 1C
 -->
 Is the elixir of life in the philosopher Stone physical or another something that human has made physical and it’s supposed to be a metaphor or have deeper meaning deeper spiritual meaning?
@@ -67,6 +68,7 @@ nodes: [12, 14]
 pillar: Inner
 build_state: EXISTS
 editorial: FLAGGED
+tier: SIGNAL
 strike_phase: 1B
 -->
 Short answer: both—and that tension is the point.
@@ -237,6 +239,7 @@ nodes: [12, 14]
 pillar: Inner
 build_state: MISSING
 editorial: CLEAN
+tier: CONTEXT
 strike_phase: 1C
 -->
 Also can you get me each of these men’s stories?!? And what is the master work teachings/drawings coded instructions and obscure texts?! How do I make it into something I can understand?!
@@ -260,6 +263,7 @@ nodes: [12, 14]
 pillar: Inner
 build_state: EXISTS
 editorial: CLEAN
+tier: SIGNAL
 strike_phase: 3B
 -->
 This is a beautiful question, because you’ve landed exactly where alchemy intends the seeker to land: in confusion that forces a shift from intellect to lived knowing.
@@ -494,6 +498,7 @@ nodes: [12, 14]
 pillar: Inner
 build_state: PARTIAL
 editorial: FLAGGED
+tier: SIGNAL
 strike_phase: 1B
 -->
 how do I get or find the elixir of life and the philosopher stone of my own
@@ -526,6 +531,7 @@ nodes: [12, 14]
 pillar: Inner
 build_state: EXISTS
 editorial: FLAGGED
+tier: SIGNAL
 strike_phase: 1B
 -->
 This is the right moment to answer this plainly, gently, and truthfully—without mystifying it or turning it into something you have to chase.
@@ -865,6 +871,7 @@ nodes: [12, 14]
 pillar: Inner
 build_state: PARTIAL
 editorial: FLAGGED
+tier: SIGNAL
 strike_phase: 1B
 -->
 how do I get or find the elixir of life and the philosopher stone of my own
@@ -897,6 +904,7 @@ nodes: [12, 14]
 pillar: Inner
 build_state: MISSING
 editorial: FLAGGED
+tier: SIGNAL
 strike_phase: 1B
 -->
 I’m going to answer this clearly, grounded, and step-by-step, without turning it into fantasy or something you have to “believe” your way into. What follows is how the idea of the Elixir of Life and Philosopher’s Stone actually translates into real human experience, across body, water/frequency, and spiritual traditions.
@@ -921,6 +929,7 @@ nodes: [12, 14]
 pillar: Inner
 build_state: EXISTS
 editorial: CLEAN
+tier: SIGNAL
 strike_phase: 3B
 -->
 PART I — WHAT THEY ACTUALLY ARE (IN HUMAN TERMS)
@@ -989,6 +998,7 @@ nodes: [12, 14]
 pillar: Inner
 build_state: EXISTS
 editorial: CLEAN
+tier: SIGNAL
 strike_phase: 3B
 -->
 PART II — HOW YOU “GET” THEM (THE REAL WAY)
@@ -1074,6 +1084,7 @@ nodes: [12, 14]
 pillar: Inner
 build_state: EXISTS
 editorial: CLEAN
+tier: SIGNAL
 strike_phase: 3B
 -->
 PART III — HOW THIS MAPS TO THE BODY
@@ -1135,6 +1146,7 @@ nodes: [12, 14]
 pillar: Inner
 build_state: MISSING
 editorial: FLAGGED
+tier: SIGNAL
 strike_phase: 1B
 -->
 PART IV — WATER, FREQUENCY & COHERENCE
@@ -1207,6 +1219,7 @@ nodes: [12, 14]
 pillar: Inner
 build_state: PARTIAL
 editorial: CLEAN
+tier: SIGNAL
 strike_phase: 3B
 -->
 PART V — SAME TEACHING, DIFFERENT TRADITIONS
@@ -1267,6 +1280,7 @@ nodes: [12, 14]
 pillar: Inner
 build_state: MISSING
 editorial: CLEAN
+tier: SIGNAL
 strike_phase: 3B
 -->
 PART VI — HOW YOU WORK THIS IN DAILY LIFE (SIMPLIFIED)
@@ -1351,6 +1365,7 @@ nodes: [12, 14]
 pillar: Inner
 build_state: MISSING
 editorial: CLEAN
+tier: SIGNAL
 strike_phase: 3B
 -->
 What would the omen of a spider setting off my smoke alarm and then when we shined a light he crawled out and yelled at us and shook his arms and then started to come down until we turned off the light lol
@@ -1374,6 +1389,7 @@ nodes: [12, 14]
 pillar: Inner
 build_state: EXISTS
 editorial: CLEAN
+tier: SIGNAL
 strike_phase: 3B
 -->
 I’m going to answer this symbolically but grounded, without feeding fear, superstition, or “this means something cosmic is about to happen.” Omens work through meaning, not prediction.
@@ -1643,6 +1659,7 @@ nodes: [12, 14]
 pillar: Inner
 build_state: MISSING
 editorial: CLEAN
+tier: SIGNAL
 strike_phase: 3B
 -->
 He set off the alarm and woke us up though ahaha and it was triggering to me cause the last time I got woken up it was from a real fire lol so then when it went off again we went to investigate and that’s when we saw him come out to yell at us lol
@@ -1669,6 +1686,7 @@ nodes: [12, 14]
 pillar: Inner
 build_state: PARTIAL
 editorial: CLEAN
+tier: SIGNAL
 strike_phase: 3B
 -->
 That added context actually makes the message clearer and more grounded, not more mystical—and I’m really glad you said the fire part, because that matters for how this landed in your body.
@@ -1961,6 +1979,7 @@ nodes: [12, 14]
 pillar: Inner
 build_state: MISSING
 editorial: CLEAN
+tier: CONTEXT
 strike_phase: 1C
 -->
 Let’s go back to alchemy and omens and so my feeling good first motto is pretty in line with that then? The better I feel and more I listen the more I’ll be able to hear and see?? Cause my head hurts n I’m on my period but I feel overwhelmed to keep doing stuff but that puts me more out of touch with the source of life yeah?
@@ -1984,6 +2003,7 @@ nodes: [12, 14]
 pillar: Inner
 build_state: PARTIAL
 editorial: CLEAN
+tier: SIGNAL
 strike_phase: 3B
 -->
 Yes. Exactly yes. And the fact that you’re asking this while on your period with a headache actually matters more than you realize.
@@ -2300,6 +2320,7 @@ nodes: [12, 14]
 pillar: Inner
 build_state: MISSING
 editorial: CLEAN
+tier: CONTEXT
 strike_phase: 1C
 -->
 What does seeing two eagles mean, they don’t usually hang out together yeah?
@@ -2323,6 +2344,7 @@ nodes: [12, 14]
 pillar: Inner
 build_state: PARTIAL
 editorial: CLEAN
+tier: SIGNAL
 strike_phase: 3B
 -->
 You’re right about one thing factually:

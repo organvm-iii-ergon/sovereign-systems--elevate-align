@@ -44,6 +44,7 @@ nodes: [9, 2]
 pillar: Inner
 build_state: MISSING
 editorial: CLEAN
+tier: CONTEXT
 strike_phase: 3A
 -->
 Can you tell as an adult if your parents let you “self soothe” as a child
@@ -67,6 +68,7 @@ nodes: [9, 2]
 pillar: Inner
 build_state: PARTIAL
 editorial: CLEAN
+tier: SIGNAL
 strike_phase: 3A
 -->
 While it can be challenging to know for sure if your parents let you "self-soothe" as a child, certain behavioral patterns and emotional tendencies in adulthood might provide clues. Self-soothing refers to a child's ability to calm themselves without external comfort, often fostered by parenting styles during infancy and childhood.

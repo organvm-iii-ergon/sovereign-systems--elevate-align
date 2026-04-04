@@ -44,6 +44,7 @@ nodes: [2, 8]
 pillar: Inner
 build_state: MISSING
 editorial: CLEAN
+tier: CONTEXT
 strike_phase: 3A
 -->
 Can you break down neuro-signatures, pruning and neurodivergent brains how they don’t prune - is there some good visuals or videos to understand or explain better
@@ -67,6 +68,7 @@ nodes: [2, 8]
 pillar: Inner
 build_state: EXISTS
 editorial: CLEAN
+tier: SIGNAL
 strike_phase: 3A
 -->
 Absolutely — let’s break it all down clearly first, and then I’ll give you visual/video resources to deepen your understanding.
@@ -225,6 +227,7 @@ nodes: [2, 8]
 pillar: Inner
 build_state: MISSING
 editorial: CLEAN
+tier: CONTEXT
 strike_phase: 1C
 -->
 What is the topic or breakdown of what I’m trying to get at - can you tie it all together and explain it like I’m in 3rd grade!? And then can you tie in how psychedelics helps light up the whole brain / rewire faster
@@ -248,6 +251,7 @@ nodes: [2, 8]
 pillar: Inner
 build_state: MISSING
 editorial: CLEAN
+tier: SIGNAL
 strike_phase: 1C
 -->
 Absolutely — let’s break this down like you're in 3rd grade, and then I’ll connect the dots with psychedelics, neuro-signatures, pruning, and neurodivergence in a fun, simple way.
@@ -382,6 +386,7 @@ nodes: [2, 8]
 pillar: Inner
 build_state: MISSING
 editorial: CLEAN
+tier: SIGNAL
 strike_phase: 3A
 -->
 How does this tie into habits and the compound effect
@@ -405,6 +410,7 @@ nodes: [2, 8]
 pillar: Inner
 build_state: MISSING
 editorial: CLEAN
+tier: SIGNAL
 strike_phase: 1C
 -->
 Love this question — because this is where the magic happens when you combine brain science with daily action 🌀✨
@@ -556,6 +562,7 @@ nodes: [2, 8]
 pillar: Inner
 build_state: MISSING
 editorial: CLEAN
+tier: CONTEXT
 strike_phase: 3A
 -->
 I need a better example that ties it together
@@ -579,6 +586,7 @@ nodes: [2, 8]
 pillar: Inner
 build_state: MISSING
 editorial: CLEAN
+tier: SIGNAL
 strike_phase: 1C
 -->
 Got you — let’s tie it all together in one clear, simple story that makes it click 💡

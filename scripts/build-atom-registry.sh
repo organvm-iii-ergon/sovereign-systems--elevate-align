@@ -48,7 +48,7 @@ find "$EXTRACTED_DIR" -name "*.md" -type f | sort | while IFS= read -r file; do
       # Parse fields from block
       idea = ""; section = ""; position = ""; of_total = ""
       prev = ""; provenance = ""; nature = ""; nodes = ""
-      pillar = ""; build_state = ""; editorial = ""; strike_phase = ""
+      pillar = ""; build_state = ""; editorial = ""; tier = ""; strike_phase = ""
 
       n = split(block, lines, "\n")
       for (i = 1; i <= n; i++) {
@@ -64,6 +64,7 @@ find "$EXTRACTED_DIR" -name "*.md" -type f | sort | while IFS= read -r file; do
         if (match(line, /^pillar: */))        pillar = substr(line, RSTART+RLENGTH)
         if (match(line, /^build_state: */))   build_state = substr(line, RSTART+RLENGTH)
         if (match(line, /^editorial: */))     editorial = substr(line, RSTART+RLENGTH)
+        if (match(line, /^tier: */))          tier = substr(line, RSTART+RLENGTH)
         if (match(line, /^strike_phase: */))  strike_phase = substr(line, RSTART+RLENGTH)
       }
 
@@ -85,6 +86,7 @@ find "$EXTRACTED_DIR" -name "*.md" -type f | sort | while IFS= read -r file; do
       printf "    pillar: \"%s\"\n", pillar
       printf "    build_state: %s\n", build_state
       printf "    editorial: %s\n", editorial
+      printf "    tier: %s\n", tier
       printf "    strike_phase: %s\n", strike_phase
       next
     }
@@ -129,6 +131,11 @@ INSTRUCTION=$(count_matches "nature: INSTRUCTION")
 
 # Count FLAGGED
 FLAGGED=$(count_matches "editorial: FLAGGED")
+
+# Count by tier
+SIGNAL=$(count_matches "tier: SIGNAL")
+CONTEXT=$(count_matches "tier: CONTEXT")
+NOISE=$(count_matches "tier: NOISE")
 
 # --- Phase 4: Generate proof ---
 if [ "$UNACCOUNTED" -eq 0 ] && [ "$TOTAL" -gt 0 ]; then
@@ -182,6 +189,14 @@ Source: docs/archive/extracted/**/*.md
 | QUESTION | $QUESTION |
 | INSTRUCTION | $INSTRUCTION |
 
+## By Tier
+
+| Tier | Count |
+|------|-------|
+| SIGNAL | $SIGNAL |
+| CONTEXT | $CONTEXT |
+| NOISE | $NOISE |
+
 ## Editorial Flags
 
 | Flag | Count |
@@ -200,6 +215,7 @@ echo "Total atoms: $TOTAL"
 echo "EXISTS: $TOTAL_EXISTS | PARTIAL: $TOTAL_PARTIAL | MISSING: $TOTAL_MISSING | N/A: $TOTAL_NA"
 echo "Unaccounted: $UNACCOUNTED"
 echo "LOCAL: $LOCAL | HYBRID: $HYBRID | ALIEN: $ALIEN"
+echo "SIGNAL: $SIGNAL | CONTEXT: $CONTEXT | NOISE: $NOISE"
 echo "FLAGGED: $FLAGGED"
 echo ""
 echo "Registry: $REGISTRY"
