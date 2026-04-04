@@ -7026,7 +7026,7 @@ atoms:
   - id: ATM-H-359
     source_file: "health-hormones-and-healing.md"
     idea: "!media/image1.png{width='2.625in' height='1.3553412073490814in'}"
-    section: "![](media/image1.png){width="2.625in" height="1.3553412073490814in"}"
+    section: "![](media/image1.png){width='2.625in' height='1.3553412073490814in'}"
     position: 1
     of_total: 14
     prev: null
