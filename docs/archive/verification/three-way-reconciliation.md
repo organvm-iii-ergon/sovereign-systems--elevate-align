@@ -11,13 +11,17 @@
 | Category | Our Excavation | Gemini Blind | Claude Blind | Our:Gemini | Our:Claude |
 |----------|---------------|-------------|-------------|------------|------------|
 | health/ | 372 | 362 | 83 | 0.97x | 0.22x |
-| mindset/ | 664 | ~320 (partial) | 88 | ~0.48x | 0.13x |
+| mindset/ | 664 | 320 | 88 | 0.48x | 0.13x |
 | business/ | 219 | 125 | 47 | 0.57x | 0.21x |
 | water/ | 139 | 162 | 26 | 1.17x | 0.19x |
-| time-astro/ | 178 | ~34 (partial) | 13 | — | 0.07x |
-| concepts/ | 104 | — | pending | — | — |
-| root docs | 145 | — | 84 | — | 0.58x |
-| **Total** | **1,821** | **~1,003** | **~341+** | **0.55x** | **0.19x** |
+| time-astro/ | 178 | 86* | 13 | 0.48x | 0.07x |
+| concepts/ | 104 | (in 86*) | pending | — | — |
+| root docs | 145 | 28 | 84 | 0.19x | 0.58x |
+| **Total** | **1,821** | **1,083** | **~341+** | **0.59x** | **0.19x** |
+
+*Gemini combined time-astro and concepts into one batch (S7: 86 atoms).
+
+**NOTE:** Gemini's self-reported summary hallucinated our numbers (claimed 1,821 total, 813 water atoms). Actual file contents verified: 1,083 atoms. Summary confabulation documented — file-level data is trustworthy, aggregate reporting is not.
 
 ## What The Numbers Mean
 
