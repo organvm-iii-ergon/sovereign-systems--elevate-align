@@ -1,6 +1,6 @@
 # Coverage Proof
 
-Generated: 2026-04-03T21:27:32Z
+Generated: 2026-04-04T00:51:30Z
 Source: docs/archive/extracted/**/*.md
 
 ## Summary
