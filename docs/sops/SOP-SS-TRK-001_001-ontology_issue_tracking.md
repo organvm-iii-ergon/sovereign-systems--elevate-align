@@ -18,8 +18,11 @@ Provide a single source of truth for tracking all issue specifications, their st
 
 | Spec File | Issue # | Phase | Priority | Type | Status | Gate Met | Notes |
 |-----------|---------|-------|----------|------|--------|----------|-------|
-| spec-spiral-node-architecture.md | 13 | α | P0 | DECISION | GATED | | Blocks #15, #8, #6 |
 | spec-revenue-agreement.md | 5 | α | P0 | DECISION | GATED | | Revenue terms pending |
+| spec-spiral-node-architecture.md | 13 | α | P0 | DECISION | GATED | | Blocks #15, #8, #6 |
+| spec-revenue-confirmation.md | - | α | P0 | DECISION | GATED | | IRF-III-023 |
+| spec-node-architecture-lock.md | - | α | P1 | DECISION | GATED | | IRF-III-024 |
+| spec-ewg-api-implementation.md | - | β | P1 | WORK | SPEC | | IRF-III-025 |
 | spec-domain-connection.md | 3 | α | P1 | DECISION | GATED | | DNS access pending |
 | spec-video-asset-verification.md | 14 | α | P1 | DECISION | GATED | | Testing access links |
 | spec-physical-sovereignty-build.md | 6 | β | P1 | WORK | SPEC | | |
