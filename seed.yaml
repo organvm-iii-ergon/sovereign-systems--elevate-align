@@ -27,6 +27,10 @@ produces:
     type: research-feedback
     signal: practice-validates-theory
     description: "Applied consulting work generates theoretical insights on solo-practitioner model"
+  - target: ORGAN-IV
+    type: process-pattern
+    signal: xenograft-protocol
+    description: "Content extraction + atomization + verification pipeline generalizable to any organ receiving alien material"
 consumes:
   - source: ORGAN-III/commerce--meta
     type: governance
