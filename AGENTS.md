@@ -232,21 +232,39 @@ src/
 This repo participates in the **ORGAN-III (Commerce)** swarm.
 
 ### Active Subscriptions
-- Event: `client.site.deployed` — triggers downstream signals to V, VII, VI, I
+- *No active event subscriptions*
 
 ### Production Responsibilities
-- Cloudflare Pages: `sovereign-systems-spiral.pages.dev`
-- Email capture function: `functions/capture.ts`
+- *No production responsibilities*
 
 ### External Dependencies
-- Consumes governance from `ORGAN-III/commerce--meta` (contract templates, SOPs, client lifecycle standards)
+- *No external dependencies*
 
 ### Governance Constraints
 - Adhere to unidirectional flow: I→II→III
 - Never commit secrets or credentials
 
-*Last synced: 2026-04-03T15:19:55Z*
-<!-- ORGANVM:AUTO:END -->
+*Last synced: 2026-04-04T22:31:32Z*
+
+<!-- ORGANVM:AUTO:START -->
+## Agent Context (auto-generated — do not edit)
+
+This repo participates in the **ORGAN-III (Commerce)** swarm.
+
+### Active Subscriptions
+- *No active event subscriptions*
+
+### Production Responsibilities
+- *No production responsibilities*
+
+### External Dependencies
+- *No external dependencies*
+
+### Governance Constraints
+- Adhere to unidirectional flow: I→II→III
+- Never commit secrets or credentials
+
+*Last synced: 2026-04-04T22:32:47Z*
 
 ## Active Handoff Protocol
 
@@ -260,3 +278,5 @@ Key sections to obey:
 - **Locked Files** — files you cannot modify
 - **Conventions** — naming/style rules to follow exactly
 - **Receiver Restrictions** — file patterns you must not touch
+<!-- ORGANVM:AUTO:END -->
+
