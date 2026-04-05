@@ -37,7 +37,7 @@ fi
 tmpfile=$(mktemp)
 trap 'rm -f "$tmpfile"' EXIT
 
-gh project item-list "$PROJECT_NUM" --owner "$OWNER" --format json --limit 200 > "$tmpfile" 2>/dev/null
+gh project item-list "$PROJECT_NUM" --owner "$OWNER" --format json --limit 100 > "$tmpfile" 2>/dev/null
 
 if [[ ! -s "$tmpfile" ]]; then
   echo "ERROR: Could not fetch board state." >&2
