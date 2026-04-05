@@ -1,0 +1,34 @@
+2026-04-04T23:50:43Z | #13 | REJECTED | GATED → CLOSED (illegal) | reason: testing illegal skip
+2026-04-04T23:50:53Z | #22 | FIELD | Next Action = Triage 63 atoms into Foundation/Standalone/Archive buckets | reason: Clarifying next step
+2026-04-04T23:51:56Z | #4 | FIELD | Next Action = Complete — intake returned 2026-04-02 | reason: Closed issue cleanup
+2026-04-04T23:52:00Z | #12 | FIELD | Next Action = Complete — citation corrected 2026-04-04 | reason: Closed issue cleanup
+2026-04-05T00:00:31Z | #22 | FIELD | Next Action = Triage atoms into buckets | reason: Config-driven test
+2026-04-05T00:00:44Z | #5 | REJECTED | GATED → CLOSED (illegal) | reason: test illegal skip
+2026-04-05T01:56:10Z | #23 | FIELD | Phase = β | reason: IRF-III-016
+2026-04-05T01:56:13Z | #23 | FIELD | Issue Type = WORK | reason: IRF-III-016
+2026-04-05T01:56:19Z | #23 | STATUS | UNSET → SPEC | reason: Spec exists: hydration-node-funnel-spec.md
+2026-04-05T01:56:23Z | #23 | FIELD | Priority = P1-high | reason: IRF-III-016
+2026-04-05T01:56:26Z | #23 | FIELD | Next Action = Phase A static UI after #13 unlocks | reason: Build order
+2026-04-05T01:56:29Z | #24 | FIELD | Phase = β | reason: IRF-III-017
+2026-04-05T01:56:33Z | #24 | FIELD | Issue Type = WORK | reason: IRF-III-017
+2026-04-05T01:56:38Z | #24 | STATUS | UNSET → SPEC | reason: Plan exists: atom-grading-assembly-delivery.md
+2026-04-05T01:56:41Z | #24 | FIELD | Priority = P1-high | reason: IRF-III-017
+2026-04-05T01:56:45Z | #24 | FIELD | Next Action = Add merge_group field to atom registry, begin grouping | reason: Unblocked
+2026-04-05T01:56:48Z | #25 | FIELD | Phase = β | reason: IRF-III-018
+2026-04-05T01:56:51Z | #25 | FIELD | Issue Type = WORK | reason: IRF-III-018
+2026-04-05T01:56:58Z | #25 | STATUS | UNSET → SPEC | reason: Strike plan exists: phase-1.md
+2026-04-05T01:57:01Z | #25 | FIELD | Priority = P1-high | reason: IRF-III-018
+2026-04-05T01:57:04Z | #25 | FIELD | Next Action = Review 104 FLAGGED atoms — verify/reframe/remove | reason: Unblocked
+2026-04-05T01:57:07Z | #26 | FIELD | Phase = β | reason: IRF-III-019
+2026-04-05T01:57:11Z | #26 | FIELD | Issue Type = WORK | reason: IRF-III-019
+2026-04-05T01:57:16Z | #26 | STATUS | UNSET → SPEC | reason: Social calendar dir exists
+2026-04-05T01:57:20Z | #26 | FIELD | Priority = P2-medium | reason: IRF-III-019
+2026-04-05T01:57:24Z | #26 | FIELD | Next Action = Route SCRIPT atoms to social calendar files | reason: Unblocked
+2026-04-05T03:50:15Z | #13 | STATUS | GATED → SPEC | reason: Maddie locked 13-node architecture
+2026-04-05T03:50:17Z | #13 | GATE_MET | Gate Met = Yes | reason: Final node list confirmed 2026-04-04 9:30PM
+2026-04-05T03:50:21Z | #13 | STATUS | SPEC → WIP | reason: Transitioning through to CLOSED
+2026-04-05T03:50:25Z | #13 | STATUS | WIP → DONE | reason: Architecture documented in client-decisions/
+2026-04-05T03:50:30Z | #13 | STATUS | DONE → CLOSED | reason: Gate met: 13 nodes locked, naming finalized, pillar mapping confirmed
+2026-04-05T03:50:34Z | #5 | STATUS | GATED → SPEC | reason: Maddie confirmed: 10% of everything until 10K, 6 revenue streams
+2026-04-05T03:50:38Z | #20 | STATUS | GATED → SPEC | reason: Maddie confirmed creature selves as original IP, locked in
+2026-04-05T03:50:40Z | #20 | FIELD | Next Action = Build creature selves concept page in Identity pillar | reason: Confirmed
