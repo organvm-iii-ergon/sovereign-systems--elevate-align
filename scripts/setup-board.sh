@@ -106,8 +106,9 @@ fi
 if [[ "$DO_VIEWS" == true ]]; then
   echo "## Views"
   echo ""
-  echo "  GitHub has no API for view creation. Create these manually in the UI:"
-  echo "  https://github.com/orgs/${OWNER}/projects/${PROJECT_NUM}/views"
+  echo "  Create at: https://github.com/orgs/${OWNER}/projects/${PROJECT_NUM}/views"
+  echo ""
+  echo "  For each: click '+ New view', set name/layout, paste the filter query."
   echo ""
 
   python3 -c "
@@ -122,22 +123,18 @@ else:
     for i, v in enumerate(views, 1):
         name = v['name']
         layout = v.get('layout', 'TABLE')
-        group = v.get('group_by')
-        filt = v.get('filter')
-        sort_by = v.get('sort')
+        filt = v.get('filter', '')
+        group = v.get('group')
+        sort_q = v.get('sort', '')
 
-        print(f'  {i}. \"{name}\" ({layout})')
-        if filt:
-            field = filt.get('field', '')
-            val = filt.get('value', '')
-            if isinstance(val, list):
-                val = ', '.join(val)
-            print(f'     Filter: {field} = {val}')
+        print(f'  {i}. {name} ({layout})')
+        q = filt
+        if sort_q:
+            q = f'{q} {sort_q}'.strip()
+        if q:
+            print(f'     {q}')
         if group:
-            print(f'     Group by: {group}')
-        if sort_by:
-            for s in sort_by:
-                print(f'     Sort: {s[\"field\"]} {s[\"direction\"]}')
+            print(f'     group by: {group}')
         print()
 "
 fi

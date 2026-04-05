@@ -67,43 +67,43 @@
     {
       "name": "All Issues",
       "layout": "TABLE",
-      "group_by": null,
-      "filter": null,
-      "sort": [{"field": "priority", "direction": "ASC"}]
+      "filter": "is:issue -status:CLOSED",
+      "group": null,
+      "sort": "sort:priority-asc"
     },
     {
       "name": "Client Gated",
       "layout": "BOARD",
-      "group_by": "priority",
-      "filter": {"field": "status", "value": "GATED"},
+      "filter": "status:GATED is:issue",
+      "group": "priority",
       "sort": null
     },
     {
       "name": "Ready to Build",
       "layout": "TABLE",
-      "group_by": null,
-      "filter": {"field": "status", "value": "SPEC"},
-      "sort": [{"field": "priority", "direction": "ASC"}]
+      "filter": "status:SPEC is:issue",
+      "group": null,
+      "sort": "sort:priority-asc"
     },
     {
       "name": "Critical Path",
       "layout": "TABLE",
-      "group_by": null,
-      "filter": {"field": "priority", "value": ["P0-blocker", "P1-high"]},
-      "sort": [{"field": "phase", "direction": "ASC"}]
+      "filter": "priority:P0-blocker,P1-high -status:CLOSED is:issue",
+      "group": null,
+      "sort": "sort:phase-asc"
     },
     {
       "name": "By Phase",
       "layout": "BOARD",
-      "group_by": "phase",
-      "filter": null,
-      "sort": [{"field": "priority", "direction": "ASC"}]
+      "filter": "is:issue -status:CLOSED",
+      "group": "phase",
+      "sort": "sort:priority-asc"
     },
     {
       "name": "Completed",
       "layout": "TABLE",
-      "group_by": null,
-      "filter": {"field": "status", "value": ["DONE", "CLOSED"]},
+      "filter": "status:DONE,CLOSED",
+      "group": null,
       "sort": null
     }
   ]
