@@ -105,7 +105,7 @@ Current critical path: `#13` final node architecture -> `#15` V5/V6 prototype me
 ### Governance
 - Strictly unidirectional flow: I→II→III. No dependencies on Theory (I).
 
-*Last synced: 2026-04-04T22:32:46Z*
+*Last synced: 2026-04-04T23:09:28Z*
 
 ## Active Handoff Protocol
 
@@ -220,7 +220,7 @@ Linked skills: api-design-patterns, cicd-resilience-and-recovery, coding-standar
 | `active_repos` | 72 | global | 2026-04-04 |
 | `archived_repos` | 54 | global | 2026-04-04 |
 | `ci_workflows` | 106 | global | 2026-04-04 |
-| `code_files` | 43 | global | 2026-04-04 |
+| `code_files` | 0 | global | 2026-04-04 |
 | `dependency_edges` | 60 | global | 2026-04-04 |
 | `operational_organs` | 9 | global | 2026-04-04 |
 | `published_essays` | 29 | global | 2026-04-04 |
@@ -233,15 +233,15 @@ Linked skills: api-design-patterns, cicd-resilience-and-recovery, coding-standar
 | `total_words_numeric` | 0 | global | 2026-04-04 |
 | `total_words_short` | 0K+ | global | 2026-04-04 |
 
-Metrics: 9 registered | Observations: 22704 recorded
+Metrics: 9 registered | Observations: 22736 recorded
 Resolve: `organvm ontologia status` | Refresh: `organvm refresh`
 
 
 ## System Density (auto-generated)
 
-AMMOI: 56% | Edges: 41 | Tensions: 33 | Clusters: 5 | Adv: 13 | Events(24h): 28152
+AMMOI: 56% | Edges: 41 | Tensions: 33 | Clusters: 5 | Adv: 13 | Events(24h): 28198
 Structure: 8 organs / 128 repos / 1654 components (depth 17) | Inference: 98% | Organs: META-ORGANVM:64%, ORGAN-I:55%, ORGAN-II:47%, ORGAN-III:55% +4 more
-Last pulse: 2026-04-04T22:32:30 | Δ24h: -0.0% | Δ7d: n/a
+Last pulse: 2026-04-04T23:09:10 | Δ24h: -0.0% | Δ7d: n/a
 
 
 ## Dialect Identity (Trivium)

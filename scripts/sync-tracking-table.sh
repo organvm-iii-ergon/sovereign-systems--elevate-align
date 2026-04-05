@@ -17,7 +17,7 @@ set -euo pipefail
 # --- Config Loading ---
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-CONFIG="${BOARD_CONFIG:-${SCRIPT_DIR}/../board.config.json}"
+CONFIG="${BOARD_CONFIG:-${SCRIPT_DIR}/../.config/board.config.json}"
 
 if [[ ! -f "$CONFIG" ]]; then
   echo "ERROR: board.config.json not found at: $CONFIG" >&2

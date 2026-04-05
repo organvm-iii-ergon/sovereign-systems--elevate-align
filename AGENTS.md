@@ -244,27 +244,7 @@ This repo participates in the **ORGAN-III (Commerce)** swarm.
 - Adhere to unidirectional flow: I→II→III
 - Never commit secrets or credentials
 
-*Last synced: 2026-04-04T22:31:32Z*
-
-<!-- ORGANVM:AUTO:START -->
-## Agent Context (auto-generated — do not edit)
-
-This repo participates in the **ORGAN-III (Commerce)** swarm.
-
-### Active Subscriptions
-- *No active event subscriptions*
-
-### Production Responsibilities
-- *No production responsibilities*
-
-### External Dependencies
-- *No external dependencies*
-
-### Governance Constraints
-- Adhere to unidirectional flow: I→II→III
-- Never commit secrets or credentials
-
-*Last synced: 2026-04-04T22:32:47Z*
+*Last synced: 2026-04-04T23:09:28Z*
 
 ## Active Handoff Protocol
 
@@ -279,4 +259,3 @@ Key sections to obey:
 - **Conventions** — naming/style rules to follow exactly
 - **Receiver Restrictions** — file patterns you must not touch
 <!-- ORGANVM:AUTO:END -->
-
