@@ -36,19 +36,6 @@ You don't have to choose between your conscience and your health.
 
 The most powerful thing you can do for the environment is to stop participating in the systems that degrade it. Start at the root. Start with your water.
 
-
-## Research & Evidence
-
-### From Maddie's Research
-
-> Thank you so much!
-
-> “Then at the end of the branches and each of, and the end of the main funnel or main water hub have the call to action, which goes to my website, which they can purchase themselves.”
-
-> “Yay, thank you. I'm excited to see it.”
-
-> “Well, thank you.”
-
 ## Resources
 
 Cost-comparison calculators, plastic reduction data, and environmental impact reports coming soon.
