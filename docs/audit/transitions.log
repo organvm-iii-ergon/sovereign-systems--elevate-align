@@ -33,3 +33,12 @@
 2026-04-05T03:50:38Z | #20 | STATUS | GATED → SPEC | reason: Maddie confirmed creature selves as original IP, locked in
 2026-04-05T03:50:40Z | #20 | FIELD | Next Action = Build creature selves concept page in Identity pillar | reason: Confirmed
 2026-04-05T04:13:33Z | #5 | FIELD | Next Action = NEXT SESSION: draft one-paragraph revenue confirmation for Maddie to sign | reason: Revenue confirmed verbally, needs written
+2026-04-14T21:30:00Z | #5 | FIELD | Next Action = Counter-review Maddie's written terms (broader scope: filters+subs+DP+water, no 12mo clause) | reason: Maddie wrote terms via iMessage 2026-04-13
+2026-04-14T21:30:05Z | #17 | STATUS | GATED → DECIDED | reason: Maddie confirmed: branches stay in GHL, site = filtration entrance funnel only (iMessage 2026-04-05)
+2026-04-14T21:30:10Z | #17 | FIELD | Next Action = Update site architecture to reflect GHL delineation | reason: Decision logged
+2026-04-14T21:30:15Z | #6 | FIELD | Next Action = Build water/filter page — Maddie says content ready, wants ASAP launch | reason: iMessage 2026-04-13
+2026-04-14T21:30:20Z | #7 | FIELD | Next Action = Plug in subscription collection — Maddie explicitly requested | reason: iMessage 2026-04-13
+2026-04-14T21:30:25Z | #23 | FIELD | Phase A scope simplified — filtration entrance, not 6 sub-pages (GHL delineation) | reason: Follows from #17 decision
+2026-04-14T21:30:30Z | #36 | CREATED | [α.6] Client walkthrough — Maddie cannot navigate current site | reason: Maddie reported confusion navigating site (iMessage 2026-04-12)
+2026-04-14T21:30:35Z | #36 | STATUS | UNSET → SPEC | reason: Issue created with gate defined
+2026-04-14T21:30:40Z | #36 | FIELD | Priority = P0 | reason: Client-facing-first rule — Maddie blocked
