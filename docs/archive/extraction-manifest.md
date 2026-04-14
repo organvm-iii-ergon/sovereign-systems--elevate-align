@@ -9,7 +9,7 @@ Extracted: docs/archive/extracted/
 - Total source files: 127 (+ 2 screenshots, not extracted)
 - .txt/.md files extracted: 120
 - .docx files converted (pre-existing): 5 (1a-master-spiral-backend-breakdown.md, 1b-spiral-dump-questionnaire.md, health-hormones-and-healing.md, mindset-rhythms-and-rituals.md, water-learn-more-about-erw.md)
-- Root documents (1a, 1b, 2a, 2b): 4 (not in Spiral!! subdirs)
+- Root documents (1a, 1b, 2a, 2b): 4 (not in spiral/ subdirs)
 - **Total extracted files: 125**
 
 ### By Readiness
@@ -30,8 +30,8 @@ Extracted: docs/archive/extracted/
 | mindset | mindset/ | 38 (+1 .docx) | 8 | 14 | 16 | 1 |
 | business | business/ | 15 | 2 | 7 | 4 | 2 |
 | water | water/ | 15 (+1 .docx) | 4 | 5 | 4 | 0 |
-| time-astro | time-astro-human design/ | 9 | 3 | 4 | 1 | 1 |
-| concepts | concepts to add in/ | 13 | 5 | 4 | 2 | 2 |
+| time-astro | time-astro-human-design/ | 9 | 3 | 4 | 1 | 1 |
+| concepts | concepts-to-add-in/ | 13 | 5 | 4 | 2 | 2 |
 
 ## Build Alignment Audit
 
