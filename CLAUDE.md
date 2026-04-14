@@ -41,7 +41,7 @@ All client-editable content lives in Markdown files:
 ```
 src/content/
   branches/    # 6 branch pages (gut-hormones, fertility, athletic, autoimmune, cancer-support, sustainability)
-  pillars/     # 3 pillar placeholder pages (inner, identity, financial)
+  pillars/     # 4 pillar pages (physical, inner, identity, financial)
 ```
 
 Frontmatter schema is enforced by `content.config.ts` — any new file must include all required fields.
@@ -220,18 +220,18 @@ Linked skills: api-design-patterns, cicd-resilience-and-recovery, coding-standar
 | `active_repos` | 72 | global | 2026-04-04 |
 | `archived_repos` | 54 | global | 2026-04-04 |
 | `ci_workflows` | 106 | global | 2026-04-04 |
-| `code_files` | 0 | global | 2026-04-04 |
+| `code_files` | 44 | local | 2026-04-14 |
 | `dependency_edges` | 60 | global | 2026-04-04 |
 | `operational_organs` | 9 | global | 2026-04-04 |
 | `published_essays` | 29 | global | 2026-04-04 |
-| `repos_with_tests` | 0 | global | 2026-04-04 |
+| `repos_with_tests` | 0 | local | 2026-04-14 |
 | `sprints_completed` | 33 | global | 2026-04-04 |
-| `test_files` | 0 | global | 2026-04-04 |
+| `test_files` | 0 | local | 2026-04-14 |
 | `total_organs` | 9 | global | 2026-04-04 |
 | `total_repos` | 128 | global | 2026-04-04 |
-| `total_words_formatted` | 0 | global | 2026-04-04 |
-| `total_words_numeric` | 0 | global | 2026-04-04 |
-| `total_words_short` | 0K+ | global | 2026-04-04 |
+| `total_words_formatted` | 1,282,530 | local | 2026-04-14 |
+| `total_words_numeric` | 1282530 | local | 2026-04-14 |
+| `total_words_short` | 1,282K+ | local | 2026-04-14 |
 
 Metrics: 9 registered | Observations: 22736 recorded
 Resolve: `organvm ontologia status` | Refresh: `organvm refresh`
