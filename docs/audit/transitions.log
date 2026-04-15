@@ -46,3 +46,4 @@
 2026-04-14T22:00:05Z | #5 | FIELD | Next Action = Send draft agreement to Maddie for mutual sign-off | reason: One-paragraph agreement drafted at docs/client-deliverables/
 2026-04-14T22:00:10Z | #36 | STATUS | SPEC → WIP | reason: Walkthrough guide drafted at docs/client-deliverables/2026-04-14-maddie-site-walkthrough.md
 2026-04-14T22:00:15Z | #36 | FIELD | Next Action = Send walkthrough to Maddie | reason: Guide covers all 8 pages + navigation map
+2026-04-14T22:15:00Z | #11 | FIELD | Priority = P3 → P1 | reason: Maddie explicitly requested self-service editing — CMS no longer deferrable
