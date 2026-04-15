@@ -16,6 +16,7 @@ export interface Branch {
   emoji: string;
   order: number;
   citationIds: string[];
+  ghlUrl?: string;
 }
 
 export interface HubConfig {

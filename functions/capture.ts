@@ -4,8 +4,9 @@ interface Env {
 
 export const onRequestPost: PagesFunction<Env> = async (context) => {
   try {
-    const data = await context.request.json() as { email?: string };
+    const data = await context.request.json() as { email?: string; source?: string };
     const email = typeof data.email === 'string' ? data.email.trim() : '';
+    const source = typeof data.source === 'string' ? data.source : 'unknown';
 
     if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
       return new Response(JSON.stringify({ error: 'Valid email required' }), {
@@ -20,7 +21,7 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
       await fetch(webhookUrl, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email, source: 'water_explore_gate', timestamp: new Date().toISOString() }),
+        body: JSON.stringify({ email, source, timestamp: new Date().toISOString() }),
       });
     }
 
