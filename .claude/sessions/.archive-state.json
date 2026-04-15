@@ -1,0 +1,22 @@
+{
+  "078cd6c8-cf8d-43f0-b241-8972469d315c": {
+    "slug": "idempotent-swimming-leaf",
+    "archive_dir": "/Users/4jp/Workspace/organvm-iii-ergon/sovereign-systems--elevate-align/.claude/sessions/2026-04-14--idempotent-swimming-leaf",
+    "archived_at": "2026-04-15T16:53:47.320133+00:00",
+    "files": [
+      "transcript.md",
+      "prompts.md",
+      "review.md",
+      "meta.json",
+      "session.jsonl",
+      "subagents/agent-af4cb5f43ad7c9f7e.jsonl",
+      "subagents/agent-acompact-10865b81b950110e.jsonl",
+      "subagents/agent-aed4d7df7d57f97da.meta.json",
+      "subagents/agent-aed4d7df7d57f97da.jsonl",
+      "subagents/agent-a7dc8aca80742a88c.meta.json",
+      "subagents/agent-a7dc8aca80742a88c.jsonl",
+      "subagents/agent-af4cb5f43ad7c9f7e.meta.json"
+    ],
+    "date": "2026-04-14"
+  }
+}
