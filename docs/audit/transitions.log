@@ -49,3 +49,6 @@
 2026-04-14T22:15:00Z | #11 | FIELD | Priority = P3 → P1 | reason: Maddie explicitly requested self-service editing — CMS no longer deferrable
 2026-04-14T22:30:00Z | #6 | STATUS | SPEC → WIP | reason: GHL delineation code shipped — quiz waitlist, branch GHL URLs, capture source tracking
 2026-04-14T22:30:05Z | #6 | FIELD | Remaining blockers = quizFormUrl empty (needs Maddie's GHL URL), GHL_WEBHOOK_URL env var not set in Cloudflare | reason: Architecture ready, config slots waiting
+2026-04-15T00:10:00Z | #15 | FIELD | V5/V6 prototypes LOCATED at docs/archive/extracted/mindset/manifestation-mastery-secrets.md (~line 6474 + ~7039) | reason: N/A vacuum research — files embedded in content, not standalone
+2026-04-15T00:10:05Z | #15 | STATUS | SPEC → UNBLOCKED | reason: #13 CLOSED + prototypes located + merge spec exists
+2026-04-15T00:10:10Z | #9 | FIELD | 3 GHL config vacuums logged: quizFormUrl, branch ghlUrls, GHL_WEBHOOK_URL env var | reason: N/A vacuum audit — all need Maddie's GHL setup data
