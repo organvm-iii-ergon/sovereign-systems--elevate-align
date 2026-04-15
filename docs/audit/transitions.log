@@ -42,3 +42,7 @@
 2026-04-14T21:30:30Z | #36 | CREATED | [α.6] Client walkthrough — Maddie cannot navigate current site | reason: Maddie reported confusion navigating site (iMessage 2026-04-12)
 2026-04-14T21:30:35Z | #36 | STATUS | UNSET → SPEC | reason: Issue created with gate defined
 2026-04-14T21:30:40Z | #36 | FIELD | Priority = P0 | reason: Client-facing-first rule — Maddie blocked
+2026-04-14T22:00:00Z | #5 | STATUS | SPEC → WIP | reason: User accepted Maddie's written terms as-is (broader scope, no duration, $10K cap)
+2026-04-14T22:00:05Z | #5 | FIELD | Next Action = Send draft agreement to Maddie for mutual sign-off | reason: One-paragraph agreement drafted at docs/client-deliverables/
+2026-04-14T22:00:10Z | #36 | STATUS | SPEC → WIP | reason: Walkthrough guide drafted at docs/client-deliverables/2026-04-14-maddie-site-walkthrough.md
+2026-04-14T22:00:15Z | #36 | FIELD | Next Action = Send walkthrough to Maddie | reason: Guide covers all 8 pages + navigation map
