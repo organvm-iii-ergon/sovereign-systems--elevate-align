@@ -52,17 +52,18 @@ Frontmatter schema is enforced by `content.config.ts` — any new file must incl
 - `docs/superpowers/intakes/2026-04-01-maddie-spiral-path-board-atomization.md` — board translation from handoff to executable issue surface
 - `.codex/plans/2026-04-01-maddie-spiral-orchestration-assignment.md` — dated orchestration plan preserved as session history
 
-## Page Map (15 pages total)
+## Page Map (16 pages total)
 
 | Route | File | Description |
 |-------|------|-------------|
 | `/` | `src/pages/index.astro` | Hub — spiral + 4-pillar grid |
-| `/pillars/[slug]` | `src/pages/pillars/[slug].astro` | Dynamic pillar pages (inner, identity, financial) |
+| `/pillars/[slug]` | `src/pages/pillars/[slug].astro` | Dynamic pillar pages (physical, inner, identity, financial) |
 | `/water/` | `src/pages/water/index.astro` | Physical Sovereignty / Stop Drinking Acid funnel home |
 | `/water/explore` | `src/pages/water/explore.astro` | Branch explorer (6 branches) |
 | `/water/quiz` | `src/pages/water/quiz.astro` | GHL quiz embed page |
-| `/water/branches/[slug]` | `src/pages/branches/[slug].astro` | Individual branch deep-dives |
+| `/water/[slug]` | `src/pages/water/[slug].astro` | Individual branch deep-dives (6 branches) |
 | `/business/` | `src/pages/business/index.astro` | Financial Sovereignty / EauCo Hub landing |
+| `/research` | `src/pages/research.astro` | Full research bibliography (email-gated) |
 
 ## Content Editing Notes
 

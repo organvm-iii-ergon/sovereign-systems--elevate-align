@@ -58,9 +58,10 @@ const branchGhlUrl = branchConfig?.ghlUrl || config.ghl.productUrl;
 
   <!-- CTA — FREE (visible to drive conversion) -->
   <section class="py-20 px-6 glow-bg text-center border-t border-ocean-500/10">
-    <div class="relative flex flex-col sm:flex-row gap-4 justify-center items-center">
+    <div class="relative flex flex-col md:flex-row gap-4 justify-center items-center">
       <CTAButton href={branchGhlUrl} label={ctaLabel} />
-      <CTAButton href="/water/explore" label="Explore other branches" variant="secondary" />
+      <CTAButton href="/water/explore" label="All Water Branches" variant="secondary" />
+      <CTAButton href="/water/" label="Back to Water" variant="secondary" />
     </div>
   </section>
 </Base>

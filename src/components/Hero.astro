@@ -2,12 +2,16 @@
 interface Props {
   heading: string;
   subtext?: string;
+  section?: string;
 }
 
-const { heading, subtext } = Astro.props;
+const { heading, subtext, section } = Astro.props;
 ---
 
 <section class="relative min-h-[85vh] flex flex-col items-center justify-center text-center px-6 py-24 glow-bg overflow-hidden">
+  {section && (
+    <p class="relative text-[11px] font-medium tracking-[0.2em] uppercase text-ocean-500 mb-3">{section}</p>
+  )}
   <h1 class="relative font-heading text-[clamp(42px,6vw,80px)] font-light leading-[1.08] tracking-tight text-white" style="text-shadow: 0 0 60px rgba(17,154,158,0.15);">
     {heading}
   </h1>

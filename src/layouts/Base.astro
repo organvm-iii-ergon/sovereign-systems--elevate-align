@@ -1,6 +1,7 @@
 ---
 import '../styles/global.css';
 import { config } from '../data/hub.config';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
 
 interface Props {
   title: string;
@@ -8,13 +9,80 @@ interface Props {
   image?: string;
 }
 
-const { 
-  title, 
+const {
+  title,
   description = config.tagline,
   image = '/og-default.svg'
 } = Astro.props;
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site || config.domains.hub);
+
+// --- Active page detection ---
+const currentPath = Astro.url.pathname;
+const isWaterSection = currentPath.startsWith('/water');
+const isHome = currentPath === '/';
+
+function navClass(href: string): string {
+  let active = href === '/'
+    ? currentPath === '/'
+    : currentPath === href || currentPath === href.replace(/\/$/, '') || currentPath.startsWith(href);
+  // Physical pillar routes to /water/, Financial pillar routes to /business/
+  if (href === '/water/' && currentPath.startsWith('/pillars/physical')) active = true;
+  if (href === '/business/' && currentPath.startsWith('/pillars/financial')) active = true;
+  return active
+    ? 'text-white'
+    : 'text-ocean-400 hover:text-white';
+}
+
+function mobileNavClass(href: string): string {
+  const active = href === '/'
+    ? currentPath === '/'
+    : currentPath === href || currentPath === href.replace(/\/$/, '') || currentPath.startsWith(href);
+  return active
+    ? 'text-white border-l-2 border-ocean-400 pl-3'
+    : 'text-ocean-400 active:text-white';
+}
+
+function subNavClass(href: string): string {
+  const normalized = currentPath.replace(/\/$/, '');
+  const hrefNormalized = href.replace(/\/$/, '');
+  return normalized === hrefNormalized
+    ? 'text-white'
+    : 'text-ocean-400/60 hover:text-white/70';
+}
+
+// --- Breadcrumb data ---
+type BreadcrumbItem = { label: string; href?: string };
+const breadcrumbs: BreadcrumbItem[] = [];
+
+if (!isHome) {
+  breadcrumbs.push({ label: 'Home', href: '/' });
+
+  if (isWaterSection) {
+    const subPath = currentPath.replace('/water/', '').replace(/\/$/, '');
+    if (!subPath || subPath === 'water') {
+      breadcrumbs.push({ label: 'Water' });
+    } else if (subPath === 'quiz') {
+      breadcrumbs.push({ label: 'Water', href: '/water/' });
+      breadcrumbs.push({ label: 'Quiz' });
+    } else if (subPath === 'explore') {
+      breadcrumbs.push({ label: 'Water', href: '/water/' });
+      breadcrumbs.push({ label: 'Branches' });
+    } else {
+      const branchName = config.branches.find(b => b.slug === subPath)?.name;
+      breadcrumbs.push({ label: 'Water', href: '/water/' });
+      breadcrumbs.push({ label: branchName || subPath });
+    }
+  } else if (currentPath.startsWith('/pillars/')) {
+    const slug = currentPath.replace('/pillars/', '').replace(/\/$/, '');
+    const pillar = config.pillars.find(p => p.slug === slug);
+    breadcrumbs.push({ label: pillar?.name || slug });
+  } else if (currentPath.startsWith('/business')) {
+    breadcrumbs.push({ label: 'Business' });
+  } else if (currentPath.startsWith('/research')) {
+    breadcrumbs.push({ label: 'Research' });
+  }
+}
 ---
 
 <!doctype html>
@@ -51,17 +119,19 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site || config.domains.hu
     />
   </head>
   <body class="min-h-screen flex flex-col bg-ocean-900 text-white/60">
-    <nav class="fixed top-0 left-0 right-0 z-50 bg-ocean-900/60 backdrop-blur-xl border-b border-white/[0.04]">
+    <nav aria-label="Main" class="fixed top-0 left-0 right-0 z-50 bg-ocean-900/60 backdrop-blur-xl border-b border-white/[0.04]">
+      <!-- Primary nav row -->
       <div class="max-w-6xl mx-auto px-6 md:px-10 py-4 flex items-center justify-between">
         <a href="/" class="font-heading text-base font-light text-white/70 hover:text-white transition-colors tracking-wide">
           {config.name}
         </a>
         <!-- Desktop nav -->
-        <div class="hidden md:flex gap-8">
-          <a href="/water/" class="text-[11px] font-medium tracking-[0.15em] uppercase text-ocean-400 hover:text-white transition-colors">Water</a>
-          <a href="/business/" class="text-[11px] font-medium tracking-[0.15em] uppercase text-ocean-400 hover:text-white transition-colors">Business</a>
-          <a href="/water/explore" class="text-[11px] font-medium tracking-[0.15em] uppercase text-ocean-400 hover:text-white transition-colors">Explore</a>
-          <a href="/water/quiz" class="text-[11px] font-medium tracking-[0.15em] uppercase text-ocean-400 hover:text-white transition-colors">Quiz</a>
+        <div class="hidden md:flex gap-7">
+          <a href="/water/" class:list={['text-[11px] font-medium tracking-[0.15em] uppercase transition-colors', navClass('/water/')]}>Water</a>
+          <a href="/pillars/inner" class:list={['text-[11px] font-medium tracking-[0.15em] uppercase transition-colors', navClass('/pillars/inner')]}>Inner</a>
+          <a href="/pillars/identity" class:list={['text-[11px] font-medium tracking-[0.15em] uppercase transition-colors', navClass('/pillars/identity')]}>Identity</a>
+          <a href="/business/" class:list={['text-[11px] font-medium tracking-[0.15em] uppercase transition-colors', navClass('/business/')]}>Business</a>
+          <a href="/research" class:list={['text-[11px] font-medium tracking-[0.15em] uppercase transition-colors', navClass('/research')]}>Research</a>
         </div>
         <!-- Mobile hamburger -->
         <button id="nav-toggle" class="md:hidden p-2 -mr-2 text-ocean-400" aria-label="Menu">
@@ -69,13 +139,30 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site || config.domains.hu
           <svg id="nav-icon-close" class="hidden" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><line x1="6" y1="6" x2="18" y2="18"/><line x1="6" y1="18" x2="18" y2="6"/></svg>
         </button>
       </div>
+      <!-- Water sub-nav (desktop only, Water section pages) -->
+      {isWaterSection && (
+        <div class="hidden md:block border-t border-white/[0.03]">
+          <div class="max-w-6xl mx-auto px-6 md:px-10 py-2.5 flex gap-6">
+            <a href="/water/" class:list={['text-[10px] font-medium tracking-[0.12em] uppercase transition-colors', subNavClass('/water/')]}>Water Home</a>
+            <a href="/water/quiz" class:list={['text-[10px] font-medium tracking-[0.12em] uppercase transition-colors', subNavClass('/water/quiz')]}>Quiz</a>
+            <a href="/water/explore" class:list={['text-[10px] font-medium tracking-[0.12em] uppercase transition-colors', subNavClass('/water/explore')]}>Branches</a>
+          </div>
+        </div>
+      )}
       <!-- Mobile menu panel -->
       <div id="nav-menu" class="hidden md:hidden border-t border-white/[0.04] bg-ocean-900/95 backdrop-blur-xl">
-        <div class="px-6 py-6 flex flex-col gap-5">
-          <a href="/water/" class="text-[13px] font-medium tracking-[0.12em] uppercase text-ocean-400 active:text-white py-1">Water</a>
-          <a href="/business/" class="text-[13px] font-medium tracking-[0.12em] uppercase text-ocean-400 active:text-white py-1">Business</a>
-          <a href="/water/explore" class="text-[13px] font-medium tracking-[0.12em] uppercase text-ocean-400 active:text-white py-1">Explore</a>
-          <a href="/water/quiz" class="text-[13px] font-medium tracking-[0.12em] uppercase text-ocean-400 active:text-white py-1">Quiz</a>
+        <div class="px-6 py-5 flex flex-col gap-1">
+          <!-- Water section -->
+          <span class="text-[9px] tracking-[0.2em] uppercase text-white/15 font-medium pt-1 pb-2">Water</span>
+          <a href="/water/" class:list={['text-[13px] font-medium tracking-[0.12em] uppercase py-1.5 pl-4 transition-colors', mobileNavClass('/water/')]}>Water Home</a>
+          <a href="/water/quiz" class:list={['text-[13px] font-medium tracking-[0.12em] uppercase py-1.5 pl-4 transition-colors', mobileNavClass('/water/quiz')]}>Take the Quiz</a>
+          <a href="/water/explore" class:list={['text-[13px] font-medium tracking-[0.12em] uppercase py-1.5 pl-4 transition-colors', mobileNavClass('/water/explore')]}>Explore Branches</a>
+          <!-- The Spiral section -->
+          <span class="text-[9px] tracking-[0.2em] uppercase text-white/15 font-medium pt-4 pb-2">The Spiral</span>
+          <a href="/pillars/inner" class:list={['text-[13px] font-medium tracking-[0.12em] uppercase py-1.5 pl-4 transition-colors', mobileNavClass('/pillars/inner')]}>Inner Sovereignty</a>
+          <a href="/pillars/identity" class:list={['text-[13px] font-medium tracking-[0.12em] uppercase py-1.5 pl-4 transition-colors', mobileNavClass('/pillars/identity')]}>Identity Sovereignty</a>
+          <a href="/business/" class:list={['text-[13px] font-medium tracking-[0.12em] uppercase py-1.5 pl-4 transition-colors', mobileNavClass('/business/')]}>Business</a>
+          <a href="/research" class:list={['text-[13px] font-medium tracking-[0.12em] uppercase py-1.5 pl-4 transition-colors', mobileNavClass('/research')]}>Research</a>
         </div>
       </div>
     </nav>
@@ -97,14 +184,53 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site || config.domains.hu
       }));
     </script>
 
-    <main class="flex-1 pt-[56px]">
+    <main class:list={['flex-1', isWaterSection ? 'pt-[88px]' : 'pt-[56px]']}>
+      <Breadcrumbs items={breadcrumbs} />
       <slot />
     </main>
 
     <footer class="border-t border-white/[0.03] bg-ocean-900">
-      <div class="max-w-6xl mx-auto px-6 py-10 text-center">
-        <p class="text-[12px] text-white/20">&copy; {new Date().getFullYear()} {config.name}</p>
-        <p class="mt-1 text-[11px] text-white/10 tracking-[0.1em]">{config.domains.hub}</p>
+      <div class="max-w-6xl mx-auto px-6 md:px-10 py-16">
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10 md:gap-8">
+          <!-- Brand -->
+          <div>
+            <a href="/" class="font-heading text-[15px] font-light text-white/50 hover:text-white/70 transition-colors">{config.name}</a>
+            <p class="mt-2 text-[11px] text-white/15 tracking-[0.08em]">{config.domains.hub}</p>
+          </div>
+          <!-- Water -->
+          <div>
+            <p class="text-[10px] tracking-[0.15em] uppercase text-white/30 font-medium mb-3">Water</p>
+            <div class="flex flex-col gap-2">
+              <a href="/water/" class="text-[12px] text-white/20 hover:text-white/40 transition-colors">Water Home</a>
+              <a href="/water/quiz" class="text-[12px] text-white/20 hover:text-white/40 transition-colors">Take the Quiz</a>
+              <a href="/water/explore" class="text-[12px] text-white/20 hover:text-white/40 transition-colors">Explore Branches</a>
+              {config.branches.map(branch => (
+                <a href={`/water/${branch.slug}`} class="text-[12px] text-white/15 hover:text-white/30 transition-colors pl-2">{branch.name}</a>
+              ))}
+            </div>
+          </div>
+          <!-- The Spiral -->
+          <div>
+            <p class="text-[10px] tracking-[0.15em] uppercase text-white/30 font-medium mb-3">The Spiral</p>
+            <div class="flex flex-col gap-2">
+              {config.pillars.filter(p => p.slug !== 'physical' && p.slug !== 'financial').map(pillar => (
+                <a href={pillar.url} class="text-[12px] text-white/20 hover:text-white/40 transition-colors">{pillar.name}</a>
+              ))}
+              <a href="/business/" class="text-[12px] text-white/20 hover:text-white/40 transition-colors">Financial Sovereignty</a>
+            </div>
+          </div>
+          <!-- Learn -->
+          <div>
+            <p class="text-[10px] tracking-[0.15em] uppercase text-white/30 font-medium mb-3">Learn</p>
+            <div class="flex flex-col gap-2">
+              <a href="/research" class="text-[12px] text-white/20 hover:text-white/40 transition-colors">Research Bibliography</a>
+            </div>
+          </div>
+        </div>
+        <!-- Copyright -->
+        <div class="mt-12 pt-6 border-t border-white/[0.03] text-center">
+          <p class="text-[11px] text-white/15">&copy; {new Date().getFullYear()} {config.name}</p>
+        </div>
       </div>
     </footer>
 
