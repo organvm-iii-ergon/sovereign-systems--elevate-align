@@ -111,8 +111,11 @@ const { steps, filterTiers, costData } = hydrationConfig;
   <div id="step-1-results" class="step-panel hidden mt-6" data-step="1-results">
     <div class="glass-card p-8 sm:p-10">
       <div class="flex items-center justify-between mb-6">
-        <h3 class="font-heading text-[20px] font-light text-white">Your Water Report</h3>
-        <span class="text-[10px] uppercase tracking-[0.15em] text-white/25">Demo Data</span>
+        <h3 class="font-heading text-[20px] font-light text-white">
+          Your Water Report
+          <span class="text-white/20 text-[14px] font-light" id="result-utility"></span>
+        </h3>
+        <span class="text-[10px] uppercase tracking-[0.15em] text-white/25" id="result-badge">Loading...</span>
       </div>
 
       <div class="grid grid-cols-3 gap-4 mb-8">
@@ -130,29 +133,8 @@ const { steps, filterTiers, costData } = hydrationConfig;
         </div>
       </div>
 
-      <!-- Demo contaminant list -->
-      <div class="space-y-3 mb-8" id="contaminant-list">
-        <div class="flex items-center justify-between py-2 border-b border-white/5">
-          <span class="text-white/60 text-[13px]">Haloacetic acids (HAA5)</span>
-          <span class="text-red-400 text-[12px] font-medium">277× above health guideline</span>
-        </div>
-        <div class="flex items-center justify-between py-2 border-b border-white/5">
-          <span class="text-white/60 text-[13px]">Total trihalomethanes (TTHMs)</span>
-          <span class="text-red-400 text-[12px] font-medium">164× above health guideline</span>
-        </div>
-        <div class="flex items-center justify-between py-2 border-b border-white/5">
-          <span class="text-white/60 text-[13px]">Chromium (hexavalent)</span>
-          <span class="text-amber-400 text-[12px] font-medium">42× above health guideline</span>
-        </div>
-        <div class="flex items-center justify-between py-2 border-b border-white/5">
-          <span class="text-white/60 text-[13px]">Chloroform</span>
-          <span class="text-amber-400 text-[12px] font-medium">28× above health guideline</span>
-        </div>
-        <div class="flex items-center justify-between py-2 border-b border-white/5">
-          <span class="text-white/60 text-[13px]">Nitrate</span>
-          <span class="text-white/40 text-[12px]">Within legal limits</span>
-        </div>
-      </div>
+      <!-- Contaminant list (populated dynamically) -->
+      <div class="space-y-3 mb-8" id="contaminant-list"></div>
 
       <!-- Cost comparison -->
       <div class="mb-8">
@@ -200,7 +182,8 @@ const { steps, filterTiers, costData } = hydrationConfig;
       <p class="text-amber-400/60 text-[12px] font-medium uppercase tracking-[0.1em] mb-2">Reality Check</p>
       <p class="text-white/40 text-[13px] font-light leading-relaxed">
         Standard Brita filters reduce chlorine taste and some sediment — but they don't remove
-        HAAs, TTHMs, hexavalent chromium, PFAS, or most of the contaminants flagged in your area.
+        HAAs, TTHMs, hexavalent chromium, PFAS, fluoride, or most of the contaminants flagged in your area.
+        Fluoride removal is one of the most common concerns, and most basic filters miss it entirely.
         Reverse osmosis strips minerals your body needs. There are better options.
       </p>
     </div>
@@ -316,9 +299,68 @@ const { steps, filterTiers, costData } = hydrationConfig;
     });
   });
 
+  // --- Contaminant rendering ---
+  function renderContaminants(contaminants: Array<{
+    name: string;
+    detected: number;
+    healthGuideline: number | null;
+    legalLimit: number | null;
+    exceedsHealth: boolean;
+    exceedsLegal: boolean;
+    unit: string;
+  }>) {
+    const list = document.getElementById('contaminant-list');
+    if (!list) return;
+    list.innerHTML = '';
+
+    // Show top 8 contaminants, sorted by severity
+    const sorted = [...contaminants].sort((a, b) => {
+      if (a.exceedsLegal && !b.exceedsLegal) return -1;
+      if (!a.exceedsLegal && b.exceedsLegal) return 1;
+      if (a.exceedsHealth && !b.exceedsHealth) return -1;
+      if (!a.exceedsHealth && b.exceedsHealth) return 1;
+      const aRatio = a.healthGuideline ? a.detected / a.healthGuideline : 0;
+      const bRatio = b.healthGuideline ? b.detected / b.healthGuideline : 0;
+      return bRatio - aRatio;
+    });
+
+    for (const c of sorted.slice(0, 8)) {
+      const row = document.createElement('div');
+      row.className = 'flex items-center justify-between py-2 border-b border-white/5';
+
+      let severityText = '';
+      let severityClass = 'text-white/40 text-[12px]';
+
+      if (c.exceedsLegal && c.legalLimit) {
+        const mult = Math.round(c.detected / c.legalLimit);
+        severityText = `${mult}× above legal limit`;
+        severityClass = 'text-red-500 text-[12px] font-medium';
+      } else if (c.exceedsHealth && c.healthGuideline) {
+        const mult = Math.round(c.detected / c.healthGuideline);
+        severityText = `${mult}× above health guideline`;
+        severityClass = mult > 100 ? 'text-red-400 text-[12px] font-medium' : 'text-amber-400 text-[12px] font-medium';
+      } else {
+        severityText = 'Within limits';
+      }
+
+      row.innerHTML = `
+        <span class="text-white/60 text-[13px]">${c.name}</span>
+        <span class="${severityClass}">${severityText}</span>
+      `;
+      list.appendChild(row);
+    }
+
+    if (contaminants.length > 8) {
+      const more = document.createElement('p');
+      more.className = 'text-white/20 text-[11px] text-center pt-2';
+      more.textContent = `+ ${contaminants.length - 8} more contaminants detected`;
+      list.appendChild(more);
+    }
+  }
+
   // --- Step 1: ZIP form submission ---
   const zipForm = document.getElementById('zip-form') as HTMLFormElement;
-  zipForm?.addEventListener('submit', (e) => {
+  zipForm?.addEventListener('submit', async (e) => {
     e.preventDefault();
     const zipInput = document.getElementById('zip-input') as HTMLInputElement;
     if (!zipInput.value || !sourceInput.value) {
@@ -327,12 +369,60 @@ const { steps, filterTiers, costData } = hydrationConfig;
       return;
     }
 
-    // Show results (Phase A: demo data for any ZIP)
+    // Show results panel with loading state
     const results = document.getElementById('step-1-results');
     results?.classList.remove('hidden');
     results?.scrollIntoView({ behavior: 'smooth', block: 'start' });
 
-    // Update step indicators
+    const badge = document.getElementById('result-badge');
+    if (badge) badge.textContent = 'Checking...';
+
+    // Fetch real data from EWG proxy
+    try {
+      const response = await fetch('/api/water-report', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ zipCode: zipInput.value, waterSource: sourceInput.value }),
+      });
+      const report = await response.json();
+
+      // Update summary stats
+      const totalEl = document.getElementById('result-total');
+      const healthEl = document.getElementById('result-exceed-health');
+      const legalEl = document.getElementById('result-exceed-legal');
+      const utilityEl = document.getElementById('result-utility');
+
+      if (totalEl) totalEl.textContent = String(report.totalContaminants);
+      if (healthEl) healthEl.textContent = String(report.exceedingHealth);
+      if (legalEl) legalEl.textContent = String(report.exceedingLegal);
+      if (utilityEl && report.utilityName) utilityEl.textContent = `— ${report.utilityName}`;
+      if (badge) badge.textContent = report.isDemo ? 'Sample Data' : `ZIP ${zipInput.value}`;
+
+      // Render contaminants
+      renderContaminants(report.contaminants || []);
+
+      // Store report for filter matching
+      (window as any).__waterReport = report;
+    } catch {
+      // On failure, reset stale metrics and show fallback
+      const totalEl = document.getElementById('result-total');
+      const healthEl = document.getElementById('result-exceed-health');
+      const legalEl = document.getElementById('result-exceed-legal');
+      const utilityEl = document.getElementById('result-utility');
+      if (totalEl) totalEl.textContent = '5';
+      if (healthEl) healthEl.textContent = '5';
+      if (legalEl) legalEl.textContent = '0';
+      if (utilityEl) utilityEl.textContent = '';
+      if (badge) badge.textContent = 'Sample Data';
+      renderContaminants([
+        { name: 'Haloacetic acids (HAA5)', detected: 27.7, healthGuideline: 0.1, legalLimit: 60, exceedsHealth: true, exceedsLegal: false, unit: 'ppb' },
+        { name: 'Total trihalomethanes (TTHMs)', detected: 49.2, healthGuideline: 0.3, legalLimit: 80, exceedsHealth: true, exceedsLegal: false, unit: 'ppb' },
+        { name: 'Chromium (hexavalent)', detected: 0.42, healthGuideline: 0.01, legalLimit: 100, exceedsHealth: true, exceedsLegal: false, unit: 'ppb' },
+        { name: 'Chloroform', detected: 22.4, healthGuideline: 0.8, legalLimit: null, exceedsHealth: true, exceedsLegal: false, unit: 'ppb' },
+        { name: 'Nitrate', detected: 1.8, healthGuideline: 0.14, legalLimit: 10000, exceedsHealth: true, exceedsLegal: false, unit: 'ppb' },
+      ]);
+    }
+
     updateStepIndicator(1, 'complete');
   });
 
