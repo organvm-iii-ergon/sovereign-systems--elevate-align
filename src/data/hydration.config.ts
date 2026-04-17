@@ -124,6 +124,64 @@ export interface HydrationConfig {
   costData: BottledWaterCost[];
 }
 
+// --- Filter Matching Engine ---
+
+interface MatchContaminant {
+  name: string;
+  exceedsHealth: boolean;
+  exceedsLegal: boolean;
+}
+
+/**
+ * Score each filter tier against a user's contaminant profile.
+ * Returns sorted recommendations (best match first) with cost comparison.
+ */
+export function matchFiltersToContaminants(
+  contaminants: MatchContaminant[],
+  filters: FilterTier[] = hydrationConfig.filterTiers,
+  avgBottledMonthly = 65,
+): FilterRecommendation[] {
+  const concerning = contaminants.filter((c) => c.exceedsHealth || c.exceedsLegal);
+
+  return filters.map((tier) => {
+    const removesLower = tier.removes.map((r) => r.toLowerCase());
+    let matched = 0;
+    for (const c of concerning) {
+      const cLower = c.name.toLowerCase();
+      if (removesLower.some((r) => cLower.includes(r) || r.includes('all major'))) {
+        matched++;
+      }
+    }
+
+    const matchScore = concerning.length > 0 ? Math.round((matched / concerning.length) * 100) : 50;
+
+    // Extract first number from range like "$150–$300" → 150
+    const priceMatch = tier.priceRange.match(/[\d,]+/);
+    const priceNum = priceMatch ? parseInt(priceMatch[0].replace(/,/g, ''), 10) : 300;
+    const monthlyFilterCost = priceNum / 36; // amortize over 3 years
+    const yearlySavings = avgBottledMonthly * 12 - monthlyFilterCost * 12;
+
+    const reason =
+      matchScore >= 80
+        ? `Removes ${matched} of ${concerning.length} flagged contaminants in your area`
+        : matchScore >= 50
+          ? `Covers key contaminants — good starting point for your profile`
+          : `Targeted solution — best for ${tier.bestFor.toLowerCase()}`;
+
+    return {
+      tier,
+      matchScore,
+      reason,
+      monthlySavings: Math.round(avgBottledMonthly - monthlyFilterCost),
+      yearlyComparison: {
+        bottledWater: Math.round(avgBottledMonthly * 12),
+        thisFilter: Math.round(monthlyFilterCost * 12),
+        savings: Math.round(yearlySavings),
+      },
+    };
+  }).sort((a, b) => b.matchScore - a.matchScore);
+}
+
 // --- Demo Data (Phase A) ---
 
 export const hydrationConfig: HydrationConfig = {
