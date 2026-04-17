@@ -18,14 +18,11 @@ You can't build a stable life on an unstable body. This is Level 1 not because i
 
 ## What Physical Sovereignty Actually Addresses
 
-**Water**
-Your cells are mostly water. Not just any water — water that can actually enter your cells and carry out waste. Molecular hydrogen water changes what your cells receive at the foundational level.
+**Water — The Non Negotiable**
+Your cells are mostly water. Not just any water — water that can actually enter your cells and carry out waste. Molecular hydrogen water changes what your cells receive at the foundational level. This is the non-negotiable starting point. If you're not at an 8 or higher in hydration, everything else is compensating.
 
-**Nervous System Regulation**
-A dysregulated nervous system burns through minerals, depletes your cellular reserves, and keeps every other system in a state of compensation. You don't need more willpower. You need a nervous system that feels safe enough to regulate.
-
-**Inflammation**
-Chronic low-grade inflammation is the background noise behind most modern health struggles — fatigue, brain fog, hormone disruption, gut problems. Reducing oxidative burden is one of the most direct levers we have.
+**Regulate — Nervous System + Inflammation**
+A dysregulated nervous system burns through minerals, depletes your cellular reserves, and keeps every other system in a state of compensation. You don't need more willpower. You need a nervous system that feels safe enough to regulate. Chronic low-grade inflammation is the background noise behind most modern health struggles — fatigue, brain fog, hormone disruption, gut problems. Reducing oxidative burden is one of the most direct levers we have. Regulation is what ties these together: stabilize inflammation and your nervous system in one motion.
 
 **Energy**
 Real energy isn't caffeine managing dehydration. It's mitochondrial function, cellular hydration, and minerals in balance. When those stabilize, energy changes at the root level.
