@@ -4,8 +4,9 @@ interface Env {
 
 export const onRequestPost: PagesFunction<Env> = async (context) => {
   try {
-    const data = await context.request.json() as { email?: string; source?: string };
+    const data = await context.request.json() as { email?: string; name?: string; source?: string };
     const email = typeof data.email === 'string' ? data.email.trim() : '';
+    const name = typeof data.name === 'string' ? data.name.trim() : '';
     const source = typeof data.source === 'string' ? data.source : 'unknown';
 
     if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
@@ -21,7 +22,7 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
       await fetch(webhookUrl, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email, source, timestamp: new Date().toISOString() }),
+        body: JSON.stringify({ email, name, source, timestamp: new Date().toISOString() }),
       });
     }
 
