@@ -404,7 +404,15 @@ const { steps, filterTiers, costData } = hydrationConfig;
       // Store report for filter matching
       (window as any).__waterReport = report;
     } catch {
-      // On failure, show fallback message
+      // On failure, reset stale metrics and show fallback
+      const totalEl = document.getElementById('result-total');
+      const healthEl = document.getElementById('result-exceed-health');
+      const legalEl = document.getElementById('result-exceed-legal');
+      const utilityEl = document.getElementById('result-utility');
+      if (totalEl) totalEl.textContent = '5';
+      if (healthEl) healthEl.textContent = '5';
+      if (legalEl) legalEl.textContent = '0';
+      if (utilityEl) utilityEl.textContent = '';
       if (badge) badge.textContent = 'Sample Data';
       renderContaminants([
         { name: 'Haloacetic acids (HAA5)', detected: 27.7, healthGuideline: 0.1, legalLimit: 60, exceedsHealth: true, exceedsLegal: false, unit: 'ppb' },

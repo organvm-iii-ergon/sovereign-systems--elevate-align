@@ -155,7 +155,9 @@ export function matchFiltersToContaminants(
 
     const matchScore = concerning.length > 0 ? Math.round((matched / concerning.length) * 100) : 50;
 
-    const priceNum = parseInt(tier.priceRange.replace(/[^\d]/g, ''), 10) || 300;
+    // Extract first number from range like "$150–$300" → 150
+    const priceMatch = tier.priceRange.match(/[\d,]+/);
+    const priceNum = priceMatch ? parseInt(priceMatch[0].replace(/,/g, ''), 10) : 300;
     const monthlyFilterCost = priceNum / 36; // amortize over 3 years
     const yearlySavings = avgBottledMonthly * 12 - monthlyFilterCost * 12;
 
