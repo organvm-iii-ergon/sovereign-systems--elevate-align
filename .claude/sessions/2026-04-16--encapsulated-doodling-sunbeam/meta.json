@@ -1,0 +1,29 @@
+{
+  "session_id": "16bf7dff-8608-4e0b-8487-70cae260a4cb",
+  "slug": "encapsulated-doodling-sunbeam",
+  "cwd": "/Users/4jp/Workspace/organvm-iii-ergon/sovereign-systems--elevate-align",
+  "git_branch": "main",
+  "project_dir": "-Users-4jp-Workspace-organvm-iii-ergon-sovereign-systems--elevate-align",
+  "started": "2026-04-16T14:59:31.936000+00:00",
+  "ended": "2026-04-16T15:11:10.811000+00:00",
+  "duration_minutes": 11,
+  "message_count": 105,
+  "human_messages": 45,
+  "assistant_messages": 60,
+  "tools_used": {
+    "Bash": 12,
+    "Read": 8,
+    "Glob": 6,
+    "ToolSearch": 7,
+    "Agent": 1,
+    "mcp__claude-in-chrome__tabs_context_mcp": 1,
+    "mcp__claude-in-chrome__tabs_create_mcp": 1,
+    "mcp__claude-in-chrome__navigate": 1,
+    "mcp__claude-in-chrome__read_page": 1,
+    "Write": 2,
+    "ExitPlanMode": 1
+  },
+  "first_human_message": "where left last: \" SESSION CLOSE AUDIT \u2014 2026-04-16                                                                                     \n                                                                                                                       \n  1. Commit + Push                         ",
+  "source_file": "/Users/4jp/.claude/projects/-Users-4jp-Workspace-organvm-iii-ergon-sovereign-systems--elevate-align/16bf7dff-8608-4e0b-8487-70cae260a4cb.jsonl",
+  "archived_at": "2026-04-16T15:12:52.454846+00:00"
+}

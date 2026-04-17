@@ -47,5 +47,23 @@
       "subagents/agent-acompact-ba2646f1c3e56b46.jsonl"
     ],
     "date": "2026-04-15"
+  },
+  "16bf7dff-8608-4e0b-8487-70cae260a4cb": {
+    "slug": "encapsulated-doodling-sunbeam",
+    "archive_dir": "/Users/4jp/Workspace/organvm-iii-ergon/sovereign-systems--elevate-align/.claude/sessions/2026-04-16--encapsulated-doodling-sunbeam",
+    "archived_at": "2026-04-16T15:12:52.466471+00:00",
+    "files": [
+      "transcript.md",
+      "prompts.md",
+      "review.md",
+      "meta.json",
+      "session.jsonl",
+      "subagents/agent-acompact-a48a1e56073fa3a8.jsonl",
+      "subagents/agent-acompact-dd11d5e12f0d7689.jsonl",
+      "subagents/agent-acompact-42f60ec12baeb49f.jsonl",
+      "subagents/agent-a58e409d7943c96a8.jsonl",
+      "subagents/agent-a58e409d7943c96a8.meta.json"
+    ],
+    "date": "2026-04-16"
   }
 }
