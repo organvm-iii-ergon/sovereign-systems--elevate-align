@@ -45,7 +45,7 @@ export const config: HubConfig = {
       emoji: '\u{1F30A}',
       tagline: 'Control your inputs. Stabilize your body.',
       color: '#119a9e',
-      url: '/water/',
+      url: '/pillars/physical',
       status: 'live',
       order: 1,
       citationIds: ['B-01', 'B-78', 'S-14', 'S-19']
