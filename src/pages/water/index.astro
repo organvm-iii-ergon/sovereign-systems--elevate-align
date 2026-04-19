@@ -10,88 +10,13 @@ import HydrationNode from '../../components/HydrationNode.astro';
 <Base title="The Water Hub">
   <Hero heading="Water changed everything for me." subtext="A simple shift that impacted my health, energy, and everything I thought I knew about healing." section="Physical Sovereignty">
     <CTAButton href="#hydration-node" label="Check what's in your water" />
-    <CTAButton href="/water/explore" label="Explore by category" variant="secondary" />
   </Hero>
-
-  <!-- This Is Not Normal -->
-  <section class="py-20 px-6 bg-ocean-900">
-    <div class="max-w-2xl mx-auto text-center">
-      <h2 class="font-heading text-[clamp(24px,3.5vw,36px)] font-light text-white mb-6" style="text-shadow: 0 0 50px rgba(17,154,158,0.08);">
-        This is not normal.
-      </h2>
-      <p class="text-white/45 text-[17px] font-light leading-[1.9] mb-6">
-        The leading cause of disease is inflammation. And the leading driver of chronic inflammation? The water you drink every day, the inputs your body runs on, and a medical system that normalizes what should alarm you.
-      </p>
-      <p class="text-white/35 text-[15px] font-light leading-[1.9]">
-        Fatigue, brain fog, hormone disruption, gut problems, skin issues — these aren't just aging. They're signals. Your body is asking for something different at the cellular level.
-      </p>
-    </div>
-  </section>
-
-  <!-- Three Health Tells -->
-  <div class="divider-line"></div>
-  <section class="py-20 px-6 bg-ocean-900">
-    <div class="max-w-4xl mx-auto">
-      <p class="text-center text-ocean-400 text-[11px] uppercase tracking-[0.25em] font-medium mb-10">
-        Three things your body is telling you right now
-      </p>
-      <div class="grid md:grid-cols-3 gap-8">
-        <div class="glass-card p-8 text-center">
-          <span class="text-[32px] block mb-4">💧</span>
-          <h3 class="font-heading text-[20px] font-light text-white mb-3">Water Quality</h3>
-          <p class="text-white/35 text-[14px] font-light leading-relaxed">
-            Not how much you drink — what your cells can actually absorb. Most water passes through without doing its job at the cellular level.
-          </p>
-        </div>
-        <div class="glass-card p-8 text-center">
-          <span class="text-[32px] block mb-4">🌙</span>
-          <h3 class="font-heading text-[20px] font-light text-white mb-3">Sleep Patterns</h3>
-          <p class="text-white/35 text-[14px] font-light leading-relaxed">
-            Your body repairs during sleep — but only when the cellular environment supports the processes that need to happen overnight.
-          </p>
-        </div>
-        <div class="glass-card p-8 text-center">
-          <span class="text-[32px] block mb-4">🔄</span>
-          <h3 class="font-heading text-[20px] font-light text-white mb-3">Bowel Movements</h3>
-          <p class="text-white/35 text-[14px] font-light leading-relaxed">
-            The most direct signal of what your gut is processing — and whether your body is actually detoxing or just recirculating.
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Hydration Metric -->
-  <section class="py-16 px-6 glow-bg">
-    <div class="max-w-xl mx-auto text-center">
-      <p class="font-heading text-[clamp(22px,3vw,32px)] font-light text-white leading-[1.4] mb-4">
-        If you're not at an <span class="text-ocean-400">8 or higher</span> in hydration — everything else is compensating.
-      </p>
-      <p class="text-white/30 text-[14px] font-light">
-        This is the non-negotiable. Water is where physical sovereignty starts.
-      </p>
-    </div>
-  </section>
 
   <!-- Documentary -->
   <div class="divider-line"></div>
   <section class="py-16 px-6 bg-ocean-900">
     <div class="max-w-3xl mx-auto">
       <VideoEmbed placeholder={true} title="My Water Story" />
-    </div>
-  </section>
-
-  <!-- Post-video grounding -->
-  <section class="py-16 px-6 bg-ocean-900">
-    <div class="max-w-[560px] mx-auto text-center">
-      <div class="w-8 h-px bg-ocean-500/30 mx-auto mb-10"></div>
-      <p class="text-white/45 text-[17px] font-light leading-[1.9]">
-        This isn't a product story. It's a turning point. Years of symptoms that doctors normalized, and one shift that started unraveling all of it.
-      </p>
-      <p class="text-white/45 text-[17px] font-light leading-[1.9] mt-5">
-        What I didn't expect was how much of what I thought was "just aging" was actually my body asking for something different at the cellular level.
-      </p>
-      <div class="w-8 h-px bg-ocean-500/30 mx-auto mt-10"></div>
     </div>
   </section>
 
@@ -119,16 +44,6 @@ import HydrationNode from '../../components/HydrationNode.astro';
   <div id="hydration-node">
     <HydrationNode />
   </div>
-
-  <!-- Branch Explorer CTA -->
-  <div class="divider-line"></div>
-  <section class="py-16 px-6 bg-ocean-900 text-center">
-    <h2 class="font-heading text-[24px] font-light text-white mb-3">Explore by category</h2>
-    <p class="text-white/35 text-[15px] font-light mb-8 max-w-md mx-auto leading-relaxed">
-      Gut health, fertility, athletic performance, inflammation — find the branch that speaks to you.
-    </p>
-    <CTAButton href="/water/explore" label="Explore branches" variant="secondary" />
-  </section>
 
   <!-- Loop Back to Physical Sovereignty -->
   <section class="py-12 px-6 bg-ocean-900 text-center">
