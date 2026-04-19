@@ -51,32 +51,33 @@ telos: >-
   distribution-worthy narrative — all through the same work, not as separate tasks.
 
 pragma: >-
-  Hub-and-spoke Astro 5 site deployed to Cloudflare Pages. 15 pages across 3
-  domains (elevatealign.com, stopdrinkingacid.com, eaucohub.com). Spiral
-  visualization renders in vanilla Canvas. Email capture function operational.
+  Hub-and-spoke Astro 5 site deployed to Cloudflare Pages. 29 pages across 3
+  domains (elevatealign.com, stopdrinkingacid.com, eaucohub.com). 13-node
+  golden-angle spiral visualization renders in vanilla Canvas with Phase 1
+  (5 nodes) live and Phase 2-4 (8 nodes) locked. 6-step HydrationNode funnel
+  with EWG API integration operational. Email capture and quiz routing live.
   Client IP boundary enforced (content = client's, code = studio's). Pricing
-  is agreed in principle at 10% of water sales until $10K, but written
-  formalization is still pending in GH#5. Maddie's 2026-04-01 Spiral Path
-  handoff is mirrored locally and atomized on the operating board, which now
-  tracks 19 issues across α/β/γ/ω phases. Launch-critical blockers are the
-  final node architecture decision (#13), reel/video asset access (#14), and
-  the V5/V6 prototype merge (#15). No case study written. No distribution
-  signal emitted. No research feedback formalized. The site exists and works,
-  but the richer Spiral Path build and the signal-closure obligations remain
-  unfinished.
+  agreed in principle at 10% of water sales until $10K; written formalization
+  still pending in GH#5. 65-want atomization complete; 22 of 48 in-scope wants
+  addressed by 5-PR corrective sequence (PRs #44-#48, merged 2026-04-19).
+  Architectural misalignment corrected: site is now spiral-first, water scoped
+  to mini version. 9 issues closed, 23 remain (most BLOCKED on Maddie inputs).
+  No case study written. No distribution signal emitted. No research feedback
+  formalized. Remaining blockers: Maddie's GHL quiz URL, documentary video,
+  Phase 2-4 node names, affiliate URLs, payment decision.
 
 praxis: >-
-  (1) Formalize the written revenue agreement tracked in GH#5. (2) Get Maddie
-  to lock the node architecture and ordering (#13) and confirm media access and
-  quiz-routing inputs (#14, #9). (3) Merge V5 content with the V6 shell into a
-  production spiral implementation (#15) and wire it into the hub. (4) Build
-  the Physical Sovereignty phase from the verified corpus (#6), then resolve
-  subscription boundaries and the remaining architecture decisions (#7, #17,
-  #18). (5) After launch-critical work is real, produce the case study,
-  distribution signal, and research feedback promised by the declared produces
-  edges. Primary risk: governance drift between GitHub, local repo memory, and
-  external handoff artifacts. The praxis is to keep those layers synchronized
-  while advancing the actual build.
+  (1) Formalize the written revenue agreement tracked in GH#5. (2) ~~Node
+  architecture locked (#13 CLOSED)~~. Confirm media access (#14) and get GHL
+  quiz URL from Maddie. (3) ~~V5/V6 merge completed (#15 CLOSED)~~ — spiral
+  rewritten with 13-node golden-angle layout. (4) ~~Physical Sovereignty phase
+  built (#6 CLOSED)~~ — 5 nodes live with content, Non Negotiable received
+  migrated health tells. (5) Resolve subscription boundaries (#7) and video
+  hosting strategy (#18). (6) Connect elevatealign.com custom domain. (7) After
+  launch-critical work is real, produce the case study (→V), distribution
+  signal (→VII), community material (→VI), and research feedback (→I) promised
+  by the declared produces edges. Primary risk: 9 wants BLOCKED on Maddie
+  inputs — forward velocity depends on client responsiveness.
 
 receptio: >-
   Partially received. Maddie has not only seen the site but supplied a 127-file
