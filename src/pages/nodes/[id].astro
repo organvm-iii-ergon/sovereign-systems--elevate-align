@@ -1,0 +1,136 @@
+---
+import Base from '../../layouts/Base.astro';
+import Hero from '../../components/Hero.astro';
+import CTAButton from '../../components/CTAButton.astro';
+import { config } from '../../data/hub.config';
+import type { SpiralNode } from '../../data/hub.config';
+
+export function getStaticPaths() {
+  return config.nodes
+    .filter((n) => n.url.startsWith('/nodes/'))
+    .map((node) => ({
+      params: { id: String(node.id) },
+      props: { node },
+    }));
+}
+
+interface Props {
+  node: SpiralNode;
+}
+
+const { node } = Astro.props;
+const pillar = config.pillars.find((p) => p.slug === node.pillarSlug);
+const phaseLabel = `${node.phase.charAt(0)}${node.phase.slice(1).toLowerCase()} Phase`;
+const isLive = node.status === 'live';
+---
+
+<Base title={node.name}>
+  <Hero heading={node.name} subtext={node.tagline} section={phaseLabel} />
+
+  {isLive ? (
+    <section class="py-20 px-6 bg-ocean-900">
+      <div class="max-w-2xl mx-auto">
+        {node.id === 1 && (
+          <>
+            <h2 class="font-heading text-[24px] font-light text-white mb-6">Start where you are</h2>
+            <p class="text-white/45 text-[16px] font-light leading-[1.9] mb-6">
+              You don't need to overhaul everything at once. The first step is the simplest: notice how you feel right now. Not how you think you should feel — how you actually feel.
+            </p>
+            <p class="text-white/35 text-[15px] font-light leading-[1.9]">
+              This node is about permission. Permission to start from wherever you are, without needing to earn your way to better health. The spiral begins here.
+            </p>
+          </>
+        )}
+        {node.id === 2 && (
+          <>
+            <h2 class="font-heading text-[24px] font-light text-white mb-6">Your body is the starting point</h2>
+            <p class="text-white/45 text-[16px] font-light leading-[1.9] mb-6">
+              Before mindset, before identity, before income — there is the body. If your physical foundation is unstable, every other system compensates for it. Energy, focus, mood, relationships — they all run on what your body provides.
+            </p>
+            <p class="text-white/35 text-[15px] font-light leading-[1.9]">
+              This isn't about fitness or aesthetics. It's about the biological systems that everything else depends on.
+            </p>
+          </>
+        )}
+        {node.id === 3 && (
+          <>
+            <h2 class="font-heading text-[24px] font-light text-white mb-6">Regulate before you optimize</h2>
+            <p class="text-white/45 text-[16px] font-light leading-[1.9] mb-6">
+              Most people jump straight to optimization — supplements, protocols, biohacks. But if the baseline isn't regulated, optimization is noise on top of chaos. Regulation means your nervous system isn't constantly in fight-or-flight, your sleep-wake cycle is consistent, and your body can actually absorb what you give it.
+            </p>
+          </>
+        )}
+        {node.id === 4 && (
+          <>
+            <h2 class="font-heading text-[24px] font-light text-white mb-6" style="text-shadow: 0 0 50px rgba(17,154,158,0.08);">
+              This is not normal.
+            </h2>
+            <p class="text-white/45 text-[17px] font-light leading-[1.9] mb-6">
+              The leading cause of disease is inflammation. And the leading driver of chronic inflammation? The water you drink every day, the inputs your body runs on, and a medical system that normalizes what should alarm you.
+            </p>
+            <p class="text-white/35 text-[15px] font-light leading-[1.9] mb-12">
+              Fatigue, brain fog, hormone disruption, gut problems, skin issues — these aren't just aging. They're signals. Your body is asking for something different at the cellular level.
+            </p>
+
+            <p class="text-center text-ocean-400 text-[11px] uppercase tracking-[0.25em] font-medium mb-10">
+              Three things your body is telling you right now
+            </p>
+            <div class="grid md:grid-cols-3 gap-8 mb-16">
+              <div class="glass-card p-8 text-center">
+                <span class="text-[32px] block mb-4">💧</span>
+                <h3 class="font-heading text-[20px] font-light text-white mb-3">Water Quality</h3>
+                <p class="text-white/35 text-[14px] font-light leading-relaxed">
+                  Not how much you drink — what your cells can actually absorb. Most water passes through without doing its job at the cellular level.
+                </p>
+              </div>
+              <div class="glass-card p-8 text-center">
+                <span class="text-[32px] block mb-4">🌙</span>
+                <h3 class="font-heading text-[20px] font-light text-white mb-3">Sleep Patterns</h3>
+                <p class="text-white/35 text-[14px] font-light leading-relaxed">
+                  Your body repairs during sleep — but only when the cellular environment supports the processes that need to happen overnight.
+                </p>
+              </div>
+              <div class="glass-card p-8 text-center">
+                <span class="text-[32px] block mb-4">🔄</span>
+                <h3 class="font-heading text-[20px] font-light text-white mb-3">Bowel Movements</h3>
+                <p class="text-white/35 text-[14px] font-light leading-relaxed">
+                  The most direct signal of what your gut is processing — and whether your body is actually detoxing or just recirculating.
+                </p>
+              </div>
+            </div>
+
+            <div class="max-w-xl mx-auto text-center py-12 glow-bg rounded-2xl">
+              <p class="font-heading text-[clamp(22px,3vw,32px)] font-light text-white leading-[1.4] mb-4 px-6">
+                If you're not at an <span class="text-ocean-400">8 or higher</span> in hydration — everything else is compensating.
+              </p>
+              <p class="text-white/30 text-[14px] font-light px-6">
+                This is the non-negotiable. Water is where physical sovereignty starts.
+              </p>
+            </div>
+          </>
+        )}
+      </div>
+    </section>
+  ) : (
+    <section class="py-20 px-6 bg-ocean-900">
+      <div class="max-w-md mx-auto text-center">
+        <div class="glass-card p-10" style="border-color: rgba(17,154,158,0.15);">
+          <div class="w-10 h-px bg-ocean-500/30 mx-auto mb-6"></div>
+          <p class="text-[48px] mb-4">{node.emoji}</p>
+          <h2 class="font-heading text-[24px] font-light text-white mb-3">Coming Soon</h2>
+          <p class="text-white/35 text-[15px] font-light leading-relaxed mb-8">
+            This node is part of the {phaseLabel}. It will unlock as the spiral grows.
+          </p>
+          {pillar && (
+            <CTAButton href={pillar.url} label={`Explore ${pillar.name}`} variant="secondary" />
+          )}
+        </div>
+      </div>
+    </section>
+  )}
+
+  <!-- Loop back -->
+  <section class="py-12 px-6 bg-ocean-900 text-center">
+    <CTAButton href="/" label="Back to the spiral" variant="secondary" />
+  </section>
+</Base>

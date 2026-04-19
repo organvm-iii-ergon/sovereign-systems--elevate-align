@@ -8,14 +8,14 @@
  */
 import { config } from '../../data/hub.config';
 
-const pillarsJson = JSON.stringify(config.pillars);
+const nodesJson = JSON.stringify(config.nodes);
 ---
 
 <div class="relative w-full hidden md:block h-[80vh]">
   <canvas
     id="spiral-canvas"
     class="absolute inset-0 w-full h-full"
-    data-pillars={pillarsJson}
+    data-nodes={nodesJson}
   ></canvas>
 </div>
 
@@ -35,12 +35,12 @@ const pillarsJson = JSON.stringify(config.pillars);
       (window as any)[INIT_KEY] = null;
     }
 
-    const raw = canvas.dataset.pillars;
+    const raw = canvas.dataset.nodes;
     if (!raw) return;
 
     import('./spiral.ts').then(({ initSpiral }) => {
-      const pillars = JSON.parse(raw);
-      const cleanup = initSpiral(canvas, pillars);
+      const nodes = JSON.parse(raw);
+      const cleanup = initSpiral(canvas, nodes);
 
       // Store cleanup so we can kill it if boot runs again
       (window as any)[INIT_KEY] = cleanup;
