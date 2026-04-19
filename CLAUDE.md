@@ -73,9 +73,9 @@ Frontmatter schema is enforced by `content.config.ts` — any new file must incl
 - To update pillar metadata (taglines, colors, URLs, GHL form URLs): edit `src/data/hub.config.ts`
 - To add a new branch: create `src/content/branches/<slug>.md` with correct frontmatter, then add an entry to the `branches` array in `hub.config.ts`
 ## Project Board
-[Operating Board](https://github.com/orgs/organvm-iii-ergon/projects/5) — 23 open issues (10 closed by corrective sequence 2026-04-19)
+[Operating Board](https://github.com/orgs/organvm-iii-ergon/projects/5) — 15 open issues, 32 closed (18 closed 2026-04-19)
 
-Critical path complete: #13 (CLOSED), #15 (CLOSED), #6 (CLOSED). Remaining work is content (BLOCKED on Maddie), infrastructure (#33 board views), or post-launch signals.
+Critical path complete. Content genome processed (merge pass, editorial review, research mapping, branch enrichment, product extraction). All remaining issues are client-gated, dependency-chained, or browser-only (#33).
 
 ## Deploy Configuration
 

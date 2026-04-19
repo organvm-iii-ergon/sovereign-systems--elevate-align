@@ -61,10 +61,13 @@ pragma: >-
   still pending in GH#5. 65-want atomization complete; 22 of 48 in-scope wants
   addressed by 5-PR corrective sequence (PRs #44-#48, merged 2026-04-19).
   Architectural misalignment corrected: site is now spiral-first, water scoped
-  to mini version. 9 issues closed, 23 remain (most BLOCKED on Maddie inputs).
-  No case study written. No distribution signal emitted. No research feedback
-  formalized. Remaining blockers: Maddie's GHL quiz URL, documentary video,
-  Phase 2-4 node names, affiliate URLs, payment decision.
+  to mini version. Content genome processed: 1,022 merge groups, 241 content
+  units, 104 flagged atoms dispositioned, 8 research threads mapped, 5 branches
+  enriched, 4 downloadable products extracted (93K chars). 32 issues closed,
+  15 remain (all client-gated or dependency-chained). No case study written.
+  No distribution signal emitted. No research feedback formalized. Remaining
+  blockers: Maddie's GHL quiz URL, documentary video, Phase 2-4 node names,
+  affiliate URLs, payment decision.
 
 praxis: >-
   (1) Formalize the written revenue agreement tracked in GH#5. (2) ~~Node
