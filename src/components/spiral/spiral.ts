@@ -1,24 +1,24 @@
 /**
  * Sovereign Systems Spiral — Canvas Renderer
  *
- * Vanilla Canvas API implementation with 2D Perlin noise for organic orbital motion.
- * No dependencies. Targets 60fps with 4 pillar nodes, orbital arcs, and a logarithmic
- * spiral line. Desktop only — mobile gets SpiralFallback.astro (CSS-only).
+ * Vanilla Canvas API implementation with 2D Perlin noise for organic motion.
+ * No dependencies. 13 spiral nodes positioned via golden-angle phyllotaxis
+ * on an Archimedean spiral path. Desktop only — mobile gets SpiralFallback.
  */
 
 // ---------------------------------------------------------------------------
 // Types
 // ---------------------------------------------------------------------------
 
-interface PillarData {
+interface NodeData {
+  id: number;
   name: string;
-  slug: string;
+  phase: string;
   emoji: string;
   tagline: string;
   color: string;
+  status: 'live' | 'locked';
   url: string;
-  status: 'live' | 'coming-soon';
-  order: number;
 }
 
 // ---------------------------------------------------------------------------
@@ -77,15 +77,17 @@ function noise2d(x: number, y: number): number {
 // Spiral Renderer
 // ---------------------------------------------------------------------------
 
-const BASE_ROTATION_SPEED = 0.001;
-const NODE_RADIUS = 26;
-const HIT_RADIUS = 30;
+const GOLDEN_ANGLE = 2.39996;
+const BASE_ROTATION_SPEED = 0.0006;
+const NODE_RADIUS = 22;
+const HIT_RADIUS = 28;
 const HOVER_SCALE = 1.15;
-const LABEL_FONT = '13px Inter, system-ui, sans-serif';
+const LABEL_FONT = '12px Inter, system-ui, sans-serif';
 const SUB_LABEL_FONT = '10px Inter, system-ui, sans-serif';
-const CENTER_LABEL_FONT = '600 14px Inter, system-ui, sans-serif';
-const EMOJI_FONT_SIZE = 22;
-const ORBITAL_RADIUS_FACTORS = [0.6, 0.75, 0.9, 1.05];
+const CENTER_LABEL_FONT = '600 13px Inter, system-ui, sans-serif';
+const EMOJI_FONT_SIZE = 18;
+const SPIRAL_MIN_R = 0.18;
+const SPIRAL_MAX_R = 0.95;
 
 interface NodeState {
   x: number;
@@ -96,7 +98,7 @@ interface NodeState {
 
 export function initSpiral(
   canvas: HTMLCanvasElement,
-  pillars: PillarData[],
+  nodes: NodeData[],
 ): () => void {
   const ctx = canvas.getContext('2d')!;
   let width = 0;
@@ -110,7 +112,7 @@ export function initSpiral(
 
   initNoise();
 
-  const nodeStates: NodeState[] = pillars.map(() => ({
+  const nodeStates: NodeState[] = nodes.map(() => ({
     x: 0,
     y: 0,
     currentScale: 1,
@@ -127,7 +129,7 @@ export function initSpiral(
     canvas.width = width * dpr;
     canvas.height = height * dpr;
     ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-    baseRadius = Math.min(width, height) * 0.34;
+    baseRadius = Math.min(width, height) * 0.38;
   }
 
   // --- Hit detection ---
@@ -139,9 +141,9 @@ export function initSpiral(
   }
 
   function handleClick(): void {
-    for (let i = 0; i < pillars.length; i++) {
-      if (nodeStates[i].hovered) {
-        window.location.href = pillars[i].url;
+    for (let i = 0; i < nodes.length; i++) {
+      if (nodeStates[i].hovered && nodes[i].status === 'live') {
+        window.location.href = nodes[i].url;
         return;
       }
     }
@@ -158,28 +160,14 @@ export function initSpiral(
 
   // --- Draw functions ---
 
-  function drawOrbitalPaths(cx: number, cy: number): void {
-    ctx.save();
-    ctx.setLineDash([2, 6]);
-    ctx.lineWidth = 1;
-    for (let i = 0; i < pillars.length; i++) {
-      const r = baseRadius * ORBITAL_RADIUS_FACTORS[i];
-      ctx.strokeStyle = hexToRgba(pillars[i].color, 0.15);
-      ctx.beginPath();
-      ctx.arc(cx, cy, r, 0, Math.PI * 2);
-      ctx.stroke();
-    }
-    ctx.restore();
-  }
-
   function drawLogarithmicSpiral(cx: number, cy: number, time: number): void {
     ctx.save();
-    ctx.strokeStyle = hexToRgba('#c9a96e', 0.12);
+    ctx.strokeStyle = hexToRgba('#c9a96e', 0.1);
     ctx.lineWidth = 1;
     ctx.beginPath();
     const a = 4;
     const b = 0.18;
-    const rotOffset = time * 0.0003;
+    const rotOffset = time * 0.0002;
     for (let theta = 0; theta < Math.PI * 8; theta += 0.05) {
       const r = a * Math.exp(b * theta);
       if (r > baseRadius * 1.2) break;
@@ -192,69 +180,84 @@ export function initSpiral(
     ctx.restore();
   }
 
+  function drawSpiralPath(cx: number, cy: number): void {
+    ctx.save();
+    ctx.setLineDash([2, 8]);
+    ctx.lineWidth = 1;
+    ctx.strokeStyle = hexToRgba('#119a9e', 0.08);
+    ctx.beginPath();
+    for (let i = 0; i <= 120; i++) {
+      const t = i / 120;
+      const theta = t * nodes.length * GOLDEN_ANGLE;
+      const r = baseRadius * (SPIRAL_MIN_R + t * (SPIRAL_MAX_R - SPIRAL_MIN_R));
+      const x = cx + r * Math.cos(theta + globalAngle);
+      const y = cy + r * Math.sin(theta + globalAngle);
+      if (i === 0) ctx.moveTo(x, y);
+      else ctx.lineTo(x, y);
+    }
+    ctx.stroke();
+    ctx.restore();
+  }
+
   function drawCenterNode(cx: number, cy: number, time: number): void {
     const pulse = 0.7 + 0.3 * Math.sin(time * 0.002);
 
-    // Subtle glow
     ctx.save();
     ctx.globalAlpha = pulse * 0.15;
     ctx.fillStyle = '#119a9e';
     ctx.beginPath();
-    ctx.arc(cx, cy, 18, 0, Math.PI * 2);
+    ctx.arc(cx, cy, 16, 0, Math.PI * 2);
     ctx.fill();
     ctx.restore();
 
-    // Dot
     ctx.save();
     ctx.globalAlpha = pulse;
     ctx.fillStyle = '#e8e4df';
     ctx.beginPath();
-    ctx.arc(cx, cy, 4, 0, Math.PI * 2);
+    ctx.arc(cx, cy, 3, 0, Math.PI * 2);
     ctx.fill();
     ctx.restore();
 
-    // Label
     ctx.save();
-    ctx.globalAlpha = pulse * 0.8;
+    ctx.globalAlpha = pulse * 0.7;
     ctx.fillStyle = '#e8e4df';
     ctx.font = CENTER_LABEL_FONT;
     ctx.textAlign = 'center';
     ctx.textBaseline = 'top';
-    ctx.fillText('SOVEREIGN SYSTEMS', cx, cy + 14);
+    ctx.fillText('SOVEREIGN SYSTEMS', cx, cy + 12);
     ctx.restore();
   }
 
-  function drawPillarNode(
-    pillar: PillarData,
+  function drawNode(
+    node: NodeData,
     state: NodeState,
     index: number,
-    time: number,
   ): void {
-    const isLive = pillar.status === 'live';
+    const isLive = node.status === 'live';
     const isHovered = state.hovered;
     const targetScale = isHovered ? HOVER_SCALE : 1;
     state.currentScale = lerp(state.currentScale, targetScale, 0.12);
     const scale = state.currentScale;
     const r = NODE_RADIUS * scale;
 
-    const baseAlpha = isLive ? 1 : 0.5;
+    const baseAlpha = isLive ? 1 : 0.4;
     const hoverAlpha = isHovered ? 1 : baseAlpha;
 
     ctx.save();
     ctx.translate(state.x, state.y);
 
     // Fill
-    ctx.fillStyle = hexToRgba(pillar.color, 0.12 * hoverAlpha);
+    ctx.fillStyle = hexToRgba(node.color, 0.1 * hoverAlpha);
     ctx.beginPath();
     ctx.arc(0, 0, r, 0, Math.PI * 2);
     ctx.fill();
 
     // Stroke
-    ctx.lineWidth = 2;
+    ctx.lineWidth = 1.5;
     if (!isLive) {
-      ctx.setLineDash([4, 4]);
+      ctx.setLineDash([3, 3]);
     }
-    ctx.strokeStyle = hexToRgba(pillar.color, 0.8 * hoverAlpha);
+    ctx.strokeStyle = hexToRgba(node.color, 0.7 * hoverAlpha);
     ctx.beginPath();
     ctx.arc(0, 0, r, 0, Math.PI * 2);
     ctx.stroke();
@@ -264,19 +267,19 @@ export function initSpiral(
     ctx.font = `${Math.round(EMOJI_FONT_SIZE * scale)}px serif`;
     ctx.textAlign = 'center';
     ctx.textBaseline = 'middle';
-    ctx.fillText(pillar.emoji, 0, -1);
+    ctx.fillText(node.emoji, 0, -1);
 
     // Name label
-    ctx.fillStyle = hexToRgba('#e8e4df', isHovered ? 1 : 0.75 * baseAlpha);
+    ctx.fillStyle = hexToRgba('#e8e4df', isHovered ? 1 : 0.65 * baseAlpha);
     ctx.font = LABEL_FONT;
     ctx.textBaseline = 'top';
-    ctx.fillText(pillar.name, 0, r + 8);
+    ctx.fillText(node.name, 0, r + 6);
 
-    // "coming soon" sub-label
+    // "locked" sub-label
     if (!isLive) {
-      ctx.fillStyle = hexToRgba('#8cc5d3', 0.6);
+      ctx.fillStyle = hexToRgba('#8cc5d3', 0.5);
       ctx.font = SUB_LABEL_FONT;
-      ctx.fillText('coming soon', 0, r + 24);
+      ctx.fillText('locked', 0, r + 20);
     }
 
     ctx.restore();
@@ -285,39 +288,30 @@ export function initSpiral(
   // --- Main draw loop ---
 
   function draw(time: number): void {
-    // Fill with opaque background to prevent ghost trails from translucent elements
     ctx.fillStyle = '#071e22';
     ctx.fillRect(0, 0, width, height);
 
     const cx = width / 2;
     const cy = height / 2;
 
-    // Logarithmic spiral background line
     drawLogarithmicSpiral(cx, cy, time);
+    drawSpiralPath(cx, cy);
 
-    // Orbital paths
-    drawOrbitalPaths(cx, cy);
-
-    // Advance global rotation
     globalAngle += BASE_ROTATION_SPEED;
 
-    // Pillar nodes
     let anyCursorHover = false;
-    for (let i = 0; i < pillars.length; i++) {
-      const orbitalR = baseRadius * ORBITAL_RADIUS_FACTORS[i];
-      const angleOffset = (Math.PI * 2 * i) / pillars.length;
+    for (let i = 0; i < nodes.length; i++) {
+      // Golden-angle spiral positioning
+      const t = i / (nodes.length - 1);
+      const theta = i * GOLDEN_ANGLE + globalAngle;
+      const rBase = baseRadius * (SPIRAL_MIN_R + t * (SPIRAL_MAX_R - SPIRAL_MIN_R));
 
       // Perlin wobble
-      const noiseAngle = noise2d(i * 1.7, time * 0.0004) * 0.25;
-      const noiseRadius = noise2d(i * 2.3 + 100, time * 0.0003) * 12;
+      const noiseAngle = noise2d(i * 1.7, time * 0.0003) * 0.15;
+      const noiseRadius = noise2d(i * 2.3 + 100, time * 0.0002) * 8;
 
-      // Slow down orbit for hovered node
-      const speedMul = nodeStates[i].hovered ? 0.3 : 1;
-      const angle = globalAngle * speedMul + angleOffset + noiseAngle;
-      const r = orbitalR + noiseRadius;
-
-      const nx = cx + r * Math.cos(angle);
-      const ny = cy + r * Math.sin(angle);
+      const nx = cx + (rBase + noiseRadius) * Math.cos(theta + noiseAngle);
+      const ny = cy + (rBase + noiseRadius) * Math.sin(theta + noiseAngle);
       nodeStates[i].x = nx;
       nodeStates[i].y = ny;
 
@@ -328,12 +322,11 @@ export function initSpiral(
       nodeStates[i].hovered = dist < HIT_RADIUS;
       if (nodeStates[i].hovered) anyCursorHover = true;
 
-      drawPillarNode(pillars[i], nodeStates[i], i, time);
+      drawNode(nodes[i], nodeStates[i], i);
     }
 
     canvas.style.cursor = anyCursorHover ? 'pointer' : 'default';
 
-    // Center node
     drawCenterNode(cx, cy, time);
 
     animFrame = requestAnimationFrame(draw);
