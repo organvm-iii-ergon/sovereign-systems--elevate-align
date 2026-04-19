@@ -40,8 +40,8 @@ Format: Each want gets a unique ID, category, evolution timeline, and implementa
 | Mar 25 | 032526-B p5 | "The very basis of what I want is all there 100%" |
 | Apr 4 | 20260404 p7 | "Oooo I love that!! I think I'm following !!" (re: 13-node spiral path) |
 
-**Current state:** SITE IS INVERTED. Water dominates. Spiral is sidebar decoration with 4 nodes.
-**Status:** NOT ADDRESSED
+**Current state:** Spiral canvas is the 80vh hero on homepage. 13 nodes on golden-angle spiral. Water is one node in Phase 1.
+**Status:** DONE — PR #44 + #47, merged 2026-04-19
 
 ### W-002: Water is a "mini version" nested in a pillar
 
@@ -51,8 +51,8 @@ Format: Each want gets a unique ID, category, evolution timeline, and implementa
 | Mar 25 | 032526-A p5 | "then we can focus on the first pillar cause it branches off to the water stuff" |
 | Apr 5 | 20260414 p1 | "I want the main water attraction for the spiral to be the filtration and then that will convert to water funnel and sales" |
 
-**Current state:** Water is the biggest, most feature-rich page. 7 sections, embedded HydrationNode, EWG API.
-**Status:** OPPOSITE OF REQUEST
+**Current state:** Water page scoped to mini version (67 lines). Hero, video, education, HydrationNode funnel, research. Health tells moved to Non Negotiable node.
+**Status:** DONE — PR #45, merged 2026-04-19
 
 ### W-003: Pillars as phases/themes of nodes
 
@@ -61,8 +61,8 @@ Format: Each want gets a unique ID, category, evolution timeline, and implementa
 | Mar 25 | 032526-A p5 | "just pillars of everything" — pillars frame the spiral, not standalone pages |
 | Apr 4 | 20260404 p3 | Node table shows pillars as phases: Phase 1 = ELEVATE (Physical), with 5 nodes inside |
 
-**Current state:** Pillars have individual pages at `/pillars/[slug]`. Homepage has 4-pillar grid.
-**Status:** PARTIALLY ADDRESSED — pillar pages exist but aren't structured as node-phase gateways
+**Current state:** Homepage shows "Four Phases of Sovereignty" grid. Physical Sovereignty routes to /pillars/physical (not /water/). 13 nodes organized by phase.
+**Status:** DONE — PR #44 + #47, merged 2026-04-19
 
 ### W-004: Homepage section order is modular/rearrangeable
 
@@ -71,8 +71,8 @@ Format: Each want gets a unique ID, category, evolution timeline, and implementa
 | Mar 25 | 032526-B p5 | "I want to rearrange the order a bit though" |
 | Mar 25 | 032526-B p5 | Your response: "Tell me what order you want things in (like 'spiral first, then pillars, then quote') and I'll move them." |
 
-**Current state:** Homepage sections are in Astro components. Modular. No specific order requested yet.
-**Status:** ARCHITECTURE READY, awaiting specific order
+**Current state:** Homepage restructured: spiral hero → quiz CTA → pillar phases → quote → video placeholder → final CTA. All sections modular Astro components.
+**Status:** DONE — PR #44, merged 2026-04-19
 
 ---
 
@@ -86,8 +86,8 @@ Format: Each want gets a unique ID, category, evolution timeline, and implementa
 | Apr 1 | 20260401 p2 | "I found spiral code YAHOOOO!!" — V5 helix prototype (Three.js, 14 nodes with deep-dive modals) |
 | Apr 4 | 20260404 p4 | V5 helix prototype shared via Gemini link + HTML code pasted |
 
-**Current state:** 4-node Canvas 2D orbital spiral. V5 prototype archived at `docs/archive/v5-helix-prototype.html`.
-**Status:** PARTIAL — 4 nodes rendered, 13-node architecture not reflected in spiral
+**Current state:** 13-node Canvas 2D golden-angle spiral. Phase 1 nodes live, Phase 2-4 locked. V5 prototype archived.
+**Status:** DONE — PR #47, merged 2026-04-19
 
 ### W-006: 13-node architecture
 
@@ -98,8 +98,8 @@ Format: Each want gets a unique ID, category, evolution timeline, and implementa
 | Apr 4 | 20260404 p8 | "let me just really lock them in and then send you finalized list so we don't have to make any changes there moving forward!!" |
 | Apr 4 | 20260404 p8 | LOCKED — 13 nodes confirmed. Issue #13 CLOSED. |
 
-**Current state:** 13 nodes defined in documentation. Canvas spiral only renders 4 pillar nodes.
-**Status:** ARCHITECTURE LOCKED, NOT IMPLEMENTED IN CODE
+**Current state:** 13 nodes defined in `hub.config.ts` and rendered on canvas. Each node has a page at `/nodes/[id]`.
+**Status:** DONE — PR #47, merged 2026-04-19
 
 ### W-007: Nodes 3 & 4 merge → "Regulate"
 
@@ -107,8 +107,8 @@ Format: Each want gets a unique ID, category, evolution timeline, and implementa
 |------|--------|-----------|
 | Apr 4 | 20260404 p3 | "I want to put 3 & 4 together and call it regulate (first line can be something like most people think it's the nervous system but a crucial step to regulating your nervous system is balancing your blood sugar first)" |
 
-**Current state:** `physical.md` updated with "Regulate — Nervous System + Inflammation" naming.
-**Status:** NAMING DONE in content. Not reflected in spiral visualization.
+**Current state:** Node 3 "Regulate" in hub.config.ts, rendered on canvas spiral, page at `/nodes/3`.
+**Status:** DONE — PR #47, merged 2026-04-19
 
 ### W-008: Node 5 rename → "Non Negotiable"
 
@@ -117,8 +117,8 @@ Format: Each want gets a unique ID, category, evolution timeline, and implementa
 | Apr 4 | 20260404 p3 | "then 5 (now 4) maybe we change to 'non negotiable'" |
 | Apr 4 | 20260404 p3 | "5 can be something catchy about the water / proper hydration / cellular healing / us being 70% water" |
 
-**Current state:** `physical.md` updated with "Water — The Non Negotiable" naming.
-**Status:** NAMING DONE in content. Not reflected in spiral.
+**Current state:** Node 4 "Non Negotiable" in hub.config.ts, rendered on canvas, page at `/nodes/4` with migrated health tells and hydration metric content.
+**Status:** DONE — PR #47, merged 2026-04-19
 
 ### W-009: Button looping from water to node 5
 
@@ -126,8 +126,8 @@ Format: Each want gets a unique ID, category, evolution timeline, and implementa
 |------|--------|-----------|
 | Apr 4 | 20260404 p3 | "Then from here can go into each water really just a button looping to node 5" |
 
-**Current state:** Water page has "See the full Physical Sovereignty pillar" CTA at bottom. No node-5 specific loop.
-**Status:** PARTIALLY DONE — needs to target node 5 specifically, not just pillar page
+**Current state:** Node 5 (Water) in config links to `/water/`. Water page loops back to Physical Sovereignty pillar. Canvas node click navigates to `/water/`.
+**Status:** DONE — PR #47, merged 2026-04-19
 
 ---
 
@@ -142,8 +142,8 @@ Format: Each want gets a unique ID, category, evolution timeline, and implementa
 | Apr 4 | 20260404 p5 | "I can't wait to get the bones up and basics and then focus on the water stuff so I can send people there for their filter info" |
 | Apr 13 | 20260414 p1 | "water/filter page pretty much done (so then I can start sending the water/filter page asap" |
 
-**Current state:** Water page fully built with 7 sections + HydrationNode embed + EWG API.
-**Status:** BUILT — but scoped too large. Should be a focused filtration entrance, not the site's centerpiece.
+**Current state:** Water page scoped to focused filtration funnel (67 lines). Hero, video, education, HydrationNode, research accordion.
+**Status:** DONE — PR #45, merged 2026-04-19
 
 ### W-011: ZIP code contaminant lookup
 
@@ -230,8 +230,8 @@ Format: Each want gets a unique ID, category, evolution timeline, and implementa
 | Apr 5 | 20260414 p1 | "idk if we need to do the 6 water hub branches (fertility autoimmunity etc) cause I'm working on that right now... it's in GHL" |
 | Apr 5 | 20260414 p1 | "I don't want to take time building that out on the site / be doubling up on it" |
 
-**Current state:** 6 branch pages built on site (gut-hormones, fertility, athletic, autoimmune, cancer-support, sustainability). Email-gated.
-**Status:** CONTRADICTS REQUEST — branches exist on site when Maddie says they belong in GHL. However, they serve as awareness content and are email-gated.
+**Current state:** Branch explorer CTA removed from water page. Branch pages still exist but are not promoted from the funnel. Explore page preserved with EmailGate.
+**Status:** DONE — PR #45 removed CTA, merged 2026-04-19. Branch pages retained as awareness content.
 
 ---
 
@@ -246,8 +246,8 @@ Format: Each want gets a unique ID, category, evolution timeline, and implementa
 | Mar 25 | 032526-B p5-6 | "after I know who's in there then they can be directed to a branch depending on their personalized answers" |
 | Apr 4 | 20260404 p3-4 | "they can take the personalized health quiz to be directed into my water funnel & specified branches" |
 
-**Current state:** No quiz on homepage. `/water/quiz` page exists but GHL embed URL is empty.
-**Status:** NOT ADDRESSED — quiz should be primary CTA on homepage, not buried on water subpage.
+**Current state:** Quiz is primary CTA on homepage ("What are you here for?"). Top-level `/quiz` page with name+email gate → pillar routing options. `/water/quiz` preserved for future GHL embed.
+**Status:** DONE — PR #44 (homepage CTA) + #46 (quiz page), merged 2026-04-19
 
 ### W-021: Explore page gated by name + email
 
@@ -256,8 +256,8 @@ Format: Each want gets a unique ID, category, evolution timeline, and implementa
 | Mar 25 | 032526-B p5-6 | "explore page would be 'locked' in a sense until I have that info" |
 | Mar 25 | 032526-B p5-6 | "or go through all of it" — some users browse all, others get routed |
 
-**Current state:** `/water/explore` exists with branch cards. Individual branches are email-gated but explore page itself is not.
-**Status:** NOT ADDRESSED — explore page should require name+email to access.
+**Current state:** `/water/explore` exists with EmailGate wrapping MiniSpiral content. Requires email to unlock.
+**Status:** DONE — EmailGate already implemented (pre-existing). Confirmed in PR #46 review.
 
 ### W-022: "Main overview" at top of explore
 
@@ -265,8 +265,8 @@ Format: Each want gets a unique ID, category, evolution timeline, and implementa
 |------|--------|-----------|
 | Mar 25 | 032526-B p5-6 | "I think for first launch the explore page is how I want it to be with maybe the 'main overview' being an option at the top and that's where the funnel that is live already lives" |
 
-**Current state:** Explore page has branch cards. No "main overview" section linking to existing GHL funnel.
-**Status:** NOT ADDRESSED
+**Current state:** Explore page has EmailGate + MiniSpiral + "Not sure where to start?" quiz CTA. GHL overview link requires Maddie's URL.
+**Status:** PARTIAL — quiz CTA exists. Main GHL overview link BLOCKED (no URL provided).
 
 ### W-023: Quiz built in GHL, embed URL provided
 
@@ -288,8 +288,8 @@ Format: Each want gets a unique ID, category, evolution timeline, and implementa
 |------|--------|-----------|
 | Apr 4 | 20260404 p3 | "opening line can be like feeling like shit is not normal" |
 
-**Current state:** Built as section on `/water/` page: "This is not normal."
-**Status:** DONE — but MISPLACED. This is "Non Negotiable" node context, currently on water page.
+**Current state:** Relocated from water page to `/nodes/4` (Non Negotiable). "This is not normal" is the node's opening section.
+**Status:** DONE — PR #45 (removed from water) + PR #47 (placed in node 4), merged 2026-04-19
 
 ### W-025: Inflammation as leading cause of disease
 
@@ -297,8 +297,8 @@ Format: Each want gets a unique ID, category, evolution timeline, and implementa
 |------|--------|-----------|
 | Apr 4 | 20260404 p3 | "the leading cause of disease is inflammation - the two most crucial elements to health are absorption & efficiency" |
 
-**Current state:** Built into water page section.
-**Status:** DONE — but MISPLACED (same as W-024).
+**Current state:** Relocated to `/nodes/4` (Non Negotiable) as part of the opening inflammation section.
+**Status:** DONE — PR #45 + #47, merged 2026-04-19
 
 ### W-026: Three health tells (water, sleep, bowel movements)
 
@@ -306,8 +306,8 @@ Format: Each want gets a unique ID, category, evolution timeline, and implementa
 |------|--------|-----------|
 | Apr 4 | 20260404 p3 | "the three biggest tells to how healthy you are & to help you gauge those first three things? Water, sleep & bowel movements" |
 
-**Current state:** 3-column grid on `/water/` page.
-**Status:** DONE — but MISPLACED. These are node context for "Non Negotiable," not water page sections.
+**Current state:** 3-column grid relocated to `/nodes/4` (Non Negotiable). Water Quality, Sleep Patterns, Bowel Movements.
+**Status:** DONE — PR #45 + #47, merged 2026-04-19
 
 ### W-027: Hydration metric — "8 or higher"
 
@@ -315,8 +315,8 @@ Format: Each want gets a unique ID, category, evolution timeline, and implementa
 |------|--------|-----------|
 | Apr 4 | 20260404 p3 | "If you're not an 8 or higher in hydration, sleep meaning getting 7-9 (11 for women) hours a night of peaceful restful sleep & you're taking 1-2 bowel movements a day" |
 
-**Current state:** Callout section on `/water/` page.
-**Status:** DONE — but MISPLACED (same as W-024/25/26).
+**Current state:** "8 or higher" hydration metric relocated to `/nodes/4` (Non Negotiable) as a styled callout.
+**Status:** DONE — PR #45 + #47, merged 2026-04-19
 
 ### W-028: Documentary / short instruction video
 
@@ -441,8 +441,8 @@ Mapped streams: (1) water ionizer sales, (2) filter commissions, (3) DP sign-ups
 | Mar 25 | 032526-B p6 | Your response: "Point elevatealign.com to Netlify" |
 | Apr 17 | 20260417 p1 | Maddie: "My username is eauco-mads & email is maddie@elevatealign.com" (CF credentials) |
 
-**Current state:** Deployed to `sovereign-systems-spiral.pages.dev`. Custom domain not connected.
-**Status:** NOT DONE — Issue #3. Needs CF dashboard config.
+**Current state:** Deployed to `sovereign-systems-spiral.pages.dev`. Custom domain ready to connect. Walkthrough v3 notes this for Maddie.
+**Status:** NOTED — needs Cloudflare dashboard action (non-code). Documented in walkthrough v3, PR #48, merged 2026-04-19.
 
 ---
 
@@ -521,8 +521,8 @@ Mapped streams: (1) water ionizer sales, (2) filter commissions, (3) DP sign-ups
 |------|--------|-----------|
 | ~Apr 12 | 20260414 p1 | "I tried poking around in the site you sent me a few times but got confused, is there things I need to be doing to see the demo/prototype like before but with all the new updates!?" |
 
-**Current state:** Nav overhaul shipped (commit `ae33323`): grouped nav, breadcrumbs, footer sitemap. Walkthrough v2 created.
-**Status:** FIX SHIPPED — but Maddie's response to the fix is unknown. She said she looked through the walkthrough v2 but we have no direct confirmation of the improved nav experience.
+**Current state:** Nav overhaul + full architecture overhaul shipped. Walkthrough v3 created explaining spiral-first restructure with 29 pages.
+**Status:** DONE — walkthrough v3 (PR #48) covers all 5 PRs. Merged 2026-04-19.
 
 ### W-047: Short video at top of explore/landing
 
@@ -531,8 +531,8 @@ Mapped streams: (1) water ionizer sales, (2) filter commissions, (3) DP sign-ups
 | Mar 25 | 032526-B p5-6 | "maybe just need to put a short video at the top explaining what it is and how it works? Or is that overkill?" |
 | Mar 25 | 032526-B p7 | Your response: "The short video at the top of explore is NOT overkill — it's actually the right move. 30-60 seconds: 'Here's how this works. Pick what speaks to you, or start with the overview.'" |
 
-**Current state:** VideoEmbed placeholder on water page. No video on explore page.
-**Status:** BLOCKED — video not filmed. Architecture note: video should be on homepage/explore, not water page.
+**Current state:** VideoEmbed placeholder on homepage ("What is Sovereign Systems?") and water page ("My Water Story"). Architecture corrected.
+**Status:** PLACEHOLDER DONE — PR #44 (homepage video section), merged 2026-04-19. Video filming BLOCKED on Maddie.
 
 ### W-048: Notes format — screenshots with annotations
 
