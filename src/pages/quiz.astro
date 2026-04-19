@@ -1,0 +1,116 @@
+---
+import Base from '../layouts/Base.astro';
+import { config } from '../data/hub.config';
+---
+
+<Base title="Find Your Starting Point">
+  <section class="min-h-[80vh] flex items-center justify-center py-24 px-6 glow-bg">
+    <div class="max-w-lg mx-auto w-full">
+      <!-- Gate: name + email -->
+      <div id="quiz-gate" class="text-center">
+        <h1 class="font-heading text-[clamp(32px,5vw,48px)] font-light text-white mb-4">
+          What are you here for?
+        </h1>
+        <p class="text-white/40 text-[15px] font-light max-w-[400px] mx-auto mb-10 leading-relaxed">
+          Tell us where to start. We'll point you to the right phase of the spiral.
+        </p>
+        <form id="quiz-entry-form" class="space-y-4 max-w-sm mx-auto">
+          <input
+            type="text"
+            name="name"
+            placeholder="Your name"
+            required
+            class="w-full bg-ocean-800/50 border border-ocean-500/20 rounded-lg px-4 py-3 text-white placeholder:text-white/20 focus:outline-none focus:border-ocean-400 transition-colors text-[15px]"
+          />
+          <input
+            type="email"
+            name="email"
+            placeholder="your@email.com"
+            required
+            class="w-full bg-ocean-800/50 border border-ocean-500/20 rounded-lg px-4 py-3 text-white placeholder:text-white/20 focus:outline-none focus:border-ocean-400 transition-colors text-[15px]"
+          />
+          <button
+            type="submit"
+            class="w-full bg-ocean-500 hover:bg-ocean-400 text-white font-medium py-3 rounded-lg transition-all shadow-lg shadow-ocean-500/10 active:scale-[0.98] text-[14px]"
+          >
+            Show me my path
+          </button>
+        </form>
+        <p class="mt-6 text-[10px] text-white/15 uppercase tracking-[0.15em]">
+          No spam. Only sovereignty.
+        </p>
+      </div>
+
+      <!-- Routing options (revealed after form submit) -->
+      <div id="quiz-options" class="hidden text-center">
+        <h2 class="font-heading text-[clamp(28px,4vw,40px)] font-light text-white mb-3">
+          Where do you want to start?
+        </h2>
+        <p class="text-white/35 text-[14px] font-light mb-10">
+          Each phase builds on the last. Most people start with the body.
+        </p>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          {config.pillars.map((pillar) => (
+            <a
+              href={pillar.url}
+              class="glass-card p-6 text-center group"
+            >
+              <span class="text-3xl block mb-3">{pillar.emoji}</span>
+              <p class="font-heading text-[18px] font-light text-white/80 mb-1">{pillar.name}</p>
+              <p class="text-white/30 text-[12px] font-light leading-relaxed">{pillar.tagline}</p>
+              <span class="block mt-3 text-ocean-500 text-[12px] font-medium tracking-wide opacity-0 group-hover:opacity-100 transition-opacity">
+                Start here &rarr;
+              </span>
+            </a>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+</Base>
+
+<script>
+  const gate = document.getElementById('quiz-gate');
+  const options = document.getElementById('quiz-options');
+  const form = document.getElementById('quiz-entry-form') as HTMLFormElement | null;
+  const QUIZ_KEY = 'ss_quiz_unlocked';
+
+  function reveal() {
+    if (gate && options) {
+      gate.classList.add('hidden');
+      options.classList.remove('hidden');
+    }
+  }
+
+  if (localStorage.getItem(QUIZ_KEY) === 'true') {
+    reveal();
+  }
+
+  form?.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const nameInput = form.querySelector('input[name="name"]') as HTMLInputElement;
+    const emailInput = form.querySelector('input[name="email"]') as HTMLInputElement;
+    const button = form.querySelector('button[type="submit"]') as HTMLButtonElement;
+
+    const name = nameInput.value.trim();
+    const email = emailInput.value.trim();
+
+    if (name && email) {
+      button.innerText = 'Finding your path...';
+      button.disabled = true;
+
+      try {
+        await fetch('/capture', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ name, email, source: 'quiz' }),
+        });
+      } catch {
+        // Proceed regardless — don't block the UX
+      }
+
+      localStorage.setItem(QUIZ_KEY, 'true');
+      reveal();
+    }
+  });
+</script>
