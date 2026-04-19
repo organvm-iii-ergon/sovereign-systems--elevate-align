@@ -52,15 +52,17 @@ Frontmatter schema is enforced by `content.config.ts` — any new file must incl
 - `docs/superpowers/intakes/2026-04-01-maddie-spiral-path-board-atomization.md` — board translation from handoff to executable issue surface
 - `.codex/plans/2026-04-01-maddie-spiral-orchestration-assignment.md` — dated orchestration plan preserved as session history
 
-## Page Map (16 pages total)
+## Page Map (29 pages total)
 
 | Route | File | Description |
 |-------|------|-------------|
-| `/` | `src/pages/index.astro` | Hub — spiral + 4-pillar grid |
+| `/` | `src/pages/index.astro` | Hub — spiral hero (80vh), quiz CTA, pillar phases, video placeholder |
+| `/quiz` | `src/pages/quiz.astro` | Name+email gate → pillar routing options |
+| `/nodes/[id]` | `src/pages/nodes/[id].astro` | Dynamic spiral node pages (12 pages — node 5/Water links to /water/) |
 | `/pillars/[slug]` | `src/pages/pillars/[slug].astro` | Dynamic pillar pages (physical, inner, identity, financial) |
-| `/water/` | `src/pages/water/index.astro` | Physical Sovereignty / Stop Drinking Acid funnel home |
-| `/water/explore` | `src/pages/water/explore.astro` | Branch explorer (6 branches) |
-| `/water/quiz` | `src/pages/water/quiz.astro` | GHL quiz embed page |
+| `/water/` | `src/pages/water/index.astro` | Water mini version — hero, video, education, HydrationNode funnel |
+| `/water/explore` | `src/pages/water/explore.astro` | Branch explorer (email-gated) |
+| `/water/quiz` | `src/pages/water/quiz.astro` | GHL quiz embed placeholder (URL empty) |
 | `/water/[slug]` | `src/pages/water/[slug].astro` | Individual branch deep-dives (6 branches) |
 | `/business/` | `src/pages/business/index.astro` | Financial Sovereignty / EauCo Hub landing |
 | `/research` | `src/pages/research.astro` | Full research bibliography (email-gated) |
@@ -71,15 +73,15 @@ Frontmatter schema is enforced by `content.config.ts` — any new file must incl
 - To update pillar metadata (taglines, colors, URLs, GHL form URLs): edit `src/data/hub.config.ts`
 - To add a new branch: create `src/content/branches/<slug>.md` with correct frontmatter, then add an entry to the `branches` array in `hub.config.ts`
 ## Project Board
-[Operating Board](https://github.com/orgs/organvm-iii-ergon/projects/5) — 19 issues after the 2026-04-01 Maddie Spiral Path handoff
+[Operating Board](https://github.com/orgs/organvm-iii-ergon/projects/5) — 23 open issues (10 closed by corrective sequence 2026-04-19)
 
-Current critical path: `#13` final node architecture -> `#15` V5/V6 prototype merge -> `#6` Physical Sovereignty phase build
+Critical path complete: #13 (CLOSED), #15 (CLOSED), #6 (CLOSED). Remaining work is content (BLOCKED on Maddie), infrastructure (#33 board views), or post-launch signals.
 
 ## Deploy Configuration
 
 - **Platform:** Cloudflare Pages (sovereign-systems-spiral.pages.dev)
 - **Build:** `npm run build` → `dist/`
-- **Functions:** `functions/capture.ts` — Cloudflare Pages Function for email capture
+- **Functions:** `functions/capture.ts` (email capture), `functions/api/water-report.ts` (EWG API proxy)
 - Primary domain: `elevatealign.com` (connect via CF dashboard → Custom Domains)
 - Secondary domains: `stopdrinkingacid.com`, `eaucohub.com` (connect when ready)
 - `netlify.toml` is legacy — kept for reference but deployment is on Cloudflare
