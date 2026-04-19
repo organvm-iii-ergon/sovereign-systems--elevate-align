@@ -218,14 +218,7 @@ export function initSpiral(
     ctx.fill();
     ctx.restore();
 
-    ctx.save();
-    ctx.globalAlpha = pulse * 0.7;
-    ctx.fillStyle = '#e8e4df';
-    ctx.font = CENTER_LABEL_FONT;
-    ctx.textAlign = 'center';
-    ctx.textBaseline = 'top';
-    ctx.fillText('SOVEREIGN SYSTEMS', cx, cy + 12);
-    ctx.restore();
+    // Center label omitted — heading is above the canvas in the DOM
   }
 
   function drawNode(
