@@ -56,7 +56,7 @@ Frontmatter schema is enforced by `content.config.ts` — any new file must incl
 
 | Route | File | Description |
 |-------|------|-------------|
-| `/` | `src/pages/index.astro` | Hub — spiral hero (80vh), quiz CTA, pillar phases, video placeholder |
+| `/` | `src/pages/index.astro` | Hub — spiral hero (80vh), quiz CTA, quote, video, pillar phases (below fold) |
 | `/quiz` | `src/pages/quiz.astro` | Name+email gate → pillar routing options |
 | `/nodes/[id]` | `src/pages/nodes/[id].astro` | Dynamic spiral node pages (12 pages — node 5/Water links to /water/) |
 | `/pillars/[slug]` | `src/pages/pillars/[slug].astro` | Dynamic pillar pages (physical, inner, identity, financial) |
@@ -73,9 +73,9 @@ Frontmatter schema is enforced by `content.config.ts` — any new file must incl
 - To update pillar metadata (taglines, colors, URLs, GHL form URLs): edit `src/data/hub.config.ts`
 - To add a new branch: create `src/content/branches/<slug>.md` with correct frontmatter, then add an entry to the `branches` array in `hub.config.ts`
 ## Project Board
-[Operating Board](https://github.com/orgs/organvm-iii-ergon/projects/5) — 15 open issues, 32 closed (18 closed 2026-04-19)
+[Operating Board](https://github.com/orgs/organvm-iii-ergon/projects/5) — 13 open issues, 34 closed (2 closed 2026-04-20: #25 editorial triage, #33 board views)
 
-Critical path complete. Content genome processed (merge pass, editorial review, research mapping, branch enrichment, product extraction). All remaining issues are client-gated, dependency-chained, or browser-only (#33).
+Critical path complete. Content genome processed (merge pass, editorial review, research mapping, branch enrichment, product extraction). All remaining issues are client-gated or dependency-chained. Awaiting Maddie's questionnaire responses to unblock architectural decisions.
 
 ## Deploy Configuration
 

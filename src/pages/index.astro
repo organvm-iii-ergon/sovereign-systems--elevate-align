@@ -28,32 +28,14 @@ import { config } from '../data/hub.config';
   <!-- Quiz CTA -->
   <section class="py-20 px-6 bg-ocean-900 text-center">
     <div class="max-w-xl mx-auto">
-      <p class="text-[11px] font-medium tracking-[0.2em] uppercase text-ocean-500 mb-3">Start Here</p>
+      <p class="text-[11px] font-medium tracking-[0.2em] uppercase text-ocean-500 mb-3">Explore the Spiral</p>
       <h2 class="font-heading text-[clamp(28px,4vw,44px)] font-light text-white mb-4">
-        What are you here for?
+        Find your starting point
       </h2>
       <p class="text-white/40 text-[15px] font-light max-w-[440px] mx-auto mb-10 leading-relaxed">
-        Take the quiz to find your starting point on the spiral.
+        Take the quiz to find where you are on the spiral — and where to begin.
       </p>
       <CTAButton href="/quiz" label="Take the Quiz" />
-    </div>
-  </section>
-
-  <!-- Divider -->
-  <div class="divider-line"></div>
-
-  <!-- Pillar Phases -->
-  <section class="py-24 px-6 bg-ocean-900">
-    <div class="max-w-[800px] mx-auto">
-      <p class="text-center text-[11px] font-medium tracking-[0.2em] uppercase text-ocean-500 mb-3">The Journey</p>
-      <h2 class="font-heading text-[clamp(32px,4vw,48px)] font-light text-white text-center mb-16">
-        Four Phases of Sovereignty
-      </h2>
-      <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
-        {config.pillars.map((pillar) => (
-          <PillarCard pillar={pillar} />
-        ))}
-      </div>
     </div>
   </section>
 
@@ -77,6 +59,24 @@ import { config } from '../data/hub.config';
         What is Sovereign Systems?
       </h2>
       <VideoEmbed placeholder={true} title="What is Sovereign Systems?" />
+    </div>
+  </section>
+
+  <!-- Divider -->
+  <div class="divider-line"></div>
+
+  <!-- Pillar Phases (structural reference) -->
+  <section class="py-24 px-6 bg-ocean-900">
+    <div class="max-w-[800px] mx-auto">
+      <p class="text-center text-[11px] font-medium tracking-[0.2em] uppercase text-ocean-500 mb-3">The Architecture</p>
+      <h2 class="font-heading text-[clamp(32px,4vw,48px)] font-light text-white text-center mb-16">
+        Four Phases of Sovereignty
+      </h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+        {config.pillars.map((pillar) => (
+          <PillarCard pillar={pillar} />
+        ))}
+      </div>
     </div>
   </section>
 
