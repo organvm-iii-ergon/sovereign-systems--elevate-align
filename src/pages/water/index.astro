@@ -5,6 +5,7 @@ import CTAButton from '../../components/CTAButton.astro';
 import VideoEmbed from '../../components/VideoEmbed.astro';
 import ResearchAccordion from '../../components/ResearchAccordion.astro';
 import HydrationNode from '../../components/HydrationNode.astro';
+import { config } from '../../data/hub.config';
 ---
 
 <Base title="The Water Hub">
@@ -45,12 +46,39 @@ import HydrationNode from '../../components/HydrationNode.astro';
     <HydrationNode />
   </div>
 
-  <!-- Loop Back to Physical Sovereignty -->
-  <section class="py-12 px-6 bg-ocean-900 text-center">
-    <p class="text-white/25 text-[13px] font-light mb-4">
-      Water is one piece of the physical foundation.
+  <!-- Branch Teasers -->
+  <div class="divider-line"></div>
+  <section id="branches" class="py-20 px-6 bg-ocean-900">
+    <div class="max-w-2xl mx-auto">
+      <div class="text-center mb-10">
+        <p class="text-[11px] font-medium tracking-[0.2em] uppercase text-ocean-500 mb-3">Go Deeper</p>
+        <h2 class="font-heading text-[28px] font-light text-white mb-2">Explore by what you're navigating</h2>
+        <p class="text-white/35 text-[14px] font-light">Every body is different. Each branch is grounded in peer-reviewed research.</p>
+      </div>
+      <div class="grid grid-cols-2 gap-4">
+        {config.branches.map((branch) => (
+          <a
+            href={`/water/${branch.slug}`}
+            class="glass-card flex items-center gap-3 p-5 group"
+          >
+            <span class="text-2xl flex-shrink-0">{branch.emoji}</span>
+            <span class="text-[14px] font-medium text-white/60 group-hover:text-white transition-colors">
+              {branch.name}
+            </span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Quiz CTA -->
+  <div class="divider-line"></div>
+  <section class="py-16 px-6 bg-ocean-900 text-center">
+    <h2 class="font-heading text-[22px] font-light text-white mb-3">Not sure where to start?</h2>
+    <p class="text-white/35 text-[15px] font-light mb-8 max-w-md mx-auto leading-relaxed">
+      Answer a few questions and we'll point you toward the right branch.
     </p>
-    <CTAButton href="/pillars/physical" label="See the full Physical Sovereignty pillar" variant="secondary" />
+    <CTAButton href="/water/quiz" label="Take the assessment" variant="secondary" />
   </section>
 
   <!-- Research -->

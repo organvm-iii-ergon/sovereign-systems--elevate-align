@@ -1,48 +1,46 @@
 ---
 /**
- * SpiralIsland — Desktop canvas wrapper.
+ * SpiralIsland — Desktop Three.js helix wrapper.
  *
- * Uses a module <script> so Vite bundles the dynamic import of spiral.ts.
- * Pillar data is passed via a data attribute on the canvas element.
- * Canvas container is hidden below md breakpoint via Tailwind.
+ * Dynamically imports spiral.ts (Three.js 3D helix renderer).
+ * Node data is passed via data attribute on the container div.
+ * Container is hidden below md breakpoint — mobile gets SpiralFallback.
  */
 import { config } from '../../data/hub.config';
 
 const nodesJson = JSON.stringify(config.nodes);
 ---
 
-<div class="relative w-full hidden md:block h-[80vh]">
-  <canvas
-    id="spiral-canvas"
+<div class="relative w-full hidden md:block h-[85vh]">
+  <div
+    id="spiral-container"
     class="absolute inset-0 w-full h-full"
     data-nodes={nodesJson}
-  ></canvas>
+  ></div>
 </div>
 
 <script>
-  // Guard against double-initialization (causes ghost echoes)
   const INIT_KEY = '__spiralCleanup';
 
   function boot(): void {
     if (!window.matchMedia('(min-width: 768px)').matches) return;
 
-    const canvas = document.getElementById('spiral-canvas') as HTMLCanvasElement | null;
-    if (!canvas) return;
+    const container = document.getElementById('spiral-container');
+    if (!container) return;
 
-    // Kill any existing animation loop before starting a new one
+    // Kill any existing instance before starting a new one
     if ((window as any)[INIT_KEY]) {
       (window as any)[INIT_KEY]();
       (window as any)[INIT_KEY] = null;
     }
 
-    const raw = canvas.dataset.nodes;
+    const raw = container.dataset.nodes;
     if (!raw) return;
 
     import('./spiral.ts').then(({ initSpiral }) => {
       const nodes = JSON.parse(raw);
-      const cleanup = initSpiral(canvas, nodes);
+      const cleanup = initSpiral(container, nodes);
 
-      // Store cleanup so we can kill it if boot runs again
       (window as any)[INIT_KEY] = cleanup;
 
       // Cleanup on Astro view transition

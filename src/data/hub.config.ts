@@ -19,7 +19,7 @@ export interface Branch {
   ghlUrl?: string;
 }
 
-export type Phase = 'ELEVATE' | 'INNER' | 'IDENTITY' | 'FINANCIAL';
+export type Phase = 'ELEVATE' | 'ALIGN' | 'UNLOCK';
 
 export interface SpiralNode {
   id: number;
@@ -100,23 +100,22 @@ export const config: HubConfig = {
     },
   ],
   nodes: [
-    // Phase 1: ELEVATE (Physical Sovereignty) — live
-    { id: 1,  name: 'Feel Good First',    phase: 'ELEVATE',   pillarSlug: 'physical',  emoji: '✦', tagline: 'Start where you are.',                      color: '#119a9e', status: 'live',   url: '/nodes/1'  },
-    { id: 2,  name: 'Your Body',          phase: 'ELEVATE',   pillarSlug: 'physical',  emoji: '🧬', tagline: 'Your body is the starting point.',          color: '#119a9e', status: 'live',   url: '/nodes/2'  },
-    { id: 3,  name: 'Regulate',           phase: 'ELEVATE',   pillarSlug: 'physical',  emoji: '⚖️', tagline: 'Regulate before you optimize.',             color: '#119a9e', status: 'live',   url: '/nodes/3'  },
-    { id: 4,  name: 'Non Negotiable',     phase: 'ELEVATE',   pillarSlug: 'physical',  emoji: '🛡️', tagline: 'The things you cannot skip.',               color: '#119a9e', status: 'live',   url: '/nodes/4'  },
-    { id: 5,  name: 'Water',              phase: 'ELEVATE',   pillarSlug: 'physical',  emoji: '🌊', tagline: 'Water is where physical sovereignty starts.', color: '#119a9e', status: 'live',   url: '/water/'   },
-    // Phase 2: INNER — locked
-    { id: 6,  name: 'Emotional Terrain',  phase: 'INNER',     pillarSlug: 'inner',     emoji: '🕊️', tagline: 'Map what you feel.',                        color: '#8cc5d3', status: 'locked', url: '/nodes/6'  },
-    { id: 7,  name: 'Nervous System',     phase: 'INNER',     pillarSlug: 'inner',     emoji: '🌙', tagline: 'Regulate the signal.',                      color: '#8cc5d3', status: 'locked', url: '/nodes/7'  },
-    { id: 8,  name: 'Mental Clarity',     phase: 'INNER',     pillarSlug: 'inner',     emoji: '🔮', tagline: 'Clear the noise.',                          color: '#8cc5d3', status: 'locked', url: '/nodes/8'  },
-    // Phase 3: IDENTITY — locked
-    { id: 9,  name: 'Purpose',            phase: 'IDENTITY',  pillarSlug: 'identity',  emoji: '✨', tagline: 'Know what you stand for.',                  color: '#c9a96e', status: 'locked', url: '/nodes/9'  },
-    { id: 10, name: 'Voice',              phase: 'IDENTITY',  pillarSlug: 'identity',  emoji: '📣', tagline: 'Say what only you can say.',                color: '#c9a96e', status: 'locked', url: '/nodes/10' },
-    { id: 11, name: 'Boundaries',         phase: 'IDENTITY',  pillarSlug: 'identity',  emoji: '🚧', tagline: 'Protect what you build.',                   color: '#c9a96e', status: 'locked', url: '/nodes/11' },
-    // Phase 4: FINANCIAL — locked
-    { id: 12, name: 'Income Systems',     phase: 'FINANCIAL', pillarSlug: 'financial', emoji: '💠', tagline: 'Build the machine.',                        color: '#3dbfc4', status: 'locked', url: '/nodes/12' },
-    { id: 13, name: 'Leverage',           phase: 'FINANCIAL', pillarSlug: 'financial', emoji: '⚡', tagline: 'Scale without trading time.',               color: '#3dbfc4', status: 'locked', url: '/nodes/13' },
+    // ELEVATE: body → Physical Sovereignty (nodes 1-5)
+    { id: 1,  name: 'Feel Good First',           phase: 'ELEVATE', pillarSlug: 'physical',  emoji: '✦',  tagline: 'Shift your state first.',                     color: '#119a9e', status: 'live',   url: '/nodes/1'  },
+    { id: 2,  name: 'Awareness',                 phase: 'ELEVATE', pillarSlug: 'physical',  emoji: '🧬', tagline: 'See where you are.',                          color: '#119a9e', status: 'live',   url: '/nodes/2'  },
+    { id: 3,  name: 'Regulation',                phase: 'ELEVATE', pillarSlug: 'physical',  emoji: '⚖️', tagline: 'Regulate before you optimize.',               color: '#119a9e', status: 'live',   url: '/nodes/3'  },
+    { id: 4,  name: 'Elevate',                   phase: 'ELEVATE', pillarSlug: 'physical',  emoji: '🛡️', tagline: 'Rise above the baseline.',                    color: '#119a9e', status: 'live',   url: '/nodes/4'  },
+    { id: 5,  name: 'Root Healing',              phase: 'ELEVATE', pillarSlug: 'physical',  emoji: '🌊', tagline: 'Heal from the root. Start with water.',       color: '#119a9e', status: 'live',   url: '/water/'   },
+    // ALIGN: mind + life → Inner & Identity Sovereignty (nodes 6-11)
+    { id: 6,  name: 'Responsibility (with Love)', phase: 'ALIGN',  pillarSlug: 'inner',     emoji: '🕊️', tagline: 'Own your choices with love.',                 color: '#8cc5d3', status: 'locked', url: '/nodes/6'  },
+    { id: 7,  name: 'Unbecoming',                phase: 'ALIGN',   pillarSlug: 'inner',     emoji: '🌙', tagline: 'Release what was never yours.',               color: '#8cc5d3', status: 'locked', url: '/nodes/7'  },
+    { id: 8,  name: 'Alignment',                 phase: 'ALIGN',   pillarSlug: 'inner',     emoji: '🔮', tagline: 'Come into coherence.',                        color: '#8cc5d3', status: 'locked', url: '/nodes/8'  },
+    { id: 9,  name: 'The Becoming',              phase: 'ALIGN',   pillarSlug: 'identity',  emoji: '✨', tagline: 'Step into who you are.',                      color: '#c9a96e', status: 'locked', url: '/nodes/9'  },
+    { id: 10, name: 'Awakening',                 phase: 'ALIGN',   pillarSlug: 'identity',  emoji: '📣', tagline: 'See clearly for the first time.',             color: '#c9a96e', status: 'locked', url: '/nodes/10' },
+    { id: 11, name: 'Integrate',                 phase: 'ALIGN',   pillarSlug: 'identity',  emoji: '🚧', tagline: 'Bring it all together.',                      color: '#c9a96e', status: 'locked', url: '/nodes/11' },
+    // UNLOCK: freedom → Financial Sovereignty (nodes 12-13)
+    { id: 12, name: 'Authenticate',              phase: 'UNLOCK',  pillarSlug: 'financial', emoji: '💠', tagline: 'Prove it to yourself.',                       color: '#3dbfc4', status: 'locked', url: '/nodes/12' },
+    { id: 13, name: 'Unlock',                    phase: 'UNLOCK',  pillarSlug: 'financial', emoji: '⚡', tagline: 'Freedom is the final layer.',                 color: '#3dbfc4', status: 'locked', url: '/nodes/13' },
   ],
   branches: [
     { 
