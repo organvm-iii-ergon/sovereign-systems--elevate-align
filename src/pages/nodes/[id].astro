@@ -22,9 +22,15 @@ const { node } = Astro.props;
 const pillar = config.pillars.find((p) => p.slug === node.pillarSlug);
 const phaseLabel = `${node.phase.charAt(0)}${node.phase.slice(1).toLowerCase()} Phase`;
 const isLive = node.status === 'live';
+
+// Sequential navigation
+const allNodes = config.nodes;
+const currentIndex = allNodes.findIndex((n) => n.id === node.id);
+const prevNode = currentIndex > 0 ? allNodes[currentIndex - 1] : null;
+const nextNode = currentIndex < allNodes.length - 1 ? allNodes[currentIndex + 1] : null;
 ---
 
-<Base title={node.name}>
+<Base title={`${node.name} — ${config.name}`} description={node.tagline}>
   <Hero heading={node.name} subtext={node.tagline} section={phaseLabel} />
 
   {isLive ? (
@@ -43,12 +49,12 @@ const isLive = node.status === 'live';
         )}
         {node.id === 2 && (
           <>
-            <h2 class="font-heading text-[24px] font-light text-white mb-6">Your body is the starting point</h2>
+            <h2 class="font-heading text-[24px] font-light text-white mb-6">See where you actually are</h2>
             <p class="text-white/45 text-[16px] font-light leading-[1.9] mb-6">
               Before mindset, before identity, before income — there is the body. If your physical foundation is unstable, every other system compensates for it. Energy, focus, mood, relationships — they all run on what your body provides.
             </p>
             <p class="text-white/35 text-[15px] font-light leading-[1.9]">
-              This isn't about fitness or aesthetics. It's about the biological systems that everything else depends on.
+              Awareness isn't about judgment. It's about honest assessment — mapping what your body is actually telling you so the work that follows is precise, not guesswork.
             </p>
           </>
         )}
@@ -62,51 +68,13 @@ const isLive = node.status === 'live';
         )}
         {node.id === 4 && (
           <>
-            <h2 class="font-heading text-[24px] font-light text-white mb-6" style="text-shadow: 0 0 50px rgba(17,154,158,0.08);">
-              This is not normal.
-            </h2>
-            <p class="text-white/45 text-[17px] font-light leading-[1.9] mb-6">
-              The leading cause of disease is inflammation. And the leading driver of chronic inflammation? The water you drink every day, the inputs your body runs on, and a medical system that normalizes what should alarm you.
+            <h2 class="font-heading text-[24px] font-light text-white mb-6">Rise above the baseline</h2>
+            <p class="text-white/45 text-[16px] font-light leading-[1.9] mb-6">
+              Once you've regulated — once the chaos has quieted and the foundation is stable — you can start to build. Elevation isn't about pushing harder. It's about raising the floor so that your new normal is what your old peak used to be.
             </p>
-            <p class="text-white/35 text-[15px] font-light leading-[1.9] mb-12">
-              Fatigue, brain fog, hormone disruption, gut problems, skin issues — these aren't just aging. They're signals. Your body is asking for something different at the cellular level.
+            <p class="text-white/35 text-[15px] font-light leading-[1.9] mb-6">
+              This is the shift from survival to sovereignty. Your body isn't fighting anymore — it's ready to grow.
             </p>
-
-            <p class="text-center text-ocean-400 text-[11px] uppercase tracking-[0.25em] font-medium mb-10">
-              Three things your body is telling you right now
-            </p>
-            <div class="grid md:grid-cols-3 gap-8 mb-16">
-              <div class="glass-card p-8 text-center">
-                <span class="text-[32px] block mb-4">💧</span>
-                <h3 class="font-heading text-[20px] font-light text-white mb-3">Water Quality</h3>
-                <p class="text-white/35 text-[14px] font-light leading-relaxed">
-                  Not how much you drink — what your cells can actually absorb. Most water passes through without doing its job at the cellular level.
-                </p>
-              </div>
-              <div class="glass-card p-8 text-center">
-                <span class="text-[32px] block mb-4">🌙</span>
-                <h3 class="font-heading text-[20px] font-light text-white mb-3">Sleep Patterns</h3>
-                <p class="text-white/35 text-[14px] font-light leading-relaxed">
-                  Your body repairs during sleep — but only when the cellular environment supports the processes that need to happen overnight.
-                </p>
-              </div>
-              <div class="glass-card p-8 text-center">
-                <span class="text-[32px] block mb-4">🔄</span>
-                <h3 class="font-heading text-[20px] font-light text-white mb-3">Bowel Movements</h3>
-                <p class="text-white/35 text-[14px] font-light leading-relaxed">
-                  The most direct signal of what your gut is processing — and whether your body is actually detoxing or just recirculating.
-                </p>
-              </div>
-            </div>
-
-            <div class="max-w-xl mx-auto text-center py-12 glow-bg rounded-2xl">
-              <p class="font-heading text-[clamp(22px,3vw,32px)] font-light text-white leading-[1.4] mb-4 px-6">
-                If you're not at an <span class="text-ocean-400">8 or higher</span> in hydration — everything else is compensating.
-              </p>
-              <p class="text-white/30 text-[14px] font-light px-6">
-                This is the non-negotiable. Water is where physical sovereignty starts.
-              </p>
-            </div>
           </>
         )}
       </div>
@@ -129,8 +97,32 @@ const isLive = node.status === 'live';
     </section>
   )}
 
-  <!-- Loop back -->
-  <section class="py-12 px-6 bg-ocean-900 text-center">
-    <CTAButton href="/" label="Back to the spiral" variant="secondary" />
+  <!-- Sequential navigation -->
+  <section class="py-12 px-6 bg-ocean-900 border-t border-white/[0.04]">
+    <div class="max-w-2xl mx-auto">
+      <div class="flex items-center justify-between">
+        {prevNode ? (
+          <a href={prevNode.url} class="group flex items-center gap-2 text-white/30 hover:text-white/60 transition-colors">
+            <span class="text-[18px] group-hover:-translate-x-1 transition-transform">&larr;</span>
+            <div class="text-right">
+              <span class="text-[10px] uppercase tracking-[0.15em] text-white/20 block">Previous</span>
+              <span class="text-[14px]">{prevNode.emoji} {prevNode.name}</span>
+            </div>
+          </a>
+        ) : <div />}
+        <a href="/" class="text-[11px] uppercase tracking-[0.15em] text-white/20 hover:text-white/40 transition-colors">
+          Spiral
+        </a>
+        {nextNode ? (
+          <a href={nextNode.url} class="group flex items-center gap-2 text-white/30 hover:text-white/60 transition-colors">
+            <div>
+              <span class="text-[10px] uppercase tracking-[0.15em] text-white/20 block">Next</span>
+              <span class="text-[14px]">{nextNode.emoji} {nextNode.name}</span>
+            </div>
+            <span class="text-[18px] group-hover:translate-x-1 transition-transform">&rarr;</span>
+          </a>
+        ) : <div />}
+      </div>
+    </div>
   </section>
 </Base>

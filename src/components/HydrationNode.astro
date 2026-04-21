@@ -16,9 +16,10 @@
 import { hydrationConfig } from '../data/hydration.config';
 
 const { steps, filterTiers, costData } = hydrationConfig;
+const filterTiersJson = JSON.stringify(filterTiers);
 ---
 
-<section class="hydration-node w-full max-w-3xl mx-auto px-4 py-16">
+<section class="hydration-node w-full max-w-3xl mx-auto px-4 py-16" data-filter-tiers={filterTiersJson}>
   <!-- Header -->
   <div class="text-center mb-16">
     <p class="text-ocean-400 text-[11px] uppercase tracking-[0.25em] font-medium mb-4">
@@ -255,9 +256,16 @@ const { steps, filterTiers, costData } = hydrationConfig;
             </div>
           </div>
 
-          <button class="w-full text-center py-3 border border-ocean-500/20 rounded-lg text-ocean-400 text-[13px] hover:bg-ocean-500/10 transition-all">
-            Learn More →
-          </button>
+          <div class="filter-match-info text-[12px] text-ocean-400/60 mb-3 hidden"></div>
+          {filter.affiliateUrl ? (
+            <a href={filter.affiliateUrl} target="_blank" rel="noopener" class="block w-full text-center py-3 border border-ocean-500/20 rounded-lg text-ocean-400 text-[13px] hover:bg-ocean-500/10 transition-all">
+              View Details →
+            </a>
+          ) : (
+            <div class="w-full text-center py-3 border border-white/10 rounded-lg text-white/25 text-[13px]">
+              Details Coming Soon
+            </div>
+          )}
         </div>
       ))}
     </div>
@@ -401,8 +409,8 @@ const { steps, filterTiers, costData } = hydrationConfig;
       // Render contaminants
       renderContaminants(report.contaminants || []);
 
-      // Store report for filter matching
-      (window as any).__waterReport = report;
+      // Run filter matching against contaminants
+      matchFiltersToReport(report.contaminants || []);
     } catch {
       // On failure, reset stale metrics and show fallback
       const totalEl = document.getElementById('result-total');
@@ -467,6 +475,47 @@ const { steps, filterTiers, costData } = hydrationConfig;
 
     localStorage.setItem('hn_email_captured', 'true');
   });
+
+  // --- Filter matching (client-side) ---
+  function matchFiltersToReport(contaminants: Array<{ name: string; exceedsHealth?: boolean; exceedsLegal?: boolean }>) {
+    const section = document.querySelector('.hydration-node');
+    const tiersJson = section?.getAttribute('data-filter-tiers');
+    if (!tiersJson) return;
+
+    const tiers = JSON.parse(tiersJson);
+    const concerning = contaminants.filter(c => c.exceedsHealth || c.exceedsLegal);
+    if (concerning.length === 0) return;
+
+    // Score each tier
+    const scores = tiers.map((tier: any) => {
+      const removesLower = (tier.removes || []).map((r: string) => r.toLowerCase());
+      let matched = 0;
+      for (const c of concerning) {
+        const cLower = c.name.toLowerCase();
+        if (removesLower.some((r: string) => cLower.includes(r) || r.includes('all major'))) {
+          matched++;
+        }
+      }
+      const matchScore = Math.round((matched / concerning.length) * 100);
+      const reason = matchScore >= 80
+        ? `Removes ${matched} of ${concerning.length} flagged contaminants in your area`
+        : matchScore >= 50
+          ? `Covers key contaminants — good starting point for your profile`
+          : `Targeted solution — best for ${(tier.bestFor || '').toLowerCase()}`;
+      return { id: tier.id, matchScore, reason };
+    });
+
+    // Update filter cards with match info
+    const filterCards = document.querySelectorAll('#step-2-results .glass-card');
+    filterCards.forEach((card, i) => {
+      if (!scores[i]) return;
+      const info = card.querySelector('.filter-match-info');
+      if (info) {
+        info.textContent = `${scores[i].matchScore}% match — ${scores[i].reason}`;
+        info.classList.remove('hidden');
+      }
+    });
+  }
 
   // --- Step indicator management ---
   function updateStepIndicator(step: number, state: 'active' | 'complete') {

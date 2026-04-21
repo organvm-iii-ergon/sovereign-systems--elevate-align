@@ -8,7 +8,7 @@ import HydrationNode from '../../components/HydrationNode.astro';
 import { config } from '../../data/hub.config';
 ---
 
-<Base title="The Water Hub">
+<Base title="Root Healing — The Water Hub" description="Discover what's in your water, find the right filter for your region, and start healing from the root.">
   <Hero heading="Water changed everything for me." subtext="A simple shift that impacted my health, energy, and everything I thought I knew about healing." section="Physical Sovereignty">
     <CTAButton href="#hydration-node" label="Check what's in your water" />
   </Hero>
@@ -85,6 +85,29 @@ import { config } from '../../data/hub.config';
   <section class="py-12 px-6 bg-ocean-900">
     <div class="max-w-2xl mx-auto text-left">
       <ResearchAccordion ids={['B-01', 'B-02', 'B-78']} />
+    </div>
+  </section>
+
+  <!-- Navigation back -->
+  <section class="py-12 px-6 bg-ocean-900 border-t border-white/[0.04]">
+    <div class="max-w-2xl mx-auto flex justify-between items-center">
+      <a href="/nodes/4" class="group flex items-center gap-2 text-white/30 hover:text-white/60 transition-colors">
+        <span class="text-[18px] group-hover:-translate-x-1 transition-transform">&larr;</span>
+        <div>
+          <span class="text-[10px] uppercase tracking-[0.15em] text-white/20 block">Previous</span>
+          <span class="text-[14px]">🛡️ Elevate</span>
+        </div>
+      </a>
+      <a href="/" class="text-[11px] uppercase tracking-[0.15em] text-white/20 hover:text-white/40 transition-colors">
+        Spiral
+      </a>
+      <a href="/nodes/6" class="group flex items-center gap-2 text-white/30 hover:text-white/60 transition-colors">
+        <div class="text-right">
+          <span class="text-[10px] uppercase tracking-[0.15em] text-white/20 block">Next</span>
+          <span class="text-[14px]">🕊️ Responsibility</span>
+        </div>
+        <span class="text-[18px] group-hover:translate-x-1 transition-transform">&rarr;</span>
+      </a>
     </div>
   </section>
 </Base>
