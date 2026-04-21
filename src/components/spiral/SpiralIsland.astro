@@ -1,17 +1,16 @@
 ---
 /**
- * SpiralIsland — Desktop Three.js helix wrapper.
+ * SpiralIsland — Three.js helix wrapper (all devices).
  *
- * Dynamically imports spiral.ts (Three.js 3D helix renderer).
- * Node data is passed via data attribute on the container div.
- * Container is hidden below md breakpoint — mobile gets SpiralFallback.
+ * Renders on both desktop and mobile. If WebGL fails, the
+ * SpiralFallback card list remains visible as a graceful degradation.
  */
 import { config } from '../../data/hub.config';
 
 const nodesJson = JSON.stringify(config.nodes);
 ---
 
-<div class="relative w-full hidden md:block h-[85vh]">
+<div class="relative w-full h-[85vh]">
   <div
     id="spiral-container"
     class="absolute inset-0 w-full h-full"
@@ -23,12 +22,10 @@ const nodesJson = JSON.stringify(config.nodes);
   const INIT_KEY = '__spiralCleanup';
 
   function boot(): void {
-    if (!window.matchMedia('(min-width: 768px)').matches) return;
-
     const container = document.getElementById('spiral-container');
     if (!container) return;
 
-    // Kill any existing instance before starting a new one
+    // Kill any existing instance
     if ((window as any)[INIT_KEY]) {
       (window as any)[INIT_KEY]();
       (window as any)[INIT_KEY] = null;
@@ -40,14 +37,19 @@ const nodesJson = JSON.stringify(config.nodes);
     import('./spiral.ts').then(({ initSpiral }) => {
       const nodes = JSON.parse(raw);
       const cleanup = initSpiral(container, nodes);
-
       (window as any)[INIT_KEY] = cleanup;
 
-      // Cleanup on Astro view transition
+      // Hide fallback since 3D loaded successfully
+      const fallback = document.getElementById('spiral-fallback');
+      if (fallback) fallback.style.display = 'none';
+
       document.addEventListener('astro:before-swap', () => {
         cleanup();
         (window as any)[INIT_KEY] = null;
       }, { once: true });
+    }).catch(() => {
+      // Three.js failed (no WebGL, etc.) — fallback stays visible
+      container.style.display = 'none';
     });
   }
 

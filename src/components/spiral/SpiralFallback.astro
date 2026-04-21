@@ -1,9 +1,9 @@
 ---
 /**
- * SpiralFallback — Mobile vertical journey (no JS).
+ * SpiralFallback — Graceful degradation (no WebGL / no JS).
  *
  * Renders all 13 spiral nodes as a vertical card list grouped by phase.
- * Shown below md breakpoint where the 3D helix is hidden.
+ * Visible by default; hidden programmatically when 3D helix loads.
  */
 import { config } from '../../data/hub.config';
 
@@ -21,7 +21,7 @@ function nodesByPhase(phase: string) {
 }
 ---
 
-<div class="md:hidden px-4 py-8 space-y-6">
+<div id="spiral-fallback" class="px-4 py-8 space-y-6">
   {phases.map((phase) => {
     const pc = phaseConfig[phase];
     const nodes = nodesByPhase(phase);
