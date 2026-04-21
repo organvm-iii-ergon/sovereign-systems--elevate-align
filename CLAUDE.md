@@ -13,7 +13,7 @@
 - **Astro 5** — static site generator, zero JS by default
 - **Tailwind CSS 4** — via `@tailwindcss/vite` plugin (no `tailwind.config.js` — CSS-first config)
 - **TypeScript** — strict, no `any`
-- **Vanilla Canvas** — `src/components/spiral/spiral.ts` drives the animated spiral visualization (no Three.js, no external canvas libs)
+- **Three.js** — `src/components/spiral/spiral.ts` drives the 3D helix visualization (tapered helix, OrbitControls, MeshPhysicalMaterial orbs, FogExp2)
 
 ## Commands
 
@@ -28,7 +28,7 @@ npm run preview    # Preview production build locally
 | File | Purpose |
 |------|---------|
 | `src/data/hub.config.ts` | Single source of truth — pillar definitions, branch list, domain map, GHL URLs |
-| `src/components/spiral/spiral.ts` | Canvas spiral animation — pure vanilla TS, no deps |
+| `src/components/spiral/spiral.ts` | Three.js 3D helix — tapered spiral with OrbitControls, 3D orb meshes, micro-motion |
 | `src/components/spiral/SpiralIsland.astro` | Astro island wrapper for the spiral (client:idle) |
 | `src/components/spiral/SpiralFallback.astro` | Static SVG fallback for no-JS environments |
 | `src/layouts/Base.astro` | Root HTML layout — head, fonts, global styles |
@@ -52,16 +52,16 @@ Frontmatter schema is enforced by `content.config.ts` — any new file must incl
 - `docs/superpowers/intakes/2026-04-01-maddie-spiral-path-board-atomization.md` — board translation from handoff to executable issue surface
 - `.codex/plans/2026-04-01-maddie-spiral-orchestration-assignment.md` — dated orchestration plan preserved as session history
 
-## Page Map (29 pages total)
+## Page Map (28 pages + 404)
 
 | Route | File | Description |
 |-------|------|-------------|
-| `/` | `src/pages/index.astro` | Hub — spiral hero (80vh), quiz CTA, quote, video, pillar phases (below fold) |
+| `/` | `src/pages/index.astro` | Hub — 3D helix hero (85vh), quiz CTA, video, pillar phases + Elevate/Align/Unlock framework (below fold) |
 | `/quiz` | `src/pages/quiz.astro` | Name+email gate → pillar routing options |
 | `/nodes/[id]` | `src/pages/nodes/[id].astro` | Dynamic spiral node pages (12 pages — node 5/Water links to /water/) |
 | `/pillars/[slug]` | `src/pages/pillars/[slug].astro` | Dynamic pillar pages (physical, inner, identity, financial) |
 | `/water/` | `src/pages/water/index.astro` | Water mini version — hero, video, education, HydrationNode funnel |
-| `/water/explore` | `src/pages/water/explore.astro` | Branch explorer (email-gated) |
+| `/water/#branches` | (inline in `water/index.astro`) | Branch grid — accessible from single scrollable water page |
 | `/water/quiz` | `src/pages/water/quiz.astro` | GHL quiz embed placeholder (URL empty) |
 | `/water/[slug]` | `src/pages/water/[slug].astro` | Individual branch deep-dives (6 branches) |
 | `/business/` | `src/pages/business/index.astro` | Financial Sovereignty / EauCo Hub landing |
