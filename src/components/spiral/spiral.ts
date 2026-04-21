@@ -1,11 +1,13 @@
 /**
  * Sovereign Systems Spiral — Three.js 3D Helix Renderer
  *
- * Tapered helix with 3D orb meshes, drag-to-rotate OrbitControls,
- * hover tooltips, click-to-navigate. Per-phase procedural textures
- * and normal maps give each orb organic surface character. Orbs
- * breathe, pulse, shimmer, and drift on layered sine curves.
- * Helix extends beyond nodes for an infinite feel.
+ * Tapered helix with 3D orb meshes that visibly spin, orbit their
+ * helix anchor points, and breathe with emissive pulsing. Per-phase
+ * procedural textures and normal maps. Per-orb particle auras and
+ * ambient atmospheric particles create a fluid, gaseous, underwater
+ * feel. Helix extends far beyond visible nodes and dissolves into
+ * fog for a truly infinite illusion. Never-repeating motion via
+ * layered sine waves at irrational frequency ratios.
  * Works on both desktop (mouse) and mobile (touch).
  */
 
@@ -35,10 +37,40 @@ interface OrbAnimParams {
   emissiveAmp: number;
   emissiveFreq: number;
   emissivePhase: number;
-  rotRate: number;
-  rotPhase: number;
-  // Two frequencies per axis for layered drift (never repeats)
+  rotRateX: number;
+  rotRateY: number;
+  rotRateZ: number;
+  rotPhaseX: number;
+  rotPhaseY: number;
+  rotPhaseZ: number;
+  orbitRadius: number;
+  orbitSpeed: number;
+  orbitPhase: number;
+  orbitNormal: THREE.Vector3;
+  orbitBinormal: THREE.Vector3;
   driftFreqs: [number, number, number, number, number, number];
+}
+
+interface AuraParam {
+  radiusBase: number;
+  theta0: number;
+  phi0: number;
+  orbitSpeed: number;
+  driftFreq: number;
+  driftAmp: number;
+  phase: number;
+  brightnessBase: number;
+  brightnessFreq: number;
+}
+
+interface AmbientParam {
+  driftFreqX: number;
+  driftFreqY: number;
+  driftFreqZ: number;
+  driftAmpX: number;
+  driftAmpY: number;
+  driftAmpZ: number;
+  phase: number;
 }
 
 // ---------------------------------------------------------------------------
@@ -48,13 +80,13 @@ interface OrbAnimParams {
 const TURNS = 3.5;
 const HELIX_HEIGHT = 20;
 const PATH_STEPS = 512;
-const PATH_EXTEND = 0.3;          // 30% extra helix above/below nodes
+const PATH_EXTEND = 0.85;            // 85% extra above/below — truly infinite
 const BG_COLOR = 0x071e22;
-const FOG_DENSITY = 0.035;
+const FOG_DENSITY = 0.065;           // dissolves endpoints into background
 const ORB_RADIUS = 0.4;
 const ORB_SEGMENTS = 32;
-const CLICK_THRESHOLD = 8;        // px — drag vs. click (mouse)
-const TAP_THRESHOLD = 30;         // px — drag vs. tap (touch, finger drift)
+const CLICK_THRESHOLD = 8;           // px — drag vs. click (mouse)
+const TAP_THRESHOLD = 30;            // px — drag vs. tap (touch)
 
 const PHASE_HEX: Record<string, number> = {
   ELEVATE: 0x119a9e,
@@ -62,9 +94,27 @@ const PHASE_HEX: Record<string, number> = {
   UNLOCK:  0x3dbfc4,
 };
 
-// Micro-motion amplitudes (preserves macro helix)
-const DRIFT_AMP = 0.06;
-const DRIFT_AMP_Y = 0.04;
+// Micro-motion amplitudes (3x increase — visible at camera distance 22)
+const DRIFT_AMP = 0.18;
+const DRIFT_AMP_Y = 0.12;
+
+// Orbital motion
+const ORBIT_RADIUS_MIN = 0.30;
+const ORBIT_RADIUS_MAX = 0.55;
+const ORBIT_SPEED_MIN = 0.25;
+const ORBIT_SPEED_MAX = 0.55;
+
+// Per-orb aura particles
+const AURA_PARTICLES_PER_ORB = 12;
+const AURA_RADIUS_MIN = 0.5;
+const AURA_RADIUS_MAX = 1.2;
+const AURA_PARTICLE_SIZE = 0.08;
+
+// Ambient atmosphere
+const AMBIENT_PARTICLE_COUNT = 150;
+const AMBIENT_VOLUME_RADIUS = 15;
+const AMBIENT_VOLUME_HEIGHT = 30;
+const AMBIENT_PARTICLE_SIZE = 0.05;
 
 // Phase-specific material overrides
 const PHASE_MAT: Record<string, {
@@ -109,22 +159,24 @@ const PHASE_MAT: Record<string, {
   },
 };
 
-// Phase-specific animation parameters
+// Phase-specific animation: per-axis rotation speeds
 const PHASE_ANIM: Record<string, {
   breathFreq: number;
   breathAmp: number;
   emissiveAmpLive: number;
   emissiveAmpLocked: number;
   emissiveFreq: number;
-  rotRateBase: number;
+  rotRateX: number;
+  rotRateY: number;
+  rotRateZ: number;
 }> = {
-  ELEVATE: { breathFreq: 0.3, breathAmp: 0.035, emissiveAmpLive: 0.15, emissiveAmpLocked: 0.04, emissiveFreq: 0.25, rotRateBase: 0.06 },
-  ALIGN:   { breathFreq: 0.45, breathAmp: 0.025, emissiveAmpLive: 0.12, emissiveAmpLocked: 0.03, emissiveFreq: 0.35, rotRateBase: 0.09 },
-  UNLOCK:  { breathFreq: 0.6, breathAmp: 0.015, emissiveAmpLive: 0.10, emissiveAmpLocked: 0.03, emissiveFreq: 0.5, rotRateBase: 0.13 },
+  ELEVATE: { breathFreq: 0.3, breathAmp: 0.035, emissiveAmpLive: 0.15, emissiveAmpLocked: 0.04, emissiveFreq: 0.25, rotRateX: 0.15, rotRateY: 0.40, rotRateZ: 0.10 },
+  ALIGN:   { breathFreq: 0.45, breathAmp: 0.025, emissiveAmpLive: 0.12, emissiveAmpLocked: 0.03, emissiveFreq: 0.35, rotRateX: 0.35, rotRateY: 0.25, rotRateZ: 0.45 },
+  UNLOCK:  { breathFreq: 0.6, breathAmp: 0.015, emissiveAmpLive: 0.10, emissiveAmpLocked: 0.03, emissiveFreq: 0.5, rotRateX: 0.10, rotRateY: 1.20, rotRateZ: 0.08 },
 };
 
 // ---------------------------------------------------------------------------
-// Seeded PRNG (mulberry32) — deterministic textures across page loads
+// Seeded PRNG (mulberry32)
 // ---------------------------------------------------------------------------
 
 function mulberry32(seed: number): () => number {
@@ -138,7 +190,7 @@ function mulberry32(seed: number): () => number {
 }
 
 // ---------------------------------------------------------------------------
-// Procedural texture generators (called once at init, zero runtime cost)
+// Procedural texture generators
 // ---------------------------------------------------------------------------
 
 function generatePhaseTexture(phase: string, seed: number): THREE.CanvasTexture {
@@ -149,12 +201,10 @@ function generatePhaseTexture(phase: string, seed: number): THREE.CanvasTexture 
   const ctx = c.getContext('2d')!;
   const rng = mulberry32(seed * 7919 + 13);
 
-  // Neutral light base — multiplies with material color to preserve hue
   ctx.fillStyle = '#d8d8d8';
   ctx.fillRect(0, 0, size, size);
 
   if (phase === 'ELEVATE') {
-    // Cellular / water caustic: overlapping translucent circles
     for (let i = 0; i < 40; i++) {
       const x = rng() * size;
       const y = rng() * size;
@@ -168,7 +218,6 @@ function generatePhaseTexture(phase: string, seed: number): THREE.CanvasTexture 
       ctx.arc(x, y, r, 0, Math.PI * 2);
       ctx.fill();
     }
-    // Bright cell nuclei
     for (let i = 0; i < 15; i++) {
       const x = rng() * size;
       const y = rng() * size;
@@ -179,7 +228,6 @@ function generatePhaseTexture(phase: string, seed: number): THREE.CanvasTexture 
       ctx.fill();
     }
   } else if (phase === 'ALIGN') {
-    // Nebulous / flowing: soft arc strokes and glowing blobs
     ctx.globalCompositeOperation = 'screen';
     for (let i = 0; i < 25; i++) {
       const cx = rng() * size;
@@ -208,7 +256,6 @@ function generatePhaseTexture(phase: string, seed: number): THREE.CanvasTexture 
     }
     ctx.globalCompositeOperation = 'source-over';
   } else {
-    // UNLOCK: crystalline / geometric: angular lines and facet polygons
     for (let i = 0; i < 30; i++) {
       const x = rng() * size;
       const y = rng() * size;
@@ -221,7 +268,6 @@ function generatePhaseTexture(phase: string, seed: number): THREE.CanvasTexture 
       ctx.lineTo(x + Math.cos(angle) * len, y + Math.sin(angle) * len);
       ctx.stroke();
     }
-    // Bright facet intersections
     for (let i = 0; i < 20; i++) {
       const x = rng() * size;
       const y = rng() * size;
@@ -231,7 +277,6 @@ function generatePhaseTexture(phase: string, seed: number): THREE.CanvasTexture 
       ctx.arc(x, y, r, 0, Math.PI * 2);
       ctx.fill();
     }
-    // Facet polygons
     for (let i = 0; i < 8; i++) {
       const cx = rng() * size;
       const cy = rng() * size;
@@ -265,12 +310,10 @@ function generatePhaseNormalMap(phase: string, seed: number): THREE.CanvasTextur
   const ctx = c.getContext('2d')!;
   const rng = mulberry32(seed * 6271 + 37);
 
-  // Flat normal: (128, 128, 255) in tangent space
   ctx.fillStyle = 'rgb(128, 128, 255)';
   ctx.fillRect(0, 0, size, size);
 
   if (phase === 'ELEVATE') {
-    // Circular bumps (cellular texture)
     for (let i = 0; i < 20; i++) {
       const cx = rng() * size;
       const cy = rng() * size;
@@ -288,7 +331,6 @@ function generatePhaseNormalMap(phase: string, seed: number): THREE.CanvasTextur
       ctx.fill();
     }
   } else if (phase === 'ALIGN') {
-    // Wave ridges (flowing breath feel)
     for (let i = 0; i < 12; i++) {
       const y0 = rng() * size;
       const amplitude = 5 + rng() * 15;
@@ -306,7 +348,6 @@ function generatePhaseNormalMap(phase: string, seed: number): THREE.CanvasTextur
       }
     }
   } else {
-    // UNLOCK: sharp faceted ridges (crystalline)
     for (let i = 0; i < 18; i++) {
       const x0 = rng() * size;
       const y0 = rng() * size;
@@ -330,7 +371,26 @@ function generatePhaseNormalMap(phase: string, seed: number): THREE.CanvasTextur
 }
 
 // ---------------------------------------------------------------------------
-// Helix path builder (extended for infinite effect)
+// Soft dot texture for particle systems (shared)
+// ---------------------------------------------------------------------------
+
+function createSoftDotTexture(): THREE.CanvasTexture {
+  const size = 32;
+  const c = document.createElement('canvas');
+  c.width = size;
+  c.height = size;
+  const ctx = c.getContext('2d')!;
+  const grad = ctx.createRadialGradient(size / 2, size / 2, 0, size / 2, size / 2, size / 2);
+  grad.addColorStop(0, 'rgba(255, 255, 255, 1.0)');
+  grad.addColorStop(0.4, 'rgba(255, 255, 255, 0.5)');
+  grad.addColorStop(1, 'rgba(255, 255, 255, 0.0)');
+  ctx.fillStyle = grad;
+  ctx.fillRect(0, 0, size, size);
+  return new THREE.CanvasTexture(c);
+}
+
+// ---------------------------------------------------------------------------
+// Helix path builder
 // ---------------------------------------------------------------------------
 
 function buildHelixPath(): THREE.Vector3[] {
@@ -351,7 +411,6 @@ function buildHelixPath(): THREE.Vector3[] {
   return points;
 }
 
-/** Map a normalized t (0-1 among nodes) to a path index in the extended array. */
 function nodePathIndex(t: number, pathLength: number): number {
   const totalRange = 1 + 2 * PATH_EXTEND;
   const normalized = (t + PATH_EXTEND) / totalRange;
@@ -359,7 +418,7 @@ function nodePathIndex(t: number, pathLength: number): number {
 }
 
 // ---------------------------------------------------------------------------
-// Emoji sprite (small billboard in front of each orb)
+// Emoji sprite
 // ---------------------------------------------------------------------------
 
 function makeEmojiSprite(emoji: string): THREE.Sprite {
@@ -391,7 +450,6 @@ export function initSpiral(
   container: HTMLElement,
   nodes: NodeData[],
 ): () => void {
-  // --- Scene ---
   const scene = new THREE.Scene();
   scene.background = new THREE.Color(BG_COLOR);
   scene.fog = new THREE.FogExp2(BG_COLOR, FOG_DENSITY);
@@ -399,11 +457,9 @@ export function initSpiral(
   const w = container.clientWidth;
   const h = container.clientHeight;
 
-  // --- Camera ---
   const camera = new THREE.PerspectiveCamera(60, w / h, 0.1, 1000);
   camera.position.set(0, 2, 22);
 
-  // --- Renderer ---
   const renderer = new THREE.WebGLRenderer({ antialias: true });
   renderer.setSize(w, h);
   renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
@@ -411,7 +467,7 @@ export function initSpiral(
   renderer.toneMappingExposure = 1.2;
   container.appendChild(renderer.domElement);
   renderer.domElement.style.cursor = 'grab';
-  renderer.domElement.style.touchAction = 'none';  // prevent scroll on touch
+  renderer.domElement.style.touchAction = 'none';
 
   // --- Lighting ---
   scene.add(new THREE.AmbientLight(0xffffff, 0.4));
@@ -435,7 +491,7 @@ export function initSpiral(
   // --- Build helix path ---
   const path = buildHelixPath();
 
-  // Phase-colored line with alpha fade at extensions
+  // Phase-colored line with vertex fade at extensions
   const geo = new THREE.BufferGeometry().setFromPoints(path);
   const vColors = new Float32Array(path.length * 3);
   const phaseC = {
@@ -447,9 +503,20 @@ export function initSpiral(
   for (let i = 0; i < path.length; i++) {
     const p = -PATH_EXTEND + (i / path.length) * totalRange;
     const c = p < 5 / 13 ? phaseC.ELEVATE : p < 11 / 13 ? phaseC.ALIGN : phaseC.UNLOCK;
-    vColors[i * 3] = c.r;
-    vColors[i * 3 + 1] = c.g;
-    vColors[i * 3 + 2] = c.b;
+
+    // Cubic fade at extensions — line dissolves before fog boundary
+    let fade = 1.0;
+    if (p < 0) {
+      fade = Math.max(0, (p + PATH_EXTEND) / PATH_EXTEND);
+      fade = fade * fade * fade;
+    } else if (p > 1) {
+      fade = Math.max(0, 1 - (p - 1) / PATH_EXTEND);
+      fade = fade * fade * fade;
+    }
+
+    vColors[i * 3] = c.r * fade;
+    vColors[i * 3 + 1] = c.g * fade;
+    vColors[i * 3 + 2] = c.b * fade;
   }
   geo.setAttribute('color', new THREE.BufferAttribute(vColors, 3));
   scene.add(new THREE.Line(geo, new THREE.LineBasicMaterial({
@@ -458,7 +525,7 @@ export function initSpiral(
     opacity: 0.3,
   })));
 
-  // --- Orb meshes with per-phase textures and materials ---
+  // --- Orb meshes ---
   const sharedGeo = new THREE.SphereGeometry(ORB_RADIUS, ORB_SEGMENTS, ORB_SEGMENTS);
   const orbMeshes: THREE.Mesh[] = [];
   const orbGroups: THREE.Group[] = [];
@@ -466,6 +533,8 @@ export function initSpiral(
   const disposables: THREE.Material[] = [];
   const texturesToDispose: THREE.Texture[] = [];
   const animParams: OrbAnimParams[] = [];
+  const nodeColorList: THREE.Color[] = [];
+  const UP = new THREE.Vector3(0, 1, 0);
 
   nodes.forEach((node, i) => {
     const t = nodes.length > 1 ? i / (nodes.length - 1) : 0;
@@ -474,16 +543,15 @@ export function initSpiral(
 
     const live = node.status === 'live';
     const nodeColor = new THREE.Color(node.color);
+    nodeColorList.push(nodeColor);
     const phase = node.phase;
     const pm = PHASE_MAT[phase] || PHASE_MAT.ELEVATE;
     const pa = PHASE_ANIM[phase] || PHASE_ANIM.ELEVATE;
 
-    // Generate per-node procedural textures
     const albedoTex = generatePhaseTexture(phase, i);
     const normalTex = generatePhaseNormalMap(phase, i);
     texturesToDispose.push(albedoTex, normalTex);
 
-    // Sheen color: lightened version of node color for ALIGN phase
     const sheenColor = new THREE.Color(node.color).lerp(new THREE.Color(0xffffff), 0.4);
 
     const mat = new THREE.MeshPhysicalMaterial({
@@ -510,12 +578,10 @@ export function initSpiral(
     const mesh = new THREE.Mesh(sharedGeo, mat);
     mesh.userData = node;
 
-    // Group holds orb + emoji sprite
     const group = new THREE.Group();
     group.position.copy(pos);
     group.add(mesh);
 
-    // Emoji sprite
     const emoji = makeEmojiSprite(node.emoji);
     group.add(emoji);
 
@@ -524,26 +590,146 @@ export function initSpiral(
     orbGroups.push(group);
     basePositions.push(pos);
 
-    // Build per-node animation parameters
+    // Helix tangent, normal, binormal for orbital plane
+    const idxPrev = Math.max(0, idx - 1);
+    const idxNext = Math.min(path.length - 1, idx + 1);
+    const tangent = new THREE.Vector3().subVectors(path[idxNext], path[idxPrev]).normalize();
+    const normal = new THREE.Vector3().crossVectors(tangent, UP).normalize();
+    const binormal = new THREE.Vector3().crossVectors(tangent, normal).normalize();
+
+    // Per-node animation parameters
+    const nodeRng = mulberry32(i * 3571 + 17);
     const seed = i * 2.39;
     animParams.push({
-      breathFreq: pa.breathFreq * (0.85 + (seed % 1) * 0.3),
+      breathFreq: pa.breathFreq * (0.85 + nodeRng() * 0.3),
       breathAmp: pa.breathAmp,
       breathPhase: seed * 1.7,
       emissiveBase: live ? 0.6 : 0.12,
       emissiveAmp: live ? pa.emissiveAmpLive : pa.emissiveAmpLocked,
-      emissiveFreq: pa.emissiveFreq * (0.9 + (seed % 1) * 0.2),
+      emissiveFreq: pa.emissiveFreq * (0.9 + nodeRng() * 0.2),
       emissivePhase: seed * 2.1,
-      rotRate: pa.rotRateBase + (i * 0.007),
-      rotPhase: seed * 0.5,
-      // Two frequencies per axis at irrational ratios
+      rotRateX: pa.rotRateX * (0.85 + nodeRng() * 0.3),
+      rotRateY: pa.rotRateY * (0.85 + nodeRng() * 0.3),
+      rotRateZ: pa.rotRateZ * (0.85 + nodeRng() * 0.3),
+      rotPhaseX: nodeRng() * Math.PI * 2,
+      rotPhaseY: nodeRng() * Math.PI * 2,
+      rotPhaseZ: nodeRng() * Math.PI * 2,
+      orbitRadius: ORBIT_RADIUS_MIN + nodeRng() * (ORBIT_RADIUS_MAX - ORBIT_RADIUS_MIN),
+      orbitSpeed: ORBIT_SPEED_MIN + nodeRng() * (ORBIT_SPEED_MAX - ORBIT_SPEED_MIN),
+      orbitPhase: nodeRng() * Math.PI * 2,
+      orbitNormal: normal,
+      orbitBinormal: binormal,
       driftFreqs: [
-        0.47 + i * 0.013,  0.31 + i * 0.009,  // X: two layers
-        0.35 + i * 0.011,  0.23 + i * 0.007,  // Y: two layers
-        0.40 + i * 0.015,  0.29 + i * 0.008,  // Z: two layers
+        0.47 + i * 0.013, 0.31 + i * 0.009,
+        0.35 + i * 0.011, 0.23 + i * 0.007,
+        0.40 + i * 0.015, 0.29 + i * 0.008,
       ],
     });
   });
+
+  // --- Per-orb aura particles (single Points object, 1 draw call) ---
+  const softDotTex = createSoftDotTexture();
+  texturesToDispose.push(softDotTex);
+
+  const TOTAL_AURA = nodes.length * AURA_PARTICLES_PER_ORB;
+  const auraPositions = new Float32Array(TOTAL_AURA * 3);
+  const auraColors = new Float32Array(TOTAL_AURA * 3);
+  const auraGeometry = new THREE.BufferGeometry();
+  auraGeometry.setAttribute('position', new THREE.BufferAttribute(auraPositions, 3));
+  auraGeometry.setAttribute('color', new THREE.BufferAttribute(auraColors, 3));
+
+  const auraParams: AuraParam[] = [];
+
+  nodes.forEach((node, i) => {
+    const particleRng = mulberry32(i * 7919 + 41);
+    const live = node.status === 'live';
+    const visibleCount = live ? AURA_PARTICLES_PER_ORB : Math.floor(AURA_PARTICLES_PER_ORB / 2);
+
+    for (let j = 0; j < AURA_PARTICLES_PER_ORB; j++) {
+      const visible = j < visibleCount;
+      auraParams.push({
+        radiusBase: visible ? AURA_RADIUS_MIN + particleRng() * (AURA_RADIUS_MAX - AURA_RADIUS_MIN) : 0,
+        theta0: particleRng() * Math.PI * 2,
+        phi0: particleRng() * Math.PI,
+        orbitSpeed: 0.15 + particleRng() * 0.4,
+        driftFreq: 0.3 + particleRng() * 0.5,
+        driftAmp: 0.1 + particleRng() * 0.2,
+        phase: particleRng() * Math.PI * 2,
+        brightnessBase: live ? (0.5 + particleRng() * 0.5) : (0.15 + particleRng() * 0.15),
+        brightnessFreq: 0.4 + particleRng() * 0.6,
+      });
+
+      // Hide excess particles for locked orbs
+      if (!visible) {
+        const bufIdx = (i * AURA_PARTICLES_PER_ORB + j) * 3;
+        auraPositions[bufIdx + 1] = -1000;
+      }
+    }
+  });
+
+  const auraMaterial = new THREE.PointsMaterial({
+    vertexColors: true,
+    transparent: true,
+    opacity: 0.6,
+    map: softDotTex,
+    blending: THREE.AdditiveBlending,
+    depthWrite: false,
+    sizeAttenuation: true,
+    size: AURA_PARTICLE_SIZE,
+  });
+  disposables.push(auraMaterial);
+  scene.add(new THREE.Points(auraGeometry, auraMaterial));
+
+  // --- Ambient atmosphere (second Points object, 1 draw call) ---
+  const ambientPositions = new Float32Array(AMBIENT_PARTICLE_COUNT * 3);
+  const ambientBasePositions = new Float32Array(AMBIENT_PARTICLE_COUNT * 3);
+  const ambientColors = new Float32Array(AMBIENT_PARTICLE_COUNT * 3);
+  const ambientGeometry = new THREE.BufferGeometry();
+  const ambientRng = mulberry32(9999);
+  const ambientParams: AmbientParam[] = [];
+  const phaseColors = [new THREE.Color(PHASE_HEX.ELEVATE), new THREE.Color(PHASE_HEX.ALIGN), new THREE.Color(PHASE_HEX.UNLOCK)];
+
+  for (let j = 0; j < AMBIENT_PARTICLE_COUNT; j++) {
+    const idx = j * 3;
+    ambientBasePositions[idx] = (ambientRng() - 0.5) * 2 * AMBIENT_VOLUME_RADIUS;
+    ambientBasePositions[idx + 1] = (ambientRng() - 0.5) * 2 * AMBIENT_VOLUME_HEIGHT;
+    ambientBasePositions[idx + 2] = (ambientRng() - 0.5) * 2 * AMBIENT_VOLUME_RADIUS;
+    ambientPositions[idx] = ambientBasePositions[idx];
+    ambientPositions[idx + 1] = ambientBasePositions[idx + 1];
+    ambientPositions[idx + 2] = ambientBasePositions[idx + 2];
+
+    const pc = phaseColors[Math.floor(ambientRng() * 3)];
+    const dim = 0.15 + ambientRng() * 0.2;
+    ambientColors[idx] = pc.r * dim;
+    ambientColors[idx + 1] = pc.g * dim;
+    ambientColors[idx + 2] = pc.b * dim;
+
+    ambientParams.push({
+      driftFreqX: 0.02 + ambientRng() * 0.04,
+      driftFreqY: 0.01 + ambientRng() * 0.02,
+      driftFreqZ: 0.02 + ambientRng() * 0.04,
+      driftAmpX: 0.3 + ambientRng() * 0.7,
+      driftAmpY: 0.2 + ambientRng() * 0.5,
+      driftAmpZ: 0.3 + ambientRng() * 0.7,
+      phase: ambientRng() * Math.PI * 2,
+    });
+  }
+
+  ambientGeometry.setAttribute('position', new THREE.BufferAttribute(ambientPositions, 3));
+  ambientGeometry.setAttribute('color', new THREE.BufferAttribute(ambientColors, 3));
+
+  const ambientMaterial = new THREE.PointsMaterial({
+    vertexColors: true,
+    transparent: true,
+    opacity: 0.25,
+    map: softDotTex,
+    blending: THREE.AdditiveBlending,
+    depthWrite: false,
+    sizeAttenuation: true,
+    size: AMBIENT_PARTICLE_SIZE,
+  });
+  disposables.push(ambientMaterial);
+  scene.add(new THREE.Points(ambientGeometry, ambientMaterial));
 
   // --- Tooltip ---
   const tip = document.createElement('div');
@@ -573,7 +759,6 @@ export function initSpiral(
   }
 
   function onPointerMove(e: PointerEvent): void {
-    // Skip touch move (no hover on touch devices)
     if (e.pointerType === 'touch') return;
 
     setPointer(e.clientX, e.clientY);
@@ -584,9 +769,7 @@ export function initSpiral(
     if (hits.length > 0) {
       const hitMesh = hits[0].object as THREE.Mesh;
       if (hovered !== hitMesh) {
-        if (hovered) {
-          hovered.scale.setScalar(1);
-        }
+        if (hovered) hovered.scale.setScalar(1);
         hovered = hitMesh;
         hitMesh.scale.setScalar(1.2);
         const data = hitMesh.userData as NodeData;
@@ -619,7 +802,6 @@ export function initSpiral(
     if (e.pointerType !== 'touch') {
       renderer.domElement.style.cursor = hovered ? 'pointer' : 'grab';
     }
-    // Pointer-type-aware threshold: fingers drift more than mice
     const threshold = downPointerType === 'touch' ? TAP_THRESHOLD : CLICK_THRESHOLD;
     if (Math.abs(e.clientX - downX) + Math.abs(e.clientY - downY) > threshold) return;
 
@@ -642,7 +824,6 @@ export function initSpiral(
     renderer.setSize(ww, hh);
   }
 
-  // --- Bind pointer events (unified mouse + touch) ---
   renderer.domElement.addEventListener('pointermove', onPointerMove);
   renderer.domElement.addEventListener('pointerdown', onPointerDown);
   renderer.domElement.addEventListener('pointerup', onPointerUp);
@@ -663,19 +844,27 @@ export function initSpiral(
       const mat = mesh.material as THREE.MeshPhysicalMaterial;
       const seed = i * 2.39;
       const df = ap.driftFreqs;
+      const nc = nodeColorList[i];
 
-      // 1. Layered positional drift — two sine waves per axis, never repeats
+      // 1. Orbital motion + layered drift
+      const orbitAngle = t * ap.orbitSpeed + ap.orbitPhase;
+      const orbX = Math.cos(orbitAngle) * ap.orbitRadius;
+      const orbY = Math.sin(orbitAngle) * ap.orbitRadius;
+
       group.position.x = basePositions[i].x
+        + ap.orbitNormal.x * orbX + ap.orbitBinormal.x * orbY
         + Math.sin(t * df[0] + seed) * DRIFT_AMP
         + Math.sin(t * df[1] + seed * 1.7) * DRIFT_AMP * 0.4;
       group.position.y = basePositions[i].y
+        + ap.orbitNormal.y * orbX + ap.orbitBinormal.y * orbY
         + Math.sin(t * df[2] + seed * 1.3) * DRIFT_AMP_Y
         + Math.sin(t * df[3] + seed * 2.1) * DRIFT_AMP_Y * 0.3;
       group.position.z = basePositions[i].z
+        + ap.orbitNormal.z * orbX + ap.orbitBinormal.z * orbY
         + Math.cos(t * df[4] + seed * 0.7) * DRIFT_AMP
         + Math.cos(t * df[5] + seed * 1.1) * DRIFT_AMP * 0.4;
 
-      // 2. Breathing scale (skip if hovered — hover uses its own scale)
+      // 2. Breathing scale (skip if hovered)
       if (mesh !== hovered) {
         const breath = 1.0 + Math.sin(t * ap.breathFreq + ap.breathPhase) * ap.breathAmp;
         mesh.scale.setScalar(breath);
@@ -685,10 +874,12 @@ export function initSpiral(
       mat.emissiveIntensity = ap.emissiveBase
         + Math.sin(t * ap.emissiveFreq + ap.emissivePhase) * ap.emissiveAmp;
 
-      // 4. Local Y-axis rotation (shimmer with normal maps)
-      mesh.rotation.y = t * ap.rotRate + ap.rotPhase;
+      // 4. Multi-axis rotation (VISIBLE spinning)
+      mesh.rotation.x = t * ap.rotRateX + ap.rotPhaseX;
+      mesh.rotation.y = t * ap.rotRateY + ap.rotPhaseY;
+      mesh.rotation.z = t * ap.rotRateZ + ap.rotPhaseZ;
 
-      // 5. Emoji sprite: camera-facing + subtle bob
+      // 5. Emoji sprite: camera-facing + bob
       const emoji = group.children[1];
       if (emoji) {
         cameraDir.copy(camera.position).sub(group.position).normalize();
@@ -696,7 +887,42 @@ export function initSpiral(
         emoji.position.copy(cameraDir.multiplyScalar(ORB_RADIUS + 0.08));
         emoji.position.y += bob;
       }
+
+      // 6. Per-orb aura particles
+      for (let j = 0; j < AURA_PARTICLES_PER_ORB; j++) {
+        const pIdx = i * AURA_PARTICLES_PER_ORB + j;
+        const pp = auraParams[pIdx];
+        if (pp.radiusBase === 0) continue;
+
+        const bufIdx = pIdx * 3;
+        const r = pp.radiusBase + Math.sin(t * pp.driftFreq + pp.phase) * pp.driftAmp;
+        const theta = pp.theta0 + t * pp.orbitSpeed;
+        const phi = pp.phi0 + t * pp.orbitSpeed * 0.37;
+
+        auraPositions[bufIdx] = group.position.x + r * Math.sin(phi) * Math.cos(theta);
+        auraPositions[bufIdx + 1] = group.position.y + r * Math.cos(phi);
+        auraPositions[bufIdx + 2] = group.position.z + r * Math.sin(phi) * Math.sin(theta);
+
+        const bright = pp.brightnessBase + Math.sin(t * pp.brightnessFreq + pp.phase) * 0.3;
+        auraColors[bufIdx] = nc.r * bright;
+        auraColors[bufIdx + 1] = nc.g * bright;
+        auraColors[bufIdx + 2] = nc.b * bright;
+      }
     });
+
+    // Flush aura buffers
+    auraGeometry.attributes.position.needsUpdate = true;
+    auraGeometry.attributes.color.needsUpdate = true;
+
+    // Ambient atmosphere drift
+    for (let j = 0; j < AMBIENT_PARTICLE_COUNT; j++) {
+      const idx = j * 3;
+      const ap = ambientParams[j];
+      ambientPositions[idx] = ambientBasePositions[idx] + Math.sin(t * ap.driftFreqX + ap.phase) * ap.driftAmpX;
+      ambientPositions[idx + 1] = ambientBasePositions[idx + 1] + Math.sin(t * ap.driftFreqY + ap.phase * 1.3) * ap.driftAmpY;
+      ambientPositions[idx + 2] = ambientBasePositions[idx + 2] + Math.cos(t * ap.driftFreqZ + ap.phase * 0.7) * ap.driftAmpZ;
+    }
+    ambientGeometry.attributes.position.needsUpdate = true;
 
     controls.update();
     renderer.render(scene, camera);
@@ -715,6 +941,8 @@ export function initSpiral(
     texturesToDispose.forEach(tex => tex.dispose());
     sharedGeo.dispose();
     geo.dispose();
+    auraGeometry.dispose();
+    ambientGeometry.dispose();
     renderer.dispose();
     tip.remove();
     renderer.domElement.remove();
