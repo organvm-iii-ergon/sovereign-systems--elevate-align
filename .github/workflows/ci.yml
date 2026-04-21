@@ -6,6 +6,11 @@ on:
   pull_request:
     branches: [main]
 
+# Only one deploy at a time — cancel in-flight deploys when a new push arrives
+concurrency:
+  group: deploy-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
   build:
     runs-on: ubuntu-latest
