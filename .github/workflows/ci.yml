@@ -38,7 +38,14 @@ jobs:
           cache: 'npm'
       - run: npm ci
       - run: npm run build
-      - uses: cloudflare/wrangler-action@v3
+      - name: Verify Cloudflare token exists
+        run: |
+          if [ -z "${{ secrets.CLOUDFLARE_API_TOKEN }}" ]; then
+            echo "::error::CLOUDFLARE_API_TOKEN secret is missing or empty. Create a new token at https://dash.cloudflare.com/profile/api-tokens with Account > Cloudflare Pages > Edit permission, then set it in repo Settings > Secrets."
+            exit 1
+          fi
+      - name: Deploy to Cloudflare Pages
+        uses: cloudflare/wrangler-action@v3
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: e0921b840fd656d8ea46426f1f114c30
