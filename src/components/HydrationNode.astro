@@ -202,13 +202,19 @@ const filterTiersJson = JSON.stringify(filterTiers);
       </div>
 
       <form id="email-form" class="space-y-4 max-w-sm mx-auto">
+        <label for="hydration-name" class="sr-only">Your name</label>
         <input
+          id="hydration-name"
+          name="name"
           type="text"
           placeholder="Your name"
           required
           class="w-full bg-ocean-800/50 border border-ocean-500/20 rounded-lg px-4 py-3 text-white placeholder:text-white/20 focus:outline-none focus:border-ocean-400 transition-colors text-[15px]"
         />
+        <label for="hydration-email" class="sr-only">Email address</label>
         <input
+          id="hydration-email"
+          name="email"
           type="email"
           placeholder="your@email.com"
           required

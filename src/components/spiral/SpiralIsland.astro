@@ -10,10 +10,12 @@ import { config } from '../../data/hub.config';
 const nodesJson = JSON.stringify(config.nodes);
 ---
 
-<div class="relative w-full h-[85vh]">
+<div class="relative w-full h-[85vh] supports-[height:1dvh]:h-[85dvh]">
   <div
     id="spiral-container"
     class="absolute inset-0 w-full h-full"
+    role="img"
+    aria-label="Interactive 3D spiral showing 13 nodes across four sovereignty phases: Elevate, Align, Unlock, and Water"
     data-nodes={nodesJson}
   ></div>
 </div>

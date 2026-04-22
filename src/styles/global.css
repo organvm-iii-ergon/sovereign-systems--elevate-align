@@ -80,6 +80,12 @@ body::after {
   box-shadow: 0 16px 48px rgba(0, 0, 0, 0.4);
 }
 
+/* Accessibility: reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .glass-card:hover { transform: none; transition: none; }
+}
+
 /* Branch content — hide raw markdown headings, use gradient separators */
 .branch-content h2 {
   font-size: 0;
