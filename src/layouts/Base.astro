@@ -342,5 +342,37 @@ if (!isHome) {
         }
       });
     </script>
+
+    {/* --- Analytics (production only) --- */}
+    {import.meta.env.PROD && (
+      <script
+        defer
+        src="https://static.cloudflareinsights.com/beacon.min.js"
+        data-cf-beacon={`{"token":"${import.meta.env.CF_ANALYTICS_TOKEN || 'PLACEHOLDER'}"}`}
+      />
+    )}
+    <script>
+      // Auto-track elements with data-ea-action attributes (production only)
+      if (import.meta.env.PROD) {
+        document.querySelectorAll<HTMLElement>('[data-ea-action]').forEach((el) => {
+          el.addEventListener('click', () => {
+            const action = el.dataset.eaAction;
+            if (!action) return;
+            const data: Record<string, string> = {};
+            for (const [key, value] of Object.entries(el.dataset)) {
+              if (key.startsWith('ea') && key !== 'eaAction' && value) {
+                const prop = key.slice(2, 3).toLowerCase() + key.slice(3);
+                data[prop] = value;
+              }
+            }
+            if (el instanceof HTMLAnchorElement && el.href) {
+              data.href = el.getAttribute('href') || el.href;
+            }
+            const pairs = Object.entries(data).map(([k, v]) => `${k}=${v}`).join(' ');
+            console.log(`[EA] action=${action}${pairs ? ' ' + pairs : ''}`);
+          });
+        });
+      }
+    </script>
   </body>
 </html>

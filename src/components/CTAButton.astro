@@ -11,6 +11,8 @@ const { href, label, variant = 'primary' } = Astro.props;
 {variant === 'primary' ? (
   <a
     href={href}
+    data-ea-action="cta_click"
+    data-ea-label={label}
     class="inline-block px-9 py-3.5 rounded-full text-[13px] font-medium tracking-wide bg-ocean-500 text-white hover:bg-ocean-400 hover:shadow-[0_8px_32px_rgba(17,154,158,0.3)] hover:-translate-y-0.5 transition-all duration-300"
   >
     {label}
@@ -18,6 +20,8 @@ const { href, label, variant = 'primary' } = Astro.props;
 ) : (
   <a
     href={href}
+    data-ea-action="cta_click"
+    data-ea-label={label}
     class="inline-block px-9 py-3.5 rounded-full text-[13px] font-medium tracking-wide border border-ocean-400/25 text-ocean-400 hover:border-ocean-400 hover:text-white hover:bg-ocean-400/[0.08] transition-all duration-300"
   >
     {label}

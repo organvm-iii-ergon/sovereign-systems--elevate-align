@@ -35,13 +35,55 @@ Molecular hydrogen (H2) works at the cellular level as a selective antioxidant, 
 
 This is the difference between survival and sovereignty. By upgrading what your cells receive, you give your body the foundational substrate it needs to restore its own balance.
 
+## Cycle-Synced Gut & Hormone Support
+
+Your gut and your cycle are not separate conversations — they’re the same system speaking two dialects. Estrogen, progesterone, cortisol, and your microbiome all shift across your menstrual cycle, and when you eat and supplement in alignment with those shifts, you stop fighting your body and start working with it.
+
+This is the piece most practitioners skip. They hand you a protocol that stays flat all month — same supplements, same foods, same routine — while your hormones are doing a full four-act transformation every 28 days. That mismatch is where the bloating, the crashes, and the "I don’t know why I feel so off" moments live.
+
+### Follicular Phase (Days 1-13) — Gut Healing Window
+
+Your follicular phase is your body’s natural rebuild window. Estrogen is climbing, your gut lining is primed for repair, and your microbiome is at its most receptive to positive inputs. This is when gut healing protocols actually land.
+
+**What to lean into:**
+- **Fermented foods** — sauerkraut, kimchi, coconut yogurt. Your gut flora are ready to diversify right now. Feed them.
+- **Prebiotic-rich vegetables** — asparagus, garlic, onions, dandelion greens. These feed the beneficial bacteria that produce the butyrate your gut lining needs to seal and heal.
+- **Light, raw, enzyme-rich meals** — your digestion is stronger in this phase. Smoothie bowls, big salads with sprouted seeds, fresh herbs. Your body can handle the fiber load now.
+- **Bone broth or collagen** — the amino acids (glycine, proline, glutamine) go directly to gut lining repair. This is the phase where they do the most work.
+- **Molecular hydrogen water** — H2 supports the gut microbiome recalibration happening naturally in this phase. The selective antioxidant activity clears the oxidative debris from the previous cycle without disrupting the beneficial signaling your gut flora need to reestablish.
+
+This is also your **new moon energy** if you bleed with the new moon — a time of planting, of setting the internal terrain for what you want to grow. Think of follicular gut work as tilling the soil.
+
+### Luteal Phase (Days 15-28) — Hormone Stabilization
+
+Here is where most women lose the thread. Progesterone rises, digestion slows, cravings spike, and the gut-brain axis gets louder. This is not your body betraying you — it is progesterone doing exactly what it’s supposed to do: slowing things down so energy can go toward building the uterine lining and preparing for potential implantation.
+
+The problem is that most women are fighting this phase instead of feeding it.
+
+**What to lean into:**
+- **Warm, cooked, easy-to-digest meals** — stews, roasted root vegetables, warm grain bowls with quinoa or millet. Your digestion is literally slower right now. Don’t make it work harder than it needs to.
+- **Magnesium-rich foods** — dark chocolate (real cacao, not sugar bombs), pumpkin seeds, black beans, leafy greens. Magnesium supports both progesterone production and the smooth muscle relaxation your gut needs to keep moving.
+- **Chia seeds and flaxseeds** — ground flax supports estrogen metabolism through the liver (your body is processing and clearing estrogen in this phase). Chia provides gentle soluble fiber that won’t aggravate a sluggish luteal gut.
+- **Reduce raw, cold, and high-fiber foods** — that giant raw kale salad that felt amazing in your follicular phase? It might sit like a rock in your luteal phase. Honor the shift.
+- **Hydrogen-rich water becomes even more important here** — progesterone’s rise increases baseline oxidative stress. H2 helps your cells manage that load without the inflammatory cascade that leads to PMS-related bloating and gut discomfort.
+
+If you bleed with the full moon, your luteal phase carries a particular intensity — the full moon is peak energy, peak illumination, and your body is simultaneously asking you to slow down. That tension is real. Working with your gut in this phase means honoring both: nourish deeply, rest intentionally, and let your digestion set the pace.
+
+### The Gut-Hormone Feedback Loop
+
+Here is what most people miss: your gut bacteria actually produce and metabolize hormones. The estrobolome — a specific collection of gut bacteria — is responsible for metabolizing estrogen. When your gut flora are disrupted (dysbiosis), estrogen doesn’t clear properly, and you end up with estrogen dominance symptoms: heavy periods, breast tenderness, mood swings, weight gain around the hips.
+
+Cycle-syncing your gut care means you are not just managing symptoms — you are maintaining the microbial ecosystem that regulates your hormones in the first place. The gut is upstream of the hormones, not downstream.
+
+*Personalized cycle-synced protocols — including nutrition plans mapped to your exact cycle length and moon phase alignment — are coming soon as part of the EAU Blueprint. This is where your planner, your chart, and your body all speak the same language.*
+
 ## Bridge
 
-You don't need another elimination diet, another supplement stack, or another hormone test that tells you everything is "technically normal."
+You don’t need another elimination diet, another supplement stack, or another hormone test that tells you everything is "technically normal."
 
 You need your foundation stable. Start at the root.
 
-The gut doesn't need to be complicated. Neither do your hormones — not when the soil they grow from is clean and supported.
+The gut doesn’t need to be complicated. Neither do your hormones — not when the soil they grow from is clean and supported.
 
 This doesn’t have to be overwhelming. One shift. Start here.
 

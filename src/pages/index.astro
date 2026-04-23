@@ -9,6 +9,18 @@ import { config } from '../data/hub.config';
 ---
 
 <Base title={config.name} description="Rebuilding life from the foundation up. A 13-node spiral journey through body, mind, life, and freedom.">
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": config.name,
+    "url": config.domains.hub,
+    "description": config.tagline,
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": `${config.domains.hub}/quiz`,
+      "name": "Take the Quiz"
+    }
+  })} />
   <!-- Spiral Hero -->
   <section class="bg-ocean-900">
     <div class="px-6 pt-16 md:pt-20 pb-6 text-center">

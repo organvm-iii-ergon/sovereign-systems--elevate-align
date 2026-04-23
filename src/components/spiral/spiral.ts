@@ -81,8 +81,8 @@ const TURNS = 3.5;
 const HELIX_HEIGHT = 20;
 const PATH_STEPS = 512;
 const PATH_EXTEND = 0.85;            // 85% extra above/below — truly infinite
-const BG_COLOR = 0x071e22;
-const FOG_DENSITY = 0.065;           // dissolves endpoints into background
+const BG_COLOR = 0x0a2d33;
+const FOG_DENSITY = 0.050;           // dissolves endpoints into background
 const ORB_RADIUS = 0.4;
 const ORB_SEGMENTS = 32;
 const CLICK_THRESHOLD = 8;           // px — drag vs. click (mouse)
@@ -464,17 +464,17 @@ export function initSpiral(
   renderer.setSize(w, h);
   renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
   renderer.toneMapping = THREE.ACESFilmicToneMapping;
-  renderer.toneMappingExposure = 1.2;
+  renderer.toneMappingExposure = 1.6;
   container.appendChild(renderer.domElement);
   renderer.domElement.style.cursor = 'grab';
   renderer.domElement.style.touchAction = 'none';
 
   // --- Lighting ---
-  scene.add(new THREE.AmbientLight(0xffffff, 0.4));
-  const keyLight = new THREE.PointLight(0x119a9e, 1.5, 60);
+  scene.add(new THREE.AmbientLight(0xffffff, 0.65));
+  const keyLight = new THREE.PointLight(0x119a9e, 2.2, 60);
   keyLight.position.set(8, 12, 15);
   scene.add(keyLight);
-  const fillLight = new THREE.PointLight(0xc9a96e, 0.6, 40);
+  const fillLight = new THREE.PointLight(0xc9a96e, 1.0, 40);
   fillLight.position.set(-6, -4, -10);
   scene.add(fillLight);
 
@@ -522,7 +522,7 @@ export function initSpiral(
   scene.add(new THREE.Line(geo, new THREE.LineBasicMaterial({
     vertexColors: true,
     transparent: true,
-    opacity: 0.3,
+    opacity: 0.45,
   })));
 
   // --- Orb meshes ---
@@ -560,7 +560,7 @@ export function initSpiral(
       normalMap: normalTex,
       normalScale: new THREE.Vector2(pm.normalStrength, pm.normalStrength),
       emissive: nodeColor,
-      emissiveIntensity: live ? 0.6 : 0.12,
+      emissiveIntensity: live ? 0.85 : 0.2,
       metalness: pm.metalness,
       roughness: pm.roughness,
       transparent: true,
@@ -604,7 +604,7 @@ export function initSpiral(
       breathFreq: pa.breathFreq * (0.85 + nodeRng() * 0.3),
       breathAmp: pa.breathAmp,
       breathPhase: seed * 1.7,
-      emissiveBase: live ? 0.6 : 0.12,
+      emissiveBase: live ? 0.85 : 0.2,
       emissiveAmp: live ? pa.emissiveAmpLive : pa.emissiveAmpLocked,
       emissiveFreq: pa.emissiveFreq * (0.9 + nodeRng() * 0.2),
       emissivePhase: seed * 2.1,
@@ -655,7 +655,7 @@ export function initSpiral(
         driftFreq: 0.3 + particleRng() * 0.5,
         driftAmp: 0.1 + particleRng() * 0.2,
         phase: particleRng() * Math.PI * 2,
-        brightnessBase: live ? (0.5 + particleRng() * 0.5) : (0.15 + particleRng() * 0.15),
+        brightnessBase: live ? (0.7 + particleRng() * 0.3) : (0.25 + particleRng() * 0.15),
         brightnessFreq: 0.4 + particleRng() * 0.6,
       });
 
@@ -699,7 +699,7 @@ export function initSpiral(
     ambientPositions[idx + 2] = ambientBasePositions[idx + 2];
 
     const pc = phaseColors[Math.floor(ambientRng() * 3)];
-    const dim = 0.15 + ambientRng() * 0.2;
+    const dim = 0.25 + ambientRng() * 0.25;
     ambientColors[idx] = pc.r * dim;
     ambientColors[idx + 1] = pc.g * dim;
     ambientColors[idx + 2] = pc.b * dim;
@@ -721,7 +721,7 @@ export function initSpiral(
   const ambientMaterial = new THREE.PointsMaterial({
     vertexColors: true,
     transparent: true,
-    opacity: 0.25,
+    opacity: 0.4,
     map: softDotTex,
     blending: THREE.AdditiveBlending,
     depthWrite: false,
@@ -830,6 +830,14 @@ export function initSpiral(
   window.addEventListener('resize', onResize);
 
   // --- Animation loop ---
+  // Reduced-motion: dampen all animation for vestibular accessibility
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const motionScale = prefersReducedMotion ? 0.05 : 1.0;
+
+  if (prefersReducedMotion) {
+    controls.autoRotate = false;
+  }
+
   const clock = new THREE.Clock();
   let frame = 0;
   const cameraDir = new THREE.Vector3();
@@ -846,10 +854,10 @@ export function initSpiral(
       const df = ap.driftFreqs;
       const nc = nodeColorList[i];
 
-      // 1. Orbital motion + layered drift
-      const orbitAngle = t * ap.orbitSpeed + ap.orbitPhase;
-      const orbX = Math.cos(orbitAngle) * ap.orbitRadius;
-      const orbY = Math.sin(orbitAngle) * ap.orbitRadius;
+      // 1. Orbital motion + layered drift (scaled by reduced-motion preference)
+      const orbitAngle = t * ap.orbitSpeed * motionScale + ap.orbitPhase;
+      const orbX = Math.cos(orbitAngle) * ap.orbitRadius * motionScale;
+      const orbY = Math.sin(orbitAngle) * ap.orbitRadius * motionScale;
 
       group.position.x = basePositions[i].x
         + ap.orbitNormal.x * orbX + ap.orbitBinormal.x * orbY
@@ -874,10 +882,10 @@ export function initSpiral(
       mat.emissiveIntensity = ap.emissiveBase
         + Math.sin(t * ap.emissiveFreq + ap.emissivePhase) * ap.emissiveAmp;
 
-      // 4. Multi-axis rotation (VISIBLE spinning)
-      mesh.rotation.x = t * ap.rotRateX + ap.rotPhaseX;
-      mesh.rotation.y = t * ap.rotRateY + ap.rotPhaseY;
-      mesh.rotation.z = t * ap.rotRateZ + ap.rotPhaseZ;
+      // 4. Multi-axis rotation (VISIBLE spinning, dampened for reduced-motion)
+      mesh.rotation.x = t * ap.rotRateX * motionScale + ap.rotPhaseX;
+      mesh.rotation.y = t * ap.rotRateY * motionScale + ap.rotPhaseY;
+      mesh.rotation.z = t * ap.rotRateZ * motionScale + ap.rotPhaseZ;
 
       // 5. Emoji sprite: camera-facing + bob
       const emoji = group.children[1];

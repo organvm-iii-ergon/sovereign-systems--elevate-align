@@ -1,0 +1,83 @@
+---
+interface Props {
+  branchSlug: string;
+  tone?: 'standard' | 'soft';
+}
+
+const { branchSlug, tone = 'standard' } = Astro.props;
+
+const phaseData = [
+  {
+    name: 'Menstrual',
+    days: '1-5',
+    moon: 'New Moon',
+    moonEmoji: '\u{1F311}',
+    energy: 'Release & Reset',
+    color: 'rgba(17, 154, 158, 0.15)',
+    borderColor: 'rgba(17, 154, 158, 0.4)',
+  },
+  {
+    name: 'Follicular',
+    days: '6-13',
+    moon: 'Waxing Moon',
+    moonEmoji: '\u{1F312}',
+    energy: 'Build & Prepare',
+    color: 'rgba(140, 197, 211, 0.15)',
+    borderColor: 'rgba(140, 197, 211, 0.4)',
+  },
+  {
+    name: 'Ovulatory',
+    days: '14-16',
+    moon: 'Full Moon',
+    moonEmoji: '\u{1F315}',
+    energy: 'Peak & Express',
+    color: 'rgba(201, 169, 110, 0.15)',
+    borderColor: 'rgba(201, 169, 110, 0.4)',
+  },
+  {
+    name: 'Luteal',
+    days: '17-28',
+    moon: 'Waning Moon',
+    moonEmoji: '\u{1F316}',
+    energy: 'Sustain & Nourish',
+    color: 'rgba(61, 191, 196, 0.15)',
+    borderColor: 'rgba(61, 191, 196, 0.4)',
+  },
+];
+---
+
+<div class="cycle-awareness my-12 py-10 px-6 rounded-lg" style="background: linear-gradient(135deg, rgba(17,154,158,0.06) 0%, rgba(140,197,211,0.04) 100%); border: 1px solid rgba(17,154,158,0.12);">
+  <div class="text-center mb-8">
+    <span class="text-3xl block mb-3">{'\u{1F319}'}</span>
+    <h3 class:list={[
+      'font-heading text-xl font-light mb-2',
+      tone === 'standard' ? 'text-white/80' : 'text-white/60',
+    ]}>
+      Cycle Awareness
+    </h3>
+    <p class="text-white/35 text-sm font-light max-w-md mx-auto leading-relaxed">
+      Your body runs on a rhythm. Every phase of your cycle shifts what your body needs, how it responds, and what supports it best. Here is the map.
+    </p>
+  </div>
+
+  <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-xl mx-auto mb-8">
+    {phaseData.map((phase) => (
+      <div
+        class="rounded-md p-4 text-center"
+        style={`background: ${phase.color}; border: 1px solid ${phase.borderColor};`}
+      >
+        <div class="text-2xl mb-1">{phase.moonEmoji}</div>
+        <div class="font-heading text-sm text-white/70 font-medium">{phase.name}</div>
+        <div class="text-white/35 text-xs mt-1">Days {phase.days}</div>
+        <div class="text-white/45 text-xs italic mt-1">{phase.energy}</div>
+        <div class="text-white/25 text-[10px] mt-2">{phase.moon}</div>
+      </div>
+    ))}
+  </div>
+
+  <div class="text-center border-t border-white/5 pt-6">
+    <p class="text-white/30 text-xs font-light max-w-sm mx-auto leading-relaxed">
+      Personalized cycle-synced protocols mapped to your birth chart and moon phase alignment are coming soon as part of the EAU Blueprint.
+    </p>
+  </div>
+</div>

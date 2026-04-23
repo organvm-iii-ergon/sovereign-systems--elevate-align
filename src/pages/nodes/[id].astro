@@ -233,4 +233,38 @@ const nextNode = currentIndex < allNodes.length - 1 ? allNodes[currentIndex + 1]
   .prose-node p:last-child {
     margin-bottom: 0;
   }
+  .prose-node h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.5rem;
+    font-weight: 300;
+    color: rgba(255, 255, 255, 0.8);
+    margin-top: 2.5rem;
+    margin-bottom: 1rem;
+  }
+  .prose-node h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.25rem;
+    font-weight: 300;
+    color: rgba(255, 255, 255, 0.7);
+    margin-top: 2rem;
+    margin-bottom: 0.75rem;
+  }
+  .prose-node strong {
+    color: rgba(255, 255, 255, 0.7);
+    font-weight: 500;
+  }
+  .prose-node em {
+    color: rgba(255, 255, 255, 0.55);
+    font-style: italic;
+  }
+  .prose-node ul, .prose-node ol {
+    margin-bottom: 1.5rem;
+    padding-left: 1.5rem;
+  }
+  .prose-node li {
+    margin-bottom: 0.5rem;
+  }
+  .prose-node ul li::marker {
+    color: rgba(17, 154, 158, 0.4);
+  }
 </style>

@@ -49,10 +49,19 @@ import { config } from '../data/hub.config';
         <p class="text-white/35 text-[14px] font-light mb-10">
           Each phase builds on the last. Most people start with the body.
         </p>
+        <a
+          href="/"
+          data-ea-action="quiz_overview"
+          class="block mb-6 text-ocean-400 hover:text-ocean-300 text-[12px] font-medium tracking-[0.1em] uppercase transition-colors"
+        >
+          &larr; See the full spiral overview
+        </a>
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
           {config.pillars.map((pillar) => (
             <a
               href={pillar.url}
+              data-ea-action="pillar_view"
+              data-ea-pillar={pillar.slug}
               class="glass-card p-6 text-center group"
             >
               <span class="text-3xl block mb-3">{pillar.emoji}</span>
@@ -110,6 +119,7 @@ import { config } from '../data/hub.config';
       }
 
       localStorage.setItem(QUIZ_KEY, 'true');
+      console.log('[EA] action=quiz_start source=hub');
       reveal();
     }
   });

@@ -3,6 +3,7 @@ import { getCollection } from 'astro:content';
 import Base from '../../layouts/Base.astro';
 import CTAButton from '../../components/CTAButton.astro';
 import ComingSoon from '../../components/ComingSoon.astro';
+import CycleAwareness from '../../components/CycleAwareness.astro';
 import ResearchAccordion from '../../components/ResearchAccordion.astro';
 import VerticalSpine from '../../components/VerticalSpine.astro';
 import EmailGate from '../../components/EmailGate.astro';
@@ -21,9 +22,12 @@ const { Content } = await branch.render();
 const { title, emoji, hook, status, tone } = branch.data;
 const ctaLabel = tone === 'soft' ? 'Explore gently' : 'Start with your water';
 
-const branchConfig = config.branches.find(b => b.slug === branch.id.replace(/\.md$/, ''));
+const branchSlug = branch.id.replace(/\.md$/, '');
+const branchConfig = config.branches.find(b => b.slug === branchSlug);
 const citationIds = branchConfig?.citationIds || [];
 const branchGhlUrl = branchConfig?.ghlUrl || config.ghl.productUrl;
+const cycleSyncedBranches = ['gut-hormones', 'fertility', 'athletic'];
+const hasCycleContent = cycleSyncedBranches.includes(branchSlug);
 ---
 
 <Base title={`${title} — Water`} description={hook || `Explore ${title} — research-backed insights for your water and health journey.`}>
@@ -50,6 +54,9 @@ const branchGhlUrl = branchConfig?.ghlUrl || config.ghl.productUrl;
           <div class="branch-content text-[16px] leading-[1.9]">
             <Content />
           </div>
+          {hasCycleContent && (
+            <CycleAwareness branchSlug={branchSlug} tone={tone} />
+          )}
           <ResearchAccordion ids={citationIds} />
         </EmailGate>
       )}

@@ -383,6 +383,9 @@ const filterTiersJson = JSON.stringify(filterTiers);
       return;
     }
 
+    // Analytics: water funnel entry
+    console.log(`[EA] action=water_funnel_entry source=${sourceInput.value}`);
+
     // Show results panel with loading state
     const results = document.getElementById('step-1-results');
     results?.classList.remove('hidden');
@@ -471,6 +474,9 @@ const filterTiersJson = JSON.stringify(filterTiers);
     } catch {
       // Continue on failure — don't block UX
     }
+
+    // Analytics: email gate completed
+    console.log('[EA] action=email_gate_submit page=hydration-node');
 
     // Show filter recommendations
     emailForm.closest('.glass-card')?.classList.add('hidden');
