@@ -811,6 +811,7 @@ export function initSpiral(
     if (hits.length > 0) {
       const data = hits[0].object.userData as NodeData;
       if (data.status === 'live') {
+        console.log(`[EA] action=spiral_node_click node=${data.id} name=${data.name} phase=${data.phase}`);
         window.location.href = data.url;
       }
     }

@@ -99,12 +99,14 @@ const { preview } = Astro.props;
           body: JSON.stringify({ email, source: 'email_gate' })
         });
         localStorage.setItem(UNLOCK_KEY, 'true');
+        console.log(`[EA] action=email_gate_unlock source=${window.location.pathname}`);
         unlock();
       } catch {
         button.innerText = originalText;
         button.disabled = false;
         // Still unlock on network failure — don't block the UX
         localStorage.setItem(UNLOCK_KEY, 'true');
+        console.log(`[EA] action=email_gate_unlock source=${window.location.pathname} fallback=true`);
         unlock();
       }
     }
