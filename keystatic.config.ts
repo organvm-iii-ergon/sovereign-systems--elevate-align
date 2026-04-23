@@ -1,9 +1,18 @@
 import { config, fields, collection } from '@keystatic/core';
 
+const storageKind =
+  (import.meta.env.KEYSTATIC_STORAGE_KIND as string) ?? 'local';
+
+const storage =
+  storageKind === 'github'
+    ? ({
+        kind: 'github' as const,
+        repo: 'organvm-iii-ergon/sovereign-systems--elevate-align',
+      })
+    : ({ kind: 'local' as const });
+
 export default config({
-  storage: {
-    kind: 'local',
-  },
+  storage,
   collections: {
     pillars: collection({
       label: 'Pillars',

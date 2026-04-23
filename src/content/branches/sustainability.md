@@ -37,17 +37,13 @@ You don't have to choose between your conscience and your health.
 The most powerful thing you can do for the environment is to stop participating in the systems that degrade it. Start at the root. Start with your water.
 
 
-## Research & Evidence
+## The Long Game
 
-### From Maddie's Research
+Sustainability isn't a trend you participate in — it's a posture you adopt. When you install a system at home that gives you clean, hydrogen-rich water on demand, you're not just saving money or reducing plastic. You're exiting a dependency loop.
 
-> Thank you so much!
+Every bottle you don't buy is a vote against the system that profits from your disconnection from your own water supply. Every gallon you produce at home is sovereignty in action — quiet, steady, compounding.
 
-> “Then at the end of the branches and each of, and the end of the main funnel or main water hub have the call to action, which goes to my website, which they can purchase themselves.”
-
-> “Yay, thank you. I'm excited to see it.”
-
-> “Well, thank you.”
+This is what Maddie means when she talks about “installing systems.” Not hustle. Not optimization. Just the slow, irreversible process of reclaiming what was always supposed to be yours.
 
 ## Resources
 

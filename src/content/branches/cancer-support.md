@@ -36,6 +36,16 @@ This section is not about promises; it is about possibilities. It is for those w
 
 You deserve support that is as grounded in evidence as it is in compassion.
 
+## A Note on Cycles During Treatment
+
+If you're undergoing chemotherapy or radiation, your cycle may be disrupted, irregular, or temporarily absent. This is normal. Your body is prioritizing survival over reproduction — that's not a failure, it's triage.
+
+If your cycle is still present during treatment, know that your immune and inflammatory responses still follow hormonal patterns. The luteal phase (when progesterone rises) tends to be more anti-inflammatory — some people report feeling marginally better during this window. The menstrual phase (when hormones drop) can amplify treatment side effects.
+
+This isn't about optimizing anything. It's about understanding why some days feel harder than others — and giving yourself permission to match your support to your rhythm, even when that rhythm is disrupted.
+
+*If and when your cycle returns post-treatment, the EAU Blueprint can help you rebuild your relationship with it. But that's for later. Right now, the only protocol is kindness.*
+
 ## Resources
 
 Detailed research summaries, safety data, and practitioner-focused resources coming soon. Always consult with your oncology team before adding new protocols.
