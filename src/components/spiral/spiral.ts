@@ -1181,12 +1181,15 @@ export function initSpiral(
     const pm = PHASE_MAT[phase] || PHASE_MAT.ELEVATE;
     const pa = PHASE_ANIM[phase] || PHASE_ANIM.ELEVATE;
 
-    // Per-node geometry — symbol mapping or generative star, depending on variant
+    // Per-node geometry — symbol mapping or generative star, depending on variant.
+    // Depth bumped 0.18 → 0.45 so the icon has real 3D INTERIOR volume — the
+    // container that holds the universe. User 2026-04-25: "icon and inside
+    // that 3dimensional perimeter a universe — the materia cant pass the icon's
+    // substrate". Materia field below uses raycast inside-test against this
+    // mesh so particles physically cannot escape the icon outline.
     const geo = variant === 'stars'
-      // Thinner extrude so edge-on rotation doesn't read as a rectangle —
-      // these are stars, not blocks. Depth 0.18 instead of 0.5.
-      ? generativeStarGeometry(node.id, ORB_RADIUS, ORB_RADIUS * 0.18)
-      : symbolGeometryFor(node.id, ORB_RADIUS, ORB_RADIUS * 0.18);
+      ? generativeStarGeometry(node.id, ORB_RADIUS, ORB_RADIUS * 0.45)
+      : symbolGeometryFor(node.id, ORB_RADIUS, ORB_RADIUS * 0.45);
     variantGeometries.push(geo);
 
     const sheenColor = nodeColor.clone().lerp(new THREE.Color(0xffffff), 0.4);
@@ -1510,40 +1513,51 @@ export function initSpiral(
     planetRingMeshes.push(nodeRings);
 
     // --- Materia particle field ---
-    // Volumetric fill: ~280 additive sprites distributed throughout the
-    // contained sphere. Sizes span MICRO (0.004) to MACRO (0.022) so each
-    // node's universe is densely populated with materia at multiple scales,
-    // not just the central sun + few planets. Color tinted from materia
-    // palette. Bigger particles bias to the inner shells (more dense core).
+    // Volumetric fill: additive sprites distributed throughout the icon's
+    // ACTUAL 3D volume — not a sphere. Each candidate point is raycast-tested
+    // against the visible mesh; only points INSIDE the icon's substrate are
+    // kept. User 2026-04-25: "the materia cant pass the icon's substrate".
+    // Sizes span MICRO (0.004) to MACRO (0.022); colored from materia palette.
     const fieldPositions = new Float32Array(MATERIA_FIELD_PARTICLES * 3);
     const fieldColors = new Float32Array(MATERIA_FIELD_PARTICLES * 3);
-    const fieldSizes = new Float32Array(MATERIA_FIELD_PARTICLES);
     const fieldRng = mulberry32(node.id * 9907 + 17 + loadSalt);
-    for (let f = 0; f < MATERIA_FIELD_PARTICLES; f++) {
-      // Rejection sampling for uniform distribution in unit sphere
-      let x = 0, y = 0, z = 0, r2 = 2;
-      while (r2 > 1) {
-        x = fieldRng() * 2 - 1;
-        y = fieldRng() * 2 - 1;
-        z = fieldRng() * 2 - 1;
-        r2 = x * x + y * y + z * z;
-      }
-      // Bias toward outer shell for variety, but keep some core density.
-      // Power 0.55 = mostly fills the volume rather than clustering at center.
-      const r = Math.pow(fieldRng(), 0.55) * ORB_CONTAINMENT_R;
-      const norm = Math.sqrt(r2) || 1;
-      fieldPositions[f * 3]     = (x / norm) * r;
-      fieldPositions[f * 3 + 1] = (y / norm) * r;
-      fieldPositions[f * 3 + 2] = (z / norm) * r;
 
-      // Size distribution power-law biased to small (most particles micro,
-      // a few macro). materia.sizeMul scales the entire envelope per node.
-      const st = Math.pow(fieldRng(), 2.2);
-      fieldSizes[f] = (MATERIA_FIELD_SIZE_MIN + st * (MATERIA_FIELD_SIZE_MAX - MATERIA_FIELD_SIZE_MIN))
-                    * materia.sizeMul;
+    // Set up raycast inside-test against the icon mesh (mesh-local frame).
+    // Mesh hasn't been added to scene yet, so its matrixWorld is identity —
+    // local positions == world positions for the raycast.
+    mesh.matrixWorld.identity();
+    geo.computeBoundingBox();
+    const bbox = geo.boundingBox!;
+    const bboxMin = bbox.min;
+    const bboxRange = new THREE.Vector3().subVectors(bbox.max, bbox.min);
+    const insideRaycaster = new THREE.Raycaster();
+    const candidatePos = new THREE.Vector3();
+    const probeDir = new THREE.Vector3(1, 0, 0);
 
-      // Color: rotate through palette + per-particle hue jitter
-      const baseCol = palette[f % palette.length];
+    let kept = 0;
+    let attempts = 0;
+    const maxAttempts = MATERIA_FIELD_PARTICLES * 12; // safety cap
+    while (kept < MATERIA_FIELD_PARTICLES && attempts < maxAttempts) {
+      // Sample uniform random point in the mesh's bounding box
+      candidatePos.set(
+        bboxMin.x + fieldRng() * bboxRange.x,
+        bboxMin.y + fieldRng() * bboxRange.y,
+        bboxMin.z + fieldRng() * bboxRange.z,
+      );
+      // Inside test: cast a ray in +X from the candidate; odd intersection
+      // count == inside the mesh (standard even/odd parity rule).
+      insideRaycaster.set(candidatePos, probeDir);
+      const hits = insideRaycaster.intersectObject(mesh, false);
+      attempts++;
+      if (hits.length % 2 !== 1) continue;          // outside — reject
+
+      fieldPositions[kept * 3]     = candidatePos.x;
+      fieldPositions[kept * 3 + 1] = candidatePos.y;
+      fieldPositions[kept * 3 + 2] = candidatePos.z;
+
+      // Color: rotate through materia palette + per-particle hue jitter so
+      // no two particles in a system are identical even from the same slot.
+      const baseCol = palette[kept % palette.length];
       const hsl = { h: 0, s: 0, l: 0 };
       baseCol.getHSL(hsl);
       const tinted = new THREE.Color().setHSL(
@@ -1551,27 +1565,36 @@ export function initSpiral(
         Math.min(1, hsl.s * (0.75 + fieldRng() * 0.4)),
         Math.min(0.95, hsl.l * (0.70 + fieldRng() * 0.55)),
       );
-      fieldColors[f * 3]     = tinted.r;
-      fieldColors[f * 3 + 1] = tinted.g;
-      fieldColors[f * 3 + 2] = tinted.b;
+      fieldColors[kept * 3]     = tinted.r;
+      fieldColors[kept * 3 + 1] = tinted.g;
+      fieldColors[kept * 3 + 2] = tinted.b;
+      kept++;
+    }
+    // If rejection sampling didn't fill (very thin shape with high reject
+    // rate), zero remaining slots so they render as transparent black points.
+    for (let f = kept; f < MATERIA_FIELD_PARTICLES; f++) {
+      fieldPositions[f * 3] = fieldPositions[f * 3 + 1] = fieldPositions[f * 3 + 2] = 0;
+      fieldColors[f * 3] = fieldColors[f * 3 + 1] = fieldColors[f * 3 + 2] = 0;
     }
     const fieldGeo = new THREE.BufferGeometry();
     fieldGeo.setAttribute('position', new THREE.BufferAttribute(fieldPositions, 3));
     fieldGeo.setAttribute('color', new THREE.BufferAttribute(fieldColors, 3));
-    // Average size for the material; per-particle sizes via shader would
-    // be ideal but PointsMaterial.size is uniform. Use the size envelope
-    // midpoint scaled by materia.emissiveMul so brighter materia look bigger.
-    const avgFieldSize = (MATERIA_FIELD_SIZE_MIN + MATERIA_FIELD_SIZE_MAX) * 0.5
+    // Average size for the material; per-particle sizes via shader would be
+    // ideal but PointsMaterial.size is uniform. Use the size envelope MAX
+    // scaled by materia knobs so particles are visible at the spiral framing
+    // (camera ~18 units away). Soft additive sprites give a hazy filled feel
+    // rather than hard dots.
+    const avgFieldSize = MATERIA_FIELD_SIZE_MAX
                        * materia.sizeMul * (0.85 + materia.emissiveMul * 0.15);
     const fieldMat = new THREE.PointsMaterial({
       vertexColors: true,
       transparent: true,
-      opacity: live ? 0.85 : 0.45,
+      opacity: live ? 0.55 : 0.32,
       map: softDotTex,
       blending: THREE.AdditiveBlending,
       depthWrite: false,
       sizeAttenuation: true,
-      size: avgFieldSize * 1.6,            // pad for visual presence
+      size: avgFieldSize * 4.5,            // visible at spiral framing
     });
     disposables.push(fieldMat);
     const fieldPoints = new THREE.Points(fieldGeo, fieldMat);
