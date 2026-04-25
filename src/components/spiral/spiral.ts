@@ -81,8 +81,8 @@ const TURNS = 3.5;
 const HELIX_HEIGHT = 20;
 const PATH_STEPS = 512;
 const PATH_EXTEND = 0.85;            // 85% extra above/below — truly infinite
-const BG_COLOR = 0x0a2d33;
-const FOG_DENSITY = 0.050;           // dissolves endpoints into background
+const BG_COLOR = 0x14525d;
+const FOG_DENSITY = 0.035;           // dissolves endpoints into background
 const ORB_RADIUS = 0.4;
 const ORB_SEGMENTS = 32;
 const CLICK_THRESHOLD = 8;           // px — drag vs. click (mouse)
@@ -93,6 +93,17 @@ const PHASE_HEX: Record<string, number> = {
   ALIGN:   0x8cc5d3,
   UNLOCK:  0x3dbfc4,
 };
+
+// 7-chakra palette — root → crown — applied to nodes bottom-to-top via interpolation.
+const CHAKRA_HEX: number[] = [
+  0xff3b3b, // 1 root      — red
+  0xff8a3c, // 2 sacral    — orange
+  0xffd23b, // 3 solar     — yellow
+  0x4ed158, // 4 heart     — green
+  0x3da9f5, // 5 throat    — sky blue
+  0x6c4cd6, // 6 third eye — indigo
+  0xb04ad8, // 7 crown     — violet
+];
 
 // Micro-motion amplitudes (3x increase — visible at camera distance 22)
 const DRIFT_AMP = 0.18;
@@ -418,6 +429,53 @@ function nodePathIndex(t: number, pathLength: number): number {
 }
 
 // ---------------------------------------------------------------------------
+// Star geometry — 5-point extruded star, shared across all nodes
+// ---------------------------------------------------------------------------
+
+function makeStarGeometry(
+  outerR: number,
+  innerR: number,
+  depth: number,
+  points = 5,
+): THREE.ExtrudeGeometry {
+  const shape = new THREE.Shape();
+  for (let i = 0; i < points * 2; i++) {
+    const r = i % 2 === 0 ? outerR : innerR;
+    const a = (i / (points * 2)) * Math.PI * 2 - Math.PI / 2;
+    const x = Math.cos(a) * r;
+    const y = Math.sin(a) * r;
+    if (i === 0) shape.moveTo(x, y);
+    else shape.lineTo(x, y);
+  }
+  shape.closePath();
+  const geo = new THREE.ExtrudeGeometry(shape, {
+    depth,
+    bevelEnabled: true,
+    bevelThickness: depth * 0.15,
+    bevelSize: outerR * 0.08,
+    bevelSegments: 2,
+    curveSegments: 6,
+  });
+  geo.center();
+  return geo;
+}
+
+// ---------------------------------------------------------------------------
+// Chakra color mapping — interpolates root→crown across N nodes (bottom→top)
+// ---------------------------------------------------------------------------
+
+function chakraColorForNode(i: number, total: number): THREE.Color {
+  if (total <= 1) return new THREE.Color(CHAKRA_HEX[0]);
+  const t = (i / (total - 1)) * (CHAKRA_HEX.length - 1); // 0..6
+  const lo = Math.floor(t);
+  const hi = Math.min(lo + 1, CHAKRA_HEX.length - 1);
+  const f = t - lo;
+  const a = new THREE.Color(CHAKRA_HEX[lo]);
+  const b = new THREE.Color(CHAKRA_HEX[hi]);
+  return a.lerp(b, f);
+}
+
+// ---------------------------------------------------------------------------
 // Emoji sprite
 // ---------------------------------------------------------------------------
 
@@ -464,13 +522,13 @@ export function initSpiral(
   renderer.setSize(w, h);
   renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
   renderer.toneMapping = THREE.ACESFilmicToneMapping;
-  renderer.toneMappingExposure = 1.6;
+  renderer.toneMappingExposure = 1.85;
   container.appendChild(renderer.domElement);
   renderer.domElement.style.cursor = 'grab';
   renderer.domElement.style.touchAction = 'none';
 
   // --- Lighting ---
-  scene.add(new THREE.AmbientLight(0xffffff, 0.65));
+  scene.add(new THREE.AmbientLight(0xffffff, 0.85));
   const keyLight = new THREE.PointLight(0x119a9e, 2.2, 60);
   keyLight.position.set(8, 12, 15);
   scene.add(keyLight);
@@ -522,11 +580,13 @@ export function initSpiral(
   scene.add(new THREE.Line(geo, new THREE.LineBasicMaterial({
     vertexColors: true,
     transparent: true,
-    opacity: 0.45,
+    opacity: 0.6,
   })));
 
   // --- Orb meshes ---
-  const sharedGeo = new THREE.SphereGeometry(ORB_RADIUS, ORB_SEGMENTS, ORB_SEGMENTS);
+  // Per Maddie's note (2026-04-25): nodes render as 5-point extruded stars,
+  // colored along the chakra spectrum (root→crown, bottom→top).
+  const sharedGeo = makeStarGeometry(ORB_RADIUS, ORB_RADIUS * 0.45, ORB_RADIUS * 0.5, 5);
   const orbMeshes: THREE.Mesh[] = [];
   const orbGroups: THREE.Group[] = [];
   const basePositions: THREE.Vector3[] = [];
@@ -542,7 +602,7 @@ export function initSpiral(
     const pos = path[idx].clone();
 
     const live = node.status === 'live';
-    const nodeColor = new THREE.Color(node.color);
+    const nodeColor = chakraColorForNode(i, nodes.length);
     nodeColorList.push(nodeColor);
     const phase = node.phase;
     const pm = PHASE_MAT[phase] || PHASE_MAT.ELEVATE;
@@ -552,7 +612,7 @@ export function initSpiral(
     const normalTex = generatePhaseNormalMap(phase, i);
     texturesToDispose.push(albedoTex, normalTex);
 
-    const sheenColor = new THREE.Color(node.color).lerp(new THREE.Color(0xffffff), 0.4);
+    const sheenColor = nodeColor.clone().lerp(new THREE.Color(0xffffff), 0.4);
 
     const mat = new THREE.MeshPhysicalMaterial({
       color: nodeColor,
@@ -560,11 +620,11 @@ export function initSpiral(
       normalMap: normalTex,
       normalScale: new THREE.Vector2(pm.normalStrength, pm.normalStrength),
       emissive: nodeColor,
-      emissiveIntensity: live ? 0.85 : 0.2,
+      emissiveIntensity: live ? 0.85 : 0.35,
       metalness: pm.metalness,
       roughness: pm.roughness,
       transparent: true,
-      opacity: live ? 0.85 : 0.3,
+      opacity: live ? 0.85 : 0.45,
       clearcoat: 1.0,
       clearcoatRoughness: pm.clearcoatRoughness,
       iridescence: pm.iridescence,
@@ -604,7 +664,7 @@ export function initSpiral(
       breathFreq: pa.breathFreq * (0.85 + nodeRng() * 0.3),
       breathAmp: pa.breathAmp,
       breathPhase: seed * 1.7,
-      emissiveBase: live ? 0.85 : 0.2,
+      emissiveBase: live ? 0.85 : 0.35,
       emissiveAmp: live ? pa.emissiveAmpLive : pa.emissiveAmpLocked,
       emissiveFreq: pa.emissiveFreq * (0.9 + nodeRng() * 0.2),
       emissivePhase: seed * 2.1,
