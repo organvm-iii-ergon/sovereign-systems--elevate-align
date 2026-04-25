@@ -177,14 +177,16 @@ const INNER_PARTICLE_SIZE = 0.07;
 // emissive material so they glow THROUGH the orb's translucent (stars) /
 // semi-translucent (symbols) surface like radiant interior bodies. Bloom
 // amplifies them so each shape reads as a contained universe.
-// With the symbol mesh hidden, the system no longer needs to fit inside
-// ORB_RADIUS (0.32). Systems can sprawl to ~0.95 radius — visible from the
-// fold-fitting helix camera framing as actual orbital systems, not specks.
-const PLANET_RADIUS_MIN = 0.022;
-const PLANET_RADIUS_MAX = 0.110;        // wide range — some big, some small
-const PLANET_ORBIT_MIN = 0.18;
-const PLANET_ORBIT_MAX = 0.95;
-const PLANET_ECCENTRICITY_MAX = 0.55;   // high — ellipses, not circles
+// CONTAINMENT — the shape is the boundary; the universe cannot escape it.
+// User 2026-04-25: "the shape CONTAINS the universe, it can not pass the
+// shape's boundary". Per-planet, semiMajor is clamped so apoapsis + planet
+// body (+ ring margin) stays inside the icon.
+const ORB_CONTAINMENT_R = 0.28;         // ORB_RADIUS (0.32) - 0.04 margin
+const PLANET_RADIUS_MIN = 0.012;
+const PLANET_RADIUS_MAX = 0.038;        // nano-to-macro spans 3.2x within bound
+const PLANET_ORBIT_MIN = 0.04;          // close-in orbit
+const PLANET_ORBIT_MAX = 0.20;          // raw max — clamped per-planet
+const PLANET_ECCENTRICITY_MAX = 0.35;   // moderate ellipse — apoapsis stays bound
 const PLANET_COUNT_BONUS_MAX = 4;       // RNG-jittered extra planets per system
 const ORBIT_TRAIL_SEGMENTS = 96;        // smoothness of visible orbit ellipse
 
@@ -224,16 +226,20 @@ interface MateriaSpec {
   dustBoost: number;      // multiplier on inner-shimmer brightness
 }
 
+// Sizes are tuned so the LARGEST planet (size * sizeMul * maxSizeMul) plus
+// its orbit apoapsis stays inside ORB_CONTAINMENT_R. Per-planet runtime
+// clamp on semiMajor enforces this (so eccentric orbits adjust their
+// semi-major axis inward when needed).
 const MATERIA: Record<Materia, MateriaSpec> = {
   plasma:  { sizeMul: 0.80, maxSizeMul: 1.0, emissiveMul: 1.6, sunSize: 1.5, ringChanceMul: 0.5, dustBoost: 1.6 },
-  fire:    { sizeMul: 0.85, maxSizeMul: 1.4, emissiveMul: 1.8, sunSize: 1.7, ringChanceMul: 0.3, dustBoost: 2.0 },
-  water:   { sizeMul: 1.10, maxSizeMul: 1.0, emissiveMul: 0.65,sunSize: 0.9, ringChanceMul: 1.2, dustBoost: 0.9 },
+  fire:    { sizeMul: 0.85, maxSizeMul: 1.3, emissiveMul: 1.8, sunSize: 1.7, ringChanceMul: 0.3, dustBoost: 2.0 },
+  water:   { sizeMul: 1.05, maxSizeMul: 1.0, emissiveMul: 0.65,sunSize: 0.9, ringChanceMul: 1.2, dustBoost: 0.9 },
   ice:     { sizeMul: 0.95, maxSizeMul: 1.0, emissiveMul: 0.85,sunSize: 0.9, ringChanceMul: 1.8, dustBoost: 1.3 },
-  crystal: { sizeMul: 1.20, maxSizeMul: 1.0, emissiveMul: 0.55,sunSize: 0.7, ringChanceMul: 2.0, dustBoost: 0.5 },
-  metal:   { sizeMul: 1.40, maxSizeMul: 1.6, emissiveMul: 0.45,sunSize: 0.75,ringChanceMul: 0.5, dustBoost: 0.3 },
-  gas:     { sizeMul: 1.65, maxSizeMul: 2.2, emissiveMul: 0.50,sunSize: 1.3, ringChanceMul: 1.4, dustBoost: 1.4 },
-  organic: { sizeMul: 1.10, maxSizeMul: 1.2, emissiveMul: 0.85,sunSize: 1.0, ringChanceMul: 0.8, dustBoost: 1.1 },
-  lunar:   { sizeMul: 1.10, maxSizeMul: 1.0, emissiveMul: 0.70,sunSize: 1.0, ringChanceMul: 1.0, dustBoost: 0.7 },
+  crystal: { sizeMul: 1.10, maxSizeMul: 1.0, emissiveMul: 0.55,sunSize: 0.7, ringChanceMul: 2.0, dustBoost: 0.5 },
+  metal:   { sizeMul: 1.25, maxSizeMul: 1.3, emissiveMul: 0.45,sunSize: 0.75,ringChanceMul: 0.5, dustBoost: 0.3 },
+  gas:     { sizeMul: 1.30, maxSizeMul: 1.5, emissiveMul: 0.50,sunSize: 1.3, ringChanceMul: 1.4, dustBoost: 1.4 },
+  organic: { sizeMul: 1.05, maxSizeMul: 1.1, emissiveMul: 0.85,sunSize: 1.0, ringChanceMul: 0.8, dustBoost: 1.1 },
+  lunar:   { sizeMul: 1.05, maxSizeMul: 1.0, emissiveMul: 0.70,sunSize: 1.0, ringChanceMul: 1.0, dustBoost: 0.7 },
 };
 
 interface NodeUniverse {
@@ -1335,7 +1341,7 @@ export function initSpiral(
       const tRad = planetCount > 1 ? p / (planetCount - 1) : 0.5;
       // Add ±15% per-planet jitter so the orbital spacing isn't perfectly even.
       const jitter = 1.0 + (planetRng() - 0.5) * 0.30;
-      const semiMajor = (PLANET_ORBIT_MIN + tRad * (PLANET_ORBIT_MAX - PLANET_ORBIT_MIN)) * jitter;
+      const semiMajorRaw = (PLANET_ORBIT_MIN + tRad * (PLANET_ORBIT_MAX - PLANET_ORBIT_MIN)) * jitter;
       // Eccentricity 0..PLANET_ECCENTRICITY_MAX; outer orbits tend more elliptical.
       const eccentricity = planetRng() * planetRng() * PLANET_ECCENTRICITY_MAX * (0.4 + tRad * 0.6);
       const argPeriapsis = planetRng() * Math.PI * 2;
@@ -1344,7 +1350,7 @@ export function initSpiral(
       const keplerBoost = Math.pow(0.55 / Math.max(0.1, semiMajor), 0.5);
       const orbitSpeed = orbitSpeedRaw * universe.speedMul * keplerBoost;
       // Nano-to-macro size range — power-law biases toward smaller sizes;
-      // outermost planet (p == planetCount-1, ~10% chance) gets the materia's
+      // outermost planet (p == planetCount-1, ~55% chance) gets the materia's
       // maxSizeMul boost so each system can have a "giant" body. Mul by
       // materia.sizeMul scales the entire size envelope per node.
       const sizeT = Math.pow(planetRng(), 1.6);
@@ -1352,6 +1358,14 @@ export function initSpiral(
       const giantBoost = isGiant ? materia.maxSizeMul : 1.0;
       const sizeBase = (PLANET_RADIUS_MIN + sizeT * (PLANET_RADIUS_MAX - PLANET_RADIUS_MIN))
                      * materia.sizeMul * giantBoost;
+
+      // CONTAINMENT CLAMP — apoapsis (semiMajor * (1+e)) + planet body must
+      // stay inside ORB_CONTAINMENT_R. Ring-bearing planets need extra room
+      // (ring extends ~2x planet radius). Conservative: assume worst-case
+      // ring presence so the universe truly cannot escape the shape.
+      const safeSize = sizeBase * 1.45;          // includes ring + small buffer
+      const maxSemiMajor = Math.max(0.025, (ORB_CONTAINMENT_R - safeSize) / (1 + eccentricity));
+      const semiMajor = Math.min(semiMajorRaw, maxSemiMajor);
       // Pick from palette in rotation, then jitter the hue slightly so no
       // two planets in the same system are exact-color duplicates.
       const baseColor = palette[p % palette.length].clone();
