@@ -1347,7 +1347,9 @@ export function initSpiral(
       const argPeriapsis = planetRng() * Math.PI * 2;
       const orbitSpeedRaw = PLANET_ORBIT_SPEED_MIN + planetRng() * (PLANET_ORBIT_SPEED_MAX - PLANET_ORBIT_SPEED_MIN);
       // Kepler-ish: inner planets faster, outer planets slower (a^-3/2 hand-wave)
-      const keplerBoost = Math.pow(0.55 / Math.max(0.1, semiMajor), 0.5);
+      // Uses raw semiMajor (clamp happens below; the boost is already a
+      // smooth function so the difference vs clamped is negligible).
+      const keplerBoost = Math.pow(0.55 / Math.max(0.1, semiMajorRaw), 0.5);
       const orbitSpeed = orbitSpeedRaw * universe.speedMul * keplerBoost;
       // Nano-to-macro size range — power-law biases toward smaller sizes;
       // outermost planet (p == planetCount-1, ~55% chance) gets the materia's
