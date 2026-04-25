@@ -38,7 +38,11 @@ const nodesJson = JSON.stringify(config.nodes);
 
     import('./spiral.ts').then(({ initSpiral }) => {
       const nodes = JSON.parse(raw);
-      const cleanup = initSpiral(container, nodes);
+      // Variant switch: ?variant=stars renders generative refracted-light stars;
+      // anything else (default) renders sacred-symbol shapes per node.
+      const params = new URLSearchParams(window.location.search);
+      const variant = params.get('variant') === 'stars' ? 'stars' : 'symbols';
+      const cleanup = initSpiral(container, nodes, variant);
       (window as any)[INIT_KEY] = cleanup;
 
       // Hide fallback since 3D loaded successfully

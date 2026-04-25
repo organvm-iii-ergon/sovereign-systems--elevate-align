@@ -13,6 +13,9 @@
 
 import * as THREE from 'three';
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
+import { mergeGeometries } from 'three/addons/utils/BufferGeometryUtils.js';
+
+export type SpiralVariant = 'symbols' | 'stars';
 
 // ---------------------------------------------------------------------------
 // Types
@@ -94,15 +97,20 @@ const PHASE_HEX: Record<string, number> = {
   UNLOCK:  0x3dbfc4,
 };
 
-// 7-chakra palette — root → crown — applied to nodes bottom-to-top via interpolation.
+// Chakra-derived palette — root → crown — applied to nodes bottom-to-top via interpolation.
+// 8 stops (was 7): added a second orange between root and sacral so the warm side gets
+// more screen real estate, the indigo→violet stretch compresses to ~2 nodes instead of 3,
+// and the crown is lightened (Maddie 2026-04-25: "another shade of orange instead of three
+// purple, lighten the most top purple").
 const CHAKRA_HEX: number[] = [
-  0xff3b3b, // 1 root      — red
-  0xff8a3c, // 2 sacral    — orange
-  0xffd23b, // 3 solar     — yellow
-  0x4ed158, // 4 heart     — green
-  0x3da9f5, // 5 throat    — sky blue
-  0x6c4cd6, // 6 third eye — indigo
-  0xb04ad8, // 7 crown     — violet
+  0xff3b3b, // 1 root        — red
+  0xff6a3c, // 2 root-sacral — red-orange (added)
+  0xff9a3c, // 3 sacral      — orange
+  0xffd23b, // 4 solar       — yellow
+  0x4ed158, // 5 heart       — green
+  0x3da9f5, // 6 throat      — sky blue
+  0x6c4cd6, // 7 third eye   — indigo
+  0xc97ce8, // 8 crown       — lightened violet
 ];
 
 // Micro-motion amplitudes (3x increase — visible at camera distance 22)
@@ -429,15 +437,31 @@ function nodePathIndex(t: number, pathLength: number): number {
 }
 
 // ---------------------------------------------------------------------------
-// Star geometry — 5-point extruded star, shared across all nodes
+// Geometry builders — Variant A (sacred symbols) + Variant B (generative stars)
 // ---------------------------------------------------------------------------
 
-function makeStarGeometry(
+const EXTRUDE_DEFAULT = (outerR: number, depth: number, curveSegments = 8) => ({
+  depth,
+  bevelEnabled: true,
+  bevelThickness: depth * 0.15,
+  bevelSize: outerR * 0.08,
+  bevelSegments: 2,
+  curveSegments,
+});
+
+function extrudeShape(
+  shape: THREE.Shape,
   outerR: number,
-  innerR: number,
   depth: number,
-  points = 5,
+  curveSegments = 8,
 ): THREE.ExtrudeGeometry {
+  const geo = new THREE.ExtrudeGeometry(shape, EXTRUDE_DEFAULT(outerR, depth, curveSegments));
+  geo.center();
+  return geo;
+}
+
+// N-point regular star (used for sunburst, hexagram, lotus rosette)
+function makeStarShape(outerR: number, innerR: number, points: number): THREE.Shape {
   const shape = new THREE.Shape();
   for (let i = 0; i < points * 2; i++) {
     const r = i % 2 === 0 ? outerR : innerR;
@@ -448,13 +472,238 @@ function makeStarGeometry(
     else shape.lineTo(x, y);
   }
   shape.closePath();
+  return shape;
+}
+
+// 1. Sunburst — 12-ray solar emblem (Egyptian Ra / universal solar disc)
+function makeSunburst(outerR: number, depth: number): THREE.ExtrudeGeometry {
+  return extrudeShape(makeStarShape(outerR, outerR * 0.22, 12), outerR, depth);
+}
+
+// 2. Eye almond + pupil hole (Eye of Horus simplified — vesica almond + iris)
+function makeEye(outerR: number, depth: number): THREE.ExtrudeGeometry {
+  const w = outerR;
+  const h = outerR * 0.55;
+  const shape = new THREE.Shape();
+  shape.moveTo(-w, 0);
+  shape.quadraticCurveTo(-w * 0.5, h, 0, h);
+  shape.quadraticCurveTo(w * 0.5, h, w, 0);
+  shape.quadraticCurveTo(w * 0.5, -h, 0, -h);
+  shape.quadraticCurveTo(-w * 0.5, -h, -w, 0);
+  const pupil = new THREE.Path();
+  pupil.absellipse(0, 0, outerR * 0.18, outerR * 0.18, 0, Math.PI * 2, false, 0);
+  shape.holes.push(pupil);
+  return extrudeShape(shape, outerR, depth, 12);
+}
+
+// 3. Yin-yang disc — circle with two small dot-holes (taegeuk dots)
+function makeYinYang(outerR: number, depth: number): THREE.ExtrudeGeometry {
+  const shape = new THREE.Shape();
+  shape.absellipse(0, 0, outerR * 0.95, outerR * 0.95, 0, Math.PI * 2, false, 0);
+  const yang = new THREE.Path();
+  yang.absellipse(0, outerR * 0.4, outerR * 0.18, outerR * 0.18, 0, Math.PI * 2, false, 0);
+  const yin = new THREE.Path();
+  yin.absellipse(0, -outerR * 0.4, outerR * 0.18, outerR * 0.18, 0, Math.PI * 2, false, 0);
+  shape.holes.push(yang, yin);
+  return extrudeShape(shape, outerR, depth, 24);
+}
+
+// 4. Upward triangle (Pythagorean fire / Hindu Manipura)
+function makeUpwardTriangle(outerR: number, depth: number): THREE.ExtrudeGeometry {
+  const shape = new THREE.Shape();
+  for (let i = 0; i < 3; i++) {
+    const a = (i / 3) * Math.PI * 2 - Math.PI / 2;
+    const x = Math.cos(a) * outerR;
+    const y = Math.sin(a) * outerR;
+    if (i === 0) shape.moveTo(x, y);
+    else shape.lineTo(x, y);
+  }
+  shape.closePath();
+  return extrudeShape(shape, outerR, depth);
+}
+
+// 5. Teardrop (water — Root Healing)
+function makeTeardrop(outerR: number, depth: number): THREE.ExtrudeGeometry {
+  const r = outerR * 0.7;
+  const tip = outerR;
+  const shape = new THREE.Shape();
+  shape.moveTo(0, tip);
+  shape.bezierCurveTo(r, tip * 0.4, r, -r * 0.6, 0, -r);
+  shape.bezierCurveTo(-r, -r * 0.6, -r, tip * 0.4, 0, tip);
+  return extrudeShape(shape, outerR, depth, 16);
+}
+
+// 6. Vesica piscis (mandorla — Christian/Hindu/Sufi mystical union, replaces generic heart)
+function makeVesicaPiscis(outerR: number, depth: number): THREE.ExtrudeGeometry {
+  const w = outerR * 0.55;
+  const h = outerR;
+  const shape = new THREE.Shape();
+  shape.moveTo(0, h);
+  shape.quadraticCurveTo(w, 0, 0, -h);
+  shape.quadraticCurveTo(-w, 0, 0, h);
+  return extrudeShape(shape, outerR, depth, 16);
+}
+
+// 7. Crescent moon (Islamic / lunar feminine)
+function makeCrescent(outerR: number, depth: number): THREE.ExtrudeGeometry {
+  const shape = new THREE.Shape();
+  shape.absellipse(0, 0, outerR * 0.95, outerR * 0.95, 0, Math.PI * 2, false, 0);
+  const bite = new THREE.Path();
+  bite.absellipse(outerR * 0.35, 0, outerR * 0.78, outerR * 0.78, 0, Math.PI * 2, false, 0);
+  shape.holes.push(bite);
+  return extrudeShape(shape, outerR, depth, 24);
+}
+
+// 8. Hexagram (Star of David / Hindu Anahata — coherence)
+function makeHexagram(outerR: number, depth: number): THREE.ExtrudeGeometry {
+  return extrudeShape(makeStarShape(outerR, outerR * 0.55, 6), outerR, depth);
+}
+
+// 9. Lotus rosette (Buddhist Sahasrara — awakening) — 8-point flower
+function makeLotus(outerR: number, depth: number): THREE.ExtrudeGeometry {
+  return extrudeShape(makeStarShape(outerR, outerR * 0.62, 8), outerR, depth, 12);
+}
+
+// 10. Eye-in-triangle (Egyptian / Masonic Eye of Providence)
+function makeEyeInTriangle(outerR: number, depth: number): THREE.ExtrudeGeometry {
+  const shape = new THREE.Shape();
+  for (let i = 0; i < 3; i++) {
+    const a = (i / 3) * Math.PI * 2 - Math.PI / 2;
+    const x = Math.cos(a) * outerR;
+    const y = Math.sin(a) * outerR;
+    if (i === 0) shape.moveTo(x, y);
+    else shape.lineTo(x, y);
+  }
+  shape.closePath();
+  const eye = new THREE.Path();
+  eye.absellipse(0, -outerR * 0.05, outerR * 0.22, outerR * 0.22, 0, Math.PI * 2, false, 0);
+  shape.holes.push(eye);
+  return extrudeShape(shape, outerR, depth, 12);
+}
+
+// 11. Solar cross / sun-wheel (Celtic / pre-Christian — replaces generic equal-arm cross)
+//     Disc with cross-shaped hole — silhouette reads as wheeled cross.
+function makeSolarCross(outerR: number, depth: number): THREE.ExtrudeGeometry {
+  const shape = new THREE.Shape();
+  shape.absellipse(0, 0, outerR * 0.95, outerR * 0.95, 0, Math.PI * 2, false, 0);
+  const armW = outerR * 0.18;
+  const armL = outerR * 0.78;
+  const crossHole = new THREE.Path();
+  crossHole.moveTo(-armW, armW);
+  crossHole.lineTo(-armW, armL);
+  crossHole.lineTo(armW, armL);
+  crossHole.lineTo(armW, armW);
+  crossHole.lineTo(armL, armW);
+  crossHole.lineTo(armL, -armW);
+  crossHole.lineTo(armW, -armW);
+  crossHole.lineTo(armW, -armL);
+  crossHole.lineTo(-armW, -armL);
+  crossHole.lineTo(-armW, -armW);
+  crossHole.lineTo(-armL, -armW);
+  crossHole.lineTo(-armL, armW);
+  crossHole.closePath();
+  shape.holes.push(crossHole);
+  return extrudeShape(shape, outerR, depth, 32);
+}
+
+// 12. Octahedron (sacred geometry — multifaceted truth)
+function makeOctahedron(outerR: number): THREE.OctahedronGeometry {
+  return new THREE.OctahedronGeometry(outerR * 1.05, 0);
+}
+
+// 13. Ankh (Egyptian "key of life") — loop + cross merged into one BufferGeometry.
+// All three parts built in absolute coords (no auto-center), merged, then centered.
+function makeAnkh(outerR: number, depth: number): THREE.BufferGeometry {
+  // Loop sits above the cross with its center at y = +0.50
+  const loopCY = outerR * 0.50;
+  const loop = new THREE.Shape();
+  loop.absellipse(0, loopCY, outerR * 0.42, outerR * 0.50, 0, Math.PI * 2, false, 0);
+  const loopHole = new THREE.Path();
+  loopHole.absellipse(0, loopCY, outerR * 0.20, outerR * 0.26, 0, Math.PI * 2, false, 0);
+  loop.holes.push(loopHole);
+  const loopGeo = new THREE.ExtrudeGeometry(loop, EXTRUDE_DEFAULT(outerR, depth, 20));
+
+  // Vertical bar below the loop
+  const vert = new THREE.Shape();
+  const vw = outerR * 0.13;
+  const vTop = outerR * 0.05;
+  const vBot = -outerR * 0.95;
+  vert.moveTo(-vw, vTop);
+  vert.lineTo(vw, vTop);
+  vert.lineTo(vw, vBot);
+  vert.lineTo(-vw, vBot);
+  vert.closePath();
+  const vertGeo = new THREE.ExtrudeGeometry(vert, EXTRUDE_DEFAULT(outerR, depth, 4));
+
+  // Horizontal cross-arms
+  const horz = new THREE.Shape();
+  const hw = outerR * 0.65;
+  const hh = outerR * 0.13;
+  const hY = -outerR * 0.20;
+  horz.moveTo(-hw, hY + hh);
+  horz.lineTo(hw, hY + hh);
+  horz.lineTo(hw, hY - hh);
+  horz.lineTo(-hw, hY - hh);
+  horz.closePath();
+  const horzGeo = new THREE.ExtrudeGeometry(horz, EXTRUDE_DEFAULT(outerR, depth, 4));
+
+  const merged = mergeGeometries([loopGeo, vertGeo, horzGeo], false);
+  loopGeo.dispose();
+  vertGeo.dispose();
+  horzGeo.dispose();
+  if (!merged) throw new Error('ankh merge failed');
+  merged.center();
+  return merged;
+}
+
+// Variant A — fixed sacred-symbol mapping per node id (1..13)
+function symbolGeometryFor(nodeId: number, outerR: number, depth: number): THREE.BufferGeometry {
+  switch (nodeId) {
+    case 1:  return makeSunburst(outerR, depth);
+    case 2:  return makeEye(outerR, depth);
+    case 3:  return makeYinYang(outerR, depth);
+    case 4:  return makeUpwardTriangle(outerR, depth);
+    case 5:  return makeTeardrop(outerR, depth);
+    case 6:  return makeVesicaPiscis(outerR, depth);          // less-generic replacement for heart
+    case 7:  return makeCrescent(outerR, depth);
+    case 8:  return makeHexagram(outerR, depth);
+    case 9:  return makeLotus(outerR, depth);
+    case 10: return makeEyeInTriangle(outerR, depth);
+    case 11: return makeSolarCross(outerR, depth);            // less-generic replacement for plain cross
+    case 12: return makeOctahedron(outerR);
+    case 13: return makeAnkh(outerR, depth);
+    default: return makeSunburst(outerR, depth);
+  }
+}
+
+// Variant B — generative star, deterministic per nodeId.
+// Per-node: random point count (5–12), inner-radius ratio, twist, jitter, depth profile.
+// All seeds are stable, so a given node always renders the same form across visits.
+function generativeStarGeometry(nodeId: number, outerR: number, depth: number): THREE.ExtrudeGeometry {
+  const rng = mulberry32(nodeId * 9173 + 401);
+  const points = 5 + Math.floor(rng() * 8);            // 5..12 points
+  const innerRatio = 0.28 + rng() * 0.32;              // 0.28..0.60
+  const twist = (rng() - 0.5) * 0.45;                  // -0.22..+0.22 rad full sweep
+  const jitter = 0.18;
+  const shape = new THREE.Shape();
+  for (let i = 0; i < points * 2; i++) {
+    const isOuter = i % 2 === 0;
+    const baseR = isOuter ? outerR : outerR * innerRatio;
+    const r = baseR * (1 + (rng() - 0.5) * jitter);
+    const a = (i / (points * 2)) * Math.PI * 2 - Math.PI / 2 + twist * (i / (points * 2));
+    const x = Math.cos(a) * r;
+    const y = Math.sin(a) * r;
+    if (i === 0) shape.moveTo(x, y);
+    else shape.lineTo(x, y);
+  }
+  shape.closePath();
   const geo = new THREE.ExtrudeGeometry(shape, {
-    depth,
+    depth: depth * (0.7 + rng() * 0.6),
     bevelEnabled: true,
-    bevelThickness: depth * 0.15,
-    bevelSize: outerR * 0.08,
-    bevelSegments: 2,
-    curveSegments: 6,
+    bevelThickness: depth * 0.18,
+    bevelSize: outerR * 0.10,
+    bevelSegments: 3,
+    curveSegments: 8,
   });
   geo.center();
   return geo;
@@ -507,6 +756,7 @@ function makeEmojiSprite(emoji: string): THREE.Sprite {
 export function initSpiral(
   container: HTMLElement,
   nodes: NodeData[],
+  variant: SpiralVariant = 'symbols',
 ): () => void {
   const scene = new THREE.Scene();
   scene.background = new THREE.Color(BG_COLOR);
@@ -588,9 +838,11 @@ export function initSpiral(
   })));
 
   // --- Orb meshes ---
-  // Per Maddie's note (2026-04-25): nodes render as 5-point extruded stars,
-  // colored along the chakra spectrum (root→crown, bottom→top).
-  const sharedGeo = makeStarGeometry(ORB_RADIUS, ORB_RADIUS * 0.45, ORB_RADIUS * 0.5, 5);
+  // Per Maddie's 2026-04-25 feedback, two variants ship side-by-side:
+  //   variant='symbols'  →  13 unique sacred symbols spanning 8+ traditions
+  //   variant='stars'    →  generative star structures with refracted-light material
+  // Both honour the chakra-spectrum coloring (root→crown, bottom→top).
+  const variantGeometries: THREE.BufferGeometry[] = [];
   const orbMeshes: THREE.Mesh[] = [];
   const orbGroups: THREE.Group[] = [];
   const basePositions: THREE.Vector3[] = [];
@@ -612,34 +864,72 @@ export function initSpiral(
     const pm = PHASE_MAT[phase] || PHASE_MAT.ELEVATE;
     const pa = PHASE_ANIM[phase] || PHASE_ANIM.ELEVATE;
 
-    const albedoTex = generatePhaseTexture(phase, i);
-    const normalTex = generatePhaseNormalMap(phase, i);
-    texturesToDispose.push(albedoTex, normalTex);
+    // Per-node geometry — symbol mapping or generative star, depending on variant
+    const geo = variant === 'stars'
+      ? generativeStarGeometry(node.id, ORB_RADIUS, ORB_RADIUS * 0.5)
+      : symbolGeometryFor(node.id, ORB_RADIUS, ORB_RADIUS * 0.5);
+    variantGeometries.push(geo);
 
     const sheenColor = nodeColor.clone().lerp(new THREE.Color(0xffffff), 0.4);
 
-    const mat = new THREE.MeshPhysicalMaterial({
-      color: nodeColor,
-      map: albedoTex,
-      normalMap: normalTex,
-      normalScale: new THREE.Vector2(pm.normalStrength, pm.normalStrength),
-      emissive: nodeColor,
-      emissiveIntensity: live ? 0.85 : 0.55,
-      metalness: pm.metalness,
-      roughness: pm.roughness,
-      transparent: true,
-      opacity: live ? 0.85 : 0.6,
-      clearcoat: 1.0,
-      clearcoatRoughness: pm.clearcoatRoughness,
-      iridescence: pm.iridescence,
-      iridescenceIOR: pm.iridescenceIOR,
-      sheen: pm.sheen,
-      sheenColor: sheenColor,
-      sheenRoughness: pm.sheenRoughness,
-    });
+    let mat: THREE.MeshPhysicalMaterial;
+    if (variant === 'stars') {
+      // Refracted-light-on-water aesthetic — Maddie's visual reference. Each star
+      // is a translucent prism: light passes through, refracts at water-IOR, with
+      // chromatic dispersion + iridescence painting per-node optical signatures.
+      // Per-node param jitter (seeded by node.id) keeps every star optically distinct.
+      const opticRng = mulberry32(node.id * 4513 + 211);
+      mat = new THREE.MeshPhysicalMaterial({
+        color: nodeColor,
+        emissive: nodeColor,
+        emissiveIntensity: live ? 0.35 : 0.20,
+        metalness: 0.0,
+        roughness: 0.10 + opticRng() * 0.12,
+        transparent: true,
+        opacity: live ? 0.92 : 0.70,
+        transmission: 0.78 + opticRng() * 0.15,
+        thickness: 0.30 + opticRng() * 0.45,
+        ior: 1.30 + opticRng() * 0.20,                    // water (1.33) → glass (1.50)
+        dispersion: 0.4 + opticRng() * 1.6,                // chromatic refraction
+        attenuationColor: nodeColor,
+        attenuationDistance: 0.8 + opticRng() * 1.2,
+        clearcoat: 1.0,
+        clearcoatRoughness: 0.05 + opticRng() * 0.10,
+        iridescence: 0.45 + opticRng() * 0.35,
+        iridescenceIOR: 1.30 + opticRng() * 0.40,
+        sheen: 0.5,
+        sheenColor: sheenColor,
+        sheenRoughness: 0.4,
+      });
+    } else {
+      // Variant A — sacred symbols: keep the V3 chakra-orb material with
+      // phase-driven texture maps so each tradition reads at silhouette + close-up.
+      const albedoTex = generatePhaseTexture(phase, i);
+      const normalTex = generatePhaseNormalMap(phase, i);
+      texturesToDispose.push(albedoTex, normalTex);
+      mat = new THREE.MeshPhysicalMaterial({
+        color: nodeColor,
+        map: albedoTex,
+        normalMap: normalTex,
+        normalScale: new THREE.Vector2(pm.normalStrength, pm.normalStrength),
+        emissive: nodeColor,
+        emissiveIntensity: live ? 0.85 : 0.55,
+        metalness: pm.metalness,
+        roughness: pm.roughness,
+        transparent: true,
+        opacity: live ? 0.85 : 0.6,
+        clearcoat: 1.0,
+        clearcoatRoughness: pm.clearcoatRoughness,
+        iridescence: pm.iridescence,
+        iridescenceIOR: pm.iridescenceIOR,
+        sheen: pm.sheen,
+        sheenColor: sheenColor,
+        sheenRoughness: pm.sheenRoughness,
+      });
+    }
     disposables.push(mat);
 
-    const mesh = new THREE.Mesh(sharedGeo, mat);
+    const mesh = new THREE.Mesh(geo, mat);
     mesh.userData = node;
 
     const group = new THREE.Group();
@@ -1013,7 +1303,7 @@ export function initSpiral(
     controls.dispose();
     disposables.forEach(m => m.dispose());
     texturesToDispose.forEach(tex => tex.dispose());
-    sharedGeo.dispose();
+    variantGeometries.forEach(g => g.dispose());
     geo.dispose();
     auraGeometry.dispose();
     ambientGeometry.dispose();
