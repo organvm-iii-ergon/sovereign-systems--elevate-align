@@ -1319,12 +1319,12 @@ export function initSpiral(
     // station that governs the universe inside it. Material opacity dropped
     // to ~18% so the shape reads as a ghost outline / glass containment;
     // texture maps still convey identity at hover/close-up.
-    // Vessel opacity bumped — the icon IS the identity, must read clearly.
-    // Materia inside is contained by the vessel walls (raycast collision below).
-    mat.opacity = live ? 0.45 : 0.28;
-    if (mat.transmission !== undefined) {
-      mat.transmission = Math.min(0.55, mat.transmission);
-    }
+    // User 2026-04-25: "the container exterior is only a guide and is to be
+    // removed". Vessel mesh hidden — the materia density (110 phase particles
+    // bouncing inside the icon's substrate boundary) IS the icon's identity.
+    // Mesh stays in scene-graph as the click/raycast target for interaction
+    // and as the spawn-volume reference (raycast inside-test at init).
+    mesh.visible = false;
 
     const group = new THREE.Group();
     group.position.copy(pos);
