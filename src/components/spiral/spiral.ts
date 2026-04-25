@@ -169,25 +169,32 @@ const INNER_RADIUS_MIN = 0.10;
 const INNER_RADIUS_MAX = 0.32;
 const INNER_PARTICLE_SIZE = 0.07;
 
-// Materia particle field — physics-driven phase particles bouncing inside
-// the icon container. User 2026-04-25: "no blank space inside the shapes,
-// when we remove the shape surface we'll be able to see the shape prevail".
-// Each particle spawns at a raycast-verified inside-icon position (its
-// "home") and is held there by a spring force, so the icon SILHOUETTE
-// emerges from particle density. Implode/explode + bounce keep them alive.
-const MATERIA_FIELD_PARTICLES = 600;            // per node — densely fills icon
+// Materia particle field — physics-driven phase particles bouncing off the
+// icon's exterior substrate. User 2026-04-25: "stars contained by bouncing
+// off their env exterior substrate; icons naturally reach edges and keep
+// form like birds or magnets or electronics". Each particle has thermal
+// jitter (Brownian-like life) + gentle outward pressure (gas-like fill) +
+// continuous raycast boundary collision against the icon's actual mesh
+// surface (distributed across frames for perf). The icon shape emerges as
+// the container the particles fill, not as a constraint pinned to springs.
+const MATERIA_FIELD_PARTICLES = 600;
 const MATERIA_FIELD_SIZE_MIN = 0.005;
 const MATERIA_FIELD_SIZE_MAX = 0.026;
-// Gravity dialed way down — spring-back to home dominates so particles
-// hold the icon shape rather than pooling at the bottom.
-const PHASE_GRAVITY = { solid: -0.10, liquid: -0.06, gas: -0.02 };
-const PHASE_DAMPING = { solid: 0.93,  liquid: 0.975, gas: 0.995 };
-const PHASE_BOUNCE  = { solid: 0.55,  liquid: 0.70,  gas: 0.95  };
-// Spring force toward home — keeps particles distributed throughout icon
-// volume. Solid is stiffest (most rigid silhouette), gas is loosest (more drift).
-const PHASE_SPRING_K = { solid: 4.5,  liquid: 2.8,  gas: 1.2  };
-const IMPLODE_EXPLODE_FREQ = 0.36;              // rad/sec — slow breath cycle
-const IMPLODE_EXPLODE_AMP = 0.30;               // peak central force magnitude
+// Phase physics: gas diffuses fastest + bounces hardest; solid is dense + sluggish.
+const PHASE_THERMAL = { solid: 0.05,  liquid: 0.20, gas: 0.55 };
+const PHASE_DAMPING = { solid: 0.92,  liquid: 0.97, gas: 0.992 };
+const PHASE_BOUNCE  = { solid: 0.50,  liquid: 0.70, gas: 0.95  };
+// Outward radial pressure — pushes particles toward edges (gas wants to fill
+// container). Stronger for gas, weaker for solid. Combined with boundary
+// collision = particles distribute throughout icon volume.
+const PHASE_PRESSURE = { solid: 0.10, liquid: 0.30, gas: 0.85 };
+const IMPLODE_EXPLODE_FREQ = 0.32;              // rad/sec — slow breath cycle
+const IMPLODE_EXPLODE_AMP = 0.18;               // gentler — bounce + pressure carry the visible motion
+// Continuous icon-shape collision — distributed across frames for perf.
+// Each frame, COLLISION_CHECK_FRACTION of particles per node get raycast-
+// tested against the actual icon mesh; particles outside get snapped back
+// to their last known inside position with reflected velocity.
+const COLLISION_CHECK_FRACTION = 0.12;          // ~12% of particles per frame = ~8 fps full cycle
 
 // Per-orb planets — each node IS a mini solar system, contained INSIDE the
 // shape itself. User 2026-04-25: "the solar system is contained within the
@@ -1986,6 +1993,21 @@ export function initSpiral(
   let frame = 0;
   const cameraDir = new THREE.Vector3();
 
+  // Reusable raycast helpers for per-frame icon-shape collision (used in
+  // phase-particle physics). Allocated once outside the loop to avoid GC.
+  const icRaycaster = new THREE.Raycaster();
+  const icCandidatePos = new THREE.Vector3();
+  const icProbeDir = new THREE.Vector3(1, 0, 0);
+
+  // Variant-driven physics divergence — user 2026-04-25: "icons and stars
+  // act opposite, to display a difference".
+  //   symbols variant → spring force toward home (particles HOLD the icon
+  //                     outline; rigid, structured, formal — like sculpture)
+  //   stars variant   → no spring (particles bounce freely; explosive,
+  //                     diffuse, gas-like — like a stellar nebula)
+  const SYMBOL_SPRING_K = { solid: 6.0, liquid: 3.5, gas: 1.5 };
+  const useSpring = variant === 'symbols';
+
   function loop(): void {
     frame = requestAnimationFrame(loop);
     const t = clock.getElapsedTime();
@@ -2131,67 +2153,86 @@ export function initSpiral(
         innerColors[bufIdx + 2] = nc.b * tint;
       }
 
-      // 8. Per-orb PHASE-PARTICLE PHYSICS — gas + liquid + solid bouncing
-      // inside the icon container. Implode/explode central force oscillates
-      // every few seconds. Per-particle gravity, damping, bounce per phase.
-      // Container collision = sphere of radius ORB_CONTAINMENT_R (close to
-      // the icon's bounding extent — perfect bounce off the inner substrate).
+      // 8. Per-orb PHASE-PARTICLE PHYSICS — gas/liquid/solid filling the icon
+      // shape via thermal motion + outward pressure + boundary collision.
+      // Icon shape emerges naturally because the icon mesh IS the container
+      // (raycast collision against actual mesh, distributed across frames).
       const phaseList = nodePhaseParticles[i];
       const phasePos = nodePhasePositions[i];
-      const dt = 1 / 60;                                  // fixed step at 60Hz target
-      // Implode/explode oscillation — sin wave; positive = implode (central
-      // attraction), negative = explode (central repulsion). Different phase
-      // per node so they don't all pulse in unison.
+      const phaseMesh = orbMeshes[i];                    // for raycast collision
+      const dt = 1 / 60;
+      // Implode/explode oscillation per node — different phase so they don't pulse in unison
       const ieT = t * IMPLODE_EXPLODE_FREQ + i * 0.45;
       const centralForce = Math.sin(ieT) * IMPLODE_EXPLODE_AMP;
+
+      // Continuous icon-shape collision: rotate through particles ~8% per frame
+      // so each particle is checked roughly every 12 frames (~5 Hz at 60fps).
+      const collCount = Math.max(1, Math.floor(phaseList.length * COLLISION_CHECK_FRACTION));
+      const collStart = (frame * 7919) % phaseList.length;     // pseudo-random rotation
+      // Ensure mesh.matrixWorld matches the orb group's transform for raycast
+      // (matrix has been updated by Three.js' render — we just need the inverse)
+      // Actually the raycast probe will be in mesh-local space because we
+      // construct the ray from local positions and intersect against the mesh
+      // (Three.js handles matrixWorld inverse automatically).
+
       for (let j = 0; j < phaseList.length; j++) {
         const part = phaseList[j];
-        if (part.size === 0) continue;                   // padded slot
-        const g = PHASE_GRAVITY[part.phase];
+        if (part.size === 0) continue;
         const damp = PHASE_DAMPING[part.phase];
         const bounce = PHASE_BOUNCE[part.phase];
-        const k = PHASE_SPRING_K[part.phase];
+        const thermalAmp = PHASE_THERMAL[part.phase];
+        const pressure = PHASE_PRESSURE[part.phase];
 
-        // Spring force back to home (Hooke's law) — keeps particles holding
-        // the icon shape rather than drifting away. Solid is stiffest.
-        const hx = part.home.x - part.pos.x;
-        const hy = part.home.y - part.pos.y;
-        const hz = part.home.z - part.pos.z;
-        part.vel.x += hx * k * dt * motionScale;
-        part.vel.y += hy * k * dt * motionScale;
-        part.vel.z += hz * k * dt * motionScale;
+        // Variant-driven divergence:
+        // SYMBOLS variant — spring force to home (rigid icon, sculpted form)
+        // STARS   variant — no spring, only thermal+pressure (free, explosive)
+        if (useSpring) {
+          const k = SYMBOL_SPRING_K[part.phase];
+          const hx = part.home.x - part.pos.x;
+          const hy = part.home.y - part.pos.y;
+          const hz = part.home.z - part.pos.z;
+          part.vel.x += hx * k * dt * motionScale;
+          part.vel.y += hy * k * dt * motionScale;
+          part.vel.z += hz * k * dt * motionScale;
+        }
 
-        // Apply gravity (downward y in icon-local frame) — much weaker now;
-        // spring dominates so silhouette holds.
-        part.vel.y += g * dt * motionScale;
+        // Thermal kick — Brownian-like jitter giving life. Gas jitters most.
+        part.vel.x += (Math.random() - 0.5) * 2 * thermalAmp * dt * motionScale;
+        part.vel.y += (Math.random() - 0.5) * 2 * thermalAmp * dt * motionScale;
+        part.vel.z += (Math.random() - 0.5) * 2 * thermalAmp * dt * motionScale;
 
-        // Central implode/explode force — vector points from particle
-        // toward origin, scaled by centralForce. Positive force = pulled in.
-        const cx = -part.pos.x, cy = -part.pos.y, cz = -part.pos.z;
-        const cLen = Math.sqrt(cx * cx + cy * cy + cz * cz) || 1;
+        // Outward radial pressure — pushes particles toward the icon's edges
+        // (gas wants to fill its container). Suppressed for symbols (spring
+        // already holds them; double force = jitter without form).
+        const rr = Math.sqrt(part.pos.x * part.pos.x + part.pos.y * part.pos.y + part.pos.z * part.pos.z) || 1e-6;
+        const rNorm = Math.min(1, rr / ORB_CONTAINMENT_R);
+        const pmag = (useSpring ? 0.25 : 1.0) * pressure * (1.0 - rNorm) * dt * motionScale;
+        part.vel.x += (part.pos.x / rr) * pmag;
+        part.vel.y += (part.pos.y / rr) * pmag;
+        part.vel.z += (part.pos.z / rr) * pmag;
+
+        // Implode/explode central oscillation — node-wide breath
         const cf = centralForce * dt * motionScale;
-        part.vel.x += (cx / cLen) * cf;
-        part.vel.y += (cy / cLen) * cf;
-        part.vel.z += (cz / cLen) * cf;
+        part.vel.x += (-part.pos.x / rr) * cf;
+        part.vel.y += (-part.pos.y / rr) * cf;
+        part.vel.z += (-part.pos.z / rr) * cf;
 
         // Integrate
         part.pos.x += part.vel.x * dt * motionScale;
         part.pos.y += part.vel.y * dt * motionScale;
         part.pos.z += part.vel.z * dt * motionScale;
 
-        // Container collision (sphere bounce) — perfect-elastic-with-loss reflection
-        const r = Math.sqrt(part.pos.x * part.pos.x + part.pos.y * part.pos.y + part.pos.z * part.pos.z);
+        // Outer sphere safety — never let particles escape the bounding sphere
+        const r2 = Math.sqrt(part.pos.x * part.pos.x + part.pos.y * part.pos.y + part.pos.z * part.pos.z);
         const limit = ORB_CONTAINMENT_R - part.size;
-        if (r > limit) {
-          const nx = part.pos.x / r, ny = part.pos.y / r, nz = part.pos.z / r;
-          // Reflect velocity component along normal
+        if (r2 > limit) {
+          const nx = part.pos.x / r2, ny = part.pos.y / r2, nz = part.pos.z / r2;
           const vDotN = part.vel.x * nx + part.vel.y * ny + part.vel.z * nz;
           if (vDotN > 0) {
             part.vel.x -= (1 + bounce) * vDotN * nx;
             part.vel.y -= (1 + bounce) * vDotN * ny;
             part.vel.z -= (1 + bounce) * vDotN * nz;
           }
-          // Push back inside
           part.pos.x = nx * limit;
           part.pos.y = ny * limit;
           part.pos.z = nz * limit;
@@ -2202,8 +2243,29 @@ export function initSpiral(
         part.vel.y *= damp;
         part.vel.z *= damp;
 
-        // Update buffer (positions are in node-LOCAL frame because the
-        // Points object is parented to the orb group)
+        // Continuous icon-shape collision — distributed across frames.
+        // If this particle is up for raycast this frame, test it against
+        // the icon mesh. If outside, snap to home + reflect velocity.
+        const collIdx = (j - collStart + phaseList.length) % phaseList.length;
+        if (collIdx < collCount && phaseMesh) {
+          icCandidatePos.copy(part.pos);
+          icRaycaster.set(icCandidatePos, icProbeDir);
+          const hits = icRaycaster.intersectObject(phaseMesh, false);
+          if (hits.length % 2 !== 1) {
+            // Outside icon — snap back to home + reflect velocity inward
+            part.pos.copy(part.home);
+            const toCenter = part.pos.length() || 1;
+            const inwardX = -part.pos.x / toCenter;
+            const inwardY = -part.pos.y / toCenter;
+            const inwardZ = -part.pos.z / toCenter;
+            const vMag = Math.sqrt(part.vel.x * part.vel.x + part.vel.y * part.vel.y + part.vel.z * part.vel.z);
+            const inwardSpeed = vMag * 0.6 * bounce;
+            part.vel.x = inwardX * inwardSpeed + (Math.random() - 0.5) * 0.05;
+            part.vel.y = inwardY * inwardSpeed + (Math.random() - 0.5) * 0.05;
+            part.vel.z = inwardZ * inwardSpeed + (Math.random() - 0.5) * 0.05;
+          }
+        }
+
         const bi = j * 3;
         phasePos[bi]     = part.pos.x;
         phasePos[bi + 1] = part.pos.y;
