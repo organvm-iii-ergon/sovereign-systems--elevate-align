@@ -196,6 +196,24 @@ const nextNode = currentIndex < allNodes.length - 1 ? allNodes[currentIndex + 1]
     </section>
   )}
 
+  {/* Lineage link — surface name to True Name to chain of traditions */}
+  <section class="py-10 px-6 bg-ocean-900 border-t border-white/[0.04]">
+    <div class="max-w-2xl mx-auto text-center">
+      <p class="text-[10px] uppercase tracking-[0.2em] text-white/20 mb-3">Substrate</p>
+      <a
+        href={`/lineage/${node.envVar.toLowerCase()}`}
+        class="inline-block group"
+      >
+        <span class="font-heading text-[28px] font-light text-white/65 group-hover:text-white tracking-wide transition-colors">
+          {node.envVar}
+        </span>
+        <p class="mt-2 text-[12px] text-white/30 group-hover:text-ocean-400/70 uppercase tracking-[0.15em] transition-colors">
+          See lineage across traditions &rarr;
+        </p>
+      </a>
+    </div>
+  </section>
+
   {/* Sequential navigation */}
   <section class="py-12 px-6 bg-ocean-900 border-t border-white/[0.04]">
     <div class="max-w-2xl mx-auto">
