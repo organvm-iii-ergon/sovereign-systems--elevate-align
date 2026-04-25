@@ -78,11 +78,11 @@ interface AmbientParam {
 // ---------------------------------------------------------------------------
 
 const TURNS = 3.5;
-const HELIX_HEIGHT = 20;
+const HELIX_HEIGHT = 14;
 const PATH_STEPS = 512;
 const PATH_EXTEND = 0.85;            // 85% extra above/below — truly infinite
-const BG_COLOR = 0x14525d;
-const FOG_DENSITY = 0.035;           // dissolves endpoints into background
+const BG_COLOR = 0x071e22;           // matches --color-ocean-900 (no seam with page)
+const FOG_DENSITY = 0.05;            // dissolves endpoints into background
 const ORB_RADIUS = 0.4;
 const ORB_SEGMENTS = 32;
 const CLICK_THRESHOLD = 8;           // px — drag vs. click (mouse)
@@ -516,19 +516,19 @@ export function initSpiral(
   const h = container.clientHeight;
 
   const camera = new THREE.PerspectiveCamera(60, w / h, 0.1, 1000);
-  camera.position.set(0, 2, 22);
+  camera.position.set(0, 0, 18);
 
   const renderer = new THREE.WebGLRenderer({ antialias: true });
   renderer.setSize(w, h);
   renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
   renderer.toneMapping = THREE.ACESFilmicToneMapping;
-  renderer.toneMappingExposure = 1.85;
+  renderer.toneMappingExposure = 2.0;
   container.appendChild(renderer.domElement);
   renderer.domElement.style.cursor = 'grab';
   renderer.domElement.style.touchAction = 'none';
 
   // --- Lighting ---
-  scene.add(new THREE.AmbientLight(0xffffff, 0.85));
+  scene.add(new THREE.AmbientLight(0xffffff, 1.0));
   const keyLight = new THREE.PointLight(0x119a9e, 2.2, 60);
   keyLight.position.set(8, 12, 15);
   scene.add(keyLight);
@@ -580,7 +580,7 @@ export function initSpiral(
   scene.add(new THREE.Line(geo, new THREE.LineBasicMaterial({
     vertexColors: true,
     transparent: true,
-    opacity: 0.6,
+    opacity: 0.7,
   })));
 
   // --- Orb meshes ---
@@ -620,11 +620,11 @@ export function initSpiral(
       normalMap: normalTex,
       normalScale: new THREE.Vector2(pm.normalStrength, pm.normalStrength),
       emissive: nodeColor,
-      emissiveIntensity: live ? 0.85 : 0.35,
+      emissiveIntensity: live ? 0.85 : 0.55,
       metalness: pm.metalness,
       roughness: pm.roughness,
       transparent: true,
-      opacity: live ? 0.85 : 0.45,
+      opacity: live ? 0.85 : 0.6,
       clearcoat: 1.0,
       clearcoatRoughness: pm.clearcoatRoughness,
       iridescence: pm.iridescence,
@@ -664,7 +664,7 @@ export function initSpiral(
       breathFreq: pa.breathFreq * (0.85 + nodeRng() * 0.3),
       breathAmp: pa.breathAmp,
       breathPhase: seed * 1.7,
-      emissiveBase: live ? 0.85 : 0.35,
+      emissiveBase: live ? 0.85 : 0.55,
       emissiveAmp: live ? pa.emissiveAmpLive : pa.emissiveAmpLocked,
       emissiveFreq: pa.emissiveFreq * (0.9 + nodeRng() * 0.2),
       emissivePhase: seed * 2.1,
