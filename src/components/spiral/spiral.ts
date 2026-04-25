@@ -198,8 +198,47 @@ const ORBIT_TRAIL_SEGMENTS = 96;        // smoothness of visible orbit ellipse
 type LayoutStyle = 'free' | 'pair' | 'cardinal' | 'sextet';
 type InclinationStyle = 'random' | 'coplanar' | 'orthogonal' | 'cardinal';
 
+// MATERIA — the *substance* the universe is made of. Each chakra icon
+// governs its env logic (universe theme + materia). Materia maps to
+// concrete material parameters (size distribution, emissive intensity,
+// central-body scale, dust density) so each node FEELS made of different
+// stuff: plasma is bright + small, gas is diffuse + huge, crystal is
+// precise + medium, ice is cool + ringed, etc.
+type Materia =
+  | 'plasma'   // high-energy ionised — brightest, smallest, hottest
+  | 'fire'     // combustion — bright, varied size, dense dust
+  | 'water'    // fluid — soft cyan, medium size, calm
+  | 'ice'      // crystalline H2O — cool tint, precise, more rings
+  | 'crystal'  // mineral — angular precision, big rings
+  | 'metal'    // dense reflective — large bodies, fewer dust, low emissive
+  | 'gas'      // diffuse — giant bodies, soft edges, lots of haze
+  | 'organic'  // bloom matter — varied warm sizes, balanced
+  | 'lunar';   // silvery body matter — calm, medium, low energy
+
+interface MateriaSpec {
+  sizeMul: number;        // overall size scaling for planets
+  maxSizeMul: number;     // boost for the largest planets (giants)
+  emissiveMul: number;    // emissive boost
+  sunSize: number;        // central sun scale relative to default 0.085
+  ringChanceMul: number;  // multiplier on universe.ringChance
+  dustBoost: number;      // multiplier on inner-shimmer brightness
+}
+
+const MATERIA: Record<Materia, MateriaSpec> = {
+  plasma:  { sizeMul: 0.80, maxSizeMul: 1.0, emissiveMul: 1.6, sunSize: 1.5, ringChanceMul: 0.5, dustBoost: 1.6 },
+  fire:    { sizeMul: 0.85, maxSizeMul: 1.4, emissiveMul: 1.8, sunSize: 1.7, ringChanceMul: 0.3, dustBoost: 2.0 },
+  water:   { sizeMul: 1.10, maxSizeMul: 1.0, emissiveMul: 0.65,sunSize: 0.9, ringChanceMul: 1.2, dustBoost: 0.9 },
+  ice:     { sizeMul: 0.95, maxSizeMul: 1.0, emissiveMul: 0.85,sunSize: 0.9, ringChanceMul: 1.8, dustBoost: 1.3 },
+  crystal: { sizeMul: 1.20, maxSizeMul: 1.0, emissiveMul: 0.55,sunSize: 0.7, ringChanceMul: 2.0, dustBoost: 0.5 },
+  metal:   { sizeMul: 1.40, maxSizeMul: 1.6, emissiveMul: 0.45,sunSize: 0.75,ringChanceMul: 0.5, dustBoost: 0.3 },
+  gas:     { sizeMul: 1.65, maxSizeMul: 2.2, emissiveMul: 0.50,sunSize: 1.3, ringChanceMul: 1.4, dustBoost: 1.4 },
+  organic: { sizeMul: 1.10, maxSizeMul: 1.2, emissiveMul: 0.85,sunSize: 1.0, ringChanceMul: 0.8, dustBoost: 1.1 },
+  lunar:   { sizeMul: 1.10, maxSizeMul: 1.0, emissiveMul: 0.70,sunSize: 1.0, ringChanceMul: 1.0, dustBoost: 0.7 },
+};
+
 interface NodeUniverse {
   theme: string;
+  materia: Materia;
   planetCount: number;
   speedMul: number;
   palette: number[];
@@ -232,19 +271,19 @@ const PAL = {
 //   11 solar cross → cardinal (4-direction)             12 octahedron → crystal
 //   13 ankh → eternal
 const NODE_UNIVERSES: Record<number, NodeUniverse> = {
-  1:  { theme: 'dawn',         planetCount: 4, speedMul: 1.20, palette: PAL.DAWN,      ringChance: 0.15, layout: 'free',     inclination: 'random'    },
-  2:  { theme: 'observation',  planetCount: 3, speedMul: 0.55, palette: PAL.COOL,      ringChance: 0.35, layout: 'free',     inclination: 'coplanar'  },
-  3:  { theme: 'duality',      planetCount: 2, speedMul: 0.90, palette: PAL.DUALITY,   ringChance: 0.00, layout: 'pair',     inclination: 'coplanar'  },
-  4:  { theme: 'fire',         planetCount: 5, speedMul: 1.65, palette: PAL.FIRE,      ringChance: 0.05, layout: 'free',     inclination: 'random'    },
-  5:  { theme: 'water',        planetCount: 4, speedMul: 0.65, palette: PAL.WATER,     ringChance: 0.20, layout: 'free',     inclination: 'coplanar'  },
-  6:  { theme: 'intersection', planetCount: 2, speedMul: 0.80, palette: PAL.SPRING,    ringChance: 0.00, layout: 'pair',     inclination: 'coplanar'  },
-  7:  { theme: 'lunar',        planetCount: 3, speedMul: 0.45, palette: PAL.LUNAR,     ringChance: 0.45, layout: 'free',     inclination: 'random'    },
-  8:  { theme: 'structure',    planetCount: 6, speedMul: 0.95, palette: PAL.STRUCTURE, ringChance: 0.10, layout: 'sextet',   inclination: 'coplanar'  },
-  9:  { theme: 'spring',       planetCount: 5, speedMul: 1.05, palette: PAL.SPRING,    ringChance: 0.20, layout: 'free',     inclination: 'random'    },
-  10: { theme: 'clarity',      planetCount: 3, speedMul: 1.30, palette: PAL.GOLD,      ringChance: 0.30, layout: 'free',     inclination: 'coplanar'  },
-  11: { theme: 'cardinal',     planetCount: 4, speedMul: 0.85, palette: PAL.CARDINAL,  ringChance: 0.00, layout: 'cardinal', inclination: 'coplanar'  },
-  12: { theme: 'crystal',      planetCount: 4, speedMul: 1.00, palette: PAL.CRYSTAL,   ringChance: 0.55, layout: 'free',     inclination: 'orthogonal'},
-  13: { theme: 'eternity',     planetCount: 5, speedMul: 1.10, palette: PAL.ETERNAL,   ringChance: 0.40, layout: 'free',     inclination: 'random'    },
+  1:  { theme: 'dawn',         materia: 'plasma',  planetCount: 4, speedMul: 1.20, palette: PAL.DAWN,      ringChance: 0.15, layout: 'free',     inclination: 'random'    },
+  2:  { theme: 'observation',  materia: 'ice',     planetCount: 3, speedMul: 0.55, palette: PAL.COOL,      ringChance: 0.35, layout: 'free',     inclination: 'coplanar'  },
+  3:  { theme: 'duality',      materia: 'metal',   planetCount: 2, speedMul: 0.90, palette: PAL.DUALITY,   ringChance: 0.00, layout: 'pair',     inclination: 'coplanar'  },
+  4:  { theme: 'fire',         materia: 'fire',    planetCount: 5, speedMul: 1.65, palette: PAL.FIRE,      ringChance: 0.05, layout: 'free',     inclination: 'random'    },
+  5:  { theme: 'water',        materia: 'water',   planetCount: 4, speedMul: 0.65, palette: PAL.WATER,     ringChance: 0.20, layout: 'free',     inclination: 'coplanar'  },
+  6:  { theme: 'intersection', materia: 'organic', planetCount: 2, speedMul: 0.80, palette: PAL.SPRING,    ringChance: 0.00, layout: 'pair',     inclination: 'coplanar'  },
+  7:  { theme: 'lunar',        materia: 'lunar',   planetCount: 3, speedMul: 0.45, palette: PAL.LUNAR,     ringChance: 0.45, layout: 'free',     inclination: 'random'    },
+  8:  { theme: 'structure',    materia: 'crystal', planetCount: 6, speedMul: 0.95, palette: PAL.STRUCTURE, ringChance: 0.10, layout: 'sextet',   inclination: 'coplanar'  },
+  9:  { theme: 'spring',       materia: 'organic', planetCount: 5, speedMul: 1.05, palette: PAL.SPRING,    ringChance: 0.20, layout: 'free',     inclination: 'random'    },
+  10: { theme: 'clarity',      materia: 'gas',     planetCount: 3, speedMul: 1.30, palette: PAL.GOLD,      ringChance: 0.30, layout: 'free',     inclination: 'coplanar'  },
+  11: { theme: 'cardinal',     materia: 'metal',   planetCount: 4, speedMul: 0.85, palette: PAL.CARDINAL,  ringChance: 0.00, layout: 'cardinal', inclination: 'coplanar'  },
+  12: { theme: 'crystal',      materia: 'crystal', planetCount: 4, speedMul: 1.00, palette: PAL.CRYSTAL,   ringChance: 0.55, layout: 'free',     inclination: 'orthogonal'},
+  13: { theme: 'eternity',     materia: 'plasma',  planetCount: 5, speedMul: 1.10, palette: PAL.ETERNAL,   ringChance: 0.40, layout: 'free',     inclination: 'random'    },
 };
 function universeFor(nodeId: number): NodeUniverse {
   return NODE_UNIVERSES[nodeId] || NODE_UNIVERSES[1];
@@ -1201,12 +1240,16 @@ export function initSpiral(
 
     const mesh = new THREE.Mesh(geo, mat);
     mesh.userData = node;
-    // User 2026-04-25: "no more do we need the shape, the system below suggests
-    // it". The contained interior universe (planets + their themed motion +
-    // rings + dust) IS the node's identity now. The symbol/star geometry stays
-    // in scene-graph as the click/hover target (it's the raycast surface that
-    // makes nodes interactive) but is rendered invisible.
-    mesh.visible = false;
+    // User 2026-04-25 (revised): "each node is still an icon from the chakra —
+    // that station rules its env logic; keep shape — make transparent". The
+    // icon/symbol geometry returns as a *transparent vessel* — the chakra
+    // station that governs the universe inside it. Material opacity dropped
+    // to ~18% so the shape reads as a ghost outline / glass containment;
+    // texture maps still convey identity at hover/close-up.
+    mat.opacity = live ? 0.22 : 0.14;
+    if (mat.transmission !== undefined) {
+      mat.transmission = Math.min(1.0, mat.transmission + 0.25);
+    }
 
     const group = new THREE.Group();
     group.position.copy(pos);
@@ -1229,12 +1272,14 @@ export function initSpiral(
     const loadSalt = Math.floor(performance.now() * 1000) & 0xfffff;
     const planetRng = mulberry32(node.id * 7919 + 401 + loadSalt);
     const universe = universeFor(node.id);
+    const materia = MATERIA[universe.materia];
     const palette: THREE.Color[] = universe.palette.map(hex => new THREE.Color(hex));
 
     // --- Central sun body ---
-    // Now that the symbol shape is hidden, every system needs a focal point.
-    // Tiny additive emissive sphere at the orb center — the "star" of this
-    // contained universe, in the parent chakra colour.
+    // The "star" of this contained universe — focal point sitting inside the
+    // transparent vessel. Sun size scales by materia.sunSize so different
+    // composition recipes look distinct (gas/fire = bigger sun, crystal =
+    // smaller more precise).
     const sunMat = new THREE.MeshBasicMaterial({
       color: nodeColor.clone().lerp(new THREE.Color(0xffffff), 0.45),
       transparent: true,
@@ -1244,7 +1289,8 @@ export function initSpiral(
     });
     disposables.push(sunMat);
     const sun = new THREE.Mesh(sharedPlanetGeo, sunMat);
-    sun.scale.setScalar(live ? 0.085 : 0.060);
+    const baseSunSize = (live ? 0.085 : 0.060) * materia.sunSize;
+    sun.scale.setScalar(baseSunSize);
     sun.renderOrder = 5;
     group.add(sun);
 
@@ -1297,10 +1343,15 @@ export function initSpiral(
       // Kepler-ish: inner planets faster, outer planets slower (a^-3/2 hand-wave)
       const keplerBoost = Math.pow(0.55 / Math.max(0.1, semiMajor), 0.5);
       const orbitSpeed = orbitSpeedRaw * universe.speedMul * keplerBoost;
-      // Wider size range — some planets are large dominant bodies, others
-      // are tiny moons/asteroids. Power-law biases toward smaller sizes.
+      // Nano-to-macro size range — power-law biases toward smaller sizes;
+      // outermost planet (p == planetCount-1, ~10% chance) gets the materia's
+      // maxSizeMul boost so each system can have a "giant" body. Mul by
+      // materia.sizeMul scales the entire size envelope per node.
       const sizeT = Math.pow(planetRng(), 1.6);
-      const sizeBase = PLANET_RADIUS_MIN + sizeT * (PLANET_RADIUS_MAX - PLANET_RADIUS_MIN);
+      const isGiant = (p === planetCount - 1) && (planetRng() < 0.55);
+      const giantBoost = isGiant ? materia.maxSizeMul : 1.0;
+      const sizeBase = (PLANET_RADIUS_MIN + sizeT * (PLANET_RADIUS_MAX - PLANET_RADIUS_MIN))
+                     * materia.sizeMul * giantBoost;
       // Pick from palette in rotation, then jitter the hue slightly so no
       // two planets in the same system are exact-color duplicates.
       const baseColor = palette[p % palette.length].clone();
@@ -1313,13 +1364,13 @@ export function initSpiral(
       );
 
       // Additive-blended emissive so the interior body GLOWS THROUGH the
-      // orb's surface (translucent for stars, semi-translucent for symbols)
-      // rather than getting depth-occluded by it. depthWrite:false + transparent
-      // lets multiple bodies layer additively without z-fighting.
+      // transparent vessel/shape rather than getting depth-occluded by it.
+      // Brightness scaled by materia.emissiveMul so different node materia
+      // read distinctly: plasma/fire = blazing, metal/crystal = subdued.
       const planetMat = new THREE.MeshBasicMaterial({
         color: planetColor.clone().lerp(new THREE.Color(0xffffff), 0.20),
         transparent: true,
-        opacity: live ? 0.95 : 0.55,
+        opacity: Math.min(1.0, (live ? 0.95 : 0.55) * materia.emissiveMul),
         blending: THREE.AdditiveBlending,
         depthWrite: false,
       });
@@ -1352,7 +1403,7 @@ export function initSpiral(
         ascendingNode: inc.asc,
         size: sizeBase,
         spinSpeed: (0.8 + planetRng() * 2.2) * (planetRng() < 0.5 ? -1 : 1),
-        hasRing: planetRng() < universe.ringChance,
+        hasRing: planetRng() < (universe.ringChance * materia.ringChanceMul),
       };
       nodePlanetParams.push(params);
 
