@@ -15,7 +15,9 @@ export default defineConfig({
   vite: {
     plugins: [tailwindcss()],
     server: {
-      allowedHosts: true,         // accept any Host header — required for tunnel
+      // Explicit list because allowedHosts:true sometimes doesn't propagate
+      // through Astro's adapter chain. Wildcard prefixes accept any subdomain.
+      allowedHosts: ['.trycloudflare.com', '.ngrok-free.dev', '.ngrok.io', 'localhost', '127.0.0.1'],
     },
   },
 });
