@@ -1052,9 +1052,9 @@ export function initSpiral(
   composer.addPass(new RenderPass(scene, camera));
   const bloomPass = new UnrealBloomPass(
     new THREE.Vector2(w, h),
-    0.18,   // strength — tamed; bright cores no longer wash out the system
-    0.40,   // radius
-    0.95,   // threshold — only EXTREMELY bright pixels bloom (was washing out)
+    0.05,   // very subtle — bloom was washing all materia colors to white
+    0.30,
+    0.98,   // only the brightest extremes bloom
   );
   composer.addPass(bloomPass);
   composer.addPass(new OutputPass());
@@ -1656,13 +1656,17 @@ export function initSpiral(
 
     const avgFieldSize = MATERIA_FIELD_SIZE_MAX
                        * materia.sizeMul * (0.85 + materia.emissiveMul * 0.15);
+    // Normal blending (NOT additive) — additive overlap was washing all
+    // materia colors to white. Each particle preserves its color identity.
+    // Slight alphaTest to keep dots crisp without depth-write z-conflicts.
     const fieldMat = new THREE.PointsMaterial({
       vertexColors: true,
       transparent: true,
-      opacity: live ? 0.85 : 0.50,
+      opacity: live ? 0.95 : 0.55,
       map: softDotTex,
-      blending: THREE.AdditiveBlending,
+      blending: THREE.NormalBlending,
       depthWrite: false,
+      alphaTest: 0.05,
       sizeAttenuation: true,
       size: avgFieldSize * 5.5,
     });
