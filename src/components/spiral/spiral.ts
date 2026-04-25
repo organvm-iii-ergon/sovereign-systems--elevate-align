@@ -170,19 +170,24 @@ const INNER_RADIUS_MAX = 0.32;
 const INNER_PARTICLE_SIZE = 0.07;
 
 // Materia particle field — physics-driven phase particles bouncing inside
-// the icon container. User 2026-04-25: "the stars should be imploding
-// exploding materias bouncing within their container — the icons are gas
-// liquids solid universes". Each particle has phase (gas/liquid/solid),
-// gravity, velocity, container collision, and a node-wide central force
-// that oscillates implode↔explode every few seconds.
-const MATERIA_FIELD_PARTICLES = 110;            // per node — performant + dense
-const MATERIA_FIELD_SIZE_MIN = 0.006;
-const MATERIA_FIELD_SIZE_MAX = 0.030;
-const PHASE_GRAVITY = { solid: -0.55, liquid: -0.28, gas: -0.06 };
+// the icon container. User 2026-04-25: "no blank space inside the shapes,
+// when we remove the shape surface we'll be able to see the shape prevail".
+// Each particle spawns at a raycast-verified inside-icon position (its
+// "home") and is held there by a spring force, so the icon SILHOUETTE
+// emerges from particle density. Implode/explode + bounce keep them alive.
+const MATERIA_FIELD_PARTICLES = 600;            // per node — densely fills icon
+const MATERIA_FIELD_SIZE_MIN = 0.005;
+const MATERIA_FIELD_SIZE_MAX = 0.026;
+// Gravity dialed way down — spring-back to home dominates so particles
+// hold the icon shape rather than pooling at the bottom.
+const PHASE_GRAVITY = { solid: -0.10, liquid: -0.06, gas: -0.02 };
 const PHASE_DAMPING = { solid: 0.93,  liquid: 0.975, gas: 0.995 };
-const PHASE_BOUNCE  = { solid: 0.45,  liquid: 0.65,  gas: 0.92  };
-const IMPLODE_EXPLODE_FREQ = 0.42;              // rad/sec — slow breath cycle
-const IMPLODE_EXPLODE_AMP = 0.42;               // peak central force magnitude
+const PHASE_BOUNCE  = { solid: 0.55,  liquid: 0.70,  gas: 0.95  };
+// Spring force toward home — keeps particles distributed throughout icon
+// volume. Solid is stiffest (most rigid silhouette), gas is loosest (more drift).
+const PHASE_SPRING_K = { solid: 4.5,  liquid: 2.8,  gas: 1.2  };
+const IMPLODE_EXPLODE_FREQ = 0.36;              // rad/sec — slow breath cycle
+const IMPLODE_EXPLODE_AMP = 0.30;               // peak central force magnitude
 
 // Per-orb planets — each node IS a mini solar system, contained INSIDE the
 // shape itself. User 2026-04-25: "the solar system is contained within the
@@ -225,6 +230,7 @@ type PhasePhase = 'solid' | 'liquid' | 'gas';
 interface PhaseParticle {
   pos: THREE.Vector3;
   vel: THREE.Vector3;
+  home: THREE.Vector3;       // spawn position inside icon — spring pulls back
   phase: PhasePhase;
   size: number;
   baseColor: THREE.Color;
@@ -1581,25 +1587,30 @@ export function initSpiral(
       if (hits.length % 2 !== 1) continue;
 
       const phase = pickPhase(fieldRng, phaseMix);
-      // Size scaling per phase: solids dense+small, liquids medium, gases tiny+sparse
-      const phaseSizeMul = phase === 'solid' ? 1.4 : phase === 'liquid' ? 1.0 : 0.7;
+      // Size: solids small+dense (stone-like), liquids medium, gases tiny+sparse
+      const phaseSizeMul = phase === 'solid' ? 1.1 : phase === 'liquid' ? 0.85 : 0.55;
       const sizeT = Math.pow(fieldRng(), 1.6);
       const size = (MATERIA_FIELD_SIZE_MIN + sizeT * (MATERIA_FIELD_SIZE_MAX - MATERIA_FIELD_SIZE_MIN))
                  * materia.sizeMul * phaseSizeMul;
 
-      // Color: palette + hue jitter; gas particles slightly brighter (emissive feel)
+      // Color: palette + per-phase tint so phases READ distinctly inside one
+      // node — Earth vs Saturn metaphor. Gas = brighter + desaturated (luminous
+      // vapor). Solid = darker + more saturated (stone). Liquid = neutral mid.
       const baseCol = palette[kept % palette.length];
       const hsl = { h: 0, s: 0, l: 0 };
       baseCol.getHSL(hsl);
-      const litBoost = phase === 'gas' ? 0.12 : 0;
+      const phaseLit = phase === 'gas' ? 0.18 : phase === 'solid' ? -0.18 : 0.02;
+      const phaseSat = phase === 'gas' ? 0.65 : phase === 'solid' ? 1.10 : 0.95;
       const tinted = new THREE.Color().setHSL(
         (hsl.h + (fieldRng() - 0.5) * 0.06 + 1) % 1,
-        Math.min(1, hsl.s * (0.80 + fieldRng() * 0.35)),
-        Math.min(0.95, (hsl.l + litBoost) * (0.75 + fieldRng() * 0.50)),
+        Math.min(1, hsl.s * phaseSat * (0.85 + fieldRng() * 0.30)),
+        Math.max(0.05, Math.min(0.95, (hsl.l + phaseLit) * (0.80 + fieldRng() * 0.40))),
       );
 
-      // Initial velocity: small random burst — physics will take over from there.
-      const vMag = phase === 'gas' ? 0.45 : phase === 'liquid' ? 0.20 : 0.05;
+      // Initial velocity: small bias so particles have life from frame 1.
+      // Phase determines magnitude (gas energetic, solid still).
+      const vMag = phase === 'gas' ? 0.30 : phase === 'liquid' ? 0.15 : 0.04;
+      const homePos = candidatePos.clone();
       particles.push({
         pos: candidatePos.clone(),
         vel: new THREE.Vector3(
@@ -1607,6 +1618,7 @@ export function initSpiral(
           (fieldRng() - 0.5) * 2 * vMag,
           (fieldRng() - 0.5) * 2 * vMag,
         ),
+        home: homePos,
         phase,
         size,
         baseColor: tinted,
@@ -1619,11 +1631,12 @@ export function initSpiral(
       fieldColors[kept * 3 + 2]    = tinted.b;
       kept++;
     }
-    // Pad unused slots
+    // Pad unused slots (raycast rejection couldn't fill — thin shape edges)
     for (let f = kept; f < MATERIA_FIELD_PARTICLES; f++) {
       particles.push({
         pos: new THREE.Vector3(),
         vel: new THREE.Vector3(),
+        home: new THREE.Vector3(),
         phase: 'gas',
         size: 0,
         baseColor: new THREE.Color(0, 0, 0),
@@ -2137,8 +2150,19 @@ export function initSpiral(
         const g = PHASE_GRAVITY[part.phase];
         const damp = PHASE_DAMPING[part.phase];
         const bounce = PHASE_BOUNCE[part.phase];
+        const k = PHASE_SPRING_K[part.phase];
 
-        // Apply gravity (downward y in icon-local frame)
+        // Spring force back to home (Hooke's law) — keeps particles holding
+        // the icon shape rather than drifting away. Solid is stiffest.
+        const hx = part.home.x - part.pos.x;
+        const hy = part.home.y - part.pos.y;
+        const hz = part.home.z - part.pos.z;
+        part.vel.x += hx * k * dt * motionScale;
+        part.vel.y += hy * k * dt * motionScale;
+        part.vel.z += hz * k * dt * motionScale;
+
+        // Apply gravity (downward y in icon-local frame) — much weaker now;
+        // spring dominates so silhouette holds.
         part.vel.y += g * dt * motionScale;
 
         // Central implode/explode force — vector points from particle
