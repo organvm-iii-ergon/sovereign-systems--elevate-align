@@ -119,7 +119,7 @@ const PATH_STEPS = 512;
 const PATH_EXTEND = 0.85;            // 85% extra above/below — truly infinite
 const BG_COLOR = 0x071e22;           // matches --color-ocean-900 (no seam with page)
 const FOG_DENSITY = 0.05;            // dissolves endpoints into background
-const ORB_RADIUS = 0.32;             // smaller — stars are points of light, not chunks
+const ORB_RADIUS = 0.58;             // big enough that the contained universe reads at spiral framing
 const ORB_SEGMENTS = 32;
 const CLICK_THRESHOLD = 8;           // px — drag vs. click (mouse)
 const TAP_THRESHOLD = 30;            // px — drag vs. tap (touch)
@@ -169,14 +169,20 @@ const INNER_RADIUS_MIN = 0.10;
 const INNER_RADIUS_MAX = 0.32;
 const INNER_PARTICLE_SIZE = 0.07;
 
-// Materia particle field — fills 99% of the contained sphere with micro-to-
-// macro elements per node, distributed throughout the volume (not just on
-// orbits). Each node gets ~280 additive sprites, sized 0.004..0.022, colored
-// from its materia palette. User 2026-04-25: "make sure 99% of the icon
-// container is filled with micro to macro elements of materia".
-const MATERIA_FIELD_PARTICLES = 280;
-const MATERIA_FIELD_SIZE_MIN = 0.004;
-const MATERIA_FIELD_SIZE_MAX = 0.022;
+// Materia particle field — physics-driven phase particles bouncing inside
+// the icon container. User 2026-04-25: "the stars should be imploding
+// exploding materias bouncing within their container — the icons are gas
+// liquids solid universes". Each particle has phase (gas/liquid/solid),
+// gravity, velocity, container collision, and a node-wide central force
+// that oscillates implode↔explode every few seconds.
+const MATERIA_FIELD_PARTICLES = 110;            // per node — performant + dense
+const MATERIA_FIELD_SIZE_MIN = 0.006;
+const MATERIA_FIELD_SIZE_MAX = 0.030;
+const PHASE_GRAVITY = { solid: -0.55, liquid: -0.28, gas: -0.06 };
+const PHASE_DAMPING = { solid: 0.93,  liquid: 0.975, gas: 0.995 };
+const PHASE_BOUNCE  = { solid: 0.45,  liquid: 0.65,  gas: 0.92  };
+const IMPLODE_EXPLODE_FREQ = 0.42;              // rad/sec — slow breath cycle
+const IMPLODE_EXPLODE_AMP = 0.42;               // peak central force magnitude
 
 // Per-orb planets — each node IS a mini solar system, contained INSIDE the
 // shape itself. User 2026-04-25: "the solar system is contained within the
@@ -187,10 +193,7 @@ const MATERIA_FIELD_SIZE_MAX = 0.022;
 // semi-translucent (symbols) surface like radiant interior bodies. Bloom
 // amplifies them so each shape reads as a contained universe.
 // CONTAINMENT — the shape is the boundary; the universe cannot escape it.
-// User 2026-04-25: "the shape CONTAINS the universe, it can not pass the
-// shape's boundary". Per-planet, semiMajor is clamped so apoapsis + planet
-// body (+ ring margin) stays inside the icon.
-const ORB_CONTAINMENT_R = 0.28;         // ORB_RADIUS (0.32) - 0.04 margin
+const ORB_CONTAINMENT_R = 0.52;         // ORB_RADIUS (0.58) - small margin
 const PLANET_RADIUS_MIN = 0.012;
 const PLANET_RADIUS_MAX = 0.038;        // nano-to-macro spans 3.2x within bound
 const PLANET_ORBIT_MIN = 0.04;          // close-in orbit
@@ -208,6 +211,46 @@ const ORBIT_TRAIL_SEGMENTS = 96;        // smoothness of visible orbit ellipse
 // hexagram → structure, octahedron → crystal, ankh → eternal cycle, etc.).
 type LayoutStyle = 'free' | 'pair' | 'cardinal' | 'sextet';
 type InclinationStyle = 'random' | 'coplanar' | 'orthogonal' | 'cardinal';
+
+// PHASE — gas, liquid, solid. Each particle in a node's universe carries
+// one phase. The phase determines physics behavior:
+//   solid  — heavy, settles toward bottom (gravity), low elasticity bounce
+//   liquid — medium gravity, fluid-like flow, moderate bounce
+//   gas    — low gravity, high diffusion, high-elasticity bounce, fills empty
+// User 2026-04-25: "icons are gas liquids solid universes — gas is wherever
+// liquid and land aint". Multi-phase coexists in each node; phase MIX per
+// materia (e.g., water = mostly liquid + some gas vapor + few solid sediment).
+type PhasePhase = 'solid' | 'liquid' | 'gas';
+
+interface PhaseParticle {
+  pos: THREE.Vector3;
+  vel: THREE.Vector3;
+  phase: PhasePhase;
+  size: number;
+  baseColor: THREE.Color;
+}
+
+interface PhaseMix { solid: number; liquid: number; gas: number; }
+
+// Per-materia phase composition. Numbers are probabilities (sum to ~1.0).
+const PHASE_MIX: Record<string, PhaseMix> = {
+  plasma:  { solid: 0.00, liquid: 0.05, gas: 0.95 },   // mostly ionised gas
+  fire:    { solid: 0.00, liquid: 0.10, gas: 0.90 },   // flame + sparks
+  water:   { solid: 0.05, liquid: 0.65, gas: 0.30 },   // water + vapor + sediment
+  ice:     { solid: 0.70, liquid: 0.20, gas: 0.10 },   // ice + meltwater + sublimation
+  crystal: { solid: 0.85, liquid: 0.05, gas: 0.10 },   // mineral lattice + occlusion
+  metal:   { solid: 0.90, liquid: 0.05, gas: 0.05 },   // dense matter, slow drift
+  gas:     { solid: 0.00, liquid: 0.00, gas: 1.00 },   // pure diffusion
+  organic: { solid: 0.30, liquid: 0.40, gas: 0.30 },   // balanced bloom mix
+  lunar:   { solid: 0.60, liquid: 0.10, gas: 0.30 },   // dust + thin vapor
+};
+
+function pickPhase(rng: () => number, mix: PhaseMix): PhasePhase {
+  const r = rng();
+  if (r < mix.solid) return 'solid';
+  if (r < mix.solid + mix.liquid) return 'liquid';
+  return 'gas';
+}
 
 // MATERIA — the *substance* the universe is made of. Each chakra icon
 // governs its env logic (universe theme + materia). Materia maps to
@@ -996,9 +1039,9 @@ export function initSpiral(
   composer.addPass(new RenderPass(scene, camera));
   const bloomPass = new UnrealBloomPass(
     new THREE.Vector2(w, h),
-    0.40,   // strength — subtle halo, not flooding bloom
-    0.45,   // radius
-    0.85,   // threshold — only the brightest pixels (cores) bloom; labels stay crisp
+    0.18,   // strength — tamed; bright cores no longer wash out the system
+    0.40,   // radius
+    0.95,   // threshold — only EXTREMELY bright pixels bloom (was washing out)
   );
   composer.addPass(bloomPass);
   composer.addPass(new OutputPass());
@@ -1156,16 +1199,23 @@ export function initSpiral(
   const nodeColorList: THREE.Color[] = [];
   const UP = new THREE.Vector3(0, 1, 0);
 
-  // Per-node planet system — each entry is the planets orbiting that node.
-  // Shared sphere/ring geometries (scaled per-instance) keep memory bounded.
+  // Per-node phase particle systems — each node gets its own list of
+  // physics-simulated PhaseParticles plus geometry buffers for rendering.
+  const nodePhaseParticles: PhaseParticle[][] = [];
+  const nodePhasePositions: Float32Array[] = [];
+  const nodePhaseColors: Float32Array[] = [];
+  const nodePhaseGeometries: THREE.BufferGeometry[] = [];
+
+  // Legacy planet arrays — kept declared (empty) so animation loop's
+  // forEach iterations are safe no-ops while the planet-system code is
+  // disabled in favour of the phase-particle physics.
   const planetMeshes: THREE.Mesh[][] = [];
   const planetParams: PlanetParam[][] = [];
   const planetRingMeshes: (THREE.Mesh | null)[][] = [];
-  const sharedPlanetGeo = new THREE.SphereGeometry(1, 16, 12);
-  const sharedRingGeo = new THREE.RingGeometry(1.4, 2.0, 32);
+  const sharedPlanetGeo = new THREE.SphereGeometry(1, 8, 6);
+  const sharedRingGeo = new THREE.RingGeometry(1.0, 1.2, 8);
 
-  // Hoisted soft-dot texture — used by aura, inner shimmer, AND the per-node
-  // materia field below. Single texture instance, multiple consumers.
+  // Hoisted soft-dot texture — used by aura AND the per-node phase field.
   const softDotTex = createSoftDotTexture();
   texturesToDispose.push(softDotTex);
 
@@ -1269,9 +1319,11 @@ export function initSpiral(
     // station that governs the universe inside it. Material opacity dropped
     // to ~18% so the shape reads as a ghost outline / glass containment;
     // texture maps still convey identity at hover/close-up.
-    mat.opacity = live ? 0.22 : 0.14;
+    // Vessel opacity bumped — the icon IS the identity, must read clearly.
+    // Materia inside is contained by the vessel walls (raycast collision below).
+    mat.opacity = live ? 0.45 : 0.28;
     if (mat.transmission !== undefined) {
-      mat.transmission = Math.min(1.0, mat.transmission + 0.25);
+      mat.transmission = Math.min(0.55, mat.transmission);
     }
 
     const group = new THREE.Group();
@@ -1298,24 +1350,8 @@ export function initSpiral(
     const materia = MATERIA[universe.materia];
     const palette: THREE.Color[] = universe.palette.map(hex => new THREE.Color(hex));
 
-    // --- Central sun body ---
-    // The "star" of this contained universe — focal point sitting inside the
-    // transparent vessel. Sun size scales by materia.sunSize so different
-    // composition recipes look distinct (gas/fire = bigger sun, crystal =
-    // smaller more precise).
-    const sunMat = new THREE.MeshBasicMaterial({
-      color: nodeColor.clone().lerp(new THREE.Color(0xffffff), 0.45),
-      transparent: true,
-      opacity: live ? 0.95 : 0.55,
-      blending: THREE.AdditiveBlending,
-      depthWrite: false,
-    });
-    disposables.push(sunMat);
-    const sun = new THREE.Mesh(sharedPlanetGeo, sunMat);
-    const baseSunSize = (live ? 0.085 : 0.060) * materia.sunSize;
-    sun.scale.setScalar(baseSunSize);
-    sun.renderOrder = 5;
-    group.add(sun);
+    // (No central sun — it dominated bloom and obscured the system. The
+    // contained particles ARE the universe.)
 
     // Layout-phase helper: how each planet is initially positioned around
     // the orbit. Determines whether the system reads as "free" (random
@@ -1342,13 +1378,8 @@ export function initSpiral(
       }
     };
 
-    // Planet count = themed base + RNG bonus. The bonus ensures even the
-    // 2-planet "duality" systems vary load-to-load (stretched to 2..6).
-    const bonusCap = universe.layout === 'pair' ? 2
-                   : universe.layout === 'cardinal' ? 0
-                   : universe.layout === 'sextet' ? 0
-                   : PLANET_COUNT_BONUS_MAX;
-    const planetCount = universe.planetCount + Math.floor(planetRng() * (bonusCap + 1));
+    // Planet system disabled — replaced by phase-particle physics below.
+    const planetCount = 0;
     const nodePlanets: THREE.Mesh[] = [];
     const nodePlanetParams: PlanetParam[] = [];
     const nodeRings: (THREE.Mesh | null)[] = [];
@@ -1512,19 +1543,16 @@ export function initSpiral(
     planetParams.push(nodePlanetParams);
     planetRingMeshes.push(nodeRings);
 
-    // --- Materia particle field ---
-    // Volumetric fill: additive sprites distributed throughout the icon's
-    // ACTUAL 3D volume — not a sphere. Each candidate point is raycast-tested
-    // against the visible mesh; only points INSIDE the icon's substrate are
-    // kept. User 2026-04-25: "the materia cant pass the icon's substrate".
-    // Sizes span MICRO (0.004) to MACRO (0.022); colored from materia palette.
-    const fieldPositions = new Float32Array(MATERIA_FIELD_PARTICLES * 3);
-    const fieldColors = new Float32Array(MATERIA_FIELD_PARTICLES * 3);
+    // --- Phase-particle physics field ---
+    // Each particle has phase (gas/liquid/solid) drawn from the materia's
+    // PHASE_MIX. Initial position is sampled INSIDE the icon's actual mesh
+    // via raycast inside-test, so particles spawn within the substrate.
+    // Per-frame physics (loop below): gravity by phase, central
+    // implode/explode oscillation, container reflection bounce.
     const fieldRng = mulberry32(node.id * 9907 + 17 + loadSalt);
+    const phaseMix = PHASE_MIX[universe.materia] || PHASE_MIX.gas;
 
-    // Set up raycast inside-test against the icon mesh (mesh-local frame).
-    // Mesh hasn't been added to scene yet, so its matrixWorld is identity —
-    // local positions == world positions for the raycast.
+    // Raycast setup for inside-test (mesh-local frame, mesh not yet in scene)
     mesh.matrixWorld.identity();
     geo.computeBoundingBox();
     const bbox = geo.boundingBox!;
@@ -1534,74 +1562,100 @@ export function initSpiral(
     const candidatePos = new THREE.Vector3();
     const probeDir = new THREE.Vector3(1, 0, 0);
 
+    const particles: PhaseParticle[] = [];
+    const fieldPositions = new Float32Array(MATERIA_FIELD_PARTICLES * 3);
+    const fieldColors = new Float32Array(MATERIA_FIELD_PARTICLES * 3);
+
     let kept = 0;
     let attempts = 0;
-    const maxAttempts = MATERIA_FIELD_PARTICLES * 12; // safety cap
+    const maxAttempts = MATERIA_FIELD_PARTICLES * 12;
     while (kept < MATERIA_FIELD_PARTICLES && attempts < maxAttempts) {
-      // Sample uniform random point in the mesh's bounding box
       candidatePos.set(
         bboxMin.x + fieldRng() * bboxRange.x,
         bboxMin.y + fieldRng() * bboxRange.y,
         bboxMin.z + fieldRng() * bboxRange.z,
       );
-      // Inside test: cast a ray in +X from the candidate; odd intersection
-      // count == inside the mesh (standard even/odd parity rule).
       insideRaycaster.set(candidatePos, probeDir);
       const hits = insideRaycaster.intersectObject(mesh, false);
       attempts++;
-      if (hits.length % 2 !== 1) continue;          // outside — reject
+      if (hits.length % 2 !== 1) continue;
 
-      fieldPositions[kept * 3]     = candidatePos.x;
-      fieldPositions[kept * 3 + 1] = candidatePos.y;
-      fieldPositions[kept * 3 + 2] = candidatePos.z;
+      const phase = pickPhase(fieldRng, phaseMix);
+      // Size scaling per phase: solids dense+small, liquids medium, gases tiny+sparse
+      const phaseSizeMul = phase === 'solid' ? 1.4 : phase === 'liquid' ? 1.0 : 0.7;
+      const sizeT = Math.pow(fieldRng(), 1.6);
+      const size = (MATERIA_FIELD_SIZE_MIN + sizeT * (MATERIA_FIELD_SIZE_MAX - MATERIA_FIELD_SIZE_MIN))
+                 * materia.sizeMul * phaseSizeMul;
 
-      // Color: rotate through materia palette + per-particle hue jitter so
-      // no two particles in a system are identical even from the same slot.
+      // Color: palette + hue jitter; gas particles slightly brighter (emissive feel)
       const baseCol = palette[kept % palette.length];
       const hsl = { h: 0, s: 0, l: 0 };
       baseCol.getHSL(hsl);
+      const litBoost = phase === 'gas' ? 0.12 : 0;
       const tinted = new THREE.Color().setHSL(
         (hsl.h + (fieldRng() - 0.5) * 0.06 + 1) % 1,
-        Math.min(1, hsl.s * (0.75 + fieldRng() * 0.4)),
-        Math.min(0.95, hsl.l * (0.70 + fieldRng() * 0.55)),
+        Math.min(1, hsl.s * (0.80 + fieldRng() * 0.35)),
+        Math.min(0.95, (hsl.l + litBoost) * (0.75 + fieldRng() * 0.50)),
       );
-      fieldColors[kept * 3]     = tinted.r;
-      fieldColors[kept * 3 + 1] = tinted.g;
-      fieldColors[kept * 3 + 2] = tinted.b;
+
+      // Initial velocity: small random burst — physics will take over from there.
+      const vMag = phase === 'gas' ? 0.45 : phase === 'liquid' ? 0.20 : 0.05;
+      particles.push({
+        pos: candidatePos.clone(),
+        vel: new THREE.Vector3(
+          (fieldRng() - 0.5) * 2 * vMag,
+          (fieldRng() - 0.5) * 2 * vMag,
+          (fieldRng() - 0.5) * 2 * vMag,
+        ),
+        phase,
+        size,
+        baseColor: tinted,
+      });
+      fieldPositions[kept * 3]     = candidatePos.x;
+      fieldPositions[kept * 3 + 1] = candidatePos.y;
+      fieldPositions[kept * 3 + 2] = candidatePos.z;
+      fieldColors[kept * 3]        = tinted.r;
+      fieldColors[kept * 3 + 1]    = tinted.g;
+      fieldColors[kept * 3 + 2]    = tinted.b;
       kept++;
     }
-    // If rejection sampling didn't fill (very thin shape with high reject
-    // rate), zero remaining slots so they render as transparent black points.
+    // Pad unused slots
     for (let f = kept; f < MATERIA_FIELD_PARTICLES; f++) {
-      fieldPositions[f * 3] = fieldPositions[f * 3 + 1] = fieldPositions[f * 3 + 2] = 0;
-      fieldColors[f * 3] = fieldColors[f * 3 + 1] = fieldColors[f * 3 + 2] = 0;
+      particles.push({
+        pos: new THREE.Vector3(),
+        vel: new THREE.Vector3(),
+        phase: 'gas',
+        size: 0,
+        baseColor: new THREE.Color(0, 0, 0),
+      });
     }
+
     const fieldGeo = new THREE.BufferGeometry();
     fieldGeo.setAttribute('position', new THREE.BufferAttribute(fieldPositions, 3));
     fieldGeo.setAttribute('color', new THREE.BufferAttribute(fieldColors, 3));
-    // Average size for the material; per-particle sizes via shader would be
-    // ideal but PointsMaterial.size is uniform. Use the size envelope MAX
-    // scaled by materia knobs so particles are visible at the spiral framing
-    // (camera ~18 units away). Soft additive sprites give a hazy filled feel
-    // rather than hard dots.
+
     const avgFieldSize = MATERIA_FIELD_SIZE_MAX
                        * materia.sizeMul * (0.85 + materia.emissiveMul * 0.15);
     const fieldMat = new THREE.PointsMaterial({
       vertexColors: true,
       transparent: true,
-      opacity: live ? 0.55 : 0.32,
+      opacity: live ? 0.85 : 0.50,
       map: softDotTex,
       blending: THREE.AdditiveBlending,
       depthWrite: false,
       sizeAttenuation: true,
-      size: avgFieldSize * 4.5,            // visible at spiral framing
+      size: avgFieldSize * 5.5,
     });
     disposables.push(fieldMat);
     const fieldPoints = new THREE.Points(fieldGeo, fieldMat);
     fieldPoints.renderOrder = 4;
     group.add(fieldPoints);
-    // Re-use variantGeometries channel for disposal at unmount
     variantGeometries.push(fieldGeo);
+
+    nodePhaseParticles.push(particles);
+    nodePhasePositions.push(fieldPositions);
+    nodePhaseColors.push(fieldColors);
+    nodePhaseGeometries.push(fieldGeo);
 
     scene.add(group);
     orbMeshes.push(mesh);
@@ -2063,6 +2117,75 @@ export function initSpiral(
         innerColors[bufIdx + 1] = nc.g * tint;
         innerColors[bufIdx + 2] = nc.b * tint;
       }
+
+      // 8. Per-orb PHASE-PARTICLE PHYSICS — gas + liquid + solid bouncing
+      // inside the icon container. Implode/explode central force oscillates
+      // every few seconds. Per-particle gravity, damping, bounce per phase.
+      // Container collision = sphere of radius ORB_CONTAINMENT_R (close to
+      // the icon's bounding extent — perfect bounce off the inner substrate).
+      const phaseList = nodePhaseParticles[i];
+      const phasePos = nodePhasePositions[i];
+      const dt = 1 / 60;                                  // fixed step at 60Hz target
+      // Implode/explode oscillation — sin wave; positive = implode (central
+      // attraction), negative = explode (central repulsion). Different phase
+      // per node so they don't all pulse in unison.
+      const ieT = t * IMPLODE_EXPLODE_FREQ + i * 0.45;
+      const centralForce = Math.sin(ieT) * IMPLODE_EXPLODE_AMP;
+      for (let j = 0; j < phaseList.length; j++) {
+        const part = phaseList[j];
+        if (part.size === 0) continue;                   // padded slot
+        const g = PHASE_GRAVITY[part.phase];
+        const damp = PHASE_DAMPING[part.phase];
+        const bounce = PHASE_BOUNCE[part.phase];
+
+        // Apply gravity (downward y in icon-local frame)
+        part.vel.y += g * dt * motionScale;
+
+        // Central implode/explode force — vector points from particle
+        // toward origin, scaled by centralForce. Positive force = pulled in.
+        const cx = -part.pos.x, cy = -part.pos.y, cz = -part.pos.z;
+        const cLen = Math.sqrt(cx * cx + cy * cy + cz * cz) || 1;
+        const cf = centralForce * dt * motionScale;
+        part.vel.x += (cx / cLen) * cf;
+        part.vel.y += (cy / cLen) * cf;
+        part.vel.z += (cz / cLen) * cf;
+
+        // Integrate
+        part.pos.x += part.vel.x * dt * motionScale;
+        part.pos.y += part.vel.y * dt * motionScale;
+        part.pos.z += part.vel.z * dt * motionScale;
+
+        // Container collision (sphere bounce) — perfect-elastic-with-loss reflection
+        const r = Math.sqrt(part.pos.x * part.pos.x + part.pos.y * part.pos.y + part.pos.z * part.pos.z);
+        const limit = ORB_CONTAINMENT_R - part.size;
+        if (r > limit) {
+          const nx = part.pos.x / r, ny = part.pos.y / r, nz = part.pos.z / r;
+          // Reflect velocity component along normal
+          const vDotN = part.vel.x * nx + part.vel.y * ny + part.vel.z * nz;
+          if (vDotN > 0) {
+            part.vel.x -= (1 + bounce) * vDotN * nx;
+            part.vel.y -= (1 + bounce) * vDotN * ny;
+            part.vel.z -= (1 + bounce) * vDotN * nz;
+          }
+          // Push back inside
+          part.pos.x = nx * limit;
+          part.pos.y = ny * limit;
+          part.pos.z = nz * limit;
+        }
+
+        // Damping
+        part.vel.x *= damp;
+        part.vel.y *= damp;
+        part.vel.z *= damp;
+
+        // Update buffer (positions are in node-LOCAL frame because the
+        // Points object is parented to the orb group)
+        const bi = j * 3;
+        phasePos[bi]     = part.pos.x;
+        phasePos[bi + 1] = part.pos.y;
+        phasePos[bi + 2] = part.pos.z;
+      }
+      nodePhaseGeometries[i].attributes.position.needsUpdate = true;
     });
 
     // Flush aura + inner buffers
