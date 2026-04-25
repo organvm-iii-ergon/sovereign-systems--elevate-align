@@ -97,9 +97,11 @@ interface InnerParam {
 // distinct radii, inclinations, speeds, and phases. Composition (count, sizes,
 // colors, ring) is seeded by node.id so every node is structurally distinct.
 interface PlanetParam {
-  orbitRadius: number;
-  orbitSpeed: number;
-  orbitPhase: number;
+  semiMajor: number;            // a — half longest axis of elliptical orbit
+  eccentricity: number;         // e — 0 = circle, 0.7 = highly elliptical
+  argPeriapsis: number;         // ω — orientation of ellipse in its plane
+  orbitSpeed: number;           // mean motion (rad/sec)
+  orbitPhase: number;           // mean anomaly at t=0
   inclination: number;          // tilt of orbital plane (rad)
   ascendingNode: number;        // longitude of ascending node (rad)
   size: number;                 // mesh scale
@@ -175,10 +177,16 @@ const INNER_PARTICLE_SIZE = 0.07;
 // emissive material so they glow THROUGH the orb's translucent (stars) /
 // semi-translucent (symbols) surface like radiant interior bodies. Bloom
 // amplifies them so each shape reads as a contained universe.
-const PLANET_RADIUS_MIN = 0.018;
-const PLANET_RADIUS_MAX = 0.045;
-const PLANET_ORBIT_MIN = 0.08;          // inside the orb (ORB_RADIUS = 0.32)
-const PLANET_ORBIT_MAX = 0.28;          // still inside ORB_RADIUS
+// With the symbol mesh hidden, the system no longer needs to fit inside
+// ORB_RADIUS (0.32). Systems can sprawl to ~0.95 radius — visible from the
+// fold-fitting helix camera framing as actual orbital systems, not specks.
+const PLANET_RADIUS_MIN = 0.022;
+const PLANET_RADIUS_MAX = 0.110;        // wide range — some big, some small
+const PLANET_ORBIT_MIN = 0.18;
+const PLANET_ORBIT_MAX = 0.95;
+const PLANET_ECCENTRICITY_MAX = 0.55;   // high — ellipses, not circles
+const PLANET_COUNT_BONUS_MAX = 4;       // RNG-jittered extra planets per system
+const ORBIT_TRAIL_SEGMENTS = 96;        // smoothness of visible orbit ellipse
 
 // --- Per-node universe themes ---
 // Each node's interior universe is tuned to its icon's symbolic meaning. The
@@ -245,9 +253,12 @@ function universeFor(nodeId: number): NodeUniverse {
 const PLANET_ORBIT_SPEED_MIN = 0.45;
 const PLANET_ORBIT_SPEED_MAX = 1.65;
 
-// Ambient atmosphere
-const AMBIENT_PARTICLE_COUNT = 150;
-const AMBIENT_VOLUME_RADIUS = 15;
+// Ambient atmosphere — heavily populated so the space *between* systems is
+// not a visual vacuum. User 2026-04-25: "empty space visually is a vacuum
+// here as well — otherwise none look like anything at all". 4x density
+// + larger volume so the helix sits in a populated cosmos.
+const AMBIENT_PARTICLE_COUNT = 700;
+const AMBIENT_VOLUME_RADIUS = 22;
 const AMBIENT_VOLUME_HEIGHT = 30;
 const AMBIENT_PARTICLE_SIZE = 0.05;
 
@@ -1209,10 +1220,14 @@ export function initSpiral(
     group.add(label);
 
     // --- Planet system for this node ---
-    // Per-node universe is *iconologically themed*. The icon's meaning →
-    // selects the universe (palette/layout/inclination/speed) so each node
-    // is a coherent semantic system, not just a color-jittered template.
-    const planetRng = mulberry32(node.id * 7919 + 401);
+    // Per-node universe is *iconologically themed* — the icon's meaning picks
+    // a CHARACTER (palette / layout / inclination / speed). Within that
+    // character, the specific configuration emerges from PHYSICS keyed to a
+    // load-time RNG seed (Date.now()), so every page load gives a fresh
+    // unique manifestation. User 2026-04-25: "each shouldn't be programmed
+    // but given physics and 100% unique renders on every instance".
+    const loadSalt = Math.floor(performance.now() * 1000) & 0xfffff;
+    const planetRng = mulberry32(node.id * 7919 + 401 + loadSalt);
     const universe = universeFor(node.id);
     const palette: THREE.Color[] = universe.palette.map(hex => new THREE.Color(hex));
 
@@ -1258,21 +1273,44 @@ export function initSpiral(
       }
     };
 
-    const planetCount = universe.planetCount;
+    // Planet count = themed base + RNG bonus. The bonus ensures even the
+    // 2-planet "duality" systems vary load-to-load (stretched to 2..6).
+    const bonusCap = universe.layout === 'pair' ? 2
+                   : universe.layout === 'cardinal' ? 0
+                   : universe.layout === 'sextet' ? 0
+                   : PLANET_COUNT_BONUS_MAX;
+    const planetCount = universe.planetCount + Math.floor(planetRng() * (bonusCap + 1));
     const nodePlanets: THREE.Mesh[] = [];
     const nodePlanetParams: PlanetParam[] = [];
     const nodeRings: (THREE.Mesh | null)[] = [];
     for (let p = 0; p < planetCount; p++) {
-      // Stagger orbit radii across the available range — closer-in and
-      // further-out planets give visual depth to the system.
+      // Stagger semi-major axis across the available range — inner + outer
+      // planets give the system visible depth.
       const tRad = planetCount > 1 ? p / (planetCount - 1) : 0.5;
-      const orbitRadius = PLANET_ORBIT_MIN + tRad * (PLANET_ORBIT_MAX - PLANET_ORBIT_MIN);
+      // Add ±15% per-planet jitter so the orbital spacing isn't perfectly even.
+      const jitter = 1.0 + (planetRng() - 0.5) * 0.30;
+      const semiMajor = (PLANET_ORBIT_MIN + tRad * (PLANET_ORBIT_MAX - PLANET_ORBIT_MIN)) * jitter;
+      // Eccentricity 0..PLANET_ECCENTRICITY_MAX; outer orbits tend more elliptical.
+      const eccentricity = planetRng() * planetRng() * PLANET_ECCENTRICITY_MAX * (0.4 + tRad * 0.6);
+      const argPeriapsis = planetRng() * Math.PI * 2;
       const orbitSpeedRaw = PLANET_ORBIT_SPEED_MIN + planetRng() * (PLANET_ORBIT_SPEED_MAX - PLANET_ORBIT_SPEED_MIN);
-      // Inner-orbit planets move faster (Kepler-ish) — modulated by universe.speedMul
-      const keplerBoost = 1.0 + (1.0 - tRad) * 0.6;
+      // Kepler-ish: inner planets faster, outer planets slower (a^-3/2 hand-wave)
+      const keplerBoost = Math.pow(0.55 / Math.max(0.1, semiMajor), 0.5);
       const orbitSpeed = orbitSpeedRaw * universe.speedMul * keplerBoost;
-      const sizeBase    = PLANET_RADIUS_MIN + planetRng() * (PLANET_RADIUS_MAX - PLANET_RADIUS_MIN);
-      const planetColor = palette[p % palette.length].clone();
+      // Wider size range — some planets are large dominant bodies, others
+      // are tiny moons/asteroids. Power-law biases toward smaller sizes.
+      const sizeT = Math.pow(planetRng(), 1.6);
+      const sizeBase = PLANET_RADIUS_MIN + sizeT * (PLANET_RADIUS_MAX - PLANET_RADIUS_MIN);
+      // Pick from palette in rotation, then jitter the hue slightly so no
+      // two planets in the same system are exact-color duplicates.
+      const baseColor = palette[p % palette.length].clone();
+      const hsl = { h: 0, s: 0, l: 0 };
+      baseColor.getHSL(hsl);
+      const planetColor = new THREE.Color().setHSL(
+        (hsl.h + (planetRng() - 0.5) * 0.05 + 1) % 1,
+        Math.min(1, hsl.s * (0.85 + planetRng() * 0.30)),
+        Math.min(0.85, hsl.l * (0.85 + planetRng() * 0.30)),
+      );
 
       // Additive-blended emissive so the interior body GLOWS THROUGH the
       // orb's surface (translucent for stars, semi-translucent for symbols)
@@ -1289,8 +1327,8 @@ export function initSpiral(
 
       const planet = new THREE.Mesh(sharedPlanetGeo, planetMat);
       planet.scale.setScalar(sizeBase);
-      // Initial position on the orbital circle (loop will animate).
-      planet.position.set(orbitRadius, 0, 0);
+      // Initial position at periapsis (loop will animate elliptical orbit).
+      planet.position.set(semiMajor * (1 - eccentricity), 0, 0);
       // renderOrder so planets render after the orb mesh — additive blend
       // requires the source to render on top.
       planet.renderOrder = 5;
@@ -1305,7 +1343,9 @@ export function initSpiral(
       const direction = allowRetrograde && planetRng() < 0.4 ? -1 : 1;
 
       const params: PlanetParam = {
-        orbitRadius,
+        semiMajor,
+        eccentricity,
+        argPeriapsis,
         orbitSpeed: orbitSpeed * direction,
         orbitPhase: layoutPhase(p, planetCount),
         inclination: inc.incl,
@@ -1315,6 +1355,53 @@ export function initSpiral(
         hasRing: planetRng() < universe.ringChance,
       };
       nodePlanetParams.push(params);
+
+      // --- Visible orbital trail ---
+      // Draw the planet's elliptical path as a thin additive line so the
+      // viewer sees the *system structure*, not just bodies adrift. Lines
+      // are precomputed once (orbits are stable parameters); pose is set on
+      // the parent group so they follow the orb. Line opacity scales with
+      // planet size — bigger planets get more visible orbits.
+      const trailPts: THREE.Vector3[] = [];
+      const b = semiMajor * Math.sqrt(Math.max(0, 1 - eccentricity * eccentricity));
+      const cosWp = Math.cos(argPeriapsis);
+      const sinWp = Math.sin(argPeriapsis);
+      const ci0 = Math.cos(inc.incl);
+      const si0 = Math.sin(inc.incl);
+      const ca0 = Math.cos(inc.asc);
+      const sa0 = Math.sin(inc.asc);
+      for (let s = 0; s <= ORBIT_TRAIL_SEGMENTS; s++) {
+        const ang = (s / ORBIT_TRAIL_SEGMENTS) * Math.PI * 2;
+        // Ellipse in orbital plane with focus at origin
+        const xe = semiMajor * (Math.cos(ang) - eccentricity);
+        const ye = b * Math.sin(ang);
+        // Rotate by argument of periapsis
+        const xr = xe * cosWp - ye * sinWp;
+        const yr = xe * sinWp + ye * cosWp;
+        // Apply inclination + ascending node (same math as planet animation)
+        const lx = xr;
+        const ly = yr * si0;
+        const lz = yr * ci0;
+        trailPts.push(new THREE.Vector3(
+          lx * ca0 - lz * sa0,
+          ly,
+          lx * sa0 + lz * ca0,
+        ));
+      }
+      const trailGeo = new THREE.BufferGeometry().setFromPoints(trailPts);
+      const trailMat = new THREE.LineBasicMaterial({
+        color: planetColor.clone().lerp(new THREE.Color(0xffffff), 0.30),
+        transparent: true,
+        opacity: live ? 0.18 + sizeT * 0.20 : 0.08,
+        blending: THREE.AdditiveBlending,
+        depthWrite: false,
+      });
+      disposables.push(trailMat);
+      const trail = new THREE.LineLoop(trailGeo, trailMat);
+      trail.renderOrder = 4;
+      group.add(trail);
+      // Reuse the variantGeometries disposal channel for trail geos
+      variantGeometries.push(trailGeo);
 
       // Optional saturn-style ring (~18% chance per planet).
       if (params.hasRing) {
@@ -1749,18 +1836,27 @@ export function initSpiral(
       for (let p = 0; p < nodePlanetList.length; p++) {
         const planet = nodePlanetList[p];
         const pp = nodePlanetParamList[p];
+        // Elliptical orbit (focus at origin). True angle from periapsis:
+        //   x = a (cos E - e),  y = b sin E
+        // Use mean-anomaly approximation (theta = E directly) — visually
+        // indistinguishable from solving Kepler's equation, much cheaper.
         const theta = pp.orbitPhase + t * pp.orbitSpeed * motionScale;
-        const ct = Math.cos(theta);
-        const st = Math.sin(theta);
+        const b = pp.semiMajor * Math.sqrt(Math.max(0, 1 - pp.eccentricity * pp.eccentricity));
+        const xe = pp.semiMajor * (Math.cos(theta) - pp.eccentricity);
+        const ye = b * Math.sin(theta);
+        // Rotate by argument of periapsis (orientation in orbital plane)
+        const cosWp = Math.cos(pp.argPeriapsis);
+        const sinWp = Math.sin(pp.argPeriapsis);
+        const xr = xe * cosWp - ye * sinWp;
+        const yr = xe * sinWp + ye * cosWp;
+        // Apply inclination (tilt) + ascending node (yaw)
         const ci = Math.cos(pp.inclination);
         const si = Math.sin(pp.inclination);
         const ca = Math.cos(pp.ascendingNode);
         const sa = Math.sin(pp.ascendingNode);
-
-        // Position in orbital plane, then rotate by ascending node.
-        const lx = pp.orbitRadius * ct;
-        const ly = pp.orbitRadius * st * si;
-        const lz = pp.orbitRadius * st * ci;
+        const lx = xr;
+        const ly = yr * si;
+        const lz = yr * ci;
 
         planet.position.set(
           lx * ca - lz * sa,
