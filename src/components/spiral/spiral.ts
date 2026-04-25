@@ -86,7 +86,7 @@ const PATH_STEPS = 512;
 const PATH_EXTEND = 0.85;            // 85% extra above/below — truly infinite
 const BG_COLOR = 0x071e22;           // matches --color-ocean-900 (no seam with page)
 const FOG_DENSITY = 0.05;            // dissolves endpoints into background
-const ORB_RADIUS = 0.4;
+const ORB_RADIUS = 0.55;             // bumped for clarity at viewport scale
 const ORB_SEGMENTS = 32;
 const CLICK_THRESHOLD = 8;           // px — drag vs. click (mouse)
 const TAP_THRESHOLD = 30;            // px — drag vs. tap (touch)
@@ -440,12 +440,12 @@ function nodePathIndex(t: number, pathLength: number): number {
 // Geometry builders — Variant A (sacred symbols) + Variant B (generative stars)
 // ---------------------------------------------------------------------------
 
-const EXTRUDE_DEFAULT = (outerR: number, depth: number, curveSegments = 8) => ({
+const EXTRUDE_DEFAULT = (outerR: number, depth: number, curveSegments = 16) => ({
   depth,
   bevelEnabled: true,
-  bevelThickness: depth * 0.15,
-  bevelSize: outerR * 0.08,
-  bevelSegments: 2,
+  bevelThickness: depth * 0.18,
+  bevelSize: outerR * 0.06,
+  bevelSegments: 4,
   curveSegments,
 });
 
@@ -700,10 +700,10 @@ function generativeStarGeometry(nodeId: number, outerR: number, depth: number): 
   const geo = new THREE.ExtrudeGeometry(shape, {
     depth: depth * (0.7 + rng() * 0.6),
     bevelEnabled: true,
-    bevelThickness: depth * 0.18,
-    bevelSize: outerR * 0.10,
-    bevelSegments: 3,
-    curveSegments: 8,
+    bevelThickness: depth * 0.22,
+    bevelSize: outerR * 0.08,
+    bevelSegments: 5,
+    curveSegments: 16,
   });
   geo.center();
   return geo;
@@ -725,27 +725,50 @@ function chakraColorForNode(i: number, total: number): THREE.Color {
 }
 
 // ---------------------------------------------------------------------------
-// Emoji sprite
+// Node label sprite — minimal typographic identifier
 // ---------------------------------------------------------------------------
+// Replaces the emoji-sprite scheme. Sleek uppercase Inter w/ wide tracking,
+// soft drop-shadow for legibility against the ocean-900 background, lower
+// opacity for locked nodes. Always camera-facing (Sprite billboard).
 
-function makeEmojiSprite(emoji: string): THREE.Sprite {
-  const size = 64;
+function makeLabelSprite(name: string, locked: boolean): THREE.Sprite {
+  const dpr = Math.min(window.devicePixelRatio, 2);
+  const w = 720;
+  const h = 100;
   const c = document.createElement('canvas');
-  c.width = size;
-  c.height = size;
+  c.width = w * dpr;
+  c.height = h * dpr;
   const ctx = c.getContext('2d')!;
-  ctx.font = `${Math.round(size * 0.7)}px serif`;
+  ctx.scale(dpr, dpr);
+  ctx.clearRect(0, 0, w, h);
+  // Weight 400 reads cleaner than 300 at small sprite sizes; tracking still wide.
+  ctx.font = '400 34px Inter, system-ui, sans-serif';
   ctx.textAlign = 'center';
   ctx.textBaseline = 'middle';
-  ctx.fillText(emoji, size / 2, size / 2);
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  (ctx as any).letterSpacing = '0.22em';
+  // Two-pass shadow for legibility: first a wide soft halo, then a tight ink shadow.
+  ctx.shadowColor = 'rgba(7, 30, 34, 0.95)';
+  ctx.shadowBlur = 18;
+  ctx.fillStyle = 'rgba(7, 30, 34, 0)';
+  ctx.fillText(name.toUpperCase(), w / 2, h / 2);
+  ctx.shadowBlur = 6;
+  ctx.shadowOffsetY = 1;
+  ctx.fillStyle = locked ? 'rgba(232, 228, 223, 0.62)' : 'rgba(248, 244, 238, 0.96)';
+  ctx.fillText(name.toUpperCase(), w / 2, h / 2);
   const tex = new THREE.CanvasTexture(c);
+  tex.minFilter = THREE.LinearFilter;
+  tex.magFilter = THREE.LinearFilter;
+  tex.anisotropy = 4;
   const mat = new THREE.SpriteMaterial({
     map: tex,
     transparent: true,
     depthWrite: false,
+    depthTest: false,                // labels float above all geometry
   });
   const sprite = new THREE.Sprite(mat);
-  sprite.scale.setScalar(0.45);
+  const worldWidth = 2.2;
+  sprite.scale.set(worldWidth, worldWidth * (h / w), 1);
   return sprite;
 }
 
@@ -882,24 +905,24 @@ export function initSpiral(
       mat = new THREE.MeshPhysicalMaterial({
         color: nodeColor,
         emissive: nodeColor,
-        emissiveIntensity: live ? 0.35 : 0.20,
+        emissiveIntensity: live ? 0.85 : 0.45,             // stars need to RADIATE
         metalness: 0.0,
-        roughness: 0.10 + opticRng() * 0.12,
+        roughness: 0.06 + opticRng() * 0.08,                // sleeker, more polished
         transparent: true,
-        opacity: live ? 0.92 : 0.70,
-        transmission: 0.78 + opticRng() * 0.15,
-        thickness: 0.30 + opticRng() * 0.45,
-        ior: 1.30 + opticRng() * 0.20,                    // water (1.33) → glass (1.50)
-        dispersion: 0.4 + opticRng() * 1.6,                // chromatic refraction
+        opacity: live ? 0.95 : 0.78,
+        transmission: 0.55 + opticRng() * 0.20,             // dialed back so color sings
+        thickness: 0.45 + opticRng() * 0.50,
+        ior: 1.33 + opticRng() * 0.20,                      // water (1.33) → glass (1.50)
+        dispersion: 0.6 + opticRng() * 1.8,                 // chromatic refraction
         attenuationColor: nodeColor,
-        attenuationDistance: 0.8 + opticRng() * 1.2,
+        attenuationDistance: 1.2 + opticRng() * 1.4,
         clearcoat: 1.0,
-        clearcoatRoughness: 0.05 + opticRng() * 0.10,
-        iridescence: 0.45 + opticRng() * 0.35,
+        clearcoatRoughness: 0.03 + opticRng() * 0.06,
+        iridescence: 0.55 + opticRng() * 0.30,
         iridescenceIOR: 1.30 + opticRng() * 0.40,
-        sheen: 0.5,
+        sheen: 0.7,
         sheenColor: sheenColor,
-        sheenRoughness: 0.4,
+        sheenRoughness: 0.25,
       });
     } else {
       // Variant A — sacred symbols: keep the V3 chakra-orb material with
@@ -936,8 +959,12 @@ export function initSpiral(
     group.position.copy(pos);
     group.add(mesh);
 
-    const emoji = makeEmojiSprite(node.emoji);
-    group.add(emoji);
+    const label = makeLabelSprite(node.name, !live);
+    label.position.set(0, -(ORB_RADIUS + 0.55), 0);
+    const labelMat = label.material as THREE.SpriteMaterial;
+    if (labelMat.map) texturesToDispose.push(labelMat.map);
+    disposables.push(labelMat);
+    group.add(label);
 
     scene.add(group);
     orbMeshes.push(mesh);
@@ -1127,9 +1154,11 @@ export function initSpiral(
         hovered = hitMesh;
         hitMesh.scale.setScalar(1.2);
         const data = hitMesh.userData as NodeData;
+        // Two-tier disclosure: label below the node always shows the name,
+        // tooltip on hover surfaces the tagline (or lock state).
         tip.textContent = data.status === 'locked'
-          ? `${data.emoji} ${data.name} — locked`
-          : `${data.emoji} ${data.name}`;
+          ? `${data.tagline} — locked`
+          : data.tagline;
         tip.style.display = 'block';
       }
       tip.style.left = (e.clientX - rect.left + 15) + 'px';
@@ -1243,13 +1272,11 @@ export function initSpiral(
       mesh.rotation.y = t * ap.rotRateY * motionScale + ap.rotPhaseY;
       mesh.rotation.z = t * ap.rotRateZ * motionScale + ap.rotPhaseZ;
 
-      // 5. Emoji sprite: camera-facing + bob
-      const emoji = group.children[1];
-      if (emoji) {
-        cameraDir.copy(camera.position).sub(group.position).normalize();
-        const bob = Math.sin(t * 0.7 + seed * 1.5) * 0.025;
-        emoji.position.copy(cameraDir.multiplyScalar(ORB_RADIUS + 0.08));
-        emoji.position.y += bob;
+      // 5. Label sprite: subtle vertical bob, billboard handled by Sprite class
+      const label = group.children[1];
+      if (label) {
+        const bob = Math.sin(t * 0.5 + seed * 1.2) * 0.02;
+        label.position.y = -(ORB_RADIUS + 0.55) + bob;
       }
 
       // 6. Per-orb aura particles
