@@ -515,8 +515,12 @@ export function initSpiral(
   const w = container.clientWidth;
   const h = container.clientHeight;
 
+  // Viewport-aware camera Z: pull in closer on mobile so nodes are legible
+  // at the smaller viewport. Desktop V3 framing (Z=18) is preserved above 768px.
+  const cameraZForViewport = (): number => (window.innerWidth < 768 ? 12 : 18);
+
   const camera = new THREE.PerspectiveCamera(60, w / h, 0.1, 1000);
-  camera.position.set(0, 0, 18);
+  camera.position.set(0, 0, cameraZForViewport());
 
   const renderer = new THREE.WebGLRenderer({ antialias: true });
   renderer.setSize(w, h);
@@ -881,6 +885,7 @@ export function initSpiral(
     const ww = container.clientWidth;
     const hh = container.clientHeight;
     camera.aspect = ww / hh;
+    camera.position.z = cameraZForViewport();
     camera.updateProjectionMatrix();
     renderer.setSize(ww, hh);
   }
