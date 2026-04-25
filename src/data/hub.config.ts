@@ -21,6 +21,30 @@ export interface Branch {
 
 export type Phase = 'ELEVATE' | 'ALIGN' | 'UNLOCK';
 
+/**
+ * EnvVar — the immutable metaphysical substrate beneath each spiral node.
+ * Surface names (Maddie's "Feel Good First", etc.) are mutable bindings;
+ * the EnvVar is the True Name keyed to the icon shape and the node's
+ * cross-cultural lineage. Used by `naming-chains.ts` to render the
+ * `/lineage/[envvar]` view that shows the same essence named through
+ * different traditions (Greek-classical, Sanskrit-Vedic, Egyptian,
+ * Christian-mystical, Jungian, modern-wellness, etc.).
+ */
+export type EnvVar =
+  | 'PYR'        // 1 — Sunburst — primordial fire / radiance
+  | 'OCULUS'     // 2 — Eye — witness / observation
+  | 'DYAD'       // 3 — Yin-Yang — polarity / pair
+  | 'PYRAMIS'    // 4 — Triangle — pyramid / ascending volume
+  | 'HYDOR'      // 5 — Teardrop — water / source
+  | 'MANDORLA'   // 6 — Vesica Piscis — overlap / sacred gate
+  | 'KENOSIS'    // 7 — Crescent — emptying / receptive vessel
+  | 'SHATKONA'   // 8 — Hexagram — six-pointed union
+  | 'PADMA'      // 9 — Lotus — bloom / unfolding
+  | 'BODHI'      // 10 — Eye-in-Triangle — awakened seeing
+  | 'TETRAD'     // 11 — Solar Cross — fourfold cardinal order
+  | 'OKTAEDRON'  // 12 — Octahedron — eightfold crystalline form
+  | 'ANKH';      // 13 — Ankh — eternal life / continuance
+
 export interface SpiralNode {
   id: number;
   name: string;
@@ -31,6 +55,8 @@ export interface SpiralNode {
   color: string;
   status: 'live' | 'locked';
   url: string;
+  /** Immutable substrate identity — see EnvVar type above. */
+  envVar: EnvVar;
 }
 
 export interface HubConfig {
@@ -101,21 +127,21 @@ export const config: HubConfig = {
   ],
   nodes: [
     // ELEVATE: body → Physical Sovereignty (nodes 1-5)
-    { id: 1,  name: 'Feel Good First',           phase: 'ELEVATE', pillarSlug: 'physical',  emoji: '✦',  tagline: 'Shift your state first.',                     color: '#119a9e', status: 'live',   url: '/nodes/1'  },
-    { id: 2,  name: 'Awareness',                 phase: 'ELEVATE', pillarSlug: 'physical',  emoji: '🧬', tagline: 'See where you are.',                          color: '#119a9e', status: 'live',   url: '/nodes/2'  },
-    { id: 3,  name: 'Regulation',                phase: 'ELEVATE', pillarSlug: 'physical',  emoji: '⚖️', tagline: 'Regulate before you optimize.',               color: '#119a9e', status: 'live',   url: '/nodes/3'  },
-    { id: 4,  name: 'Elevate',                   phase: 'ELEVATE', pillarSlug: 'physical',  emoji: '🛡️', tagline: 'Rise above the baseline.',                    color: '#119a9e', status: 'live',   url: '/nodes/4'  },
-    { id: 5,  name: 'Root Healing',              phase: 'ELEVATE', pillarSlug: 'physical',  emoji: '🌊', tagline: 'Heal from the root. Start with water.',       color: '#119a9e', status: 'live',   url: '/water/'   },
+    { id: 1,  name: 'Feel Good First',           phase: 'ELEVATE', pillarSlug: 'physical',  emoji: '✦',  tagline: 'Shift your state first.',                     color: '#119a9e', status: 'live',   url: '/nodes/1',  envVar: 'PYR'       },
+    { id: 2,  name: 'Awareness',                 phase: 'ELEVATE', pillarSlug: 'physical',  emoji: '🧬', tagline: 'See where you are.',                          color: '#119a9e', status: 'live',   url: '/nodes/2',  envVar: 'OCULUS'    },
+    { id: 3,  name: 'Regulation',                phase: 'ELEVATE', pillarSlug: 'physical',  emoji: '⚖️', tagline: 'Regulate before you optimize.',               color: '#119a9e', status: 'live',   url: '/nodes/3',  envVar: 'DYAD'      },
+    { id: 4,  name: 'Elevate',                   phase: 'ELEVATE', pillarSlug: 'physical',  emoji: '🛡️', tagline: 'Rise above the baseline.',                    color: '#119a9e', status: 'live',   url: '/nodes/4',  envVar: 'PYRAMIS'   },
+    { id: 5,  name: 'Root Healing',              phase: 'ELEVATE', pillarSlug: 'physical',  emoji: '🌊', tagline: 'Heal from the root. Start with water.',       color: '#119a9e', status: 'live',   url: '/water/',   envVar: 'HYDOR'     },
     // ALIGN: mind + life → Inner & Identity Sovereignty (nodes 6-11)
-    { id: 6,  name: 'Responsibility (with Love)', phase: 'ALIGN',  pillarSlug: 'inner',     emoji: '🕊️', tagline: 'Own your choices with love.',                 color: '#8cc5d3', status: 'locked', url: '/nodes/6'  },
-    { id: 7,  name: 'Unbecoming',                phase: 'ALIGN',   pillarSlug: 'inner',     emoji: '🌙', tagline: 'Release what was never yours.',               color: '#8cc5d3', status: 'locked', url: '/nodes/7'  },
-    { id: 8,  name: 'Alignment',                 phase: 'ALIGN',   pillarSlug: 'inner',     emoji: '🔮', tagline: 'Come into coherence.',                        color: '#8cc5d3', status: 'locked', url: '/nodes/8'  },
-    { id: 9,  name: 'The Becoming',              phase: 'ALIGN',   pillarSlug: 'identity',  emoji: '✨', tagline: 'Step into who you are.',                      color: '#c9a96e', status: 'locked', url: '/nodes/9'  },
-    { id: 10, name: 'Awakening',                 phase: 'ALIGN',   pillarSlug: 'identity',  emoji: '📣', tagline: 'See clearly for the first time.',             color: '#c9a96e', status: 'locked', url: '/nodes/10' },
-    { id: 11, name: 'Integrate',                 phase: 'ALIGN',   pillarSlug: 'identity',  emoji: '🚧', tagline: 'Bring it all together.',                      color: '#c9a96e', status: 'locked', url: '/nodes/11' },
+    { id: 6,  name: 'Responsibility (with Love)', phase: 'ALIGN',  pillarSlug: 'inner',     emoji: '🕊️', tagline: 'Own your choices with love.',                 color: '#8cc5d3', status: 'locked', url: '/nodes/6',  envVar: 'MANDORLA'  },
+    { id: 7,  name: 'Unbecoming',                phase: 'ALIGN',   pillarSlug: 'inner',     emoji: '🌙', tagline: 'Release what was never yours.',               color: '#8cc5d3', status: 'locked', url: '/nodes/7',  envVar: 'KENOSIS'   },
+    { id: 8,  name: 'Alignment',                 phase: 'ALIGN',   pillarSlug: 'inner',     emoji: '🔮', tagline: 'Come into coherence.',                        color: '#8cc5d3', status: 'locked', url: '/nodes/8',  envVar: 'SHATKONA'  },
+    { id: 9,  name: 'The Becoming',              phase: 'ALIGN',   pillarSlug: 'identity',  emoji: '✨', tagline: 'Step into who you are.',                      color: '#c9a96e', status: 'locked', url: '/nodes/9',  envVar: 'PADMA'     },
+    { id: 10, name: 'Awakening',                 phase: 'ALIGN',   pillarSlug: 'identity',  emoji: '📣', tagline: 'See clearly for the first time.',             color: '#c9a96e', status: 'locked', url: '/nodes/10', envVar: 'BODHI'     },
+    { id: 11, name: 'Integrate',                 phase: 'ALIGN',   pillarSlug: 'identity',  emoji: '🚧', tagline: 'Bring it all together.',                      color: '#c9a96e', status: 'locked', url: '/nodes/11', envVar: 'TETRAD'    },
     // UNLOCK: freedom → Financial Sovereignty (nodes 12-13)
-    { id: 12, name: 'Authenticate',              phase: 'UNLOCK',  pillarSlug: 'financial', emoji: '💠', tagline: 'Prove it to yourself.',                       color: '#3dbfc4', status: 'locked', url: '/nodes/12' },
-    { id: 13, name: 'Unlock',                    phase: 'UNLOCK',  pillarSlug: 'financial', emoji: '⚡', tagline: 'Freedom is the final layer.',                 color: '#3dbfc4', status: 'locked', url: '/nodes/13' },
+    { id: 12, name: 'Authenticate',              phase: 'UNLOCK',  pillarSlug: 'financial', emoji: '💠', tagline: 'Prove it to yourself.',                       color: '#3dbfc4', status: 'locked', url: '/nodes/12', envVar: 'OKTAEDRON' },
+    { id: 13, name: 'Unlock',                    phase: 'UNLOCK',  pillarSlug: 'financial', emoji: '⚡', tagline: 'Freedom is the final layer.',                 color: '#3dbfc4', status: 'locked', url: '/nodes/13', envVar: 'ANKH'      },
   ],
   branches: [
     { 
