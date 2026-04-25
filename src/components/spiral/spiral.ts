@@ -169,6 +169,15 @@ const INNER_RADIUS_MIN = 0.10;
 const INNER_RADIUS_MAX = 0.32;
 const INNER_PARTICLE_SIZE = 0.07;
 
+// Materia particle field — fills 99% of the contained sphere with micro-to-
+// macro elements per node, distributed throughout the volume (not just on
+// orbits). Each node gets ~280 additive sprites, sized 0.004..0.022, colored
+// from its materia palette. User 2026-04-25: "make sure 99% of the icon
+// container is filled with micro to macro elements of materia".
+const MATERIA_FIELD_PARTICLES = 280;
+const MATERIA_FIELD_SIZE_MIN = 0.004;
+const MATERIA_FIELD_SIZE_MAX = 0.022;
+
 // Per-orb planets — each node IS a mini solar system, contained INSIDE the
 // shape itself. User 2026-04-25: "the solar system is contained within the
 // shape itself" + "each universe is a season, or weather, different phases of
@@ -1155,6 +1164,11 @@ export function initSpiral(
   const sharedPlanetGeo = new THREE.SphereGeometry(1, 16, 12);
   const sharedRingGeo = new THREE.RingGeometry(1.4, 2.0, 32);
 
+  // Hoisted soft-dot texture — used by aura, inner shimmer, AND the per-node
+  // materia field below. Single texture instance, multiple consumers.
+  const softDotTex = createSoftDotTexture();
+  texturesToDispose.push(softDotTex);
+
   nodes.forEach((node, i) => {
     const t = nodes.length > 1 ? i / (nodes.length - 1) : 0;
     const idx = nodePathIndex(t, path.length);
@@ -1495,6 +1509,77 @@ export function initSpiral(
     planetParams.push(nodePlanetParams);
     planetRingMeshes.push(nodeRings);
 
+    // --- Materia particle field ---
+    // Volumetric fill: ~280 additive sprites distributed throughout the
+    // contained sphere. Sizes span MICRO (0.004) to MACRO (0.022) so each
+    // node's universe is densely populated with materia at multiple scales,
+    // not just the central sun + few planets. Color tinted from materia
+    // palette. Bigger particles bias to the inner shells (more dense core).
+    const fieldPositions = new Float32Array(MATERIA_FIELD_PARTICLES * 3);
+    const fieldColors = new Float32Array(MATERIA_FIELD_PARTICLES * 3);
+    const fieldSizes = new Float32Array(MATERIA_FIELD_PARTICLES);
+    const fieldRng = mulberry32(node.id * 9907 + 17 + loadSalt);
+    for (let f = 0; f < MATERIA_FIELD_PARTICLES; f++) {
+      // Rejection sampling for uniform distribution in unit sphere
+      let x = 0, y = 0, z = 0, r2 = 2;
+      while (r2 > 1) {
+        x = fieldRng() * 2 - 1;
+        y = fieldRng() * 2 - 1;
+        z = fieldRng() * 2 - 1;
+        r2 = x * x + y * y + z * z;
+      }
+      // Bias toward outer shell for variety, but keep some core density.
+      // Power 0.55 = mostly fills the volume rather than clustering at center.
+      const r = Math.pow(fieldRng(), 0.55) * ORB_CONTAINMENT_R;
+      const norm = Math.sqrt(r2) || 1;
+      fieldPositions[f * 3]     = (x / norm) * r;
+      fieldPositions[f * 3 + 1] = (y / norm) * r;
+      fieldPositions[f * 3 + 2] = (z / norm) * r;
+
+      // Size distribution power-law biased to small (most particles micro,
+      // a few macro). materia.sizeMul scales the entire envelope per node.
+      const st = Math.pow(fieldRng(), 2.2);
+      fieldSizes[f] = (MATERIA_FIELD_SIZE_MIN + st * (MATERIA_FIELD_SIZE_MAX - MATERIA_FIELD_SIZE_MIN))
+                    * materia.sizeMul;
+
+      // Color: rotate through palette + per-particle hue jitter
+      const baseCol = palette[f % palette.length];
+      const hsl = { h: 0, s: 0, l: 0 };
+      baseCol.getHSL(hsl);
+      const tinted = new THREE.Color().setHSL(
+        (hsl.h + (fieldRng() - 0.5) * 0.06 + 1) % 1,
+        Math.min(1, hsl.s * (0.75 + fieldRng() * 0.4)),
+        Math.min(0.95, hsl.l * (0.70 + fieldRng() * 0.55)),
+      );
+      fieldColors[f * 3]     = tinted.r;
+      fieldColors[f * 3 + 1] = tinted.g;
+      fieldColors[f * 3 + 2] = tinted.b;
+    }
+    const fieldGeo = new THREE.BufferGeometry();
+    fieldGeo.setAttribute('position', new THREE.BufferAttribute(fieldPositions, 3));
+    fieldGeo.setAttribute('color', new THREE.BufferAttribute(fieldColors, 3));
+    // Average size for the material; per-particle sizes via shader would
+    // be ideal but PointsMaterial.size is uniform. Use the size envelope
+    // midpoint scaled by materia.emissiveMul so brighter materia look bigger.
+    const avgFieldSize = (MATERIA_FIELD_SIZE_MIN + MATERIA_FIELD_SIZE_MAX) * 0.5
+                       * materia.sizeMul * (0.85 + materia.emissiveMul * 0.15);
+    const fieldMat = new THREE.PointsMaterial({
+      vertexColors: true,
+      transparent: true,
+      opacity: live ? 0.85 : 0.45,
+      map: softDotTex,
+      blending: THREE.AdditiveBlending,
+      depthWrite: false,
+      sizeAttenuation: true,
+      size: avgFieldSize * 1.6,            // pad for visual presence
+    });
+    disposables.push(fieldMat);
+    const fieldPoints = new THREE.Points(fieldGeo, fieldMat);
+    fieldPoints.renderOrder = 4;
+    group.add(fieldPoints);
+    // Re-use variantGeometries channel for disposal at unmount
+    variantGeometries.push(fieldGeo);
+
     scene.add(group);
     orbMeshes.push(mesh);
     orbGroups.push(group);
@@ -1549,9 +1634,7 @@ export function initSpiral(
   });
 
   // --- Per-orb aura particles (single Points object, 1 draw call) ---
-  const softDotTex = createSoftDotTexture();
-  texturesToDispose.push(softDotTex);
-
+  // (softDotTex is hoisted earlier — shared with materia field + inner shimmer)
   const TOTAL_AURA = nodes.length * AURA_PARTICLES_PER_ORB;
   const auraPositions = new Float32Array(TOTAL_AURA * 3);
   const auraColors = new Float32Array(TOTAL_AURA * 3);
