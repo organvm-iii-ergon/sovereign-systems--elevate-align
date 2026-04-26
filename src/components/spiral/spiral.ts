@@ -18,6 +18,7 @@ import { EffectComposer } from 'three/addons/postprocessing/EffectComposer.js';
 import { RenderPass } from 'three/addons/postprocessing/RenderPass.js';
 import { UnrealBloomPass } from 'three/addons/postprocessing/UnrealBloomPass.js';
 import { OutputPass } from 'three/addons/postprocessing/OutputPass.js';
+import { type IconWorld, type ParticleBehavior, worldFor } from '../../data/icon-worlds';
 
 export type SpiralVariant = 'symbols' | 'stars';
 
@@ -307,6 +308,148 @@ const MATERIA: Record<Materia, MateriaSpec> = {
   lunar:   { sizeMul: 1.05, maxSizeMul: 1.0, emissiveMul: 0.70,sunSize: 1.0, ringChanceMul: 1.0, dustBoost: 0.7 },
 };
 
+const WORLD_SIZE_BIAS: Record<IconWorld['sizeBias'], number> = {
+  micro: 0.74,
+  mixed: 1.0,
+  macro: 1.28,
+};
+
+const PHASE_GRAVITY_SCALE: Record<PhasePhase, number> = {
+  solid: 1.15,
+  liquid: 0.9,
+  gas: 0.55,
+};
+
+const COHESION_PULL: Record<PhasePhase, number> = {
+  solid: 1.9,
+  liquid: 1.5,
+  gas: 1.1,
+};
+
+const CHAOS_REPULSION: Record<PhasePhase, number> = {
+  solid: 0.65,
+  liquid: 0.95,
+  gas: 1.35,
+};
+
+function phaseMixForWorld(world: IconWorld): PhaseMix {
+  const solid = world.phaseMix.solid + world.phaseMix.plasma * 0.08;
+  const liquid = world.phaseMix.liquid + world.phaseMix.plasma * 0.04;
+  const gas = world.phaseMix.gas + world.phaseMix.plasma * 0.88;
+  const total = solid + liquid + gas || 1;
+
+  return {
+    solid: solid / total,
+    liquid: liquid / total,
+    gas: gas / total,
+  };
+}
+
+function blendWorldPalette(
+  basePalette: THREE.Color[],
+  accentPalette: number[],
+  nodeColor: THREE.Color,
+): THREE.Color[] {
+  return accentPalette.map((accentHex, idx) => {
+    const accent = new THREE.Color(accentHex ?? 0xffffff);
+    const base = basePalette[idx % basePalette.length] ?? nodeColor;
+    return base.clone().lerp(accent, 0.68).lerp(nodeColor, 0.18);
+  });
+}
+
+function respawnChaosParticle(part: PhaseParticle, world: IconWorld): void {
+  const angle = Math.random() * Math.PI * 2;
+  const radius = Math.random() * 0.08;
+  const lift = (Math.random() - 0.5) * 0.12;
+  const burst = (0.18 + Math.random() * 0.45) * world.thermalAmpMul;
+
+  part.pos.set(
+    Math.cos(angle) * radius,
+    lift,
+    Math.sin(angle) * radius,
+  );
+
+  part.vel.set(
+    Math.cos(angle) * burst + world.gravity.x * 0.15,
+    lift * 1.6 + world.gravity.y * 0.25,
+    Math.sin(angle) * burst + world.gravity.z * 0.15,
+  );
+}
+
+function applyWorldBehaviorForce(
+  behavior: ParticleBehavior,
+  part: PhaseParticle,
+  time: number,
+  nodeIndex: number,
+  partIndex: number,
+  dt: number,
+  motionScale: number,
+  mode: 'cohesion' | 'chaos',
+): void {
+  const modeMul = mode === 'cohesion' ? 1.0 : 1.45;
+
+  switch (behavior) {
+    case 'floaty': {
+      part.vel.y += Math.sin(time * 0.8 + partIndex * 0.17) * 0.05 * dt * motionScale * modeMul;
+      break;
+    }
+    case 'crystalline': {
+      const targetX = Math.sign(part.home.x || 1) * 0.18;
+      const targetY = Math.round(part.home.y / 0.14) * 0.14;
+      const targetZ = Math.sign(part.home.z || 1) * 0.18;
+      const snap = (mode === 'cohesion' ? 1.4 : 0.75) * dt * motionScale;
+      part.vel.x += (targetX - part.pos.x) * snap;
+      part.vel.y += (targetY - part.pos.y) * snap;
+      part.vel.z += (targetZ - part.pos.z) * snap;
+      break;
+    }
+    case 'rising': {
+      part.vel.y += (mode === 'cohesion' ? 0.18 : 0.34) * dt * motionScale;
+      break;
+    }
+    case 'spiraling': {
+      const swirl = (mode === 'cohesion' ? 0.55 : 1.15) * dt * motionScale;
+      part.vel.x += -part.pos.z * swirl;
+      part.vel.z += part.pos.x * swirl;
+      part.vel.y += 0.05 * swirl;
+      break;
+    }
+    case 'lattice': {
+      const cell = 0.11;
+      const targetX = Math.round(part.home.x / cell) * cell;
+      const targetY = Math.round(part.home.y / cell) * cell;
+      const targetZ = Math.round(part.home.z / cell) * cell;
+      const snap = (mode === 'cohesion' ? 1.8 : 0.95) * dt * motionScale;
+      part.vel.x += (targetX - part.pos.x) * snap;
+      part.vel.y += (targetY - part.pos.y) * snap;
+      part.vel.z += (targetZ - part.pos.z) * snap;
+      break;
+    }
+    case 'tidal': {
+      const wave = Math.sin(time * 0.9 + nodeIndex * 0.73 + partIndex * 0.031);
+      part.vel.x += wave * 0.06 * dt * motionScale * modeMul;
+      part.vel.z += Math.cos(time * 0.65 + partIndex * 0.029) * 0.04 * dt * motionScale * modeMul;
+      break;
+    }
+    case 'radial-emission': {
+      const rr = Math.hypot(part.pos.x, part.pos.y, part.pos.z) || 1e-6;
+      const radial = (mode === 'cohesion' ? 0.08 : 0.24) * dt * motionScale;
+      part.vel.x += (part.pos.x / rr) * radial;
+      part.vel.y += (part.pos.y / rr) * radial;
+      part.vel.z += (part.pos.z / rr) * radial;
+      break;
+    }
+    case 'dual-gyre': {
+      const dir = part.home.x >= 0 ? 1 : -1;
+      const gyre = (mode === 'cohesion' ? 0.7 : 1.3) * dt * motionScale * dir;
+      part.vel.x += -part.pos.z * gyre;
+      part.vel.z += part.pos.x * gyre;
+      part.vel.y += Math.sin(time * 1.1 + dir * partIndex * 0.05) * 0.03 * dt * motionScale;
+      break;
+    }
+  }
+}
+
 interface NodeUniverse {
   theme: string;
   materia: Materia;
@@ -358,184 +501,6 @@ const NODE_UNIVERSES: Record<number, NodeUniverse> = {
 };
 function universeFor(nodeId: number): NodeUniverse {
   return NODE_UNIVERSES[nodeId] || NODE_UNIVERSES[1];
-}
-
-// ---------------------------------------------------------------------------
-// IconWorld — per-node themed environment ("Halloween Town, Tomorrowland,
-// Christmas Tree Shop"). Each node is its own complete world: elements,
-// phase mix, biology, gravity vector, and a particle behavior pattern that
-// flavors HOW its physics regime expresses (cohesion for icons / chaos for
-// stars). User vision 2026-04-25.
-// ---------------------------------------------------------------------------
-
-type Element =
-  | 'photon'  | 'plasma'   | 'fire'   | 'lava'    | 'smoke'
-  | 'water'   | 'ice'      | 'vapor'  | 'salt'
-  | 'mist'    | 'dew'      | 'pollen' | 'petals'
-  | 'dust'    | 'regolith' | 'moonbeam'
-  | 'quartz'  | 'prism'    | 'mineral'| 'gold'
-  | 'shadow'  | 'light'    | 'ion'    | 'air'     | 'earth';
-
-type Biology = 'organic' | 'mineral' | 'synthetic' | 'cosmic' | 'aquatic' | 'volcanic' | 'lunar';
-
-type ParticleBehavior =
-  | 'floaty'           // zero-g drift
-  | 'crystalline'      // 4-fold cardinal anchors
-  | 'rising'           // upward respawn loop
-  | 'spiraling'        // helical motion
-  | 'lattice'          // snap to grid points
-  | 'tidal'            // sin-wave bias
-  | 'radial-emission'  // radiate outward from center
-  | 'dual-gyre';       // two counter-rotating populations
-
-interface IconWorld {
-  id: number;
-  themeName: string;                    // poetic — "Forge of Dawn", "Crystal Vault"
-  elements: Element[];
-  phaseMix: { gas: number; liquid: number; solid: number; plasma: number };
-  biology: Biology;
-  gravity: { x: number; y: number; z: number };  // local-frame vector
-  particleBehavior: ParticleBehavior;
-  accentPalette: number[];              // theme-specific accent layered over chakra base
-  thermalAmpMul: number;                // ×PHASE_THERMAL — Halloween hot, Christmas calm
-  sizeBias: 'micro' | 'mixed' | 'macro';
-}
-
-const ICON_WORLDS: Record<number, IconWorld> = {
-  1: {
-    id: 1, themeName: 'Forge of Dawn',
-    elements: ['photon', 'plasma', 'fire'],
-    phaseMix: { gas: 0.0, liquid: 0.0, solid: 0.05, plasma: 0.95 },
-    biology: 'cosmic',
-    gravity: { x: 0, y: 0, z: 0 },                // zero-g — pure radiance
-    particleBehavior: 'radial-emission',
-    accentPalette: [0xfff7d6, 0xffaa3c, 0xfff0aa, 0xff5e1a],   // gold + white-hot
-    thermalAmpMul: 1.6, sizeBias: 'micro',
-  },
-  2: {
-    id: 2, themeName: 'Lunar Observatorium',
-    elements: ['mist', 'light', 'water'],
-    phaseMix: { gas: 0.30, liquid: 0.55, solid: 0.15, plasma: 0.0 },
-    biology: 'aquatic',
-    gravity: { x: 0, y: 0, z: 0 },                // zero-g — observation
-    particleBehavior: 'floaty',
-    accentPalette: [0xc9d4f5, 0x6c4cd6, 0xa0c8ff, 0x88a4c4],
-    thermalAmpMul: 0.55, sizeBias: 'mixed',
-  },
-  3: {
-    id: 3, themeName: 'Polarity Hall',
-    elements: ['shadow', 'light', 'ion'],
-    phaseMix: { gas: 0.35, liquid: 0.15, solid: 0.45, plasma: 0.05 },
-    biology: 'synthetic',
-    gravity: { x: 0, y: -0.04, z: 0 },            // very mild
-    particleBehavior: 'dual-gyre',
-    accentPalette: [0xffffff, 0x101018, 0xc97ce8, 0x9966cc],
-    thermalAmpMul: 1.4, sizeBias: 'mixed',
-  },
-  4: {
-    id: 4, themeName: 'Volcanic Pyre',
-    elements: ['fire', 'lava', 'smoke'],
-    phaseMix: { gas: 0.50, liquid: 0.15, solid: 0.30, plasma: 0.05 },
-    biology: 'volcanic',
-    gravity: { x: 0, y: 0.18, z: 0 },             // POSITIVE = rising (heat lift)
-    particleBehavior: 'rising',
-    accentPalette: [0xff3b3b, 0xff8a3c, 0x111111, 0xffaa44],
-    thermalAmpMul: 1.5, sizeBias: 'mixed',
-  },
-  5: {
-    id: 5, themeName: 'Aquarium',
-    elements: ['water', 'ice', 'vapor', 'salt'],
-    phaseMix: { gas: 0.25, liquid: 0.65, solid: 0.10, plasma: 0.0 },
-    biology: 'aquatic',
-    gravity: { x: 0, y: -0.10, z: 0 },            // mild downward (water settles)
-    particleBehavior: 'tidal',
-    accentPalette: [0x3da9f5, 0x4ed1c5, 0xa0e6f0, 0x5ab8d6],
-    thermalAmpMul: 0.85, sizeBias: 'mixed',
-  },
-  6: {
-    id: 6, themeName: 'Mandorla Garden',
-    elements: ['pollen', 'dew', 'petals'],
-    phaseMix: { gas: 0.30, liquid: 0.40, solid: 0.30, plasma: 0.0 },
-    biology: 'organic',
-    gravity: { x: 0, y: 0, z: 0 },                // zero-g — pollination drift
-    particleBehavior: 'spiraling',
-    accentPalette: [0xff9aaa, 0x88c878, 0xffd23b, 0xc97ce8],
-    thermalAmpMul: 0.95, sizeBias: 'mixed',
-  },
-  7: {
-    id: 7, themeName: 'Lunar Night',
-    elements: ['dust', 'regolith', 'moonbeam'],
-    phaseMix: { gas: 0.30, liquid: 0.15, solid: 0.55, plasma: 0.0 },
-    biology: 'lunar',
-    gravity: { x: 0, y: -0.05, z: 0 },            // 1/6 gravity
-    particleBehavior: 'tidal',
-    accentPalette: [0xc9d4f5, 0x9ba9d6, 0xa0c8ff, 0x6688aa],
-    thermalAmpMul: 0.40, sizeBias: 'micro',
-  },
-  8: {
-    id: 8, themeName: 'Crystal Cave',
-    elements: ['quartz', 'prism', 'mineral'],
-    phaseMix: { gas: 0.05, liquid: 0.10, solid: 0.85, plasma: 0.0 },
-    biology: 'mineral',
-    gravity: { x: 0, y: 0, z: 0 },                // lattice-locked
-    particleBehavior: 'lattice',
-    accentPalette: [0x6c4cd6, 0x4ed158, 0xffd23b, 0x3da9f5],
-    thermalAmpMul: 0.50, sizeBias: 'micro',
-  },
-  9: {
-    id: 9, themeName: 'Spring Bloom',
-    elements: ['petals', 'dew', 'pollen'],
-    phaseMix: { gas: 0.25, liquid: 0.40, solid: 0.35, plasma: 0.0 },
-    biology: 'organic',
-    gravity: { x: 0, y: 0.05, z: 0 },             // mild upward (bloom)
-    particleBehavior: 'radial-emission',
-    accentPalette: [0xff9aaa, 0x88c878, 0xfff0d6, 0xc97ce8],
-    thermalAmpMul: 1.0, sizeBias: 'mixed',
-  },
-  10: {
-    id: 10, themeName: 'Radiant Clarity',
-    elements: ['photon', 'plasma', 'gold'],
-    phaseMix: { gas: 0.70, liquid: 0.0, solid: 0.10, plasma: 0.20 },
-    biology: 'cosmic',
-    gravity: { x: 0, y: 0, z: 0 },
-    particleBehavior: 'radial-emission',
-    accentPalette: [0xffffff, 0xfff0aa, 0xffd23b, 0xc9a96e],
-    thermalAmpMul: 1.2, sizeBias: 'micro',
-  },
-  11: {
-    id: 11, themeName: 'Cardinal Forge',
-    elements: ['fire', 'water', 'earth', 'air'],
-    phaseMix: { gas: 0.25, liquid: 0.25, solid: 0.25, plasma: 0.25 },
-    biology: 'synthetic',
-    gravity: { x: 0, y: 0, z: 0 },                // 4-axis balanced
-    particleBehavior: 'crystalline',
-    accentPalette: [0xff3b3b, 0xffd23b, 0x4ed158, 0x6c4cd6],
-    thermalAmpMul: 0.95, sizeBias: 'mixed',
-  },
-  12: {
-    id: 12, themeName: 'Crystal Vault',
-    elements: ['mineral', 'prism', 'photon'],
-    phaseMix: { gas: 0.05, liquid: 0.05, solid: 0.85, plasma: 0.05 },
-    biology: 'mineral',
-    gravity: { x: 0, y: 0, z: 0 },                // anchored
-    particleBehavior: 'lattice',
-    accentPalette: [0x9be3ff, 0xc9a96e, 0xe4f0ff, 0xa0c8d6],
-    thermalAmpMul: 0.45, sizeBias: 'macro',
-  },
-  13: {
-    id: 13, themeName: 'Eternal Gold',
-    elements: ['plasma', 'gold', 'photon'],
-    phaseMix: { gas: 0.60, liquid: 0.0, solid: 0.10, plasma: 0.30 },
-    biology: 'cosmic',
-    gravity: { x: 0, y: 0.10, z: 0 },             // upward (ascending)
-    particleBehavior: 'spiraling',
-    accentPalette: [0xffd23b, 0xffaa66, 0xc9a96e, 0xc97ce8],
-    thermalAmpMul: 1.1, sizeBias: 'mixed',
-  },
-};
-
-function worldFor(nodeId: number): IconWorld {
-  return ICON_WORLDS[nodeId] || ICON_WORLDS[1];
 }
 
 const PLANET_ORBIT_SPEED_MIN = 0.45;
@@ -1396,6 +1361,7 @@ export function initSpiral(
   const nodePhasePositions: Float32Array[] = [];
   const nodePhaseColors: Float32Array[] = [];
   const nodePhaseGeometries: THREE.BufferGeometry[] = [];
+  const nodeWorlds: IconWorld[] = [];
 
   // Legacy planet arrays — kept declared (empty) so animation loop's
   // forEach iterations are safe no-ops while the planet-system code is
@@ -1416,7 +1382,13 @@ export function initSpiral(
     const pos = path[idx].clone();
 
     const live = node.status === 'live';
-    const nodeColor = chakraColorForNode(i, nodes.length);
+    const world = worldFor(node.id);
+    nodeWorlds.push(world);
+    const accentLeadHex =
+      world.accentPalette[i % world.accentPalette.length]
+      ?? world.accentPalette[0]
+      ?? 0xffffff;
+    const nodeColor = chakraColorForNode(i, nodes.length).lerp(new THREE.Color(accentLeadHex), 0.32);
     nodeColorList.push(nodeColor);
     const phase = node.phase;
     const pm = PHASE_MAT[phase] || PHASE_MAT.ELEVATE;
@@ -1539,7 +1511,8 @@ export function initSpiral(
     const planetRng = mulberry32(node.id * 7919 + 401 + loadSalt);
     const universe = universeFor(node.id);
     const materia = MATERIA[universe.materia];
-    const palette: THREE.Color[] = universe.palette.map(hex => new THREE.Color(hex));
+    const basePalette: THREE.Color[] = universe.palette.map((hex) => new THREE.Color(hex));
+    const palette: THREE.Color[] = blendWorldPalette(basePalette, world.accentPalette, nodeColor);
 
     // (No central sun — it dominated bloom and obscured the system. The
     // contained particles ARE the universe.)
@@ -1741,7 +1714,8 @@ export function initSpiral(
     // Per-frame physics (loop below): gravity by phase, central
     // implode/explode oscillation, container reflection bounce.
     const fieldRng = mulberry32(node.id * 9907 + 17 + loadSalt);
-    const phaseMix = PHASE_MIX[universe.materia] || PHASE_MIX.gas;
+    const phaseMix = phaseMixForWorld(world);
+    const worldSizeMul = WORLD_SIZE_BIAS[world.sizeBias];
 
     // Raycast setup for inside-test (mesh-local frame, mesh not yet in scene)
     mesh.matrixWorld.identity();
@@ -1776,7 +1750,7 @@ export function initSpiral(
       const phaseSizeMul = phase === 'solid' ? 1.1 : phase === 'liquid' ? 0.85 : 0.55;
       const sizeT = Math.pow(fieldRng(), 1.6);
       const size = (MATERIA_FIELD_SIZE_MIN + sizeT * (MATERIA_FIELD_SIZE_MAX - MATERIA_FIELD_SIZE_MIN))
-                 * materia.sizeMul * phaseSizeMul;
+                 * materia.sizeMul * phaseSizeMul * worldSizeMul;
 
       // Color: palette + per-phase tint so phases READ distinctly inside one
       // node — Earth vs Saturn metaphor. Gas = brighter + desaturated (luminous
@@ -1799,9 +1773,9 @@ export function initSpiral(
       particles.push({
         pos: candidatePos.clone(),
         vel: new THREE.Vector3(
-          (fieldRng() - 0.5) * 2 * vMag,
-          (fieldRng() - 0.5) * 2 * vMag,
-          (fieldRng() - 0.5) * 2 * vMag,
+          (fieldRng() - 0.5) * 2 * vMag + world.gravity.x * 0.12,
+          (fieldRng() - 0.5) * 2 * vMag + world.gravity.y * 0.12,
+          (fieldRng() - 0.5) * 2 * vMag + world.gravity.z * 0.12,
         ),
         home: homePos,
         phase,
@@ -2341,7 +2315,10 @@ export function initSpiral(
       // (raycast collision against actual mesh, distributed across frames).
       const phaseList = nodePhaseParticles[i];
       const phasePos = nodePhasePositions[i];
+      const phaseCol = nodePhaseColors[i];
       const phaseMesh = orbMeshes[i];                    // for raycast collision
+      const node = nodes[i]!;
+      const world = nodeWorlds[i] ?? worldFor(node.id);
       const dt = 1 / 60;
       // Implode/explode oscillation per node — different phase so they don't pulse in unison
       const ieT = t * IMPLODE_EXPLODE_FREQ + i * 0.45;
@@ -2356,14 +2333,137 @@ export function initSpiral(
       // Actually the raycast probe will be in mesh-local space because we
       // construct the ray from local positions and intersect against the mesh
       // (Three.js handles matrixWorld inverse automatically).
+      let solidX = 0;
+      let solidY = 0;
+      let solidZ = 0;
+      let solidCount = 0;
+      let liquidX = 0;
+      let liquidY = 0;
+      let liquidZ = 0;
+      let liquidCount = 0;
+      let gasX = 0;
+      let gasY = 0;
+      let gasZ = 0;
+      let gasCount = 0;
 
       for (let j = 0; j < phaseList.length; j++) {
         const part = phaseList[j];
         if (part.size === 0) continue;
-        const damp = PHASE_DAMPING[part.phase];
-        const bounce = PHASE_BOUNCE[part.phase];
-        const thermalAmp = PHASE_THERMAL[part.phase];
-        const pressure = PHASE_PRESSURE[part.phase];
+        switch (part.phase) {
+          case 'solid':
+            solidX += part.pos.x;
+            solidY += part.pos.y;
+            solidZ += part.pos.z;
+            solidCount++;
+            break;
+          case 'liquid':
+            liquidX += part.pos.x;
+            liquidY += part.pos.y;
+            liquidZ += part.pos.z;
+            liquidCount++;
+            break;
+          case 'gas':
+            gasX += part.pos.x;
+            gasY += part.pos.y;
+            gasZ += part.pos.z;
+            gasCount++;
+            break;
+        }
+      }
+
+      const solidCX = solidCount ? solidX / solidCount : 0;
+      const solidCY = solidCount ? solidY / solidCount : 0;
+      const solidCZ = solidCount ? solidZ / solidCount : 0;
+      const liquidCX = liquidCount ? liquidX / liquidCount : 0;
+      const liquidCY = liquidCount ? liquidY / liquidCount : 0;
+      const liquidCZ = liquidCount ? liquidZ / liquidCount : 0;
+      const gasCX = gasCount ? gasX / gasCount : 0;
+      const gasCY = gasCount ? gasY / gasCount : 0;
+      const gasCZ = gasCount ? gasZ / gasCount : 0;
+
+      const burstCycle = 3.2 + (node.id % 5) * 0.65;
+      const burstPhase = (t + node.id * 0.83) % burstCycle;
+      const burstWindow = !useSpring && burstPhase < 0.32 ? 1 - burstPhase / 0.32 : 0;
+      const burstOriginX = Math.sin(node.id * 0.73 + t * 0.19) * 0.12;
+      const burstOriginY = Math.cos(node.id * 1.11 + t * 0.13) * 0.10;
+      const burstOriginZ = Math.sin(node.id * 1.91 + t * 0.17) * 0.12;
+      const burstRadius = 0.24 + world.thermalAmpMul * 0.10;
+
+      for (let j = 0; j < phaseList.length; j++) {
+        const part = phaseList[j];
+        if (part.size === 0) continue;
+        const damp = useSpring
+          ? PHASE_DAMPING[part.phase]
+          : Math.min(0.998, PHASE_DAMPING[part.phase] + 0.012);
+        const bounce = useSpring
+          ? PHASE_BOUNCE[part.phase]
+          : Math.min(0.98, PHASE_BOUNCE[part.phase] + 0.08);
+        const thermalAmp = PHASE_THERMAL[part.phase] * world.thermalAmpMul * (useSpring ? 1.0 : 2.8);
+        const pressure = PHASE_PRESSURE[part.phase] * (useSpring ? 0.55 : 1.1);
+        const gravityScale = PHASE_GRAVITY_SCALE[part.phase] * (useSpring ? 1.0 : 1.35) * dt * motionScale;
+        const centroidX = part.phase === 'solid' ? solidCX : part.phase === 'liquid' ? liquidCX : gasCX;
+        const centroidY = part.phase === 'solid' ? solidCY : part.phase === 'liquid' ? liquidCY : gasCY;
+        const centroidZ = part.phase === 'solid' ? solidCZ : part.phase === 'liquid' ? liquidCZ : gasCZ;
+
+        part.vel.x += world.gravity.x * gravityScale;
+        part.vel.y += world.gravity.y * gravityScale;
+        part.vel.z += world.gravity.z * gravityScale;
+
+        let neighborForceX = 0;
+        let neighborForceY = 0;
+        let neighborForceZ = 0;
+        let alignX = 0;
+        let alignY = 0;
+        let alignZ = 0;
+        let samples = 0;
+
+        for (let s = 0; s < 4; s++) {
+          const candidateIdx = (j + (s + 1) * (17 + i * 3) + frame * (s + 2)) % phaseList.length;
+          const candidate = phaseList[candidateIdx];
+          if (!candidate || candidate === part || candidate.size === 0) continue;
+
+          const dx = candidate.pos.x - part.pos.x;
+          const dy = candidate.pos.y - part.pos.y;
+          const dz = candidate.pos.z - part.pos.z;
+          const distSq = dx * dx + dy * dy + dz * dz + 0.0025;
+          const affinity = candidate.phase === part.phase ? 1.15 : 0.6;
+          const weight = affinity / (0.025 + distSq * (useSpring ? 12 : 7));
+
+          if (useSpring) {
+            neighborForceX += dx * weight;
+            neighborForceY += dy * weight;
+            neighborForceZ += dz * weight;
+            alignX += candidate.vel.x;
+            alignY += candidate.vel.y;
+            alignZ += candidate.vel.z;
+          } else {
+            neighborForceX -= dx * weight;
+            neighborForceY -= dy * weight;
+            neighborForceZ -= dz * weight;
+          }
+
+          samples++;
+        }
+
+        if (useSpring) {
+          part.vel.x += (centroidX - part.pos.x) * COHESION_PULL[part.phase] * 0.70 * dt * motionScale;
+          part.vel.y += (centroidY - part.pos.y) * COHESION_PULL[part.phase] * 0.70 * dt * motionScale;
+          part.vel.z += (centroidZ - part.pos.z) * COHESION_PULL[part.phase] * 0.70 * dt * motionScale;
+
+          if (samples > 0) {
+            part.vel.x += neighborForceX * COHESION_PULL[part.phase] * 0.22 * dt * motionScale;
+            part.vel.y += neighborForceY * COHESION_PULL[part.phase] * 0.22 * dt * motionScale;
+            part.vel.z += neighborForceZ * COHESION_PULL[part.phase] * 0.22 * dt * motionScale;
+
+            part.vel.x += ((alignX / samples) - part.vel.x) * 0.18 * dt * motionScale;
+            part.vel.y += ((alignY / samples) - part.vel.y) * 0.18 * dt * motionScale;
+            part.vel.z += ((alignZ / samples) - part.vel.z) * 0.18 * dt * motionScale;
+          }
+        } else if (samples > 0) {
+          part.vel.x += neighborForceX * CHAOS_REPULSION[part.phase] * 0.16 * dt * motionScale;
+          part.vel.y += neighborForceY * CHAOS_REPULSION[part.phase] * 0.16 * dt * motionScale;
+          part.vel.z += neighborForceZ * CHAOS_REPULSION[part.phase] * 0.16 * dt * motionScale;
+        }
 
         // Variant-driven divergence:
         // SYMBOLS variant — spring force to home (rigid icon, sculpted form)
@@ -2377,6 +2477,17 @@ export function initSpiral(
           part.vel.y += hy * k * dt * motionScale;
           part.vel.z += hz * k * dt * motionScale;
         }
+
+        applyWorldBehaviorForce(
+          world.particleBehavior,
+          part,
+          t,
+          i,
+          j,
+          dt,
+          motionScale,
+          useSpring ? 'cohesion' : 'chaos',
+        );
 
         // Thermal kick — Brownian-like jitter giving life. Gas jitters most.
         part.vel.x += (Math.random() - 0.5) * 2 * thermalAmp * dt * motionScale;
@@ -2399,6 +2510,25 @@ export function initSpiral(
         part.vel.y += (-part.pos.y / rr) * cf;
         part.vel.z += (-part.pos.z / rr) * cf;
 
+        if (!useSpring && burstWindow > 0) {
+          const bdx = part.pos.x - burstOriginX;
+          const bdy = part.pos.y - burstOriginY;
+          const bdz = part.pos.z - burstOriginZ;
+          const burstDist = Math.hypot(bdx, bdy, bdz) || 1e-6;
+          const burstReach = Math.max(0, 1 - burstDist / burstRadius);
+          const burstKick = burstWindow * burstReach * 3.2 * dt * motionScale;
+          part.vel.x += (bdx / burstDist) * burstKick;
+          part.vel.y += (bdy / burstDist) * burstKick;
+          part.vel.z += (bdz / burstDist) * burstKick;
+        }
+
+        if (!useSpring && Math.random() < 0.0012 * world.thermalAmpMul) {
+          const rareKick = 0.10 + 0.18 / Math.max(0.12, Math.random());
+          part.vel.x += (Math.random() - 0.5) * 2 * rareKick * motionScale;
+          part.vel.y += (Math.random() - 0.5) * 2 * rareKick * motionScale;
+          part.vel.z += (Math.random() - 0.5) * 2 * rareKick * motionScale;
+        }
+
         // Integrate
         part.pos.x += part.vel.x * dt * motionScale;
         part.pos.y += part.vel.y * dt * motionScale;
@@ -2408,16 +2538,22 @@ export function initSpiral(
         const r2 = Math.sqrt(part.pos.x * part.pos.x + part.pos.y * part.pos.y + part.pos.z * part.pos.z);
         const limit = ORB_CONTAINMENT_R - part.size;
         if (r2 > limit) {
-          const nx = part.pos.x / r2, ny = part.pos.y / r2, nz = part.pos.z / r2;
-          const vDotN = part.vel.x * nx + part.vel.y * ny + part.vel.z * nz;
-          if (vDotN > 0) {
-            part.vel.x -= (1 + bounce) * vDotN * nx;
-            part.vel.y -= (1 + bounce) * vDotN * ny;
-            part.vel.z -= (1 + bounce) * vDotN * nz;
+          if (useSpring) {
+            const nx = part.pos.x / r2;
+            const ny = part.pos.y / r2;
+            const nz = part.pos.z / r2;
+            const vDotN = part.vel.x * nx + part.vel.y * ny + part.vel.z * nz;
+            if (vDotN > 0) {
+              part.vel.x -= (1 + bounce) * vDotN * nx;
+              part.vel.y -= (1 + bounce) * vDotN * ny;
+              part.vel.z -= (1 + bounce) * vDotN * nz;
+            }
+            part.pos.x = nx * limit;
+            part.pos.y = ny * limit;
+            part.pos.z = nz * limit;
+          } else {
+            respawnChaosParticle(part, world);
           }
-          part.pos.x = nx * limit;
-          part.pos.y = ny * limit;
-          part.pos.z = nz * limit;
         }
 
         // Damping
@@ -2434,17 +2570,21 @@ export function initSpiral(
           icRaycaster.set(icCandidatePos, icProbeDir);
           const hits = icRaycaster.intersectObject(phaseMesh, false);
           if (hits.length % 2 !== 1) {
-            // Outside icon — snap back to home + reflect velocity inward
-            part.pos.copy(part.home);
-            const toCenter = part.pos.length() || 1;
-            const inwardX = -part.pos.x / toCenter;
-            const inwardY = -part.pos.y / toCenter;
-            const inwardZ = -part.pos.z / toCenter;
-            const vMag = Math.sqrt(part.vel.x * part.vel.x + part.vel.y * part.vel.y + part.vel.z * part.vel.z);
-            const inwardSpeed = vMag * 0.6 * bounce;
-            part.vel.x = inwardX * inwardSpeed + (Math.random() - 0.5) * 0.05;
-            part.vel.y = inwardY * inwardSpeed + (Math.random() - 0.5) * 0.05;
-            part.vel.z = inwardZ * inwardSpeed + (Math.random() - 0.5) * 0.05;
+            if (useSpring) {
+              // Outside icon — snap back to home + reflect velocity inward
+              part.pos.copy(part.home);
+              const toCenter = part.pos.length() || 1;
+              const inwardX = -part.pos.x / toCenter;
+              const inwardY = -part.pos.y / toCenter;
+              const inwardZ = -part.pos.z / toCenter;
+              const vMag = Math.sqrt(part.vel.x * part.vel.x + part.vel.y * part.vel.y + part.vel.z * part.vel.z);
+              const inwardSpeed = vMag * 0.6 * bounce;
+              part.vel.x = inwardX * inwardSpeed + (Math.random() - 0.5) * 0.05;
+              part.vel.y = inwardY * inwardSpeed + (Math.random() - 0.5) * 0.05;
+              part.vel.z = inwardZ * inwardSpeed + (Math.random() - 0.5) * 0.05;
+            } else {
+              respawnChaosParticle(part, world);
+            }
           }
         }
 
@@ -2452,8 +2592,16 @@ export function initSpiral(
         phasePos[bi]     = part.pos.x;
         phasePos[bi + 1] = part.pos.y;
         phasePos[bi + 2] = part.pos.z;
+        const speed = Math.sqrt(part.vel.x * part.vel.x + part.vel.y * part.vel.y + part.vel.z * part.vel.z);
+        const glow = useSpring
+          ? 0.88 + Math.min(0.32, speed * 0.45)
+          : 0.95 + Math.min(0.75, speed * 0.55 + burstWindow * 0.55);
+        phaseCol[bi] = Math.min(1, part.baseColor.r * glow);
+        phaseCol[bi + 1] = Math.min(1, part.baseColor.g * glow);
+        phaseCol[bi + 2] = Math.min(1, part.baseColor.b * glow);
       }
       nodePhaseGeometries[i].attributes.position.needsUpdate = true;
+      nodePhaseGeometries[i].attributes.color.needsUpdate = true;
     });
 
     // Flush aura + inner buffers
