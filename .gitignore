@@ -7,3 +7,7 @@ dist/
 # Ensure public/ assets are tracked (overrides global gitignore)
 !public/
 .wrangler/
+\noutput/\n*.txt
+
+output/
+*.txt

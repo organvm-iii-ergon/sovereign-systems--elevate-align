@@ -1,8 +1,9 @@
 # HANDOFF — sovereign-systems--elevate-align
 
 **Last update:** 2026-04-25
-**Last commit:** `d380086` — design proposals doc
+**Last commit:** `90bc2b4` — wire ICON_WORLDS into phase physics
 **Live:** https://sovereign-systems-spiral.pages.dev/ (V3: chakra stars, bg matches page, helix compressed)
+**Review Surface:** https://symbolistical-amiya-mitigable.ngrok-free.dev/ (current review while CI is broken)
 **Custom domain:** `elevatealign.com` — NOT yet pointed (GoDaddy parking)
 **Working tree:** clean, all pushed
 
@@ -13,19 +14,22 @@ Five work groups below, each self-contained. Pick whichever has its trigger sati
 | # | Group | Status | Trigger |
 |---|-------|--------|---------|
 | 1 | V4 Node Shapes | BLOCKED | Maddie reacts to Proposal A |
-| 2 | Mobile Spiral Polish | READY | Opportunistic — parallel to V4 |
+| 2 | Mobile Spiral Polish | DONE | Completed in 90bc2b4 |
 | 3 | CI Auto-Deploy Unblock (GH#52) | BLOCKED | Anthony rotates `CLOUDFLARE_API_TOKEN` |
 | 4 | Custom Domain Go-Live (GH#3) | BLOCKED | Maddie/Anthony coordinate DNS |
 | 5 | Filter Affiliate Flow (GH#49) | BLOCKED | Maddie sends water-filter info |
 
 Recent shipping context (most recent first):
+- `90bc2b4` — feat(spiral): wire ICON_WORLDS into phase physics (Commit 5 & 6). Cohesion vs Chaos regimes drive particle field.
 - `d380086` — `docs(design)`: Proposal A (13 sacred symbols) + Proposal B (generative) for V4 node shapes
 - `845fcaf` — V3 fix: BG matches `--color-ocean-900`, helix compressed (HELIX_HEIGHT 14), camera (0,0,18), canvas `h-[calc(100vh-240px)]`
 - `c7bca33` — handoff doc for V2/V3 internal context
 - `02c90a2` — V2: chakra-colored 5-pt stars + round 2 lightening
 - `cdd046e` — V1 (round 1 lightening — never deployed; CI broken since Apr 19)
 
-Memory anchor: `~/.claude/projects/-Users-4jp/memory/project_artifact_spiral_maddie.md` — current artifact state.
+Memory anchors:
+- `~/.claude/projects/-Users-4jp/memory/project_artifact_spiral_maddie.md` — current artifact state (V6).
+- `~/.claude/projects/-Users-4jp/memory/project_artifact_naming_chains.md` — multi-lens substrate logic.
 
 ---
 
@@ -80,38 +84,9 @@ Non-goals: don't propagate chakra colors to hub.config.ts / pillar pages / node 
 
 ## Group 2 — MOBILE SPIRAL POLISH
 
-**Trigger:** opportunistic — can run parallel to Group 1, or while waiting on Maddie.
+**Status: DONE** (Completed in `90bc2b4` with `cameraZForViewport` implementation).
 
-**Why this matters:** Mobile renders the spiral on `/` but at a camera distance that makes the nodes too small to read. V3's helix compression (HELIX_HEIGHT 20→14) and `h-[calc(100vh-240px)]` container helped on desktop but didn't tune mobile camera. Pre-existing — not introduced by V2/V3.
-
-### Relay
-
-~~~
-Picking up mobile spiral polish for the Maddie spiral.
-
-Repo: ~/Workspace/organvm/sovereign-systems--elevate-align
-Live: https://sovereign-systems-spiral.pages.dev/
-
-Problem: on mobile (≤768px), the 3D spiral renders correctly but the camera distance (Z=18) is too far for the nodes to read at the smaller viewport. The spiral becomes a thin colored squiggle.
-
-Read first:
-- src/components/spiral/spiral.ts:514–520 (camera setup)
-- src/components/spiral/SpiralIsland.astro (container + client:idle hydration)
-
-Approach options (pick one or layer):
-- Add a viewport-aware camera Z: window.innerWidth < 768 ? 12 : 18
-- Wire a window 'resize' listener that updates camera.position.z
-- Adjust ORB_RADIUS and HELIX_HEIGHT responsively
-- Or scope SpiralIsland to desktop only (md:block hidden) and let SpiralFallback take mobile (already in DOM at index.astro:36)
-
-Verify:
-- Chrome MCP at 393×852 (mobile) and 1456×900 (desktop) — both readable
-- Test orbit drag still works on mobile (touch)
-- npm run build clean
-- Deploy via local wrangler (CI still broken per GH#52)
-
-Don't break: desktop V3 framing (page bg seamless, full helix above the fold).
-~~~
+**Summary:** camera Z distance now scales (12 for mobile, 18 for desktop) and updates on window resize, ensuring nodes remain legible on smaller viewports.
 
 ---
 
@@ -120,6 +95,13 @@ Don't break: desktop V3 framing (page bg seamless, full helix above the fold).
 **Trigger:** Anthony rotates `CLOUDFLARE_API_TOKEN` in GitHub repo Settings → Secrets.
 
 **Why this matters:** CI auto-deploy via `cloudflare/wrangler-action@v3` has been failing with `Authentication error [code: 10000]` since April 19. Every spiral push needs a manual `wrangler pages deploy dist --project-name sovereign-systems-spiral` locally. Until rotated, this is an ongoing tax on every iteration.
+
+**Manual Rotation Steps:**
+1. Log in to [Cloudflare Dashboard](https://dash.cloudflare.com/profile/api-tokens).
+2. Click **Create Token** -> Use **Edit Cloudflare Pages** template.
+3. Permissions: `Account: Cloudflare Pages: Edit` and `Account: Account Settings: Read`.
+4. Resources: `Include: All accounts` (or `ivviiviivvi`).
+5. Copy the token and paste it into GitHub: `Settings > Secrets and variables > Actions > CLOUDFLARE_API_TOKEN`.
 
 ### Relay
 
