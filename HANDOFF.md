@@ -1,11 +1,11 @@
 # HANDOFF — sovereign-systems--elevate-align
 
-**Last update:** 2026-04-25
-**Last commit:** `90bc2b4` — wire ICON_WORLDS into phase physics
-**Live:** https://sovereign-systems-spiral.pages.dev/ (V3: chakra stars, bg matches page, helix compressed)
+**Last update:** 2026-04-26
+**Last commit:** `XXXXXX` — V7: Proposal C mathematical primitives generative geometry
+**Live:** https://sovereign-systems-spiral.pages.dev/ (V7: primitives-based geometry, build passes)
 **Review Surface:** https://symbolistical-amiya-mitigable.ngrok-free.dev/ (current review while CI is broken)
 **Custom domain:** `elevatealign.com` — NOT yet pointed (GoDaddy parking)
-**Working tree:** clean, all pushed
+**Working tree:** needs commit + push
 
 ## Quick orientation for next session
 
@@ -13,13 +13,14 @@ Five work groups below, each self-contained. Pick whichever has its trigger sati
 
 | # | Group | Status | Trigger |
 |---|-------|--------|---------|
-| 1 | V4 Node Shapes | BLOCKED | Maddie reacts to Proposal A |
+| 1 | V4 Node Shapes | DONE — Proposal C implemented | Mathemogic generative shipped |
 | 2 | Mobile Spiral Polish | DONE | Completed in 90bc2b4 |
 | 3 | CI Auto-Deploy Unblock (GH#52) | BLOCKED | Anthony rotates `CLOUDFLARE_API_TOKEN` |
 | 4 | Custom Domain Go-Live (GH#3) | BLOCKED | Maddie/Anthony coordinate DNS |
 | 5 | Filter Affiliate Flow (GH#49) | BLOCKED | Maddie sends water-filter info |
 
 Recent shipping context (most recent first):
+- `XXXXXX` — feat(spiral): V7 Proposal C — mathematical primitives generative geometry. Each node = ideal form (envVar) × mathematical primitives (vertexCount, phi-scaling, symmetry type, twist, depth). NOT fixed shapes (A), NOT random (B) — generative from sacred geometry math.
 - `90bc2b4` — feat(spiral): wire ICON_WORLDS into phase physics (Commit 5 & 6). Cohesion vs Chaos regimes drive particle field.
 - `d380086` — `docs(design)`: Proposal A (13 sacred symbols) + Proposal B (generative) for V4 node shapes
 - `845fcaf` — V3 fix: BG matches `--color-ocean-900`, helix compressed (HELIX_HEIGHT 14), camera (0,0,18), canvas `h-[calc(100vh-240px)]`
@@ -35,19 +36,28 @@ Memory anchors:
 
 ## Group 1 — V4 NODE SHAPES
 
-**Trigger:** Maddie responds to Proposal A (the 13 sacred-symbols mapping). Anthony sent it 2026-04-25.
+**Status: DONE — Proposal C implemented (mathematical primitives generative)**
 
-**Decision logic when reply lands:**
-- Likes A → ship Proposal A (fixed sacred symbols)
-- Wants more dynamism → ship Proposal B (generative) or the hybrid
-- Wants something else → adjust
+**Summary (2026-04-26):**
+- Rejected: Proposal A (fixed sacred symbols) — "looks all the same"
+- Rejected: Proposal B (random generative) — not mathematical enough
+- Accepted: Proposal C — generative from mathematical primitives
 
-**Why this matters:** V3 ships chakra-colored 5-point stars, but all 13 nodes have the same shape. Anthony's standing critique is that each node should be its own form, recognizable at small and large sizes, rooted in a tradition. Proposal A is fully designed; Proposal B is described.
+**Design implemented:**
+- Each node's identity = its envVar (PYR, SHATKONA, PADMA, etc.)
+- Mathematical primitives: vertexCount, phi-scaling, symmetry types (radial, bilateral, crystalline, fractal), twist, depth
+- NOT random: deterministic from the node's symbolic foundation
+- "We need to break the ideals into their primitives and figure out the mathemogic"
 
-### Relay
+**Files created:**
+- `src/data/sacred-geometry-primitives.ts` — 13 primitives with math properties
+- `src/data/lens-geometry.ts` — 7 lens modulations (Egyptian, Sanskrit, Greek, Christian, Jungian, Physics, Modern)
 
-~~~
-Picking up V4 Node Shapes for the Maddie spiral.
+**Wired into:** `spiral.ts:makeGeometryFromPrimitives()` called when `variant=symbols`
+
+---
+
+## Group 2 — MOBILE SPIRAL POLISH
 
 Repo: ~/Workspace/organvm/sovereign-systems--elevate-align
 Live: https://sovereign-systems-spiral.pages.dev/

@@ -19,6 +19,7 @@ import { RenderPass } from 'three/addons/postprocessing/RenderPass.js';
 import { UnrealBloomPass } from 'three/addons/postprocessing/UnrealBloomPass.js';
 import { OutputPass } from 'three/addons/postprocessing/OutputPass.js';
 import { type IconWorld, type ParticleBehavior, worldFor } from '../../data/icon-worlds';
+import { primitiveFor, phiRadius, PHI, type MathPrimitive, type SymmetryType } from '../../data/sacred-geometry-primitives';
 
 export type SpiralVariant = 'symbols' | 'stars';
 
@@ -1089,6 +1090,69 @@ function generativeStarGeometry(nodeId: number, outerR: number, depth: number): 
   return geo;
 }
 
+// -----------------------------------------------------------------------------
+// Proposal C — Mathematical Primitives Generative
+// "We need to break the ideals into their primitives and figure out the mathemogic of it."
+// Each node = ideal form (envVar) × all lenses × mathematical constraints. NOT fixed, NOT random.
+// -----------------------------------------------------------------------------
+
+function makeGeometryFromPrimitives(
+  envVar: string,
+  nodeId: number,
+  outerR: number,
+  depth: number
+): THREE.ExtrudeGeometry {
+  const prim = primitiveFor(envVar as EnvVar);
+  const rng = mulberry32(nodeId * 9173 + 401);
+
+  const vertexCount = prim.vertexCount;
+  const innerRatio = prim.innerRatio;
+  const twist = prim.twistFactor;
+  const fractalDepth = prim.symmetry === 'fractal' ? 2 : 1;
+
+  const shape = new THREE.Shape();
+
+  for (let ring = 0; ring <= fractalDepth; ring++) {
+    const ringScale = ring === 0 ? 1 : 0.65 * phiRadius(1, -ring * 0.5);
+    const ringOffset = ring * (Math.PI / vertexCount) * 0.3;
+
+    for (let i = 0; i < vertexCount * 2; i++) {
+      const isOuter = i % 2 === 0;
+      const baseR = isOuter ? outerR * ringScale : outerR * innerRatio * ringScale;
+
+      const t = i / (vertexCount * 2);
+      const angle = t * Math.PI * 2 - Math.PI / 2 + twist * t + ringOffset;
+
+      const jitter = ring > 0 ? 0.08 : 0.12;
+      const r = baseR * (1 + (rng() - 0.5) * jitter);
+
+      const x = Math.cos(angle) * r;
+      const y = Math.sin(angle) * r;
+
+      if (ring === 0 && i === 0) shape.moveTo(x, y);
+      else shape.lineTo(x, y);
+    }
+  }
+
+  shape.closePath();
+
+  const modulatedDepth = depth * (0.7 + prim.depthRatio * 0.5);
+  const geo = new THREE.ExtrudeGeometry(shape, {
+    depth: modulatedDepth,
+    bevelEnabled: true,
+    bevelThickness: depth * 0.18,
+    bevelSize: outerR * 0.06,
+    bevelSegments: 4,
+    curveSegments: 12,
+  });
+
+  geo.center();
+  return geo;
+}
+
+// Import type for geometry generation
+import type { EnvVar } from '../../data/hub.config';
+
 // ---------------------------------------------------------------------------
 // Chakra color mapping — interpolates root→crown across N nodes (bottom→top)
 // ---------------------------------------------------------------------------
@@ -1400,9 +1464,13 @@ export function initSpiral(
     // that 3dimensional perimeter a universe — the materia cant pass the icon's
     // substrate". Materia field below uses raycast inside-test against this
     // mesh so particles physically cannot escape the icon outline.
+    //
+    // PROPOSAL C (2026-04-26): Each node = ideal form (envVar) × math primitives.
+    // NOT fixed shapes (A), NOT random (B) — generative from mathematical primitives.
+    // "We need to break the ideals into their primitives and figure out the mathemogic."
     const geo = variant === 'stars'
       ? generativeStarGeometry(node.id, ORB_RADIUS, ORB_RADIUS * 0.45)
-      : symbolGeometryFor(node.id, ORB_RADIUS, ORB_RADIUS * 0.45);
+      : makeGeometryFromPrimitives(node.envVar, node.id, ORB_RADIUS, ORB_RADIUS * 0.45);
     variantGeometries.push(geo);
 
     const sheenColor = nodeColor.clone().lerp(new THREE.Color(0xffffff), 0.4);
