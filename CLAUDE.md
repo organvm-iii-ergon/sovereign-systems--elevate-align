@@ -13,7 +13,7 @@
 - **Astro 5** — static site generator, zero JS by default
 - **Tailwind CSS 4** — via `@tailwindcss/vite` plugin (no `tailwind.config.js` — CSS-first config)
 - **TypeScript** — strict, no `any`
-- **Three.js** — `src/components/spiral/spiral.ts` drives the 3D helix visualization (tapered helix, OrbitControls, MeshPhysicalMaterial orbs, FogExp2)
+- **Three.js** — `src/components/spiral/spiral.ts` drives the 3D helix visualization (tapered helix, OrbitControls, MeshPhysicalMaterial orbs, FogExp2). V5 adds IconWorlds physics (cohesion for symbols, chaos for stars).
 
 ## Commands
 
@@ -28,11 +28,13 @@ npm run preview    # Preview production build locally
 | File | Purpose |
 |------|---------|
 | `src/data/hub.config.ts` | Single source of truth — pillar definitions, branch list, domain map, GHL URLs |
-| `src/components/spiral/spiral.ts` | Three.js 3D helix — tapered spiral with OrbitControls, 3D orb meshes, micro-motion |
+| `src/data/icon-worlds.ts` | Physics configuration for the spiral — phase mix, palettes, gravity, thermal bias |
+| `src/components/spiral/spiral.ts` | Three.js 3D helix — tapered spiral with OrbitControls, 3D orb meshes, micro-motion, IconWorlds physics |
 | `src/components/spiral/SpiralIsland.astro` | Astro island wrapper for the spiral (client:idle) |
 | `src/components/spiral/SpiralFallback.astro` | Static SVG fallback for no-JS environments |
 | `src/layouts/Base.astro` | Root HTML layout — head, fonts, global styles |
 | `content.config.ts` | Content collection schemas (`branches`, `pillars`) |
+| `src/pages/lineage/[envvar].astro` | Naming chains substrate logic |
 
 ## Content Directories
 
@@ -73,9 +75,9 @@ Frontmatter schema is enforced by `content.config.ts` — any new file must incl
 - To update pillar metadata (taglines, colors, URLs, GHL form URLs): edit `src/data/hub.config.ts`
 - To add a new branch: create `src/content/branches/<slug>.md` with correct frontmatter, then add an entry to the `branches` array in `hub.config.ts`
 ## Project Board
-[Operating Board](https://github.com/orgs/organvm-iii-ergon/projects/5) — 13 open issues, 34 closed (2 closed 2026-04-20: #25 editorial triage, #33 board views)
+[Operating Board](https://github.com/orgs/organvm-iii-ergon/projects/5) — 13 open issues, 36 closed (Group 2 Mobile Polish marked DONE GH#55; GH#53 Chakra stars DONE).
 
-Critical path complete. Content genome processed (merge pass, editorial review, research mapping, branch enrichment, product extraction). All remaining issues are client-gated or dependency-chained. Awaiting Maddie's questionnaire responses to unblock architectural decisions.
+Critical path complete. Content genome processed. Deployed via local wrangler due to GH#52 auth failure.
 
 ## Deploy Configuration
 

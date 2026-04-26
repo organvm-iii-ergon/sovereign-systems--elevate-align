@@ -53,34 +53,28 @@ telos: >-
 pragma: >-
   Hub-and-spoke Astro 5 site deployed to Cloudflare Pages. 29 pages across 3
   domains (elevatealign.com, stopdrinkingacid.com, eaucohub.com). 13-node
-  golden-angle spiral visualization renders in vanilla Canvas with Phase 1
-  (5 nodes) live and Phase 2-4 (8 nodes) locked. 6-step HydrationNode funnel
+  golden-angle spiral visualization renders in Three.js with IconWorlds
+  physics (cohesion vs chaos regimes) operational. 6-step HydrationNode funnel
   with EWG API integration operational. Email capture and quiz routing live.
   Client IP boundary enforced (content = client's, code = studio's). Pricing
   agreed in principle at 10% of water sales until $10K; written formalization
   still pending in GH#5. 65-want atomization complete; 22 of 48 in-scope wants
-  addressed by 5-PR corrective sequence (PRs #44-#48, merged 2026-04-19).
-  Architectural misalignment corrected: site is now spiral-first, water scoped
-  to mini version. Content genome processed: 1,022 merge groups, 241 content
-  units, 104 flagged atoms dispositioned, 8 research threads mapped, 5 branches
-  enriched, 4 downloadable products extracted (93K chars). 32 issues closed,
-  15 remain (all client-gated or dependency-chained). No case study written.
-  No distribution signal emitted. No research feedback formalized. Remaining
-  blockers: Maddie's GHL quiz URL, documentary video, Phase 2-4 node names,
-  affiliate URLs, payment decision.
+  addressed. Architectural misalignment corrected: site is now spiral-first,
+  water scoped to mini version. Content genome processed: 1,022 merge groups,
+  241 content units, 104 flagged atoms dispositioned. 32 issues closed,
+  15 remain. No case study written. Deployed via local wrangler due to GH#52.
 
 praxis: >-
-  (1) Formalize the written revenue agreement tracked in GH#5. (2) ~~Node
-  architecture locked (#13 CLOSED)~~. Confirm media access (#14) and get GHL
-  quiz URL from Maddie. (3) ~~V5/V6 merge completed (#15 CLOSED)~~ — spiral
-  rewritten with 13-node golden-angle layout. (4) ~~Physical Sovereignty phase
-  built (#6 CLOSED)~~ — 5 nodes live with content, Non Negotiable received
-  migrated health tells. (5) Resolve subscription boundaries (#7) and video
-  hosting strategy (#18). (6) Connect elevatealign.com custom domain. (7) After
-  launch-critical work is real, produce the case study (→V), distribution
-  signal (→VII), community material (→VI), and research feedback (→I) promised
-  by the declared produces edges. Primary risk: 9 wants BLOCKED on Maddie
-  inputs — forward velocity depends on client responsiveness.
+  (1) Formalize the written revenue agreement tracked in GH#5. (2) Media
+  access (#14) and get GHL quiz URL from Maddie. (3) ~~V5/V6 merge completed
+  (#15 CLOSED)~~ — spiral rewritten with 13-node golden-angle layout and
+  IconWorlds physics wiring. (4) ~~Physical Sovereignty phase built (#6 CLOSED)~~
+  — 5 nodes live with content. (5) Resolve subscription boundaries (#7) and
+  video hosting strategy (#18). (6) Connect elevatealign.com custom domain
+  (GH#3 BLOCKED on DNS). (7) Rotate CLAUDE_API_TOKEN to unblock CI (GH#52).
+  (8) Produce case study (→V), distribution signal (→VII), community material
+  (→VI), and research feedback (→I). Primary risk: 9 wants BLOCKED on Maddie
+  inputs.
 
 receptio: >-
   Partially received. Maddie has not only seen the site but supplied a 127-file
