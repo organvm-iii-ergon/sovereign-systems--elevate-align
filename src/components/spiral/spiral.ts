@@ -19,7 +19,8 @@ import { RenderPass } from 'three/addons/postprocessing/RenderPass.js';
 import { UnrealBloomPass } from 'three/addons/postprocessing/UnrealBloomPass.js';
 import { OutputPass } from 'three/addons/postprocessing/OutputPass.js';
 import { type IconWorld, type ParticleBehavior, worldFor } from '../../data/icon-worlds';
-import { primitiveFor, phiRadius, PHI, type MathPrimitive, type SymmetryType } from '../../data/sacred-geometry-primitives';
+import { primitiveFor, PHI, type MathPrimitive, type SymmetryType } from '../../data/sacred-geometry-primitives';
+import { type Lens, modulatePrimitive } from '../../data/lens-geometry';
 
 export type SpiralVariant = 'symbols' | 'stars';
 
@@ -31,11 +32,15 @@ interface NodeData {
   id: number;
   name: string;
   phase: string;
+  pillarSlug: string;
   emoji: string;
   tagline: string;
   color: string;
   status: 'live' | 'locked';
   url: string;
+  envVar: EnvVar;
+  /** Spiral t-value (0..1) — computed from index at call site */
+  t: number;
 }
 
 interface OrbAnimParams {
@@ -590,6 +595,73 @@ function mulberry32(seed: number): () => number {
 }
 
 // ---------------------------------------------------------------------------
+// Lineage hash — deterministic uniqueness across all structural dimensions.
+// Each planet's identity derives from nodeId + phase + pillarSlug + planetIdx
+// + loadSalt. "Math proofs win" — physics-derived, not aesthetic.
+// ---------------------------------------------------------------------------
+
+function lineageHash(
+  nodeId: number,
+  phase: string,
+  pillarSlug: string,
+  planetIdx: number,
+  loadSalt: number,
+): number {
+  let h = Math.imul(nodeId, 1664525);
+  h = Math.imul(
+    h ^
+    phase.split('').reduce((a, c) => Math.imul(a ^ c.charCodeAt(0), 2654435761), 0),
+    1664525,
+  );
+  h = Math.imul(
+    h ^
+    pillarSlug.split('').reduce((a, c) => Math.imul(a ^ c.charCodeAt(0), 2654435761), 0),
+    1664525,
+  );
+  h = Math.imul(h ^ Math.imul(planetIdx, 6271), 1664525);
+  h = Math.imul(h ^ loadSalt, 1664525);
+  return (h ^ (h >>> 16)) >>> 0;
+}
+
+// Lens sequence — 7 traditions spanning Egyptian → Sanskrit → Greek → Christian
+// → Jungian → Physics → Modern. NodeIndex mod 7 selects primary lens, phase
+// deepens uniqueness within the phase band. Each lens transforms the ideal
+// form's mathematical constraints differently (vertexCount, twist, scale, etc.).
+const LENS_SEQUENCE: Lens[] = [
+  'egyptian',
+  'sanskrit-vedic',
+  'greek-classical',
+  'christian-mystical',
+  'jungian',
+  'physics-elemental',
+  'modern-wellness',
+];
+
+function primaryLensForNode(nodeIndex: number, phase: string): Lens {
+  const idx = nodeIndex % 7;
+  const baseLens = LENS_SEQUENCE[idx];
+  if (phase === 'ELEVATE') return idx % 2 === 0 ? baseLens : 'physics-elemental';
+  if (phase === 'UNLOCK') return idx % 3 === 0 ? baseLens : 'greek-classical';
+  return baseLens;
+}
+
+// Creation/destruction physics derivation.
+// "one creates and one destroys, both are spectacular" — determined by energy
+// density (emissiveMul/sizeMul), not aesthetics. High energy/mass = creation
+// (radiation, expansion). Low = destruction (collapse, endurance, dissolution).
+// Gas and organic are physics exceptions: gas fills all space (expansion
+// = creation), organic = bloom/growth (creation).
+function isCreationMateria(materia: Materia): boolean {
+  const spec = MATERIA[materia];
+  if (!spec) return false;
+  const epm = spec.emissiveMul / spec.sizeMul;
+  if (epm > 1.0) return true;
+  if (materia === 'gas') return true;
+  if (materia === 'organic') return true;
+  return false;
+}
+
+// ---------------------------------------------------------------------------
 // Procedural texture generators
 // ---------------------------------------------------------------------------
 
@@ -1100,28 +1172,42 @@ function makeGeometryFromPrimitives(
   envVar: string,
   nodeId: number,
   outerR: number,
-  depth: number
+  depth: number,
+  lens: Lens,
+  hash: number,
 ): THREE.ExtrudeGeometry {
-  const prim = primitiveFor(envVar as EnvVar);
-  const rng = mulberry32(nodeId * 9173 + 401);
+  const basePrim = PRIMITIVES[envVar as EnvVar];
+  const modulated = modulatePrimitive(envVar as EnvVar, lens);
+  const rng = mulberry32(hash);
 
-  const vertexCount = prim.vertexCount;
-  const innerRatio = prim.innerRatio;
-  const twist = prim.twistFactor;
-  const fractalDepth = prim.symmetry === 'fractal' ? 2 : 1;
+  const vertexCount = Math.max(3, modulated.vertexCount + Math.floor((rng() - 0.5) * 4));
+  const innerRatio = Math.max(
+    0.1,
+    Math.min(0.9, modulated.innerRatio + (rng() - 0.5) * 0.25),
+  );
+  const twist = Math.max(
+    0,
+    Math.min(1, modulated.twistFactor + (rng() - 0.5) * 0.3),
+  );
+  const scaleMul = modulated.scaleMul * (0.85 + rng() * 0.30);
+  const fractalDepth = modulated.symmetry === 'fractal' ? 1 + Math.floor(rng() * 2) : 1;
 
   const shape = new THREE.Shape();
 
   for (let ring = 0; ring <= fractalDepth; ring++) {
-    const ringScale = ring === 0 ? 1 : 0.65 * phiRadius(1, -ring * 0.5);
+    const ringScale =
+      ring === 0 ? scaleMul : scaleMul * 0.65 * Math.pow(PHI, -ring * 0.5);
     const ringOffset = ring * (Math.PI / vertexCount) * 0.3;
 
     for (let i = 0; i < vertexCount * 2; i++) {
       const isOuter = i % 2 === 0;
-      const baseR = isOuter ? outerR * ringScale : outerR * innerRatio * ringScale;
+      const baseR = isOuter
+        ? outerR * ringScale
+        : outerR * innerRatio * ringScale;
 
       const t = i / (vertexCount * 2);
-      const angle = t * Math.PI * 2 - Math.PI / 2 + twist * t + ringOffset;
+      const angle =
+        t * Math.PI * 2 - Math.PI / 2 + twist * t + ringOffset;
 
       const jitter = ring > 0 ? 0.08 : 0.12;
       const r = baseR * (1 + (rng() - 0.5) * jitter);
@@ -1136,7 +1222,7 @@ function makeGeometryFromPrimitives(
 
   shape.closePath();
 
-  const modulatedDepth = depth * (0.7 + prim.depthRatio * 0.5);
+  const modulatedDepth = depth * (0.7 + modulated.depthRatio * 0.5);
   const geo = new THREE.ExtrudeGeometry(shape, {
     depth: modulatedDepth,
     bevelEnabled: true,
@@ -1440,6 +1526,10 @@ export function initSpiral(
   const softDotTex = createSoftDotTexture();
   texturesToDispose.push(softDotTex);
 
+  // loadSalt fixed at init so every page load gives a fresh but stable unique
+  // manifestation. Used by lineageHash for both icon geometry and planet RNG.
+  const loadSalt = Math.floor(performance.now() * 1000) & 0xfffff;
+
   nodes.forEach((node, i) => {
     const t = nodes.length > 1 ? i / (nodes.length - 1) : 0;
     const idx = nodePathIndex(t, path.length);
@@ -1465,12 +1555,15 @@ export function initSpiral(
     // substrate". Materia field below uses raycast inside-test against this
     // mesh so particles physically cannot escape the icon outline.
     //
-    // PROPOSAL C (2026-04-26): Each node = ideal form (envVar) × math primitives.
-    // NOT fixed shapes (A), NOT random (B) — generative from mathematical primitives.
-    // "We need to break the ideals into their primitives and figure out the mathemogic."
+    // PROPOSAL C (2026-04-26): Each node = ideal form (envVar) × lens × lineage
+    // hash. Lens (structural position) transforms the mathematical constraints;
+    // hash provides per-node unique jitter. NOT fixed shapes, NOT random.
+    // "We fraction and factor" — 13 prime × 7 lenses = bounded possibility space.
+    const nodeLens = primaryLensForNode(i, node.phase);
+    const nodeHash = lineageHash(node.id, node.phase, node.pillarSlug, 0, loadSalt);
     const geo = variant === 'stars'
       ? generativeStarGeometry(node.id, ORB_RADIUS, ORB_RADIUS * 0.45)
-      : makeGeometryFromPrimitives(node.envVar, node.id, ORB_RADIUS, ORB_RADIUS * 0.45);
+      : makeGeometryFromPrimitives(node.envVar, node.id, ORB_RADIUS, ORB_RADIUS * 0.45, nodeLens, nodeHash);
     variantGeometries.push(geo);
 
     const sheenColor = nodeColor.clone().lerp(new THREE.Color(0xffffff), 0.4);
@@ -1569,87 +1662,67 @@ export function initSpiral(
     group.add(label);
 
     // --- Planet system for this node ---
-    // Per-node universe is *iconologically themed* — the icon's meaning picks
-    // a CHARACTER (palette / layout / inclination / speed). Within that
-    // character, the specific configuration emerges from PHYSICS keyed to a
-    // load-time RNG seed (Date.now()), so every page load gives a fresh
-    // unique manifestation. User 2026-04-25: "each shouldn't be programmed
-    // but given physics and 100% unique renders on every instance".
-    const loadSalt = Math.floor(performance.now() * 1000) & 0xfffff;
-    const planetRng = mulberry32(node.id * 7919 + 401 + loadSalt);
+    // Per-node universe: iconologically themed character determines WHAT each
+    // universe IS (materia, palette, layout, inclination). Lineage hash
+    // determines HOW each planet manifests within that universe — unique per
+    // planet via physics-seeded RNG. "one creates and one destroys, both are
+    // spectacular" — physics (emissiveMul/sizeMul) determines which is which.
     const universe = universeFor(node.id);
     const materia = MATERIA[universe.materia];
+    const creationSystem = isCreationMateria(universe.materia);
     const basePalette: THREE.Color[] = universe.palette.map((hex) => new THREE.Color(hex));
     const palette: THREE.Color[] = blendWorldPalette(basePalette, world.accentPalette, nodeColor);
 
     // (No central sun — it dominated bloom and obscured the system. The
     // contained particles ARE the universe.)
 
-    // Layout-phase helper: how each planet is initially positioned around
-    // the orbit. Determines whether the system reads as "free" (random
-    // phases), "pair" (2 planets at 180° opposite), "cardinal" (4 at 90°),
-    // or "sextet" (6 at 60° intervals).
-    const layoutPhase = (p: number, n: number): number => {
-      if (universe.layout === 'pair' && n === 2) return p === 0 ? 0 : Math.PI;
-      if (universe.layout === 'cardinal') return (p / Math.max(1, n)) * Math.PI * 2;
-      if (universe.layout === 'sextet') return (p / Math.max(1, n)) * Math.PI * 2;
-      return planetRng() * Math.PI * 2;
-    };
-
-    // Inclination per universe theme — coplanar systems share an orbital
-    // plane (read as a *disk*), random systems look 3D / chaotic, orthogonal
-    // alternates 0/90° (crystalline / structured), cardinal sets each
-    // planet on a different cardinal plane.
-    const layoutInclination = (p: number, n: number): { incl: number; asc: number } => {
-      switch (universe.inclination) {
-        case 'coplanar':   return { incl: 0,                                    asc: 0 };
-        case 'orthogonal': return { incl: (p % 2 === 0 ? 0 : Math.PI / 2),     asc: 0 };
-        case 'cardinal':   return { incl: 0,                                    asc: (p / Math.max(1, n)) * Math.PI * 2 };
-        case 'random':
-        default:           return { incl: (planetRng() - 0.5) * Math.PI * 0.7, asc: planetRng() * Math.PI * 2 };
-      }
-    };
-
-    // Planet system disabled — replaced by phase-particle physics below.
-    const planetCount = 0;
+    const planetCount = universe.planetCount;
     const nodePlanets: THREE.Mesh[] = [];
     const nodePlanetParams: PlanetParam[] = [];
     const nodeRings: (THREE.Mesh | null)[] = [];
+
     for (let p = 0; p < planetCount; p++) {
+      // Per-planet lineage RNG — unique seed from structural position.
+      // nodeId + phase + pillarSlug + planetIdx + loadSalt = deterministic,
+      // per-load, maximally unique. Every planet in every system is different.
+      const planetHash = lineageHash(node.id, node.phase, node.pillarSlug, p, loadSalt);
+      const planetRng = mulberry32(planetHash);
+
       // Stagger semi-major axis across the available range — inner + outer
       // planets give the system visible depth.
       const tRad = planetCount > 1 ? p / (planetCount - 1) : 0.5;
-      // Add ±15% per-planet jitter so the orbital spacing isn't perfectly even.
       const jitter = 1.0 + (planetRng() - 0.5) * 0.30;
-      const semiMajorRaw = (PLANET_ORBIT_MIN + tRad * (PLANET_ORBIT_MAX - PLANET_ORBIT_MIN)) * jitter;
+      const semiMajorRaw =
+        (PLANET_ORBIT_MIN + tRad * (PLANET_ORBIT_MAX - PLANET_ORBIT_MIN)) * jitter;
       // Eccentricity 0..PLANET_ECCENTRICITY_MAX; outer orbits tend more elliptical.
-      const eccentricity = planetRng() * planetRng() * PLANET_ECCENTRICITY_MAX * (0.4 + tRad * 0.6);
+      const eccentricity =
+        planetRng() * planetRng() * PLANET_ECCENTRICITY_MAX * (0.4 + tRad * 0.6);
       const argPeriapsis = planetRng() * Math.PI * 2;
-      const orbitSpeedRaw = PLANET_ORBIT_SPEED_MIN + planetRng() * (PLANET_ORBIT_SPEED_MAX - PLANET_ORBIT_SPEED_MIN);
-      // Kepler-ish: inner planets faster, outer planets slower (a^-3/2 hand-wave)
-      // Uses raw semiMajor (clamp happens below; the boost is already a
-      // smooth function so the difference vs clamped is negligible).
+      const orbitSpeedRaw =
+        PLANET_ORBIT_SPEED_MIN + planetRng() * (PLANET_ORBIT_SPEED_MAX - PLANET_ORBIT_SPEED_MIN);
+      // Kepler-ish: inner planets faster, outer planets slower (a^-3/2 hand-wave).
       const keplerBoost = Math.pow(0.55 / Math.max(0.1, semiMajorRaw), 0.5);
       const orbitSpeed = orbitSpeedRaw * universe.speedMul * keplerBoost;
       // Nano-to-macro size range — power-law biases toward smaller sizes;
-      // outermost planet (p == planetCount-1, ~55% chance) gets the materia's
-      // maxSizeMul boost so each system can have a "giant" body. Mul by
-      // materia.sizeMul scales the entire size envelope per node.
+      // outermost planet gets the materia's maxSizeMul boost for "giant" bodies.
       const sizeT = Math.pow(planetRng(), 1.6);
-      const isGiant = (p === planetCount - 1) && (planetRng() < 0.55);
+      const isGiant = p === planetCount - 1 && planetRng() < 0.55;
       const giantBoost = isGiant ? materia.maxSizeMul : 1.0;
-      const sizeBase = (PLANET_RADIUS_MIN + sizeT * (PLANET_RADIUS_MAX - PLANET_RADIUS_MIN))
-                     * materia.sizeMul * giantBoost;
+      const sizeBase =
+        (PLANET_RADIUS_MIN + sizeT * (PLANET_RADIUS_MAX - PLANET_RADIUS_MIN)) *
+        materia.sizeMul *
+        giantBoost;
 
-      // CONTAINMENT CLAMP — apoapsis (semiMajor * (1+e)) + planet body must
-      // stay inside ORB_CONTAINMENT_R. Ring-bearing planets need extra room
-      // (ring extends ~2x planet radius). Conservative: assume worst-case
-      // ring presence so the universe truly cannot escape the shape.
-      const safeSize = sizeBase * 1.45;          // includes ring + small buffer
-      const maxSemiMajor = Math.max(0.025, (ORB_CONTAINMENT_R - safeSize) / (1 + eccentricity));
+      // CONTAINMENT CLAMP — apoapsis + planet body must stay inside ORB_CONTAINMENT_R.
+      const safeSize = sizeBase * 1.45;
+      const maxSemiMajor = Math.max(
+        0.025,
+        (ORB_CONTAINMENT_R - safeSize) / (1 + eccentricity),
+      );
       const semiMajor = Math.min(semiMajorRaw, maxSemiMajor);
-      // Pick from palette in rotation, then jitter the hue slightly so no
-      // two planets in the same system are exact-color duplicates.
+
+      // Unique color per planet: palette rotation + per-planet hue jitter so
+      // no two planets in the same system are exact duplicates.
       const baseColor = palette[p % palette.length].clone();
       const hsl = { h: 0, s: 0, l: 0 };
       baseColor.getHSL(hsl);
@@ -1659,110 +1732,145 @@ export function initSpiral(
         Math.min(0.85, hsl.l * (0.85 + planetRng() * 0.30)),
       );
 
-      // Additive-blended emissive so the interior body GLOWS THROUGH the
-      // transparent vessel/shape rather than getting depth-occluded by it.
-      // Brightness scaled by materia.emissiveMul so different node materia
-      // read distinctly: plasma/fire = blazing, metal/crystal = subdued.
-      const planetMat = new THREE.MeshBasicMaterial({
-        color: planetColor.clone().lerp(new THREE.Color(0xffffff), 0.20),
-        transparent: true,
-        opacity: Math.min(1.0, (live ? 0.95 : 0.55) * materia.emissiveMul),
-        blending: THREE.AdditiveBlending,
-        depthWrite: false,
-      });
+      // Creation/destruction material — physics determines role, not aesthetics.
+      // "one creates and one destroys, both are spectacular." Creation (high
+      // energy density) glows additively; destruction (collapse/endurance) is
+      // dark and absorbing. Physics derivation: emissiveMul/sizeMul > 1.0, plus
+      // gas (fills space = expansion = creation) and organic (bloom = creation).
+      let planetMat: THREE.Material;
+      if (creationSystem) {
+        planetMat = new THREE.MeshBasicMaterial({
+          color: planetColor.clone().lerp(new THREE.Color(0xffffff), 0.20),
+          transparent: true,
+          opacity: Math.min(1.0, (live ? 0.95 : 0.55) * materia.emissiveMul),
+          blending: THREE.AdditiveBlending,
+          depthWrite: false,
+        });
+      } else {
+        // Destruction: dark, absorbing, complementary hue. The void consuming light.
+        const destHsl = { h: 0, s: 0, l: 0 };
+        planetColor.getHSL(destHsl);
+        const darkColor = new THREE.Color().setHSL(
+          (destHsl.h + 0.5) % 1,
+          Math.max(0, destHsl.s - 0.3),
+          Math.max(0.05, destHsl.l - 0.4),
+        );
+        planetMat = new THREE.MeshStandardMaterial({
+          color: darkColor,
+          emissive: darkColor.clone().multiplyScalar(0.15),
+          emissiveIntensity: live ? 0.3 : 0.1,
+          roughness: 0.3,
+          metalness: 0.4,
+          transparent: true,
+          opacity: Math.min(1.0, (live ? 0.85 : 0.45) * materia.emissiveMul),
+          depthWrite: false,
+        });
+      }
       disposables.push(planetMat);
 
       const planet = new THREE.Mesh(sharedPlanetGeo, planetMat);
       planet.scale.setScalar(sizeBase);
-      // Initial position at periapsis (loop will animate elliptical orbit).
       planet.position.set(semiMajor * (1 - eccentricity), 0, 0);
-      // renderOrder so planets render after the orb mesh — additive blend
-      // requires the source to render on top.
       planet.renderOrder = 5;
       group.add(planet);
       nodePlanets.push(planet);
 
-      const inc = layoutInclination(p, planetCount);
-      // Retrograde flip suppressed for structured layouts (cardinal/sextet/pair)
-      // so the system reads as orderly rather than chaotic. Free + duality
-      // systems can have mixed directions for visual interest.
-      const allowRetrograde = universe.layout === 'free' || universe.layout === 'pair';
+      // Orbital geometry: inclination + ascending node from universe character.
+      // Inclination styles: coplanar (disk), random (3D chaos), orthogonal
+      // (0/90° alternating), cardinal (each planet on different cardinal plane).
+      let incl = 0;
+      let asc = 0;
+      if (universe.inclination === 'random') {
+        incl = (planetRng() - 0.5) * Math.PI * 0.7;
+        asc = planetRng() * Math.PI * 2;
+      } else if (universe.inclination === 'orthogonal') {
+        incl = p % 2 === 0 ? 0 : Math.PI / 2;
+      } else if (universe.inclination === 'cardinal') {
+        asc = (p / Math.max(1, planetCount)) * Math.PI * 2;
+      }
+      // Retrograde suppression for structured layouts (pair/cardinal/sextet).
+      const allowRetrograde = universe.layout === 'free';
       const direction = allowRetrograde && planetRng() < 0.4 ? -1 : 1;
+
+      // Initial orbital phase: pair (180° apart), cardinal/sextet (even spread),
+      // free (random from lineage hash).
+      let orbitPhase = planetRng() * Math.PI * 2;
+      if (universe.layout === 'pair' && planetCount === 2) {
+        orbitPhase = p === 0 ? 0 : Math.PI;
+      }
 
       const params: PlanetParam = {
         semiMajor,
         eccentricity,
         argPeriapsis,
         orbitSpeed: orbitSpeed * direction,
-        orbitPhase: layoutPhase(p, planetCount),
-        inclination: inc.incl,
-        ascendingNode: inc.asc,
+        orbitPhase,
+        inclination: incl,
+        ascendingNode: asc,
         size: sizeBase,
         spinSpeed: (0.8 + planetRng() * 2.2) * (planetRng() < 0.5 ? -1 : 1),
-        hasRing: planetRng() < (universe.ringChance * materia.ringChanceMul),
+        hasRing: planetRng() < universe.ringChance * materia.ringChanceMul,
       };
       nodePlanetParams.push(params);
 
       // --- Visible orbital trail ---
-      // Draw the planet's elliptical path as a thin additive line so the
-      // viewer sees the *system structure*, not just bodies adrift. Lines
-      // are precomputed once (orbits are stable parameters); pose is set on
-      // the parent group so they follow the orb. Line opacity scales with
-      // planet size — bigger planets get more visible orbits.
+      // Elliptical orbit path as an additive line. All orbits show trails
+      // (math: trail is precomputed from stable orbital parameters, not from
+      // real-time position — always visible regardless of eccentricity).
       const trailPts: THREE.Vector3[] = [];
       const b = semiMajor * Math.sqrt(Math.max(0, 1 - eccentricity * eccentricity));
       const cosWp = Math.cos(argPeriapsis);
       const sinWp = Math.sin(argPeriapsis);
-      const ci0 = Math.cos(inc.incl);
-      const si0 = Math.sin(inc.incl);
-      const ca0 = Math.cos(inc.asc);
-      const sa0 = Math.sin(inc.asc);
+      const ci0 = Math.cos(incl);
+      const si0 = Math.sin(incl);
+      const ca0 = Math.cos(asc);
+      const sa0 = Math.sin(asc);
       for (let s = 0; s <= ORBIT_TRAIL_SEGMENTS; s++) {
         const ang = (s / ORBIT_TRAIL_SEGMENTS) * Math.PI * 2;
-        // Ellipse in orbital plane with focus at origin
         const xe = semiMajor * (Math.cos(ang) - eccentricity);
         const ye = b * Math.sin(ang);
-        // Rotate by argument of periapsis
         const xr = xe * cosWp - ye * sinWp;
         const yr = xe * sinWp + ye * cosWp;
-        // Apply inclination + ascending node (same math as planet animation)
         const lx = xr;
         const ly = yr * si0;
         const lz = yr * ci0;
-        trailPts.push(new THREE.Vector3(
-          lx * ca0 - lz * sa0,
-          ly,
-          lx * sa0 + lz * ca0,
-        ));
+        trailPts.push(
+          new THREE.Vector3(lx * ca0 - lz * sa0, ly, lx * sa0 + lz * ca0),
+        );
       }
       const trailGeo = new THREE.BufferGeometry().setFromPoints(trailPts);
+      // Trail color: creation = bright additive; destruction = dark subtle trace.
+      const trailColor = creationSystem
+        ? planetColor.clone().lerp(new THREE.Color(0xffffff), 0.30)
+        : planetColor.clone().lerp(new THREE.Color(0x000000), 0.40);
       const trailMat = new THREE.LineBasicMaterial({
-        color: planetColor.clone().lerp(new THREE.Color(0xffffff), 0.30),
+        color: trailColor,
         transparent: true,
         opacity: live ? 0.18 + sizeT * 0.20 : 0.08,
-        blending: THREE.AdditiveBlending,
+        blending: creationSystem ? THREE.AdditiveBlending : THREE.NormalBlending,
         depthWrite: false,
       });
       disposables.push(trailMat);
       const trail = new THREE.LineLoop(trailGeo, trailMat);
       trail.renderOrder = 4;
       group.add(trail);
-      // Reuse the variantGeometries disposal channel for trail geos
       variantGeometries.push(trailGeo);
 
-      // Optional saturn-style ring (~18% chance per planet).
+      // Saturn-style ring — same creation/destruction style as planet.
       if (params.hasRing) {
+        const ringColor = creationSystem
+          ? planetColor.clone().lerp(new THREE.Color(0xffffff), 0.45)
+          : planetColor.clone().lerp(new THREE.Color(0x000000), 0.35);
         const ringMat = new THREE.MeshBasicMaterial({
-          color: planetColor.clone().lerp(new THREE.Color(0xffffff), 0.45),
+          color: ringColor,
           transparent: true,
-          opacity: live ? 0.85 : 0.40,
+          opacity: live ? (creationSystem ? 0.85 : 0.70) : (creationSystem ? 0.40 : 0.25),
           side: THREE.DoubleSide,
-          blending: THREE.AdditiveBlending,
+          blending: creationSystem ? THREE.AdditiveBlending : THREE.NormalBlending,
           depthWrite: false,
         });
         disposables.push(ringMat);
         const ring = new THREE.Mesh(sharedRingGeo, ringMat);
-        // Tilt ring slightly off the planet's equatorial plane for visibility
         ring.rotation.x = Math.PI / 2 + (planetRng() - 0.5) * 0.4;
         ring.renderOrder = 5;
         planet.add(ring);
