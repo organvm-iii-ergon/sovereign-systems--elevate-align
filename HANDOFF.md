@@ -1,11 +1,11 @@
 # HANDOFF — sovereign-systems--elevate-align
 
 **Last update:** 2026-04-26
-**Last commit:** `XXXXXX` — V7: Proposal C mathematical primitives generative geometry
-**Live:** https://sovereign-systems-spiral.pages.dev/ (V7: primitives-based geometry, build passes)
+**Last commit:** `66a6f0b` — V8: unique universes via lineage × lenses × math
+**Live:** https://sovereign-systems-spiral.pages.dev/ (V8: unique universes, lineage-driven planets, creation/destruction physics)
 **Review Surface:** https://symbolistical-amiya-mitigable.ngrok-free.dev/ (current review while CI is broken)
 **Custom domain:** `elevatealign.com` — NOT yet pointed (GoDaddy parking)
-**Working tree:** needs commit + push
+**Working tree:** clean
 
 ## Quick orientation for next session
 
@@ -13,14 +13,15 @@ Five work groups below, each self-contained. Pick whichever has its trigger sati
 
 | # | Group | Status | Trigger |
 |---|-------|--------|---------|
-| 1 | V4 Node Shapes | DONE — Proposal C implemented | Mathemogic generative shipped |
+| 1 | V4/V8 Unique Universes | DONE | V8 shipped: lineage × lenses × math, planets active |
 | 2 | Mobile Spiral Polish | DONE | Completed in 90bc2b4 |
 | 3 | CI Auto-Deploy Unblock (GH#52) | BLOCKED | Anthony rotates `CLOUDFLARE_API_TOKEN` |
 | 4 | Custom Domain Go-Live (GH#3) | BLOCKED | Maddie/Anthony coordinate DNS |
 | 5 | Filter Affiliate Flow (GH#49) | BLOCKED | Maddie sends water-filter info |
 
 Recent shipping context (most recent first):
-- `XXXXXX` — feat(spiral): V7 Proposal C — mathematical primitives generative geometry. Each node = ideal form (envVar) × mathematical primitives (vertexCount, phi-scaling, symmetry type, twist, depth). NOT fixed shapes (A), NOT random (B) — generative from sacred geometry math.
+- `66a6f0b` — V8: unique universes via lineage × lenses × math. Planets re-enabled (2-6 per node), per-planet lineage RNG (lineageHash from nodeId+phase+pillarSlug+planetIdx+loadSalt), lens-driven icon geometry (primaryLensForNode from 7-tradition sequence), creation/destruction duality (isCreationMateria: emissiveMul/sizeMul > 1.0 = creation; gas/organic physics exceptions), all orbits show visible trails.
+- `671818b` — V7: Proposal C — mathematical primitives generative geometry. 13 primitives (sacred-geometry-primitives.ts) + 7 lens modulations (lens-geometry.ts) wired into spiral render loop.
 - `90bc2b4` — feat(spiral): wire ICON_WORLDS into phase physics (Commit 5 & 6). Cohesion vs Chaos regimes drive particle field.
 - `d380086` — `docs(design)`: Proposal A (13 sacred symbols) + Proposal B (generative) for V4 node shapes
 - `845fcaf` — V3 fix: BG matches `--color-ocean-900`, helix compressed (HELIX_HEIGHT 14), camera (0,0,18), canvas `h-[calc(100vh-240px)]`
