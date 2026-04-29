@@ -7,7 +7,18 @@ dist/
 # Ensure public/ assets are tracked (overrides global gitignore)
 !public/
 .wrangler/
-\noutput/\n*.txt
 
 output/
 *.txt
+
+# IDE / editor caches
+.vscode/
+.history/
+.lh/
+
+# AI tooling caches (NOT .conductor/ — entry permits live there)
+.gemini/
+.specstory/
+
+# Session export artifacts (ephemeral)
+export-*.md
