@@ -23,7 +23,12 @@ const uiDefaults = JSON.stringify(ui);
 </div>
 
 <script>
-  const INIT_KEY = '__spiralCleanup';
+  declare global {
+    interface Window {
+      __spiralCleanup?: (() => void) | null;
+    }
+  }
+
   const VESSEL_MODES = ['invisible', 'visible', 'refracted-star', 'hybrid'] as const;
   type VesselMode = typeof VESSEL_MODES[number];
 
@@ -32,9 +37,9 @@ const uiDefaults = JSON.stringify(ui);
     if (!container) return;
 
     // Kill any existing instance
-    if ((window as any)[INIT_KEY]) {
-      (window as any)[INIT_KEY]();
-      (window as any)[INIT_KEY] = null;
+    if (window.__spiralCleanup) {
+      window.__spiralCleanup();
+      window.__spiralCleanup = null;
     }
 
     const raw = container.dataset.nodes;
@@ -57,7 +62,7 @@ const uiDefaults = JSON.stringify(ui);
           ? (vesselParam as VesselMode)
           : (uiDefault.spiralVesselMode as VesselMode);
       const cleanup = initSpiral(container, nodes, variant, vesselMode);
-      (window as any)[INIT_KEY] = cleanup;
+      window.__spiralCleanup = cleanup;
 
       // Hide fallback since 3D loaded successfully
       const fallback = document.getElementById('spiral-fallback');
@@ -65,7 +70,7 @@ const uiDefaults = JSON.stringify(ui);
 
       document.addEventListener('astro:before-swap', () => {
         cleanup();
-        (window as any)[INIT_KEY] = null;
+        window.__spiralCleanup = null;
       }, { once: true });
     }).catch(() => {
       // Three.js failed (no WebGL, etc.) — fallback stays visible

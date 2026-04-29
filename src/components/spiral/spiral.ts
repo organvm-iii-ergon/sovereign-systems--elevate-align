@@ -1277,8 +1277,7 @@ function makeLabelSprite(name: string, locked: boolean): THREE.Sprite {
   ctx.font = '400 34px Inter, system-ui, sans-serif';
   ctx.textAlign = 'center';
   ctx.textBaseline = 'middle';
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  (ctx as any).letterSpacing = '0.22em';
+  ctx.letterSpacing = '0.22em';
   // Two-pass shadow for legibility: first a wide soft halo, then a tight ink shadow.
   ctx.shadowColor = 'rgba(7, 30, 34, 0.95)';
   ctx.shadowBlur = 18;

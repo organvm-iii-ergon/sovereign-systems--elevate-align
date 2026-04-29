@@ -22,3 +22,7 @@ output/
 
 # Session export artifacts (ephemeral)
 export-*.md
+session-ses_*.md
+
+# Debug heap dumps (regenerable; never committed)
+*.heapsnapshot
