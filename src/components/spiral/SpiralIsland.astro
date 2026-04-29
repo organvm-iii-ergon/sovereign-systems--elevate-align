@@ -5,9 +5,10 @@
  * Renders on both desktop and mobile. If WebGL fails, the
  * SpiralFallback card list remains visible as a graceful degradation.
  */
-import { config } from '../../data/hub.config';
+import { config, ui } from '../../data/hub.config';
 
 const nodesJson = JSON.stringify(config.nodes);
+const uiDefaults = JSON.stringify(ui);
 ---
 
 <div class="relative w-full h-[calc(100vh-240px)] supports-[height:1dvh]:h-[calc(100dvh-240px)]">
@@ -17,11 +18,14 @@ const nodesJson = JSON.stringify(config.nodes);
     role="img"
     aria-label="Interactive 3D spiral showing 13 nodes across four sovereignty phases: Elevate, Align, Unlock, and Water"
     data-nodes={nodesJson}
+    data-ui={uiDefaults}
   ></div>
 </div>
 
 <script>
   const INIT_KEY = '__spiralCleanup';
+  const VESSEL_MODES = ['invisible', 'visible', 'refracted-star', 'hybrid'] as const;
+  type VesselMode = typeof VESSEL_MODES[number];
 
   function boot(): void {
     const container = document.getElementById('spiral-container');
@@ -36,13 +40,23 @@ const nodesJson = JSON.stringify(config.nodes);
     const raw = container.dataset.nodes;
     if (!raw) return;
 
+    const uiRaw = container.dataset.ui;
+    const uiDefault = uiRaw ? JSON.parse(uiRaw) : { spiralVesselMode: 'invisible' };
+
     import('./spiral.ts').then(({ initSpiral }) => {
       const nodes = JSON.parse(raw);
       // Variant switch: ?variant=stars renders generative refracted-light stars;
       // anything else (default) renders sacred-symbol shapes per node.
       const params = new URLSearchParams(window.location.search);
       const variant = params.get('variant') === 'stars' ? 'stars' : 'symbols';
-      const cleanup = initSpiral(container, nodes, variant);
+      // Vessel mode: ?vessel=visible|refracted-star|hybrid|invisible.
+      // Querystring overrides the build-time ui.spiralVesselMode default.
+      const vesselParam = params.get('vessel');
+      const vesselMode: VesselMode =
+        VESSEL_MODES.includes(vesselParam as VesselMode)
+          ? (vesselParam as VesselMode)
+          : (uiDefault.spiralVesselMode as VesselMode);
+      const cleanup = initSpiral(container, nodes, variant, vesselMode);
       (window as any)[INIT_KEY] = cleanup;
 
       // Hide fallback since 3D loaded successfully

@@ -21,8 +21,10 @@ import { OutputPass } from 'three/addons/postprocessing/OutputPass.js';
 import { type IconWorld, type ParticleBehavior, worldFor } from '../../data/icon-worlds';
 import { primitiveFor, PHI, type MathPrimitive, type SymmetryType } from '../../data/sacred-geometry-primitives';
 import { type Lens, modulatePrimitive } from '../../data/lens-geometry';
+import { type VesselMode } from '../../data/hub.config';
 
 export type SpiralVariant = 'symbols' | 'stars';
+export type { VesselMode };
 
 // ---------------------------------------------------------------------------
 // Types
@@ -1309,8 +1311,21 @@ function makeLabelSprite(name: string, locked: boolean): THREE.Sprite {
 export function initSpiral(
   container: HTMLElement,
   nodes: NodeData[],
-  variant: SpiralVariant = 'symbols',
+  variantParam: SpiralVariant = 'symbols',
+  vesselMode: VesselMode = 'invisible',
 ): () => void {
+  // VesselMode → derived flags. The mode controls (a) whether the icon
+  // mesh is rendered, (b) whether the per-node particle field reads at
+  // full opacity, and (c) whether the variant is forced to 'stars' for
+  // the prismatic/refractive look. Querystring override happens upstream
+  // in SpiralIsland.astro (?vessel=visible|refracted-star|hybrid|invisible).
+  const variant: SpiralVariant = vesselMode === 'refracted-star' ? 'stars' : variantParam;
+  const meshVisible = vesselMode !== 'invisible';
+  const particleOpacityMult =
+    vesselMode === 'invisible' ? 1.0 :
+    vesselMode === 'hybrid' ? 0.3 :
+    /* visible | refracted-star */ 0.0;
+
   const scene = new THREE.Scene();
   scene.background = new THREE.Color(BG_COLOR);
   scene.fog = new THREE.FogExp2(BG_COLOR, FOG_DENSITY);
@@ -1637,18 +1652,16 @@ export function initSpiral(
 
     const mesh = new THREE.Mesh(geo, mat);
     mesh.userData = node;
-    // User 2026-04-25 (revised): "each node is still an icon from the chakra —
-    // that station rules its env logic; keep shape — make transparent". The
-    // icon/symbol geometry returns as a *transparent vessel* — the chakra
-    // station that governs the universe inside it. Material opacity dropped
-    // to ~18% so the shape reads as a ghost outline / glass containment;
-    // texture maps still convey identity at hover/close-up.
-    // User 2026-04-25: "the container exterior is only a guide and is to be
-    // removed". Vessel mesh hidden — the materia density (110 phase particles
-    // bouncing inside the icon's substrate boundary) IS the icon's identity.
-    // Mesh stays in scene-graph as the click/raycast target for interaction
-    // and as the spawn-volume reference (raycast inside-test at init).
-    mesh.visible = false;
+    // Vessel visibility — driven by the VesselMode the caller passed
+    // (default 'invisible' preserves Maddie's 2026-04-25 ship state:
+    // "the container exterior is only a guide and is to be removed";
+    // the materia density of phase particles IS the icon's identity).
+    // Other modes ('visible' / 'refracted-star' / 'hybrid') are exposed
+    // via the ?vessel= querystring for live A/B comparison without a
+    // redeploy. Mesh is always added to the scene-graph regardless of
+    // visibility — it remains the raycast/click target and spawn-volume
+    // reference for the phase particles.
+    mesh.visible = meshVisible;
 
     const group = new THREE.Group();
     group.position.copy(pos);
@@ -1990,7 +2003,10 @@ export function initSpiral(
     const fieldMat = new THREE.PointsMaterial({
       vertexColors: true,
       transparent: true,
-      opacity: live ? 0.95 : 0.55,
+      // Particle opacity is multiplied by vesselMode-derived factor:
+      // 1.0 invisible (default), 0.3 hybrid, 0.0 visible/refracted-star.
+      // When the mesh becomes the visual identity, particles step back.
+      opacity: (live ? 0.95 : 0.55) * particleOpacityMult,
       map: softDotTex,
       blending: THREE.NormalBlending,
       depthWrite: false,

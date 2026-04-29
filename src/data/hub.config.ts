@@ -76,6 +76,43 @@ export interface HubConfig {
   };
 }
 
+/**
+ * VesselMode — how spiral nodes render their substrate.
+ *
+ *  invisible       — mesh hidden, particle field is the visual identity
+ *                    (current ship; preserves Maddie's 2026-04-25 feedback
+ *                    "the container exterior is only a guide and is to be removed")
+ *  visible         — mesh shown opaquely, particle field suppressed
+ *  refracted-star  — mesh shown with stars-variant transmission/IOR/dispersion
+ *                    material; particle field suppressed; prismatic look
+ *  hybrid          — mesh shown AND particle field at 30% — both layered
+ */
+export type VesselMode = 'invisible' | 'visible' | 'refracted-star' | 'hybrid';
+
+/**
+ * NavVariant — top-of-page navigation surface.
+ *
+ *  pillar-first  — current default; nav links to /pillars/:slug + /water/ + /business/
+ *  spiral-first  — alternate; nav links directly to /nodes/1..13 sequence
+ */
+export type NavVariant = 'pillar-first' | 'spiral-first';
+
+export interface UIConfig {
+  spiralVesselMode: VesselMode;
+  navVariant: NavVariant;
+}
+
+/**
+ * Runtime UI defaults. Both flags can be overridden at request time via
+ * querystring (?vessel=visible, ?nav=spiral-first) for live A/B comparison
+ * without a redeploy. The defaults below are the ship state — change here
+ * to promote a variant to default after Maddie picks.
+ */
+export const ui: UIConfig = {
+  spiralVesselMode: 'invisible',
+  navVariant: 'pillar-first',
+};
+
 export const config: HubConfig = {
   name: 'Sovereign Systems Spiral',
   tagline: 'Rebuilding life from the foundation up \u2014 stabilizing the body, strengthening inner authority, refining identity, and installing financial systems.',
