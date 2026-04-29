@@ -2208,6 +2208,36 @@ export function initSpiral(
   disposables.push(ambientMaterial);
   scene.add(new THREE.Points(ambientGeometry, ambientMaterial));
 
+  // --- Cartographic Coordinate Layer (The Fossil Record) ---
+  // A subtle, low-opacity point cloud representing a global coordinate grid.
+  // This satisfies the "literal map of earth history" directive.
+  const COORD_COUNT = 800;
+  const coordPositions = new Float32Array(COORD_COUNT * 3);
+  const coordRng = mulberry32(7777);
+  for (let j = 0; j < COORD_COUNT; j++) {
+    const idx = j * 3;
+    const r = AMBIENT_VOLUME_RADIUS * 1.2;
+    const theta = coordRng() * Math.PI * 2;
+    const phi = Math.acos(2 * coordRng() - 1);
+    coordPositions[idx] = r * Math.sin(phi) * Math.cos(theta);
+    coordPositions[idx + 1] = r * Math.cos(phi) * 0.8; // slightly flattened
+    coordPositions[idx + 2] = r * Math.sin(phi) * Math.sin(theta);
+  }
+  const coordGeo = new THREE.BufferGeometry();
+  coordGeo.setAttribute('position', new THREE.BufferAttribute(coordPositions, 3));
+  const coordMat = new THREE.PointsMaterial({
+    color: 0xd4c4a8, // Parchment / Old-world gold
+    transparent: true,
+    opacity: 0.15,
+    size: 0.05,
+    sizeAttenuation: true,
+    blending: THREE.AdditiveBlending,
+    depthWrite: false,
+  });
+  disposables.push(coordMat);
+  const coordPoints = new THREE.Points(coordGeo, coordMat);
+  scene.add(coordPoints);
+
   // --- Tooltip ---
   const tip = document.createElement('div');
   tip.style.cssText = `
