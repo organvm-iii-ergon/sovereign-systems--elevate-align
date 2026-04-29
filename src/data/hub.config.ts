@@ -45,6 +45,28 @@ export type EnvVar =
   | 'OKTAEDRON'  // 12 — Octahedron — eightfold crystalline form
   | 'ANKH';      // 13 — Ankh — eternal life / continuance
 
+/**
+ * QuizTheme — vocabulary used to match user quiz answers to nodes.
+ * Tags chosen to be self-evident (no client copy gloss needed) and
+ * non-overlapping enough to make scoring meaningful. The same theme
+ * may appear on multiple nodes; the relative count + answer weight
+ * is what produces a placement.
+ */
+export type QuizTheme =
+  | 'state-shifting' | 'baseline' | 'simple-pleasure'        // node 1
+  | 'witness' | 'awareness' | 'signal-reading'                // node 2
+  | 'regulation' | 'balance' | 'calm'                         // node 3
+  | 'elevation' | 'beyond-baseline' | 'knowing-better'        // node 4
+  | 'foundation' | 'hydration' | 'root-cause'                 // node 5
+  | 'ownership' | 'gentleness' | 'choice'                     // node 6
+  | 'release' | 'reclaim' | 'unwiring'                        // node 7
+  | 'clarity' | 'intention' | 'coherence'                     // node 8
+  | 'becoming' | 'life-fueling' | 'power'                     // node 9
+  | 'awakening' | 'what-now' | 'post-awakening'               // node 10
+  | 'integration' | 'wholeness' | 'pulling-together'          // node 11
+  | 'expression' | 'identity' | 'loud-pride'                  // node 12
+  | 'freedom' | 'gifts-amplified' | 'full-flow';              // node 13
+
 export interface SpiralNode {
   id: number;
   name: string;
@@ -57,6 +79,19 @@ export interface SpiralNode {
   url: string;
   /** Immutable substrate identity — see EnvVar type above. */
   envVar: EnvVar;
+  /**
+   * Theme tags used by the node-placement quiz. The themes describe
+   * what the node addresses, not what the user must already know.
+   * Three is the target count per node — enough to differentiate,
+   * few enough to keep affinity scoring stable.
+   */
+  themes?: QuizTheme[];
+  /**
+   * Chakra mapping for the node's energetic/symbolic register.
+   * Used in the asterisk/chakra geometry primitives and could feed
+   * future quiz dimensions (chakra-resonance scoring).
+   */
+  chakra?: 'root' | 'sacral' | 'solar-plexus' | 'heart' | 'throat' | 'third-eye' | 'crown' | 'root-crown';
 }
 
 export interface HubConfig {
@@ -164,21 +199,21 @@ export const config: HubConfig = {
   ],
   nodes: [
     // ELEVATE: body → Physical Sovereignty (nodes 1-5)
-    { id: 1,  name: 'Feel Good First',           phase: 'ELEVATE', pillarSlug: 'physical',  emoji: '✦',  tagline: 'Feeling good is the baseline — not the bonus.',                              color: '#119a9e', status: 'live',   url: '/nodes/1',  envVar: 'PYR'       },
-    { id: 2,  name: 'Awareness',                 phase: 'ELEVATE', pillarSlug: 'physical',  emoji: '🧬', tagline: 'Your body is always speaking — are you listening?',                          color: '#119a9e', status: 'live',   url: '/nodes/2',  envVar: 'OCULUS'    },
-    { id: 3,  name: 'Regulation',                phase: 'ELEVATE', pillarSlug: 'physical',  emoji: '⚖️', tagline: 'Balance your energy, calm your system.',                                    color: '#119a9e', status: 'live',   url: '/nodes/3',  envVar: 'DYAD'      },
-    { id: 4,  name: 'Elevate',                   phase: 'ELEVATE', pillarSlug: 'physical',  emoji: '🛡️', tagline: 'Feeling like shit is not normal — when you know better, you do better.',     color: '#119a9e', status: 'live',   url: '/nodes/4',  envVar: 'PYRAMIS'   },
-    { id: 5,  name: 'Root Healing',              phase: 'ELEVATE', pillarSlug: 'physical',  emoji: '🌊', tagline: 'Optimize your absorption & energy flow.',                                   color: '#119a9e', status: 'live',   url: '/water/',   envVar: 'HYDOR'     },
+    { id: 1,  name: 'Feel Good First',           phase: 'ELEVATE', pillarSlug: 'physical',  emoji: '✦',  tagline: 'Feeling good is the baseline — not the bonus.',                              color: '#119a9e', status: 'live',   url: '/nodes/1',  envVar: 'PYR',       themes: ['state-shifting', 'baseline', 'simple-pleasure'],          chakra: 'root' },
+    { id: 2,  name: 'Awareness',                 phase: 'ELEVATE', pillarSlug: 'physical',  emoji: '🧬', tagline: 'Your body is always speaking — are you listening?',                          color: '#119a9e', status: 'live',   url: '/nodes/2',  envVar: 'OCULUS',    themes: ['witness', 'awareness', 'signal-reading'],                 chakra: 'third-eye' },
+    { id: 3,  name: 'Regulation',                phase: 'ELEVATE', pillarSlug: 'physical',  emoji: '⚖️', tagline: 'Balance your energy, calm your system.',                                    color: '#119a9e', status: 'live',   url: '/nodes/3',  envVar: 'DYAD',      themes: ['regulation', 'balance', 'calm'],                          chakra: 'sacral' },
+    { id: 4,  name: 'Elevate',                   phase: 'ELEVATE', pillarSlug: 'physical',  emoji: '🛡️', tagline: 'Feeling like shit is not normal — when you know better, you do better.',     color: '#119a9e', status: 'live',   url: '/nodes/4',  envVar: 'PYRAMIS',   themes: ['elevation', 'beyond-baseline', 'knowing-better'],         chakra: 'solar-plexus' },
+    { id: 5,  name: 'Root Healing',              phase: 'ELEVATE', pillarSlug: 'physical',  emoji: '🌊', tagline: 'Optimize your absorption & energy flow.',                                   color: '#119a9e', status: 'live',   url: '/water/',   envVar: 'HYDOR',     themes: ['foundation', 'hydration', 'root-cause'],                  chakra: 'sacral' },
     // ALIGN: mind + life → Inner & Identity Sovereignty (nodes 6-10)
-    { id: 6,  name: 'Responsibility (with Love)', phase: 'ALIGN',  pillarSlug: 'inner',     emoji: '🕊️', tagline: 'Own your choices, gently.',                                                color: '#8cc5d3', status: 'locked', url: '/nodes/6',  envVar: 'MANDORLA'  },
-    { id: 7,  name: 'Unbecoming',                phase: 'ALIGN',   pillarSlug: 'inner',     emoji: '🌙', tagline: 'Reclaim / Remember / Release.',                                            color: '#8cc5d3', status: 'locked', url: '/nodes/7',  envVar: 'KENOSIS'   },
-    { id: 8,  name: 'Alignment',                 phase: 'ALIGN',   pillarSlug: 'inner',     emoji: '🔮', tagline: 'See clearly, act intentionally.',                                           color: '#8cc5d3', status: 'locked', url: '/nodes/8',  envVar: 'SHATKONA'  },
-    { id: 9,  name: 'The Becoming',              phase: 'ALIGN',   pillarSlug: 'identity',  emoji: '✨', tagline: 'Know your power — your choices create a life that fuels you.',              color: '#c9a96e', status: 'locked', url: '/nodes/9',  envVar: 'PADMA'     },
-    { id: 10, name: 'Awakening',                 phase: 'ALIGN',   pillarSlug: 'identity',  emoji: '📣', tagline: 'I\'m awake, I have all this power — now what?',                             color: '#c9a96e', status: 'locked', url: '/nodes/10', envVar: 'BODHI'     },
+    { id: 6,  name: 'Responsibility (with Love)', phase: 'ALIGN',  pillarSlug: 'inner',     emoji: '🕊️', tagline: 'Own your choices, gently.',                                                color: '#8cc5d3', status: 'locked', url: '/nodes/6',  envVar: 'MANDORLA',  themes: ['ownership', 'gentleness', 'choice'],                      chakra: 'heart' },
+    { id: 7,  name: 'Unbecoming',                phase: 'ALIGN',   pillarSlug: 'inner',     emoji: '🌙', tagline: 'Reclaim / Remember / Release.',                                            color: '#8cc5d3', status: 'locked', url: '/nodes/7',  envVar: 'KENOSIS',   themes: ['release', 'reclaim', 'unwiring'],                         chakra: 'throat' },
+    { id: 8,  name: 'Alignment',                 phase: 'ALIGN',   pillarSlug: 'inner',     emoji: '🔮', tagline: 'See clearly, act intentionally.',                                           color: '#8cc5d3', status: 'locked', url: '/nodes/8',  envVar: 'SHATKONA',  themes: ['clarity', 'intention', 'coherence'],                      chakra: 'third-eye' },
+    { id: 9,  name: 'The Becoming',              phase: 'ALIGN',   pillarSlug: 'identity',  emoji: '✨', tagline: 'Know your power — your choices create a life that fuels you.',              color: '#c9a96e', status: 'locked', url: '/nodes/9',  envVar: 'PADMA',     themes: ['becoming', 'life-fueling', 'power'],                      chakra: 'heart' },
+    { id: 10, name: 'Awakening',                 phase: 'ALIGN',   pillarSlug: 'identity',  emoji: '📣', tagline: 'I\'m awake, I have all this power — now what?',                             color: '#c9a96e', status: 'locked', url: '/nodes/10', envVar: 'BODHI',     themes: ['awakening', 'what-now', 'post-awakening'],                chakra: 'crown' },
     // UNLOCK: integration + freedom → Identity & Financial Sovereignty (nodes 11-13)
-    { id: 11, name: 'Integrate',                 phase: 'UNLOCK',  pillarSlug: 'identity',  emoji: '🚧', tagline: 'Pull it all together; your wholeness is the work.',                        color: '#c9a96e', status: 'locked', url: '/nodes/11', envVar: 'TETRAD'    },
-    { id: 12, name: 'Authenticate',              phase: 'UNLOCK',  pillarSlug: 'financial', emoji: '💠', tagline: 'Be YOU — loudly, proudly, unapologetically.',                               color: '#3dbfc4', status: 'locked', url: '/nodes/12', envVar: 'OKTAEDRON' },
-    { id: 13, name: 'Unlock',                    phase: 'UNLOCK',  pillarSlug: 'financial', emoji: '⚡', tagline: 'Level up fully — your gifts, flow, and freedom amplified.',                 color: '#3dbfc4', status: 'locked', url: '/nodes/13', envVar: 'ANKH'      },
+    { id: 11, name: 'Integrate',                 phase: 'UNLOCK',  pillarSlug: 'identity',  emoji: '🚧', tagline: 'Pull it all together; your wholeness is the work.',                        color: '#c9a96e', status: 'locked', url: '/nodes/11', envVar: 'TETRAD',    themes: ['integration', 'wholeness', 'pulling-together'],           chakra: 'root-crown' },
+    { id: 12, name: 'Authenticate',              phase: 'UNLOCK',  pillarSlug: 'financial', emoji: '💠', tagline: 'Be YOU — loudly, proudly, unapologetically.',                               color: '#3dbfc4', status: 'locked', url: '/nodes/12', envVar: 'OKTAEDRON', themes: ['expression', 'identity', 'loud-pride'],                   chakra: 'throat' },
+    { id: 13, name: 'Unlock',                    phase: 'UNLOCK',  pillarSlug: 'financial', emoji: '⚡', tagline: 'Level up fully — your gifts, flow, and freedom amplified.',                 color: '#3dbfc4', status: 'locked', url: '/nodes/13', envVar: 'ANKH',      themes: ['freedom', 'gifts-amplified', 'full-flow'],                chakra: 'crown' },
   ],
   branches: [
     { 
