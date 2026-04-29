@@ -20,7 +20,7 @@ npm run build      # production → dist/
 
 ```
 Hub (elevatealign.com)
-├── Spiral Visualization (canvas, vanilla TS)
+├── Spiral Visualization (Three.js 3D helix, ~2,876 LOC)
 ├── 4 Pillar Pages (Physical, Inner, Identity, Financial)
 ├── Research Bibliography (263 citations, gated)
 │
@@ -78,7 +78,7 @@ Config: `.config/board.config.json`
 - **Tailwind CSS 4** — CSS-first config via `@tailwindcss/vite`
 - **TypeScript** — strict mode
 - **Cloudflare Pages** — deploy on push to `main`
-- **Vanilla Canvas** — spiral visualization (no Three.js)
+- **Three.js** — 3D helix spiral visualization at `src/components/spiral/spiral.ts` (V8: per-node universes, IconWorlds physics, kepler orbital motion, generative geometry)
 
 ## IP Boundary
 
