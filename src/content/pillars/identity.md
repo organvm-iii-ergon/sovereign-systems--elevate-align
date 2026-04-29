@@ -34,6 +34,9 @@ Boundaries are the infrastructure of identity. Without them, your time, energy, 
 **Self-Expression as Practice**
 Identity isn't something you discover once and then have forever. It's a practice. The way you dress on Tuesday is a choice. The way you respond to a message is a choice. The daily accumulation of those choices IS your identity. Identity sovereignty means making those choices consciously rather than defaulting to the patterns you inherited.
 
+**The Mission of Influence**
+Claiming your identity is the precursor to service. This pillar addresses the moral obligation to utilize your influence for the collective good, specifically targeting the crisis of hidden homelessness and systemic neglect. Sovereignty is not an island—it is a node of responsibility. By reclaiming who you are, you gain the clarity and strength to see and support those who have been made invisible by the system.
+
 ## The Entry Point
 
 Identity sovereignty begins with noticing where you perform. One day of paying attention to moments where you modify yourself for approval — your tone shifts in a meeting, your outfit changes depending on who you'll see, your opinion softens because the room wouldn't agree — reveals the architecture of performance that's been running in the background.

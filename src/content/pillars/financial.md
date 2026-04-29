@@ -32,6 +32,9 @@ What you don't measure, you can't govern. Financial sovereignty requires knowing
 **Systemic Integrity**
 Building a business that reflects your values, not just your profit margins <sup>S-88</sup>. As Epictetus taught <sup>S-27</sup>, no one is free who is not master of themselves. A business that requires you to compromise what you believe to make what you earn is not sovereignty — it's a more sophisticated form of employment. Systemic integrity means the business IS the expression, not the compromise.
 
+**Sovereign Giving**
+True financial sovereignty creates a surplus that flows outward. This system implements the "10% for the world" model, ensuring that as you grow, so does your ability to support non-profit missions and humanitarian causes. Sovereignty is not just the power to say "no" to what you don't want—it is the capacity to say "yes" to the needs of others through structured, sustainable giving.
+
 ## The Entry Point
 
 Financial sovereignty begins with one audit: *Where does your income come from, and what happens to it if you stop for 30 days?*
