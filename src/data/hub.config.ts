@@ -127,21 +127,21 @@ export const config: HubConfig = {
   ],
   nodes: [
     // ELEVATE: body → Physical Sovereignty (nodes 1-5)
-    { id: 1,  name: 'Feel Good First',           phase: 'ELEVATE', pillarSlug: 'physical',  emoji: '✦',  tagline: 'Shift your state first.',                     color: '#119a9e', status: 'live',   url: '/nodes/1',  envVar: 'PYR'       },
-    { id: 2,  name: 'Awareness',                 phase: 'ELEVATE', pillarSlug: 'physical',  emoji: '🧬', tagline: 'See where you are.',                          color: '#119a9e', status: 'live',   url: '/nodes/2',  envVar: 'OCULUS'    },
-    { id: 3,  name: 'Regulation',                phase: 'ELEVATE', pillarSlug: 'physical',  emoji: '⚖️', tagline: 'Regulate before you optimize.',               color: '#119a9e', status: 'live',   url: '/nodes/3',  envVar: 'DYAD'      },
-    { id: 4,  name: 'Elevate',                   phase: 'ELEVATE', pillarSlug: 'physical',  emoji: '🛡️', tagline: 'Rise above the baseline.',                    color: '#119a9e', status: 'live',   url: '/nodes/4',  envVar: 'PYRAMIS'   },
-    { id: 5,  name: 'Root Healing',              phase: 'ELEVATE', pillarSlug: 'physical',  emoji: '🌊', tagline: 'Heal from the root. Start with water.',       color: '#119a9e', status: 'live',   url: '/water/',   envVar: 'HYDOR'     },
-    // ALIGN: mind + life → Inner & Identity Sovereignty (nodes 6-11)
-    { id: 6,  name: 'Responsibility (with Love)', phase: 'ALIGN',  pillarSlug: 'inner',     emoji: '🕊️', tagline: 'Own your choices with love.',                 color: '#8cc5d3', status: 'locked', url: '/nodes/6',  envVar: 'MANDORLA'  },
-    { id: 7,  name: 'Unbecoming',                phase: 'ALIGN',   pillarSlug: 'inner',     emoji: '🌙', tagline: 'Release what was never yours.',               color: '#8cc5d3', status: 'locked', url: '/nodes/7',  envVar: 'KENOSIS'   },
-    { id: 8,  name: 'Alignment',                 phase: 'ALIGN',   pillarSlug: 'inner',     emoji: '🔮', tagline: 'Come into coherence.',                        color: '#8cc5d3', status: 'locked', url: '/nodes/8',  envVar: 'SHATKONA'  },
-    { id: 9,  name: 'The Becoming',              phase: 'ALIGN',   pillarSlug: 'identity',  emoji: '✨', tagline: 'Step into who you are.',                      color: '#c9a96e', status: 'locked', url: '/nodes/9',  envVar: 'PADMA'     },
-    { id: 10, name: 'Awakening',                 phase: 'ALIGN',   pillarSlug: 'identity',  emoji: '📣', tagline: 'See clearly for the first time.',             color: '#c9a96e', status: 'locked', url: '/nodes/10', envVar: 'BODHI'     },
-    { id: 11, name: 'Integrate',                 phase: 'ALIGN',   pillarSlug: 'identity',  emoji: '🚧', tagline: 'Bring it all together.',                      color: '#c9a96e', status: 'locked', url: '/nodes/11', envVar: 'TETRAD'    },
-    // UNLOCK: freedom → Financial Sovereignty (nodes 12-13)
-    { id: 12, name: 'Authenticate',              phase: 'UNLOCK',  pillarSlug: 'financial', emoji: '💠', tagline: 'Prove it to yourself.',                       color: '#3dbfc4', status: 'locked', url: '/nodes/12', envVar: 'OKTAEDRON' },
-    { id: 13, name: 'Unlock',                    phase: 'UNLOCK',  pillarSlug: 'financial', emoji: '⚡', tagline: 'Freedom is the final layer.',                 color: '#3dbfc4', status: 'locked', url: '/nodes/13', envVar: 'ANKH'      },
+    { id: 1,  name: 'Feel Good First',           phase: 'ELEVATE', pillarSlug: 'physical',  emoji: '✦',  tagline: 'Feeling good is the baseline — not the bonus.',                              color: '#119a9e', status: 'live',   url: '/nodes/1',  envVar: 'PYR'       },
+    { id: 2,  name: 'Awareness',                 phase: 'ELEVATE', pillarSlug: 'physical',  emoji: '🧬', tagline: 'Your body is always speaking — are you listening?',                          color: '#119a9e', status: 'live',   url: '/nodes/2',  envVar: 'OCULUS'    },
+    { id: 3,  name: 'Regulation',                phase: 'ELEVATE', pillarSlug: 'physical',  emoji: '⚖️', tagline: 'Balance your energy, calm your system.',                                    color: '#119a9e', status: 'live',   url: '/nodes/3',  envVar: 'DYAD'      },
+    { id: 4,  name: 'Elevate',                   phase: 'ELEVATE', pillarSlug: 'physical',  emoji: '🛡️', tagline: 'Feeling like shit is not normal — when you know better, you do better.',     color: '#119a9e', status: 'live',   url: '/nodes/4',  envVar: 'PYRAMIS'   },
+    { id: 5,  name: 'Root Healing',              phase: 'ELEVATE', pillarSlug: 'physical',  emoji: '🌊', tagline: 'Optimize your absorption & energy flow.',                                   color: '#119a9e', status: 'live',   url: '/water/',   envVar: 'HYDOR'     },
+    // ALIGN: mind + life → Inner & Identity Sovereignty (nodes 6-10)
+    { id: 6,  name: 'Responsibility (with Love)', phase: 'ALIGN',  pillarSlug: 'inner',     emoji: '🕊️', tagline: 'Own your choices, gently.',                                                color: '#8cc5d3', status: 'locked', url: '/nodes/6',  envVar: 'MANDORLA'  },
+    { id: 7,  name: 'Unbecoming',                phase: 'ALIGN',   pillarSlug: 'inner',     emoji: '🌙', tagline: 'Reclaim / Remember / Release.',                                            color: '#8cc5d3', status: 'locked', url: '/nodes/7',  envVar: 'KENOSIS'   },
+    { id: 8,  name: 'Alignment',                 phase: 'ALIGN',   pillarSlug: 'inner',     emoji: '🔮', tagline: 'See clearly, act intentionally.',                                           color: '#8cc5d3', status: 'locked', url: '/nodes/8',  envVar: 'SHATKONA'  },
+    { id: 9,  name: 'The Becoming',              phase: 'ALIGN',   pillarSlug: 'identity',  emoji: '✨', tagline: 'Know your power — your choices create a life that fuels you.',              color: '#c9a96e', status: 'locked', url: '/nodes/9',  envVar: 'PADMA'     },
+    { id: 10, name: 'Awakening',                 phase: 'ALIGN',   pillarSlug: 'identity',  emoji: '📣', tagline: 'I\'m awake, I have all this power — now what?',                             color: '#c9a96e', status: 'locked', url: '/nodes/10', envVar: 'BODHI'     },
+    // UNLOCK: integration + freedom → Identity & Financial Sovereignty (nodes 11-13)
+    { id: 11, name: 'Integrate',                 phase: 'UNLOCK',  pillarSlug: 'identity',  emoji: '🚧', tagline: 'Pull it all together; your wholeness is the work.',                        color: '#c9a96e', status: 'locked', url: '/nodes/11', envVar: 'TETRAD'    },
+    { id: 12, name: 'Authenticate',              phase: 'UNLOCK',  pillarSlug: 'financial', emoji: '💠', tagline: 'Be YOU — loudly, proudly, unapologetically.',                               color: '#3dbfc4', status: 'locked', url: '/nodes/12', envVar: 'OKTAEDRON' },
+    { id: 13, name: 'Unlock',                    phase: 'UNLOCK',  pillarSlug: 'financial', emoji: '⚡', tagline: 'Level up fully — your gifts, flow, and freedom amplified.',                 color: '#3dbfc4', status: 'locked', url: '/nodes/13', envVar: 'ANKH'      },
   ],
   branches: [
     { 
