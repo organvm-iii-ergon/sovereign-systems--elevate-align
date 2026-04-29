@@ -107,12 +107,12 @@ export const PRIMITIVES: Record<EnvVar, MathPrimitive> = {
 
   // 6 — MANDORLA (Vesica Piscis) — fractal/intersecting, the bloom
   MANDORLA: {
-    vertexCount: 12,
+    vertexCount: 16, // increased from 12 for complex bloom
     symmetry: 'fractal',
     phiExponent: 1,
-    innerRatio: 0.45,
+    innerRatio: 0.42,
     rotationPerSegment: 0,
-    twistFactor: 0.45,
+    twistFactor: 0.65, // increased from 0.45
     hasCentralVoid: true,
     depthRatio: 0.35,
   },
@@ -167,13 +167,13 @@ export const PRIMITIVES: Record<EnvVar, MathPrimitive> = {
 
   // 11 — TETRAD (Solar Cross) — bilateral, cardinal directions
   TETRAD: {
-    vertexCount: 4,
+    vertexCount: 8, // increased from 4 for more intricate wheel
     symmetry: 'bilateral',
     phiExponent: 1,
-    innerRatio: 0.35,
-    rotationPerSegment: Math.PI / 2,
-    twistFactor: 0.05,
-    hasCentralVoid: false,
+    innerRatio: 0.45,
+    rotationPerSegment: Math.PI / 4,
+    twistFactor: 0.08,
+    hasCentralVoid: true, // changed from false for stoic wheel structure
     depthRatio: 0.5,
   },
 
