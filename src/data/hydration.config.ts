@@ -246,7 +246,7 @@ export const hydrationConfig: HydrationConfig = {
       features: ['Point-of-use', 'Easy install', 'No plumbing changes'],
       removes: ['Chlorine', 'Lead', 'Sediment', 'VOCs'],
       bestFor: 'Renters or single-faucet solution',
-      affiliateUrl: '',
+      affiliateUrl: 'https://ionfaucet.com/maddie-spiral',
     },
     {
       id: 'multipure',
@@ -257,7 +257,7 @@ export const hydrationConfig: HydrationConfig = {
       features: ['Whole house option', 'NSF certified', 'Carbon block'],
       removes: ['Chlorine', 'Lead', 'Mercury', 'Arsenic', 'PFAS', 'Pharmaceuticals'],
       bestFor: 'Families wanting broader protection',
-      affiliateUrl: '',
+      affiliateUrl: 'https://www.multipure.com/maddie-wired',
     },
     {
       id: 'purehome',
@@ -268,7 +268,7 @@ export const hydrationConfig: HydrationConfig = {
       features: ['Whole house', 'Multi-stage', 'Professional install'],
       removes: ['All major contaminants', 'Bacteria', 'Viruses', 'Microplastics'],
       bestFor: 'Homeowners wanting complete water sovereignty',
-      affiliateUrl: '',
+      affiliateUrl: 'https://purehome.co/maddie',
     },
     {
       id: 'anespa',
