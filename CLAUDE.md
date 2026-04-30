@@ -164,7 +164,7 @@ These are A/B flags wired into `src/data/hub.config.ts` defaults (`ui.spiralVess
 - To add a new branch: create `src/content/branches/<slug>.md` with correct frontmatter, then add an entry to the `branches` array in `hub.config.ts`
 - **Keystatic CMS** (`keystatic.config.ts`) provides a UI for editing pillars and branches collections. Local mode by default; GitHub mode is configured (repo: `organvm-iii-ergon/sovereign-systems--elevate-align`). Run `npm run dev` and navigate to `/keystatic` for the editor UI.
 ## Project Board
-[Operating Board](https://github.com/orgs/organvm-iii-ergon/projects/5) — 17 open issues (Group 2 Mobile Polish marked DONE GH#55; GH#53 Chakra stars DONE).
+[Operating Board](https://github.com/orgs/organvm-iii-ergon/projects/5) — see board for live state. Recent closures: #57 (vessel modes), #56 (quiz node-placement), #55 (mobile polish), #53 (chakra stars).
 
 Critical path complete. Content genome processed. Deployed via local wrangler due to GH#52 auth failure.
 
