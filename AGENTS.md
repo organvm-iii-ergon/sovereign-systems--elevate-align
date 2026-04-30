@@ -14,7 +14,7 @@ This file provides guidance for AI coding agents operating in this repository.
 - **Astro 5** — static site generator, zero JS by default
 - **Tailwind CSS 4** — via `@tailwindcss/vite` plugin (CSS-first config, no `tailwind.config.js`)
 - **TypeScript** — strict mode, no `any`
-- **Vanilla Canvas** — `src/components/spiral/spiral.ts` drives animated spiral (no Three.js, no external canvas libs)
+- **Three.js** — `src/components/spiral/spiral.ts` drives the 3D helix renderer: tapered helix with `OrbitControls`, `MeshPhysicalMaterial` orbs, `FogExp2`, and an `EffectComposer` post-processing pipeline (`RenderPass` → `UnrealBloomPass` → `OutputPass`).
 
 ---
 
