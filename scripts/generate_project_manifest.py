@@ -88,9 +88,7 @@ def iter_files(root: Path) -> Iterable[Path]:
     if rel_root in EXCLUDED_RELATIVE_DIRS:
       dirs[:] = []
       continue
-    dirs[:] = sorted(
-      d for d in dirs if d not in EXCLUDED_DIRS and not (rel_root == Path(".") and d in EXCLUDED_DIRS)
-    )
+    dirs[:] = sorted(d for d in dirs if d not in EXCLUDED_DIRS)
     for filename in sorted(files):
       yield Path(current_root) / filename
 
@@ -236,6 +234,33 @@ def slug(value: str) -> str:
   return normalized or "ROOT"
 
 
+KEYWORD_TAGS = {
+  "maddie": "client:maddie",
+  "spiral": "topic:spiral",
+  "water": "pillar:water",
+  "hydration": "topic:hydration",
+  "business": "pillar:financial",
+  "financial": "pillar:financial",
+  "inner": "pillar:inner",
+  "identity": "pillar:identity",
+  "physical": "pillar:physical",
+  "citation": "topic:citations",
+  "atom": "topic:atoms",
+  "issue": "governance:issue",
+  "irf": "governance:irf",
+  "decision": "governance:decision",
+  "handoff": "governance:handoff",
+  "audit": "governance:audit",
+  "plan": "governance:plan",
+  "session": "governance:session",
+  "spec": "governance:spec",
+  "sop": "governance:sop",
+  "source-bundle": "corpus:source-bundle",
+  "extracted": "corpus:extracted",
+}
+KEYWORD_RE = re.compile("|".join(re.escape(k) for k in KEYWORD_TAGS))
+
+
 def tags_for(path: Path, text: str, thread_title: str) -> list[str]:
   path_text = rel(path).lower()
   haystack = f"{path_text} {text[:5000].lower()} {thread_title.lower()}"
@@ -247,33 +272,8 @@ def tags_for(path: Path, text: str, thread_title: str) -> list[str]:
   top = path.relative_to(REPO_ROOT).parts[0]
   tags.add(f"area:{top}")
 
-  keyword_tags = {
-    "maddie": "client:maddie",
-    "spiral": "topic:spiral",
-    "water": "pillar:water",
-    "hydration": "topic:hydration",
-    "business": "pillar:financial",
-    "financial": "pillar:financial",
-    "inner": "pillar:inner",
-    "identity": "pillar:identity",
-    "physical": "pillar:physical",
-    "citation": "topic:citations",
-    "atom": "topic:atoms",
-    "issue": "governance:issue",
-    "irf": "governance:irf",
-    "decision": "governance:decision",
-    "handoff": "governance:handoff",
-    "audit": "governance:audit",
-    "plan": "governance:plan",
-    "session": "governance:session",
-    "spec": "governance:spec",
-    "sop": "governance:sop",
-    "source-bundle": "corpus:source-bundle",
-    "extracted": "corpus:extracted",
-  }
-  for keyword, tag in keyword_tags.items():
-    if keyword in haystack:
-      tags.add(tag)
+  for match in KEYWORD_RE.finditer(haystack):
+    tags.add(KEYWORD_TAGS[match.group(0)])
 
   return sorted(tags)
 
@@ -305,7 +305,9 @@ def make_entries(files: list[Path], run_date: str) -> list[ManifestEntry]:
 
 def write_json(entries: list[ManifestEntry], json_path: Path) -> None:
   payload = [asdict(entry) for entry in entries]
-  json_path.write_text(json.dumps(payload, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+  with json_path.open("w", encoding="utf-8") as fp:
+    json.dump(payload, fp, indent=2, ensure_ascii=False)
+    fp.write("\n")
 
 
 def write_markdown(entries: list[ManifestEntry], md_path: Path, run_date: str) -> None:
