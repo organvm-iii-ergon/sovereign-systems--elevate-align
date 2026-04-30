@@ -104,7 +104,7 @@ Two primary patterns:
 
 Tracking both your cycle and the moon phase gives you a dual map — biological and rhythmic — for understanding your fertility window and your body’s deeper patterns. If your cycle length doesn’t match the lunar cycle exactly, that’s normal. The alignment shifts over time, and working with it (not forcing it) is the practice.
 
-*A personalized fertility planner — synced to your birth chart, your cycle data, and the current lunar calendar — is coming soon as part of the EAU Blueprint. Your body, the moon, and your chart all mapped onto one timeline.*
+Use the pattern now: support the terrain across the whole cycle, not only the ovulation window. Track cervical fluid, basal body temperature if you already use it, cycle day, sleep, stress, and hydration without turning the process into pressure.
 
 ## Bridge
 
@@ -151,7 +151,10 @@ It includes:
 
 ## Resources
 
-Video context and real stories coming soon. This section will grow as we document properly.
+- **Start here:** map one full cycle before making major changes. Note ovulation signs, luteal length, energy, sleep, and hydration consistency.
+- **Terrain support:** build minerals, protein, warm meals, and stress reduction into the whole cycle; do not reduce fertility to a single window.
+- **Evidence anchor:** use the cited oxidative-stress, antioxidant, and reproductive-medicine research above as the research thread for deeper review.
+- **Care boundary:** fertility concerns deserve qualified medical support. Use this branch as foundational education alongside appropriate care.
 
 ## CTA
 

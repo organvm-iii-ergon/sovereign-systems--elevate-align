@@ -129,7 +129,7 @@ bash scripts/setup-board.sh --dry-run                                        # b
 | `/for/[persona]` | `src/pages/for/[persona].astro` | Persona-specific landing (dynamic by persona slug) |
 | `/water/` | `src/pages/water/index.astro` | Water mini version — hero, video, education, HydrationNode funnel |
 | `/water/#branches` | (inline in `water/index.astro`) | Branch grid — accessible from single scrollable water page |
-| `/water/quiz` | `src/pages/water/quiz.astro` | GHL quiz embed placeholder (URL empty) |
+| `/water/quiz` | `src/pages/water/quiz.astro` | Local assessment route when GHL URL is empty |
 | `/water/[slug]` | `src/pages/water/[slug].astro` | Individual branch deep-dives (6 branches) |
 | `/business/` | `src/pages/business/index.astro` | Financial Sovereignty / EauCo Hub landing |
 | `/research` | `src/pages/research.astro` | Full research bibliography (email-gated) |

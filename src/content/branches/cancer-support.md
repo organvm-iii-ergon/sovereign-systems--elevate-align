@@ -48,7 +48,10 @@ This isn't about optimizing anything. It's about understanding why some days fee
 
 ## Resources
 
-Detailed research summaries, safety data, and practitioner-focused resources coming soon. Always consult with your oncology team before adding new protocols.
+- **Start here:** ask your oncology team before adding any new protocol, supplement, device, or water routine during active treatment.
+- **Support lens:** track fatigue, nausea, hydration tolerance, appetite, and emotional load. The goal is dignity and resilience, not optimization.
+- **Evidence anchor:** use the cited H2 adjunct-support, safety-profile, radiation-enteritis, and quality-of-life studies above as the research thread for deeper review.
+- **Care boundary:** this branch is supportive education only. Primary treatment decisions stay with the oncology team.
 
 ## CTA
 

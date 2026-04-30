@@ -66,11 +66,14 @@ Your immune system doesn’t operate in a vacuum. It responds directly to your r
 
 Stop treating every day the same. Your anti-inflammatory protocols, your H2 water intake, your rest and movement — all of these can be adjusted to match where you are in your cycle. More support during menstrual and ovulatory phases. More gentle expansion during luteal.
 
-*A personalized cycle-synced autoimmune protocol is coming as part of the EAU Blueprint — your birth chart, your cycle, your condition, mapped together.*
+Use the pattern now: protect the menstrual and ovulatory windows, track condition-specific symptoms daily, and treat the luteal phase as the gentlest rebuilding window rather than a time to overcorrect.
 
 ## Resources
 
-Detailed research summaries, protocols, and cycle-tracking tools coming soon. Built carefully, not quickly.
+- **Start here:** track flare intensity, sleep, hydration, stress, and cycle day for one month. Do not change five variables at once.
+- **Protection windows:** add extra rest and lower-inflammatory meals around menstruation and ovulation if those are your personal flare points.
+- **Evidence anchor:** use the cited rheumatoid arthritis, IL-6, NF-kB, and MAPK research above as the research thread for deeper review.
+- **Care boundary:** use this as supportive education, not as a replacement for medical guidance or prescribed treatment.
 
 ## CTA
 

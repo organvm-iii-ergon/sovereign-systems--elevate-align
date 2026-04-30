@@ -47,7 +47,10 @@ This is what Maddie means when she talks about “installing systems.” Not hus
 
 ## Resources
 
-Cost-comparison calculators, plastic reduction data, and environmental impact reports coming soon.
+- **Start here:** count how many single-use bottles enter the home in one ordinary week, then multiply by 52 to see the annual dependency loop.
+- **Cost lens:** compare bottled water, filter replacement, machine/service costs, and delivery habits by yearly cost rather than checkout price.
+- **Impact lens:** track plastic avoided, store trips avoided, and household compliance. The most sustainable system is the one people actually use.
+- **Evidence anchor:** use the cited water-quality, public-health, and relational water ethics references above as the research thread for deeper review.
 
 ## CTA
 

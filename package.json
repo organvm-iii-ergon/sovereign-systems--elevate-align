@@ -6,6 +6,8 @@
     "dev": "astro dev",
     "prebuild": "node scripts/generate-citations-json.js",
     "build": "astro build",
+    "test": "node scripts/test.mjs",
+    "test:all": "npm run test && npm run build",
     "preview": "astro preview",
     "astro": "astro",
     "parse-citations": "node scripts/parse-citations.js",

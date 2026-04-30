@@ -101,7 +101,7 @@ When you periodize your training to your cycle, three things happen:
 
 This is not about doing less. It's about doing the right thing at the right time. That's periodization — and your hormones already wrote the program.
 
-*A personalized training periodization planner — synced to your cycle length, your sport, and your moon phase alignment — is coming soon as part of the EAU Blueprint. Your programming, your cycle, and your rhythm on one calendar.*
+Use the pattern now: heavy strength and speed work in follicular/ovulatory windows, endurance and hypertrophy in luteal windows, and active recovery during menstruation. Track cycle day, sleep, soreness, hydration, and perceived exertion for one month before changing the plan.
 
 ## Bridge
 
@@ -153,7 +153,10 @@ But where you place it matters. If we drop it in the wrong spot, it can interrup
 
 ## Resources
 
-Performance protocols, athlete case studies, and deep-dive research coming soon.
+- **Start here:** take the water assessment, then choose one recovery metric to track for 30 days: soreness, sleep quality, morning energy, or training readiness.
+- **Training rhythm:** plan the highest-intensity sessions for follicular and ovulatory windows; place mobility, walking, zone-2, and deload work around menstruation.
+- **Evidence anchor:** use the cited H2 exercise-fatigue, lactate-clearance, and muscular-endurance studies above as the research thread for deeper review.
+- **Next build target:** convert this branch into a sport-specific planner once Maddie chooses the first audience: lifting, running, team sport, or general fitness.
 
 ## CTA
 

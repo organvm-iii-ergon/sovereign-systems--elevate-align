@@ -24,58 +24,20 @@ const { formUrl = config.ghl.quizFormUrl } = Astro.props;
     <div class="max-w-md mx-auto py-8">
       <div class="glass-card p-10 text-center" style="border-color: rgba(17,154,158,0.15);">
         <div class="w-10 h-px bg-ocean-500/30 mx-auto mb-6"></div>
-        <h2 class="font-heading text-[24px] font-light text-white mb-3">Your assessment is almost ready</h2>
+        <h2 class="font-heading text-[24px] font-light text-white mb-3">Your assessment is ready</h2>
         <p class="text-white/35 text-[15px] font-light mb-8 leading-relaxed">
-          Five questions to find what your body actually needs. Leave your email and we'll notify you the moment it's live.
+          Five questions place you on the spiral first, then you can stay connected after you receive your result.
         </p>
-        <form id="quiz-waitlist-form" class="space-y-4">
-          <input
-            type="email"
-            required
-            placeholder="your@email.com"
-            class="w-full bg-ocean-800/50 border border-ocean-500/20 rounded-lg px-4 py-3 text-white placeholder:text-white/20 focus:outline-none focus:border-ocean-400 transition-colors text-[15px]"
-          />
-          <button
-            type="submit"
-            class="w-full bg-ocean-500 hover:bg-ocean-400 text-white font-medium py-3 rounded-lg transition-all shadow-lg shadow-ocean-500/10 active:scale-[0.98] text-[14px]"
-          >
-            Notify me
-          </button>
-        </form>
+        <a
+          href="/quiz"
+          class="inline-block w-full bg-ocean-500 hover:bg-ocean-400 text-white font-medium py-3 rounded-lg transition-all shadow-lg shadow-ocean-500/10 active:scale-[0.98] text-[14px]"
+        >
+          Start the assessment
+        </a>
         <p class="mt-6 text-[10px] text-white/15 uppercase tracking-[0.15em]">
-          No spam. Only sovereignty.
+          Result first. Email optional.
         </p>
       </div>
     </div>
   )}
 </div>
-
-<script>
-  const form = document.getElementById('quiz-waitlist-form') as HTMLFormElement | null;
-  form?.addEventListener('submit', async (e) => {
-    e.preventDefault();
-    const emailInput = form.querySelector('input[type="email"]') as HTMLInputElement;
-    const button = form.querySelector('button[type="submit"]') as HTMLButtonElement;
-    const email = emailInput.value;
-
-    if (email) {
-      button.innerText = 'Sending...';
-      button.disabled = true;
-
-      try {
-        await fetch('/capture', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ email, source: 'quiz_waitlist' }),
-        });
-      } catch {
-        // Proceed regardless of network error
-      }
-
-      button.innerText = "You're on the list";
-      button.classList.replace('bg-ocean-500', 'bg-ocean-700');
-      button.classList.remove('hover:bg-ocean-400');
-      emailInput.disabled = true;
-    }
-  });
-</script>

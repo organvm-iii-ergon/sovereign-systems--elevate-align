@@ -24,6 +24,7 @@ const quizNodes = config.nodes.map((n) => ({
   pillarSlug: n.pillarSlug,
   emoji: n.emoji,
   tagline: n.tagline,
+  status: n.status,
   url: n.url,
   themes: n.themes ?? [],
   chakra: n.chakra,
@@ -238,6 +239,7 @@ const pillarsJson = JSON.stringify(pillarChoices);
     pillarSlug: string;
     emoji: string;
     tagline: string;
+    status: 'live' | 'locked';
     url: string;
     themes: string[];
     chakra?: string;

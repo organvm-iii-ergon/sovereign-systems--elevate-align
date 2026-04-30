@@ -75,7 +75,7 @@ Here is what most people miss: your gut bacteria actually produce and metabolize
 
 Cycle-syncing your gut care means you are not just managing symptoms — you are maintaining the microbial ecosystem that regulates your hormones in the first place. The gut is upstream of the hormones, not downstream.
 
-*Personalized cycle-synced protocols — including nutrition plans mapped to your exact cycle length and moon phase alignment — are coming soon as part of the EAU Blueprint. This is where your planner, your chart, and your body all speak the same language.*
+Use the pattern now: follicular for gut repair and lighter enzyme-rich meals, ovulatory for expression and social energy, luteal for cooked grounding meals, and menstrual for warmth, minerals, and rest.
 
 ## Bridge
 
@@ -151,7 +151,10 @@ Fruits
 
 ## Resources
 
-Video breakdowns and case studies coming soon — we're building this out properly so you get real context, not sales noise.
+- **Start here:** track bloating, bowel rhythm, cravings, sleep, and cycle day for one month. Your pattern matters more than a generic protocol.
+- **Food rhythm:** use fermented/prebiotic foods when digestion feels open; use cooked, warm, mineral-rich meals when digestion slows.
+- **Evidence anchor:** use the cited microbiome, gut-lining, and hydrogen-water reviews above as the research thread for deeper review.
+- **Next build target:** turn this branch into a one-page cycle grocery map after the first final offer format is chosen.
 
 ## CTA
 

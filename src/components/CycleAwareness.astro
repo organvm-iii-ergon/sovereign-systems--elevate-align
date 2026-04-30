@@ -6,6 +6,17 @@ interface Props {
 
 const { branchSlug, tone = 'standard' } = Astro.props;
 
+const branchGuidance: Record<string, string> = {
+  'gut-hormones': 'Use this as a monthly check-in: follicular for gut repair, ovulatory for expression, luteal for hormone steadiness, menstrual for release and restoration.',
+  fertility: 'Use this as a fertility map: build the internal terrain before ovulation, protect implantation conditions after ovulation, and track patterns without forcing them.',
+  autoimmune: 'Use this as a flare-awareness map: add more protection around menstrual and ovulatory windows, then rebuild gently when progesterone rises.',
+  athletic: 'Use this as a training-periodization map: push strength and intensity when energy rises, then taper toward recovery when the body asks for consolidation.',
+  'cancer-support': 'Use this as a kindness map during treatment: notice rhythm when it is present, but let medical care, fatigue, and recovery needs override any calendar.',
+  sustainability: 'Use this as a rhythm map for household change: install one stable water habit per phase instead of trying to overhaul everything at once.',
+};
+
+const guidance = branchGuidance[branchSlug] ?? 'Use this as a rhythm map: notice what your body asks for in each phase, then make the next supportive choice small enough to repeat.';
+
 const phaseData = [
   {
     name: 'Menstrual',
@@ -77,7 +88,7 @@ const phaseData = [
 
   <div class="text-center border-t border-white/5 pt-6">
     <p class="text-white/30 text-xs font-light max-w-sm mx-auto leading-relaxed">
-      Personalized cycle-synced protocols mapped to your birth chart and moon phase alignment are coming soon as part of the EAU Blueprint.
+      {guidance}
     </p>
   </div>
 </div>
