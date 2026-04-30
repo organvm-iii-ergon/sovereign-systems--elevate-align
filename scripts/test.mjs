@@ -115,4 +115,14 @@ const manifestMdPath = join(manifestDir, manifestMd);
 assert.ok(statSync(manifestMdPath).isFile(), 'annotated bibliography Markdown manifest exists');
 assert.equal(read(`docs/manifests/${manifestMd}`).includes('\0'), false, 'Markdown manifest is searchable text');
 
+// --- Content Vacuum Gate ---
+const { execSync } = await import('node:child_process');
+try {
+  execSync('node scripts/vacuum-gate.mjs', { cwd: repoRoot, stdio: 'pipe' });
+  console.log('ok - content vacuum gate passed');
+} catch (err) {
+  console.error(err.stdout?.toString() || err.message);
+  process.exit(1);
+}
+
 console.log(`ok - ${nodeEntries.length} nodes, ${pillarSlugs.length} pillars, ${branchSlugs.length} branches, ${manifest.length} manifest entries`);
