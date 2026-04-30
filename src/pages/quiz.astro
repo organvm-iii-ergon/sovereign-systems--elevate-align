@@ -14,6 +14,10 @@
  */
 import Base from '../layouts/Base.astro';
 import { config } from '../data/hub.config';
+import { quizQuestions, quizResultCopy, quizCaptureCopy } from '../data/quiz.config';
+
+const resultCopyJson = JSON.stringify(quizResultCopy);
+const captureCopyJson = JSON.stringify(quizCaptureCopy);
 
 // Pre-process node data for client-side scoring; only the fields the
 // quiz needs are serialized into the DOM (no internal/private fields).
@@ -37,6 +41,8 @@ const pillarChoices = config.pillars.map((p) => ({
   emoji: p.emoji,
 }));
 const pillarsJson = JSON.stringify(pillarChoices);
+
+const questionsJson = JSON.stringify(quizQuestions);
 ---
 
 <Base
@@ -44,123 +50,41 @@ const pillarsJson = JSON.stringify(pillarChoices);
   description="Five questions to place you on the spiral. Your starting point is where the work meets you, not where you think you should begin."
 >
   <section class="min-h-[80vh] flex items-center justify-center py-20 px-6 glow-bg">
-    <div class="max-w-xl mx-auto w-full" id="quiz-root" data-nodes={nodesJson} data-pillars={pillarsJson}>
+    <div class="max-w-xl mx-auto w-full" id="quiz-root" data-nodes={nodesJson} data-pillars={pillarsJson} data-questions={questionsJson} data-result-copy={resultCopyJson} data-capture-copy={captureCopyJson}>
       <!-- Progress dots -->
       <div id="quiz-progress" class="flex justify-center gap-2 mb-10" aria-hidden="true"></div>
 
       <!-- Question stage (one step at a time) -->
       <div id="quiz-stage" class="min-h-[420px]">
-        <!-- Q1: Phase resonance -->
-        <div class="quiz-step" data-step="1" data-axis="phase">
-          <h1 class="font-heading text-[clamp(28px,4.5vw,40px)] font-light text-white mb-3 text-center">Where does your energy want to start?</h1>
-          <p class="text-white/40 text-[14px] font-light text-center mb-8">There's no wrong answer. Pick the one that feels truest right now.</p>
-          <div class="space-y-3">
-            <button class="quiz-option glass-card w-full p-5 text-left" data-value="ELEVATE">
-              <span class="block text-white text-[15px] font-light leading-snug">I need to feel better in my body — physically grounded, energized, present.</span>
-            </button>
-            <button class="quiz-option glass-card w-full p-5 text-left" data-value="ALIGN">
-              <span class="block text-white text-[15px] font-light leading-snug">I'm ready to do the inner work — patterns, identity, alignment.</span>
-            </button>
-            <button class="quiz-option glass-card w-full p-5 text-left" data-value="UNLOCK">
-              <span class="block text-white text-[15px] font-light leading-snug">I'm ready for full expression and freedom — letting it all out.</span>
-            </button>
-            <button class="quiz-option glass-card w-full p-5 text-left" data-value="ALL">
-              <span class="block text-white text-[15px] font-light leading-snug">All of it — I want to integrate everything at once.</span>
-            </button>
+        {quizQuestions.map((q) => (
+          <div class="quiz-step hidden" data-step={q.step} data-axis={q.axis}>
+            <h1 class="font-heading text-[clamp(28px,4.5vw,40px)] font-light text-white mb-3 text-center">{q.text}</h1>
+            <p class="text-white/40 text-[14px] font-light text-center mb-8">{q.subtitle}</p>
+            {q.step === 2 ? (
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                {q.answers.map((a) => (
+                  <button class="quiz-option glass-card p-5 text-left" data-value={a.value}>
+                    {a.emoji && <span class="text-2xl block mb-1">{a.emoji}</span>}
+                    <span class="block text-white text-[15px] font-light">{a.text}</span>
+                    {a.sublabel && <span class="block text-white/40 text-[12px] mt-1">{a.sublabel}</span>}
+                  </button>
+                ))}
+              </div>
+            ) : (
+              <div class="space-y-3">
+                {q.answers.map((a) => (
+                  <button class="quiz-option glass-card w-full p-5 text-left" data-value={a.value}>
+                    <span class="block text-white text-[15px] font-light leading-snug">{a.text}</span>
+                  </button>
+                ))}
+              </div>
+            )}
           </div>
-        </div>
-
-        <!-- Q2: Pillar resonance -->
-        <div class="quiz-step hidden" data-step="2" data-axis="pillar">
-          <h1 class="font-heading text-[clamp(28px,4.5vw,40px)] font-light text-white mb-3 text-center">Which pillar feels most alive in you right now?</h1>
-          <p class="text-white/40 text-[14px] font-light text-center mb-8">The one that pulls you, not the one you think you should pick.</p>
-          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
-            <button class="quiz-option glass-card p-5 text-left" data-value="physical">
-              <span class="text-2xl block mb-1">🌊</span>
-              <span class="block text-white text-[15px] font-light">Physical</span>
-              <span class="block text-white/40 text-[12px] mt-1">body, energy, hydration, sleep</span>
-            </button>
-            <button class="quiz-option glass-card p-5 text-left" data-value="inner">
-              <span class="text-2xl block mb-1">🕊️</span>
-              <span class="block text-white text-[15px] font-light">Inner</span>
-              <span class="block text-white/40 text-[12px] mt-1">emotions, regulation, awareness</span>
-            </button>
-            <button class="quiz-option glass-card p-5 text-left" data-value="identity">
-              <span class="text-2xl block mb-1">✨</span>
-              <span class="block text-white text-[15px] font-light">Identity</span>
-              <span class="block text-white/40 text-[12px] mt-1">who I am, how I show up</span>
-            </button>
-            <button class="quiz-option glass-card p-5 text-left" data-value="financial">
-              <span class="text-2xl block mb-1">💠</span>
-              <span class="block text-white text-[15px] font-light">Financial</span>
-              <span class="block text-white/40 text-[12px] mt-1">sovereignty over time + money</span>
-            </button>
-          </div>
-        </div>
-
-        <!-- Q3: Right-now need -->
-        <div class="quiz-step hidden" data-step="3" data-axis="theme">
-          <h1 class="font-heading text-[clamp(28px,4.5vw,40px)] font-light text-white mb-3 text-center">What does your system most need right now?</h1>
-          <p class="text-white/40 text-[14px] font-light text-center mb-8">If you could only do one thing for yourself this week.</p>
-          <div class="space-y-3">
-            <button class="quiz-option glass-card w-full p-5 text-left" data-value="state-shifting,baseline,simple-pleasure">
-              <span class="block text-white text-[15px] font-light">To feel good and at ease — just to taste that again.</span>
-            </button>
-            <button class="quiz-option glass-card w-full p-5 text-left" data-value="witness,awareness,signal-reading">
-              <span class="block text-white text-[15px] font-light">To understand what's happening to me — read my own signals.</span>
-            </button>
-            <button class="quiz-option glass-card w-full p-5 text-left" data-value="release,reclaim,unwiring">
-              <span class="block text-white text-[15px] font-light">To release patterns I'm tired of carrying.</span>
-            </button>
-            <button class="quiz-option glass-card w-full p-5 text-left" data-value="becoming,expression,life-fueling">
-              <span class="block text-white text-[15px] font-light">To step fully into who I'm becoming.</span>
-            </button>
-          </div>
-        </div>
-
-        <!-- Q4: Foundational concern -->
-        <div class="quiz-step hidden" data-step="4" data-axis="theme">
-          <h1 class="font-heading text-[clamp(28px,4.5vw,40px)] font-light text-white mb-3 text-center">What feels foundational to address?</h1>
-          <p class="text-white/40 text-[14px] font-light text-center mb-8">The thing under the thing.</p>
-          <div class="space-y-3">
-            <button class="quiz-option glass-card w-full p-5 text-left" data-value="foundation,hydration,root-cause">
-              <span class="block text-white text-[15px] font-light">Energy and absorption — my body's basic systems.</span>
-            </button>
-            <button class="quiz-option glass-card w-full p-5 text-left" data-value="regulation,balance,calm">
-              <span class="block text-white text-[15px] font-light">Calm and regulation — my nervous system.</span>
-            </button>
-            <button class="quiz-option glass-card w-full p-5 text-left" data-value="ownership,gentleness,choice">
-              <span class="block text-white text-[15px] font-light">Choice and ownership — taking responsibility, gently.</span>
-            </button>
-            <button class="quiz-option glass-card w-full p-5 text-left" data-value="clarity,intention,coherence">
-              <span class="block text-white text-[15px] font-light">Coherence and clarity — knowing what I want.</span>
-            </button>
-          </div>
-        </div>
-
-        <!-- Q5: Growth edge -->
-        <div class="quiz-step hidden" data-step="5" data-axis="theme">
-          <h1 class="font-heading text-[clamp(28px,4.5vw,40px)] font-light text-white mb-3 text-center">Where do you sense your growth edge?</h1>
-          <p class="text-white/40 text-[14px] font-light text-center mb-8">The honest one. Not the impressive one.</p>
-          <div class="space-y-3">
-            <button class="quiz-option glass-card w-full p-5 text-left" data-value="release,ownership,unwiring">
-              <span class="block text-white text-[15px] font-light">I keep doing things that don't serve me.</span>
-            </button>
-            <button class="quiz-option glass-card w-full p-5 text-left" data-value="witness,regulation,awareness">
-              <span class="block text-white text-[15px] font-light">I notice patterns but can't change them yet.</span>
-            </button>
-            <button class="quiz-option glass-card w-full p-5 text-left" data-value="awakening,what-now,integration">
-              <span class="block text-white text-[15px] font-light">I'm awake but unsure what to do with it.</span>
-            </button>
-            <button class="quiz-option glass-card w-full p-5 text-left" data-value="expression,freedom,full-flow">
-              <span class="block text-white text-[15px] font-light">I'm ready to act on what I know.</span>
-            </button>
-          </div>
-        </div>
+        ))}
 
         <!-- Result panel -->
         <div class="quiz-step hidden" data-step="result">
-          <p class="text-white/40 text-[12px] uppercase tracking-[0.15em] text-center mb-3">Your starting node</p>
+          <p class="text-white/40 text-[12px] uppercase tracking-[0.15em] text-center mb-3">{quizResultCopy.label}</p>
           <div id="result-card" class="glass-card p-8 text-center">
             <div id="result-emoji" class="text-5xl mb-4"></div>
             <h2 id="result-title" class="font-heading text-[clamp(26px,4vw,36px)] font-light text-white mb-2"></h2>
@@ -175,25 +99,25 @@ const pillarsJson = JSON.stringify(pillarChoices);
 
           <!-- Optional capture (value already delivered above) -->
           <div class="mt-10 text-center">
-            <p class="text-white/35 text-[12px] uppercase tracking-[0.15em] mb-4">Stay connected (optional)</p>
-            <p class="text-white/30 text-[13px] font-light mb-5">Get notes from Maddie as your node deepens. No spam, only sovereignty.</p>
+            <p class="text-white/35 text-[12px] uppercase tracking-[0.15em] mb-4">{quizCaptureCopy.label}</p>
+            <p class="text-white/30 text-[13px] font-light mb-5">{quizCaptureCopy.description}</p>
             <form id="quiz-capture-form" class="space-y-3 max-w-sm mx-auto">
               <input
                 type="text"
                 name="name"
-                placeholder="Your name"
+                placeholder={quizCaptureCopy.namePlaceholder}
                 class="w-full bg-ocean-800/50 border border-ocean-500/20 rounded-lg px-4 py-3 text-white placeholder:text-white/20 focus:outline-none focus:border-ocean-400 transition-colors text-[14px]"
               />
               <input
                 type="email"
                 name="email"
-                placeholder="your@email.com"
+                placeholder={quizCaptureCopy.emailPlaceholder}
                 class="w-full bg-ocean-800/50 border border-ocean-500/20 rounded-lg px-4 py-3 text-white placeholder:text-white/20 focus:outline-none focus:border-ocean-400 transition-colors text-[14px]"
               />
               <button
                 type="submit"
                 class="w-full bg-transparent border border-ocean-500/30 hover:border-ocean-400 text-white/70 hover:text-white font-medium py-3 rounded-lg transition-all text-[13px]"
-              >Stay connected</button>
+              >{quizCaptureCopy.submitLabel}</button>
             </form>
             <p id="capture-status" class="mt-4 text-[11px] text-white/30 hidden"></p>
           </div>
@@ -249,7 +173,10 @@ const pillarsJson = JSON.stringify(pillarChoices);
   if (!root) throw new Error('quiz-root missing');
 
   const nodes: QuizNode[] = JSON.parse(root.dataset.nodes ?? '[]');
-  const TOTAL_STEPS = 5;
+  const questions: typeof quizQuestions = JSON.parse(root.dataset.questions ?? '[]');
+  const resultCopy: typeof quizResultCopy = JSON.parse(root.dataset.resultCopy ?? '{}');
+  const captureCopy: typeof quizCaptureCopy = JSON.parse(root.dataset.captureCopy ?? '{}');
+  const TOTAL_STEPS = questions.length;
 
   // --- State ----------------------------------------------------
   // Each step's selected value is recorded; step 1 → phase, step 2
@@ -295,6 +222,7 @@ const pillarsJson = JSON.stringify(pillarChoices);
     }
   }
   paintProgress();
+  showStep(1);
 
   // --- Option clicks --------------------------------------------
   stage.addEventListener('click', (e) => {
@@ -371,13 +299,17 @@ const pillarsJson = JSON.stringify(pillarChoices);
     (document.getElementById('result-tagline')!).textContent = node.tagline;
     const cta = document.getElementById('result-cta') as HTMLAnchorElement;
     cta.href = node.url;
-    cta.textContent = node.status === 'locked' ? `Preview Node ${node.id} →` : `Visit Node ${node.id} →`;
+    const ctaTemplate = node.status === 'locked' ? resultCopy.ctaPreviewTemplate : resultCopy.ctaVisitTemplate;
+    cta.textContent = ctaTemplate.replace('{nodeId}', String(node.id));
     const why = document.getElementById('result-why')!;
     const phaseHit = answers[1] === node.phase || answers[1] === 'ALL' ? 'phase resonance' : '';
     const pillarHit = answers[2] === node.pillarSlug ? 'pillar resonance' : '';
     const themeNames = node.themes.join(', ');
-    const reasons = [phaseHit, pillarHit].filter(Boolean).join(' + ');
-    why.textContent = `Match: ${score}% (${reasons || 'theme alignment'}). This node addresses ${themeNames}.`;
+    const reasons = [phaseHit, pillarHit].filter(Boolean).join(' + ') || resultCopy.whyReasonsFallback;
+    why.textContent = resultCopy.whyTemplate
+      .replace('{score}', String(score))
+      .replace('{reasons}', reasons)
+      .replace('{themes}', themeNames);
   }
 
   // --- Capture (fire-and-forget; never blocks UX) ---------------
@@ -398,12 +330,12 @@ const pillarsJson = JSON.stringify(pillarChoices);
     const name = nameInput.value.trim();
     const email = emailInput.value.trim();
     if (!email) {
-      captureStatus.textContent = 'Email needed to stay connected.';
+      captureStatus.textContent = captureCopy.statusEmailNeeded;
       captureStatus.classList.remove('hidden');
       return;
     }
 
-    button.textContent = 'Sending...';
+    button.textContent = captureCopy.statusSending;
     button.disabled = true;
 
     const ranked = nodes.map((n) => ({ node: n, score: scoreNode(n) })).sort((a, b) => b.score - a.score);
