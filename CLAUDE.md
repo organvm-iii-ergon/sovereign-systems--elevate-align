@@ -1,5 +1,7 @@
 # CLAUDE.md
 
+This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
+
 ## What This Is
 
 **Sovereign Systems Spiral** — multi-domain Astro 5 website for client Maddie's 4-pillar health and business brand. Hub-and-spoke architecture: `elevatealign.com` is the central hub; `stopdrinkingacid.com` powers the Water/Physical Sovereignty funnel; `eaucohub.com` hosts the Financial Sovereignty business arm.
@@ -13,19 +15,21 @@
 - **Astro 5** — static site generator, zero JS by default; Cloudflare adapter (`@astrojs/cloudflare`)
 - **Tailwind CSS 4** — via `@tailwindcss/vite` plugin (no `tailwind.config.js` — CSS-first config)
 - **TypeScript** — strict, no `any` (a small handful of `as any` lifecycle escapes exist in island scripts; treat as non-conventional)
-- **Three.js** — `src/components/spiral/spiral.ts` drives the 3D helix visualization (tapered helix, OrbitControls, MeshPhysicalMaterial orbs, FogExp2). V5 adds IconWorlds physics (cohesion for symbols, chaos for stars).
+- **Three.js** — `src/components/spiral/spiral.ts` drives the 3D helix visualization: tapered helix, `OrbitControls`, `MeshPhysicalMaterial` orbs, `FogExp2`, and a post-processing pipeline (`EffectComposer` → `RenderPass` → `UnrealBloomPass` → `OutputPass`). IconWorlds physics gives each node its own particle behavior (cohesion for symbol-mode, chaos for star-mode). Source has no version marker; treat the file as authoritative.
 - **Markdoc + Keystatic CMS** — Markdoc renders rich content blocks; Keystatic (`@keystatic/astro`) provides an admin UI at `/keystatic` for editing pillars and branches collections.
 
 ## Commands
 
 ```bash
 npm run dev              # Dev server at localhost:4321 (host:true; tunnel-friendly)
-npm run build            # Production build → dist/  (prebuild regenerates citations JSON)
+npm run build            # Production build → dist/
 npm run preview          # Preview production build locally
 npm run deploy           # build + wrangler pages deploy dist (project: sovereign-systems-spiral)
 npm run parse-citations  # Regenerate citations from source bibliography
 npm run count-files      # Repo file census utility
 ```
+
+**`prebuild` auto-runs** `node scripts/generate-citations-json.js` before every `npm run build` (npm lifecycle hook in `package.json`). Citations JSON is rebuilt on every build — do not commit a stale snapshot expecting it to survive deploy.
 
 **No test/lint/format tooling is configured.** No ESLint, Prettier, Vitest, or other dev gates — don't search for them. Code quality is enforced by review and TypeScript strictness only.
 
@@ -77,6 +81,33 @@ src/content/
 Frontmatter schema is enforced by `content.config.ts` — any new file must include all required fields.
 
 **Node schema is the deepest** — beyond `title` and `nodeId`, supports optional `subHeader`, `intention`, `steps[]` (`{title, text}`), `practiceTable[]` (`{science, sacred, soul}`), `toolsTable[]` (`{tool, purpose, sacred}`), `reflectionPrompts[]`, and `closingLine`. All optional except `title` and `nodeId`. See `content.config.ts` for the Zod definitions.
+
+## Content Genome
+
+The site is powered by an **atom registry** — content units extracted from client conversations, each carrying a 17-field metadata schema (signal class, pillar, phase, citations, linked issues, etc.). README.md cites the current corpus census (1,821 atoms; 1,153 SIGNAL / 557 CONTEXT / 111 NOISE; 1,343 linked to issues; 263 citations). Treat README as the authoritative count for any given session — this CLAUDE.md will drift.
+
+Regenerate after content changes:
+
+```bash
+bash scripts/build-atom-registry.sh
+python3 scripts/link-atoms-to-issues.py --write
+```
+
+## Governance Scripts
+
+**Hard rule: no direct project-board edits.** All board mutations go through config-driven scripts so state transitions are auditable and reversible. Config lives at `.config/board.config.json`.
+
+```bash
+bash scripts/transition-issue.sh <issue#> --status <STATUS> --reason "why"  # the gatekeeper
+bash scripts/sync-tracking-table.sh --write                                  # board → tracking table
+bash scripts/audit-board.sh                                                  # drift + missing fields
+bash scripts/detect-redundancy.sh                                            # duplicate issues
+bash scripts/setup-board.sh --dry-run                                        # board scaffolding
+```
+
+## Project Manifest
+
+`scripts/generate_project_manifest.py` produces a dated annotated bibliography of the entire repo corpus to `docs/manifests/YYYY-MM-DD-project-manifest-annotated-bibliography.{md,json}`. Deterministic UIDs, thread-grouped, content-previewed for text/Markdown/JSON/DOCX/PDF, SHA-256 per file. Excludes `.git`, `node_modules`, `dist`, `.astro`, `.netlify`, `.wrangler`, `output`, and `docs/manifests/` itself. Re-run on any session that materially changes the corpus.
 
 ## Canonical Intake
 
