@@ -144,7 +144,7 @@ export interface UIConfig {
  * to promote a variant to default after Maddie picks.
  */
 export const ui: UIConfig = {
-  spiralVesselMode: 'invisible',
+  spiralVesselMode: 'hybrid',
   navVariant: 'pillar-first',
 };
 
@@ -157,7 +157,7 @@ export const config: HubConfig = {
       slug: 'physical',
       emoji: '\u{1F30A}',
       tagline: 'Control your inputs. Stabilize your body.',
-      color: '#119a9e',
+      color: '#ff9a3c',
       url: '/pillars/physical',
       status: 'live',
       order: 1,
@@ -168,7 +168,7 @@ export const config: HubConfig = {
       slug: 'inner',
       emoji: '\u{1F54A}',
       tagline: 'Control your internal state.',
-      color: '#8cc5d3',
+      color: '#4ed158',
       url: '/pillars/inner',
       status: 'live',
       order: 2,
@@ -179,7 +179,7 @@ export const config: HubConfig = {
       slug: 'identity',
       emoji: '\u2728',
       tagline: 'Control your self-expression.',
-      color: '#c9a96e',
+      color: '#6c4cd6',
       url: '/pillars/identity',
       status: 'live',
       order: 3,
@@ -190,7 +190,7 @@ export const config: HubConfig = {
       slug: 'financial',
       emoji: '\u{1F4A0}',
       tagline: 'Control your income and systems.',
-      color: '#3dbfc4',
+      color: '#c97ce8',
       url: '/business/',
       status: 'live',
       order: 4,
@@ -199,62 +199,62 @@ export const config: HubConfig = {
   ],
   nodes: [
     // ELEVATE: body → Physical Sovereignty (nodes 1-5)
-    { id: 1,  name: 'Feel Good First',           phase: 'ELEVATE', pillarSlug: 'physical',  emoji: '✦',  tagline: 'Feeling good is the baseline — not the bonus.',                              color: '#119a9e', status: 'live',   url: '/nodes/1',  envVar: 'PYR',       themes: ['state-shifting', 'baseline', 'simple-pleasure'],          chakra: 'root' },
-    { id: 2,  name: 'Awareness',                 phase: 'ELEVATE', pillarSlug: 'physical',  emoji: '🧬', tagline: 'Your body is always speaking — are you listening?',                          color: '#119a9e', status: 'live',   url: '/nodes/2',  envVar: 'OCULUS',    themes: ['witness', 'awareness', 'signal-reading'],                 chakra: 'third-eye' },
-    { id: 3,  name: 'Regulation',                phase: 'ELEVATE', pillarSlug: 'physical',  emoji: '⚖️', tagline: 'Balance your energy, calm your system.',                                    color: '#119a9e', status: 'live',   url: '/nodes/3',  envVar: 'DYAD',      themes: ['regulation', 'balance', 'calm'],                          chakra: 'sacral' },
-    { id: 4,  name: 'Elevate',                   phase: 'ELEVATE', pillarSlug: 'physical',  emoji: '🛡️', tagline: 'Feeling like shit is not normal — when you know better, you do better.',     color: '#119a9e', status: 'live',   url: '/nodes/4',  envVar: 'PYRAMIS',   themes: ['elevation', 'beyond-baseline', 'knowing-better'],         chakra: 'solar-plexus' },
-    { id: 5,  name: 'Root Healing',              phase: 'ELEVATE', pillarSlug: 'physical',  emoji: '🌊', tagline: 'Optimize your absorption & energy flow.',                                   color: '#119a9e', status: 'live',   url: '/water/',   envVar: 'HYDOR',     themes: ['foundation', 'hydration', 'root-cause'],                  chakra: 'sacral' },
+    { id: 1,  name: 'Feel Good First',           phase: 'ELEVATE', pillarSlug: 'physical',  emoji: '✦',  tagline: 'Feeling good is the baseline — not the bonus.',                              color: '#ff3b3b', status: 'live',   url: '/nodes/1',  envVar: 'PYR',       themes: ['state-shifting', 'baseline', 'simple-pleasure'],          chakra: 'root' },
+    { id: 2,  name: 'Awareness',                 phase: 'ELEVATE', pillarSlug: 'physical',  emoji: '🧬', tagline: 'Your body is always speaking — are you listening?',                          color: '#ff563c', status: 'live',   url: '/nodes/2',  envVar: 'OCULUS',    themes: ['witness', 'awareness', 'signal-reading'],                 chakra: 'third-eye' },
+    { id: 3,  name: 'Regulation',                phase: 'ELEVATE', pillarSlug: 'physical',  emoji: '⚖️', tagline: 'Balance your energy, calm your system.',                                    color: '#ff723c', status: 'live',   url: '/nodes/3',  envVar: 'DYAD',      themes: ['regulation', 'balance', 'calm'],                          chakra: 'sacral' },
+    { id: 4,  name: 'Elevate',                   phase: 'ELEVATE', pillarSlug: 'physical',  emoji: '🛡️', tagline: 'Feeling like shit is not normal — when you know better, you do better.',     color: '#ff8e3c', status: 'live',   url: '/nodes/4',  envVar: 'PYRAMIS',   themes: ['elevation', 'beyond-baseline', 'knowing-better'],         chakra: 'solar-plexus' },
+    { id: 5,  name: 'Root Healing',              phase: 'ELEVATE', pillarSlug: 'physical',  emoji: '🌊', tagline: 'Optimize your absorption & energy flow.',                                   color: '#ffad3c', status: 'live',   url: '/water/',   envVar: 'HYDOR',     themes: ['foundation', 'hydration', 'root-cause'],                  chakra: 'sacral' },
     // ALIGN: mind + life → Inner & Identity Sovereignty (nodes 6-10)
-    { id: 6,  name: 'Responsibility (with Love)', phase: 'ALIGN',  pillarSlug: 'inner',     emoji: '🕊️', tagline: 'Own your choices, gently.',                                                color: '#8cc5d3', status: 'locked', url: '/nodes/6',  envVar: 'MANDORLA',  themes: ['ownership', 'gentleness', 'choice'],                      chakra: 'heart' },
-    { id: 7,  name: 'Unbecoming',                phase: 'ALIGN',   pillarSlug: 'inner',     emoji: '🌙', tagline: 'Reclaim / Remember / Release.',                                            color: '#8cc5d3', status: 'locked', url: '/nodes/7',  envVar: 'KENOSIS',   themes: ['release', 'reclaim', 'unwiring'],                         chakra: 'throat' },
-    { id: 8,  name: 'Alignment',                 phase: 'ALIGN',   pillarSlug: 'inner',     emoji: '🔮', tagline: 'See clearly, act intentionally.',                                           color: '#8cc5d3', status: 'locked', url: '/nodes/8',  envVar: 'SHATKONA',  themes: ['clarity', 'intention', 'coherence'],                      chakra: 'third-eye' },
-    { id: 9,  name: 'The Becoming',              phase: 'ALIGN',   pillarSlug: 'identity',  emoji: '✨', tagline: 'Know your power — your choices create a life that fuels you.',              color: '#c9a96e', status: 'locked', url: '/nodes/9',  envVar: 'PADMA',     themes: ['becoming', 'life-fueling', 'power'],                      chakra: 'heart' },
-    { id: 10, name: 'Awakening',                 phase: 'ALIGN',   pillarSlug: 'identity',  emoji: '📣', tagline: 'I\'m awake, I have all this power — now what?',                             color: '#c9a96e', status: 'locked', url: '/nodes/10', envVar: 'BODHI',     themes: ['awakening', 'what-now', 'post-awakening'],                chakra: 'crown' },
+    { id: 6,  name: 'Responsibility (with Love)', phase: 'ALIGN',  pillarSlug: 'inner',     emoji: '🕊️', tagline: 'Own your choices, gently.',                                                color: '#ffcd3b', status: 'locked', url: '/nodes/6',  envVar: 'MANDORLA',  themes: ['ownership', 'gentleness', 'choice'],                      chakra: 'heart' },
+    { id: 7,  name: 'Unbecoming',                phase: 'ALIGN',   pillarSlug: 'inner',     emoji: '🌙', tagline: 'Reclaim / Remember / Release.',                                            color: '#a7d24a', status: 'locked', url: '/nodes/7',  envVar: 'KENOSIS',   themes: ['release', 'reclaim', 'unwiring'],                         chakra: 'throat' },
+    { id: 8,  name: 'Alignment',                 phase: 'ALIGN',   pillarSlug: 'inner',     emoji: '🔮', tagline: 'See clearly, act intentionally.',                                           color: '#4dce65', status: 'locked', url: '/nodes/8',  envVar: 'SHATKONA',  themes: ['clarity', 'intention', 'coherence'],                      chakra: 'third-eye' },
+    { id: 9,  name: 'The Becoming',              phase: 'ALIGN',   pillarSlug: 'identity',  emoji: '🪷', tagline: 'Know your power — your choices create a life that fuels you.',              color: '#43b6c1', status: 'locked', url: '/nodes/9',  envVar: 'PADMA',     themes: ['becoming', 'life-fueling', 'power'],                      chakra: 'heart' },
+    { id: 10, name: 'Awakening',                 phase: 'ALIGN',   pillarSlug: 'identity',  emoji: '✨', tagline: 'I\'m awake, I have all this power — now what?',                             color: '#4992ed', status: 'locked', url: '/nodes/10', envVar: 'BODHI',     themes: ['awakening', 'what-now', 'post-awakening'],                chakra: 'crown' },
     // UNLOCK: integration + freedom → Identity & Financial Sovereignty (nodes 11-13)
-    { id: 11, name: 'Integrate',                 phase: 'UNLOCK',  pillarSlug: 'identity',  emoji: '🚧', tagline: 'Pull it all together; your wholeness is the work.',                        color: '#c9a96e', status: 'locked', url: '/nodes/11', envVar: 'TETRAD',    themes: ['integration', 'wholeness', 'pulling-together'],           chakra: 'root-crown' },
-    { id: 12, name: 'Authenticate',              phase: 'UNLOCK',  pillarSlug: 'financial', emoji: '💠', tagline: 'Be YOU — loudly, proudly, unapologetically.',                               color: '#3dbfc4', status: 'locked', url: '/nodes/12', envVar: 'OKTAEDRON', themes: ['expression', 'identity', 'loud-pride'],                   chakra: 'throat' },
-    { id: 13, name: 'Unlock',                    phase: 'UNLOCK',  pillarSlug: 'financial', emoji: '⚡', tagline: 'Level up fully — your gifts, flow, and freedom amplified.',                 color: '#3dbfc4', status: 'locked', url: '/nodes/13', envVar: 'ANKH',      themes: ['freedom', 'gifts-amplified', 'full-flow'],                chakra: 'crown' },
+    { id: 11, name: 'Integrate',                 phase: 'UNLOCK',  pillarSlug: 'identity',  emoji: '⨁', tagline: 'Pull it all together; your wholeness is the work.',                        color: '#645bdb', status: 'locked', url: '/nodes/11', envVar: 'TETRAD',    themes: ['integration', 'wholeness', 'pulling-together'],           chakra: 'root-crown' },
+    { id: 12, name: 'Authenticate',              phase: 'UNLOCK',  pillarSlug: 'financial', emoji: '💠', tagline: 'Be YOU — loudly, proudly, unapologetically.',                               color: '#9360de', status: 'locked', url: '/nodes/12', envVar: 'OKTAEDRON', themes: ['expression', 'identity', 'loud-pride'],                   chakra: 'throat' },
+    { id: 13, name: 'Unlock',                    phase: 'UNLOCK',  pillarSlug: 'financial', emoji: '⚡', tagline: 'Level up fully — your gifts, flow, and freedom amplified.',                 color: '#c97ce8', status: 'locked', url: '/nodes/13', envVar: 'ANKH',      themes: ['freedom', 'gifts-amplified', 'full-flow'],                chakra: 'crown' },
   ],
   branches: [
-    { 
-      name: 'Gut + Hormones', 
-      slug: 'gut-hormones', 
-      emoji: '\u{1F33F}', 
+    {
+      name: 'Gut + Hormones',
+      slug: 'gut-hormones',
+      emoji: '\u{1F33F}',
       order: 1,
       citationIds: ['B-13', 'B-14', 'B-15', 'B-16', 'B-17', 'B-18', 'B-19', 'B-20', 'S-16']
     },
-    { 
-      name: 'Fertility', 
-      slug: 'fertility', 
-      emoji: '\u{1F90D}', 
+    {
+      name: 'Fertility',
+      slug: 'fertility',
+      emoji: '\u{1F90D}',
       order: 2,
       citationIds: ['B-21', 'B-22', 'B-23', 'B-24', 'B-25', 'B-26', 'B-27', 'B-28', 'B-29', 'B-01']
     },
-    { 
-      name: 'Athletic Performance', 
-      slug: 'athletic', 
-      emoji: '\u{1F4AA}', 
+    {
+      name: 'Athletic Performance',
+      slug: 'athletic',
+      emoji: '\u{1F4AA}',
       order: 3,
       citationIds: ['B-38', 'B-39', 'B-40', 'B-41', 'B-42', 'B-43', 'B-44', 'B-45']
     },
-    { 
-      name: 'Inflammation / Autoimmune', 
-      slug: 'autoimmune', 
-      emoji: '\u{1F525}', 
+    {
+      name: 'Inflammation / Autoimmune',
+      slug: 'autoimmune',
+      emoji: '\u{1F525}',
       order: 4,
       citationIds: ['B-30', 'B-31', 'B-32', 'B-33', 'B-34', 'B-35', 'B-36', 'B-37']
     },
-    { 
-      name: 'Cancer Support', 
-      slug: 'cancer-support', 
-      emoji: '\u{1F397}', 
+    {
+      name: 'Cancer Support',
+      slug: 'cancer-support',
+      emoji: '\u{1F397}',
       order: 5,
       citationIds: ['B-46', 'B-47', 'B-48', 'B-49', 'B-50', 'B-51', 'B-52', 'B-53']
     },
-    { 
-      name: 'Sustainability / Savings', 
-      slug: 'sustainability', 
-      emoji: '\u{1F30E}', 
+    {
+      name: 'Sustainability / Savings',
+      slug: 'sustainability',
+      emoji: '\u{1F30E}',
       order: 6,
       citationIds: ['S-13', 'S-17', 'S-19']
     },
