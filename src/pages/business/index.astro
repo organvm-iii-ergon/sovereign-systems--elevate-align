@@ -68,11 +68,45 @@ const citationIds = financialPillar?.citationIds || [];
         Ready to install your systems?
       </h2>
       <p class="text-white/40 text-[16px] font-light mb-10 leading-relaxed">
-        Let's build the infrastructure of your independence.
+        Let's build the infrastructure of your independence. Be first when applications open.
       </p>
-      <div class="text-white/30 text-[14px] font-light border border-white/10 rounded-full px-9 py-3.5 inline-block">
-        Application opening soon
-      </div>
+      <form id="biz-waitlist-form" class="max-w-sm mx-auto space-y-3" action="/capture" method="POST">
+        <input type="hidden" name="source" value="business-application-waitlist" />
+        <input
+          type="email"
+          name="email"
+          placeholder="your@email.com"
+          required
+          class="w-full bg-ocean-800/50 border border-ocean-500/20 rounded-lg px-4 py-3 text-white placeholder:text-white/20 focus:outline-none focus:border-ocean-400 transition-colors text-[14px]"
+        />
+        <button
+          type="submit"
+          class="w-full bg-ocean-500 hover:bg-ocean-400 text-white font-medium py-3 px-8 rounded-lg transition-all shadow-lg shadow-ocean-500/10 active:scale-[0.98] text-[14px]"
+        >
+          Join the Waitlist
+        </button>
+      </form>
+      <p id="biz-waitlist-status" class="mt-4 text-[11px] text-white/30 hidden"></p>
     </div>
   </section>
 </Base>
+
+<script>
+  const form = document.getElementById('biz-waitlist-form') as HTMLFormElement;
+  const status = document.getElementById('biz-waitlist-status')!;
+  form?.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const email = (form.querySelector('input[name="email"]') as HTMLInputElement).value.trim();
+    if (!email) return;
+    try {
+      await fetch('/capture', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email, source: 'business-application-waitlist' }),
+      });
+    } catch { /* fire-and-forget */ }
+    form.classList.add('hidden');
+    status.textContent = 'You\'re on the list. We\'ll notify you when applications open.';
+    status.classList.remove('hidden');
+  });
+</script>
