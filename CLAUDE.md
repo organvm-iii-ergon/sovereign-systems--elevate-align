@@ -10,12 +10,20 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 - **Client IP boundary:** content = client's IP (do not distribute or reuse); code/architecture = studio IP
 - **Deploy:** Cloudflare Pages, auto-deploy on push to `main`
 
+## Sibling AI Guidance
+
+Three other AI/human guidance files live at repo root: `AGENTS.md` (vendor-agnostic agent contract), `GEMINI.md` (Gemini-specific), `README.md` (human overview). When a fact appears in more than one, **`AGENTS.md` is canonical for tech-stack and command claims** (commit `667e808` — "AGENTS.md tech-stack truth"). CLAUDE.md is canonical for Claude-specific protocols: capture pipeline, content genome handling, governance scripts, session close, and the conventions documented below.
+
+## Cross-Client IP Isolation (`.private/`)
+
+`.private/` at repo root holds artifacts that mix multi-client IP (e.g., orchestration showcases referencing both Maddie and other studio clients). Gitignored except for `.private/README.md` (rule at `.gitignore:33-34` — `.private/*` + `!.private/README.md`). Use it when an artifact is operationally useful but would leak IP if filed in a single client's repo. See `feedback_private_directory.md` in scope memory.
+
 ## Tech Stack
 
 - **Astro 5** — static site generator, zero JS by default; Cloudflare adapter (`@astrojs/cloudflare`)
 - **Tailwind CSS 4** — via `@tailwindcss/vite` plugin (no `tailwind.config.js` — CSS-first config)
-- **TypeScript** — strict, no `any` (a small handful of `as any` lifecycle escapes exist in island scripts; treat as non-conventional)
-- **Three.js** — `src/components/spiral/spiral.ts` drives the 3D helix visualization: tapered helix, `OrbitControls`, `MeshPhysicalMaterial` orbs, `FogExp2`, and a post-processing pipeline (`EffectComposer` → `RenderPass` → `UnrealBloomPass` → `OutputPass`). IconWorlds physics gives each node its own particle behavior (cohesion for symbol-mode, chaos for star-mode). Source has no version marker; treat the file as authoritative.
+- **TypeScript** — strict, no `any` (escapes were dropped in commit `0322e37`)
+- **Three.js** — `src/components/spiral/spiral.ts` drives the 3D helix visualization: tapered helix, `OrbitControls`, `MeshPhysicalMaterial` orbs, `FogExp2`, and a post-processing pipeline (`EffectComposer` → `RenderPass` → `UnrealBloomPass` → `OutputPass`). IconWorlds physics gives each node its own particle behavior (cohesion for symbol-mode, chaos for star-mode). Node colors map to a 13-step chakra-aligned spectrum via `chakraColorForNode` (spiral.ts:1248); default vessel mode is `'hybrid'` (`hub.config.ts:147` — `spiralVesselMode: 'hybrid'`). Source has no version marker; treat the file as authoritative.
 - **Markdoc + Keystatic CMS** — Markdoc renders rich content blocks; Keystatic (`@keystatic/astro`) provides an admin UI at `/keystatic` for editing pillars and branches collections.
 
 ## Commands
@@ -25,13 +33,15 @@ npm run dev              # Dev server at localhost:4321 (host:true; tunnel-frien
 npm run build            # Production build → dist/
 npm run preview          # Preview production build locally
 npm run deploy           # build + wrangler pages deploy dist (project: sovereign-systems-spiral)
+npm test                 # Node-assertion content-shape validator (scripts/test.mjs — frontmatter + schema invariants)
+npm run test:all         # test + production build (the CI-style gate)
 npm run parse-citations  # Regenerate citations from source bibliography
 npm run count-files      # Repo file census utility
 ```
 
 **`prebuild` auto-runs** `node scripts/generate-citations-json.js` before every `npm run build` (npm lifecycle hook in `package.json`). Citations JSON is rebuilt on every build — do not commit a stale snapshot expecting it to survive deploy.
 
-**No test/lint/format tooling is configured.** No ESLint, Prettier, Vitest, or other dev gates — don't search for them. Code quality is enforced by review and TypeScript strictness only.
+**No ESLint, Prettier, or Vitest.** The only quality gates are TypeScript strictness and `npm test` — a 118-line Node assertion script that validates content-collection frontmatter and schema invariants. There is no traditional lint/format tooling; don't search for `.eslintrc` or `prettier.config.*`.
 
 ## Key Files
 
@@ -66,6 +76,10 @@ The codebase separates **immutable identity** from **mutable surface** through a
 5. **`naming-chains.ts`** — bindings (`EnvVar` × `Lens` → surface name); `chainsFor(envVar)` returns chronological lineage, `viewThroughLens(lens)` returns all 13 nodes through one tradition.
 
 **When changing node identity:** check all 5 layers. Adding a `QuizTheme` tag, for example, requires both `hub.config.ts` (node theme list) AND `src/pages/quiz.astro` (button labels must match exactly).
+
+## Landing Engine
+
+`src/lib/landing-engine/` is a declarative composer for `/for/[persona]` routes (commit `3d8cabd`): three data layers (`personas.ts`, `narratives.ts`, `sections.ts`) feed `compose.ts` (pure), which produces the section list rendered by section components in `src/components/landing/`. **Adding a persona to `personas.ts` spawns a new `/for/<id>` page automatically** via `getStaticPaths` in `src/pages/for/[persona].astro` — no route-file edit required.
 
 ## Content Directories
 
@@ -114,6 +128,14 @@ bash scripts/setup-board.sh --dry-run                                        # b
 - `docs/handoff-maddie-spiral-path-2026-04-01.md` — mirrored canonical handoff for the 2026-04-01 Maddie Spiral Path intake
 - `docs/superpowers/intakes/2026-04-01-maddie-spiral-path-board-atomization.md` — board translation from handoff to executable issue surface
 - `.codex/plans/2026-04-01-maddie-spiral-orchestration-assignment.md` — dated orchestration plan preserved as session history
+
+## Session Archives
+
+`docs/archive/YYYY-MM/` is the home for filed conversation-transcript exports (Zed/IDE session logs of the form `# Title` + `**Session ID:** ses_…`). Naming convention: `YYYY-MM-DD-<slug>-ses_<short-id>.md`. Filed transcripts are auto-committed by the conductor pipeline within ~7 minutes of landing on disk under the user's git identity — verify with `git log --oneline -- docs/archive/YYYY-MM/` rather than waiting on a manual commit. Stream-isolation rule: only Maddie-related transcripts go here; Rob's go to `4444J99/hokage-chess/docs/archive/YYYY-MM/`; workspace-meta sessions go to `~/.claude/sessions/YYYY-MM/` mirrored at `meta-organvm/organvm-corpvs-testamentvm/docs/archive/YYYY-MM/`. See `feedback_stream_repo_alignment.md` in scope memory.
+
+## Design Critiques
+
+`docs/critiques/YYYY-MM-DD-<slug>.md` is the home for structured architectural-critique passes — severity-rated findings on usability, visual hierarchy, accessibility, color systems, etc. — produced by review sessions and intended to feed polish work. Distinct from session transcripts (`docs/archive/`) and from intake handoffs (`docs/superpowers/intakes/`): critiques are *evaluative* deliverables, not records-of-conversation. First exemplar: `2026-04-30-spiral-hero-polish-critique.md` (post-chakra ship, hybrid vessel default). When a Claude Code session uses `isolation: "worktree"` to produce a critique, ensure the artifact is migrated back into main before the worktree is removed — otherwise the critique dies with the branch.
 
 ## Page Map
 
