@@ -26,3 +26,9 @@ session-ses_*.md
 
 # Debug heap dumps (regenerable; never committed)
 *.heapsnapshot
+
+# Cross-client IP isolation — local-only artifacts that touch
+# multi-client showcases or pre-publication client docs.
+# README is tracked so the convention is discoverable; everything else local-only.
+.private/*
+!.private/README.md
