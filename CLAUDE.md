@@ -263,11 +263,11 @@ Close-out is a checklist, not a feeling. Default is **check-all, skip-inapplicab
 7. **Memory parity** — file count in `~/.claude/projects/.../memory/` minus 1 (the `MEMORY.md` index itself) = MEMORY.md line count.
 8. **Plan file durable** — plan exists at `~/.claude/plans/<slug>.md`; project mirror at `<repo>/.claude/plans/YYYY-MM-DD-<slug>.md` per workspace-CLAUDE.md plan-file discipline.
 9. **Session memory written** — `project_session_YYYY_MM_DD_<slug>.md` saved + indexed in MEMORY.md.
-10. **Commit-all, push-origin** — explicit `git push origin main` after final commits across every touched repo. Auto-deploy picks them up.
+10. **Commit-all, land-on-origin** — every touched repo lands its work on `origin/main`. Two valid flows: (a) direct-push: `git push origin main` after atomic commits; (b) PR-cascade: `gh pr create` → self-review → `gh pr merge --squash`. Auto-deploy picks up either. Choose direct-push for low-risk hygiene; PR-cascade when round-robin review discipline is warranted (multi-section docs changes, structural refactors, governance edits).
 
 **Recover-on-loss law:** if any check fails, recover *immediately* — universal rule across all repos and surfaces. Nothing local-only, nothing lost.
 
-Reference exemplar: `~/.claude/projects/-Users-4jp-Workspace-organvm-sovereign-systems--elevate-align/memory/project_session_2026_05_01_maddie_tracks_translation.md`.
+Reference exemplar pattern: `~/.claude/projects/-Users-4jp-Workspace-<project-slug>/memory/project_session_YYYY_MM_DD_<slug>.md` (latest exemplar findable via `ls -t` in that dir).
 
 This protocol is the HARVEST phase of the FRAME→SHAPE→BUILD→PROVE→HARVEST conductor cycle — formalizing as `conductor_session_transition(target_phase="HARVEST")` is IRF-track work.
 
