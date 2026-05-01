@@ -145,6 +145,14 @@ bash scripts/setup-board.sh --dry-run                                        # b
 
 **Adding a new vacuum:** file a GH issue (apply `vacuum` label), then add the entry to `TRACKED_VACUUMS`. Without the GH issue the gate refuses to acknowledge the vacuum as named work.
 
+## Hook Noise Expectation
+
+The PreToolUse:Write hook prints `HARD BLOCK — LaunchAgent creation is forbidden` on every Write tool call. **The print is universal; the block is conditional.** The hook fires only as a guard when the target path matches LaunchAgent danger patterns: `.plist` extension, `~/Library/LaunchAgents/` directory, or any `launchctl` invocation. If your target is none of those, the print is informational and the write proceeds.
+
+If your target *does* match (you're writing a `.plist` to `~/Library/LaunchAgents/` or planning a `launchctl` call), **STOP** — never override. The rule exists because every prior LaunchAgent incident froze the machine; on-demand CLI only is the hard rule.
+
+This applies generally: future safety hooks may follow the same shape (universal print + conditional block). Read the hook message, verify your target path, decide.
+
 ## Project Manifest
 
 `scripts/generate_project_manifest.py` produces a dated annotated bibliography of the entire repo corpus to `docs/manifests/YYYY-MM-DD-project-manifest-annotated-bibliography.{md,json}`. Deterministic UIDs, thread-grouped, content-previewed for text/Markdown/JSON/DOCX/PDF, SHA-256 per file. Excludes `.git`, `node_modules`, `dist`, `.astro`, `.netlify`, `.wrangler`, `output`, and `docs/manifests/` itself. Re-run on any session that materially changes the corpus.
