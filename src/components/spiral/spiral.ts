@@ -1322,7 +1322,7 @@ export function initSpiral(
   const meshVisible = vesselMode !== 'invisible';
   const particleOpacityMult =
     vesselMode === 'invisible' ? 1.0 :
-    vesselMode === 'hybrid' ? 0.3 :
+    vesselMode === 'hybrid' ? 0.15 :
     /* visible | refracted-star */ 0.0;
 
   const scene = new THREE.Scene();
