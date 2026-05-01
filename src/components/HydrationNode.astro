@@ -119,6 +119,16 @@ const filterTiersJson = JSON.stringify(filterTiers);
         <span class="text-[10px] uppercase tracking-[0.15em] text-white/25" id="result-badge">Loading...</span>
       </div>
 
+      <div id="result-data-source-banner" class="hidden mb-6 rounded-xl border border-amber-400/30 bg-amber-400/5 p-4">
+        <div class="flex items-start gap-3">
+          <span class="text-amber-400 text-[14px] mt-[1px]">⚠</span>
+          <div class="flex-1">
+            <p class="text-amber-200 text-[13px] font-medium">Sample data — not your utility's actual report</p>
+            <p class="text-white/50 text-[12px] mt-1" data-banner-detail>The list below is illustrative.</p>
+          </div>
+        </div>
+      </div>
+
       <div class="grid grid-cols-3 gap-4 mb-8">
         <div class="text-center p-4 rounded-xl bg-white/[0.02] border border-white/5">
           <div class="text-[28px] font-light text-red-400" id="result-total">12</div>
@@ -372,6 +382,39 @@ const filterTiersJson = JSON.stringify(filterTiers);
     }
   }
 
+  // --- Data-source banner state (live / demo-server / demo-fallback) ---
+  // Three branches discriminate where contaminants came from. Critical for
+  // any user reading the list — absence of a contaminant from a "demo" list
+  // is meaningless, while absence from a "live" list is information.
+  function setDataSourceState(
+    badge: HTMLElement | null,
+    state: 'live' | 'demo-server' | 'demo-fallback',
+    zip: string,
+  ) {
+    const banner = document.getElementById('result-data-source-banner');
+    const detail = banner?.querySelector('[data-banner-detail]');
+    if (!badge) return;
+    if (state === 'live') {
+      badge.textContent = `ZIP ${zip}`;
+      badge.className = 'text-[10px] uppercase tracking-[0.15em] text-white/40';
+      banner?.classList.add('hidden');
+    } else if (state === 'demo-server') {
+      badge.textContent = 'Sample data';
+      badge.className = 'text-[10px] uppercase tracking-[0.15em] text-amber-400 font-semibold';
+      if (banner && detail) {
+        banner.classList.remove('hidden');
+        detail.textContent = `EWG returned no contaminant data for ZIP ${zip}. The list below is illustrative; the absence of any specific contaminant (including fluoride) is not informative for your utility.`;
+      }
+    } else {
+      badge.textContent = 'Sample data — connection error';
+      badge.className = 'text-[10px] uppercase tracking-[0.15em] text-red-400 font-semibold';
+      if (banner && detail) {
+        banner.classList.remove('hidden');
+        detail.textContent = `Couldn't reach the EWG lookup service. The list below is a default sample; please retry or request a personalized lookup below.`;
+      }
+    }
+  }
+
   // --- Step 1: ZIP form submission ---
   const zipForm = document.getElementById('zip-form') as HTMLFormElement;
   zipForm?.addEventListener('submit', async (e) => {
@@ -413,7 +456,7 @@ const filterTiersJson = JSON.stringify(filterTiers);
       if (healthEl) healthEl.textContent = String(report.exceedingHealth);
       if (legalEl) legalEl.textContent = String(report.exceedingLegal);
       if (utilityEl && report.utilityName) utilityEl.textContent = `— ${report.utilityName}`;
-      if (badge) badge.textContent = report.isDemo ? 'Sample Data' : `ZIP ${zipInput.value}`;
+      setDataSourceState(badge, report.isDemo ? 'demo-server' : 'live', zipInput.value);
 
       // Render contaminants
       renderContaminants(report.contaminants || []);
@@ -421,22 +464,25 @@ const filterTiersJson = JSON.stringify(filterTiers);
       // Run filter matching against contaminants
       matchFiltersToReport(report.contaminants || []);
     } catch {
-      // On failure, reset stale metrics and show fallback
+      // Network or parse failure. Surface explicitly so an absent fluoride
+      // row in this fallback list is never mistaken for "your utility doesn't
+      // report fluoride." See docs/decisions/2026-05-01-water-report-fluoride-bug-diagnosis.md
       const totalEl = document.getElementById('result-total');
       const healthEl = document.getElementById('result-exceed-health');
       const legalEl = document.getElementById('result-exceed-legal');
       const utilityEl = document.getElementById('result-utility');
-      if (totalEl) totalEl.textContent = '5';
+      if (totalEl) totalEl.textContent = '6';
       if (healthEl) healthEl.textContent = '5';
       if (legalEl) legalEl.textContent = '0';
       if (utilityEl) utilityEl.textContent = '';
-      if (badge) badge.textContent = 'Sample Data';
+      setDataSourceState(badge, 'demo-fallback', zipInput.value);
       renderContaminants([
         { name: 'Haloacetic acids (HAA5)', detected: 27.7, healthGuideline: 0.1, legalLimit: 60, exceedsHealth: true, exceedsLegal: false, unit: 'ppb' },
         { name: 'Total trihalomethanes (TTHMs)', detected: 49.2, healthGuideline: 0.3, legalLimit: 80, exceedsHealth: true, exceedsLegal: false, unit: 'ppb' },
         { name: 'Chromium (hexavalent)', detected: 0.42, healthGuideline: 0.01, legalLimit: 100, exceedsHealth: true, exceedsLegal: false, unit: 'ppb' },
         { name: 'Chloroform', detected: 22.4, healthGuideline: 0.8, legalLimit: null, exceedsHealth: true, exceedsLegal: false, unit: 'ppb' },
         { name: 'Nitrate', detected: 1.8, healthGuideline: 0.14, legalLimit: 10000, exceedsHealth: true, exceedsLegal: false, unit: 'ppb' },
+        { name: 'Fluoride', detected: 700, healthGuideline: null, legalLimit: 4000, exceedsHealth: false, exceedsLegal: false, unit: 'ppb' },
       ]);
     }
 
