@@ -252,10 +252,24 @@ Verify at session close. The principle is identity-by-triangulation: items whose
 
 ## Session Close
 
-- Mirror any canonical external handoff into `docs/` before treating it as authoritative project context
-- Keep dated artifacts in `docs/superpowers/intakes/` and `.codex/plans/` additive; do not overwrite prior session records
-- If scope or board state changes, reconcile `seed.yaml` and `CLAUDE.md` in the same session
-- Commit and push before close so project memory exists locally and remotely
+Close-out is a checklist, not a feeling. Default is **check-all, skip-inapplicable, never check-none**.
+
+1. **Local↔remote = 1:1** — `git rev-list --count origin/main..main` and reverse, both must be 0. Both this repo *and* any workspace-meta repos touched.
+2. **Vacuum gate** — `npm test`. Any new `src/data/*` fields must be in `TRACKED_VACUUMS` map (with GH issue) or filled. UNTRACKED vacuums fail the build.
+3. **Additive only** — atomized-wants, IRF, decision docs grow forward; never overwrite. Audit reconciles drift after.
+4. **Triple-reference law** (IRF-SYS-078) — verify each new work item in 3 surfaces (see `## Triple-Reference Law` section above). 3/3 CONSTITUTED, 2/3 EMBRYONIC (blocked work OK), <2 → file the missing references.
+5. **N/A vacuum law** (Constitutional Axiom #1) — every blank/N/A in atomized-wants, IRF, or `seed.yaml` must become a named vacuum item with researched plan. No bare blanks.
+6. **10-index propagation** — for completed/new work, propagate to: IRF (`organvm irf list`), `INST-INDEX-LOCORUM`, `INST-INDEX-NOMINUM`, omega scorecard (`organvm omega status`), `inquiry-log.yaml` (if SGO work), `seed.yaml` (if capabilities changed), CLAUDE.md (if architecture changed), `concordance.md` (if new ID type introduced), GH issues (`gh issue create`/`gh issue close`), and any external handoff doc that needs mirroring into `docs/`. **Applicability rule:** an index is applicable if today's commits/decisions touched its scope; ≥1 touch = include, 0 = skip.
+7. **Memory parity** — file count in `~/.claude/projects/.../memory/` minus 1 (the `MEMORY.md` index itself) = MEMORY.md line count.
+8. **Plan file durable** — plan exists at `~/.claude/plans/<slug>.md`; project mirror at `<repo>/.claude/plans/YYYY-MM-DD-<slug>.md` per workspace-CLAUDE.md plan-file discipline.
+9. **Session memory written** — `project_session_YYYY_MM_DD_<slug>.md` saved + indexed in MEMORY.md.
+10. **Commit-all, land-on-origin** — every touched repo lands its work on `origin/main`. Two valid flows: (a) direct-push: `git push origin main` after atomic commits; (b) PR-cascade: `gh pr create` → self-review → `gh pr merge --squash`. Auto-deploy picks up either. Choose direct-push for low-risk hygiene; PR-cascade when round-robin review discipline is warranted (multi-section docs changes, structural refactors, governance edits).
+
+**Recover-on-loss law:** if any check fails, recover *immediately* — universal rule across all repos and surfaces. Nothing local-only, nothing lost.
+
+Reference exemplar pattern: `~/.claude/projects/-Users-4jp-Workspace-<project-slug>/memory/project_session_YYYY_MM_DD_<slug>.md` (latest exemplar findable via `ls -t` in that dir).
+
+This protocol is the HARVEST phase of the FRAME→SHAPE→BUILD→PROVE→HARVEST conductor cycle — formalizing as `conductor_session_transition(target_phase="HARVEST")` is IRF-track work.
 
 <!-- ORGANVM:AUTO:START -->
 ## System Context (auto-generated — do not edit)
