@@ -14,6 +14,20 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 Three other AI/human guidance files live at repo root: `AGENTS.md` (vendor-agnostic agent contract), `GEMINI.md` (Gemini-specific), `README.md` (human overview). When a fact appears in more than one, **`AGENTS.md` is canonical for tech-stack and command claims** (commit `667e808` — "AGENTS.md tech-stack truth"). CLAUDE.md is canonical for Claude-specific protocols: capture pipeline, content genome handling, governance scripts, session close, and the conventions documented below.
 
+## Universal Mandates (live in memory, not CLAUDE.md)
+
+Cross-stream rules that govern *all* code/content changes are recorded as feedback memories at `~/.claude/projects/-Users-4jp-Workspace-organvm-sovereign-systems--elevate-align/memory/feedback_*.md` and indexed in `MEMORY.md` (auto-loaded at session start). Do not duplicate the rule text in CLAUDE.md (drift risk).
+
+**Scope rule:** memory entries are universal unless their `description:` frontmatter says otherwise. CLAUDE.md is the *index*; memory is the *source*. `MEMORY.md` is auto-truncated past line 200 — when the index grows beyond that, the underlying `feedback_*.md` files remain readable directly via filesystem; never let truncation hide active mandates.
+
+As of 2026-05-01 the active universal mandates:
+
+- **M1 multi-citation** (`feedback_multi_citation_mandate.md`) — every assertion needs ≥2 independent citations.
+- **M2 no hardcoded dynamic data** (`feedback_no_hardcoded_dynamic_data.md`) — names, links, statistics, costs, affiliate URLs, contaminant thresholds, prices live in env vars or external config; never inline in source.
+- **M3 macro→atom decomposition + iteration tracking** (`feedback_macro_to_atom_tracking.md`) — client asks AND 4jp's prompts each live in canonical sources, recursively decomposed, mapped to commits, with continuous diff/spread + per-audience visual surfaces. Substrate grammar: `~/Workspace/meta-organvm/organvm-corpvs-testamentvm/data/prompt-registry/GRAMMAR.md`.
+
+When a new universal rule is established, save the feedback memory FIRST and add a one-line entry above. CLAUDE.md is the index pointer; memory is the source.
+
 ## Cross-Client IP Isolation (`.private/`)
 
 `.private/` at repo root holds artifacts that mix multi-client IP (e.g., orchestration showcases referencing both Maddie and other studio clients). Gitignored except for `.private/README.md` (rule at `.gitignore:33-34` — `.private/*` + `!.private/README.md`). Use it when an artifact is operationally useful but would leak IP if filed in a single client's repo. See `feedback_private_directory.md` in scope memory.
