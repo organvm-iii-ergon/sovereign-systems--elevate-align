@@ -24,7 +24,7 @@ As of 2026-05-01 the active universal mandates:
 
 - **M1 multi-citation** (`feedback_multi_citation_mandate.md`) — every assertion needs ≥2 independent citations.
 - **M2 no hardcoded dynamic data** (`feedback_no_hardcoded_dynamic_data.md`) — names, links, statistics, costs, affiliate URLs, contaminant thresholds, prices live in env vars or external config; never inline in source.
-- **M3 macro→atom decomposition + iteration tracking** (`feedback_macro_to_atom_tracking.md`) — client asks AND 4jp's prompts each live in canonical sources, recursively decomposed, mapped to commits, with continuous diff/spread + per-audience visual surfaces. Substrate grammar: `meta-organvm/organvm-corpvs-testamentvm/data/prompt-registry/GRAMMAR.md`.
+- **M3 macro→atom decomposition + iteration tracking** (`feedback_macro_to_atom_tracking.md`) — client asks AND 4jp's prompts each live in canonical sources, recursively decomposed, mapped to commits, with continuous diff/spread + per-audience visual surfaces. Substrate grammar: `~/Workspace/meta-organvm/organvm-corpvs-testamentvm/data/prompt-registry/GRAMMAR.md`.
 
 When a new universal rule is established, save the feedback memory FIRST and add a one-line entry above. CLAUDE.md is the index pointer; memory is the source.
 
