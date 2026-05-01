@@ -52,3 +52,32 @@
 2026-04-15T00:10:00Z | #15 | FIELD | V5/V6 prototypes LOCATED at docs/archive/extracted/mindset/manifestation-mastery-secrets.md (~line 6474 + ~7039) | reason: N/A vacuum research — files embedded in content, not standalone
 2026-04-15T00:10:05Z | #15 | STATUS | SPEC → UNBLOCKED | reason: #13 CLOSED + prototypes located + merge spec exists
 2026-04-15T00:10:10Z | #9 | FIELD | 3 GHL config vacuums logged: quizFormUrl, branch ghlUrls, GHL_WEBHOOK_URL env var | reason: N/A vacuum audit — all need Maddie's GHL setup data
+2026-05-01T19:09:56Z | #61 | FIELD | Phase = β | reason: W-066 board attach: spiral visual distinctness
+2026-05-01T19:10:24Z | #61 | FIELD | Issue Type = WORK | reason: W-066 board attach
+2026-05-01T19:10:28Z | #61 | FIELD | Priority = P2-medium | reason: W-066 label parity
+2026-05-01T19:10:32Z | #61 | FIELD | External Party = Maddie | reason: Awaiting A1 visual approval
+2026-05-01T19:10:36Z | #61 | FIELD | Next Action = Maddie reviews A1 live spiral distinctness; then decide A2/A3 | reason: W-066 blocker captured
+2026-05-01T19:10:42Z | #61 | STATUS | UNSET → GATED | reason: A1 shipped; closure waits on Maddie visual approval
+2026-05-01T19:10:46Z | #62 | FIELD | Phase = β | reason: W-069 board attach: water report bug
+2026-05-01T19:10:49Z | #62 | FIELD | Issue Type = BLOCKER | reason: P0 fluoride miss blocks water report trust
+2026-05-01T19:10:53Z | #62 | FIELD | Priority = P0-blocker | reason: W-069 label parity
+2026-05-01T19:10:57Z | #62 | FIELD | External Party = Maddie | reason: Need badge state plus ZIP discriminator
+2026-05-01T19:11:00Z | #62 | FIELD | Next Action = Maddie sends water-report badge state plus ZIP; reproduce fluoride path | reason: W-069 discriminator captured
+2026-05-01T19:11:06Z | #62 | STATUS | UNSET → GATED | reason: Defensive patch shipped; discriminated fix waits on Maddie badge state plus ZIP
+2026-05-01T19:11:10Z | #63 | FIELD | Phase = β | reason: W-067 board attach: bottle pricing
+2026-05-01T19:11:14Z | #63 | FIELD | Issue Type = WORK | reason: Externalize dynamic pricing config
+2026-05-01T19:11:17Z | #63 | FIELD | Priority = P2-medium | reason: W-067 label parity
+2026-05-01T19:11:22Z | #63 | FIELD | External Party = Maddie | reason: Need current store prices
+2026-05-01T19:11:26Z | #63 | FIELD | Next Action = Land schema/externalization; wait for Maddie store prices for data swap | reason: W-067 split captured
+2026-05-01T19:11:33Z | #63 | STATUS | UNSET → GATED | reason: Real price data waits on Maddie; schema refactor remains independently actionable
+2026-05-01T19:11:36Z | #64 | FIELD | Phase = β | reason: W-068 board attach: bottled-water content
+2026-05-01T19:11:39Z | #64 | FIELD | Issue Type = WORK | reason: Content draft with M1 citation gate
+2026-05-01T19:11:43Z | #64 | FIELD | Priority = P2-medium | reason: W-068 label parity
+2026-05-01T19:11:47Z | #64 | FIELD | Next Action = Source 2+ citations per brand claim; draft bottled-truth content | reason: W-068 M1 gate captured
+2026-05-01T19:12:44Z | #64 | STATUS | UNSET → SPEC | reason: Work is specified; not client-blocked before citation sourcing
+2026-05-01T19:12:44Z | #65 | FIELD | Phase = β | reason: W-070 board attach: personalized filter plan
+2026-05-01T19:12:45Z | #65 | FIELD | Issue Type = WORK | reason: Capture-path enhancement
+2026-05-01T19:12:46Z | #65 | FIELD | Priority = P3-backlog | reason: W-070 label parity
+2026-05-01T19:12:47Z | #65 | FIELD | External Party = Maddie | reason: Depends on W-069 discriminator from Maddie
+2026-05-01T19:12:48Z | #65 | FIELD | Next Action = After W-069 stabilizes, add water-personalized-plan capture path | reason: W-070 dependency captured
+2026-05-01T19:12:49Z | #65 | STATUS | UNSET → GATED | reason: Depends on Maddie-provided W-069 discriminator before UX choice

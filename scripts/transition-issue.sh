@@ -59,7 +59,11 @@ log_event() {
 
 get_item_id() {
   local issue_num="$1"
-  gh project item-list "$PROJECT_NUM" --owner "$OWNER" --format json --limit 100 2>/dev/null \
+  if [[ -n "${PROJECT_ITEM_ID:-}" ]]; then
+    echo "$PROJECT_ITEM_ID"
+    return 0
+  fi
+  gh project item-list "$PROJECT_NUM" --owner "$OWNER" --format json --limit 200 2>/dev/null \
     | python3 -c "
 import json, sys
 data = json.load(sys.stdin)
@@ -74,7 +78,11 @@ sys.exit(1)
 
 get_current_status() {
   local issue_num="$1"
-  gh project item-list "$PROJECT_NUM" --owner "$OWNER" --format json --limit 100 2>/dev/null \
+  if [[ -n "${CURRENT_STATUS:-}" ]]; then
+    echo "$CURRENT_STATUS"
+    return 0
+  fi
+  gh project item-list "$PROJECT_NUM" --owner "$OWNER" --format json --limit 200 2>/dev/null \
     | python3 -c "
 import json, sys
 data = json.load(sys.stdin)
