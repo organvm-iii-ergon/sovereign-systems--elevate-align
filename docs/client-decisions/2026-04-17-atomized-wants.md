@@ -797,3 +797,128 @@ Connects spatially to everything else: WWOOF farms have coordinates, springs hav
 6. **W-049 + W-060:** User's housing crisis is the operating constraint. Revenue from Maddie's project (W-030) is not abstract — it funds survival. This explains why "water/filter page ASAP" is priority: it's the shortest path to commissionable traffic.
 7. **W-050 + W-051:** Farm reset + board offer creates a future arc. If user does the WWOOF reset, the 30-90 day window becomes a deadline for getting the site revenue-capable.
 8. **W-057:** Payment terms are written but unsigned. Formalizing would unblock both parties from the "is this holding things up?" ambiguity.
+
+---
+
+## 2026-05-01 Update — Today's Messages
+
+This section extends the doc forward additively. The Apr-17 summary tables above reflect the state as-of that date and are NOT recomputed here (future tooling pass). Today's messages add five new in-scope wants (W-066 → W-070) plus one existing entry whose evolution row gets extended.
+
+**Source:** four iMessages from Maddie pasted into a Claude Code session 2026-05-01. Voice-to-text artifacts preserved verbatim; the noise is signal.
+
+### SPIRAL (continued)
+
+#### W-066: Spiral node visual distinctness — "easily identifiable / enough differential"
+
+| Date | Source | Evolution |
+|------|--------|-----------|
+| May 1 | 050126 msg2 | "Yes correct! I love that! Ahahaha yes more so just aesthetic but I love where you're going with it & I'm working on the converting part!!" |
+| May 1 | 050126 msg2 | "My biggest thing on this is I just want them to be easily identifiable / enough differential that you can tell they're different if that makes sense?" |
+| May 1 | 050126 msg2 | "Even if it's just the distinct colors or shapes or whatever it is, does that kind of make sense?" |
+| May 1 | 050126 msg2 | "I love the creativity though! So excited to seeee!!" |
+
+**Current state:** As of `070b98d` (2026-04-30) the default render is hybrid vessel mode + chakra spectrum. Per code analysis: 13 nodes already differ by sacred shape (sunburst/eye/yin-yang/triangle/teardrop/vesica-piscis/crescent/hexagram/lotus/eye-in-triangle/solar-cross/octahedron/ankh — `spiral.ts:1115-1131`) and by chakra color and by per-IconWorld particle behavior. The hybrid blend (mesh ~30% opacity + particles on top) likely WASHES OUT the existing differentiation. Hypothesis: tuning the hybrid blend or flipping default to `'visible'` will surface the differentiation that already exists in data without new geometry work.
+
+**Plan path:** Three-step Track A in approved plan `messages-from-maddie-i-wrote-generic-minsky.md`:
+- A1: Tune hybrid blend opacity 30% → ~55-60% in `spiral.ts` vesselMode switch (~lines 1314-1326).
+- A2: Flip default in `hub.config.ts:147` from `'hybrid'` → `'visible'`.
+- A3: Activate `makeGeometryFromPrimitives()` in `spiral.ts:1173-1199` so each EnvVar's `sacred-geometry-primitives.ts` essence becomes its rendered mesh.
+
+**Status:** PLANNED — A1/A2/A3 approved by user 2026-05-01.
+
+### WATER (continued)
+
+#### W-067: Bottled water pricing accuracy
+
+| Date | Source | Evolution |
+|------|--------|-----------|
+| May 1 | 050126 msg3 | "I do not think that the [pricing] of the water or the bottles water pricing is right" |
+| May 1 | 050126 msg3 | "I tried to work with chat and it was it wasn't having it so if I need to go into the store myself" |
+| May 1 | 050126 msg3 | "phone numbers are like onto rate website or whatever and pulse specific numbers and then we can put the equation in the back end" |
+
+**Current state:** Three hardcoded `BottledWaterCost` records at `src/data/hydration.config.ts:297-325` (Safeway $1.29/bottle, Fiji $2.49, Essentia $2.79). Monthly/yearly numbers derive from a hidden ~36 bottles/month assumption. None of the prices have a source citation or last-verified stamp.
+
+**Plan path:** Track B (revised under universal mandate M2 — no hardcoded dynamic data). Externalize BottledWaterCost array out of `hydration.config.ts` into `src/data/runtime/bottled-prices.json`. Add `source`, `sourceCheckedAt`, `unitVolumeOz`, `monthlyVolumeAssumption` fields. Math becomes derivable, not stored. Maddie's incoming in-store numbers slot into the JSON, not source.
+
+**Status:** SCHEMA REWORK QUEUED. DATA SWAP BLOCKED — waiting on Maddie's in-store visit.
+
+#### W-068: Bottled water brand education — "what the bottle is actually selling you"
+
+| Date | Source | Evolution |
+|------|--------|-----------|
+| May 1 | 050126 msg3 | "I have a whole bottle of water section cause I have a bunch of information on this smart water horse [Voss?] water you could be drinking" |
+| May 1 | 050126 msg3 | "They have the best marketing, but it is the most acidic and dehydrating" |
+| May 1 | 050126 msg3 | "they put sodium in their water so just like little things like that we could even add" |
+
+**Current state:** No bottled-water brand-level content exists in `src/content/branches/`, `nodes/`, or `pillars/`. `src/content/branches/sustainability.md` discusses bottled-water *category* (waste, regulation) but no brand callouts. Closest existing pattern: `HydrationNode.astro:182-190` "Brita reality check" callout.
+
+**Plan path:** Track C (revised under universal mandate M1 — multi-citation). New content slot `src/content/branches/bottled-truth.md` (or similar) with per-brand mini-cards: brand → marketing claim → actual pH → sodium content → cost per gallon. Brands to seed: Smart Water, Voss, Fiji, Aquafina, Dasani, Essentia, Liquid Death. Every assertion requires ≥2 independent citations (brand product page + independent lab/regulatory/peer-reviewed source). Drafts ship with `status: draft-pending-citations` until both sources land.
+
+**Status:** STRUCTURAL DRAFT QUEUED. CITATIONS PENDING — drafts unshippable single-sourced.
+
+#### W-069: EWG fluoride detection bug (P0 — confirmed bug, not feature ask)
+
+| Date | Source | Evolution |
+|------|--------|-----------|
+| May 1 | 050126 msg3 | "the biggest issue with my ZIP Code is fluoride and I didn't see that pop-up" |
+| May 1 | 050126 msg3 | "fluoride is a very specific filter that you have to get a specific filter for so a lot of people spend a shit ton of money on the wrong filters and they don't even filter out what they want to filter" |
+| May 1 | 050126 msg3 | "all that eight right in front of me" [voice-to-text artifact, likely "ate"/"hate" or "all that ate" — context: dismay at how easily this gets missed] |
+
+**Current state:** EWG integration at `functions/api/water-report.ts` is LIVE (real scraper, `https://www.ewg.org/tapwater/search-results.php?zip5=...`, KV cached 24h, demo-data fallback on parse/network failure). Hardcoded contaminant→effects map at lines 38-57. Fallback fires SILENTLY — there is no UI signal distinguishing "EWG live" / "EWG cached" / "demo data."
+
+**Possible root causes** (ranked by likelihood):
+1. Parser regex/selector misses fluoride rows in EWG's HTML (parser drift after EWG markup change).
+2. "fluoride" not in the contaminant→effects map → extracted but dropped from the rendered card.
+3. Demo-data fallback firing silently for Maddie's ZIP (network or parse error not surfaced).
+4. EWG genuinely returned no fluoride for that utility — but the UI gives no "here's what we DIDN'T detect" disclaimer, so absence reads as "we didn't check," which is misleading.
+5. Cloudflare adapter Worker bundle precedence: `_worker.js` may be serving `/api/water-report` instead of `functions/api/water-report.ts`, meaning fixes to that file may be ineffective in production.
+
+**Plan path:** Track D in approved plan. Diagnosis-first (read-only): confirm endpoint authority, inspect parser, audit effects map, instrument the fallback. Fix decided post-diagnosis. Add observable "data source: live / cached / demo" banner in UI regardless of root cause.
+
+**Status:** P0 — DIAGNOSIS NEXT. Single blocker for fix: Maddie's ZIP code (request that next outbound).
+
+#### W-070: Email-simplified personalized filter plan (alternative path)
+
+| Date | Source | Evolution |
+|------|--------|-----------|
+| May 1 | 050126 msg3 | "we can simplify it right they can just say here's my email. I want to reach out with a personalized filter plan for me" |
+| May 1 | 050126 msg3 | "I can take your email go to take their address go to EWG put it in and then work with chat and ideally, I'm gonna build my own knowledge right" |
+| May 1 | 050126 msg3 | "I just did this for myself and for Chloe and I and I was like it would be so easy to have it automated" |
+
+**Current state:** HydrationNode (`HydrationNode.astro:465-471`) already does ZIP → EWG → filter recommendation in two steps with email gate. The "simplification" Maddie describes is a *different* code path: a "send me a personalized plan" CTA that captures email + address, sends to her for manual lookup, no on-page result.
+
+**Plan path:** Add a new capture form with `source=water-personalized-plan` + optional `address` field on `CapturePayload`. New CTA on `/water/` ("Send me a personalized filter plan"). Wire to existing capture pipeline (`src/pages/capture.ts`). No new sink needed — multiple of the existing `Promise.all` branches handle the email→GHL forwarding.
+
+**Status:** QUEUED — after W-069 stabilizes, since both paths share the EWG layer.
+
+### Existing entry — evolution row added
+
+#### W-013 (Personalized filter recommendations) — affiliate URL ETA update
+
+| Date | Source | Evolution |
+|------|--------|-----------|
+| ... | ... | (prior rows) |
+| May 1 | 050126 msg4 | "I want to get you over the pre-filter like affiliate link for each today" |
+
+**Status update:** affiliate URLs ETA = today (2026-05-01). Track E becomes a same-day data swap once received.
+
+### Out-of-scope (continued)
+
+#### W-049 / W-050 / W-051 — relocation thread
+
+| Date | Source | Evolution |
+|------|--------|-----------|
+| May 1 | 050126 msg1 | "do we want to live in salmon Idaho (pretty but more remote & gets colder) or in eastern Tennessee (never been easterner than Louisiana so literally have no clue)" |
+| May 1 | 050126 msg1 | "maybe can do 3-6 months somewhere and figure out loan stuff/place where we really want the non profit to be & then can part ways (if you're ready to bounce!) or can go to non profit spot & start it up!!" |
+
+**Status:** PERSONAL/RELATIONAL/VISION. Nonprofit siting decision is becoming concrete (two named candidate locations + 3-6 month exploratory window). No engineering implication on the site. Goes to collaborator-memory open threads.
+
+---
+
+## Universal mandates received this session (M1, M2, M3)
+
+These are not Maddie's asks but 4jp's directives. They reshape how all wants are handled going forward. Recorded here as cross-stream context.
+
+- **M1. Multi-citation mandate.** Every assertion requires ≥2 independent citations. Particularly affects W-068 (bottled-water content).
+- **M2. No hardcoded dynamic data.** Names, links, statistics, costs, contact details, affiliate URLs, contaminant thresholds, prices must live in env/config. Particularly affects W-067 (bottle pricing externalization), W-013 (affiliate URLs externalization), W-011/W-069 (contaminant effects map externalization).
+- **M3. Macro→atom decomposition + iteration tracking.** Maddie's wants AND 4jp's prompts each live in canonical sources, recursively decomposed, mapped to iterations, with continuous diff/spread measurement and per-audience visual surfaces. This document is the Maddie source. The 4jp source is to-be-built (likely workspace-meta scope).
