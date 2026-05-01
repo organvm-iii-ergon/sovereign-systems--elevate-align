@@ -825,6 +825,7 @@ This section extends the doc forward additively. The Apr-17 summary tables above
 - A3: Activate `makeGeometryFromPrimitives()` in `spiral.ts:1173-1199` so each EnvVar's `sacred-geometry-primitives.ts` essence becomes its rendered mesh.
 
 **Status:** PLANNED — A1/A2/A3 approved by user 2026-05-01.
+**GH issue:** [#61](https://github.com/organvm-iii-ergon/sovereign-systems--elevate-align/issues/61)
 
 ### WATER (continued)
 
@@ -841,6 +842,7 @@ This section extends the doc forward additively. The Apr-17 summary tables above
 **Plan path:** Track B (revised under universal mandate M2 — no hardcoded dynamic data). Externalize BottledWaterCost array out of `hydration.config.ts` into `src/data/runtime/bottled-prices.json`. Add `source`, `sourceCheckedAt`, `unitVolumeOz`, `monthlyVolumeAssumption` fields. Math becomes derivable, not stored. Maddie's incoming in-store numbers slot into the JSON, not source.
 
 **Status:** SCHEMA REWORK QUEUED. DATA SWAP BLOCKED — waiting on Maddie's in-store visit.
+**GH issue:** [#63](https://github.com/organvm-iii-ergon/sovereign-systems--elevate-align/issues/63)
 
 #### W-068: Bottled water brand education — "what the bottle is actually selling you"
 
@@ -855,6 +857,7 @@ This section extends the doc forward additively. The Apr-17 summary tables above
 **Plan path:** Track C (revised under universal mandate M1 — multi-citation). New content slot `src/content/branches/bottled-truth.md` (or similar) with per-brand mini-cards: brand → marketing claim → actual pH → sodium content → cost per gallon. Brands to seed: Smart Water, Voss, Fiji, Aquafina, Dasani, Essentia, Liquid Death. Every assertion requires ≥2 independent citations (brand product page + independent lab/regulatory/peer-reviewed source). Drafts ship with `status: draft-pending-citations` until both sources land.
 
 **Status:** STRUCTURAL DRAFT QUEUED. CITATIONS PENDING — drafts unshippable single-sourced.
+**GH issue:** [#64](https://github.com/organvm-iii-ergon/sovereign-systems--elevate-align/issues/64)
 
 #### W-069: EWG fluoride detection bug (P0 — confirmed bug, not feature ask)
 
@@ -875,7 +878,8 @@ This section extends the doc forward additively. The Apr-17 summary tables above
 
 **Plan path:** Track D in approved plan. Diagnosis-first (read-only): confirm endpoint authority, inspect parser, audit effects map, instrument the fallback. Fix decided post-diagnosis. Add observable "data source: live / cached / demo" banner in UI regardless of root cause.
 
-**Status:** P0 — DIAGNOSIS NEXT. Single blocker for fix: Maddie's ZIP code (request that next outbound).
+**Status:** P0 — DEFENSIVE PATCHES SHIPPED (commit `c778f48` — fluoride in client fallback + 3-state data-source banner). DISCRIMINATED FIX HELD on Maddie's badge state + ZIP.
+**GH issue:** [#62](https://github.com/organvm-iii-ergon/sovereign-systems--elevate-align/issues/62) (P0)
 
 #### W-070: Email-simplified personalized filter plan (alternative path)
 
@@ -890,6 +894,7 @@ This section extends the doc forward additively. The Apr-17 summary tables above
 **Plan path:** Add a new capture form with `source=water-personalized-plan` + optional `address` field on `CapturePayload`. New CTA on `/water/` ("Send me a personalized filter plan"). Wire to existing capture pipeline (`src/pages/capture.ts`). No new sink needed — multiple of the existing `Promise.all` branches handle the email→GHL forwarding.
 
 **Status:** QUEUED — after W-069 stabilizes, since both paths share the EWG layer.
+**GH issue:** [#65](https://github.com/organvm-iii-ergon/sovereign-systems--elevate-align/issues/65)
 
 ### Existing entry — evolution row added
 

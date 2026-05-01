@@ -149,6 +149,14 @@ bash scripts/setup-board.sh --dry-run                                        # b
 
 `docs/critiques/YYYY-MM-DD-<slug>.md` is the home for structured architectural-critique passes — severity-rated findings on usability, visual hierarchy, accessibility, color systems, etc. — produced by review sessions and intended to feed polish work. Distinct from session transcripts (`docs/archive/`) and from intake handoffs (`docs/superpowers/intakes/`): critiques are *evaluative* deliverables, not records-of-conversation. First exemplar: `2026-04-30-spiral-hero-polish-critique.md` (post-chakra ship, hybrid vessel default). When a Claude Code session uses `isolation: "worktree"` to produce a critique, ensure the artifact is migrated back into main before the worktree is removed — otherwise the critique dies with the branch.
 
+## Evolution Timelines
+
+`docs/timelines/YYYY-MM-DD-<artifact>-evolution-timeline.md` is the home for chronological 3-column evolution transcripts (date | client request | 4jp prompt | version shipped) of a specific artifact across all rounds of iteration. First exemplar: `2026-05-01-spiral-evolution-timeline.md` (Sovereign Systems Spiral Apr 1 → May 1, 7 rounds, 56 commits). Distinct from session archives (records-of-conversation) and from critiques (evaluative): timelines are *historical narrative* of one named artifact's evolution, with verbatim quotes traceable to primary sources (`meta-organvm/organvm-corpvs-testamentvm/data/corpora/.../prompts-raw.jsonl` and `.specstory/history/*.md` for 4jp; iMessage extracts and dated decision docs for the client).
+
+## Maddie Outbound Drafts
+
+`docs/maddie/YYYY-MM-DD-<topic>.md` is the home for iMessage-ready outbound drafts to Maddie. Plain-text bodies (no markdown bold — iMessage doesn't render it), kept durable so the message Maddie receives matches what's tracked in repo memory. First exemplar: `2026-05-01-outbound-tracks-status.md` (consolidated tracks-status response addressing all four 2026-05-01 messages). Outbounds are NOT auto-sent by any pipeline; they exist as reviewable artifacts the user pastes into iMessage when ready.
+
 ## Page Map
 
 **13 source files in `src/pages/` generate ~28 routes** (most expansion via `[id]` / `[slug]` / `[persona]` / `[envvar]` dynamic templates).
