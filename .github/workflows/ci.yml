@@ -21,7 +21,7 @@ jobs:
           node-version: 22
           cache: 'npm'
       - run: npm ci
-      - run: npm run build
+      - run: npm run test:all
 
   deploy:
     needs: build
@@ -37,7 +37,7 @@ jobs:
           node-version: 22
           cache: 'npm'
       - run: npm ci
-      - run: npm run build
+      - run: npm run test:all
       - name: Verify Cloudflare token exists
         run: |
           if [ -z "${{ secrets.CLOUDFLARE_API_TOKEN }}" ]; then

@@ -137,7 +137,7 @@ bash scripts/setup-board.sh --dry-run                                        # b
 
 ## Vacuum Gate (Axiom #1)
 
-`scripts/vacuum-gate.mjs` runs as part of `npm test`. It scans `src/data/hub.config.ts` and `src/data/hydration.config.ts` for empty config strings (and `src/content/{pillars,branches}/*.md` for empty required frontmatter). Every detected vacuum is checked against an in-file `TRACKED_VACUUMS` map (field-key → GH issue ref). UNTRACKED vacuums fail the build.
+`scripts/vacuum-gate.mjs` runs as part of `npm test`, which CI invokes via `npm run test:all` in `.github/workflows/ci.yml` on every push and PR (both `build` and `deploy` jobs). It scans `src/data/hub.config.ts` and `src/data/hydration.config.ts` for empty config strings (and `src/content/{pillars,branches}/*.md` for empty required frontmatter). Every detected vacuum is checked against an in-file `TRACKED_VACUUMS` map (field-key → GH issue ref). UNTRACKED vacuums fail the build.
 
 **Why allow-list rather than live `gh` query:** deterministic, no network on test, explicit context for any reader of the gate. The map is the truth source — `.config/board.config.json` does NOT contain an `issues[]` array (the project board lives in GH Projects #5; that JSON is metadata for the transition scripts only).
 
