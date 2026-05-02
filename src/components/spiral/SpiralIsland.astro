@@ -72,7 +72,8 @@ const uiDefaults = JSON.stringify(ui);
         cleanup();
         window.__spiralCleanup = null;
       }, { once: true });
-    }).catch(() => {
+    }).catch((err) => {
+      console.error('[SpiralIsland] init failed:', err);
       // Three.js failed (no WebGL, etc.) — fallback stays visible
       container.style.display = 'none';
     });

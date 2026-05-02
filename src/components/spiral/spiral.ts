@@ -1178,7 +1178,7 @@ function makeGeometryFromPrimitives(
   lens: Lens,
   hash: number,
 ): THREE.ExtrudeGeometry {
-  const basePrim = PRIMITIVES[envVar as EnvVar];
+  const basePrim = primitiveFor(envVar as EnvVar);
   const modulated = modulatePrimitive(envVar as EnvVar, lens);
   const rng = mulberry32(hash);
 
@@ -1191,7 +1191,11 @@ function makeGeometryFromPrimitives(
     0,
     Math.min(1, modulated.twistFactor + (rng() - 0.5) * 0.3),
   );
-  const scaleMul = modulated.scaleMul * (0.85 + rng() * 0.30);
+  // Lens-driven scale: phiExponent already incorporates the lens's scaleMul
+  // (lens-geometry.ts:154 — base.phiExponent * mod.scaleMul), so we re-derive
+  // a scale factor here. The trailing jitter keeps node-to-node variation
+  // from looking mechanical.
+  const scaleMul = Math.pow(PHI, modulated.phiExponent) * (0.85 + rng() * 0.30);
   const fractalDepth = modulated.symmetry === 'fractal' ? 1 + Math.floor(rng() * 2) : 1;
 
   const shape = new THREE.Shape();
@@ -1313,6 +1317,7 @@ export function initSpiral(
   variantParam: SpiralVariant = 'symbols',
   vesselMode: VesselMode = 'invisible',
 ): () => void {
+  try {
   // VesselMode → derived flags. The mode controls (a) whether the icon
   // mesh is rendered, (b) whether the per-node particle field reads at
   // full opacity, and (c) whether the variant is forced to 'stars' for
@@ -1359,7 +1364,7 @@ export function initSpiral(
   composer.addPass(new RenderPass(scene, camera));
   const bloomPass = new UnrealBloomPass(
     new THREE.Vector2(w, h),
-    0.05,   // very subtle — bloom was washing all materia colors to white
+    0.05,   // very subtle — bloom was washing all material colors to white
     0.30,
     0.98,   // only the brightest extremes bloom
   );
@@ -2888,4 +2893,8 @@ export function initSpiral(
     tip.remove();
     renderer.domElement.remove();
   };
+  } catch (err) {
+    console.error('[spiral] initSpiral failed:', err);
+    throw err;
+  }
 }
