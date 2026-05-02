@@ -283,10 +283,18 @@ if (!isHome) {
 
     <script>
       // Citation tooltips — lazy-load data on first hover
-      let citations = null;
-      let tooltip = null;
+      interface Citation {
+        id: string;
+        source: string;
+        detail: string;
+        context: string;
+      }
 
-      function createTooltip() {
+      let citations: Citation[] | null = null;
+      let tooltip: HTMLElement | null = null;
+      let activeSup: HTMLElement | null = null;
+
+      function createTooltip(): HTMLElement {
         const el = document.createElement('div');
         el.id = 'cite-tooltip';
         el.style.cssText = `
@@ -300,20 +308,20 @@ if (!isHome) {
         return el;
       }
 
-      async function loadCitations() {
+      async function loadCitations(): Promise<Citation[]> {
         if (citations) return citations;
         try {
           const res = await fetch('/citations.json');
-          citations = await res.json();
+          citations = (await res.json()) as Citation[];
         } catch { citations = []; }
         return citations;
       }
 
-      function findCitation(id) {
-        return citations?.find(c => c.id === id);
+      function findCitation(id: string): Citation | undefined {
+        return citations?.find((c) => c.id === id);
       }
 
-      function renderTooltip(cite, isBio) {
+      function renderTooltip(cite: Citation, isBio: boolean): string {
         return `
           <div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.12em;color:#7dd3d7;margin-bottom:6px;">
             ${isBio ? 'Peer-Reviewed Research' : 'Sacred / Philosophical Source'}
@@ -328,7 +336,7 @@ if (!isHome) {
         `;
       }
 
-      function positionTooltip(sup) {
+      function positionTooltip(sup: HTMLElement): void {
         if (!tooltip) return;
         const rect = sup.getBoundingClientRect();
         const maxW = Math.min(320, window.innerWidth - 16);
@@ -343,14 +351,12 @@ if (!isHome) {
         tooltip.style.opacity = '1';
       }
 
-      function hideTooltip() {
+      function hideTooltip(): void {
         if (tooltip) tooltip.style.opacity = '0';
       }
 
-      let activeSup = null;
-
-      async function showForSup(sup) {
-        const id = sup.textContent.trim();
+      async function showForSup(sup: HTMLElement): Promise<void> {
+        const id = sup.textContent?.trim() ?? '';
         if (!/^[SB]-\d+$/.test(id)) return;
         await loadCitations();
         const cite = findCitation(id);
@@ -363,16 +369,24 @@ if (!isHome) {
 
       // Desktop: hover
       document.addEventListener('mouseover', (e) => {
-        const sup = e.target.closest('sup');
+        if (!(e.target instanceof Element)) return;
+        const sup = e.target.closest<HTMLElement>('sup');
         if (sup) showForSup(sup);
       });
       document.addEventListener('mouseout', (e) => {
-        if (e.target.closest('sup')) hideTooltip();
+        if (e.target instanceof Element && e.target.closest('sup')) hideTooltip();
       });
 
       // Mobile: tap to toggle
       document.addEventListener('click', (e) => {
-        const sup = e.target.closest('sup');
+        if (!(e.target instanceof Element)) {
+          if (tooltip?.style.opacity === '1') {
+            hideTooltip();
+            activeSup = null;
+          }
+          return;
+        }
+        const sup = e.target.closest<HTMLElement>('sup');
         if (sup) {
           e.preventDefault();
           if (activeSup === sup && tooltip?.style.opacity === '1') {

@@ -307,6 +307,8 @@ const filterTiersJson = JSON.stringify(filterTiers);
 </section>
 
 <script>
+  import type { WaterReport } from '../data/hydration.config';
+
   // --- Water source selection ---
   const sourceBtns = document.querySelectorAll('.source-btn');
   const sourceInput = document.getElementById('source-input') as HTMLInputElement;
@@ -444,7 +446,7 @@ const filterTiersJson = JSON.stringify(filterTiers);
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ zipCode: zipInput.value, waterSource: sourceInput.value }),
       });
-      const report = await response.json();
+      const report = (await response.json()) as WaterReport & { isDemo?: boolean };
 
       // Update summary stats
       const totalEl = document.getElementById('result-total');

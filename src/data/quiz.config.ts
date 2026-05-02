@@ -99,6 +99,7 @@ export const quizResultCopy = {
   ctaPreviewTemplate: 'Preview Node {nodeId} →',
   ctaVisitTemplate: 'Visit Node {nodeId} →',
 };
+export type QuizResultCopy = typeof quizResultCopy;
 
 /** Copy used in the optional email capture section (quiz.astro) */
 export const quizCaptureCopy = {
@@ -112,6 +113,7 @@ export const quizCaptureCopy = {
   statusWelcome: 'Welcome.',
   statusEmailNeeded: 'Email needed to stay connected.',
 };
+export type QuizCaptureCopy = typeof quizCaptureCopy;
 
 /** Copy used in QuizEmbed.astro fallback UI */
 export const quizEmbedCopy = {

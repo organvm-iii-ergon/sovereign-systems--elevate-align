@@ -151,6 +151,8 @@ const questionsJson = JSON.stringify(quizQuestions);
 </style>
 
 <script>
+  import type { QuizQuestion, QuizResultCopy, QuizCaptureCopy } from '../data/quiz.config';
+
   // ---------------------------------------------------------------
   // Types & types-like (the script is plain JS at runtime; the
   // type-shaped comments document the contract for human readers).
@@ -173,9 +175,9 @@ const questionsJson = JSON.stringify(quizQuestions);
   if (!root) throw new Error('quiz-root missing');
 
   const nodes: QuizNode[] = JSON.parse(root.dataset.nodes ?? '[]');
-  const questions: typeof quizQuestions = JSON.parse(root.dataset.questions ?? '[]');
-  const resultCopy: typeof quizResultCopy = JSON.parse(root.dataset.resultCopy ?? '{}');
-  const captureCopy: typeof quizCaptureCopy = JSON.parse(root.dataset.captureCopy ?? '{}');
+  const questions: QuizQuestion[] = JSON.parse(root.dataset.questions ?? '[]');
+  const resultCopy: QuizResultCopy = JSON.parse(root.dataset.resultCopy ?? '{}');
+  const captureCopy: QuizCaptureCopy = JSON.parse(root.dataset.captureCopy ?? '{}');
   const TOTAL_STEPS = questions.length;
 
   // --- State ----------------------------------------------------
