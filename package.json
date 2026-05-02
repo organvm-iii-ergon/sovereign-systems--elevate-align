@@ -6,8 +6,9 @@
     "dev": "astro dev",
     "prebuild": "node scripts/generate-citations-json.js",
     "build": "astro build",
+    "check": "tsc --noEmit",
     "test": "node scripts/test.mjs",
-    "test:all": "npm run test && npm run build",
+    "test:all": "npm run test && npm run check && npm run build",
     "preview": "astro preview",
     "astro": "astro",
     "parse-citations": "node scripts/parse-citations.js",
@@ -24,8 +25,11 @@
     "three": "0.184.0"
   },
   "devDependencies": {
+    "@astrojs/check": "0.9.9",
+    "@cloudflare/workers-types": "4.20260426.1",
     "@tailwindcss/vite": "^4.0.0",
     "@types/three": "0.184.0",
-    "tailwindcss": "^4.0.0"
+    "tailwindcss": "^4.0.0",
+    "typescript": "5.9.3"
   }
 }

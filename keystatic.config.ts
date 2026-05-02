@@ -7,7 +7,7 @@ const storage =
   storageKind === 'github'
     ? ({
         kind: 'github' as const,
-        repo: 'organvm-iii-ergon/sovereign-systems--elevate-align',
+        repo: { owner: 'organvm-iii-ergon', name: 'sovereign-systems--elevate-align' },
       })
     : ({ kind: 'local' as const });
 
