@@ -51,12 +51,6 @@ function extractTitle(html) {
   return t ? t[1].replace(/\s*\|.*$/, "").trim() : "Branch";
 }
 
-function stripScripts(html) {
-  return html
-    .replace(/<script\b[^>]*>[\s\S]*?<\/script\b[^>]*>/gi, "")
-    .replace(/<style\b[^>]*>[\s\S]*?<\/style\b[^>]*>/gi, "");
-}
-
 function inlineWrap(title, hero, body, label, slug) {
   return `<!--
   Branch export: ${label} (${title})
@@ -98,8 +92,7 @@ for (const b of BRANCHES) {
     console.warn(`skip ${b.slug}: missing ${src}`);
     continue;
   }
-  const rawHtml = readFileSync(src, "utf8");
-  const html = stripScripts(rawHtml);
+  const html = readFileSync(src, "utf8");
   const hero = extractHeroAndContent(html);
   if (!hero.body) {
     console.warn(`skip ${b.slug}: no .branch-content block found`);
