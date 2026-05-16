@@ -19,11 +19,15 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
       - uses: actions/setup-node@v4
         with:
           node-version: 22
           cache: 'npm'
       - run: npm ci
+      - name: Trunk lint (PR-scoped — modified files only)
+        uses: trunk-io/trunk-action@v1
       - run: npm run test:all
 
   deploy:
