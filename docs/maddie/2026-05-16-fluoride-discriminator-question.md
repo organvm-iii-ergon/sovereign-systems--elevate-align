@@ -4,7 +4,7 @@ date: 2026-05-16
 status: draft (NOT auto-sent)
 direction: outbound 4jp → Maddie
 purpose: close GH#62 fluoride bug H1/H2/H3 hypothesis tree with one targeted question
-parent: docs/maddie/2026-05-16-maddie-imessage-transcript-and-signals.md (TL;DR point 3)
+parent: docs/internal/2026-05-16-maddie-imessage-transcript-and-signals.md (TL;DR point 3)
 ---
 
 # Outbound: one-question fluoride discriminator
@@ -53,7 +53,7 @@ one of those tells me exactly which of three things to fix. no rush 🙏
 
 ## Audit trail
 
-- Source bug report: Maddie 2026-05-01 voice memo (transcript in `docs/maddie/2026-05-16-maddie-imessage-transcript-and-signals.md`, Audio 2)
+- Source bug report: Maddie 2026-05-01 voice memo (transcript in `docs/internal/2026-05-16-maddie-imessage-transcript-and-signals.md`, Audio 2)
 - Diagnosis doc: `docs/decisions/2026-05-01-water-report-fluoride-bug-diagnosis.md`
 - Defensive ship: commit `c778f48` (added Fluoride to client fallback list + 3-state badge)
 - Half-confirmed 2026-05-16: Maddie verified fluoride IS the issue but did NOT name the badge state
