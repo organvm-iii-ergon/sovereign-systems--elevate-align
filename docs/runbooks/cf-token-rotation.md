@@ -13,8 +13,10 @@ Before rotating, confirm the token *is* the failure mode. Other deploy failures 
 ```sh
 gh run list --repo organvm-iii-ergon/sovereign-systems--elevate-align \
   --workflow CI --limit 5 --json conclusion,headBranch,databaseId,createdAt
-gh run view <last-failed-id> --log | grep -i -E "authentication|10000|token"
+gh run view <last-failed-id> --log-failed | grep -i -E "authentication|10000|token"
 ```
+
+> Use `--log-failed`, not `--log`. `--log` returns every job's full output and the head is the `build` job's setup boilerplate (`token: ***` from `actions/checkout`) which false-matches the grep. `--log-failed` scopes to the failing step (`deploy` → `Deploy to Cloudflare Pages`) where the real `Authentication error [code: 10000]` lives.
 
 If the failure is `Authentication error [code: 10000]` → token is the cause. Proceed.
 If it's any other error → the new token will not fix it; do not rotate yet.
@@ -29,10 +31,10 @@ gh issue view 52 --repo organvm-iii-ergon/sovereign-systems--elevate-align --web
 
 Critical invariants (do NOT diverge from GH#52):
 - Token type: **Custom Token** (not API Tokens preset).
-- Permissions: `Account > Cloudflare Pages > Edit` (this exact scope; broader scopes leak unnecessary capability).
-- Account Resources: `Include > ivviiviivvi` (the org that owns the CF Pages project).
+- Permissions: `Account > Cloudflare Pages > Edit` **and** `Account > Account Settings > Read`. Pages:Edit is what wrangler needs to upload; Account Settings:Read is what the wrangler "Getting User settings..." pre-flight step queries. Without Account Settings:Read the deploy reaches the Pages API but the user-settings probe 401s, surfacing the same `code: 10000` error.
+- Account Resources: `All accounts` (the workspace has one CF account — `ivviiviivvi` / `e0921b840fd656d8ea46426f1f114c30`; "All accounts" and "Include > ivviiviivvi" are equivalent in this single-account workspace).
 - TTL: **never expires** (the April 19 incident was a TTL expiry; do not repeat it).
-- Secret name: `CLOUDFLARE_API_TOKEN` (matches `.github/workflows/ci.yml:50`).
+- Secret name: `CLOUDFLARE_API_TOKEN` — existence check at `.github/workflows/ci.yml:46`, consumed at `.github/workflows/ci.yml:53`, deploy step name at `.github/workflows/ci.yml:50` ("Deploy to Cloudflare Pages"). Verify all three references survive any workflow edit.
 
 Final write happens via:
 
