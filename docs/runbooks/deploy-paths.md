@@ -75,8 +75,9 @@ npm run deploy
 
 ```bash
 # 1. Follow docs/runbooks/cf-token-rotation.md
-#    (mint token in CF dashboard → Account > Cloudflare Pages > Edit;
-#     scope to Account Resources > Include > ivviiviivvi; No TTL)
+#    (mint token in CF dashboard → Account > Cloudflare Pages > Edit (required)
+#     plus Account > Account Settings > Read (precautionary, not empirically verified
+#     — see runbook "Open question"); Account Resources: All accounts; No TTL)
 
 # 2. Set the new token as the GitHub repo secret
 gh secret set CLOUDFLARE_API_TOKEN --repo organvm-iii-ergon/sovereign-systems--elevate-align
