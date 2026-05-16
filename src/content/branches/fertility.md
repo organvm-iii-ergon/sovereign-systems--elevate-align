@@ -116,39 +116,6 @@ It’s not a cure. It’s a foundation. And foundations matter most when everyth
 
 You deserve support that doesn’t add noise — just clarity, and a place to start.
 
-
-## Research & Evidence
-
-### Key Frameworks
-
-It’s totally understandable that you’re frustrated — Endometriosis is a painful, complex condition and the “standard” suggestions (hormones, surgery) often feel limiting. Let’s unpack what is known about causes and explore how some eastern-medicine perspectives and practices approach it. I’ll also offer caveats (very important) so you can evaluate what might feel useful for you.
-
-What we do know about causes
-
-First, a frank reminder: researchers do not have a definitive cause for endometriosis. NCBI+3World Health Organization+3Mount Sinai Health System+3
-However, many factors are associated with or likely contributors. Here are key ones:
-
-### Supporting Research
-
-- Yes — every single resource, study, educator, and framework included is:
-
-✅ Top-tier, reputable, medically recognized, peer-reviewed, and woman-centered
-
-✅ Rooted in evidence — not fear, politics, or agenda
-
-### From Maddie's Research
-
-> Perfect — that is going to look STUNNING.
-A soft burnt earthy orange as the main accent + a pale water-blue secondary accent will give the whole document:
-
-> Perfect — Terracotta Rose (#D8A48F) + Glacier Blue (#BCD4D8) is an absolutely gorgeous pairing.
-Warm, soft, feminine, earthy, elegant, and perfectly aligned with your eau.co aesthetic.
-
-> Beautiful — both of those titles have a clean, grounded, feminine, scientific-but-soft feel.
-
-> Your print-ready PDF is complete!
-It includes:
-
 ## Resources
 
 - **Start here:** map one full cycle before making major changes. Note ovulation signs, luteal length, energy, sleep, and hydration consistency.

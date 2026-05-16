@@ -55,25 +55,10 @@ export const LIBRARY: LibraryEntry[] = [
     kind: 'dir',
     path: 'docs/client-deliverables',
   },
-  {
-    slug: 'client-pdfs',
-    label: 'Client PDFs (iMessage Exports)',
-    description: 'Inbound iMessage thread exports from Maddie — chronological dump of the source-of-truth client conversation.',
-    group: 'client',
-    kind: 'dir',
-    path: 'docs/client-pdfs',
-    exts: ['.pdf'],
-    maxShown: 20,
-  },
-  {
-    slug: 'maddie',
-    label: 'Maddie Outbound Drafts',
-    description: 'iMessage-ready outbound drafts to the client, plus distilled signal docs.',
-    group: 'client',
-    kind: 'dir',
-    path: 'docs/maddie',
-    exts: ['.md'],
-  },
+  // NOTE: `client-pdfs` and `maddie` entries intentionally NOT surfaced on
+  // the public /library page (2026-05-16). Repo is public so files remain on
+  // GitHub, but they're no longer clickable from the deployed site —
+  // protects internal analysis docs from accidental client surfacing.
 
   // Product stream
   {

@@ -3,7 +3,7 @@ title: Branch-Swap Proposal — Analysis & Decision Matrix
 date: 2026-05-16
 direction: inbound proposal from Maddie → studio analysis → response draft
 status: analysis-pending-decision
-parent_thread: docs/maddie/2026-05-16-maddie-imessage-transcript-and-signals.md (addendum)
+parent_thread: docs/internal/2026-05-16-maddie-imessage-transcript-and-signals.md (addendum)
 ---
 
 # Branch-Swap Proposal — Analysis
