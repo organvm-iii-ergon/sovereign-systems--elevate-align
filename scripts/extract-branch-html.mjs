@@ -53,8 +53,8 @@ function extractTitle(html) {
 
 function stripScripts(html) {
   return html
-    .replace(/<script\b[^>]*>[\s\S]*?<\/script\s*>/gi, "")
-    .replace(/<style\b[^>]*>[\s\S]*?<\/style\s*>/gi, "");
+    .replace(/<script\b[^>]*>[\s\S]*?<\/script\b[^>]*>/gi, "")
+    .replace(/<style\b[^>]*>[\s\S]*?<\/style\b[^>]*>/gi, "");
 }
 
 function inlineWrap(title, hero, body, label, slug) {
