@@ -14,9 +14,19 @@
  */
 
 import { hydrationConfig } from '../data/hydration.config';
+import { config as hubConfig } from '../data/hub.config';
 
 const { steps, filterTiers, costData } = hydrationConfig;
 const filterTiersJson = JSON.stringify(filterTiers);
+
+/**
+ * Per Maddie 2026-05-16: "I want the spiral to be all spiral... just the
+ * touch of the water." The "what's in my water" + "how much you're spending"
+ * surfaces stay; filter recommendations + email gate are routed to her
+ * GHL water hub instead. Flip back to true to re-enable on-spiral filters.
+ */
+const SHOW_FILTER_FUNNEL = false;
+const ghlWaterUrl = hubConfig.ghl.productUrl || `https://${hubConfig.domains.water}`;
 ---
 
 <section class="hydration-node w-full max-w-3xl mx-auto px-4 py-16" data-filter-tiers={filterTiersJson}>
@@ -176,15 +186,34 @@ const filterTiersJson = JSON.stringify(filterTiers);
       </div>
 
       <div class="text-center pt-4 border-t border-white/5">
-        <p class="text-white/35 text-[14px] mb-4">
-          Want to see which filter removes <em>your</em> specific contaminants?
-        </p>
-        <button
-          id="goto-step-2"
-          class="bg-ocean-500 hover:bg-ocean-400 text-white font-medium py-3 px-8 rounded-lg transition-all shadow-lg shadow-ocean-500/10 active:scale-[0.98] text-[14px]"
-        >
-          See My Filter Recommendations →
-        </button>
+        {SHOW_FILTER_FUNNEL ? (
+          <>
+            <p class="text-white/35 text-[14px] mb-4">
+              Want to see which filter removes <em>your</em> specific contaminants?
+            </p>
+            <button
+              id="goto-step-2"
+              class="bg-ocean-500 hover:bg-ocean-400 text-white font-medium py-3 px-8 rounded-lg transition-all shadow-lg shadow-ocean-500/10 active:scale-[0.98] text-[14px]"
+            >
+              See My Filter Recommendations →
+            </button>
+          </>
+        ) : (
+          <>
+            <p class="text-white/35 text-[14px] mb-4">
+              Ready for the full water protocol — filter matches, reports, and the deeper system?
+            </p>
+            <a
+              href={ghlWaterUrl}
+              target="_blank"
+              rel="noopener"
+              data-ea-action="water_funnel_to_ghl"
+              class="inline-block bg-ocean-500 hover:bg-ocean-400 text-white font-medium py-3 px-8 rounded-lg transition-all shadow-lg shadow-ocean-500/10 active:scale-[0.98] text-[14px]"
+            >
+              Continue at the Water Hub →
+            </a>
+          </>
+        )}
       </div>
     </div>
 
@@ -200,6 +229,8 @@ const filterTiersJson = JSON.stringify(filterTiers);
     </div>
   </div>
 
+  {SHOW_FILTER_FUNNEL && (
+  <>
   <!-- Step 2: Email Gate + Filter Recommendations -->
   <div id="step-2" class="step-panel hidden mt-6" data-step="2">
     <div class="glass-card p-8 sm:p-10">
@@ -304,6 +335,8 @@ const filterTiersJson = JSON.stringify(filterTiers);
       </div>
     ))}
   </div>
+  </>
+  )}
 </section>
 
 <script>

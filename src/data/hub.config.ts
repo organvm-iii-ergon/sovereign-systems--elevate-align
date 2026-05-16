@@ -17,6 +17,15 @@ export interface Branch {
   order: number;
   citationIds: string[];
   ghlUrl?: string;
+  /**
+   * Whether the branch surfaces on the spiral site (water hub teasers, nav, etc).
+   * Default true. Hidden branches keep their /water/[slug] route + .md source —
+   * the route still resolves for direct links and HTML extraction — but no
+   * navigation surface exposes them. Per Maddie 2026-05-16 voice note:
+   * spiral = 3 visible branches (Inflammation, Hormone Health, Energy + Focus);
+   * the other 3 move to her GHL water hub at stopdrinkingacid.com.
+   */
+  visible?: boolean;
 }
 
 export type Phase = 'ELEVATE' | 'ALIGN' | 'UNLOCK';
@@ -217,7 +226,7 @@ export const config: HubConfig = {
   ],
   branches: [
     {
-      name: 'Gut + Hormones',
+      name: 'Hormone Health',
       slug: 'gut-hormones',
       emoji: '\u{1F33F}',
       order: 1,
@@ -228,17 +237,18 @@ export const config: HubConfig = {
       slug: 'fertility',
       emoji: '\u{1F90D}',
       order: 2,
-      citationIds: ['B-21', 'B-22', 'B-23', 'B-24', 'B-25', 'B-26', 'B-27', 'B-28', 'B-29', 'B-01']
+      citationIds: ['B-21', 'B-22', 'B-23', 'B-24', 'B-25', 'B-26', 'B-27', 'B-28', 'B-29', 'B-01'],
+      visible: false
     },
     {
-      name: 'Athletic Performance',
+      name: 'Energy + Focus',
       slug: 'athletic',
       emoji: '\u{1F4AA}',
       order: 3,
       citationIds: ['B-38', 'B-39', 'B-40', 'B-41', 'B-42', 'B-43', 'B-44', 'B-45']
     },
     {
-      name: 'Inflammation / Autoimmune',
+      name: 'Inflammation',
       slug: 'autoimmune',
       emoji: '\u{1F525}',
       order: 4,
@@ -249,14 +259,16 @@ export const config: HubConfig = {
       slug: 'cancer-support',
       emoji: '\u{1F397}',
       order: 5,
-      citationIds: ['B-46', 'B-47', 'B-48', 'B-49', 'B-50', 'B-51', 'B-52', 'B-53']
+      citationIds: ['B-46', 'B-47', 'B-48', 'B-49', 'B-50', 'B-51', 'B-52', 'B-53'],
+      visible: false
     },
     {
       name: 'Sustainability / Savings',
       slug: 'sustainability',
       emoji: '\u{1F30E}',
       order: 6,
-      citationIds: ['S-13', 'S-17', 'S-19']
+      citationIds: ['S-13', 'S-17', 'S-19'],
+      visible: false
     },
   ],
   domains: {
