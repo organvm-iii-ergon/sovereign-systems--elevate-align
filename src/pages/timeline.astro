@@ -34,8 +34,8 @@ function statusLabel(status: 'live' | 'playable' | 'snapshot-pending'): string {
         Every deployed visual aesthetic of the Sovereign Systems Spiral,
         chronologically. Click any <strong>PLAYABLE</strong> entry to open the
         deployed version in a new tab. <strong>SNAPSHOT PENDING</strong> entries
-        exist in git history but were never CF-deployed (auto-deploy broke
-        Apr 19–May 16) — they link to the source commit for now.
+        exist in git history but have not been re-deployed at their historical
+        commit yet — they link to the source commit for now.
       </p>
       <p class="timeline-stats">
         <strong>{totalCount}</strong> versions ·
@@ -76,10 +76,11 @@ function statusLabel(status: 'live' | 'playable' | 'snapshot-pending'): string {
       <section class="timeline-section section-historical">
         <h2>V1 – V8 · Production History</h2>
         <p class="section-desc">
-          The spiral's evolution from V1 (Apr 23) through V8 (Apr 26).
-          Where Cloudflare preserved a permanent preview URL, the version is
-          playable directly. The rest can be promoted to playable by deploying
-          their source commit (see <code>src/data/spiral-versions.ts</code>).
+          The spiral's evolution from V1 (Apr 23) through V8 (Apr 26). Every
+          version below has been re-deployed at its historical commit to a
+          permanent <code>&lt;hash&gt;.sovereign-systems-spiral.pages.dev</code>
+          URL — click any <strong>Open</strong> button to interact with the
+          version exactly as it shipped on that date.
         </p>
         <div class="version-grid">
           {historical.map((v) => (
