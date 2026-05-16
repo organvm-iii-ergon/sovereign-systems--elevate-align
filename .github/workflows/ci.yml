@@ -17,13 +17,21 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      checks: write
+      pull-requests: write
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
       - uses: actions/setup-node@v4
         with:
           node-version: 22
-          cache: 'npm'
+          cache: "npm"
       - run: npm ci
+      - name: Trunk lint (PR-scoped — modified files only)
+        uses: trunk-io/trunk-action@v1
       - run: npm run test:all
 
   deploy:
@@ -38,7 +46,7 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 22
-          cache: 'npm'
+          cache: "npm"
       - run: npm ci
       - run: npm run test:all
       - name: Verify Cloudflare token exists
