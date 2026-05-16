@@ -44,7 +44,7 @@ jobs:
       - name: Verify Cloudflare token exists
         run: |
           if [ -z "${{ secrets.CLOUDFLARE_API_TOKEN }}" ]; then
-            echo "::error::CLOUDFLARE_API_TOKEN secret is missing or empty. Create a new token at https://dash.cloudflare.com/profile/api-tokens with Account > Cloudflare Pages > Edit AND Account > Account Settings > Read permissions (both required — wrangler's user-settings pre-flight needs the latter; without it the deploy 401s with the same code:10000 as missing Pages scope). Then set it in repo Settings > Secrets. Full procedure: docs/runbooks/cf-token-rotation.md."
+            echo "::error::CLOUDFLARE_API_TOKEN secret is missing or empty. Create a new token at https://dash.cloudflare.com/profile/api-tokens with Account > Cloudflare Pages > Edit (required for wrangler pages deploy) plus Account > Account Settings > Read (included in the 2026-05-16 rotated token; sufficiency of Pages:Edit alone not empirically verified — see docs/runbooks/cf-token-rotation.md Open question). Then set it in repo Settings > Secrets."
             exit 1
           fi
       - name: Deploy to Cloudflare Pages
