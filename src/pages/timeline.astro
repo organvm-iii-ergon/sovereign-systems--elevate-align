@@ -4,7 +4,6 @@ import { SPIRAL_VERSIONS, versionsGroupedByCategory } from '../data/spiral-versi
 
 const groups = versionsGroupedByCategory();
 const live = groups['production-live'];
-const experiments = groups['experiment'];
 const historical = groups['production-historical'];
 
 const totalCount = SPIRAL_VERSIONS.length;
@@ -25,16 +24,18 @@ function statusLabel(status: 'live' | 'playable' | 'snapshot-pending'): string {
 
 <Base
   title="Spiral Evolution Timeline"
-  description="Every major visual aesthetic of the Sovereign Systems Spiral, browseable as a versioned timeline."
+  description="Every deployed visual aesthetic of the Sovereign Systems Spiral, browseable as a versioned timeline."
 >
   <main class="timeline-page">
     <header class="timeline-hero">
       <p class="timeline-eyebrow">Internal · Client Review</p>
       <h1>Spiral Evolution Timeline</h1>
       <p class="timeline-intro">
-        Every major visual aesthetic of the Sovereign Systems Spiral,
+        Every deployed visual aesthetic of the Sovereign Systems Spiral,
         chronologically. Click any <strong>PLAYABLE</strong> entry to open the
-        version in a new tab — each opens its own self-contained universe.
+        deployed version in a new tab. <strong>SNAPSHOT PENDING</strong> entries
+        exist in git history but were never CF-deployed (auto-deploy broke
+        Apr 19–May 16) — they link to the source commit for now.
       </p>
       <p class="timeline-stats">
         <strong>{totalCount}</strong> versions ·
@@ -46,38 +47,12 @@ function statusLabel(status: 'live' | 'playable' | 'snapshot-pending'): string {
     {live.length > 0 && (
       <section class="timeline-section section-live">
         <h2>Currently Live</h2>
-        <p class="section-desc">What visitors see at <a href="https://elevatealign.com" target="_blank" rel="noopener">elevatealign.com</a> right now.</p>
-        <div class="version-grid">
-          {live.map((v) => (
-            <article class={`version-card status-${v.status}`}>
-              <header class="card-header">
-                <h3>{v.name}</h3>
-                <span class="status-badge">{statusLabel(v.status)}</span>
-              </header>
-              <p class="card-date">{formatDate(v.date)}</p>
-              <p class="card-desc">{v.description}</p>
-              {v.notes && <p class="card-notes">{v.notes}</p>}
-              <div class="card-actions">
-                {v.iframeSrc && (
-                  <a class="btn-open" href={v.iframeSrc} target="_blank" rel="noopener">Open ▸</a>
-                )}
-              </div>
-            </article>
-          ))}
-        </div>
-      </section>
-    )}
-
-    {experiments.length > 0 && (
-      <section class="timeline-section section-experiments">
-        <h2>2026-05-16 — Lab Experiments</h2>
         <p class="section-desc">
-          Confluence × Apophatic batch — alternative aesthetics being explored in parallel
-          to the live spiral. Not deployed to the site yet. Each opens as its own
-          interactive universe.
+          What visitors see at <a href="https://sovereign-systems-spiral.pages.dev" target="_blank" rel="noopener">sovereign-systems-spiral.pages.dev</a> right now.
+          (Custom domain <code>elevatealign.com</code> is not yet pointed.)
         </p>
         <div class="version-grid">
-          {experiments.map((v) => (
+          {live.map((v) => (
             <article class={`version-card status-${v.status}`}>
               <header class="card-header">
                 <h3>{v.name}</h3>
@@ -101,9 +76,10 @@ function statusLabel(status: 'live' | 'playable' | 'snapshot-pending'): string {
       <section class="timeline-section section-historical">
         <h2>V1 – V8 · Production History</h2>
         <p class="section-desc">
-          The production spiral's evolution from V1 (Apr 23) through V8 (Apr 26).
-          Snapshots will be backfilled over time — for now, each links to the commit where
-          that version's source code lives.
+          The spiral's evolution from V1 (Apr 23) through V8 (Apr 26).
+          Where Cloudflare preserved a permanent preview URL, the version is
+          playable directly. The rest can be promoted to playable by deploying
+          their source commit (see <code>src/data/spiral-versions.ts</code>).
         </p>
         <div class="version-grid">
           {historical.map((v) => (
@@ -119,8 +95,8 @@ function statusLabel(status: 'live' | 'playable' | 'snapshot-pending'): string {
                 {v.iframeSrc && (
                   <a class="btn-open" href={v.iframeSrc} target="_blank" rel="noopener">Open ▸</a>
                 )}
-                {!v.iframeSrc && v.commit && (
-                  <a class="btn-source" href={`https://github.com/organvm-iii-ergon/sovereign-systems--elevate-align/commit/${v.commit}`} target="_blank" rel="noopener">View source · <code>{v.commit}</code></a>
+                {v.commit && (
+                  <a class="btn-source" href={`https://github.com/organvm-iii-ergon/sovereign-systems--elevate-align/commit/${v.commit}`} target="_blank" rel="noopener">Source · <code>{v.commit}</code></a>
                 )}
               </div>
             </article>
@@ -131,10 +107,9 @@ function statusLabel(status: 'live' | 'playable' | 'snapshot-pending'): string {
 
     <footer class="timeline-footer">
       <p>
-        To file a new version: append to <code>src/data/spiral-versions.ts</code>.
-        To promote a <strong>SNAPSHOT PENDING</strong> entry to <strong>PLAYABLE</strong>,
-        build the version at its commit, copy the output to
-        <code>public/spiral-versions/&lt;id&gt;/</code>, and set <code>status: 'playable'</code>.
+        Internal lab experiments (Confluence × Apophatic batch, etc.) are
+        <strong>not</strong> shown here — they live in <code>docs/spiral-experiments/</code>
+        and are studio-internal reference, not site versions.
       </p>
     </footer>
   </main>
@@ -209,6 +184,15 @@ function statusLabel(status: 'live' | 'playable' | 'snapshot-pending'): string {
     color: var(--color-accent, #c4a878);
     text-decoration: none;
     border-bottom: 1px solid currentColor;
+  }
+
+  .section-desc code,
+  .timeline-footer code {
+    font-family: ui-monospace, 'SF Mono', monospace;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 0.15em 0.4em;
+    border-radius: 3px;
+    font-size: 0.9em;
   }
 
   .version-grid {
@@ -355,14 +339,6 @@ function statusLabel(status: 'live' | 'playable' | 'snapshot-pending'): string {
     font-size: 0.8rem;
     line-height: 1.6;
     opacity: 0.55;
-  }
-
-  .timeline-footer code {
-    font-family: ui-monospace, 'SF Mono', monospace;
-    background: rgba(255, 255, 255, 0.05);
-    padding: 0.15em 0.4em;
-    border-radius: 3px;
-    font-size: 0.9em;
   }
 
   @media (max-width: 640px) {

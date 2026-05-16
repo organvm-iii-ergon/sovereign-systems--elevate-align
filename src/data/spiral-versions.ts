@@ -1,27 +1,34 @@
 /**
- * Spiral version manifest — chronological record of every major visual
- * aesthetic of the Sovereign Systems Spiral.
+ * Spiral version manifest — chronological record of every deployed visual
+ * aesthetic of the Sovereign Systems Spiral site.
  *
  * Source of truth: HANDOFF.md and docs/timelines/2026-05-01-spiral-evolution-timeline.md
- * for V1–V8; docs/spiral-experiments/<batch>/README.md for experiment batches.
+ * for V1–V8. Permanent CF Pages preview URLs come from
+ *   `npx wrangler pages deployment list --project-name sovereign-systems-spiral`.
+ *
+ * Scope rule: this manifest contains ONLY entries representing actual site
+ * deployments (or commits that should be deployed). Internal lab experiments
+ * (Confluence × Apophatic batch, etc.) belong in `docs/spiral-experiments/`,
+ * not here, and not in `public/`.
  *
  * Status semantics:
- *   - 'live'             — currently deployed on the production site
- *   - 'playable'         — self-contained HTML snapshot served from public/
- *   - 'snapshot-pending' — version exists in git history but has no playable
- *                          snapshot yet. Source link points to the commit.
+ *   - 'live'             — currently deployed at sovereign-systems-spiral.pages.dev
+ *   - 'playable'         — has a permanent CF Pages preview URL at that commit
+ *   - 'snapshot-pending' — commit exists but was never CF-deployed (auto-deploy
+ *                          was broken Apr 19–May 16). Needs a manual re-deploy
+ *                          at the historical SHA to become playable.
  *
- * To add a new version: append to SPIRAL_VERSIONS chronologically.
- * To promote a snapshot-pending entry: build the version at its commit,
- * copy the output to public/spiral-versions/<id>/, set iframeSrc and
- * status='playable'.
+ * To promote a snapshot-pending entry to playable:
+ *   1. git worktree add ../tmp-rebuild <commit>
+ *   2. cd ../tmp-rebuild && npm install && npx wrangler pages deploy dist --project-name sovereign-systems-spiral
+ *   3. Note the preview URL printed; set `iframeSrc` and `status: 'playable'` here.
+ *   4. git worktree remove ../tmp-rebuild
  */
 
 export type SpiralVersionStatus = 'live' | 'playable' | 'snapshot-pending';
 export type SpiralVersionCategory =
   | 'production-historical' // shipped on the live site, now superseded
   | 'production-live'       // currently deployed
-  | 'experiment'            // lab artifact, not in live site
   ;
 
 export interface SpiralVersion {
@@ -37,9 +44,9 @@ export interface SpiralVersion {
   commit?: string;
   /** Short caption beneath the version name. */
   description: string;
-  /** Path the iframe loads. For 'playable' or 'live' only. */
+  /** URL the card's "Open" button targets. For 'playable' or 'live' only. */
   iframeSrc?: string;
-  /** Optional context note (e.g. "Never deployed — CI broken Apr 19"). */
+  /** Optional context note. */
   notes?: string;
 }
 
@@ -52,16 +59,17 @@ export const SPIRAL_VERSIONS: SpiralVersion[] = [
     status: 'snapshot-pending',
     commit: 'cdd046e',
     description: 'First lightening pass on the spiral after the Apr 21 3D-helix realignment.',
-    notes: 'Never deployed — CI broken since Apr 19. Lived only in local dev until V2.',
+    notes: 'Never CF-deployed — auto-deploy broke Apr 19. Lived only in local dev until V2.',
   },
   {
     id: 'v2-chakra-stars',
     name: 'V2 — Chakra-Colored Stars',
     date: '2026-04-25',
     category: 'production-historical',
-    status: 'snapshot-pending',
+    status: 'playable',
     commit: '02c90a2',
     description: '5-point stars with chakra-aligned color spectrum, bottom-to-top.',
+    iframeSrc: 'https://3c27e19e.sovereign-systems-spiral.pages.dev/',
   },
   {
     id: 'v3-helix-compressed',
@@ -77,9 +85,10 @@ export const SPIRAL_VERSIONS: SpiralVersion[] = [
     name: 'V4 — Dual Variants (Sacred Symbols + Refracted Stars)',
     date: '2026-04-25',
     category: 'production-historical',
-    status: 'snapshot-pending',
+    status: 'playable',
     commit: 'b8d105b',
     description: 'Two simultaneous aesthetics: 13 sacred symbols (Variant A) and generative refracted-light stars (Variant B).',
+    iframeSrc: 'https://b6f1d5ec.sovereign-systems-spiral.pages.dev/',
     notes: 'Maddie: "IM SO OBSESSED !!!!"',
   },
   {
@@ -118,7 +127,6 @@ export const SPIRAL_VERSIONS: SpiralVersion[] = [
     commit: '66a6f0b',
     description: 'Planets re-enabled (2–6 per node), per-planet lineage RNG, lens-driven icon geometry from 7-tradition sequence, creation/destruction duality.',
   },
-  // Live current
   {
     id: 'live-current',
     name: 'LIVE — Current Production Spiral',
@@ -126,90 +134,8 @@ export const SPIRAL_VERSIONS: SpiralVersion[] = [
     category: 'production-live',
     status: 'live',
     description: 'V8+ with chakra-color nodes (chakraColorForNode at spiral.ts:1248), IconWorlds physics, hybrid vessel-mode default.',
-    iframeSrc: '/',
-    notes: 'Always reflects the current deployment. Use the homepage spiral as your reference for "what visitors see now."',
-  },
-  // 2026-05-16 Confluence × Apophatic experiment batch (parallel lab — not in live site)
-  {
-    id: 'exp-mystical-canvas-v1',
-    name: 'Lab — Mystical Energy Canvas v1',
-    date: '2026-05-16',
-    category: 'experiment',
-    status: 'playable',
-    description: 'Minimal seed render. Smallest, simplest version of the canvas series.',
-    iframeSrc: '/spiral-experiments/2026-05-16-confluence-apophatic/mystical_energy_canvas.html',
-  },
-  {
-    id: 'exp-mystical-canvas-v2',
-    name: 'Lab — Mystical Energy Canvas v2',
-    date: '2026-05-16',
-    category: 'experiment',
-    status: 'playable',
-    description: 'More developed: added motion and more elements.',
-    iframeSrc: '/spiral-experiments/2026-05-16-confluence-apophatic/mystical_energy_canvas (1).html',
-  },
-  {
-    id: 'exp-mystical-canvas-v3',
-    name: 'Lab — Mystical Energy Canvas v3',
-    date: '2026-05-16',
-    category: 'experiment',
-    status: 'playable',
-    description: 'Richer particle system.',
-    iframeSrc: '/spiral-experiments/2026-05-16-confluence-apophatic/mystical_energy_canvas (2).html',
-  },
-  {
-    id: 'exp-mystical-canvas-v4',
-    name: 'Lab — Mystical Energy Canvas v4',
-    date: '2026-05-16',
-    category: 'experiment',
-    status: 'playable',
-    description: 'Most developed of the base canvas series.',
-    iframeSrc: '/spiral-experiments/2026-05-16-confluence-apophatic/mystical_energy_canvas (3).html',
-  },
-  {
-    id: 'exp-remixed-v1',
-    name: 'Lab — Remixed (d00fdcac) v1',
-    date: '2026-05-16',
-    category: 'experiment',
-    status: 'playable',
-    description: 'Remix variant: different aesthetic, same seed image.',
-    iframeSrc: '/spiral-experiments/2026-05-16-confluence-apophatic/remixed-d00fdcac.html',
-  },
-  {
-    id: 'exp-remixed-v2',
-    name: 'Lab — Remixed (d00fdcac) v2',
-    date: '2026-05-16',
-    category: 'experiment',
-    status: 'playable',
-    description: 'Remix iteration.',
-    iframeSrc: '/spiral-experiments/2026-05-16-confluence-apophatic/remixed-d00fdcac (1).html',
-  },
-  {
-    id: 'exp-confluence-kataphatic',
-    name: 'Lab — Confluence (Kataphatic)',
-    date: '2026-05-16',
-    category: 'experiment',
-    status: 'playable',
-    description: 'Implementation of the Confluence philosophy: 6 orbital loops, 12 stations, 144 streaming lanes, dual triads. Every sacred motion made visible.',
-    iframeSrc: '/spiral-experiments/2026-05-16-confluence-apophatic/confluence.html',
-  },
-  {
-    id: 'exp-pf005-twelvefold',
-    name: 'Lab — PF-005 Twelvefold Confluence',
-    date: '2026-05-16',
-    category: 'experiment',
-    status: 'playable',
-    description: 'Alternate kataphatic phrasing — same polarity, different surface.',
-    iframeSrc: '/spiral-experiments/2026-05-16-confluence-apophatic/pf-005-twelvefold-confluence.html',
-  },
-  {
-    id: 'exp-apophatic-engine-cell',
-    name: 'Lab — Apophatic Engine Cell',
-    date: '2026-05-16',
-    category: 'experiment',
-    status: 'playable',
-    description: 'Negative/aniconic counterpart to the Confluence philosophy. Deliberately minimal — refuses image.',
-    iframeSrc: '/spiral-experiments/2026-05-16-confluence-apophatic/apophatic-engine-cell.html',
+    iframeSrc: 'https://sovereign-systems-spiral.pages.dev/',
+    notes: 'Always reflects the current deployment.',
   },
 ];
 
@@ -217,7 +143,6 @@ export const SPIRAL_VERSIONS: SpiralVersion[] = [
 export function versionsGroupedByCategory(): Record<SpiralVersionCategory, SpiralVersion[]> {
   const groups: Record<SpiralVersionCategory, SpiralVersion[]> = {
     'production-live': [],
-    'experiment': [],
     'production-historical': [],
   };
   for (const v of SPIRAL_VERSIONS) groups[v.category].push(v);
