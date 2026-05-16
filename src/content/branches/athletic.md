@@ -1,5 +1,5 @@
 ---
-title: "Athletic Performance"
+title: "Energy + Focus"
 emoji: "⚡"
 hook: "Your body is capable of more than you think — if you give it the foundation to perform."
 status: live

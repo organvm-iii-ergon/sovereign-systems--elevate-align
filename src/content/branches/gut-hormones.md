@@ -1,5 +1,5 @@
 ---
-title: "Gut & Hormones"
+title: "Hormone Health"
 emoji: "🌿"
 hook: "Your gut and hormones are speaking — most people just don't know how to listen."
 status: live

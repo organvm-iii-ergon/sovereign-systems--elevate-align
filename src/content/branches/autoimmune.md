@@ -1,5 +1,5 @@
 ---
-title: "Autoimmune & Inflammation"
+title: "Inflammation"
 emoji: "🔥"
 hook: "Inflammation isn't the enemy — a body stuck in a chronic inflammatory state is asking for something different."
 status: live
