@@ -44,9 +44,26 @@ interface CapturePayload {
   quizPath?: string;          // serialized answers e.g. "ALIGN|inner|3,5,2,4,5"
   selectedPillar?: string;    // pillar slug
   selectedPhase?: Phase;
+  // Decision-board extension — present when the call comes from
+  // /decisions option clicks. Each click captures (a) which decision
+  // was answered, (b) which option was chosen, (c) whether the chosen
+  // option was the studio's recommendation, and (d) the suggestion
+  // text itself so KV preserves what was proposed alongside the answer.
+  decisionId?: string;
+  chosenOptionLabel?: string;
+  chosenOptionRecommended?: boolean;
+  studioSuggestion?: string;
+  decisionCategory?: string;
+  decisionOwner?: string;
 }
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+// Decision-board source uses a known constant identifier so Maddie's
+// click-throughs land in KV without requiring her to retype her email
+// on every option. She's the only client of /decisions; if a 4jp click
+// is captured via the same endpoint, the decisionOwner field distinguishes.
+const DECISION_BOARD_SOURCE = 'decision-board';
+const DECISION_BOARD_DEFAULT_EMAIL = 'decisions@sovereign-systems.local';
 
 function randomId(): string {
   return (
@@ -124,9 +141,13 @@ export const POST: APIRoute = async ({ request, locals }) => {
     });
   }
 
-  const email = typeof data.email === 'string' ? data.email.trim() : '';
+  const rawEmail = typeof data.email === 'string' ? data.email.trim() : '';
   const name = typeof data.name === 'string' ? data.name.trim() : '';
   const source = typeof data.source === 'string' ? data.source : 'unknown';
+
+  // Decision-board submissions are self-attributing — synthesize an email
+  // if one wasn't provided so KV writes still succeed.
+  const email = rawEmail || (source === DECISION_BOARD_SOURCE ? DECISION_BOARD_DEFAULT_EMAIL : '');
 
   if (!email || !EMAIL_RE.test(email)) {
     return new Response(JSON.stringify({ error: 'Valid email required' }), {
@@ -148,11 +169,22 @@ export const POST: APIRoute = async ({ request, locals }) => {
     quiz.selectedPhase = data.selectedPhase;
   }
 
+  const decision: Partial<CapturePayload> = {};
+  if (source === DECISION_BOARD_SOURCE) {
+    if (typeof data.decisionId === 'string') decision.decisionId = data.decisionId.slice(0, 80);
+    if (typeof data.chosenOptionLabel === 'string') decision.chosenOptionLabel = data.chosenOptionLabel.slice(0, 120);
+    if (typeof data.chosenOptionRecommended === 'boolean') decision.chosenOptionRecommended = data.chosenOptionRecommended;
+    if (typeof data.studioSuggestion === 'string') decision.studioSuggestion = data.studioSuggestion.slice(0, 1000);
+    if (typeof data.decisionCategory === 'string') decision.decisionCategory = data.decisionCategory.slice(0, 40);
+    if (typeof data.decisionOwner === 'string') decision.decisionOwner = data.decisionOwner.slice(0, 40);
+  }
+
   const enriched = {
     email,
     name,
     source,
     ...quiz,
+    ...decision,
     receivedAt: new Date().toISOString(),
     ipHint: ipHintFromHeaders(request.headers),
   };

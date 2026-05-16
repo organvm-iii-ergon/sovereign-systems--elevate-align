@@ -14,8 +14,10 @@ const groups = decisionsByCategory();
 const stats = overallProgress();
 const categoryOrder = ['urgent', 'client-gated', 'strategic', 'studio-internal'] as const;
 
-// Each option button opens a pre-filled mailto: with the selection — no infra
-// required for v1. v2 will hook into /capture so clicks land in KV.
+// Each option button POSTs to /capture (source='decision-board') so clicks
+// land in KV with the studio's suggestion captured alongside the answer.
+// Mailto: still acts as graceful fallback if the fetch fails (offline,
+// runtime error, ad-blocker, etc.).
 function mailtoFor(item: DecisionItem, option: DecisionOption): string {
   const to = 'padavano.anthony@gmail.com';
   const subj = `Decision: ${item.title}`;
@@ -24,6 +26,9 @@ function mailtoFor(item: DecisionItem, option: DecisionOption): string {
     `My choice: ${option.label}`,
     '',
     `(${option.description})`,
+    '',
+    `Studio suggestion: ${item.suggestion}`,
+    `Was the recommended option? ${option.recommended ? 'yes' : 'no'}`,
     '',
     `— sent from /decisions`,
   ].join('\n');
@@ -75,7 +80,7 @@ function statusIcon(status: 'open' | 'partial' | 'resolved'): string {
                   <span class="status-icon" title={item.status}>{statusIcon(item.status)}</span>
                   <h3>{item.title}</h3>
                   <div class="card-meta">
-                    <span class="owner-badge owner-{item.ownerNeeded}">{ownerLabel(item.ownerNeeded)}</span>
+                    <span class={`owner-badge owner-${item.ownerNeeded}`}>{ownerLabel(item.ownerNeeded)}</span>
                     <span class="urgency">{item.urgencyHint}</span>
                   </div>
                 </header>
@@ -101,6 +106,12 @@ function statusIcon(status: 'open' | 'partial' | 'resolved'): string {
                             <a
                               class={`option-btn ${opt.recommended ? 'recommended' : ''}`}
                               href={mailtoFor(item, opt)}
+                              data-decision-id={item.id}
+                              data-option-label={opt.label}
+                              data-option-recommended={opt.recommended ? 'true' : 'false'}
+                              data-suggestion={item.suggestion}
+                              data-category={item.category}
+                              data-owner={item.ownerNeeded}
                             >
                               <span class="opt-label">
                                 {opt.recommended && <span class="rec-tag">recommended</span>}
@@ -108,6 +119,7 @@ function statusIcon(status: 'open' | 'partial' | 'resolved'): string {
                               </span>
                               <span class="opt-desc">{opt.description}</span>
                               {opt.consequence && <span class="opt-conseq">→ {opt.consequence}</span>}
+                              <span class="opt-status" aria-live="polite"></span>
                             </a>
                           ))}
                         </div>
@@ -152,8 +164,9 @@ function statusIcon(status: 'open' | 'partial' | 'resolved'): string {
     <footer class="decisions-footer">
       <p>
         To add or edit decisions: <code>src/data/decisions.ts</code>.
-        To wire option clicks into KV instead of email: hook the `mailtoFor`
-        helper to POST <code>/capture</code> with <code>source: 'decision-board'</code>.
+        Option clicks POST to <code>/capture</code> with <code>source: 'decision-board'</code>;
+        the studio's suggestion is captured in the same payload as the chosen
+        option. Mailto: still fires as graceful fallback if the POST fails.
       </p>
       <p class="footer-meta">
         Generated from {stats.count} curated items · last index update on commit deploy.
@@ -161,6 +174,52 @@ function statusIcon(status: 'open' | 'partial' | 'resolved'): string {
     </footer>
   </main>
 </Base>
+
+<script is:inline>
+  // Intercept option-button clicks: POST to /capture first, then either
+  // show "Saved ✓" inline or fall through to the mailto: href so the user
+  // never loses their click.
+  document.addEventListener('DOMContentLoaded', () => {
+    const buttons = document.querySelectorAll('.option-btn');
+    buttons.forEach((btn) => {
+      btn.addEventListener('click', async (evt) => {
+        const el = evt.currentTarget;
+        if (!(el instanceof HTMLAnchorElement)) return;
+        const status = el.querySelector('.opt-status');
+        if (status && status.textContent === 'Saved ✓') {
+          // Already saved this click — let the user open mailto: if they want
+          // to follow up by email. Don't double-POST.
+          return;
+        }
+        evt.preventDefault();
+        if (status) status.textContent = 'Saving…';
+        try {
+          const resp = await fetch('/capture', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              source: 'decision-board',
+              decisionId: el.dataset.decisionId,
+              chosenOptionLabel: el.dataset.optionLabel,
+              chosenOptionRecommended: el.dataset.optionRecommended === 'true',
+              studioSuggestion: el.dataset.suggestion,
+              decisionCategory: el.dataset.category,
+              decisionOwner: el.dataset.owner,
+            }),
+          });
+          if (!resp.ok) throw new Error('non-2xx');
+          if (status) status.textContent = 'Saved ✓';
+          el.classList.add('saved');
+        } catch {
+          // Graceful fallback: let the mailto: open so the user's click
+          // isn't lost. Reset status so the next click retries the fetch.
+          if (status) status.textContent = '';
+          window.location.href = el.href;
+        }
+      });
+    });
+  });
+</script>
 
 <style>
   .decisions-page {
@@ -462,6 +521,18 @@ function statusIcon(status: 'open' | 'partial' | 'resolved'): string {
     opacity: 0.55;
     margin-top: 0.35rem;
     font-style: italic;
+  }
+  .opt-status {
+    display: block;
+    font-size: 0.78rem;
+    margin-top: 0.5rem;
+    color: var(--color-accent, #c4a878);
+    font-weight: 500;
+    min-height: 1em;
+  }
+  .option-btn.saved {
+    border-color: var(--color-accent, #c4a878);
+    background: rgba(196, 168, 120, 0.08);
   }
 
   .links {
