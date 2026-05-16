@@ -10,6 +10,10 @@ dist/
 
 output/
 *.txt
+# Track durable client-IP exports (e.g. ChatGPT conversation forwards from Maddie).
+# These are durable artifacts that satisfy Universal Rule #2 (nothing local only);
+# the broader *.txt ignore prevents accidental commits of ephemeral session logs.
+!docs/maddie/chat-exports/*.txt
 
 # IDE / editor caches
 .vscode/

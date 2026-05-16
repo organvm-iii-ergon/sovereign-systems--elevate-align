@@ -352,3 +352,63 @@ direction: inbound (Maddie → 4jp) + 4jp replies in scroll
 ## Cross-stream durability note
 
 Per CLAUDE.md `feedback_stream_repo_alignment`, Maddie-only transcripts go in this repo (not Rob's or workspace-meta). The PDF + 20 source jpegs live at `docs/client-pdfs/2026-05-16-maddie-imessage-screenshots/`; this transcript lives at `docs/maddie/2026-05-16-maddie-imessage-transcript-and-signals.md`. Commit + push satisfies Universal Rule #2.
+
+---
+
+## Addendum — 2026-05-16 later in day (text-only follow-on)
+
+After the screenshots PDF was compiled this morning, Maddie sent additional iMessage text content forwarded to the session. Filed here so the canonical transcript stays whole.
+
+### New text messages from Maddie
+
+> **"On me for TikTok💀💀💀 brain is still waking up lolol"**
+
+Context: appears to be self-deprecation after a TikTok-related miscommunication or post-correction. Standalone — no actionable signal.
+
+> **"Okay okay old one was stopdrinkingacid.com/waterhub & new one is stopdrinkingacid.com & got the quiz all done just have to put the coding in for the branches and then connect the auto and put in a few more emails and the two lil docs and it's all done !! 😛😮‍💨🤯💰💣"**
+
+**Major update.** The water funnel quiz is built in GHL. Maddie's remaining work on the GHL side: branch logic, automations, a few more emails, two small docs. Domain has changed: **`stopdrinkingacid.com`** is now the new clean URL (previously hosted at `/waterhub` subpath). `src/data/hub.config.ts:264` already lists this as `domains.water` and `src/data/hub.config.ts:269` already lists it as `ghl.productUrl` — code state is consistent with the new URL.
+
+> **"Is there anyway for me to pull all the branches you made/info resources etc into GHL? Cause it's really amazing and I'd love to use it so it doesn't get lost, but if not that's okay too we can just repurpose it on the spiral site a lil so it's not redundant (cause I don't want all of it on the spiral I don't think, just a few parts)"**
+>
+> **"Essentially I want to switch my baby branches to the spiral and your kickass ones into GHL if that's okay with you?"**
+
+**Strategic ask — branch-content swap.** Maddie proposes:
+- Move **her** GHL branch content ("baby branches") **onto the spiral site** as the public-facing branches
+- Move **the studio-developed** branch content (currently in `src/content/branches/*.md`) **into GHL** as the depth library that captured leads receive
+
+Why: she wants the spiral to be curated/aesthetic with her voice, GHL to hold the deep info. Not the other way around.
+
+This is content-architecture-level, not a same-session execute. See `docs/maddie/2026-05-16-branch-swap-proposal-analysis.md` for the analytical response and decision matrix.
+
+### New affiliate URLs sent (in same forward batch)
+
+| URL | Filter tier mapping | Notes |
+|---|---|---|
+| `https://www.multipure.com/shop-now/?coupon=249270&gad_source=1&gad_campaignid=16742058412&gbraid=0AAAAADnOQlV_zuwnACtQOJD9y-DS7isBz` | Multipure tier (line 260 of `hydration.config.ts`) | **Strip Google Ads tracking params before saving** (`gad_source`, `gad_campaignid`, `gbraid` leak Maddie's Google Ads attribution). Keep only `?coupon=249270`. Current value in code is `https://www.multipure.com/maddie-wired` — confirm with Maddie which is the canonical referral path. |
+| `https://www.coldstreamfilters.com/?v=79cba1185463` | **NEW brand — no tier exists** | The `?v=79cba1185463` parameter is likely her affiliate code. Needs a content decision: add as a new filter tier in `hydration.config.ts`, or list under a "filter alternatives" section, or skip. |
+| `https://www.multipure.com/why-multipure/what-we-remove/` | Info page (not affiliate) | Could power the bottled-water / what-we-remove education section (GH#64). |
+| `https://ionfaucet.com/` | Already in code at line 249 as `https://ionfaucet.com/maddie-spiral` | The bare URL she sent here does NOT supersede the existing maddie-spiral path — that one carries the referral. Leave as-is. |
+| `https://elevatealign.com/` | Primary hub | Already in `domains.hub`. No change. |
+
+### New files dropped to disk in same batch (now filed)
+
+- `docs/maddie/chat-exports/ChatGPT-Ionfaucet vs PureHome.txt` (227 KB) — closes the open Rule #2 violation noted in original TL;DR (point 4 / GH#49)
+- `docs/maddie/chat-exports/ChatGPT-Ionfaucet and Enagic Relationship.txt` (105 KB) — same
+
+### Updated action register
+
+Items added by this addendum (in addition to those in original Action register):
+
+| Priority | Action | Issue link | Effort |
+|---|---|---|---|
+| **P0 strategic** | Draft response to branch-swap proposal — DO NOT EXECUTE SWAP unilaterally. Strategic content-architecture decision requiring user (4jp) + client (Maddie) alignment. See `docs/maddie/2026-05-16-branch-swap-proposal-analysis.md`. | NEW issue (file when scope locked) | M (analysis) + L (execution if approved) |
+| **P1** | Multipure URL: confirm with Maddie which path is canonical referral (`?coupon=249270` vs `/maddie-wired`). Both produce affiliate revenue but only one should be displayed to avoid attribution split. | GH#49 sub-task | XS (one question) |
+| **P2** | Coldstream UK — decide whether to add as new filter tier in `hydration.config.ts` or list as alternative. Needs 4jp content judgment (does Coldstream fit the existing tier model?). | NEW (or extends GH#49) | S |
+| **P2** | TikTok mention — surface to 4jp; ambiguous, may relate to social media draft work. | — | — |
+| **CLOSED** | Original TL;DR point 4: "Two file-attachment exports from Maddie are NOT on disk" — now filed at `docs/maddie/chat-exports/`. | — | done |
+
+### Tone observations (addendum)
+
+- Maddie's "OMG sorry got migraine" earlier in the day → these later messages came after partial recovery. Still energetic ("💰💣" emoji on the water-funnel almost-done message).
+- The branch-swap proposal is the **biggest content-strategy ask of the entire conversation thread** — it reverses the implicit assumption that the studio holds the depth library. She's asking to invert authorship. Treat as foundational decision, not detail-level.
