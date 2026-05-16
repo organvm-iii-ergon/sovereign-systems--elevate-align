@@ -11,44 +11,50 @@
  *
  * Re-run any time the source branch content changes: `node scripts/extract-branch-html.mjs`.
  */
-import { readFileSync, writeFileSync, mkdirSync, existsSync } from 'node:fs';
-import { resolve } from 'node:path';
+import { readFileSync, writeFileSync, mkdirSync, existsSync } from "node:fs";
+import { resolve } from "node:path";
 
 const ROOT = process.cwd();
-const DIST = resolve(ROOT, 'dist/water');
-const OUT = resolve(ROOT, 'docs/maddie/2026-05-16-branch-html-exports');
+const DIST = resolve(ROOT, "dist/water");
+const OUT = resolve(ROOT, "docs/maddie/2026-05-16-branch-html-exports");
 
 const BRANCHES = [
-  { slug: 'gut-hormones', label: 'Hormone Health', visible: true },
-  { slug: 'fertility', label: 'Fertility', visible: false },
-  { slug: 'athletic', label: 'Energy + Focus', visible: true },
-  { slug: 'autoimmune', label: 'Inflammation', visible: true },
-  { slug: 'cancer-support', label: 'Cancer Support', visible: false },
-  { slug: 'sustainability', label: 'Sustainability + Savings', visible: false },
+  { slug: "gut-hormones", label: "Hormone Health", visible: true },
+  { slug: "fertility", label: "Fertility", visible: false },
+  { slug: "athletic", label: "Energy + Focus", visible: true },
+  { slug: "autoimmune", label: "Inflammation", visible: true },
+  { slug: "cancer-support", label: "Cancer Support", visible: false },
+  { slug: "sustainability", label: "Sustainability + Savings", visible: false },
 ];
 
 function extractHeroAndContent(html) {
   // Hero: the <h1> title and the italic subtext live in the first <section> with
   // class containing 'min-h-[60vh]' (the standard branch hero).
-  const heroMatch = html.match(/<h1[^>]*>([\s\S]*?)<\/h1>[\s\S]*?<p[^>]*italic[^>]*>([\s\S]*?)<\/p>/i);
-  const heroTitle = heroMatch ? heroMatch[1].replace(/\s+/g, ' ').trim() : '';
-  const heroSubtitle = heroMatch ? heroMatch[2].replace(/\s+/g, ' ').trim() : '';
+  const heroMatch = html.match(
+    /<h1[^>]*>([\s\S]*?)<\/h1>[\s\S]*?<p[^>]*italic[^>]*>([\s\S]*?)<\/p>/i,
+  );
+  const heroTitle = heroMatch ? heroMatch[1].replace(/\s+/g, " ").trim() : "";
+  const heroSubtitle = heroMatch
+    ? heroMatch[2].replace(/\s+/g, " ").trim()
+    : "";
 
   // Body: the rendered Markdoc lives inside <div class="branch-content ...">
-  const bodyMatch = html.match(/<div[^>]*class="[^"]*branch-content[^"]*"[^>]*>([\s\S]*?)<\/div>\s*<\/div>\s*<\/div>/i);
+  const bodyMatch = html.match(
+    /<div[^>]*class="[^"]*branch-content[^"]*"[^>]*>([\s\S]*?)<\/div>\s*<\/div>\s*<\/div>/i,
+  );
   const body = bodyMatch ? bodyMatch[1].trim() : null;
   return { heroTitle, heroSubtitle, body };
 }
 
 function extractTitle(html) {
   const t = html.match(/<title>([^<]+)<\/title>/i);
-  return t ? t[1].replace(/\s*\|.*$/, '').trim() : 'Branch';
+  return t ? t[1].replace(/\s*\|.*$/, "").trim() : "Branch";
 }
 
 function stripScripts(html) {
   return html
-    .replace(/<script\b[^>]*>[\s\S]*?<\/script\s*>/gi, '')
-    .replace(/<style\b[^>]*>[\s\S]*?<\/style\s*>/gi, '');
+    .replace(/<script\b[^>]*>[\s\S]*?<\/script\s*>/gi, "")
+    .replace(/<style\b[^>]*>[\s\S]*?<\/style\s*>/gi, "");
 }
 
 function inlineWrap(title, hero, body, label, slug) {
@@ -74,9 +80,9 @@ function inlineWrap(title, hero, body, label, slug) {
 <div style="background:#0d1b2a;color:#e8e6e1;padding:48px 24px;font-family:'Inter',system-ui,sans-serif;line-height:1.8;">
   <div style="max-width:640px;margin:0 auto;">
     <h1 style="font-size:48px;font-weight:300;line-height:1.1;margin:0 0 24px;color:#ffffff;">${hero.heroTitle || label}</h1>
-    ${hero.heroSubtitle ? `<p style="font-style:italic;color:rgba(255,255,255,0.6);font-size:20px;line-height:1.6;margin:0 0 48px;">${hero.heroSubtitle}</p>` : ''}
+    ${hero.heroSubtitle ? `<p style="font-style:italic;color:rgba(255,255,255,0.6);font-size:20px;line-height:1.6;margin:0 0 48px;">${hero.heroSubtitle}</p>` : ""}
     <div style="font-size:16px;line-height:1.9;">
-      ${body || '<p>(content extraction failed — see source .md)</p>'}
+      ${body || "<p>(content extraction failed — see source .md)</p>"}
     </div>
   </div>
 </div>
@@ -87,12 +93,12 @@ if (!existsSync(OUT)) mkdirSync(OUT, { recursive: true });
 
 let made = 0;
 for (const b of BRANCHES) {
-  const src = resolve(DIST, b.slug, 'index.html');
+  const src = resolve(DIST, b.slug, "index.html");
   if (!existsSync(src)) {
     console.warn(`skip ${b.slug}: missing ${src}`);
     continue;
   }
-  const rawHtml = readFileSync(src, 'utf8');
+  const rawHtml = readFileSync(src, "utf8");
   const html = stripScripts(rawHtml);
   const hero = extractHeroAndContent(html);
   if (!hero.body) {
@@ -102,7 +108,9 @@ for (const b of BRANCHES) {
   const title = extractTitle(html);
   const out = resolve(OUT, `${b.slug}.html`);
   writeFileSync(out, inlineWrap(title, hero, hero.body, b.label, b.slug));
-  console.log(`ok ${b.slug} → ${out} (${hero.body.length} bytes content, ${b.visible ? 'visible-on-spiral' : 'hidden-on-spiral'})`);
+  console.log(
+    `ok ${b.slug} → ${out} (${hero.body.length} bytes content, ${b.visible ? "visible-on-spiral" : "hidden-on-spiral"})`,
+  );
   made++;
 }
 
