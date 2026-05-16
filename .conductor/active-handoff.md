@@ -13,8 +13,8 @@ The prior CF-token-rotation handoff is archived at `.conductor/archive-2026-05-1
 ## Current State
 
 - **Branch:** `main`. Working tree carries 3 items: `R .conductor/active-handoff.md → archive-...` (the rename producing this handoff), plus 2 pre-existing carry-forwards from parallel sessions (`D docs/maddie/2026-04-25-message-spiral-feedback.pdf`, `?? docs/client-pdfs/2026-05-16-maddie-imessage-responses.pdf`).
-- **Main:** at `319ae5b chore(content): relocate session transcript containing leak artifacts (#86)`. Parity `origin/main..main = 0` / `main..origin/main = 0`. ✓ 1:1.
-- **CI on main:** assumed green (last verified by post-merge runs for #84/#85/#86 — all squash-merged, auto-deploy live).
+- **Main:** at `8afc6a4 feat(decisions): wire option clicks to /capture + capture studio suggestions (#88)`. Parity `origin/main..main = 0` / `main..origin/main = 0`. ✓ 1:1.
+- **CI on main:** assumed green (last verified by post-merge runs for #84/#85/#86/#87/#88 — all squash-merged, auto-deploy live).
 - **Live URL:** `https://sovereign-systems-spiral.pages.dev` — verified clean across `/water/{gut-hormones,athletic,fertility}/` + `/library` at session close.
 - **Open PRs:** 0.
 - **Vacuum gate:** `npm test` ✓ at last run before #84.
