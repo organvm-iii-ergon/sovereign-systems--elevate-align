@@ -6,6 +6,9 @@ on:
   pull_request:
     branches: [main]
 
+permissions:
+  contents: read
+
 # Only one deploy at a time — cancel in-flight deploys when a new push arrives
 concurrency:
   group: deploy-${{ github.ref }}
