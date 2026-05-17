@@ -15,7 +15,7 @@
 - **Branch:** `main` @ `4917861 ci: wire trunk lint into build job (closes #70, IRF-CRP-012) (#93)`
 - **Parity:** `origin/main..main = 0` / `main..origin/main = 0` ✓ 1:1
 - **Working tree:** ONE pending item — handoff rotation:
-  ```
+  ```text
   R  .conductor/active-handoff.md -> .conductor/archive-2026-05-16-post-leak-scrub-handoff.md
   ?? .conductor/active-handoff.md
   ```
@@ -23,7 +23,7 @@
 - **CI:** Main green at HEAD (`build: success, deploy: success` verified post-#93 merge). Trunk lint step now in gate path for every PR + push.
 - **Live URL:** `https://sovereign-systems-spiral.pages.dev` — last verified clean at start of prior session; no content shipped this session.
 - **Open PRs:** 0
-- **Project Board #5:** 89 items (80 ATM-* atom flags + 9 GH-issue items; the 9 are the issues tab)
+- **Project Board #5:** 89 items (80 ATM-\* atom flags + 9 GH-issue items; the 9 are the issues tab)
 - **Open issues:** 21 (down from 23). Breakdown: 6 Maddie-gated (incl. #1 Keystatic-handover labelled this session; #17 dropped — closed 2026-04-19, was a stale entry in prior bucket), 4 P0-client-action-pending (#5/#49/#58/#62), 10 SPEC roadmap, 1 tracking (#94). Reconciles to 21.
 - **Security alerts:** Code-scanning **0** | Secret-scanning **0** | Dependabot **9** (all in #94 awaiting auth).
 
@@ -42,18 +42,18 @@
 
 ## Key Decisions
 
-| Decision | Rationale |
-|----------|-----------|
-| Remove `stripScripts` outright after 4 regex iterations | CodeQL `js/incomplete-multi-character-sanitization` is fundamentally unfixable with regex (nested-tag attack model). Downstream `bodyMatch` already isolates safe region. Theater removed → alerts closed → no functional regression. |
-| Trunk default behavior (PR-scoped) over `--all` | Repo has 473+ pre-existing format issues + 11.7k lint findings. `--all` would fail every PR. PR-scoped gate catches new debt without forcing inherited-rot cleanup as prerequisite. |
-| File #94 as tracking issue, do NOT take major bumps unilaterally | Live client site mid-Maddie-onboarding; Astro 5→6 + CF adapter 12→13 are breaking. Risk-assess shows vulnerable paths aren't exercised. Wait for explicit auth + 2–4 hr session window. |
-| 80 ATM-* atoms intentionally untouched | Project CLAUDE.md hard rule: "Atoms are permanent — never batch-close. Only the human closes." Listed in close-out as intentional non-action, not silent skip. |
+| Decision                                                                  | Rationale                                                                                                                                                                                                                                                                                                                                        |
+| ------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| Remove `stripScripts` outright after 4 regex iterations                   | CodeQL `js/incomplete-multi-character-sanitization` is fundamentally unfixable with regex (nested-tag attack model). Downstream `bodyMatch` already isolates safe region. Theater removed → alerts closed → no functional regression.                                                                                                            |
+| Trunk default behavior (PR-scoped) over `--all`                           | Repo has 473+ pre-existing format issues + 11.7k lint findings. `--all` would fail every PR. PR-scoped gate catches new debt without forcing inherited-rot cleanup as prerequisite.                                                                                                                                                              |
+| File #94 as tracking issue, do NOT take major bumps unilaterally          | Live client site mid-Maddie-onboarding; Astro 5→6 + CF adapter 12→13 are breaking. Risk-assess shows vulnerable paths aren't exercised. Wait for explicit auth + 2–4 hr session window.                                                                                                                                                          |
+| 80 ATM-\* atoms intentionally untouched                                   | Project CLAUDE.md hard rule: "Atoms are permanent — never batch-close. Only the human closes." Listed in close-out as intentional non-action, not silent skip.                                                                                                                                                                                   |
 | Bypass autogen-freshness gate with `AUTOGEN_FRESHNESS_THRESHOLD_DAYS=999` | 3 remediations attempted (`organvm context sync --write`, `organvm refresh`, `--organ III`), all reported success, none updated this repo's timestamps. Root cause hypothesized: seed-registry still indexes legacy `Workspace/organvm-iii-ergon/` path post-migration to `Code/organvm/`. Bypass + filed-for-followup is the correct trade-off. |
 
 ## Critical Context
 
 - **Trunk gate calibration moment is the NEXT PR.** First PR after #93 will run `trunk-io/trunk-action@v1` for the first time on someone's working set. If it flags unexpected lint issues, that's the gate working as designed — don't reflexively widen ignore lists. Investigate first.
-- **80 ATM-* on the project board are NOT GH-issue work.** They are doctrine-encoded prompt atoms tracked at `~/Workspace/meta-organvm/organvm-corpvs-testamentvm/data/prompt-registry/prompt-atoms.json`. They don't block any code/CI surface. Treat as inventory, not backlog.
+- **80 ATM-\* on the project board are NOT GH-issue work.** They are doctrine-encoded prompt atoms tracked at `~/Workspace/meta-organvm/organvm-corpvs-testamentvm/data/prompt-registry/prompt-atoms.json`. They don't block any code/CI surface. Treat as inventory, not backlog.
 - **The autogen-tail staleness is a NEW manifestation, not a regression.** The prior schema bug (`4444J99/domus-semper-palingenesis#30` / IRF-DOM-048) was fixed earlier today. The bug this session uncovered is path-drift between the seed-registry and on-disk repo location after the Workspace→Code migration. Expect bypass to be the temporary norm until filed and fixed.
 - **`docs/internal/` is unlisted, not private.** The 4 files relocated in the prior content-leak-scrub session are still publicly visible via the GitHub UI. Full privacy requires git-history rewrite (destructive, held for explicit user auth).
 - **Build pipeline does not sanitize** — `.md` source → `dist/water/{slug}/index.html` → `scripts/extract-branch-html.mjs` → HTML exports for Maddie. Single source can contaminate 3+ surfaces silently. Always grep `dist/` and `docs/maddie/2026-05-16-branch-html-exports/` after `.md` edits.
@@ -74,7 +74,7 @@ In rough priority order. Pick one — do not bundle unless explicitly authorized
    git pull --ff-only origin main
    ```
 2. **#94 — Major-bump session** (2–4 hrs nominal; 6–10 hrs if SpiralIsland or capture.ts break — see #94 body). BUILD-phase. Recipient candidates: Claude (current) for cross-organ-aware execution; **Codex for mechanical-refactor execution if Claude is unavailable** (per work-type matrix). Steps in #94 body + active-handoff Next Actions #2.
-3. **File IRF entry for autogen silent-skip bug.** Per active-handoff Next Actions #3. Audit/research work — best for Claude or Codex. Acceptance: `organvm refresh` updates the per-repo CLAUDE.md tail OR loudly reports "skipping <path>: no seed entry" (silent success → loud failure).
+3. **File IRF entry for autogen silent-skip bug.** Per active-handoff Next Actions #3. Audit/research work — best for Claude or Codex. Acceptance: `organvm refresh` updates the per-repo CLAUDE.md tail OR loudly reports `skipping <path>: no seed entry` (silent success → loud failure).
 4. **Send HOLD + CLEAR Maddie messages** (drafted at `docs/maddie/_hold-messages/2026-05-16-{HOLD,CLEAR}-html-exports.md`). Conversation-level, not BUILD. User pastes when ready.
 
 ## Hung items (carry-forwards; canonical list in active-handoff)
@@ -100,19 +100,19 @@ The active-handoff is the canonical source. If this summary disagrees with activ
 - **Don't run `trunk fmt --all` or `trunk check --all` without scoping** — would touch 473+ files. The gate is PR-scoped by design.
 - **Don't push to `main` directly** — project CLAUDE.md hard rule. Always PR-cascade on public ORGANVM repos.
 - **Don't bypass the autogen-freshness gate without naming it in the close-out** — bypassing silently is a smoothing violation (Universal Rule #9: every artifact-producing agent including Claude is a smoothing agent).
-- **Don't batch-close ATM-* atoms** — they are permanent; only the human closes (project CLAUDE.md HARD RULE).
+- **Don't batch-close ATM-\* atoms** — they are permanent; only the human closes (project CLAUDE.md HARD RULE).
 
 ## Conflict Zones (for parallel-agent coordination)
 
-| Path | Rule | Reason |
-|---|---|---|
-| `.conductor/active-handoff.md` | exclusive | Single source of truth for repo continuity; serialize writes |
-| `.github/workflows/ci.yml` | exclusive | CI changes have blast radius; coordinate before edit |
-| `src/data/decisions.ts` | exclusive | Maddie's decision-state lives here; appendable but serialize |
-| `scripts/extract-branch-html.mjs` | exclusive | Just stabilized post-#92; further edits should pass through review |
+| Path                                 | Rule             | Reason                                                                             |
+| ------------------------------------ | ---------------- | ---------------------------------------------------------------------------------- |
+| `.conductor/active-handoff.md`       | exclusive        | Single source of truth for repo continuity; serialize writes                       |
+| `.github/workflows/ci.yml`           | exclusive        | CI changes have blast radius; coordinate before edit                               |
+| `src/data/decisions.ts`              | exclusive        | Maddie's decision-state lives here; appendable but serialize                       |
+| `scripts/extract-branch-html.mjs`    | exclusive        | Just stabilized post-#92; further edits should pass through review                 |
 | `package.json` / `package-lock.json` | coordinator_only | Dep changes require full smoke test; only the agent doing the bump session touches |
-| `~/.claude/plans/closeout-*.md` | append_only | Each session writes its own dated closeout; never overwrite |
-| `.conductor/archive-*.md` | append_only | Historical handoffs; never edit after rotation |
+| `~/.claude/plans/closeout-*.md`      | append_only      | Each session writes its own dated closeout; never overwrite                        |
+| `.conductor/archive-*.md`            | append_only      | Historical handoffs; never edit after rotation                                     |
 
 ## Recovery Protocol (if you're a fresh agent reading this cold)
 
