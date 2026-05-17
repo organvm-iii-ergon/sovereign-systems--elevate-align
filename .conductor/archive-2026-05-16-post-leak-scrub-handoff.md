@@ -43,14 +43,14 @@ The prior CF-token-rotation handoff is archived at `.conductor/archive-2026-05-1
 
 ## Key Decisions
 
-| Decision | Rationale |
-|----------|-----------|
-| Delete full `## Research & Evidence` section, not surgical excision | Cleaner diff, matches existing-clean `autoimmune.md` template, no leftover empty headers (advisor) |
-| `docs/internal/` (git-tracked), not `.private/` (gitignored) | Universal Rule #2 nothing-local-only; defense-in-depth, not absolute removal (advisor) |
-| Pull `/library` entries entirely, don't filter-allowlist | Opt-in catalogs stay correct as `docs/` grows; allow-lists rot (advisor) |
-| Send HOLD message BEFORE cleaning, then CLEAR after | Maddie might be pasting HTML into GHL right now; HOLD-first prevents her shipping contaminated copy (advisor) |
-| Trust `.md` edit but verify `dist/` after build | Build pipeline transforms whatever is present — could re-inject (advisor) |
-| PR-cascade (#84/#85/#86), not direct push | Project CLAUDE.md hard rule: no direct push to main on public ORGANVM repos |
+| Decision                                                            | Rationale                                                                                                     |
+| ------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------- |
+| Delete full `## Research & Evidence` section, not surgical excision | Cleaner diff, matches existing-clean `autoimmune.md` template, no leftover empty headers (advisor)            |
+| `docs/internal/` (git-tracked), not `.private/` (gitignored)        | Universal Rule #2 nothing-local-only; defense-in-depth, not absolute removal (advisor)                        |
+| Pull `/library` entries entirely, don't filter-allowlist            | Opt-in catalogs stay correct as `docs/` grows; allow-lists rot (advisor)                                      |
+| Send HOLD message BEFORE cleaning, then CLEAR after                 | Maddie might be pasting HTML into GHL right now; HOLD-first prevents her shipping contaminated copy (advisor) |
+| Trust `.md` edit but verify `dist/` after build                     | Build pipeline transforms whatever is present — could re-inject (advisor)                                     |
+| PR-cascade (#84/#85/#86), not direct push                           | Project CLAUDE.md hard rule: no direct push to main on public ORGANVM repos                                   |
 
 ## Critical Context
 
@@ -97,6 +97,7 @@ The prior CF-token-rotation handoff is archived at `.conductor/archive-2026-05-1
 ---
 
 **Compression level:** Standard (~1700 tokens). Source-of-truth files:
+
 - `~/.claude/projects/.../memory/project_session_2026_05_16_content_leak_scrub.md` — fullest record
 - `~/.claude/projects/.../memory/feedback_build_pipeline_propagation.md` — durable rule (export-grep mandate)
 - `~/.claude/projects/.../memory/feedback_library_indexing_privacy.md` — durable rule (opt-in catalog principle)
