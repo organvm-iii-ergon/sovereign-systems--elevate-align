@@ -240,7 +240,7 @@ Critical path complete. Content genome processed. Deployed via local wrangler du
 
 ## Triple-Reference Law
 
-Identity by triangulation. Every referenceable work item exists in 3 canonical surfaces. For this project: (a) atomized-wants `W-###` (or `seed.yaml` declaration) in this repo, (b) workspace-meta IRF entry `IRF-XXX-NNN` at `~/Workspace/meta-organvm/organvm-corpvs-testamentvm/INST-INDEX-RERUM-FACIENDARUM.md`, (c) GitHub issue on this repo's project board.
+Identity by triangulation. Every referenceable work item exists in 3 canonical surfaces. For this project: (a) atomized-wants `W-###` (or `seed.yaml` declaration) in this repo, (b) IRF entry `IRF-XXX-NNN` at `~/Code/organvm/organvm-corpvs-testamentvm/INST-INDEX-RERUM-FACIENDARUM.md`, (c) GitHub issue on this repo's project board.
 
 Threshold classifications per IRF-SYS-078: **3/3 = CONSTITUTED** (active, traceable across all surfaces), **2/3 = EMBRYONIC** (acceptable for blocked work waiting on input), **1/3 = NASCENT** (likely an unfiled vacuum), **0/3 = VACUUM** (Constitutional Axiom #1 violation).
 
