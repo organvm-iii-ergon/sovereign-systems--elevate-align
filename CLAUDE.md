@@ -348,16 +348,16 @@ Transcripts are on-demand (never committed):
 
 System-wide SOPs from `meta-organvm/praxis-perpetua/library/` are not duplicated here — discover them with `organvm sop lifecycle`. Project-specific SOPs (this repo) below.
 
-| Name                                                     | Description                                             |
-| -------------------------------------------------------- | ------------------------------------------------------- |
-| SOP-SS-ATM-001_001-atomic-decomposition                  | Atomic Decomposition & Coverage Proof                   |
-| SOP-SS-CLT-001_001-ontology_client_decisions             | Client decisions ontology                               |
-| SOP-SS-CNT-001_001-content-extraction-and-node-injection | Content Extraction & Node Injection                     |
-| SOP-SS-ISS-001-001-ontology-issue-specification          | Issue specification ontology                            |
-| SOP-SS-PRC-001_001-ontology_meta_process                 | Meta-process ontology                                   |
-| SOP-SS-QAB-001_001-project-board-qa                      | Project board QA                                        |
-| SOP-SS-TRK-001_001-ontology_issue_tracking               | Issue tracking ontology                                 |
-| registry                                                 | SOP Registry — Sovereign Systems                        |
+| Name                                                     | Description                           |
+| -------------------------------------------------------- | ------------------------------------- |
+| SOP-SS-ATM-001_001-atomic-decomposition                  | Atomic Decomposition & Coverage Proof |
+| SOP-SS-CLT-001_001-ontology_client_decisions             | Client decisions ontology             |
+| SOP-SS-CNT-001_001-content-extraction-and-node-injection | Content Extraction & Node Injection   |
+| SOP-SS-ISS-001-001-ontology-issue-specification          | Issue specification ontology          |
+| SOP-SS-PRC-001_001-ontology_meta_process                 | Meta-process ontology                 |
+| SOP-SS-QAB-001_001-project-board-qa                      | Project board QA                      |
+| SOP-SS-TRK-001_001-ontology_issue_tracking               | Issue tracking ontology               |
+| registry                                                 | SOP Registry — Sovereign Systems      |
 
 **Linked skills:** api-design-patterns, cicd-resilience-and-recovery, coding-standards-enforcer, continuous-learning-agent, contract-risk-analyzer, cross-agent-handoff, evaluation-to-growth, gdpr-compliance-check, genesis-dna, multi-agent-workforce-planner, planning-and-roadmapping, promotion-and-state-transitions, quality-gate-baseline-calibration, repo-onboarding-and-habitat-creation, security-threat-modeler, structural-integrity-audit
 
