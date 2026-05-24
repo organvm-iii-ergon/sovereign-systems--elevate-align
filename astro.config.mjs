@@ -6,7 +6,10 @@ import markdoc from '@astrojs/markdoc';
 
 export default defineConfig({
   site: 'https://elevatealign.com',
-  adapter: cloudflare(),
+  // imageService 'compile' uses Astro's build-time image service (the site
+  // does no astro:assets optimization), avoiding the v13 default that requires
+  // a Cloudflare 'IMAGES' binding this project doesn't provision.
+  adapter: cloudflare({ imageService: 'compile' }),
   integrations: [sitemap(), markdoc()],
   server: {
     host: true, // bind 0.0.0.0 — required for tunnel access

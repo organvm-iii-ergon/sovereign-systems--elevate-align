@@ -3,40 +3,33 @@ import Base from '../layouts/Base.astro';
 import {
   LIBRARY,
   libraryByGroup,
-  discoverFiles,
   formatBytes,
   GROUP_LABEL,
   GROUP_DESCRIPTION,
   GITHUB_BLOB_BASE,
   GITHUB_TREE_BASE,
-  type LibraryEntry,
   type DiscoveredFile,
 } from '../lib/docs-library';
+import libraryManifest from '../data/library-manifest.json';
 
-const repoRoot = process.cwd();
+// File listings are precomputed at build time by
+// scripts/generate-library-manifest.mjs — workerd prerender (Cloudflare v13)
+// has no host filesystem, so the page can't call node:fs at render time.
+type EntryFiles = { files: DiscoveredFile[]; total: number; shown: number };
+const manifest = libraryManifest as Record<string, EntryFiles>;
 
-// Discover files at build time. The map keeps order stable per entry.
-type EntryFiles = {
-  entry: LibraryEntry;
-  files: DiscoveredFile[];
-  total: number;
-  shown: number;
-};
-const populated: EntryFiles[] = LIBRARY.map((entry) => {
-  const all = discoverFiles(entry, repoRoot);
-  const max = entry.maxShown ?? 30;
-  return {
-    entry,
-    files: all.slice(0, max),
-    total: all.length,
-    shown: Math.min(max, all.length),
-  };
-});
-
-const populatedBySlug = new Map(populated.map((p) => [p.entry.slug, p]));
+const populatedBySlug = new Map<string, EntryFiles>(
+  LIBRARY.map((entry) => [
+    entry.slug,
+    manifest[entry.slug] ?? { files: [], total: 0, shown: 0 },
+  ]),
+);
 const groups = libraryByGroup();
 const groupKeys = Object.keys(groups) as Array<keyof typeof groups>;
-const totalFiles = populated.reduce((acc, p) => acc + p.total, 0);
+const totalFiles = LIBRARY.reduce(
+  (acc, e) => acc + (manifest[e.slug]?.total ?? 0),
+  0,
+);
 
 function fmtDate(iso: string): string {
   const d = new Date(iso);

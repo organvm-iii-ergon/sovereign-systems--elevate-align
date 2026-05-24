@@ -10,8 +10,11 @@
  * Add a new category by appending an entry here; the library page picks
  * it up automatically on the next build.
  */
-import { readdirSync, statSync, existsSync } from 'node:fs';
-import { join, basename, extname } from 'node:path';
+// NOTE: this module is imported by `src/pages/library.astro`, which prerenders
+// in workerd under @astrojs/cloudflare v13 (no host filesystem). It must stay
+// free of `node:fs`/`node:path`. The build-time file enumeration lives in
+// `scripts/generate-library-manifest.mjs`, which writes the manifest JSON the
+// page reads.
 
 export type LibraryGroup =
   | 'client' // client deliverables, decisions, inbound PDFs
@@ -240,70 +243,6 @@ export interface DiscoveredFile {
   sizeBytes: number;
   mtimeIso: string;
   isDir: boolean;
-}
-
-const DEFAULT_EXTS = ['.md', '.html', '.pdf', '.json', '.txt'];
-
-/**
- * Enumerate files for a library entry. Runs at build time.
- * For 'dir' entries, lists immediate children matching the entry's exts (default
- * to a useful subset). For 'single-file' entries, returns one-element array.
- * Sorted newest-first by mtime.
- */
-export function discoverFiles(
-  entry: LibraryEntry,
-  repoRoot: string,
-): DiscoveredFile[] {
-  const absRoot = join(repoRoot, entry.path);
-  if (!existsSync(absRoot)) return [];
-
-  if (entry.kind === 'single-file') {
-    const st = statSync(absRoot);
-    return [
-      {
-        name: basename(entry.path),
-        relPath: entry.path,
-        ext: extname(entry.path).toLowerCase(),
-        sizeBytes: st.size,
-        mtimeIso: st.mtime.toISOString(),
-        isDir: false,
-      },
-    ];
-  }
-
-  const exts = entry.exts ?? DEFAULT_EXTS;
-  const out: DiscoveredFile[] = [];
-
-  for (const child of readdirSync(absRoot)) {
-    if (child.startsWith('.')) continue; // skip .DS_Store etc
-    const abs = join(absRoot, child);
-    const st = statSync(abs);
-    if (st.isDirectory()) {
-      out.push({
-        name: child,
-        relPath: join(entry.path, child),
-        ext: '',
-        sizeBytes: 0,
-        mtimeIso: st.mtime.toISOString(),
-        isDir: true,
-      });
-      continue;
-    }
-    const ext = extname(child).toLowerCase();
-    if (exts.length && !exts.includes(ext)) continue;
-    out.push({
-      name: child,
-      relPath: join(entry.path, child),
-      ext,
-      sizeBytes: st.size,
-      mtimeIso: st.mtime.toISOString(),
-      isDir: false,
-    });
-  }
-
-  // Newest first.
-  out.sort((a, b) => b.mtimeIso.localeCompare(a.mtimeIso));
-  return out;
 }
 
 export function libraryByGroup(): Record<LibraryGroup, LibraryEntry[]> {

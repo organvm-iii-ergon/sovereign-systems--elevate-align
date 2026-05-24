@@ -10,6 +10,7 @@ output/
 # Generated artifacts (owned by their generators — never hand-format)
 public/citations.json
 src/data/citations.ts
+src/data/library-manifest.json
 package-lock.json
 
 # Markdown corpus + manifests are managed by markdownlint, not prettier
