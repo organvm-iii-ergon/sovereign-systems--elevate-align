@@ -10,6 +10,11 @@ export default defineConfig({
   // does no astro:assets optimization), avoiding the v13 default that requires
   // a Cloudflare 'IMAGES' binding this project doesn't provision.
   adapter: cloudflare({ imageService: 'compile' }),
+  // The site uses no Astro.session. Declaring a driver stops @astrojs/cloudflare
+  // v13 from auto-injecting a Cloudflare KV 'SESSION' binding requirement (it
+  // only does so when no session driver is set). The in-memory driver is inert
+  // here since sessions are never read/written, and needs no Cloudflare binding.
+  session: { driver: 'memory' },
   integrations: [sitemap(), markdoc()],
   server: {
     host: true, // bind 0.0.0.0 — required for tunnel access
