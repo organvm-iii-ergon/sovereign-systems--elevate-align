@@ -27,6 +27,7 @@
  * flow never blocks on capture latency or webhook availability.
  */
 import type { APIRoute } from 'astro';
+import { env as cfEnv } from 'cloudflare:workers';
 
 export const prerender = false;
 
@@ -89,13 +90,13 @@ interface Bindings {
   SUBMISSIONS?: KVNamespace;
 }
 
-function bindings(locals: App.Locals | undefined): Bindings {
-  // Astro Cloudflare adapter exposes Cloudflare bindings on
-  // `locals.runtime.env`. In `astro dev` (no Cloudflare runtime),
-  // `runtime` is undefined — degrade gracefully.
-  const env = (locals as { runtime?: { env?: Bindings } } | undefined)?.runtime
-    ?.env;
-  return env ?? {};
+function bindings(): Bindings {
+  // Astro v6 / @astrojs/cloudflare v13 removed `Astro.locals.runtime.env`
+  // (accessing it now throws); bindings come from the `cloudflare:workers`
+  // module instead. When a binding isn't provisioned (e.g. `astro dev`
+  // without wrangler bindings), the field is simply undefined and the
+  // matching sink degrades gracefully.
+  return cfEnv as unknown as Bindings;
 }
 
 async function persistToKv(
@@ -140,7 +141,7 @@ async function dispatchToGhl(
   }
 }
 
-export const POST: APIRoute = async ({ request, locals }) => {
+export const POST: APIRoute = async ({ request }) => {
   let data: CapturePayload;
   try {
     data = (await request.json()) as CapturePayload;
@@ -220,7 +221,7 @@ export const POST: APIRoute = async ({ request, locals }) => {
     ipHint: ipHintFromHeaders(request.headers),
   };
 
-  const env = bindings(locals);
+  const env = bindings();
   await Promise.all([persistToKv(env, enriched), dispatchToGhl(env, enriched)]);
 
   return new Response(JSON.stringify({ success: true }), {
