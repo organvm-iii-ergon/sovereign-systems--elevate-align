@@ -31,5 +31,10 @@
     "@types/three": "0.184.0",
     "tailwindcss": "^4.0.0",
     "typescript": "5.9.3"
+  },
+  "overrides": {
+    "undici": "^7.25.0",
+    "ws": "^8.21.0",
+    "yaml": "^2.9.0"
   }
 }

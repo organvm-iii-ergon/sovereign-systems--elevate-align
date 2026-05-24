@@ -68,6 +68,28 @@ Net effect: `osv-scanner` clean, so the Trunk check goes green. The
 `@astrojs/cloudflare` SSRF (the runtime-relevant one) is only patched in the
 13.x line, which is exactly why it has no Astro-5 fix.
 
+## Interim mitigation (applied 2026-05-24)
+
+Without waiting for the migration, npm `overrides` pin the vulnerable transitive
+dev/build dependencies to patched releases while staying on Astro 5:
+
+```json
+"overrides": { "undici": "^7.25.0", "ws": "^8.21.0", "yaml": "^2.9.0" }
+```
+
+This clears 8 of the 12 `npm audit` findings — the
+`wrangler -> miniflare -> undici/ws` chain and the
+`@astrojs/language-server -> yaml` chain — and `npm run test:all` stays green.
+These packages run only in local dev/deploy tooling, not in the deployed worker.
+
+The residual 4 findings are all rooted in `astro` core and require Astro 6:
+the `@astrojs/cloudflare` SSRF, the `astro` `define:vars` XSS
+(GHSA-j687-52p2-xcff), the `astro` server-island encrypted-param replay
+(GHSA-xr5h-phrj-8vxv), and `@astrojs/markdoc` (transitively via `astro`). None
+are exercised by this site's code — it uses no `astro:assets` `<Image>`, no
+`define:vars`, and no server islands — so they are present-but-dormant pending
+the migration.
+
 ## Recommended sequencing
 
 1. **Now:** merge PR #109 to un-break `npm ci` and ship the issue-discovery
