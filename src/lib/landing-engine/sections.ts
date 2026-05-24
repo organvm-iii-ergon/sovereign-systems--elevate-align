@@ -79,24 +79,32 @@ export const SectionBuilders = {
   },
   threePaths(persona: Persona): ThreePathsSectionProps {
     // The three "doors" point at the persona's primary pillar plus two
-    // adjacent surfaces. For slice 1 we use a fixed adjacency map.
-    const adjacency: Record<string, [string, string, string]> = {
-      water: ["water", "inner", "identity"],
-      inner: ["inner", "identity", "performance"],
-      identity: ["identity", "inner", "cancer-support"],
-      performance: ["performance", "inner", "financial"],
-      financial: ["financial", "performance", "identity"],
-      "cancer-support": ["cancer-support", "inner", "identity"],
+    // adjacent surfaces. PillarId values (water/performance/cancer-support)
+    // are persona-anchor concepts, not routable pillar slugs — the only
+    // pillar pages are physical/inner/identity/financial. Map first, then
+    // pick adjacency over real slugs so every door resolves to a live page.
+    const pillarSlug: Record<string, string> = {
+      water: "physical",
+      inner: "inner",
+      identity: "identity",
+      performance: "physical",
+      financial: "financial",
+      "cancer-support": "physical",
     };
-    const paths = (adjacency[persona.primaryPillar] ?? [
-      "water",
-      "inner",
-      "identity",
-    ]).map((slug) => ({
-      label: slug.replace("-", " "),
-      description: `Enter through ${slug.replace("-", " ")}.`,
-      href: `/pillars/${slug}`,
-    }));
+    const adjacency: Record<string, [string, string, string]> = {
+      physical: ["physical", "inner", "identity"],
+      inner: ["inner", "identity", "financial"],
+      identity: ["identity", "inner", "financial"],
+      financial: ["financial", "identity", "inner"],
+    };
+    const anchor = pillarSlug[persona.primaryPillar] ?? "physical";
+    const paths = (adjacency[anchor] ?? ["physical", "inner", "identity"]).map(
+      (slug) => ({
+        label: slug.replace("-", " "),
+        description: `Enter through ${slug.replace("-", " ")}.`,
+        href: `/pillars/${slug}`,
+      }),
+    );
     return {
       type: "three-paths",
       heading: "Three roads in",

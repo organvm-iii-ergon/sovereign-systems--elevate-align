@@ -81,8 +81,10 @@ function checkContentVacuums(dir, requiredFields) {
   }
 }
 
-checkContentVacuums('src/content/pillars', ['name', 'tagline']);
-checkContentVacuums('src/content/branches', ['name']);
+// Field names must match the content-collection schema (content.config.ts):
+// pillars use `title`/`tagline`; branches use `title`/`hook`.
+checkContentVacuums('src/content/pillars', ['title', 'tagline']);
+checkContentVacuums('src/content/branches', ['title', 'hook']);
 
 // --- Report ---
 console.log('\n=== Content Vacuum Gate ===\n');

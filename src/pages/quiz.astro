@@ -105,12 +105,14 @@ const questionsJson = JSON.stringify(quizQuestions);
               <input
                 type="text"
                 name="name"
+                aria-label={quizCaptureCopy.namePlaceholder}
                 placeholder={quizCaptureCopy.namePlaceholder}
                 class="w-full bg-ocean-800/50 border border-ocean-500/20 rounded-lg px-4 py-3 text-white placeholder:text-white/20 focus:outline-none focus:border-ocean-400 transition-colors text-[14px]"
               />
               <input
                 type="email"
                 name="email"
+                aria-label={quizCaptureCopy.emailPlaceholder}
                 placeholder={quizCaptureCopy.emailPlaceholder}
                 class="w-full bg-ocean-800/50 border border-ocean-500/20 rounded-lg px-4 py-3 text-white placeholder:text-white/20 focus:outline-none focus:border-ocean-400 transition-colors text-[14px]"
               />
@@ -290,12 +292,12 @@ const questionsJson = JSON.stringify(quizQuestions);
     const top = ranked[0];
     if (!top) return;
     const normalized = Math.round((top.score / MAX_SCORE) * 100);
-    paintResult(top.node, normalized, ranked.slice(0, 3));
+    paintResult(top.node, normalized);
     showStep('result');
     fireCapture(top.node, normalized);
   }
 
-  function paintResult(node: QuizNode, score: number, top3: { node: QuizNode; score: number }[]) {
+  function paintResult(node: QuizNode, score: number) {
     (document.getElementById('result-emoji')!).textContent = node.emoji;
     (document.getElementById('result-title')!).textContent = `Node ${node.id} — ${node.name}`;
     (document.getElementById('result-tagline')!).textContent = node.tagline;

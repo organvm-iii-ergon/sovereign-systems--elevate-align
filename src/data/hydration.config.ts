@@ -172,11 +172,13 @@ export function matchFiltersToContaminants(
       tier,
       matchScore,
       reason,
-      monthlySavings: Math.round(avgBottledMonthly - monthlyFilterCost),
+      // Premium tiers (spa/ionizer) can cost more than the bottled baseline;
+      // never surface a negative "savings" figure in the UI.
+      monthlySavings: Math.max(0, Math.round(avgBottledMonthly - monthlyFilterCost)),
       yearlyComparison: {
         bottledWater: Math.round(avgBottledMonthly * 12),
         thisFilter: Math.round(monthlyFilterCost * 12),
-        savings: Math.round(yearlySavings),
+        savings: Math.max(0, Math.round(yearlySavings)),
       },
     };
   }).sort((a, b) => b.matchScore - a.matchScore);

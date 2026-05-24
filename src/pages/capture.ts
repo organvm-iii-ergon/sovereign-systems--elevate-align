@@ -119,14 +119,21 @@ async function dispatchToGhl(
 ): Promise<void> {
   const url = env.GHL_WEBHOOK_URL;
   if (!url) return;
+  // Bound the outbound call so a slow/hanging GHL endpoint can't pin the
+  // worker open — the client response should never wait on a flaky webhook.
+  const controller = new AbortController();
+  const timeout = setTimeout(() => controller.abort(), 5000);
   try {
     await fetch(url, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(payload),
+      signal: controller.signal,
     });
   } catch (err) {
     console.error('[capture] GHL webhook failed:', err);
+  } finally {
+    clearTimeout(timeout);
   }
 }
 
@@ -141,9 +148,9 @@ export const POST: APIRoute = async ({ request, locals }) => {
     });
   }
 
-  const rawEmail = typeof data.email === 'string' ? data.email.trim() : '';
-  const name = typeof data.name === 'string' ? data.name.trim() : '';
-  const source = typeof data.source === 'string' ? data.source : 'unknown';
+  const rawEmail = typeof data.email === 'string' ? data.email.trim().slice(0, 254) : '';
+  const name = typeof data.name === 'string' ? data.name.trim().slice(0, 120) : '';
+  const source = typeof data.source === 'string' ? data.source.slice(0, 60) : 'unknown';
 
   // Decision-board submissions are self-attributing — synthesize an email
   // if one wasn't provided so KV writes still succeed.

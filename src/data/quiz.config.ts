@@ -55,7 +55,7 @@ export const quizQuestions: QuizQuestion[] = [
       { value: 'state-shifting,baseline,simple-pleasure', text: 'To feel good and at ease — just to taste that again.' },
       { value: 'witness,awareness,signal-reading', text: 'To understand what\'s happening to me — read my own signals.' },
       { value: 'release,reclaim,unwiring', text: 'To release patterns I\'m tired of carrying.' },
-      { value: 'becoming,expression,life-fueling', text: 'To step fully into who I\'m becoming.' },
+      { value: 'becoming,life-fueling,power', text: 'To step fully into who I\'m becoming.' },
     ],
   },
   {
@@ -76,10 +76,10 @@ export const quizQuestions: QuizQuestion[] = [
     text: 'Where do you sense your growth edge?',
     subtitle: 'The honest one. Not the impressive one.',
     answers: [
-      { value: 'release,ownership,unwiring', text: 'I keep doing things that don\'t serve me.' },
-      { value: 'witness,regulation,awareness', text: 'I notice patterns but can\'t change them yet.' },
-      { value: 'awakening,what-now,integration', text: 'I\'m awake but unsure what to do with it.' },
-      { value: 'expression,freedom,full-flow', text: 'I\'m ready to act on what I know.' },
+      { value: 'integration,wholeness,pulling-together', text: 'I keep doing things that don\'t serve me.' },
+      { value: 'awakening,what-now,post-awakening', text: 'I notice patterns but can\'t change them yet.' },
+      { value: 'expression,identity,loud-pride', text: 'I\'m awake but unsure what to do with it.' },
+      { value: 'elevation,beyond-baseline,knowing-better,freedom,gifts-amplified,full-flow', text: 'I\'m ready to act on what I know.' },
     ],
   },
 ];

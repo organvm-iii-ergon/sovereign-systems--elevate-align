@@ -12,11 +12,14 @@
  * Props:
  *   preview — optional teaser text shown above the gate
  */
+import { citations } from '../data/citations';
+
 interface Props {
   preview?: string;
 }
 
 const { preview } = Astro.props;
+const sourceCount = citations.length;
 ---
 
 <div class="email-gate-wrapper">
@@ -37,13 +40,14 @@ const { preview } = Astro.props;
         <div class="w-10 h-px bg-ocean-500/30 mx-auto mb-6"></div>
         <h2 class="font-heading text-[26px] font-light text-white mb-3">Continue reading</h2>
         <p class="text-white/35 text-[15px] font-light mb-8 leading-relaxed">
-          Enter your email to unlock the full research-backed deep dive. Backed by 263 peer-reviewed and sacred sources.
+          Enter your email to unlock the full research-backed deep dive. Backed by {sourceCount} peer-reviewed and sacred sources.
         </p>
 
         <form id="gate-form" class="space-y-4">
           <input
             type="email"
             required
+            aria-label="Email address"
             placeholder="your@email.com"
             class="w-full bg-ocean-800/50 border border-ocean-500/20 rounded-lg px-4 py-3 text-white placeholder:text-white/20 focus:outline-none focus:border-ocean-400 transition-colors text-[15px]"
           />

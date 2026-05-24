@@ -1503,11 +1503,12 @@ export function initSpiral(
     helixLiveColors[i * 3 + 2] = helixBaseColors[i * 3 + 2];
   }
   helixGeo.setAttribute('color', new THREE.BufferAttribute(helixLiveColors, 3));
-  scene.add(new THREE.Line(helixGeo, new THREE.LineBasicMaterial({
+  const helixLineMat = new THREE.LineBasicMaterial({
     vertexColors: true,
     transparent: true,
     opacity: 0.7,
-  })));
+  });
+  scene.add(new THREE.Line(helixGeo, helixLineMat));
 
   // --- Orb meshes ---
   // Per Maddie's 2026-04-25 feedback, two variants ship side-by-side:
@@ -2881,9 +2882,11 @@ export function initSpiral(
     texturesToDispose.forEach(tex => tex.dispose());
     variantGeometries.forEach(g => g.dispose());
     helixGeo.dispose();
+    helixLineMat.dispose();
     auraGeometry.dispose();
     innerGeometry.dispose();
     ambientGeometry.dispose();
+    coordGeo.dispose();
     bgGeometry.dispose();
     bgMaterial.dispose();
     sharedPlanetGeo.dispose();
