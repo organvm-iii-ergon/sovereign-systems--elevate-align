@@ -1,6 +1,6 @@
 # Sovereign Systems Spiral
 
-Multi-domain Astro 5 website for a 4-pillar health and sovereignty brand. Hub-and-spoke architecture across three domains.
+Multi-domain Astro 6 website for a 4-pillar health and sovereignty brand. Hub-and-spoke architecture across three domains.
 
 | Domain | Purpose |
 |--------|---------|
@@ -74,7 +74,7 @@ Config: `.config/board.config.json`
 
 ## Stack
 
-- **Astro 5** — static site generator
+- **Astro 6** — static site generator
 - **Tailwind CSS 4** — CSS-first config via `@tailwindcss/vite`
 - **TypeScript** — strict mode
 - **Cloudflare Pages** — deploy on push to `main`

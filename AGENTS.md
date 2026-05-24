@@ -4,7 +4,7 @@ This file provides guidance for AI coding agents operating in this repository.
 
 ## Project Overview
 
-**Sovereign Systems Spiral** — multi-domain Astro 5 website for a 4-pillar health and business brand. Hub-and-spoke across three domains:
+**Sovereign Systems Spiral** — multi-domain Astro 6 website for a 4-pillar health and business brand. Hub-and-spoke across three domains:
 
 | Domain | Purpose |
 |--------|---------|
@@ -16,12 +16,13 @@ This file provides guidance for AI coding agents operating in this repository.
 
 ## Tech Stack
 
-- **Astro 5** with Cloudflare adapter (`@astrojs/cloudflare`) — SSR via `prerender = false` on API routes
+- **Astro 6** with Cloudflare adapter (`@astrojs/cloudflare` 13.x) — SSR via `prerender = false` on API routes; content via the Content Layer `glob()` loader. (Migrated from Astro 5 on 2026-05-24 — see `docs/design-proposals/2026-05-24-astro-6-migration-scope.md`.)
 - **Tailwind CSS 4** — via `@tailwindcss/vite` plugin (CSS-first, **no `tailwind.config.js`**)
 - **TypeScript strict**, `@/*` → `src/*`
 - **Three.js** — `src/components/spiral/spiral.ts` (~2,891 LOC): 13-node golden-angle helix, IconWorlds physics, post-processing bloom
-- **Keystatic CMS** — `/admin` route, storage via `KEYSTATIC_STORAGE_KIND` env var (`local` or `github`)
+- **Pages CMS** (`.pages.yml`) — git-based content editor at app.pagescms.org for pillars + branches (replaced Keystatic, which has no Astro 6 support)
 - **Markdoc** — content format via `@astrojs/markdoc`
+- **`vite` pinned to `^7.3.3`** in `package.json` `overrides` — dedupes against `@tailwindcss/vite`'s vite 8 so the cloudflare vite-plugin runner-worker bundles correctly
 
 ## Commands
 
@@ -61,8 +62,8 @@ Test suite: `scripts/test.mjs` (Node assert, no framework). Validates:
 |------|---------|
 | `src/data/hub.config.ts` | Pillars, nodes, branches, domains, UI defaults (vessel mode, nav variant) |
 | `src/data/hydration.config.ts` | 6-step funnel config, filter tiers, cost data, matching engine |
-| `src/content.config.ts` | Astro content collection schema |
-| `keystatic.config.ts` | CMS schema for pillars + branches (Markdoc content) |
+| `src/content.config.ts` | Astro content collection schema (Content Layer `glob()` loader) |
+| `.pages.yml` | Pages CMS config for pillars + branches (replaced `keystatic.config.ts`) |
 
 ### Pages
 
