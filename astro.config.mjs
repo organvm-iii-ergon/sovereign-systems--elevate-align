@@ -1,4 +1,4 @@
-import { defineConfig } from 'astro/config';
+import { defineConfig, sessionDrivers } from 'astro/config';
 import tailwindcss from '@tailwindcss/vite';
 import sitemap from '@astrojs/sitemap';
 import cloudflare from '@astrojs/cloudflare';
@@ -14,7 +14,8 @@ export default defineConfig({
   // v13 from auto-injecting a Cloudflare KV 'SESSION' binding requirement (it
   // only does so when no session driver is set). The in-memory driver is inert
   // here since sessions are never read/written, and needs no Cloudflare binding.
-  session: { driver: 'memory' },
+  // (Driver factory, not the deprecated bare-string signature.)
+  session: { driver: sessionDrivers.memory() },
   integrations: [sitemap(), markdoc()],
   server: {
     host: true, // bind 0.0.0.0 — required for tunnel access
