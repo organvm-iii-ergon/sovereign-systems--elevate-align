@@ -14,27 +14,27 @@ produces:
   - target: ORGAN-V
     type: process-documentation
     signal: case-study
-    description: "Client engagement narrative — building-in-public essay on solo-practitioner consulting model"
+    description: 'Client engagement narrative — building-in-public essay on solo-practitioner consulting model'
   - target: ORGAN-VII
     type: distribution-signal
     signal: client-launch-announcement
-    description: "Launch/update announcements for POSSE distribution pipeline"
+    description: 'Launch/update announcements for POSSE distribution pipeline'
   - target: ORGAN-VI
     type: community-growth
     signal: client-success-material
-    description: "Client engagement feeds community discussion and workshop material"
+    description: 'Client engagement feeds community discussion and workshop material'
   - target: ORGAN-I
     type: research-feedback
     signal: practice-validates-theory
-    description: "Applied consulting work generates theoretical insights on solo-practitioner model"
+    description: 'Applied consulting work generates theoretical insights on solo-practitioner model'
   - target: ORGAN-IV
     type: process-pattern
     signal: xenograft-protocol
-    description: "Content extraction + atomization + verification pipeline generalizable to any organ receiving alien material"
+    description: 'Content extraction + atomization + verification pipeline generalizable to any organ receiving alien material'
 consumes:
   - source: ORGAN-III/commerce--meta
     type: governance
-    description: "Contract templates, SOPs, and client lifecycle standards"
+    description: 'Contract templates, SOPs, and client lifecycle standards'
 deploy:
   platform: cloudflare-pages
   project: sovereign-systems-spiral
@@ -88,7 +88,7 @@ receptio: >-
 
 polis:
   - role: business_critic
-    examines: "Commercial viability of the solo-practitioner consulting model"
+    examines: 'Commercial viability of the solo-practitioner consulting model'
     findings: >-
       Pricing is no longer hypothetical; there is an agreed structure,
       but it is still operationally weak until written terms exist and
@@ -97,7 +97,7 @@ polis:
       the actual gating work. The client IP/studio IP boundary remains
       the strongest scaling decision in the formation.
   - role: systems_theorist
-    examines: "Whether the eight-organ signal closure model actually produces the entailed outputs"
+    examines: 'Whether the eight-organ signal closure model actually produces the entailed outputs'
     findings: >-
       The seed.yaml declares 4 produces edges (V, VII, VI, I) and
       1 consumes edge (III/commerce--meta). None of the produces
@@ -107,7 +107,7 @@ polis:
       produce all four, the entailment matrix is aspirational, not
       deductive.
   - role: rhetorician
-    examines: "The narrative coherence of the client-facing brand architecture"
+    examines: 'The narrative coherence of the client-facing brand architecture'
     findings: >-
       Hub-and-spoke across 3 domains is still sound, but the April 1
       handoff shifts the narrative center from a finished 4-pillar site
@@ -126,7 +126,7 @@ polis:
       instrument. Analytics and conversion tracking are still absent, so
       even a live experience would remain under-measured.
   - role: ethicist
-    examines: "The labor model — is one person serving a client while running a 127-repo system ethical and sustainable?"
+    examines: 'The labor model — is one person serving a client while running a 127-repo system ethical and sustainable?'
     findings: >-
       The model is viable but unproven at duration. Four solo sessions across
       two weeks delivered a 16-page site, 19-issue board, CI/CD pipeline, and

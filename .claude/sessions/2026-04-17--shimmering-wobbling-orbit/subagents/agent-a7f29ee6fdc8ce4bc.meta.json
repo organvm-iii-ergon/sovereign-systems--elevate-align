@@ -1,1 +1,4 @@
-{"agentType":"Explore","description":"Audit project files & recent changes"}
+{
+  "agentType": "Explore",
+  "description": "Audit project files & recent changes"
+}

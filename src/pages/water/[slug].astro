@@ -23,22 +23,33 @@ const { title, emoji, hook, status, tone } = branch.data;
 const ctaLabel = tone === 'soft' ? 'Explore gently' : 'Start with your water';
 
 const branchSlug = branch.id.replace(/\.md$/, '');
-const branchConfig = config.branches.find(b => b.slug === branchSlug);
+const branchConfig = config.branches.find((b) => b.slug === branchSlug);
 const citationIds = branchConfig?.citationIds || [];
 const branchGhlUrl = branchConfig?.ghlUrl || config.ghl.productUrl;
 const cycleSyncedBranches = ['gut-hormones', 'fertility', 'athletic'];
 const hasCycleContent = cycleSyncedBranches.includes(branchSlug);
 ---
 
-<Base title={`${title} — Water`} description={hook || `Explore ${title} — research-backed insights for your water and health journey.`}>
+<Base
+  title={`${title} — Water`}
+  description={hook ||
+    `Explore ${title} — research-backed insights for your water and health journey.`}
+>
   <VerticalSpine />
   <!-- Branch header — FREE (Layer 1) -->
-  <section class="relative min-h-[60vh] flex flex-col items-center justify-center text-center px-6 py-24 glow-bg overflow-hidden">
+  <section
+    class="relative min-h-[60vh] flex flex-col items-center justify-center text-center px-6 py-24 glow-bg overflow-hidden"
+  >
     <div class="relative text-6xl mb-6">{emoji}</div>
-    <h1 class="relative font-heading text-[clamp(40px,5vw,64px)] font-light text-white leading-[1.1] mb-6" style="text-shadow: 0 0 50px rgba(17,154,158,0.12);">
+    <h1
+      class="relative font-heading text-[clamp(40px,5vw,64px)] font-light text-white leading-[1.1] mb-6"
+      style="text-shadow: 0 0 50px rgba(17,154,158,0.12);"
+    >
       {title}
     </h1>
-    <p class="relative font-heading italic text-white/45 text-[clamp(18px,2.5vw,24px)] leading-relaxed max-w-2xl">
+    <p
+      class="relative font-heading italic text-white/45 text-[clamp(18px,2.5vw,24px)] leading-relaxed max-w-2xl"
+    >
       {hook}
     </p>
   </section>
@@ -47,27 +58,37 @@ const hasCycleContent = cycleSyncedBranches.includes(branchSlug);
   <div class="divider-line"></div>
   <section class="py-16 px-6 bg-ocean-900">
     <div class="max-w-[640px] mx-auto">
-      {status === 'placeholder' ? (
-        <ComingSoon title={title} emoji={emoji} />
-      ) : (
-        <EmailGate preview={`Research-backed deep dive into ${title.toLowerCase()} — what it means, where water fits, and what the science shows.`}>
-          <div class="branch-content text-[16px] leading-[1.9]">
-            <Content />
-          </div>
-          {hasCycleContent && (
-            <CycleAwareness branchSlug={branchSlug} tone={tone} />
-          )}
-          <ResearchAccordion ids={citationIds} />
-        </EmailGate>
-      )}
+      {
+        status === 'placeholder' ? (
+          <ComingSoon title={title} emoji={emoji} />
+        ) : (
+          <EmailGate
+            preview={`Research-backed deep dive into ${title.toLowerCase()} — what it means, where water fits, and what the science shows.`}
+          >
+            <div class="branch-content text-[16px] leading-[1.9]">
+              <Content />
+            </div>
+            {hasCycleContent && (
+              <CycleAwareness branchSlug={branchSlug} tone={tone} />
+            )}
+            <ResearchAccordion ids={citationIds} />
+          </EmailGate>
+        )
+      }
     </div>
   </section>
 
   <!-- CTA — FREE (visible to drive conversion) -->
   <section class="py-20 px-6 glow-bg text-center border-t border-ocean-500/10">
-    <div class="relative flex flex-col md:flex-row gap-4 justify-center items-center">
+    <div
+      class="relative flex flex-col md:flex-row gap-4 justify-center items-center"
+    >
       <CTAButton href={branchGhlUrl} label={ctaLabel} />
-      <CTAButton href="/water/#branches" label="All Water Branches" variant="secondary" />
+      <CTAButton
+        href="/water/#branches"
+        label="All Water Branches"
+        variant="secondary"
+      />
       <CTAButton href="/water/" label="Back to Water" variant="secondary" />
     </div>
   </section>

@@ -19,19 +19,28 @@ export async function getStaticPaths() {
 const { pillar } = Astro.props;
 const { Content } = await pillar.render();
 const { title, emoji, tagline, status } = pillar.data;
-const pillarConfig = config.pillars.find(p => p.slug === pillar.id.replace(/\.md$/, ''));
+const pillarConfig = config.pillars.find(
+  (p) => p.slug === pillar.id.replace(/\.md$/, ''),
+);
 const citationIds = pillarConfig?.citationIds || [];
 ---
 
 <Base title={`${title} — ${config.name}`} description={tagline}>
   <VerticalSpine />
   <!-- Pillar header — FREE (Layer 1) -->
-  <section class="relative min-h-[50vh] flex flex-col items-center justify-center text-center px-6 py-24 glow-bg overflow-hidden">
+  <section
+    class="relative min-h-[50vh] flex flex-col items-center justify-center text-center px-6 py-24 glow-bg overflow-hidden"
+  >
     <div class="relative text-6xl mb-6">{emoji}</div>
-    <h1 class="relative font-heading text-[clamp(40px,5vw,64px)] font-light text-white leading-[1.1] mb-4" style="text-shadow: 0 0 50px rgba(17,154,158,0.12);">
+    <h1
+      class="relative font-heading text-[clamp(40px,5vw,64px)] font-light text-white leading-[1.1] mb-4"
+      style="text-shadow: 0 0 50px rgba(17,154,158,0.12);"
+    >
       {title}
     </h1>
-    <p class="relative font-heading italic text-white/40 text-[20px] leading-relaxed">
+    <p
+      class="relative font-heading italic text-white/40 text-[20px] leading-relaxed"
+    >
       {tagline}
     </p>
   </section>
@@ -40,18 +49,24 @@ const citationIds = pillarConfig?.citationIds || [];
   <div class="divider-line"></div>
   <section class="py-16 px-6 bg-ocean-900">
     <div class="max-w-[640px] mx-auto">
-      {status === 'placeholder' ? (
-        <ComingSoon title={title} emoji={emoji} message="This pillar is being built. The foundation comes first." />
-      ) : (
-        <EmailGate preview={`The full ${title} framework — what it addresses, where to start, and how it connects to the spiral.`}>
-          <div class="branch-content text-[16px] leading-[1.9]">
-            <Content />
-          </div>
-          {citationIds.length > 0 && (
-            <ResearchAccordion ids={citationIds} />
-          )}
-        </EmailGate>
-      )}
+      {
+        status === 'placeholder' ? (
+          <ComingSoon
+            title={title}
+            emoji={emoji}
+            message="This pillar is being built. The foundation comes first."
+          />
+        ) : (
+          <EmailGate
+            preview={`The full ${title} framework — what it addresses, where to start, and how it connects to the spiral.`}
+          >
+            <div class="branch-content text-[16px] leading-[1.9]">
+              <Content />
+            </div>
+            {citationIds.length > 0 && <ResearchAccordion ids={citationIds} />}
+          </EmailGate>
+        )
+      }
     </div>
   </section>
 

@@ -6,9 +6,9 @@
  * frame). More templates land in slice 2+ once the schema proves stable.
  */
 
-import type { SectionBuilderKey } from "./sections";
+import type { SectionBuilderKey } from './sections';
 
-export type NarrativeId = "ki-sho-ten-ketsu";
+export type NarrativeId = 'ki-sho-ten-ketsu';
 
 export interface Narrative {
   id: NarrativeId;
@@ -20,12 +20,12 @@ export interface Narrative {
 }
 
 export const NARRATIVES: Record<NarrativeId, Narrative> = {
-  "ki-sho-ten-ketsu": {
-    id: "ki-sho-ten-ketsu",
-    label: "Ki–Sho–Ten–Ketsu (introduce → develop → twist → resolve)",
+  'ki-sho-ten-ketsu': {
+    id: 'ki-sho-ten-ketsu',
+    label: 'Ki–Sho–Ten–Ketsu (introduce → develop → twist → resolve)',
     intent:
       "Default narrative for persona-targeted landing pages. Opens with the persona's hero, names the shape of their stuckness, twists into three concrete paths in, resolves with a single decisive CTA.",
-    sequence: ["hero", "problem", "threePaths", "cta"],
+    sequence: ['hero', 'problem', 'threePaths', 'cta'],
   },
 };
 

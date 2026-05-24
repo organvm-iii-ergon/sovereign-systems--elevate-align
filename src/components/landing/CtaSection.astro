@@ -1,5 +1,5 @@
 ---
-import type { CtaSectionProps } from "@/lib/landing-engine/sections";
+import type { CtaSectionProps } from '@/lib/landing-engine/sections';
 
 interface Props {
   data: CtaSectionProps;
@@ -8,11 +8,10 @@ interface Props {
 const { data } = Astro.props;
 ---
 
-<section
-  id="cta"
-  class="relative px-6 py-32 max-w-[760px] mx-auto text-center"
->
-  <h2 class="font-heading text-[clamp(32px,4vw,52px)] font-light text-white leading-tight">
+<section id="cta" class="relative px-6 py-32 max-w-[760px] mx-auto text-center">
+  <h2
+    class="font-heading text-[clamp(32px,4vw,52px)] font-light text-white leading-tight"
+  >
     {data.heading}
   </h2>
   <p class="mt-6 text-[17px] font-light leading-relaxed text-white/55">

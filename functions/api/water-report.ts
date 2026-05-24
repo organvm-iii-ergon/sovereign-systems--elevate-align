@@ -38,22 +38,22 @@ interface WaterReport {
 const KNOWN_EFFECTS: Record<string, string[]> = {
   'haloacetic acids': ['carcinogenic', 'cellular'],
   'total trihalomethanes': ['carcinogenic', 'cellular'],
-  'chromium': ['carcinogenic', 'detox'],
-  'arsenic': ['carcinogenic', 'neurological'],
-  'lead': ['neurological', 'reproductive', 'cellular'],
-  'nitrate': ['reproductive', 'cellular'],
-  'radium': ['carcinogenic'],
-  'uranium': ['carcinogenic', 'detox'],
-  'fluoride': ['neurological', 'hormonal'],
-  'chloroform': ['carcinogenic', 'detox'],
-  'pfas': ['hormonal', 'reproductive', 'cellular'],
-  'pfoa': ['hormonal', 'reproductive', 'carcinogenic'],
-  'pfos': ['hormonal', 'reproductive', 'carcinogenic'],
-  'manganese': ['neurological'],
-  'barium': ['cellular'],
-  'chlorine': ['skin', 'hydration'],
-  'bromodichloromethane': ['carcinogenic'],
-  'dibromochloromethane': ['carcinogenic'],
+  chromium: ['carcinogenic', 'detox'],
+  arsenic: ['carcinogenic', 'neurological'],
+  lead: ['neurological', 'reproductive', 'cellular'],
+  nitrate: ['reproductive', 'cellular'],
+  radium: ['carcinogenic'],
+  uranium: ['carcinogenic', 'detox'],
+  fluoride: ['neurological', 'hormonal'],
+  chloroform: ['carcinogenic', 'detox'],
+  pfas: ['hormonal', 'reproductive', 'cellular'],
+  pfoa: ['hormonal', 'reproductive', 'carcinogenic'],
+  pfos: ['hormonal', 'reproductive', 'carcinogenic'],
+  manganese: ['neurological'],
+  barium: ['cellular'],
+  chlorine: ['skin', 'hydration'],
+  bromodichloromethane: ['carcinogenic'],
+  dibromochloromethane: ['carcinogenic'],
 };
 
 function lookupEffects(contaminantName: string): string[] {
@@ -64,19 +64,28 @@ function lookupEffects(contaminantName: string): string[] {
   return ['cellular'];
 }
 
-function parseEwgHtml(html: string, zipCode: string, waterSource: string): WaterReport | null {
+function parseEwgHtml(
+  html: string,
+  zipCode: string,
+  waterSource: string,
+): WaterReport | null {
   const contaminants: Contaminant[] = [];
 
   // Extract utility name from the page title or header
-  const utilityMatch = html.match(/<h1[^>]*class="[^"]*headline[^"]*"[^>]*>([^<]+)</i)
-    || html.match(/<title>([^|<]+)/);
+  const utilityMatch =
+    html.match(/<h1[^>]*class="[^"]*headline[^"]*"[^>]*>([^<]+)</i) ||
+    html.match(/<title>([^|<]+)/);
   const utilityName = utilityMatch
-    ? utilityMatch[1].replace(/\s*\|.*$/, '').replace(/EWG.*$/, '').trim()
+    ? utilityMatch[1]
+        .replace(/\s*\|.*$/, '')
+        .replace(/EWG.*$/, '')
+        .trim()
     : `Water utility for ${zipCode}`;
 
   // EWG uses structured data in their contaminant rows
   // Pattern: contaminant name, detected amount, legal limit, health guideline
-  const contaminantPattern = /class="[^"]*contaminant[^"]*"[^>]*>[\s\S]*?<(?:span|div)[^>]*class="[^"]*name[^"]*"[^>]*>([^<]+)<[\s\S]*?class="[^"]*amount[^"]*"[^>]*>([^<]*)<[\s\S]*?class="[^"]*legal[^"]*"[^>]*>([^<]*)<[\s\S]*?class="[^"]*health[^"]*"[^>]*>([^<]*)</g;
+  const contaminantPattern =
+    /class="[^"]*contaminant[^"]*"[^>]*>[\s\S]*?<(?:span|div)[^>]*class="[^"]*name[^"]*"[^>]*>([^<]+)<[\s\S]*?class="[^"]*amount[^"]*"[^>]*>([^<]*)<[\s\S]*?class="[^"]*legal[^"]*"[^>]*>([^<]*)<[\s\S]*?class="[^"]*health[^"]*"[^>]*>([^<]*)</g;
 
   let match;
   while ((match = contaminantPattern.exec(html)) !== null) {
@@ -99,7 +108,8 @@ function parseEwgHtml(html: string, zipCode: string, waterSource: string): Water
 
   // Fallback: try simpler pattern if structured parsing found nothing
   if (contaminants.length === 0) {
-    const simplePattern = /<a[^>]*href="[^"]*contaminant[^"]*"[^>]*>([^<]+)<\/a>[\s\S]*?(\d+\.?\d*)\s*x\s*(?:above|over)\s*(?:health|EWG)/gi;
+    const simplePattern =
+      /<a[^>]*href="[^"]*contaminant[^"]*"[^>]*>([^<]+)<\/a>[\s\S]*?(\d+\.?\d*)\s*x\s*(?:above|over)\s*(?:health|EWG)/gi;
     while ((match = simplePattern.exec(html)) !== null) {
       const name = match[1].trim();
       const multiplier = parseFloat(match[2]);
@@ -136,18 +146,126 @@ const DEMO_REPORT: WaterReport = {
   waterSource: 'tap',
   utilityName: 'Sample Municipal Water',
   contaminants: [
-    { name: 'Haloacetic acids (HAA5)', detected: 27.7, legalLimit: 60, healthGuideline: 0.1, unit: 'ppb', exceedsLegal: false, exceedsHealth: true, effects: ['carcinogenic', 'cellular'] },
-    { name: 'Total trihalomethanes (TTHMs)', detected: 49.2, legalLimit: 80, healthGuideline: 0.3, unit: 'ppb', exceedsLegal: false, exceedsHealth: true, effects: ['carcinogenic', 'cellular'] },
-    { name: 'Chromium (hexavalent)', detected: 0.42, legalLimit: 100, healthGuideline: 0.01, unit: 'ppb', exceedsLegal: false, exceedsHealth: true, effects: ['carcinogenic', 'detox'] },
-    { name: 'Chloroform', detected: 22.4, legalLimit: null, healthGuideline: 0.8, unit: 'ppb', exceedsLegal: false, exceedsHealth: true, effects: ['carcinogenic', 'detox'] },
-    { name: 'Bromodichloromethane', detected: 8.9, legalLimit: null, healthGuideline: 0.3, unit: 'ppb', exceedsLegal: false, exceedsHealth: true, effects: ['carcinogenic'] },
-    { name: 'Dibromochloromethane', detected: 5.1, legalLimit: null, healthGuideline: 0.4, unit: 'ppb', exceedsLegal: false, exceedsHealth: true, effects: ['carcinogenic'] },
-    { name: 'Nitrate', detected: 1.8, legalLimit: 10000, healthGuideline: 0.14, unit: 'ppb', exceedsLegal: false, exceedsHealth: true, effects: ['reproductive', 'cellular'] },
-    { name: 'Fluoride', detected: 700, legalLimit: 4000, healthGuideline: null, unit: 'ppb', exceedsLegal: false, exceedsHealth: false, effects: ['neurological', 'hormonal'] },
-    { name: 'Barium', detected: 34, legalLimit: 2000, healthGuideline: 700, unit: 'ppb', exceedsLegal: false, exceedsHealth: false, effects: ['cellular'] },
-    { name: 'Manganese', detected: 2.1, legalLimit: null, healthGuideline: null, unit: 'ppb', exceedsLegal: false, exceedsHealth: false, effects: ['neurological'] },
-    { name: 'Chlorine', detected: 1200, legalLimit: 4000, healthGuideline: null, unit: 'ppb', exceedsLegal: false, exceedsHealth: false, effects: ['skin', 'hydration'] },
-    { name: 'Radium (-226 & -228)', detected: 0.8, legalLimit: 5, healthGuideline: 0.05, unit: 'pCi/L', exceedsLegal: false, exceedsHealth: true, effects: ['carcinogenic'] },
+    {
+      name: 'Haloacetic acids (HAA5)',
+      detected: 27.7,
+      legalLimit: 60,
+      healthGuideline: 0.1,
+      unit: 'ppb',
+      exceedsLegal: false,
+      exceedsHealth: true,
+      effects: ['carcinogenic', 'cellular'],
+    },
+    {
+      name: 'Total trihalomethanes (TTHMs)',
+      detected: 49.2,
+      legalLimit: 80,
+      healthGuideline: 0.3,
+      unit: 'ppb',
+      exceedsLegal: false,
+      exceedsHealth: true,
+      effects: ['carcinogenic', 'cellular'],
+    },
+    {
+      name: 'Chromium (hexavalent)',
+      detected: 0.42,
+      legalLimit: 100,
+      healthGuideline: 0.01,
+      unit: 'ppb',
+      exceedsLegal: false,
+      exceedsHealth: true,
+      effects: ['carcinogenic', 'detox'],
+    },
+    {
+      name: 'Chloroform',
+      detected: 22.4,
+      legalLimit: null,
+      healthGuideline: 0.8,
+      unit: 'ppb',
+      exceedsLegal: false,
+      exceedsHealth: true,
+      effects: ['carcinogenic', 'detox'],
+    },
+    {
+      name: 'Bromodichloromethane',
+      detected: 8.9,
+      legalLimit: null,
+      healthGuideline: 0.3,
+      unit: 'ppb',
+      exceedsLegal: false,
+      exceedsHealth: true,
+      effects: ['carcinogenic'],
+    },
+    {
+      name: 'Dibromochloromethane',
+      detected: 5.1,
+      legalLimit: null,
+      healthGuideline: 0.4,
+      unit: 'ppb',
+      exceedsLegal: false,
+      exceedsHealth: true,
+      effects: ['carcinogenic'],
+    },
+    {
+      name: 'Nitrate',
+      detected: 1.8,
+      legalLimit: 10000,
+      healthGuideline: 0.14,
+      unit: 'ppb',
+      exceedsLegal: false,
+      exceedsHealth: true,
+      effects: ['reproductive', 'cellular'],
+    },
+    {
+      name: 'Fluoride',
+      detected: 700,
+      legalLimit: 4000,
+      healthGuideline: null,
+      unit: 'ppb',
+      exceedsLegal: false,
+      exceedsHealth: false,
+      effects: ['neurological', 'hormonal'],
+    },
+    {
+      name: 'Barium',
+      detected: 34,
+      legalLimit: 2000,
+      healthGuideline: 700,
+      unit: 'ppb',
+      exceedsLegal: false,
+      exceedsHealth: false,
+      effects: ['cellular'],
+    },
+    {
+      name: 'Manganese',
+      detected: 2.1,
+      legalLimit: null,
+      healthGuideline: null,
+      unit: 'ppb',
+      exceedsLegal: false,
+      exceedsHealth: false,
+      effects: ['neurological'],
+    },
+    {
+      name: 'Chlorine',
+      detected: 1200,
+      legalLimit: 4000,
+      healthGuideline: null,
+      unit: 'ppb',
+      exceedsLegal: false,
+      exceedsHealth: false,
+      effects: ['skin', 'hydration'],
+    },
+    {
+      name: 'Radium (-226 & -228)',
+      detected: 0.8,
+      legalLimit: 5,
+      healthGuideline: 0.05,
+      unit: 'pCi/L',
+      exceedsLegal: false,
+      exceedsHealth: true,
+      effects: ['carcinogenic'],
+    },
   ],
   totalContaminants: 12,
   exceedingHealth: 8,
@@ -168,8 +286,12 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
       waterSource?: string;
     };
 
-    const zipCode = typeof body.zipCode === 'string' ? body.zipCode.replace(/\D/g, '').slice(0, 5) : '';
-    const waterSource = typeof body.waterSource === 'string' ? body.waterSource : 'tap';
+    const zipCode =
+      typeof body.zipCode === 'string'
+        ? body.zipCode.replace(/\D/g, '').slice(0, 5)
+        : '';
+    const waterSource =
+      typeof body.waterSource === 'string' ? body.waterSource : 'tap';
 
     if (!zipCode || zipCode.length !== 5) {
       return new Response(

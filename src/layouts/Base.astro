@@ -8,8 +8,8 @@ import Breadcrumbs from '../components/Breadcrumbs.astro';
 // count as the pillar-first variant (5 items including Research).
 const PHASE_ENTRY = {
   ELEVATE: { url: '/nodes/1', label: 'Elevate' },
-  ALIGN:   { url: '/nodes/6', label: 'Align' },
-  UNLOCK:  { url: '/nodes/11', label: 'Unlock' },
+  ALIGN: { url: '/nodes/6', label: 'Align' },
+  UNLOCK: { url: '/nodes/11', label: 'Unlock' },
 };
 
 interface Props {
@@ -21,10 +21,13 @@ interface Props {
 const {
   title,
   description = config.tagline,
-  image = '/og-default.svg'
+  image = '/og-default.svg',
 } = Astro.props;
 
-const canonicalURL = new URL(Astro.url.pathname, Astro.site || config.domains.hub);
+const canonicalURL = new URL(
+  Astro.url.pathname,
+  Astro.site || config.domains.hub,
+);
 
 // --- Active page detection ---
 const currentPath = Astro.url.pathname;
@@ -32,21 +35,27 @@ const isWaterSection = currentPath.startsWith('/water');
 const isHome = currentPath === '/';
 
 function navClass(href: string): string {
-  let active = href === '/'
-    ? currentPath === '/'
-    : currentPath === href || currentPath === href.replace(/\/$/, '') || currentPath.startsWith(href);
+  let active =
+    href === '/'
+      ? currentPath === '/'
+      : currentPath === href ||
+        currentPath === href.replace(/\/$/, '') ||
+        currentPath.startsWith(href);
   // Physical pillar routes to /water/, Financial pillar routes to /business/
-  if (href === '/water/' && currentPath.startsWith('/pillars/physical')) active = true;
-  if (href === '/business/' && currentPath.startsWith('/pillars/financial')) active = true;
-  return active
-    ? 'text-white'
-    : 'text-ocean-400 hover:text-white';
+  if (href === '/water/' && currentPath.startsWith('/pillars/physical'))
+    active = true;
+  if (href === '/business/' && currentPath.startsWith('/pillars/financial'))
+    active = true;
+  return active ? 'text-white' : 'text-ocean-400 hover:text-white';
 }
 
 function mobileNavClass(href: string): string {
-  const active = href === '/'
-    ? currentPath === '/'
-    : currentPath === href || currentPath === href.replace(/\/$/, '') || currentPath.startsWith(href);
+  const active =
+    href === '/'
+      ? currentPath === '/'
+      : currentPath === href ||
+        currentPath === href.replace(/\/$/, '') ||
+        currentPath.startsWith(href);
   return active
     ? 'text-white border-l-2 border-ocean-400 pl-3'
     : 'text-ocean-400 active:text-white';
@@ -78,13 +87,13 @@ if (!isHome) {
       breadcrumbs.push({ label: 'Water', href: '/water/' });
       breadcrumbs.push({ label: 'Branches' });
     } else {
-      const branchName = config.branches.find(b => b.slug === subPath)?.name;
+      const branchName = config.branches.find((b) => b.slug === subPath)?.name;
       breadcrumbs.push({ label: 'Water', href: '/water/' });
       breadcrumbs.push({ label: branchName || subPath });
     }
   } else if (currentPath.startsWith('/pillars/')) {
     const slug = currentPath.replace('/pillars/', '').replace(/\/$/, '');
-    const pillar = config.pillars.find(p => p.slug === slug);
+    const pillar = config.pillars.find((p) => p.slug === slug);
     breadcrumbs.push({ label: pillar?.name || slug });
   } else if (currentPath.startsWith('/business')) {
     breadcrumbs.push({ label: 'Business' });
@@ -100,7 +109,7 @@ if (!isHome) {
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{title}</title>
-    
+
     <!-- Primary Meta Tags -->
     <meta name="title" content={title} />
     <meta name="description" content={description} />
@@ -128,75 +137,339 @@ if (!isHome) {
     />
   </head>
   <body class="min-h-screen flex flex-col bg-ocean-900 text-white/60">
-    <nav aria-label="Main" class="fixed top-0 left-0 right-0 z-50 bg-ocean-900/60 backdrop-blur-xl border-b border-white/[0.04]" data-default-nav={ui.navVariant}>
+    <nav
+      aria-label="Main"
+      class="fixed top-0 left-0 right-0 z-50 bg-ocean-900/60 backdrop-blur-xl border-b border-white/[0.04]"
+      data-default-nav={ui.navVariant}
+    >
       <!-- Primary nav row -->
-      <div class="max-w-6xl mx-auto px-6 md:px-10 py-4 flex items-center justify-between">
-        <a href="/" class="font-heading text-base font-light text-white/70 hover:text-white transition-colors tracking-wide">
+      <div
+        class="max-w-6xl mx-auto px-6 md:px-10 py-4 flex items-center justify-between"
+      >
+        <a
+          href="/"
+          class="font-heading text-base font-light text-white/70 hover:text-white transition-colors tracking-wide"
+        >
           {config.name}
         </a>
         <!-- Desktop nav: pillar-first variant -->
-        <div class:list={['hidden md:flex gap-7', { hidden: ui.navVariant !== 'pillar-first' }]} data-nav-variant="pillar-first">
-          <a href="/water/" class:list={['text-[11px] font-medium tracking-[0.15em] uppercase transition-colors', navClass('/water/')]}>Water</a>
-          <a href="/pillars/inner" class:list={['text-[11px] font-medium tracking-[0.15em] uppercase transition-colors', navClass('/pillars/inner')]}>Inner</a>
-          <a href="/pillars/identity" class:list={['text-[11px] font-medium tracking-[0.15em] uppercase transition-colors', navClass('/pillars/identity')]}>Identity</a>
-          <a href="/business/" class:list={['text-[11px] font-medium tracking-[0.15em] uppercase transition-colors', navClass('/business/')]}>Business</a>
-          <a href="/research" class:list={['text-[11px] font-medium tracking-[0.15em] uppercase transition-colors', navClass('/research')]}>Research</a>
+        <div
+          class:list={[
+            'hidden md:flex gap-7',
+            { hidden: ui.navVariant !== 'pillar-first' },
+          ]}
+          data-nav-variant="pillar-first"
+        >
+          <a
+            href="/water/"
+            class:list={[
+              'text-[11px] font-medium tracking-[0.15em] uppercase transition-colors',
+              navClass('/water/'),
+            ]}>Water</a
+          >
+          <a
+            href="/pillars/inner"
+            class:list={[
+              'text-[11px] font-medium tracking-[0.15em] uppercase transition-colors',
+              navClass('/pillars/inner'),
+            ]}>Inner</a
+          >
+          <a
+            href="/pillars/identity"
+            class:list={[
+              'text-[11px] font-medium tracking-[0.15em] uppercase transition-colors',
+              navClass('/pillars/identity'),
+            ]}>Identity</a
+          >
+          <a
+            href="/business/"
+            class:list={[
+              'text-[11px] font-medium tracking-[0.15em] uppercase transition-colors',
+              navClass('/business/'),
+            ]}>Business</a
+          >
+          <a
+            href="/research"
+            class:list={[
+              'text-[11px] font-medium tracking-[0.15em] uppercase transition-colors',
+              navClass('/research'),
+            ]}>Research</a
+          >
         </div>
         <!-- Desktop nav: spiral-first variant (one entry node per phase) -->
-        <div class:list={['hidden md:flex gap-7', { hidden: ui.navVariant !== 'spiral-first' }]} data-nav-variant="spiral-first">
-          <a href="/" class:list={['text-[11px] font-medium tracking-[0.15em] uppercase transition-colors', navClass('/')]}>Spiral</a>
-          <a href={PHASE_ENTRY.ELEVATE.url} class:list={['text-[11px] font-medium tracking-[0.15em] uppercase transition-colors', navClass('/nodes/1')]}>{PHASE_ENTRY.ELEVATE.label}</a>
-          <a href={PHASE_ENTRY.ALIGN.url} class:list={['text-[11px] font-medium tracking-[0.15em] uppercase transition-colors', navClass('/nodes/6')]}>{PHASE_ENTRY.ALIGN.label}</a>
-          <a href={PHASE_ENTRY.UNLOCK.url} class:list={['text-[11px] font-medium tracking-[0.15em] uppercase transition-colors', navClass('/nodes/11')]}>{PHASE_ENTRY.UNLOCK.label}</a>
-          <a href="/research" class:list={['text-[11px] font-medium tracking-[0.15em] uppercase transition-colors', navClass('/research')]}>Research</a>
+        <div
+          class:list={[
+            'hidden md:flex gap-7',
+            { hidden: ui.navVariant !== 'spiral-first' },
+          ]}
+          data-nav-variant="spiral-first"
+        >
+          <a
+            href="/"
+            class:list={[
+              'text-[11px] font-medium tracking-[0.15em] uppercase transition-colors',
+              navClass('/'),
+            ]}>Spiral</a
+          >
+          <a
+            href={PHASE_ENTRY.ELEVATE.url}
+            class:list={[
+              'text-[11px] font-medium tracking-[0.15em] uppercase transition-colors',
+              navClass('/nodes/1'),
+            ]}>{PHASE_ENTRY.ELEVATE.label}</a
+          >
+          <a
+            href={PHASE_ENTRY.ALIGN.url}
+            class:list={[
+              'text-[11px] font-medium tracking-[0.15em] uppercase transition-colors',
+              navClass('/nodes/6'),
+            ]}>{PHASE_ENTRY.ALIGN.label}</a
+          >
+          <a
+            href={PHASE_ENTRY.UNLOCK.url}
+            class:list={[
+              'text-[11px] font-medium tracking-[0.15em] uppercase transition-colors',
+              navClass('/nodes/11'),
+            ]}>{PHASE_ENTRY.UNLOCK.label}</a
+          >
+          <a
+            href="/research"
+            class:list={[
+              'text-[11px] font-medium tracking-[0.15em] uppercase transition-colors',
+              navClass('/research'),
+            ]}>Research</a
+          >
         </div>
         <!-- Mobile hamburger -->
-        <button id="nav-toggle" class="md:hidden p-2 -mr-2 text-ocean-400" aria-label="Menu" aria-expanded="false">
-          <svg id="nav-icon-open" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="17" x2="20" y2="17"/></svg>
-          <svg id="nav-icon-close" class="hidden" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><line x1="6" y1="6" x2="18" y2="18"/><line x1="6" y1="18" x2="18" y2="6"/></svg>
+        <button
+          id="nav-toggle"
+          class="md:hidden p-2 -mr-2 text-ocean-400"
+          aria-label="Menu"
+          aria-expanded="false"
+        >
+          <svg
+            id="nav-icon-open"
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.5"
+            stroke-linecap="round"
+            ><line x1="4" y1="7" x2="20" y2="7"></line><line
+              x1="4"
+              y1="12"
+              x2="20"
+              y2="12"></line><line x1="4" y1="17" x2="20" y2="17"></line></svg
+          >
+          <svg
+            id="nav-icon-close"
+            class="hidden"
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.5"
+            stroke-linecap="round"
+            ><line x1="6" y1="6" x2="18" y2="18"></line><line
+              x1="6"
+              y1="18"
+              x2="18"
+              y2="6"></line></svg
+          >
         </button>
       </div>
       <!-- Water sub-nav (desktop only, Water section pages) -->
-      {isWaterSection && (
-        <div class="hidden md:block border-t border-white/[0.03]">
-          <div class="max-w-6xl mx-auto px-6 md:px-10 py-2.5 flex gap-6">
-            <a href="/water/" class:list={['text-[10px] font-medium tracking-[0.12em] uppercase transition-colors', subNavClass('/water/')]}>Water Home</a>
-            <a href="/water/quiz" class:list={['text-[10px] font-medium tracking-[0.12em] uppercase transition-colors', subNavClass('/water/quiz')]}>Quiz</a>
-            <a href="/water/#branches" class:list={['text-[10px] font-medium tracking-[0.12em] uppercase transition-colors', subNavClass('/water/#branches')]}>Branches</a>
+      {
+        isWaterSection && (
+          <div class="hidden md:block border-t border-white/[0.03]">
+            <div class="max-w-6xl mx-auto px-6 md:px-10 py-2.5 flex gap-6">
+              <a
+                href="/water/"
+                class:list={[
+                  'text-[10px] font-medium tracking-[0.12em] uppercase transition-colors',
+                  subNavClass('/water/'),
+                ]}
+              >
+                Water Home
+              </a>
+              <a
+                href="/water/quiz"
+                class:list={[
+                  'text-[10px] font-medium tracking-[0.12em] uppercase transition-colors',
+                  subNavClass('/water/quiz'),
+                ]}
+              >
+                Quiz
+              </a>
+              <a
+                href="/water/#branches"
+                class:list={[
+                  'text-[10px] font-medium tracking-[0.12em] uppercase transition-colors',
+                  subNavClass('/water/#branches'),
+                ]}
+              >
+                Branches
+              </a>
+            </div>
           </div>
-        </div>
-      )}
+        )
+      }
       <!-- Mobile menu panel -->
-      <div id="nav-menu" class="hidden md:hidden border-t border-white/[0.04] bg-ocean-900/95 backdrop-blur-xl">
+      <div
+        id="nav-menu"
+        class="hidden md:hidden border-t border-white/[0.04] bg-ocean-900/95 backdrop-blur-xl"
+      >
         <!-- Pillar-first mobile -->
-        <div class:list={['px-6 py-5 flex flex-col gap-1', { hidden: ui.navVariant !== 'pillar-first' }]} data-nav-variant="pillar-first">
-          <span class="text-[9px] tracking-[0.2em] uppercase text-white/15 font-medium pt-1 pb-2">Water</span>
-          <a href="/water/" class:list={['text-[13px] font-medium tracking-[0.12em] uppercase py-1.5 pl-4 transition-colors', mobileNavClass('/water/')]}>Water Home</a>
-          <a href="/water/quiz" class:list={['text-[13px] font-medium tracking-[0.12em] uppercase py-1.5 pl-4 transition-colors', mobileNavClass('/water/quiz')]}>Take the Quiz</a>
-          <a href="/water/#branches" class:list={['text-[13px] font-medium tracking-[0.12em] uppercase py-1.5 pl-4 transition-colors', mobileNavClass('/water/#branches')]}>Explore Branches</a>
-          <span class="text-[9px] tracking-[0.2em] uppercase text-white/15 font-medium pt-4 pb-2">The Spiral</span>
-          <a href="/pillars/inner" class:list={['text-[13px] font-medium tracking-[0.12em] uppercase py-1.5 pl-4 transition-colors', mobileNavClass('/pillars/inner')]}>Inner Sovereignty</a>
-          <a href="/pillars/identity" class:list={['text-[13px] font-medium tracking-[0.12em] uppercase py-1.5 pl-4 transition-colors', mobileNavClass('/pillars/identity')]}>Identity Sovereignty</a>
-          <a href="/business/" class:list={['text-[13px] font-medium tracking-[0.12em] uppercase py-1.5 pl-4 transition-colors', mobileNavClass('/business/')]}>Business</a>
-          <a href="/research" class:list={['text-[13px] font-medium tracking-[0.12em] uppercase py-1.5 pl-4 transition-colors', mobileNavClass('/research')]}>Research</a>
+        <div
+          class:list={[
+            'px-6 py-5 flex flex-col gap-1',
+            { hidden: ui.navVariant !== 'pillar-first' },
+          ]}
+          data-nav-variant="pillar-first"
+        >
+          <span
+            class="text-[9px] tracking-[0.2em] uppercase text-white/15 font-medium pt-1 pb-2"
+            >Water</span
+          >
+          <a
+            href="/water/"
+            class:list={[
+              'text-[13px] font-medium tracking-[0.12em] uppercase py-1.5 pl-4 transition-colors',
+              mobileNavClass('/water/'),
+            ]}>Water Home</a
+          >
+          <a
+            href="/water/quiz"
+            class:list={[
+              'text-[13px] font-medium tracking-[0.12em] uppercase py-1.5 pl-4 transition-colors',
+              mobileNavClass('/water/quiz'),
+            ]}>Take the Quiz</a
+          >
+          <a
+            href="/water/#branches"
+            class:list={[
+              'text-[13px] font-medium tracking-[0.12em] uppercase py-1.5 pl-4 transition-colors',
+              mobileNavClass('/water/#branches'),
+            ]}>Explore Branches</a
+          >
+          <span
+            class="text-[9px] tracking-[0.2em] uppercase text-white/15 font-medium pt-4 pb-2"
+            >The Spiral</span
+          >
+          <a
+            href="/pillars/inner"
+            class:list={[
+              'text-[13px] font-medium tracking-[0.12em] uppercase py-1.5 pl-4 transition-colors',
+              mobileNavClass('/pillars/inner'),
+            ]}>Inner Sovereignty</a
+          >
+          <a
+            href="/pillars/identity"
+            class:list={[
+              'text-[13px] font-medium tracking-[0.12em] uppercase py-1.5 pl-4 transition-colors',
+              mobileNavClass('/pillars/identity'),
+            ]}>Identity Sovereignty</a
+          >
+          <a
+            href="/business/"
+            class:list={[
+              'text-[13px] font-medium tracking-[0.12em] uppercase py-1.5 pl-4 transition-colors',
+              mobileNavClass('/business/'),
+            ]}>Business</a
+          >
+          <a
+            href="/research"
+            class:list={[
+              'text-[13px] font-medium tracking-[0.12em] uppercase py-1.5 pl-4 transition-colors',
+              mobileNavClass('/research'),
+            ]}>Research</a
+          >
         </div>
         <!-- Spiral-first mobile (phase-grouped node lists) -->
-        <div class:list={['px-6 py-5 flex flex-col gap-1', { hidden: ui.navVariant !== 'spiral-first' }]} data-nav-variant="spiral-first">
-          <a href="/" class:list={['text-[13px] font-medium tracking-[0.12em] uppercase py-1.5 transition-colors', mobileNavClass('/')]}>Spiral (Home)</a>
-          <span class="text-[9px] tracking-[0.2em] uppercase text-white/15 font-medium pt-4 pb-2">Elevate (body)</span>
-          {config.nodes.filter(n => n.phase === 'ELEVATE').map(n => (
-            <a href={n.url} class:list={['text-[13px] font-medium tracking-[0.12em] uppercase py-1.5 pl-4 transition-colors', mobileNavClass(n.url)]}>{n.id}. {n.name}</a>
-          ))}
-          <span class="text-[9px] tracking-[0.2em] uppercase text-white/15 font-medium pt-4 pb-2">Align (mind + life)</span>
-          {config.nodes.filter(n => n.phase === 'ALIGN').map(n => (
-            <a href={n.url} class:list={['text-[13px] font-medium tracking-[0.12em] uppercase py-1.5 pl-4 transition-colors', mobileNavClass(n.url)]}>{n.id}. {n.name}</a>
-          ))}
-          <span class="text-[9px] tracking-[0.2em] uppercase text-white/15 font-medium pt-4 pb-2">Unlock (freedom)</span>
-          {config.nodes.filter(n => n.phase === 'UNLOCK').map(n => (
-            <a href={n.url} class:list={['text-[13px] font-medium tracking-[0.12em] uppercase py-1.5 pl-4 transition-colors', mobileNavClass(n.url)]}>{n.id}. {n.name}</a>
-          ))}
-          <span class="text-[9px] tracking-[0.2em] uppercase text-white/15 font-medium pt-4 pb-2">Learn</span>
-          <a href="/research" class:list={['text-[13px] font-medium tracking-[0.12em] uppercase py-1.5 pl-4 transition-colors', mobileNavClass('/research')]}>Research</a>
+        <div
+          class:list={[
+            'px-6 py-5 flex flex-col gap-1',
+            { hidden: ui.navVariant !== 'spiral-first' },
+          ]}
+          data-nav-variant="spiral-first"
+        >
+          <a
+            href="/"
+            class:list={[
+              'text-[13px] font-medium tracking-[0.12em] uppercase py-1.5 transition-colors',
+              mobileNavClass('/'),
+            ]}>Spiral (Home)</a
+          >
+          <span
+            class="text-[9px] tracking-[0.2em] uppercase text-white/15 font-medium pt-4 pb-2"
+            >Elevate (body)</span
+          >
+          {
+            config.nodes
+              .filter((n) => n.phase === 'ELEVATE')
+              .map((n) => (
+                <a
+                  href={n.url}
+                  class:list={[
+                    'text-[13px] font-medium tracking-[0.12em] uppercase py-1.5 pl-4 transition-colors',
+                    mobileNavClass(n.url),
+                  ]}
+                >
+                  {n.id}. {n.name}
+                </a>
+              ))
+          }
+          <span
+            class="text-[9px] tracking-[0.2em] uppercase text-white/15 font-medium pt-4 pb-2"
+            >Align (mind + life)</span
+          >
+          {
+            config.nodes
+              .filter((n) => n.phase === 'ALIGN')
+              .map((n) => (
+                <a
+                  href={n.url}
+                  class:list={[
+                    'text-[13px] font-medium tracking-[0.12em] uppercase py-1.5 pl-4 transition-colors',
+                    mobileNavClass(n.url),
+                  ]}
+                >
+                  {n.id}. {n.name}
+                </a>
+              ))
+          }
+          <span
+            class="text-[9px] tracking-[0.2em] uppercase text-white/15 font-medium pt-4 pb-2"
+            >Unlock (freedom)</span
+          >
+          {
+            config.nodes
+              .filter((n) => n.phase === 'UNLOCK')
+              .map((n) => (
+                <a
+                  href={n.url}
+                  class:list={[
+                    'text-[13px] font-medium tracking-[0.12em] uppercase py-1.5 pl-4 transition-colors',
+                    mobileNavClass(n.url),
+                  ]}
+                >
+                  {n.id}. {n.name}
+                </a>
+              ))
+          }
+          <span
+            class="text-[9px] tracking-[0.2em] uppercase text-white/15 font-medium pt-4 pb-2"
+            >Learn</span
+          >
+          <a
+            href="/research"
+            class:list={[
+              'text-[13px] font-medium tracking-[0.12em] uppercase py-1.5 pl-4 transition-colors',
+              mobileNavClass('/research'),
+            ]}>Research</a
+          >
         </div>
       </div>
     </nav>
@@ -212,11 +485,13 @@ if (!isHome) {
         toggle?.setAttribute('aria-expanded', String(open));
       });
       // Close on link tap
-      menu?.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
-        menu.classList.add('hidden');
-        iconOpen?.classList.remove('hidden');
-        iconClose?.classList.add('hidden');
-      }));
+      menu?.querySelectorAll('a').forEach((a) =>
+        a.addEventListener('click', () => {
+          menu.classList.add('hidden');
+          iconOpen?.classList.remove('hidden');
+          iconClose?.classList.add('hidden');
+        }),
+      );
 
       // Querystring nav variant override (?nav=spiral-first or ?nav=pillar-first).
       // Server-rendered the build-time default (ui.navVariant); this script
@@ -224,59 +499,129 @@ if (!isHome) {
       const params = new URLSearchParams(window.location.search);
       const override = params.get('nav');
       if (override === 'pillar-first' || override === 'spiral-first') {
-        document.querySelectorAll<HTMLElement>('[data-nav-variant]').forEach((el) => {
-          el.classList.toggle('hidden', el.dataset.navVariant !== override);
-        });
+        document
+          .querySelectorAll<HTMLElement>('[data-nav-variant]')
+          .forEach((el) => {
+            el.classList.toggle('hidden', el.dataset.navVariant !== override);
+          });
       }
     </script>
 
-    <a href="#main-content" class="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-[100] focus:bg-ocean-500 focus:text-white focus:px-4 focus:py-2 focus:rounded-lg">Skip to content</a>
-    <main id="main-content" class:list={['flex-1', isWaterSection ? 'pt-[88px]' : 'pt-[56px]']}>
+    <a
+      href="#main-content"
+      class="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-[100] focus:bg-ocean-500 focus:text-white focus:px-4 focus:py-2 focus:rounded-lg"
+      >Skip to content</a
+    >
+    <main
+      id="main-content"
+      class:list={['flex-1', isWaterSection ? 'pt-[88px]' : 'pt-[56px]']}
+    >
       <Breadcrumbs items={breadcrumbs} />
       <slot />
     </main>
 
     <footer class="border-t border-white/[0.03] bg-ocean-900">
       <div class="max-w-6xl mx-auto px-6 md:px-10 py-16">
-        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10 md:gap-8">
+        <div
+          class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10 md:gap-8"
+        >
           <!-- Brand -->
           <div>
-            <a href="/" class="font-heading text-[15px] font-light text-white/50 hover:text-white/70 transition-colors">{config.name}</a>
-            <p class="mt-2 text-[11px] text-white/15 tracking-[0.08em]">{config.domains.hub}</p>
+            <a
+              href="/"
+              class="font-heading text-[15px] font-light text-white/50 hover:text-white/70 transition-colors"
+              >{config.name}</a
+            >
+            <p class="mt-2 text-[11px] text-white/15 tracking-[0.08em]">
+              {config.domains.hub}
+            </p>
           </div>
           <!-- Water -->
           <div>
-            <p class="text-[10px] tracking-[0.15em] uppercase text-white/30 font-medium mb-3">Water</p>
+            <p
+              class="text-[10px] tracking-[0.15em] uppercase text-white/30 font-medium mb-3"
+            >
+              Water
+            </p>
             <div class="flex flex-col gap-2">
-              <a href="/water/" class="text-[12px] text-white/20 hover:text-white/40 transition-colors">Water Home</a>
-              <a href="/water/quiz" class="text-[12px] text-white/20 hover:text-white/40 transition-colors">Take the Quiz</a>
-              <a href="/water/#branches" class="text-[12px] text-white/20 hover:text-white/40 transition-colors">Explore Branches</a>
-              {config.branches.map(branch => (
-                <a href={`/water/${branch.slug}`} class="text-[12px] text-white/15 hover:text-white/30 transition-colors pl-2">{branch.name}</a>
-              ))}
+              <a
+                href="/water/"
+                class="text-[12px] text-white/20 hover:text-white/40 transition-colors"
+                >Water Home</a
+              >
+              <a
+                href="/water/quiz"
+                class="text-[12px] text-white/20 hover:text-white/40 transition-colors"
+                >Take the Quiz</a
+              >
+              <a
+                href="/water/#branches"
+                class="text-[12px] text-white/20 hover:text-white/40 transition-colors"
+                >Explore Branches</a
+              >
+              {
+                config.branches.map((branch) => (
+                  <a
+                    href={`/water/${branch.slug}`}
+                    class="text-[12px] text-white/15 hover:text-white/30 transition-colors pl-2"
+                  >
+                    {branch.name}
+                  </a>
+                ))
+              }
             </div>
           </div>
           <!-- The Spiral -->
           <div>
-            <p class="text-[10px] tracking-[0.15em] uppercase text-white/30 font-medium mb-3">The Spiral</p>
+            <p
+              class="text-[10px] tracking-[0.15em] uppercase text-white/30 font-medium mb-3"
+            >
+              The Spiral
+            </p>
             <div class="flex flex-col gap-2">
-              {config.pillars.filter(p => p.slug !== 'physical' && p.slug !== 'financial').map(pillar => (
-                <a href={pillar.url} class="text-[12px] text-white/20 hover:text-white/40 transition-colors">{pillar.name}</a>
-              ))}
-              <a href="/business/" class="text-[12px] text-white/20 hover:text-white/40 transition-colors">Financial Sovereignty</a>
+              {
+                config.pillars
+                  .filter(
+                    (p) => p.slug !== 'physical' && p.slug !== 'financial',
+                  )
+                  .map((pillar) => (
+                    <a
+                      href={pillar.url}
+                      class="text-[12px] text-white/20 hover:text-white/40 transition-colors"
+                    >
+                      {pillar.name}
+                    </a>
+                  ))
+              }
+              <a
+                href="/business/"
+                class="text-[12px] text-white/20 hover:text-white/40 transition-colors"
+                >Financial Sovereignty</a
+              >
             </div>
           </div>
           <!-- Learn -->
           <div>
-            <p class="text-[10px] tracking-[0.15em] uppercase text-white/30 font-medium mb-3">Learn</p>
+            <p
+              class="text-[10px] tracking-[0.15em] uppercase text-white/30 font-medium mb-3"
+            >
+              Learn
+            </p>
             <div class="flex flex-col gap-2">
-              <a href="/research" class="text-[12px] text-white/20 hover:text-white/40 transition-colors">Research Bibliography</a>
+              <a
+                href="/research"
+                class="text-[12px] text-white/20 hover:text-white/40 transition-colors"
+                >Research Bibliography</a
+              >
             </div>
           </div>
         </div>
         <!-- Copyright -->
         <div class="mt-12 pt-6 border-t border-white/[0.03] text-center">
-          <p class="text-[11px] text-white/15">&copy; {new Date().getFullYear()} {config.name}</p>
+          <p class="text-[11px] text-white/15">
+            &copy; {new Date().getFullYear()}
+            {config.name}
+          </p>
         </div>
       </div>
     </footer>
@@ -313,7 +658,9 @@ if (!isHome) {
         try {
           const res = await fetch('/citations.json');
           citations = (await res.json()) as Citation[];
-        } catch { citations = []; }
+        } catch {
+          citations = [];
+        }
         return citations;
       }
 
@@ -344,9 +691,9 @@ if (!isHome) {
         let left = rect.left + rect.width / 2 - maxW / 2;
         left = Math.max(8, Math.min(left, window.innerWidth - maxW - 8));
         tooltip.style.left = left + 'px';
-        tooltip.style.top = (rect.top - tooltip.offsetHeight - 8) + 'px';
+        tooltip.style.top = rect.top - tooltip.offsetHeight - 8 + 'px';
         if (rect.top - tooltip.offsetHeight - 8 < 8) {
-          tooltip.style.top = (rect.bottom + 8) + 'px';
+          tooltip.style.top = rect.bottom + 8 + 'px';
         }
         tooltip.style.opacity = '1';
       }
@@ -374,7 +721,8 @@ if (!isHome) {
         if (sup) showForSup(sup);
       });
       document.addEventListener('mouseout', (e) => {
-        if (e.target instanceof Element && e.target.closest('sup')) hideTooltip();
+        if (e.target instanceof Element && e.target.closest('sup'))
+          hideTooltip();
       });
 
       // Mobile: tap to toggle
@@ -403,34 +751,40 @@ if (!isHome) {
     </script>
 
     {/* --- Analytics (production only) --- */}
-    {import.meta.env.PROD && (
-      <script
-        defer
-        src="https://static.cloudflareinsights.com/beacon.min.js"
-        data-cf-beacon={`{"token":"${import.meta.env.CF_ANALYTICS_TOKEN || 'PLACEHOLDER'}"}`}
-      />
-    )}
+    {
+      import.meta.env.PROD && (
+        <script
+          defer
+          src="https://static.cloudflareinsights.com/beacon.min.js"
+          data-cf-beacon={`{"token":"${import.meta.env.CF_ANALYTICS_TOKEN || 'PLACEHOLDER'}"}`}
+        />
+      )
+    }
     <script>
       // Auto-track elements with data-ea-action attributes (production only)
       if (import.meta.env.PROD) {
-        document.querySelectorAll<HTMLElement>('[data-ea-action]').forEach((el) => {
-          el.addEventListener('click', () => {
-            const action = el.dataset.eaAction;
-            if (!action) return;
-            const data: Record<string, string> = {};
-            for (const [key, value] of Object.entries(el.dataset)) {
-              if (key.startsWith('ea') && key !== 'eaAction' && value) {
-                const prop = key.slice(2, 3).toLowerCase() + key.slice(3);
-                data[prop] = value;
+        document
+          .querySelectorAll<HTMLElement>('[data-ea-action]')
+          .forEach((el) => {
+            el.addEventListener('click', () => {
+              const action = el.dataset.eaAction;
+              if (!action) return;
+              const data: Record<string, string> = {};
+              for (const [key, value] of Object.entries(el.dataset)) {
+                if (key.startsWith('ea') && key !== 'eaAction' && value) {
+                  const prop = key.slice(2, 3).toLowerCase() + key.slice(3);
+                  data[prop] = value;
+                }
               }
-            }
-            if (el instanceof HTMLAnchorElement && el.href) {
-              data.href = el.getAttribute('href') || el.href;
-            }
-            const pairs = Object.entries(data).map(([k, v]) => `${k}=${v}`).join(' ');
-            console.log(`[EA] action=${action}${pairs ? ' ' + pairs : ''}`);
+              if (el instanceof HTMLAnchorElement && el.href) {
+                data.href = el.getAttribute('href') || el.href;
+              }
+              const pairs = Object.entries(data)
+                .map(([k, v]) => `${k}=${v}`)
+                .join(' ');
+              console.log(`[EA] action=${action}${pairs ? ' ' + pairs : ''}`);
+            });
           });
-        });
       }
     </script>
   </body>

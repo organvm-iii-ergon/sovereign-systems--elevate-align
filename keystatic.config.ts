@@ -5,11 +5,14 @@ const storageKind =
 
 const storage =
   storageKind === 'github'
-    ? ({
+    ? {
         kind: 'github' as const,
-        repo: { owner: 'organvm-iii-ergon', name: 'sovereign-systems--elevate-align' },
-      })
-    : ({ kind: 'local' as const });
+        repo: {
+          owner: 'organvm-iii-ergon',
+          name: 'sovereign-systems--elevate-align',
+        },
+      }
+    : { kind: 'local' as const };
 
 export default config({
   storage,
@@ -21,8 +24,14 @@ export default config({
       format: { contentField: 'content' },
       schema: {
         title: fields.slug({ name: { label: 'Title' } }),
-        emoji: fields.text({ label: 'Emoji', description: 'Single emoji for this pillar' }),
-        tagline: fields.text({ label: 'Tagline', description: 'Short description shown on cards' }),
+        emoji: fields.text({
+          label: 'Emoji',
+          description: 'Single emoji for this pillar',
+        }),
+        tagline: fields.text({
+          label: 'Tagline',
+          description: 'Short description shown on cards',
+        }),
         status: fields.select({
           label: 'Status',
           options: [
@@ -31,7 +40,10 @@ export default config({
           ],
           defaultValue: 'placeholder',
         }),
-        order: fields.integer({ label: 'Order', description: 'Display position (1-4)' }),
+        order: fields.integer({
+          label: 'Order',
+          description: 'Display position (1-4)',
+        }),
         content: fields.markdoc({
           label: 'Content',
           description: 'Full pillar page content',
@@ -45,8 +57,14 @@ export default config({
       format: { contentField: 'content' },
       schema: {
         title: fields.slug({ name: { label: 'Title' } }),
-        emoji: fields.text({ label: 'Emoji', description: 'Single emoji for this branch' }),
-        hook: fields.text({ label: 'Hook', description: 'Opening question or statement' }),
+        emoji: fields.text({
+          label: 'Emoji',
+          description: 'Single emoji for this branch',
+        }),
+        hook: fields.text({
+          label: 'Hook',
+          description: 'Opening question or statement',
+        }),
         status: fields.select({
           label: 'Status',
           options: [
@@ -63,7 +81,10 @@ export default config({
           ],
           defaultValue: 'standard',
         }),
-        order: fields.integer({ label: 'Order', description: 'Display position (1-6)' }),
+        order: fields.integer({
+          label: 'Order',
+          description: 'Display position (1-6)',
+        }),
         content: fields.markdoc({
           label: 'Content',
           description: 'Full branch page content',

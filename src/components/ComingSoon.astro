@@ -5,7 +5,11 @@ interface Props {
   message?: string;
 }
 
-const { title, emoji, message = 'This branch is growing. Check back soon.' } = Astro.props;
+const {
+  title,
+  emoji,
+  message = 'This branch is growing. Check back soon.',
+} = Astro.props;
 ---
 
 <div class="max-w-lg mx-auto text-center py-20 px-6">

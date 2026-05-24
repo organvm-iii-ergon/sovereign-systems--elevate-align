@@ -1,0 +1,30 @@
+# Build output & caches
+node_modules/
+dist/
+.astro/
+.wrangler/
+.netlify/
+.vercel/
+output/
+
+# Generated artifacts (owned by their generators — never hand-format)
+public/citations.json
+src/data/citations.ts
+package-lock.json
+
+# Markdown corpus + manifests are managed by markdownlint, not prettier
+docs/
+*.md
+
+# CI / infra config kept hand-managed
+.github/
+
+# prettier-plugin-astro@0.14 mishandles these two files (valid Astro, build
+# fine): HydrationNode has HTML comments inside `{cond && (<>…</>)}` it can't
+# parse; aesthetics formats non-idempotently (--write output fails --check).
+# Exempt until the astro plugin handles them; revisit on plugin upgrade.
+src/components/HydrationNode.astro
+src/pages/aesthetics.astro
+
+# Cross-client IP isolation (local-only)
+.private/

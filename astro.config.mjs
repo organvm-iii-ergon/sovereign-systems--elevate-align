@@ -10,14 +10,21 @@ export default defineConfig({
   adapter: cloudflare(),
   integrations: [sitemap(), markdoc(), keystatic()],
   server: {
-    host: true,                   // bind 0.0.0.0 — required for tunnel access
+    host: true, // bind 0.0.0.0 — required for tunnel access
   },
   vite: {
     plugins: [tailwindcss()],
     server: {
       // Explicit list because allowedHosts:true sometimes doesn't propagate
       // through Astro's adapter chain. Wildcard prefixes accept any subdomain.
-      allowedHosts: ['.trycloudflare.com', '.ngrok-free.app', '.ngrok-free.dev', '.ngrok.io', 'localhost', '127.0.0.1'],
+      allowedHosts: [
+        '.trycloudflare.com',
+        '.ngrok-free.app',
+        '.ngrok-free.dev',
+        '.ngrok.io',
+        'localhost',
+        '127.0.0.1',
+      ],
     },
   },
 });

@@ -32,9 +32,12 @@ const repoRoot = dirname(fileURLToPath(import.meta.url));
  * To declare a new vacuum: add an entry with a real GH issue reference.
  */
 const TRACKED_VACUUMS = {
-  'hub.config.ts → ghl.quizFormUrl': 'GH#58 (Maddie pending — hub assessment funnel)',
-  'hydration.config.ts → filterTiers.anespa.affiliateUrl': 'GH#49 (Maddie pending — affiliate links)',
-  'hydration.config.ts → filterTiers.k8.affiliateUrl': 'GH#49 (Maddie pending — affiliate links)',
+  'hub.config.ts → ghl.quizFormUrl':
+    'GH#58 (Maddie pending — hub assessment funnel)',
+  'hydration.config.ts → filterTiers.anespa.affiliateUrl':
+    'GH#49 (Maddie pending — affiliate links)',
+  'hydration.config.ts → filterTiers.k8.affiliateUrl':
+    'GH#49 (Maddie pending — affiliate links)',
 };
 
 function read(path) {
@@ -56,7 +59,11 @@ if (/quizFormUrl:\s*''/.test(hubConfig)) {
 
 // --- hydration.config.ts: empty affiliateUrl per filter tier ---
 const hydrationConfig = read('src/data/hydration.config.ts');
-const filterEntries = [...hydrationConfig.matchAll(/\{\s*id:\s*'([^']+)'[\s\S]*?affiliateUrl:\s*'([^']*)'[\s\S]*?\}/g)];
+const filterEntries = [
+  ...hydrationConfig.matchAll(
+    /\{\s*id:\s*'([^']+)'[\s\S]*?affiliateUrl:\s*'([^']*)'[\s\S]*?\}/g,
+  ),
+];
 for (const match of filterEntries) {
   const id = match[1];
   const url = match[2];
@@ -67,7 +74,9 @@ for (const match of filterEntries) {
 
 // --- content frontmatter: empty required fields ---
 function checkContentVacuums(dir, requiredFields) {
-  const files = readdirSync(join(repoRoot, '..', dir)).filter((f) => f.endsWith('.md'));
+  const files = readdirSync(join(repoRoot, '..', dir)).filter((f) =>
+    f.endsWith('.md'),
+  );
   for (const file of files) {
     const source = read(`${dir}/${file}`);
     const fm = source.match(/^---\n([\s\S]*?)\n---/);
@@ -106,7 +115,9 @@ console.log('');
 
 if (untracked > 0) {
   console.error(`✗ ${untracked} untracked vacuum(s) found.`);
-  console.error('  File a GH issue with label "vacuum" and add an entry to TRACKED_VACUUMS in this file.');
+  console.error(
+    '  File a GH issue with label "vacuum" and add an entry to TRACKED_VACUUMS in this file.',
+  );
   console.error('  Axiom #1: N/A is a vacuum — never a resting state.\n');
   process.exit(1);
 }

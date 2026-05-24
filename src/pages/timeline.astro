@@ -1,18 +1,30 @@
 ---
 import Base from '../layouts/Base.astro';
-import { SPIRAL_VERSIONS, versionsGroupedByCategory } from '../data/spiral-versions';
+import {
+  SPIRAL_VERSIONS,
+  versionsGroupedByCategory,
+} from '../data/spiral-versions';
 
 const groups = versionsGroupedByCategory();
 const live = groups['production-live'];
 const historical = groups['production-historical'];
 
 const totalCount = SPIRAL_VERSIONS.length;
-const playableCount = SPIRAL_VERSIONS.filter((v) => v.status === 'playable' || v.status === 'live').length;
-const pendingCount = SPIRAL_VERSIONS.filter((v) => v.status === 'snapshot-pending').length;
+const playableCount = SPIRAL_VERSIONS.filter(
+  (v) => v.status === 'playable' || v.status === 'live',
+).length;
+const pendingCount = SPIRAL_VERSIONS.filter(
+  (v) => v.status === 'snapshot-pending',
+).length;
 
 function formatDate(iso: string): string {
   const d = new Date(iso + 'T00:00:00Z');
-  return d.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric', timeZone: 'UTC' });
+  return d.toLocaleDateString('en-US', {
+    month: 'long',
+    day: 'numeric',
+    year: 'numeric',
+    timeZone: 'UTC',
+  });
 }
 
 function statusLabel(status: 'live' | 'playable' | 'snapshot-pending'): string {
@@ -32,10 +44,10 @@ function statusLabel(status: 'live' | 'playable' | 'snapshot-pending'): string {
       <h1>Spiral Evolution Timeline</h1>
       <p class="timeline-intro">
         Every deployed visual aesthetic of the Sovereign Systems Spiral,
-        chronologically. Click any <strong>PLAYABLE</strong> entry to open the
-        deployed version in a new tab. <strong>SNAPSHOT PENDING</strong> entries
-        exist in git history but have not been re-deployed at their historical
-        commit yet — they link to the source commit for now.
+        chronologically. Click any <strong>PLAYABLE</strong> entry to open the deployed
+        version in a new tab. <strong>SNAPSHOT PENDING</strong> entries exist in git
+        history but have not been re-deployed at their historical commit yet — they
+        link to the source commit for now.
       </p>
       <p class="timeline-stats">
         <strong>{totalCount}</strong> versions ·
@@ -44,72 +56,108 @@ function statusLabel(status: 'live' | 'playable' | 'snapshot-pending'): string {
       </p>
     </header>
 
-    {live.length > 0 && (
-      <section class="timeline-section section-live">
-        <h2>Currently Live</h2>
-        <p class="section-desc">
-          What visitors see at <a href="https://sovereign-systems-spiral.pages.dev" target="_blank" rel="noopener">sovereign-systems-spiral.pages.dev</a> right now.
-          (Custom domain <code>elevatealign.com</code> is not yet pointed.)
-        </p>
-        <div class="version-grid">
-          {live.map((v) => (
-            <article class={`version-card status-${v.status}`}>
-              <header class="card-header">
-                <h3>{v.name}</h3>
-                <span class="status-badge">{statusLabel(v.status)}</span>
-              </header>
-              <p class="card-date">{formatDate(v.date)}</p>
-              <p class="card-desc">{v.description}</p>
-              {v.notes && <p class="card-notes">{v.notes}</p>}
-              <div class="card-actions">
-                {v.iframeSrc && (
-                  <a class="btn-open" href={v.iframeSrc} target="_blank" rel="noopener">Open ▸</a>
-                )}
-              </div>
-            </article>
-          ))}
-        </div>
-      </section>
-    )}
+    {
+      live.length > 0 && (
+        <section class="timeline-section section-live">
+          <h2>Currently Live</h2>
+          <p class="section-desc">
+            What visitors see at{' '}
+            <a
+              href="https://sovereign-systems-spiral.pages.dev"
+              target="_blank"
+              rel="noopener"
+            >
+              sovereign-systems-spiral.pages.dev
+            </a>{' '}
+            right now. (Custom domain <code>elevatealign.com</code> is not yet
+            pointed.)
+          </p>
+          <div class="version-grid">
+            {live.map((v) => (
+              <article class={`version-card status-${v.status}`}>
+                <header class="card-header">
+                  <h3>{v.name}</h3>
+                  <span class="status-badge">{statusLabel(v.status)}</span>
+                </header>
+                <p class="card-date">{formatDate(v.date)}</p>
+                <p class="card-desc">{v.description}</p>
+                {v.notes && <p class="card-notes">{v.notes}</p>}
+                <div class="card-actions">
+                  {v.iframeSrc && (
+                    <a
+                      class="btn-open"
+                      href={v.iframeSrc}
+                      target="_blank"
+                      rel="noopener"
+                    >
+                      Open ▸
+                    </a>
+                  )}
+                </div>
+              </article>
+            ))}
+          </div>
+        </section>
+      )
+    }
 
-    {historical.length > 0 && (
-      <section class="timeline-section section-historical">
-        <h2>V1 – V8 · Production History</h2>
-        <p class="section-desc">
-          The spiral's evolution from V1 (Apr 23) through V8 (Apr 26). Every
-          version below has been re-deployed at its historical commit to a
-          permanent <code>&lt;hash&gt;.sovereign-systems-spiral.pages.dev</code>
-          URL — click any <strong>Open</strong> button to interact with the
-          version exactly as it shipped on that date.
-        </p>
-        <div class="version-grid">
-          {historical.map((v) => (
-            <article class={`version-card status-${v.status}`}>
-              <header class="card-header">
-                <h3>{v.name}</h3>
-                <span class="status-badge">{statusLabel(v.status)}</span>
-              </header>
-              <p class="card-date">{formatDate(v.date)}</p>
-              <p class="card-desc">{v.description}</p>
-              {v.notes && <p class="card-notes">{v.notes}</p>}
-              <div class="card-actions">
-                {v.iframeSrc && (
-                  <a class="btn-open" href={v.iframeSrc} target="_blank" rel="noopener">Open ▸</a>
-                )}
-                {v.commit && (
-                  <a class="btn-source" href={`https://github.com/organvm-iii-ergon/sovereign-systems--elevate-align/commit/${v.commit}`} target="_blank" rel="noopener">Source · <code>{v.commit}</code></a>
-                )}
-              </div>
-            </article>
-          ))}
-        </div>
-      </section>
-    )}
+    {
+      historical.length > 0 && (
+        <section class="timeline-section section-historical">
+          <h2>V1 – V8 · Production History</h2>
+          <p class="section-desc">
+            The spiral's evolution from V1 (Apr 23) through V8 (Apr 26). Every
+            version below has been re-deployed at its historical commit to a
+            permanent{' '}
+            <code>&lt;hash&gt;.sovereign-systems-spiral.pages.dev</code>
+            URL — click any <strong>Open</strong> button to interact with the
+            version exactly as it shipped on that date.
+          </p>
+          <div class="version-grid">
+            {historical.map((v) => (
+              <article class={`version-card status-${v.status}`}>
+                <header class="card-header">
+                  <h3>{v.name}</h3>
+                  <span class="status-badge">{statusLabel(v.status)}</span>
+                </header>
+                <p class="card-date">{formatDate(v.date)}</p>
+                <p class="card-desc">{v.description}</p>
+                {v.notes && <p class="card-notes">{v.notes}</p>}
+                <div class="card-actions">
+                  {v.iframeSrc && (
+                    <a
+                      class="btn-open"
+                      href={v.iframeSrc}
+                      target="_blank"
+                      rel="noopener"
+                    >
+                      Open ▸
+                    </a>
+                  )}
+                  {v.commit && (
+                    <a
+                      class="btn-source"
+                      href={`https://github.com/organvm-iii-ergon/sovereign-systems--elevate-align/commit/${v.commit}`}
+                      target="_blank"
+                      rel="noopener"
+                    >
+                      Source · <code>{v.commit}</code>
+                    </a>
+                  )}
+                </div>
+              </article>
+            ))}
+          </div>
+        </section>
+      )
+    }
 
     <footer class="timeline-footer">
       <p>
         Internal lab experiments (Confluence × Apophatic batch, etc.) are
-        <strong>not</strong> shown here — they live in <code>docs/spiral-experiments/</code>
+        <strong>not</strong> shown here — they live in <code
+          >docs/spiral-experiments/</code
+        >
         and are studio-internal reference, not site versions.
       </p>
     </footer>
@@ -209,7 +257,9 @@ function statusLabel(status: 'live' | 'playable' | 'snapshot-pending'): string {
     padding: 1.5rem;
     display: flex;
     flex-direction: column;
-    transition: border-color 0.2s ease, background 0.2s ease;
+    transition:
+      border-color 0.2s ease,
+      background 0.2s ease;
   }
 
   .version-card:hover {
@@ -296,13 +346,16 @@ function statusLabel(status: 'live' | 'playable' | 'snapshot-pending'): string {
     flex-wrap: wrap;
   }
 
-  .btn-open, .btn-source {
+  .btn-open,
+  .btn-source {
     display: inline-block;
     padding: 0.5rem 1rem;
     font-size: 0.85rem;
     border-radius: 6px;
     text-decoration: none;
-    transition: background 0.15s ease, transform 0.1s ease;
+    transition:
+      background 0.15s ease,
+      transform 0.1s ease;
   }
 
   .btn-open {

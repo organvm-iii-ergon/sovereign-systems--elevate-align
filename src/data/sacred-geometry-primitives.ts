@@ -18,10 +18,10 @@ export const PHI_SQUARED = PHI * PHI;
 
 /** Symmetry types — the governing law that constrains each form */
 export type SymmetryType =
-  | 'radial'       // rotational symmetry around center (sunburst, lotus)
-  | 'bilateral'    // mirror symmetry (yin-yang, ankh)
-  | 'crystalline'  // polyhedral / geometric crystal (octahedron, hexagram)
-  | 'fractal';     // recursive self-similar (unfolding blooms)
+  | 'radial' // rotational symmetry around center (sunburst, lotus)
+  | 'bilateral' // mirror symmetry (yin-yang, ankh)
+  | 'crystalline' // polyhedral / geometric crystal (octahedron, hexagram)
+  | 'fractal'; // recursive self-similar (unfolding blooms)
 
 export interface MathPrimitive {
   /** Fundamental vertex count base — the prime constraint */
@@ -230,7 +230,10 @@ export function phiRadius(base: number, k: number): number {
 }
 
 /** Harmonic resonance — valid frequency ratios for 13 nodes */
-export function harmonicResonance(fundamental: number, nodes: number): number[] {
+export function harmonicResonance(
+  fundamental: number,
+  nodes: number,
+): number[] {
   // Only ratios that are integer multiples of 13's factors produce resonance
   const ratios: number[] = [];
   for (let i = 1; i <= nodes; i++) {
@@ -248,7 +251,17 @@ export function primitiveFor(envVar: EnvVar): MathPrimitive {
 
 /** All 13 envVars in order */
 export const ALL_ENV_VARS: EnvVar[] = [
-  'PYR', 'OCULUS', 'DYAD', 'PYRAMIS', 'HYDOR',
-  'MANDORLA', 'KENOSIS', 'SHATKONA', 'PADMA', 'BODHI',
-  'TETRAD', 'OKTAEDRON', 'ANKH',
+  'PYR',
+  'OCULUS',
+  'DYAD',
+  'PYRAMIS',
+  'HYDOR',
+  'MANDORLA',
+  'KENOSIS',
+  'SHATKONA',
+  'PADMA',
+  'BODHI',
+  'TETRAD',
+  'OKTAEDRON',
+  'ANKH',
 ];

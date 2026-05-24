@@ -5,12 +5,12 @@
  * dynamic renderer in src/pages/for/[persona].astro maps to components.
  */
 
-import type { Persona, PersonaId } from "./personas";
-import { getPersona } from "./personas";
-import type { Narrative, NarrativeId } from "./narratives";
-import { getNarrative } from "./narratives";
-import type { SectionData } from "./sections";
-import { SectionBuilders } from "./sections";
+import type { Persona, PersonaId } from './personas';
+import { getPersona } from './personas';
+import type { Narrative, NarrativeId } from './narratives';
+import { getNarrative } from './narratives';
+import type { SectionData } from './sections';
+import { SectionBuilders } from './sections';
 
 export interface ComposedLanding {
   persona: Persona;
@@ -23,7 +23,7 @@ export function composeLanding(opts: {
   narrativeId?: NarrativeId;
 }): ComposedLanding {
   const persona = getPersona(opts.personaId);
-  const narrative = getNarrative(opts.narrativeId ?? "ki-sho-ten-ketsu");
+  const narrative = getNarrative(opts.narrativeId ?? 'ki-sho-ten-ketsu');
   const sections = narrative.sequence.map((key) => {
     const builder = SectionBuilders[key];
     return builder(persona);

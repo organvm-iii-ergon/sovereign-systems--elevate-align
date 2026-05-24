@@ -41,173 +41,239 @@ if (nodeContent) {
 const allNodes = config.nodes;
 const currentIndex = allNodes.findIndex((n) => n.id === node.id);
 const prevNode = currentIndex > 0 ? allNodes[currentIndex - 1] : null;
-const nextNode = currentIndex < allNodes.length - 1 ? allNodes[currentIndex + 1] : null;
+const nextNode =
+  currentIndex < allNodes.length - 1 ? allNodes[currentIndex + 1] : null;
 ---
 
-<Base title={`${node.name} — ${config.name}`} description={data.intention || node.tagline}>
+<Base
+  title={`${node.name} — ${config.name}`}
+  description={data.intention || node.tagline}
+>
   <Hero heading={node.name} subtext={node.tagline} section={phaseLabel} />
 
-  {isLive && hasContent ? (
-    <section class="py-20 px-6 bg-ocean-900">
-      <div class="max-w-2xl mx-auto">
-        {/* Sub-header quote */}
-        {data.subHeader && (
-          <p class="font-heading text-[20px] italic text-ocean-400 text-center mb-12 leading-relaxed">
-            {data.subHeader}
-          </p>
-        )}
+  {
+    isLive && hasContent ? (
+      <section class="py-20 px-6 bg-ocean-900">
+        <div class="max-w-2xl mx-auto">
+          {/* Sub-header quote */}
+          {data.subHeader && (
+            <p class="font-heading text-[20px] italic text-ocean-400 text-center mb-12 leading-relaxed">
+              {data.subHeader}
+            </p>
+          )}
 
-        {/* Intention box */}
-        {data.intention && (
-          <div class="mb-12">
-            <p class="text-[10px] uppercase tracking-[0.2em] text-white/20 mb-3">Intention</p>
-            <div class="glass-card p-6 sm:p-8" style="border-color: rgba(17,154,158,0.12);">
-              <p class="font-heading text-[18px] font-light text-white/70 leading-[1.7]">
-                {data.intention}
+          {/* Intention box */}
+          {data.intention && (
+            <div class="mb-12">
+              <p class="text-[10px] uppercase tracking-[0.2em] text-white/20 mb-3">
+                Intention
               </p>
-            </div>
-          </div>
-        )}
-
-        {/* Markdown body content */}
-        <div class="prose-node text-white/45 text-[16px] font-light leading-[1.9] mb-12">
-          <Content />
-        </div>
-
-        {/* Core steps */}
-        {data.steps && data.steps.length > 0 && (
-          <div class="mb-12">
-            <p class="text-[10px] uppercase tracking-[0.2em] text-white/20 mb-6">Core Steps</p>
-            <div class="space-y-6">
-              {data.steps.map((step: any, i: number) => (
-                <div class="flex gap-4">
-                  <span class="font-heading text-[28px] text-white/10 leading-none mt-1">
-                    {String(i + 1).padStart(2, '0')}
-                  </span>
-                  <div>
-                    <h3 class="text-white/80 text-[16px] font-medium mb-2">{step.title}</h3>
-                    <p class="text-white/40 text-[15px] font-light leading-[1.8]">{step.text}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        )}
-
-        {/* Practice table (Science / Sacred / Soul) */}
-        {data.practiceTable && data.practiceTable.length > 0 && (
-          <div class="mb-12">
-            <p class="text-[10px] uppercase tracking-[0.2em] text-white/20 mb-4">Practice</p>
-            <div class="overflow-x-auto">
-              <table class="w-full text-[13px] border-collapse">
-                <thead>
-                  <tr class="border-b border-white/10">
-                    <th class="text-left py-3 px-2 text-[10px] uppercase tracking-[0.1em] text-white/25 font-medium">Science</th>
-                    <th class="text-left py-3 px-2 text-[10px] uppercase tracking-[0.1em] text-white/25 font-medium">Sacred</th>
-                    <th class="text-left py-3 px-2 text-[10px] uppercase tracking-[0.1em] text-white/25 font-medium">Soul Practice</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {data.practiceTable.map((row: any) => (
-                    <tr class="border-b border-white/5">
-                      <td class="py-3 px-2 text-white/35 font-light">{row.science}</td>
-                      <td class="py-3 px-2 text-white/35 font-light font-heading italic">{row.sacred}</td>
-                      <td class="py-3 px-2 text-ocean-400/70 font-medium">{row.soul}</td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
-          </div>
-        )}
-
-        {/* Tools table (Tool / Purpose / Sacred) */}
-        {data.toolsTable && data.toolsTable.length > 0 && (
-          <div class="mb-12">
-            <p class="text-[10px] uppercase tracking-[0.2em] text-white/20 mb-4">Regulation Tools</p>
-            <div class="overflow-x-auto">
-              <table class="w-full text-[13px] border-collapse">
-                <thead>
-                  <tr class="border-b border-white/10">
-                    <th class="text-left py-3 px-2 text-[10px] uppercase tracking-[0.1em] text-white/25 font-medium">Tool</th>
-                    <th class="text-left py-3 px-2 text-[10px] uppercase tracking-[0.1em] text-white/25 font-medium">Purpose</th>
-                    <th class="text-left py-3 px-2 text-[10px] uppercase tracking-[0.1em] text-white/25 font-medium">Sacred Mirror</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {data.toolsTable.map((row: any) => (
-                    <tr class="border-b border-white/5">
-                      <td class="py-3 px-2 text-ocean-400/70 font-medium">{row.tool}</td>
-                      <td class="py-3 px-2 text-white/35 font-light">{row.purpose}</td>
-                      <td class="py-3 px-2 text-white/35 font-light font-heading italic">{row.sacred}</td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
-          </div>
-        )}
-
-        {/* Reflection prompts */}
-        {data.reflectionPrompts && data.reflectionPrompts.length > 0 && (
-          <div class="mb-12">
-            <p class="text-[10px] uppercase tracking-[0.2em] text-white/20 mb-4">Reflection</p>
-            <div class="glass-card p-6 sm:p-8 text-center" style="border-color: rgba(17,154,158,0.08);">
-              {data.reflectionPrompts.map((prompt: string) => (
-                <p class="font-heading text-[18px] italic text-white/50 leading-[1.7] mb-3 last:mb-0">
-                  "{prompt}"
+              <div
+                class="glass-card p-6 sm:p-8"
+                style="border-color: rgba(17,154,158,0.12);"
+              >
+                <p class="font-heading text-[18px] font-light text-white/70 leading-[1.7]">
+                  {data.intention}
                 </p>
-              ))}
+              </div>
             </div>
-          </div>
-        )}
+          )}
 
-        {/* Closing line */}
-        {data.closingLine && (
-          <p class="font-heading text-[20px] font-light text-white/60 text-center leading-relaxed mt-12">
-            {data.closingLine}
-          </p>
-        )}
-      </div>
-    </section>
-  ) : isLive ? (
-    <section class="py-20 px-6 bg-ocean-900">
-      <div class="max-w-2xl mx-auto">
-        <p class="text-white/45 text-[16px] font-light leading-[1.9]">
-          {node.tagline}
-        </p>
-      </div>
-    </section>
-  ) : (
-    <section class="py-20 px-6 bg-ocean-900">
-      <div class="max-w-md mx-auto text-center">
-        <div class="glass-card p-10" style="border-color: rgba(17,154,158,0.15);">
-          <div class="w-10 h-px bg-ocean-500/30 mx-auto mb-6"></div>
-          <p class="text-[48px] mb-4">{node.emoji}</p>
-          <h2 class="font-heading text-[24px] font-light text-white mb-3">Coming Soon</h2>
-          <p class="text-white/35 text-[15px] font-light leading-relaxed mb-8">
-            This node is part of the {phaseLabel}. It will unlock as the spiral grows.
-          </p>
-          {pillar && (
-            <CTAButton href={pillar.url} label={`Explore ${pillar.name}`} variant="secondary" />
+          {/* Markdown body content */}
+          <div class="prose-node text-white/45 text-[16px] font-light leading-[1.9] mb-12">
+            <Content />
+          </div>
+
+          {/* Core steps */}
+          {data.steps && data.steps.length > 0 && (
+            <div class="mb-12">
+              <p class="text-[10px] uppercase tracking-[0.2em] text-white/20 mb-6">
+                Core Steps
+              </p>
+              <div class="space-y-6">
+                {data.steps.map((step: any, i: number) => (
+                  <div class="flex gap-4">
+                    <span class="font-heading text-[28px] text-white/10 leading-none mt-1">
+                      {String(i + 1).padStart(2, '0')}
+                    </span>
+                    <div>
+                      <h3 class="text-white/80 text-[16px] font-medium mb-2">
+                        {step.title}
+                      </h3>
+                      <p class="text-white/40 text-[15px] font-light leading-[1.8]">
+                        {step.text}
+                      </p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
+
+          {/* Practice table (Science / Sacred / Soul) */}
+          {data.practiceTable && data.practiceTable.length > 0 && (
+            <div class="mb-12">
+              <p class="text-[10px] uppercase tracking-[0.2em] text-white/20 mb-4">
+                Practice
+              </p>
+              <div class="overflow-x-auto">
+                <table class="w-full text-[13px] border-collapse">
+                  <thead>
+                    <tr class="border-b border-white/10">
+                      <th class="text-left py-3 px-2 text-[10px] uppercase tracking-[0.1em] text-white/25 font-medium">
+                        Science
+                      </th>
+                      <th class="text-left py-3 px-2 text-[10px] uppercase tracking-[0.1em] text-white/25 font-medium">
+                        Sacred
+                      </th>
+                      <th class="text-left py-3 px-2 text-[10px] uppercase tracking-[0.1em] text-white/25 font-medium">
+                        Soul Practice
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {data.practiceTable.map((row: any) => (
+                      <tr class="border-b border-white/5">
+                        <td class="py-3 px-2 text-white/35 font-light">
+                          {row.science}
+                        </td>
+                        <td class="py-3 px-2 text-white/35 font-light font-heading italic">
+                          {row.sacred}
+                        </td>
+                        <td class="py-3 px-2 text-ocean-400/70 font-medium">
+                          {row.soul}
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          )}
+
+          {/* Tools table (Tool / Purpose / Sacred) */}
+          {data.toolsTable && data.toolsTable.length > 0 && (
+            <div class="mb-12">
+              <p class="text-[10px] uppercase tracking-[0.2em] text-white/20 mb-4">
+                Regulation Tools
+              </p>
+              <div class="overflow-x-auto">
+                <table class="w-full text-[13px] border-collapse">
+                  <thead>
+                    <tr class="border-b border-white/10">
+                      <th class="text-left py-3 px-2 text-[10px] uppercase tracking-[0.1em] text-white/25 font-medium">
+                        Tool
+                      </th>
+                      <th class="text-left py-3 px-2 text-[10px] uppercase tracking-[0.1em] text-white/25 font-medium">
+                        Purpose
+                      </th>
+                      <th class="text-left py-3 px-2 text-[10px] uppercase tracking-[0.1em] text-white/25 font-medium">
+                        Sacred Mirror
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {data.toolsTable.map((row: any) => (
+                      <tr class="border-b border-white/5">
+                        <td class="py-3 px-2 text-ocean-400/70 font-medium">
+                          {row.tool}
+                        </td>
+                        <td class="py-3 px-2 text-white/35 font-light">
+                          {row.purpose}
+                        </td>
+                        <td class="py-3 px-2 text-white/35 font-light font-heading italic">
+                          {row.sacred}
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          )}
+
+          {/* Reflection prompts */}
+          {data.reflectionPrompts && data.reflectionPrompts.length > 0 && (
+            <div class="mb-12">
+              <p class="text-[10px] uppercase tracking-[0.2em] text-white/20 mb-4">
+                Reflection
+              </p>
+              <div
+                class="glass-card p-6 sm:p-8 text-center"
+                style="border-color: rgba(17,154,158,0.08);"
+              >
+                {data.reflectionPrompts.map((prompt: string) => (
+                  <p class="font-heading text-[18px] italic text-white/50 leading-[1.7] mb-3 last:mb-0">
+                    "{prompt}"
+                  </p>
+                ))}
+              </div>
+            </div>
+          )}
+
+          {/* Closing line */}
+          {data.closingLine && (
+            <p class="font-heading text-[20px] font-light text-white/60 text-center leading-relaxed mt-12">
+              {data.closingLine}
+            </p>
           )}
         </div>
-      </div>
-    </section>
-  )}
+      </section>
+    ) : isLive ? (
+      <section class="py-20 px-6 bg-ocean-900">
+        <div class="max-w-2xl mx-auto">
+          <p class="text-white/45 text-[16px] font-light leading-[1.9]">
+            {node.tagline}
+          </p>
+        </div>
+      </section>
+    ) : (
+      <section class="py-20 px-6 bg-ocean-900">
+        <div class="max-w-md mx-auto text-center">
+          <div
+            class="glass-card p-10"
+            style="border-color: rgba(17,154,158,0.15);"
+          >
+            <div class="w-10 h-px bg-ocean-500/30 mx-auto mb-6" />
+            <p class="text-[48px] mb-4">{node.emoji}</p>
+            <h2 class="font-heading text-[24px] font-light text-white mb-3">
+              Coming Soon
+            </h2>
+            <p class="text-white/35 text-[15px] font-light leading-relaxed mb-8">
+              This node is part of the {phaseLabel}. It will unlock as the
+              spiral grows.
+            </p>
+            {pillar && (
+              <CTAButton
+                href={pillar.url}
+                label={`Explore ${pillar.name}`}
+                variant="secondary"
+              />
+            )}
+          </div>
+        </div>
+      </section>
+    )
+  }
 
   {/* Lineage link — surface name to True Name to chain of traditions */}
   <section class="py-10 px-6 bg-ocean-900 border-t border-white/[0.04]">
     <div class="max-w-2xl mx-auto text-center">
-      <p class="text-[10px] uppercase tracking-[0.2em] text-white/20 mb-3">Substrate</p>
+      <p class="text-[10px] uppercase tracking-[0.2em] text-white/20 mb-3">
+        Substrate
+      </p>
       <a
         href={`/lineage/${node.envVar.toLowerCase()}`}
         class="inline-block group"
       >
-        <span class="font-heading text-[28px] font-light text-white/65 group-hover:text-white tracking-wide transition-colors">
+        <span
+          class="font-heading text-[28px] font-light text-white/65 group-hover:text-white tracking-wide transition-colors"
+        >
           {node.envVar}
         </span>
-        <p class="mt-2 text-[12px] text-white/30 group-hover:text-ocean-400/70 uppercase tracking-[0.15em] transition-colors">
+        <p
+          class="mt-2 text-[12px] text-white/30 group-hover:text-ocean-400/70 uppercase tracking-[0.15em] transition-colors"
+        >
           See lineage across traditions &rarr;
         </p>
       </a>
@@ -218,27 +284,56 @@ const nextNode = currentIndex < allNodes.length - 1 ? allNodes[currentIndex + 1]
   <section class="py-12 px-6 bg-ocean-900 border-t border-white/[0.04]">
     <div class="max-w-2xl mx-auto">
       <div class="flex items-center justify-between">
-        {prevNode ? (
-          <a href={prevNode.url} class="group flex items-center gap-2 text-white/30 hover:text-white/60 transition-colors">
-            <span class="text-[18px] group-hover:-translate-x-1 transition-transform">&larr;</span>
-            <div class="text-right">
-              <span class="text-[10px] uppercase tracking-[0.15em] text-white/20 block">Previous</span>
-              <span class="text-[14px]">{prevNode.emoji} {prevNode.name}</span>
-            </div>
-          </a>
-        ) : <div />}
-        <a href="/" class="text-[11px] uppercase tracking-[0.15em] text-white/20 hover:text-white/40 transition-colors">
+        {
+          prevNode ? (
+            <a
+              href={prevNode.url}
+              class="group flex items-center gap-2 text-white/30 hover:text-white/60 transition-colors"
+            >
+              <span class="text-[18px] group-hover:-translate-x-1 transition-transform">
+                &larr;
+              </span>
+              <div class="text-right">
+                <span class="text-[10px] uppercase tracking-[0.15em] text-white/20 block">
+                  Previous
+                </span>
+                <span class="text-[14px]">
+                  {prevNode.emoji} {prevNode.name}
+                </span>
+              </div>
+            </a>
+          ) : (
+            <div />
+          )
+        }
+        <a
+          href="/"
+          class="text-[11px] uppercase tracking-[0.15em] text-white/20 hover:text-white/40 transition-colors"
+        >
           Spiral
         </a>
-        {nextNode ? (
-          <a href={nextNode.url} class="group flex items-center gap-2 text-white/30 hover:text-white/60 transition-colors">
-            <div>
-              <span class="text-[10px] uppercase tracking-[0.15em] text-white/20 block">Next</span>
-              <span class="text-[14px]">{nextNode.emoji} {nextNode.name}</span>
-            </div>
-            <span class="text-[18px] group-hover:translate-x-1 transition-transform">&rarr;</span>
-          </a>
-        ) : <div />}
+        {
+          nextNode ? (
+            <a
+              href={nextNode.url}
+              class="group flex items-center gap-2 text-white/30 hover:text-white/60 transition-colors"
+            >
+              <div>
+                <span class="text-[10px] uppercase tracking-[0.15em] text-white/20 block">
+                  Next
+                </span>
+                <span class="text-[14px]">
+                  {nextNode.emoji} {nextNode.name}
+                </span>
+              </div>
+              <span class="text-[18px] group-hover:translate-x-1 transition-transform">
+                &rarr;
+              </span>
+            </a>
+          ) : (
+            <div />
+          )
+        }
       </div>
     </div>
   </section>
@@ -275,7 +370,8 @@ const nextNode = currentIndex < allNodes.length - 1 ? allNodes[currentIndex + 1]
     color: rgba(255, 255, 255, 0.55);
     font-style: italic;
   }
-  .prose-node ul, .prose-node ol {
+  .prose-node ul,
+  .prose-node ol {
     margin-bottom: 1.5rem;
     padding-left: 1.5rem;
   }

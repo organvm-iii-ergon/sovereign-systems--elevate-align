@@ -141,47 +141,63 @@ export function matchFiltersToContaminants(
   filters: FilterTier[] = hydrationConfig.filterTiers,
   avgBottledMonthly = 65,
 ): FilterRecommendation[] {
-  const concerning = contaminants.filter((c) => c.exceedsHealth || c.exceedsLegal);
+  const concerning = contaminants.filter(
+    (c) => c.exceedsHealth || c.exceedsLegal,
+  );
 
-  return filters.map((tier) => {
-    const removesLower = tier.removes.map((r) => r.toLowerCase());
-    let matched = 0;
-    for (const c of concerning) {
-      const cLower = c.name.toLowerCase();
-      if (removesLower.some((r) => cLower.includes(r) || r.includes('all major'))) {
-        matched++;
+  return filters
+    .map((tier) => {
+      const removesLower = tier.removes.map((r) => r.toLowerCase());
+      let matched = 0;
+      for (const c of concerning) {
+        const cLower = c.name.toLowerCase();
+        if (
+          removesLower.some(
+            (r) => cLower.includes(r) || r.includes('all major'),
+          )
+        ) {
+          matched++;
+        }
       }
-    }
 
-    const matchScore = concerning.length > 0 ? Math.round((matched / concerning.length) * 100) : 50;
+      const matchScore =
+        concerning.length > 0
+          ? Math.round((matched / concerning.length) * 100)
+          : 50;
 
-    // Extract first number from range like "$150–$300" → 150
-    const priceMatch = tier.priceRange.match(/[\d,]+/);
-    const priceNum = priceMatch ? parseInt(priceMatch[0].replace(/,/g, ''), 10) : 300;
-    const monthlyFilterCost = priceNum / 36; // amortize over 3 years
-    const yearlySavings = avgBottledMonthly * 12 - monthlyFilterCost * 12;
+      // Extract first number from range like "$150–$300" → 150
+      const priceMatch = tier.priceRange.match(/[\d,]+/);
+      const priceNum = priceMatch
+        ? parseInt(priceMatch[0].replace(/,/g, ''), 10)
+        : 300;
+      const monthlyFilterCost = priceNum / 36; // amortize over 3 years
+      const yearlySavings = avgBottledMonthly * 12 - monthlyFilterCost * 12;
 
-    const reason =
-      matchScore >= 80
-        ? `Removes ${matched} of ${concerning.length} flagged contaminants in your area`
-        : matchScore >= 50
-          ? `Covers key contaminants — good starting point for your profile`
-          : `Targeted solution — best for ${tier.bestFor.toLowerCase()}`;
+      const reason =
+        matchScore >= 80
+          ? `Removes ${matched} of ${concerning.length} flagged contaminants in your area`
+          : matchScore >= 50
+            ? `Covers key contaminants — good starting point for your profile`
+            : `Targeted solution — best for ${tier.bestFor.toLowerCase()}`;
 
-    return {
-      tier,
-      matchScore,
-      reason,
-      // Premium tiers (spa/ionizer) can cost more than the bottled baseline;
-      // never surface a negative "savings" figure in the UI.
-      monthlySavings: Math.max(0, Math.round(avgBottledMonthly - monthlyFilterCost)),
-      yearlyComparison: {
-        bottledWater: Math.round(avgBottledMonthly * 12),
-        thisFilter: Math.round(monthlyFilterCost * 12),
-        savings: Math.max(0, Math.round(yearlySavings)),
-      },
-    };
-  }).sort((a, b) => b.matchScore - a.matchScore);
+      return {
+        tier,
+        matchScore,
+        reason,
+        // Premium tiers (spa/ionizer) can cost more than the bottled baseline;
+        // never surface a negative "savings" figure in the UI.
+        monthlySavings: Math.max(
+          0,
+          Math.round(avgBottledMonthly - monthlyFilterCost),
+        ),
+        yearlyComparison: {
+          bottledWater: Math.round(avgBottledMonthly * 12),
+          thisFilter: Math.round(monthlyFilterCost * 12),
+          savings: Math.max(0, Math.round(yearlySavings)),
+        },
+      };
+    })
+    .sort((a, b) => b.matchScore - a.matchScore);
 }
 
 // --- Demo Data (Phase A) ---
@@ -191,7 +207,8 @@ export const hydrationConfig: HydrationConfig = {
     {
       id: 1,
       title: "What's In Your Water?",
-      subtitle: 'Enter your ZIP code to see what contaminants are in your local water supply.',
+      subtitle:
+        'Enter your ZIP code to see what contaminants are in your local water supply.',
       access: 'free',
       color: '#119a9e',
       icon: '💧',
@@ -199,7 +216,8 @@ export const hydrationConfig: HydrationConfig = {
     {
       id: 2,
       title: 'Your Personalized Filter Match',
-      subtitle: 'Get tiered filter recommendations matched to your specific contaminants.',
+      subtitle:
+        'Get tiered filter recommendations matched to your specific contaminants.',
       access: 'email-gated',
       color: '#c9a96e',
       icon: '🔬',
@@ -207,7 +225,8 @@ export const hydrationConfig: HydrationConfig = {
     {
       id: 3,
       title: 'Your Water & Health Profile',
-      subtitle: 'Optional deeper assessment — hydration, detox, fertility, energy, skin.',
+      subtitle:
+        'Optional deeper assessment — hydration, detox, fertility, energy, skin.',
       access: 'post-conversion',
       color: '#3dbfc4',
       icon: '🌿',
@@ -223,7 +242,8 @@ export const hydrationConfig: HydrationConfig = {
     {
       id: 5,
       title: 'Your Full Report',
-      subtitle: 'Emailed summary with contaminants, recommendations, and cost savings.',
+      subtitle:
+        'Emailed summary with contaminants, recommendations, and cost savings.',
       access: 'post-conversion',
       color: '#f59e0b',
       icon: '📊',
@@ -231,7 +251,8 @@ export const hydrationConfig: HydrationConfig = {
     {
       id: 6,
       title: 'Deep Dive',
-      subtitle: 'Cellular hydration, detox pathways, and advanced wellness resources.',
+      subtitle:
+        'Cellular hydration, detox pathways, and advanced wellness resources.',
       access: 'post-conversion',
       color: '#ec4899',
       icon: '🔮',
@@ -257,7 +278,14 @@ export const hydrationConfig: HydrationConfig = {
       position: 'mid-tier',
       priceRange: '$400–$800',
       features: ['Whole house option', 'NSF certified', 'Carbon block'],
-      removes: ['Chlorine', 'Lead', 'Mercury', 'Arsenic', 'PFAS', 'Pharmaceuticals'],
+      removes: [
+        'Chlorine',
+        'Lead',
+        'Mercury',
+        'Arsenic',
+        'PFAS',
+        'Pharmaceuticals',
+      ],
       bestFor: 'Families wanting broader protection',
       affiliateUrl: 'https://www.multipure.com/maddie-wired',
     },
@@ -268,7 +296,12 @@ export const hydrationConfig: HydrationConfig = {
       position: 'high-end',
       priceRange: '$2,000–$5,000',
       features: ['Whole house', 'Multi-stage', 'Professional install'],
-      removes: ['All major contaminants', 'Bacteria', 'Viruses', 'Microplastics'],
+      removes: [
+        'All major contaminants',
+        'Bacteria',
+        'Viruses',
+        'Microplastics',
+      ],
       bestFor: 'Homeowners wanting complete water sovereignty',
       affiliateUrl: 'https://purehome.co/maddie',
     },
@@ -303,8 +336,8 @@ export const hydrationConfig: HydrationConfig = {
       perCase: 5.99,
       perGallon: 1.19,
       source: 'Safeway 2026 shelf prices',
-      monthlyEstimate: 47.60,
-      yearlyEstimate: 571.20,
+      monthlyEstimate: 47.6,
+      yearlyEstimate: 571.2,
     },
     {
       brand: 'Fiji',
@@ -312,8 +345,8 @@ export const hydrationConfig: HydrationConfig = {
       perCase: 29.99,
       perGallon: 9.55,
       source: 'Safeway 2026 shelf prices',
-      monthlyEstimate: 74.70,
-      yearlyEstimate: 896.40,
+      monthlyEstimate: 74.7,
+      yearlyEstimate: 896.4,
     },
     {
       brand: 'Essentia',
@@ -321,8 +354,8 @@ export const hydrationConfig: HydrationConfig = {
       perCase: 27.99,
       perGallon: 10.68,
       source: 'Safeway 2026 shelf prices',
-      monthlyEstimate: 83.70,
-      yearlyEstimate: 1004.40,
+      monthlyEstimate: 83.7,
+      yearlyEstimate: 1004.4,
     },
   ],
 };
