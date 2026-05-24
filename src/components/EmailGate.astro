@@ -24,23 +24,34 @@ const sourceCount = citations.length;
 
 <div class="email-gate-wrapper">
   <!-- Gated content (hidden until unlocked) -->
-  <div id="gated-content" class="hidden opacity-0 transition-opacity duration-700">
+  <div
+    id="gated-content"
+    class="hidden opacity-0 transition-opacity duration-700"
+  >
     <slot />
   </div>
 
   <!-- Gate form (visible until unlocked) -->
   <div id="gate-overlay" class="py-20 px-6">
-    {preview && (
-      <div class="max-w-[640px] mx-auto mb-12 text-white/35 text-[16px] font-light leading-[1.9] text-center">
-        <p>{preview}</p>
-      </div>
-    )}
+    {
+      preview && (
+        <div class="max-w-[640px] mx-auto mb-12 text-white/35 text-[16px] font-light leading-[1.9] text-center">
+          <p>{preview}</p>
+        </div>
+      )
+    }
     <div class="max-w-md mx-auto">
-      <div class="glass-card p-10 text-center" style="border-color: rgba(17,154,158,0.15);">
+      <div
+        class="glass-card p-10 text-center"
+        style="border-color: rgba(17,154,158,0.15);"
+      >
         <div class="w-10 h-px bg-ocean-500/30 mx-auto mb-6"></div>
-        <h2 class="font-heading text-[26px] font-light text-white mb-3">Continue reading</h2>
+        <h2 class="font-heading text-[26px] font-light text-white mb-3">
+          Continue reading
+        </h2>
         <p class="text-white/35 text-[15px] font-light mb-8 leading-relaxed">
-          Enter your email to unlock the full research-backed deep dive. Backed by {sourceCount} peer-reviewed and sacred sources.
+          Enter your email to unlock the full research-backed deep dive. Backed
+          by {sourceCount} peer-reviewed and sacred sources.
         </p>
 
         <form id="gate-form" class="space-y-4">
@@ -87,8 +98,12 @@ const sourceCount = citations.length;
 
   form?.addEventListener('submit', async (e) => {
     e.preventDefault();
-    const emailInput = form.querySelector('input[type="email"]') as HTMLInputElement;
-    const button = form.querySelector('button[type="submit"]') as HTMLButtonElement;
+    const emailInput = form.querySelector(
+      'input[type="email"]',
+    ) as HTMLInputElement;
+    const button = form.querySelector(
+      'button[type="submit"]',
+    ) as HTMLButtonElement;
     const email = emailInput.value;
 
     if (email) {
@@ -100,17 +115,21 @@ const sourceCount = citations.length;
         await fetch('/capture', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ email, source: 'email_gate' })
+          body: JSON.stringify({ email, source: 'email_gate' }),
         });
         localStorage.setItem(UNLOCK_KEY, 'true');
-        console.log(`[EA] action=email_gate_unlock source=${window.location.pathname}`);
+        console.log(
+          `[EA] action=email_gate_unlock source=${window.location.pathname}`,
+        );
         unlock();
       } catch {
         button.innerText = originalText;
         button.disabled = false;
         // Still unlock on network failure — don't block the UX
         localStorage.setItem(UNLOCK_KEY, 'true');
-        console.log(`[EA] action=email_gate_unlock source=${window.location.pathname} fallback=true`);
+        console.log(
+          `[EA] action=email_gate_unlock source=${window.location.pathname} fallback=true`,
+        );
         unlock();
       }
     }

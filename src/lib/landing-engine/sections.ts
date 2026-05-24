@@ -12,12 +12,12 @@
  *   4. Register in SectionRenderer.astro switch
  */
 
-import type { Persona } from "./personas";
+import type { Persona } from './personas';
 
-export type SectionType = "hero" | "problem" | "three-paths" | "cta";
+export type SectionType = 'hero' | 'problem' | 'three-paths' | 'cta';
 
 export interface HeroSectionProps {
-  type: "hero";
+  type: 'hero';
   heading: string;
   subhead: string;
   ctaLabel: string;
@@ -26,13 +26,13 @@ export interface HeroSectionProps {
 }
 
 export interface ProblemSectionProps {
-  type: "problem";
+  type: 'problem';
   heading: string;
   painPoints: string[];
 }
 
 export interface ThreePathsSectionProps {
-  type: "three-paths";
+  type: 'three-paths';
   heading: string;
   paths: Array<{
     label: string;
@@ -42,7 +42,7 @@ export interface ThreePathsSectionProps {
 }
 
 export interface CtaSectionProps {
-  type: "cta";
+  type: 'cta';
   heading: string;
   subhead: string;
   ctaLabel: string;
@@ -62,18 +62,18 @@ export type SectionData =
 export const SectionBuilders = {
   hero(persona: Persona): HeroSectionProps {
     return {
-      type: "hero",
-      pillarLabel: persona.primaryPillar.replace("-", " "),
+      type: 'hero',
+      pillarLabel: persona.primaryPillar.replace('-', ' '),
       heading: persona.label,
       subhead: persona.heroHook,
       ctaLabel: persona.ctaCommit,
-      ctaHref: "#cta",
+      ctaHref: '#cta',
     };
   },
   problem(persona: Persona): ProblemSectionProps {
     return {
-      type: "problem",
-      heading: "The shape of being stuck",
+      type: 'problem',
+      heading: 'The shape of being stuck',
       painPoints: persona.pain,
     };
   },
@@ -84,40 +84,40 @@ export const SectionBuilders = {
     // pillar pages are physical/inner/identity/financial. Map first, then
     // pick adjacency over real slugs so every door resolves to a live page.
     const pillarSlug: Record<string, string> = {
-      water: "physical",
-      inner: "inner",
-      identity: "identity",
-      performance: "physical",
-      financial: "financial",
-      "cancer-support": "physical",
+      water: 'physical',
+      inner: 'inner',
+      identity: 'identity',
+      performance: 'physical',
+      financial: 'financial',
+      'cancer-support': 'physical',
     };
     const adjacency: Record<string, [string, string, string]> = {
-      physical: ["physical", "inner", "identity"],
-      inner: ["inner", "identity", "financial"],
-      identity: ["identity", "inner", "financial"],
-      financial: ["financial", "identity", "inner"],
+      physical: ['physical', 'inner', 'identity'],
+      inner: ['inner', 'identity', 'financial'],
+      identity: ['identity', 'inner', 'financial'],
+      financial: ['financial', 'identity', 'inner'],
     };
-    const anchor = pillarSlug[persona.primaryPillar] ?? "physical";
-    const paths = (adjacency[anchor] ?? ["physical", "inner", "identity"]).map(
+    const anchor = pillarSlug[persona.primaryPillar] ?? 'physical';
+    const paths = (adjacency[anchor] ?? ['physical', 'inner', 'identity']).map(
       (slug) => ({
-        label: slug.replace("-", " "),
-        description: `Enter through ${slug.replace("-", " ")}.`,
+        label: slug.replace('-', ' '),
+        description: `Enter through ${slug.replace('-', ' ')}.`,
         href: `/pillars/${slug}`,
       }),
     );
     return {
-      type: "three-paths",
-      heading: "Three roads in",
-      paths: paths as ThreePathsSectionProps["paths"],
+      type: 'three-paths',
+      heading: 'Three roads in',
+      paths: paths as ThreePathsSectionProps['paths'],
     };
   },
   cta(persona: Persona): CtaSectionProps {
     return {
-      type: "cta",
-      heading: persona.desire[0] ?? "Begin.",
-      subhead: persona.desire.slice(1).join(" ") || persona.heroHook,
+      type: 'cta',
+      heading: persona.desire[0] ?? 'Begin.',
+      subhead: persona.desire.slice(1).join(' ') || persona.heroHook,
       ctaLabel: persona.ctaCommit,
-      ctaHref: "/quiz",
+      ctaHref: '/quiz',
     };
   },
 } as const;

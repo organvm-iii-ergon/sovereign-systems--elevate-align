@@ -10,17 +10,17 @@
  */
 
 export type PersonaId =
-  | "toxic-environment-seeker"
-  | "burnt-out-high-achiever"
-  | "cycle-syncing-practitioner";
+  | 'toxic-environment-seeker'
+  | 'burnt-out-high-achiever'
+  | 'cycle-syncing-practitioner';
 
 export type PillarId =
-  | "water"
-  | "inner"
-  | "identity"
-  | "performance"
-  | "financial"
-  | "cancer-support";
+  | 'water'
+  | 'inner'
+  | 'identity'
+  | 'performance'
+  | 'financial'
+  | 'cancer-support';
 
 export interface Persona {
   /** URL slug (must match PersonaId). */
@@ -40,62 +40,62 @@ export interface Persona {
 }
 
 export const PERSONAS: Record<PersonaId, Persona> = {
-  "toxic-environment-seeker": {
-    id: "toxic-environment-seeker",
-    label: "Toxic-Environment Seeker",
-    primaryPillar: "water",
+  'toxic-environment-seeker': {
+    id: 'toxic-environment-seeker',
+    label: 'Toxic-Environment Seeker',
+    primaryPillar: 'water',
     pain: [
       "I'm doing everything right and still feel toxic.",
-      "My gut, my skin, my cycle — nothing is regulating.",
+      'My gut, my skin, my cycle — nothing is regulating.',
       "Every product I try lists 'natural' but reads like a chemistry textbook.",
       "I don't know which inputs to my body are actually clean.",
     ],
     desire: [
-      "A short list of inputs I can actually trust.",
+      'A short list of inputs I can actually trust.',
       "A way to check what's in something without becoming a chemist.",
-      "Visible regulation — sleep, skin, cycle, mood — within months not years.",
+      'Visible regulation — sleep, skin, cycle, mood — within months not years.',
     ],
     heroHook:
-      "If your body keeps telling you something is off, the inputs are probably the conversation. This is where to start tuning them.",
-    ctaCommit: "Send me the inputs map.",
+      'If your body keeps telling you something is off, the inputs are probably the conversation. This is where to start tuning them.',
+    ctaCommit: 'Send me the inputs map.',
   },
-  "burnt-out-high-achiever": {
-    id: "burnt-out-high-achiever",
-    label: "Burnt-Out High Achiever",
-    primaryPillar: "inner",
+  'burnt-out-high-achiever': {
+    id: 'burnt-out-high-achiever',
+    label: 'Burnt-Out High Achiever',
+    primaryPillar: 'inner',
     pain: [
       "I'm performing at the level I trained for and dying inside it.",
       "Therapy gave me language but the loop hasn't actually moved.",
-      "Every framework I touch becomes another to-do.",
+      'Every framework I touch becomes another to-do.',
       "I don't have time for a wellness practice. I need a wellness operating system.",
     ],
     desire: [
-      "Something I can run between meetings, not instead of them.",
-      "A way to integrate without losing the edge that got me here.",
-      "Stop trading the body for the work. Start trading the work back.",
+      'Something I can run between meetings, not instead of them.',
+      'A way to integrate without losing the edge that got me here.',
+      'Stop trading the body for the work. Start trading the work back.',
     ],
     heroHook:
       "You didn't get here by accident. You won't leave by accident either. This is the integration layer underneath what you've already built.",
-    ctaCommit: "Show me the integration layer.",
+    ctaCommit: 'Show me the integration layer.',
   },
-  "cycle-syncing-practitioner": {
-    id: "cycle-syncing-practitioner",
-    label: "Cycle-Syncing Practitioner",
-    primaryPillar: "identity",
+  'cycle-syncing-practitioner': {
+    id: 'cycle-syncing-practitioner',
+    label: 'Cycle-Syncing Practitioner',
+    primaryPillar: 'identity',
     pain: [
-      "I track my cycle but I still get blindsided by it.",
-      "Every app reads my data and tells me almost nothing.",
-      "My astrology, my human design, my cycle — all in different tabs that never speak to each other.",
-      "I want a practice, not another dashboard.",
+      'I track my cycle but I still get blindsided by it.',
+      'Every app reads my data and tells me almost nothing.',
+      'My astrology, my human design, my cycle — all in different tabs that never speak to each other.',
+      'I want a practice, not another dashboard.',
     ],
     desire: [
-      "A unified read across cycle, astrology, and HD layers.",
-      "Predictable rituals tied to where I actually am, not where the app thinks I am.",
-      "A practice that compounds across months, not resets every cycle.",
+      'A unified read across cycle, astrology, and HD layers.',
+      'Predictable rituals tied to where I actually am, not where the app thinks I am.',
+      'A practice that compounds across months, not resets every cycle.',
     ],
     heroHook:
-      "Your body, your chart, and your design are already saying the same thing. The work is hearing them at the same volume.",
-    ctaCommit: "Tune me in.",
+      'Your body, your chart, and your design are already saying the same thing. The work is hearing them at the same volume.',
+    ctaCommit: 'Tune me in.',
   },
 };
 

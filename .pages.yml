@@ -1,0 +1,81 @@
+# Pages CMS (https://pagescms.org) — git-based content editor.
+# Replaces Keystatic, which has no Astro 6 support (see
+# docs/design-proposals/2026-05-24-astro-6-migration-scope.md).
+# Connect this repo at https://app.pagescms.org to edit content via a GUI;
+# it commits straight to the Markdown files below. No build integration, no
+# self-hosted auth — Pages CMS handles GitHub OAuth itself.
+content:
+  - name: pillars
+    label: Pillars
+    type: collection
+    path: src/content/pillars
+    view:
+      fields:
+        - title
+        - status
+        - order
+    fields:
+      - name: title
+        label: Title
+        type: string
+      - name: emoji
+        label: Emoji
+        type: string
+      - name: tagline
+        label: Tagline
+        type: string
+      - name: status
+        label: Status
+        type: select
+        options:
+          values:
+            - live
+            - placeholder
+        default: placeholder
+      - name: order
+        label: Order
+        type: number
+      - name: body
+        label: Content
+        type: rich-text
+  - name: branches
+    label: Branches
+    type: collection
+    path: src/content/branches
+    view:
+      fields:
+        - title
+        - status
+        - order
+    fields:
+      - name: title
+        label: Title
+        type: string
+      - name: emoji
+        label: Emoji
+        type: string
+      - name: hook
+        label: Hook
+        type: string
+      - name: status
+        label: Status
+        type: select
+        options:
+          values:
+            - live
+            - placeholder
+        default: placeholder
+      - name: tone
+        label: Tone
+        type: select
+        options:
+          values:
+            - standard
+            - soft
+        default: standard
+      - name: order
+        label: Order
+        type: number
+      - name: body
+        label: Content
+        type: rich-text

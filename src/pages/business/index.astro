@@ -6,12 +6,16 @@ import VideoEmbed from '../../components/VideoEmbed.astro';
 import ResearchAccordion from '../../components/ResearchAccordion.astro';
 import { config } from '../../data/hub.config';
 
-const financialPillar = config.pillars.find(p => p.slug === 'financial');
+const financialPillar = config.pillars.find((p) => p.slug === 'financial');
 const citationIds = financialPillar?.citationIds || [];
 ---
 
 <Base title="Financial Sovereignty — Business Hub">
-  <Hero heading="Stability that scales." subtext="Build a business that supports your life, rather than consuming it. Systems, scale, and sovereign income." section="Financial Sovereignty">
+  <Hero
+    heading="Stability that scales."
+    subtext="Build a business that supports your life, rather than consuming it. Systems, scale, and sovereign income."
+    section="Financial Sovereignty"
+  >
     <CTAButton href="#systems" label="Explore the Systems" />
     <CTAButton href="/" label="Return to Hub" variant="secondary" />
   </Hero>
@@ -24,11 +28,18 @@ const citationIds = financialPillar?.citationIds || [];
   </section>
 
   <!-- Philosophy -->
-  <section class="py-20 px-6 bg-ocean-900 text-center border-t border-white/[0.03]">
+  <section
+    class="py-20 px-6 bg-ocean-900 text-center border-t border-white/[0.03]"
+  >
     <div class="max-w-2xl mx-auto">
-      <h2 class="font-heading text-[32px] font-light text-white mb-6">Beyond the Hustle</h2>
+      <h2 class="font-heading text-[32px] font-light text-white mb-6">
+        Beyond the Hustle
+      </h2>
       <p class="text-white/45 text-[17px] font-light leading-[1.9] mb-8">
-        We have been taught that success requires sacrifice — of your health, your time, and your presence. We believe that true financial sovereignty is the opposite: it is the result of installing systems that protect those very assets.
+        We have been taught that success requires sacrifice — of your health,
+        your time, and your presence. We believe that true financial sovereignty
+        is the opposite: it is the result of installing systems that protect
+        those very assets.
       </p>
       <div class="w-12 h-px bg-ocean-500/30 mx-auto"></div>
     </div>
@@ -39,23 +50,32 @@ const citationIds = financialPillar?.citationIds || [];
     <div class="max-w-5xl mx-auto grid md:grid-cols-3 gap-8">
       <div class="glass-card p-8">
         <div class="text-3xl mb-4">⚙️</div>
-        <h3 class="font-heading text-[20px] text-white mb-3 text-gold">Backend Infrastructure</h3>
+        <h3 class="font-heading text-[20px] text-white mb-3 text-gold">
+          Backend Infrastructure
+        </h3>
         <p class="text-white/40 text-[14px] leading-relaxed">
-          The "nervous system" of your business. CRM integration, automated funnels, and payment gates that work while you're offline.
+          The "nervous system" of your business. CRM integration, automated
+          funnels, and payment gates that work while you're offline.
         </p>
       </div>
       <div class="glass-card p-8">
         <div class="text-3xl mb-4">💎</div>
-        <h3 class="font-heading text-[20px] text-white mb-3 text-gold">Skill-Based Authority</h3>
+        <h3 class="font-heading text-[20px] text-white mb-3 text-gold">
+          Skill-Based Authority
+        </h3>
         <p class="text-white/40 text-[14px] leading-relaxed">
-          Packaging your unique expertise into high-value offers that decouple your income from your hourly rate.
+          Packaging your unique expertise into high-value offers that decouple
+          your income from your hourly rate.
         </p>
       </div>
       <div class="glass-card p-8">
         <div class="text-3xl mb-4">⏳</div>
-        <h3 class="font-heading text-[20px] text-white mb-3 text-gold">Time Reclamation</h3>
+        <h3 class="font-heading text-[20px] text-white mb-3 text-gold">
+          Time Reclamation
+        </h3>
         <p class="text-white/40 text-[14px] leading-relaxed">
-          Moving from manual labor to systemic management. Building a platform that scales without requiring more of you.
+          Moving from manual labor to systemic management. Building a platform
+          that scales without requiring more of you.
         </p>
       </div>
     </div>
@@ -64,14 +84,26 @@ const citationIds = financialPillar?.citationIds || [];
   <!-- CTA -->
   <section class="py-28 px-6 glow-bg text-center">
     <div class="relative max-w-xl mx-auto">
-      <h2 class="font-heading text-[clamp(32px,4vw,48px)] font-light text-white mb-6">
+      <h2
+        class="font-heading text-[clamp(32px,4vw,48px)] font-light text-white mb-6"
+      >
         Ready to install your systems?
       </h2>
       <p class="text-white/40 text-[16px] font-light mb-10 leading-relaxed">
-        Let's build the infrastructure of your independence. Be first when applications open.
+        Let's build the infrastructure of your independence. Be first when
+        applications open.
       </p>
-      <form id="biz-waitlist-form" class="max-w-sm mx-auto space-y-3" action="/capture" method="POST">
-        <input type="hidden" name="source" value="business-application-waitlist" />
+      <form
+        id="biz-waitlist-form"
+        class="max-w-sm mx-auto space-y-3"
+        action="/capture"
+        method="POST"
+      >
+        <input
+          type="hidden"
+          name="source"
+          value="business-application-waitlist"
+        />
         <input
           type="email"
           name="email"
@@ -87,7 +119,8 @@ const citationIds = financialPillar?.citationIds || [];
           Join the Waitlist
         </button>
       </form>
-      <p id="biz-waitlist-status" class="mt-4 text-[11px] text-white/30 hidden"></p>
+      <p id="biz-waitlist-status" class="mt-4 text-[11px] text-white/30 hidden">
+      </p>
     </div>
   </section>
 </Base>
@@ -97,17 +130,25 @@ const citationIds = financialPillar?.citationIds || [];
   const status = document.getElementById('biz-waitlist-status')!;
   form?.addEventListener('submit', async (e) => {
     e.preventDefault();
-    const email = (form.querySelector('input[name="email"]') as HTMLInputElement).value.trim();
+    const email = (
+      form.querySelector('input[name="email"]') as HTMLInputElement
+    ).value.trim();
     if (!email) return;
     try {
       await fetch('/capture', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email, source: 'business-application-waitlist' }),
+        body: JSON.stringify({
+          email,
+          source: 'business-application-waitlist',
+        }),
       });
-    } catch { /* fire-and-forget */ }
+    } catch {
+      /* fire-and-forget */
+    }
     form.classList.add('hidden');
-    status.textContent = 'You\'re on the list. We\'ll notify you when applications open.';
+    status.textContent =
+      "You're on the list. We'll notify you when applications open.";
     status.classList.remove('hidden');
   });
 </script>

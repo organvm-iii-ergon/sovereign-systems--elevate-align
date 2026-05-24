@@ -8,26 +8,37 @@ import VideoEmbed from '../components/VideoEmbed.astro';
 import { config } from '../data/hub.config';
 ---
 
-<Base title={config.name} description="Rebuilding life from the foundation up. A 13-node spiral journey through body, mind, life, and freedom.">
-  <script type="application/ld+json" set:html={JSON.stringify({
-    "@context": "https://schema.org",
-    "@type": "WebSite",
-    "name": config.name,
-    "url": config.domains.hub,
-    "description": config.tagline,
-    "potentialAction": {
-      "@type": "SearchAction",
-      "target": `${config.domains.hub}/quiz`,
-      "name": "Take the Quiz"
-    }
-  })} />
+<Base
+  title={config.name}
+  description="Rebuilding life from the foundation up. A 13-node spiral journey through body, mind, life, and freedom."
+>
+  <script
+    type="application/ld+json"
+    set:html={JSON.stringify({
+      '@context': 'https://schema.org',
+      '@type': 'WebSite',
+      name: config.name,
+      url: config.domains.hub,
+      description: config.tagline,
+      potentialAction: {
+        '@type': 'SearchAction',
+        target: `${config.domains.hub}/quiz`,
+        name: 'Take the Quiz',
+      },
+    })}
+  />
   <!-- Spiral Hero -->
   <section class="bg-ocean-900">
     <div class="px-6 pt-16 md:pt-20 pb-6 text-center">
-      <h1 class="font-heading text-[clamp(36px,6vw,64px)] font-light text-white leading-[1.08] tracking-tight" style="text-shadow: 0 0 60px rgba(17,154,158,0.15);">
+      <h1
+        class="font-heading text-[clamp(36px,6vw,64px)] font-light text-white leading-[1.08] tracking-tight"
+        style="text-shadow: 0 0 60px rgba(17,154,158,0.15);"
+      >
         Sovereign Systems Spiral
       </h1>
-      <p class="mt-4 text-[15px] md:text-[17px] font-light text-white/40 max-w-[480px] mx-auto leading-relaxed">
+      <p
+        class="mt-4 text-[15px] md:text-[17px] font-light text-white/40 max-w-[480px] mx-auto leading-relaxed"
+      >
         {config.tagline}
       </p>
     </div>
@@ -40,11 +51,19 @@ import { config } from '../data/hub.config';
   <!-- Quiz CTA -->
   <section class="py-20 px-6 bg-ocean-900 text-center">
     <div class="max-w-xl mx-auto">
-      <p class="text-[11px] font-medium tracking-[0.2em] uppercase text-ocean-500 mb-3">Explore the Spiral</p>
-      <h2 class="font-heading text-[clamp(28px,4vw,44px)] font-light text-white mb-4">
+      <p
+        class="text-[11px] font-medium tracking-[0.2em] uppercase text-ocean-500 mb-3"
+      >
+        Explore the Spiral
+      </p>
+      <h2
+        class="font-heading text-[clamp(28px,4vw,44px)] font-light text-white mb-4"
+      >
         Find your starting point
       </h2>
-      <p class="text-white/40 text-[15px] font-light max-w-[440px] mx-auto mb-10 leading-relaxed">
+      <p
+        class="text-white/40 text-[15px] font-light max-w-[440px] mx-auto mb-10 leading-relaxed"
+      >
         Take the quiz to find where you are on the spiral — and where to begin.
       </p>
       <CTAButton href="/quiz" label="Take the Quiz" />
@@ -55,7 +74,9 @@ import { config } from '../data/hub.config';
   <section class="py-24 px-6 bg-ocean-900">
     <div class="max-w-[680px] mx-auto text-center">
       <div class="w-10 h-px bg-gold/40 mx-auto mb-12"></div>
-      <blockquote class="font-heading text-[clamp(22px,3vw,32px)] font-light italic leading-[1.6] text-white/70">
+      <blockquote
+        class="font-heading text-[clamp(22px,3vw,32px)] font-light italic leading-[1.6] text-white/70"
+      >
         Most people try to fix their mindset while their foundation is unstable.
         Growth isn't linear. It's spiral. But it requires a backbone.
       </blockquote>
@@ -66,8 +87,14 @@ import { config } from '../data/hub.config';
   <!-- Video — What is this? -->
   <section class="py-20 px-6 bg-ocean-900">
     <div class="max-w-3xl mx-auto">
-      <p class="text-center text-[11px] font-medium tracking-[0.2em] uppercase text-ocean-500 mb-3">The Story</p>
-      <h2 class="font-heading text-[clamp(24px,3vw,36px)] font-light text-white text-center mb-10">
+      <p
+        class="text-center text-[11px] font-medium tracking-[0.2em] uppercase text-ocean-500 mb-3"
+      >
+        The Story
+      </p>
+      <h2
+        class="font-heading text-[clamp(24px,3vw,36px)] font-light text-white text-center mb-10"
+      >
         What is Sovereign Systems?
       </h2>
       <VideoEmbed placeholder={true} title="What is Sovereign Systems?" />
@@ -80,31 +107,63 @@ import { config } from '../data/hub.config';
   <!-- Pillar Phases (structural reference) -->
   <section class="py-24 px-6 bg-ocean-900">
     <div class="max-w-[800px] mx-auto">
-      <p class="text-center text-[11px] font-medium tracking-[0.2em] uppercase text-ocean-500 mb-3">The Architecture</p>
-      <h2 class="font-heading text-[clamp(32px,4vw,48px)] font-light text-white text-center mb-16">
+      <p
+        class="text-center text-[11px] font-medium tracking-[0.2em] uppercase text-ocean-500 mb-3"
+      >
+        The Architecture
+      </p>
+      <h2
+        class="font-heading text-[clamp(32px,4vw,48px)] font-light text-white text-center mb-16"
+      >
         Four Phases of Sovereignty
       </h2>
       <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
-        {config.pillars.map((pillar) => (
-          <PillarCard pillar={pillar} />
-        ))}
+        {config.pillars.map((pillar) => <PillarCard pillar={pillar} />)}
       </div>
 
       <!-- Elevate / Align / Unlock framework -->
       <div class="mt-16 pt-12 border-t border-white/[0.04]">
-        <p class="text-center text-[11px] font-medium tracking-[0.2em] uppercase text-ocean-500 mb-6">The Journey</p>
+        <p
+          class="text-center text-[11px] font-medium tracking-[0.2em] uppercase text-ocean-500 mb-6"
+        >
+          The Journey
+        </p>
         <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 text-center">
           <div>
-            <div class="text-[28px] font-heading font-light text-white mb-2" style="color:#119a9e;">Elevate</div>
-            <p class="text-white/30 text-[13px] leading-relaxed">Stabilize the body. Clean your inputs. Build a physical foundation you can trust.</p>
+            <div
+              class="text-[28px] font-heading font-light text-white mb-2"
+              style="color:#119a9e;"
+            >
+              Elevate
+            </div>
+            <p class="text-white/30 text-[13px] leading-relaxed">
+              Stabilize the body. Clean your inputs. Build a physical foundation
+              you can trust.
+            </p>
           </div>
           <div>
-            <div class="text-[28px] font-heading font-light text-white mb-2" style="color:#8cc5d3;">Align</div>
-            <p class="text-white/30 text-[13px] leading-relaxed">Clear emotional weight. Find your rhythm. Let who you really are come forward.</p>
+            <div
+              class="text-[28px] font-heading font-light text-white mb-2"
+              style="color:#8cc5d3;"
+            >
+              Align
+            </div>
+            <p class="text-white/30 text-[13px] leading-relaxed">
+              Clear emotional weight. Find your rhythm. Let who you really are
+              come forward.
+            </p>
           </div>
           <div>
-            <div class="text-[28px] font-heading font-light text-white mb-2" style="color:#3dbfc4;">Unlock</div>
-            <p class="text-white/30 text-[13px] leading-relaxed">Build systems that work without you. Turn sovereignty into freedom.</p>
+            <div
+              class="text-[28px] font-heading font-light text-white mb-2"
+              style="color:#3dbfc4;"
+            >
+              Unlock
+            </div>
+            <p class="text-white/30 text-[13px] leading-relaxed">
+              Build systems that work without you. Turn sovereignty into
+              freedom.
+            </p>
           </div>
         </div>
       </div>
@@ -114,10 +173,15 @@ import { config } from '../data/hub.config';
   <!-- CTA -->
   <section class="py-28 px-6 glow-bg text-center">
     <div class="relative max-w-xl mx-auto">
-      <h2 class="font-heading text-[clamp(36px,5vw,56px)] font-light text-white mb-4" style="text-shadow: 0 0 60px rgba(17,154,158,0.12);">
+      <h2
+        class="font-heading text-[clamp(36px,5vw,56px)] font-light text-white mb-4"
+        style="text-shadow: 0 0 60px rgba(17,154,158,0.12);"
+      >
         Start the spiral
       </h2>
-      <p class="text-white/40 text-[16px] font-light max-w-[440px] mx-auto mb-10 leading-relaxed">
+      <p
+        class="text-white/40 text-[16px] font-light max-w-[440px] mx-auto mb-10 leading-relaxed"
+      >
         Growth isn't linear. Find where you are and begin.
       </p>
       <CTAButton href="/quiz" label="Take the Quiz" />

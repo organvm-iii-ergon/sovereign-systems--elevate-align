@@ -138,10 +138,7 @@ export const LENSES: Lens[] = [
 ];
 
 /** Get the effective primitive after lens modulation */
-export function modulatePrimitive(
-  envVar: EnvVar,
-  lens: Lens
-): MathPrimitive {
+export function modulatePrimitive(envVar: EnvVar, lens: Lens): MathPrimitive {
   const base = PRIMITIVES[envVar];
   const mod = LENS_MODULATION[lens];
 

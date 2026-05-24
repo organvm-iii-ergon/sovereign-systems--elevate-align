@@ -8,8 +8,15 @@ import HydrationNode from '../../components/HydrationNode.astro';
 import { config } from '../../data/hub.config';
 ---
 
-<Base title="Root Healing — The Water Hub" description="Discover what's in your water, find the right filter for your region, and start healing from the root.">
-  <Hero heading="Water changed everything for me." subtext="A simple shift that impacted my health, energy, and everything I thought I knew about healing." section="Physical Sovereignty">
+<Base
+  title="Root Healing — The Water Hub"
+  description="Discover what's in your water, find the right filter for your region, and start healing from the root."
+>
+  <Hero
+    heading="Water changed everything for me."
+    subtext="A simple shift that impacted my health, energy, and everything I thought I knew about healing."
+    section="Physical Sovereignty"
+  >
     <CTAButton href="#hydration-node" label="Check what's in your water" />
   </Hero>
 
@@ -26,15 +33,29 @@ import { config } from '../../data/hub.config';
   <section class="py-20 px-6 bg-ocean-900">
     <div class="max-w-4xl mx-auto grid md:grid-cols-2 gap-16">
       <div>
-        <h3 class="font-heading text-[24px] font-light text-white mb-4">What is molecular hydrogen?</h3>
+        <h3 class="font-heading text-[24px] font-light text-white mb-4">
+          What is molecular hydrogen?
+        </h3>
         <p class="text-white/40 text-[15px] font-light leading-[1.8]">
-          Molecular hydrogen (H2) is the smallest antioxidant molecule in existence. As established in the foundational 2007 <em>Nature Medicine</em> study <sup>B-01</sup>, H2 passes directly into cells and mitochondria to selectively neutralize the most damaging free radicals (hydroxyl and peroxynitrite) without disrupting beneficial oxidative signaling <sup>B-02</sup>.
+          Molecular hydrogen (H2) is the smallest antioxidant molecule in
+          existence. As established in the foundational 2007 <em
+            >Nature Medicine</em
+          > study <sup>B-01</sup>, H2 passes directly into cells and
+          mitochondria to selectively neutralize the most damaging free radicals
+          (hydroxyl and peroxynitrite) without disrupting beneficial oxidative
+          signaling <sup>B-02</sup>.
         </p>
       </div>
       <div>
-        <h3 class="font-heading text-[24px] font-light text-white mb-4">Why cellular hydration matters</h3>
+        <h3 class="font-heading text-[24px] font-light text-white mb-4">
+          Why cellular hydration matters
+        </h3>
         <p class="text-white/40 text-[15px] font-light leading-[1.8]">
-          Hydration is more than just volume. The discovery of aquaporins (the protein channels regulating water transport into cells), which earned the 2003 Nobel Prize in Chemistry <sup>B-78</sup>, proved that cells actively regulate water entry. True hydration requires a medium that your cells can actually receive and utilize.
+          Hydration is more than just volume. The discovery of aquaporins (the
+          protein channels regulating water transport into cells), which earned
+          the 2003 Nobel Prize in Chemistry <sup>B-78</sup>, proved that cells
+          actively regulate water entry. True hydration requires a medium that
+          your cells can actually receive and utilize.
         </p>
       </div>
     </div>
@@ -51,24 +72,37 @@ import { config } from '../../data/hub.config';
   <section id="branches" class="py-20 px-6 bg-ocean-900">
     <div class="max-w-2xl mx-auto">
       <div class="text-center mb-10">
-        <p class="text-[11px] font-medium tracking-[0.2em] uppercase text-ocean-500 mb-3">Go Deeper</p>
-        <h2 class="font-heading text-[28px] font-light text-white mb-2">Explore by what you're navigating</h2>
-        <p class="text-white/35 text-[14px] font-light">Every body is different. Each branch is grounded in peer-reviewed research.</p>
+        <p
+          class="text-[11px] font-medium tracking-[0.2em] uppercase text-ocean-500 mb-3"
+        >
+          Go Deeper
+        </p>
+        <h2 class="font-heading text-[28px] font-light text-white mb-2">
+          Explore by what you're navigating
+        </h2>
+        <p class="text-white/35 text-[14px] font-light">
+          Every body is different. Each branch is grounded in peer-reviewed
+          research.
+        </p>
       </div>
       <div class="grid grid-cols-2 gap-4">
-        {config.branches.filter((b) => b.visible !== false).map((branch) => (
-          <a
-            href={`/water/${branch.slug}`}
-            data-ea-action="branch_view"
-            data-ea-branch={branch.slug}
-            class="glass-card flex items-center gap-3 p-5 group"
-          >
-            <span class="text-2xl flex-shrink-0">{branch.emoji}</span>
-            <span class="text-[14px] font-medium text-white/60 group-hover:text-white transition-colors">
-              {branch.name}
-            </span>
-          </a>
-        ))}
+        {
+          config.branches
+            .filter((b) => b.visible !== false)
+            .map((branch) => (
+              <a
+                href={`/water/${branch.slug}`}
+                data-ea-action="branch_view"
+                data-ea-branch={branch.slug}
+                class="glass-card flex items-center gap-3 p-5 group"
+              >
+                <span class="text-2xl flex-shrink-0">{branch.emoji}</span>
+                <span class="text-[14px] font-medium text-white/60 group-hover:text-white transition-colors">
+                  {branch.name}
+                </span>
+              </a>
+            ))
+        }
       </div>
     </div>
   </section>
@@ -76,11 +110,19 @@ import { config } from '../../data/hub.config';
   <!-- Quiz CTA -->
   <div class="divider-line"></div>
   <section class="py-16 px-6 bg-ocean-900 text-center">
-    <h2 class="font-heading text-[22px] font-light text-white mb-3">Not sure where to start?</h2>
-    <p class="text-white/35 text-[15px] font-light mb-8 max-w-md mx-auto leading-relaxed">
+    <h2 class="font-heading text-[22px] font-light text-white mb-3">
+      Not sure where to start?
+    </h2>
+    <p
+      class="text-white/35 text-[15px] font-light mb-8 max-w-md mx-auto leading-relaxed"
+    >
       Answer a few questions and we'll point you toward the right branch.
     </p>
-    <CTAButton href="/water/quiz" label="Take the assessment" variant="secondary" />
+    <CTAButton
+      href="/water/quiz"
+      label="Take the assessment"
+      variant="secondary"
+    />
   </section>
 
   <!-- Research -->
@@ -93,22 +135,42 @@ import { config } from '../../data/hub.config';
   <!-- Navigation back -->
   <section class="py-12 px-6 bg-ocean-900 border-t border-white/[0.04]">
     <div class="max-w-2xl mx-auto flex justify-between items-center">
-      <a href="/nodes/4" class="group flex items-center gap-2 text-white/30 hover:text-white/60 transition-colors">
-        <span class="text-[18px] group-hover:-translate-x-1 transition-transform">&larr;</span>
+      <a
+        href="/nodes/4"
+        class="group flex items-center gap-2 text-white/30 hover:text-white/60 transition-colors"
+      >
+        <span
+          class="text-[18px] group-hover:-translate-x-1 transition-transform"
+          >&larr;</span
+        >
         <div>
-          <span class="text-[10px] uppercase tracking-[0.15em] text-white/20 block">Previous</span>
+          <span
+            class="text-[10px] uppercase tracking-[0.15em] text-white/20 block"
+            >Previous</span
+          >
           <span class="text-[14px]">🛡️ Elevate</span>
         </div>
       </a>
-      <a href="/" class="text-[11px] uppercase tracking-[0.15em] text-white/20 hover:text-white/40 transition-colors">
+      <a
+        href="/"
+        class="text-[11px] uppercase tracking-[0.15em] text-white/20 hover:text-white/40 transition-colors"
+      >
         Spiral
       </a>
-      <a href="/nodes/6" class="group flex items-center gap-2 text-white/30 hover:text-white/60 transition-colors">
+      <a
+        href="/nodes/6"
+        class="group flex items-center gap-2 text-white/30 hover:text-white/60 transition-colors"
+      >
         <div class="text-right">
-          <span class="text-[10px] uppercase tracking-[0.15em] text-white/20 block">Next</span>
+          <span
+            class="text-[10px] uppercase tracking-[0.15em] text-white/20 block"
+            >Next</span
+          >
           <span class="text-[14px]">🕊️ Responsibility</span>
         </div>
-        <span class="text-[18px] group-hover:translate-x-1 transition-transform">&rarr;</span>
+        <span class="text-[18px] group-hover:translate-x-1 transition-transform"
+          >&rarr;</span
+        >
       </a>
     </div>
   </section>

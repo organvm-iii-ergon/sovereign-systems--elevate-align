@@ -11,7 +11,9 @@ const nodesJson = JSON.stringify(config.nodes);
 const uiDefaults = JSON.stringify(ui);
 ---
 
-<div class="relative w-full h-[calc(100vh-240px)] supports-[height:1dvh]:h-[calc(100dvh-240px)]">
+<div
+  class="relative w-full h-[calc(100vh-240px)] supports-[height:1dvh]:h-[calc(100dvh-240px)]"
+>
   <div
     id="spiral-container"
     class="absolute inset-0 w-full h-full"
@@ -19,7 +21,8 @@ const uiDefaults = JSON.stringify(ui);
     aria-label="Interactive 3D spiral showing 13 nodes across four sovereignty phases: Elevate, Align, Unlock, and Water"
     data-nodes={nodesJson}
     data-ui={uiDefaults}
-  ></div>
+  >
+  </div>
 </div>
 
 <script>
@@ -29,8 +32,13 @@ const uiDefaults = JSON.stringify(ui);
     }
   }
 
-  const VESSEL_MODES = ['invisible', 'visible', 'refracted-star', 'hybrid'] as const;
-  type VesselMode = typeof VESSEL_MODES[number];
+  const VESSEL_MODES = [
+    'invisible',
+    'visible',
+    'refracted-star',
+    'hybrid',
+  ] as const;
+  type VesselMode = (typeof VESSEL_MODES)[number];
 
   function boot(): void {
     const container = document.getElementById('spiral-container');
@@ -46,37 +54,46 @@ const uiDefaults = JSON.stringify(ui);
     if (!raw) return;
 
     const uiRaw = container.dataset.ui;
-    const uiDefault = uiRaw ? JSON.parse(uiRaw) : { spiralVesselMode: 'invisible' };
+    const uiDefault = uiRaw
+      ? JSON.parse(uiRaw)
+      : { spiralVesselMode: 'invisible' };
 
-    import('./spiral.ts').then(({ initSpiral }) => {
-      const nodes = JSON.parse(raw);
-      // Variant switch: ?variant=stars renders generative refracted-light stars;
-      // anything else (default) renders sacred-symbol shapes per node.
-      const params = new URLSearchParams(window.location.search);
-      const variant = params.get('variant') === 'stars' ? 'stars' : 'symbols';
-      // Vessel mode: ?vessel=visible|refracted-star|hybrid|invisible.
-      // Querystring overrides the build-time ui.spiralVesselMode default.
-      const vesselParam = params.get('vessel');
-      const vesselMode: VesselMode =
-        VESSEL_MODES.includes(vesselParam as VesselMode)
+    import('./spiral.ts')
+      .then(({ initSpiral }) => {
+        const nodes = JSON.parse(raw);
+        // Variant switch: ?variant=stars renders generative refracted-light stars;
+        // anything else (default) renders sacred-symbol shapes per node.
+        const params = new URLSearchParams(window.location.search);
+        const variant = params.get('variant') === 'stars' ? 'stars' : 'symbols';
+        // Vessel mode: ?vessel=visible|refracted-star|hybrid|invisible.
+        // Querystring overrides the build-time ui.spiralVesselMode default.
+        const vesselParam = params.get('vessel');
+        const vesselMode: VesselMode = VESSEL_MODES.includes(
+          vesselParam as VesselMode,
+        )
           ? (vesselParam as VesselMode)
           : (uiDefault.spiralVesselMode as VesselMode);
-      const cleanup = initSpiral(container, nodes, variant, vesselMode);
-      window.__spiralCleanup = cleanup;
+        const cleanup = initSpiral(container, nodes, variant, vesselMode);
+        window.__spiralCleanup = cleanup;
 
-      // Hide fallback since 3D loaded successfully
-      const fallback = document.getElementById('spiral-fallback');
-      if (fallback) fallback.style.display = 'none';
+        // Hide fallback since 3D loaded successfully
+        const fallback = document.getElementById('spiral-fallback');
+        if (fallback) fallback.style.display = 'none';
 
-      document.addEventListener('astro:before-swap', () => {
-        cleanup();
-        window.__spiralCleanup = null;
-      }, { once: true });
-    }).catch((err) => {
-      console.error('[SpiralIsland] init failed:', err);
-      // Three.js failed (no WebGL, etc.) — fallback stays visible
-      container.style.display = 'none';
-    });
+        document.addEventListener(
+          'astro:before-swap',
+          () => {
+            cleanup();
+            window.__spiralCleanup = null;
+          },
+          { once: true },
+        );
+      })
+      .catch((err) => {
+        console.error('[SpiralIsland] init failed:', err);
+        // Three.js failed (no WebGL, etc.) — fallback stays visible
+        container.style.display = 'none';
+      });
   }
 
   boot();

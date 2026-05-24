@@ -1,11 +1,11 @@
 ---
-import Base from "@/layouts/Base.astro";
-import { listPersonas } from "@/lib/landing-engine/personas";
-import { composeLanding } from "@/lib/landing-engine/compose";
-import HeroSection from "@/components/landing/HeroSection.astro";
-import ProblemSection from "@/components/landing/ProblemSection.astro";
-import ThreePathsSection from "@/components/landing/ThreePathsSection.astro";
-import CtaSection from "@/components/landing/CtaSection.astro";
+import Base from '@/layouts/Base.astro';
+import { listPersonas } from '@/lib/landing-engine/personas';
+import { composeLanding } from '@/lib/landing-engine/compose';
+import HeroSection from '@/components/landing/HeroSection.astro';
+import ProblemSection from '@/components/landing/ProblemSection.astro';
+import ThreePathsSection from '@/components/landing/ThreePathsSection.astro';
+import CtaSection from '@/components/landing/CtaSection.astro';
 
 export async function getStaticPaths() {
   return listPersonas().map((p) => ({
@@ -20,11 +20,14 @@ const { persona, sections } = composed;
 ---
 
 <Base title={`Elevate Align — for ${persona.label}`}>
-  {sections.map((section) => {
-    if (section.type === "hero") return <HeroSection data={section} />;
-    if (section.type === "problem") return <ProblemSection data={section} />;
-    if (section.type === "three-paths") return <ThreePathsSection data={section} />;
-    if (section.type === "cta") return <CtaSection data={section} />;
-    return null;
-  })}
+  {
+    sections.map((section) => {
+      if (section.type === 'hero') return <HeroSection data={section} />;
+      if (section.type === 'problem') return <ProblemSection data={section} />;
+      if (section.type === 'three-paths')
+        return <ThreePathsSection data={section} />;
+      if (section.type === 'cta') return <CtaSection data={section} />;
+      return null;
+    })
+  }
 </Base>
