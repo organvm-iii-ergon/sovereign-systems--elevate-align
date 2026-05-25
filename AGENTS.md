@@ -125,7 +125,7 @@ GitHub Actions (`.github/workflows/ci.yml`):
 - **Node 5 → `/water/`** — Root Healing node routes to the hydration funnel, not `/nodes/5`.
 - **Vessel mode / nav variant** — querystring overrides available (`?vessel=visible`, `?nav=spiral-first`) for A/B testing. Defaults in `hub.config.ts` `ui` object.
 - **Functions vs API routes** — `functions/` directory is legacy. Use `src/pages/*.ts` with `export const prerender = false` for server routes.
-- **No `.env` committed** — env vars: `KEYSTATIC_STORAGE_KIND`, `GHL_WEBHOOK_URL`, `CLOUDFLARE_API_TOKEN`.
+- **No `.env` committed** — env vars: `GHL_WEBHOOK_URL`, `CLOUDFLARE_API_TOKEN`, `CF_ANALYTICS_TOKEN`.
 - **Empty affiliate URLs** — `Anespa DX` and `K8 Kangen` have `affiliateUrl: ''` in `hydration.config.ts` — these are client-gated (tracked in GH#49).
 - **`ghl.quizFormUrl` is empty** — local fallback to `/quiz`; affiliate routing tracked in GH#49 and GH#56.
 - **No lockfile committed** — `package-lock.json` exists but should be regenerated; use `npm ci` in CI, `npm install` locally.

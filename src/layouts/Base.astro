@@ -752,11 +752,11 @@ if (!isHome) {
 
     {/* --- Analytics (production only) --- */}
     {
-      import.meta.env.PROD && (
+      import.meta.env.PROD && import.meta.env.CF_ANALYTICS_TOKEN && (
         <script
           defer
           src="https://static.cloudflareinsights.com/beacon.min.js"
-          data-cf-beacon={`{"token":"${import.meta.env.CF_ANALYTICS_TOKEN || 'PLACEHOLDER'}"}`}
+          data-cf-beacon={`{"token":"${import.meta.env.CF_ANALYTICS_TOKEN}"}`}
         />
       )
     }
