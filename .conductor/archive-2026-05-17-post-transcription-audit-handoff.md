@@ -44,7 +44,7 @@ Prior handoff (`post-triage-sweep` + /simplify reconciliation) is archived at `.
 ## Key Decisions
 
 | Decision | Rationale |
-|----------|-----------|
+| --- | --- |
 | Close all 4 gaps in a single PR rather than 4 separate PRs | User's AskUserQuestion selection of "Close all 4 gaps now (Recommended)". Trunk-fmt clean + no semantic conflict; single-commit closure preserves audit-followup atomicity. |
 | File v2 backlog items as `P3,roadmap,client-gated` (#98 + #100) vs `P3,roadmap,enhancement` (#99) | #98 needs Maddie's authoring engagement (picker UI replaces her current implicit authoring flow). #100 is downstream of her nonprofit-location/structure decisions (transcript line 90 Idaho/Tennessee + line 281 constructor/realtor). #99 is purely studio-side aesthetic exploration; no client gating. |
 | Do NOT add `bookingUrl` to `hub.config.ts:279` proactively | Mirrors `hub-quiz-form-url` pattern: vacuum exists in code AND in decisions surface; field added once URL is sent. Adding `bookingUrl: ''` now without a tracked URL would compound the vacuum without closing it. |
@@ -63,9 +63,11 @@ Prior handoff (`post-triage-sweep` + /simplify reconciliation) is archived at `.
 
 1. **Land this handoff** — PR-cascade for the `.conductor/active-handoff.md` rotation + the project-mirror plan (per project CLAUDE.md no-direct-push rule).
 2. **Unblock the autogen-gate (IRF-OPS-050)** — diagnostic + fix steps documented in `.claude/plans/2026-05-17-handoff-irf-ops-050-unblock.md` (currently untracked; commit-and-execute or bypass-with-authorization per user preference). One-line diagnosis:
+
    ```bash
    grep -rn "sovereign-systems--elevate-align" ~/Code/organvm/organvm-corpvs-testamentvm/data/ 2>/dev/null | head -10
    ```
+
    Expected finding: registry path still `~/Workspace/organvm-iii-ergon/...` (pre-relocation).
 3. **Maddie thread** — paste the HOLD/CLEAR messages (already drafted at `docs/maddie/_hold-messages/2026-05-16-{HOLD,CLEAR}-html-exports.md`) when ready. NOT auto-sent. Also: the fluoride-discriminator question at `docs/maddie/2026-05-16-fluoride-discriminator-question.md` (one-question close for GH#62).
 4. **#94 major-bump session** — when authorized: tag baseline → feature branch → install astro@^6 + @astrojs/cloudflare@^13 + undici@^7 → test:all + smoke on 13 nodes + 6 branches + /quiz + /decisions + /capture → CF preview → PR-cascade. Failure-domain risk: `src/components/spiral/spiral.ts` OrbitControls/EffectComposer pipeline + `src/pages/capture.ts` APIRoute signature.

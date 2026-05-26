@@ -60,7 +60,7 @@ f1536f9  fix: opt out of v13 SESSION KV binding + complete Pages CMS config
 ## Key Decisions
 
 | Decision | Rationale |
-|----------|-----------|
+| --- | --- |
 | Repurpose PR #105 (post-content-leak-scrub handoff) into a post-migration handoff | Owner flagged the original handoff as stale (Astro 6 listed deferred but done on `main`). Refresh-on-this-branch chosen over close-as-superseded. |
 | Reset branch to `origin/main` HEAD rather than a literal `git rebase` replay | The single original commit only touched `active-handoff.md` (now fully rewritten) and an archive file that already exists identically on `main`; a replay would only produce conflicts. Reset + fresh write is the clean realization of "rebase onto main + rewrite". |
 | Archive the post-transcription-audit handoff under its own dated filename | Preserves the standing handoff-lineage convention (each active handoff archives its predecessor). |
