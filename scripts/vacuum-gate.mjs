@@ -95,32 +95,59 @@ function checkContentVacuums(dir, requiredFields) {
 checkContentVacuums('src/content/pillars', ['title', 'tagline']);
 checkContentVacuums('src/content/branches', ['title', 'hook']);
 
+// --- Orphaned-tracker detection (fail-closed) ---
+// A TRACKED_VACUUMS entry whose vacuum is no longer detected means the
+// value was populated but its tracker was never removed. The resolution
+// loop — populate value → remove entry → close issue — must move together;
+// a stale tracker is itself a gate failure (otherwise the map drifts from
+// reality silently).
+const flaggedFields = new Set(vacuums.map((v) => v.field));
+const orphanedTrackers = Object.keys(TRACKED_VACUUMS).filter(
+  (key) => !flaggedFields.has(key),
+);
+
 // --- Report ---
 console.log('\n=== Content Vacuum Gate ===\n');
 
-if (vacuums.length === 0) {
-  console.log('✓ No content vacuums found.\n');
-  process.exit(0);
-}
-
-let untracked = 0;
 for (const v of vacuums) {
   const status = v.tracked ? `TRACKED — ${v.ref}` : 'UNTRACKED';
   const icon = v.tracked ? '✓' : '✗';
   console.log(`${icon} ${v.field}: ${v.value} [${status}]`);
-  if (!v.tracked) untracked++;
 }
 
-console.log('');
+const untracked = vacuums.filter((v) => !v.tracked).length;
+
+if (orphanedTrackers.length > 0) {
+  console.error('');
+  console.error(
+    `✗ ${orphanedTrackers.length} stale TRACKED_VACUUMS entr${orphanedTrackers.length === 1 ? 'y' : 'ies'} — value populated but tracker not removed:`,
+  );
+  for (const key of orphanedTrackers) {
+    console.error(`    ${key} → ${TRACKED_VACUUMS[key]}`);
+  }
+  console.error(
+    '  Remove the entry from TRACKED_VACUUMS (and close its GH issue) now that the value is filled.',
+  );
+}
 
 if (untracked > 0) {
+  console.error('');
   console.error(`✗ ${untracked} untracked vacuum(s) found.`);
   console.error(
     '  File a GH issue with label "vacuum" and add an entry to TRACKED_VACUUMS in this file.',
   );
   console.error('  Axiom #1: N/A is a vacuum — never a resting state.\n');
+}
+
+if (untracked > 0 || orphanedTrackers.length > 0) {
   process.exit(1);
 }
 
-console.log(`✓ All ${vacuums.length} vacuum(s) tracked in TRACKED_VACUUMS.\n`);
+if (vacuums.length === 0) {
+  console.log('✓ No content vacuums found.\n');
+} else {
+  console.log(
+    `✓ All ${vacuums.length} vacuum(s) tracked in TRACKED_VACUUMS.\n`,
+  );
+}
 process.exit(0);
