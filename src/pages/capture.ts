@@ -75,12 +75,14 @@ function randomId(): string {
 
 function ipHintFromHeaders(headers: Headers): string {
   // Cloudflare provides the connecting IP via CF-Connecting-IP. We keep
-  // only the last octet (or last :: segment for v6) — enough to
-  // de-duplicate aggressive resubmits, not enough to identify.
+  // only a coarse fragment — enough to de-duplicate aggressive resubmits,
+  // not enough to identify. For IPv4 that's the last octet; for IPv6 it's
+  // the FIRST hextet (part of the shared routing prefix) — never the
+  // trailing interface identifier, which would single out a host.
   const ip = headers.get('CF-Connecting-IP') ?? '';
   if (!ip) return '';
   if (ip.includes(':')) {
-    return ip.split(':').pop() ?? '';
+    return ip.split(':').find((seg) => seg.length > 0) ?? '';
   }
   return ip.split('.').pop() ?? '';
 }

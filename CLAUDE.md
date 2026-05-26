@@ -101,7 +101,7 @@ The codebase separates **immutable identity** from **mutable surface** through a
 
 All client-editable content lives in Markdown files:
 
-```
+```text
 src/content/
   branches/    # 6 branch pages (gut-hormones, fertility, athletic, autoimmune, cancer-support, sustainability)
   pillars/     # 4 pillar pages (physical, inner, identity, financial)
@@ -256,7 +256,7 @@ Verify at session close. The principle is identity-by-triangulation: items whose
 - **Platform:** Cloudflare Pages (`sovereign-systems-spiral.pages.dev`); auto-deploy on push to `main`
 - **Build:** `npm run build` → `dist/`. Astro Cloudflare adapter generates `_worker.js`; `src/pages/*.ts` (e.g., `capture.ts`) become routes inside the worker bundle, _not_ separate Pages Functions.
 - **Manual deploy:** `npm run deploy` (= `npm run build && wrangler pages deploy dist --project-name sovereign-systems-spiral`); used when CF auth-on-push fails (see GH#52).
-- **Legacy `functions/` directory:** `functions/api/water-report.ts` (EWG proxy) still on disk but the Astro worker bundle takes precedence — treat the worker output as authoritative.
+- **`functions/` directory removed:** the EWG proxy now lives at `src/pages/api/water-report.ts` (Astro APIRoute, same pattern as `capture.ts`). The prior `functions/api/water-report.ts` was unreachable in production — the `_worker.js` bundle takes precedence over root `functions/`, which also isn't part of `dist/` — so it 404'd and the funnel silently served demo data. The worker bundle is authoritative for all routes.
 - **Multi-domain story is metadata-only.** `src/data/hub.config.ts` declares `domains: { hub, water, business }` for content references; actual multi-domain routing is DNS-level (CNAMEs in Cloudflare), not Astro logic.
   - Primary: `elevatealign.com` (connect via CF dashboard → Custom Domains)
   - Secondary: `stopdrinkingacid.com`, `eaucohub.com` (connect when ready)
