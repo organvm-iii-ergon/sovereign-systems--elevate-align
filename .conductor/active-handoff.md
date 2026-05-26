@@ -81,13 +81,22 @@ f1536f9  fix: opt out of v13 SESSION KV binding + complete Pages CMS config
 
 ## Next Actions
 
+This PR grew beyond the handoff rotation: it now also carries 3 HIGH fixes
+from a full-codebase review (water-report APIRoute port, vacuum-gate
+fail-closed, capture.ts IPv6 de-id). They ride here because this is the
+task-pinned branch; split into a separate PR if cleaner.
+
 ```bash
-# 1. Confirm CI is green on this branch's handoff commit (lint-only delta expected)
-#    via MCP github tools: pull_request_read get_check_runs on PR #105
-
-# 2. Owner reads the new .conductor/active-handoff.md and confirms it matches host-side intent
-
-# 3. Merge PR #105 (squash) once confirmed — lands the post-migration handoff on main
+# 1. CI green on PR #105 — build + Trunk + CodeQL verified (commit 1c4df35).
+# 2. Owner reads this handoff + the full-codebase review comment on PR #105.
+# 3. Merge PR #105 (squash) — lands the handoff rotation + 3 HIGH fixes;
+#    auto-closes #164 (water-report), #165 (vacuum-gate), #166 (IPv6).
+# 4. HOST-SIDE ONLY (unreachable from the remote container): IRF + cross-repo
+#    index propagation — tracked + assigned at GH#167. Add 3 IRF-OPS entries,
+#    update omega; #164/#165/#166 reach 3/3 triple-reference once IRF IDs exist.
+# 5. Review backlog (not yet filed): 4 MEDIUM / 5 LOW findings in the PR review
+#    comment — unbounded selectedPillar KV write, /capture rate limit, bare
+#    schema.org URLs, duplicate Lens type, quiz clamp, nodes/[id] `any`, etc.
 ```
 
 ## Risks & Warnings
@@ -95,7 +104,7 @@ f1536f9  fix: opt out of v13 SESSION KV binding + complete Pages CMS config
 - **Don't push to `main` directly on this public ORGANVM repo without explicit per-session authorization.** PR-cascade always.
 - **Don't force-push history rewrites without explicit owner authorization.** The 4 leaked `docs/internal/` files are a content-IP exposure in history, not a live-build vulnerability — treat as a separate, deliberate operation.
 - **Remote container is ephemeral.** Anything not committed + pushed dies with the container.
-- **Memory is hypothesis.** State as of 2026-05-25. Before acting: `git rev-list --count origin/main..main`, `pull_request_read get_status` on any open PR, and a curl of the live URL are your fact-checks.
+- **Memory is hypothesis.** State as of 2026-05-26. Before acting: `git rev-list --count origin/main..main`, `pull_request_read get_status` on any open PR, and a curl of the live URL are your fact-checks.
 
 ## Recovery Protocol (if state has drifted on resumption)
 
