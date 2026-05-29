@@ -18,7 +18,7 @@
     "astro": "astro",
     "parse-citations": "node scripts/parse-citations.js",
     "count-files": "node scripts/count-files.cjs",
-    "deploy": "npm run test:all && wrangler pages deploy dist --project-name sovereign-systems-spiral"
+    "deploy": "npm run test:all && wrangler pages deploy dist/client --project-name sovereign-systems-spiral"
   },
   "dependencies": {
     "@astrojs/cloudflare": "13.5.4",
