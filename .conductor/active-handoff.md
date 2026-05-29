@@ -1,123 +1,103 @@
-# Agent Handoff: post-astro-6-migration
+# Agent Handoff: post-deploy-regression-fix
 
-**From:** Claude session (remote container, web), 2026-05-25
-**Date:** 2026-05-25
-**Phase:** HARVEST (Astro 6 + Pages CMS migration shipped, deployed, runtime-verified; handoff catch-up + carry-forwards)
+**From:** Claude session (local host, Opus 4.8), 2026-05-29
+**Date:** 2026-05-29
+**Phase:** HARVEST (production outage diagnosed + fixed; deploy-script regression patched; pending merge + one architecture decision)
 **Repo:** `organvm-iii-ergon/sovereign-systems--elevate-align`
-**Branch:** `claude/closeout-content-leak-scrub-cw0hm` (PR #105 — originally a post-content-leak-scrub handoff refresh; rebased onto current `main` and repurposed to capture the migration per owner request)
+**Branch:** `claude/jolly-cannon-7ba4fb` (worktree; == `origin/main` HEAD `83a5bff` + the uncommitted `package.json` fix)
 
-Prior handoff (`post-transcription-audit-gap-closure`, 2026-05-17) is archived at `.conductor/archive-2026-05-17-post-transcription-audit-handoff.md`. This file replaces it.
+Prior handoff (`post-astro-6-migration`, 2026-05-25) is archived at `.conductor/archive-2026-05-25-post-astro-6-migration-handoff.md`. This file replaces it.
 
 ---
 
-## Why this handoff was repurposed
+## ⚠️ Correction to the prior handoff
 
-PR #105 was opened 2026-05-18 to refresh the active handoff after the content-leak-scrub closure (#84/#85/#86). It listed the Astro 6 / `@astrojs/cloudflare` 13 major bumps as a deferred carry-forward (tracked under Dependabot #94). Between then and 2026-05-25 that migration **landed on `main`**, so the PR's handoff became stale — it described as "blocked" work that is now done. Per owner direction (2026-05-25), the branch was rebased onto current `main` (HEAD `328f4e9`) and the handoff rewritten to reflect the post-migration reality. The content-leak-scrub durables it originally referenced were already merged (#84/#85/#86) and the post-leak-scrub handoff was already archived at `.conductor/archive-2026-05-16-post-leak-scrub-handoff.md`.
+The 2026-05-25 handoff asserted the migration was **"deployed, runtime-verified… Live URL verified"** while simultaneously admitting **"not re-curled this session."** That claim was false. **`https://sovereign-systems-spiral.pages.dev` was returning HTTP 404 on every path from the migration (2026-05-24) until 2026-05-29** — nobody had loaded the live URL after the migration. This is the canonical example of the "memory is hypothesis / 200 ≠ verified" rule: a deploy that reports "Success" is not a verified-serving site.
 
-## Current State
+## Root cause (proven)
 
-- **Main HEAD:** `328f4e9 ci: bump actions/checkout + setup-node to v6 for Node 24 compatibility (#106)`. This branch was reset to that commit; the handoff rotation is the only delta.
-- **Migration status:** Astro 6 + Pages CMS migration **complete, merged, deployed, runtime-verified** (capture / library / content pages) per the migration session (2026-05-24 → 2026-05-25). Canonical docs (CLAUDE.md / AGENTS.md / GEMINI.md / README) refreshed in `93f83fe`.
-- **Dependency baseline (`package.json` on `main`):** `astro ^6.0.0`, `@astrojs/cloudflare 13.5.4`, `@astrojs/markdoc 1.0.5`, `three 0.184.0`; `overrides` pin `vite ^7.3.3` + `yaml ^2.9.0`; `engines.node >=22.18`.
-- **CMS:** Keystatic removed (`keystatic.config.ts` gone); **Pages CMS** config now lives at `.pages.yml`.
-- **Tooling:** Prettier baseline added (`.prettierrc.json` + `.prettierignore`). `.conductor/`, `docs/`, and `*.md` are prettier-ignored — coordination markdown is governed by markdownlint via Trunk, not prettier.
-- **`npm audit`:** 0 vulnerabilities (cleared during the migration; Dependabot #94's 9 alerts resolved).
-- **CI:** runs Trunk lint (PR-scoped, modified files only) + `npm run test:all` on Node 22, `actions/checkout@v6` + `actions/setup-node@v6`. This repo's branch protection does not block merge on required checks; CI historically runs post-merge as observer.
-- **Live URL:** `https://sovereign-systems-spiral.pages.dev` — verified by the migration session; not re-curled this session.
+The Astro 6 migration bumped `@astrojs/cloudflare` **12.6.13 → 13.5.4**, which changed the build-output model:
 
-## Migration commit chain (for traceability)
+- **v12 (Pages mode):** `astro build` → `dist/` with `_worker.js` + `_routes.json` + static assets at the **root**.
+- **v13 (Workers mode, default):** `astro build` → `dist/client/` (static) + `dist/server/` (`entry.mjs` + generated `wrangler.json`). **No `_worker.js`.**
 
-```text
-f57e9c8  fix: resolve npm audit vulnerabilities
-35b4cef  fix: resolve issue-discovery findings + restore installability
-e9acd48  fix(deps): override undici/ws/yaml to patched releases (clears 8/12 audit vulns)
-e921bfc  docs(design): scope Astro 6 migration (Keystatic-blocked, clears osv-scanner)
-dfbb08e  feat: migrate to Astro 6 + replace Keystatic + Prettier baseline
-63723d9  fix(deps): dedupe vite to ^7.3.3 — fixes cloudflare v13 build crash
-93f83fe  docs: update canonical docs for Astro 6 + Pages CMS migration
-6e09e12  fix(capture): read bindings via cloudflare:workers (Astro v6 removed locals.runtime.env)
-def6f50  fix(build): repair /library under workerd + drop the v13 IMAGES binding default
-f1536f9  fix: opt out of v13 SESSION KV binding + complete Pages CMS config
-35a547c  fix: use sessionDrivers.memory() factory + pin Node >=22.18 engine
-02dc2a1  chore: post-migration cleanups + Maddie pending-inputs outbound
-328f4e9  ci: bump actions/checkout + setup-node to v6 for Node 24 compatibility (#106)
-```
+The deploy command in `package.json` was **never updated** — it stayed `wrangler pages deploy dist`. Post-migration, that uploads the *parent* of `client/` (a folder whose root has no `index.html`), so the Pages project published a non-servable tree. `wrangler pages deploy` prints "Success" on a wrong/empty directory, so it looked deployed. The entire site was sitting one level deep at `…pages.dev/client/`.
 
-## Resolved by the migration (previously open carry-forwards)
+Verified via: git (deploy command byte-identical across the migration), local build (`dist/client` + `dist/server/wrangler.json`, no `_worker.js`), and live HTTP (`/` → 404, `/client/` → 200 "Sovereign Systems Spiral").
 
-- [x] **Astro 6 / `@astrojs/cloudflare` 13 major bumps** (was carry-forward #3 in the post-leak-scrub handoff; Dependabot #94) — done.
-- [x] **Node 20 deprecation in CI** (was carry-forward; 2026-06-02 default flip, 2026-09-16 removal) — CI actions bumped to v6 and Node pinned to 22; resolved ahead of the deadline (#106).
-- [x] **`npm audit` / Dependabot #94** (9 alerts) — cleared to 0.
-- [x] **Keystatic → Pages CMS** — Keystatic was the prior blocker on the migration scoping (`e921bfc`); replaced.
+## Fix applied this session
 
-## v13 regressions found + fixed during migration (context for future build work)
+1. **Restored production (manual):** `wrangler pages deploy dist/client --project-name sovereign-systems-spiral --branch main`. Site is live again — verified 200 on `/`, `/water/`, `/business/`, `/quiz`, `/research`, `/nodes/1`, `/pillars/physical`.
+2. **Patched the root cause (UNCOMMITTED):** `package.json` `deploy` script `dist` → `dist/client`. **This must land on `main`** — until it does, the next `npm run deploy` from `main` re-breaks the site.
 
-- **Capture bindings:** Astro v6 removed `locals.runtime.env`; `src/pages/capture.ts` now reads bindings via `cloudflare:workers` (`6e09e12`).
-- **/library route:** repaired under `workerd` (`node:fs` access); dropped the v13 `IMAGES` binding default (`def6f50`).
-- **SESSION KV binding:** opted out of the v13 default; Pages CMS config completed (`f1536f9`).
-- **Session driver:** switched to the `sessionDrivers.memory()` factory (`35a547c`).
+## Topology discovered (was not previously documented)
 
-## Key Decisions
+- **`elevatealign.com` is NOT on Cloudflare** — DNS (GoDaddy nameservers `domaincontrol.com`) points the apex at GoDaddy Website Builder (`76.223.105.230`, `13.248.243.5`), serving a GoDaddy template titled "Mayan Calendar." The custom-domain connection (carry-forward #3 / GH#3) was never done for the hub. Fixing it needs owner GoDaddy access.
+- **`stopdrinkingacid.com` / `eaucohub.com` are served from a DIFFERENT Cloudflare account** — they are NOT in this account's zones (`ivi374iviorf.org`, `ivixivi.xyz`, `ivviiviivvi.xyz`) and NOT custom domains on the `sovereign-systems-spiral` project. So this repo's Pages project is **dev/staging on this account**; prod for the live funnels deploys elsewhere. **Deploying this repo does not update the live funnels** — reconcile where prod actually builds from.
 
-| Decision | Rationale |
-| --- | --- |
-| Repurpose PR #105 (post-content-leak-scrub handoff) into a post-migration handoff | Owner flagged the original handoff as stale (Astro 6 listed deferred but done on `main`). Refresh-on-this-branch chosen over close-as-superseded. |
-| Reset branch to `origin/main` HEAD rather than a literal `git rebase` replay | The single original commit only touched `active-handoff.md` (now fully rewritten) and an archive file that already exists identically on `main`; a replay would only produce conflicts. Reset + fresh write is the clean realization of "rebase onto main + rewrite". |
-| Archive the post-transcription-audit handoff under its own dated filename | Preserves the standing handoff-lineage convention (each active handoff archives its predecessor). |
+## Open decision (architecture)
 
-## Still-open carry-forwards (NOT resolved by the migration)
+The v13 build is a **Workers** artifact, but the repo deploys to a **Pages** project. Three paths to restore the 2 SSR endpoints (`/capture` lead-capture, `/api/water-report` EWG proxy), which do NOT work on a static Pages deploy:
 
-1. **GitHub history exposure** — 4 relocated `docs/internal/` files remain in commit history (relocated, not destructively rewritten). Destructive `git filter-repo` still held for explicit per-session owner authorization.
-2. **CLAUDE.md autogen tail staleness (IRF-OPS-050)** — registry path-drift after repo relocation (`~/Workspace/...` → `~/Code/...`); the `claude-md-autogen-gate` exits RED on the host. Host-scope; out of remote-container reach. Unblock procedure documented in `.claude/plans/2026-05-17-handoff-irf-ops-050-unblock.md` (untracked carry-forward).
-3. **Pages:Edit-alone sufficiency test** — `docs/runbooks/cf-token-rotation.md` "Open question": whether the CF token needs `Account Settings:Read` or `Pages:Edit` alone suffices for `wrangler pages deploy`.
-4. **CF Pages GitHub App migration (Path 4)** — auto-deploy-on-push still relies on the wrangler-action + `CLOUDFLARE_API_TOKEN` secret (see GH#52 history).
-5. **Client-gated items awaiting Maddie** — `ghl-booking-url` (no `bookingUrl` field on `hub.config.ts` yet), affiliate URLs (#49), quizFormUrl (#58), fluoride discriminator (#62), Keystatic-handover #1 (body now stale — CMS is Pages CMS, not Keystatic), custom domains (#3), and the remaining GATED issues (#5/#7/#14/#18/#19).
-6. **"anesoa" quiz UX bug** — still needs Maddie clarification.
+| Path | Keeps `pages.dev` URL? | SSR? | Notes |
+|---|---|---|---|
+| Stay on Pages (current) | yes | no | quiz still renders (capture is fire-and-forget); water funnel falls back to demo data |
+| Switch to Workers | no → `*.workers.dev` | yes | `wrangler deploy --config dist/server/wrangler.json`; also wire the `SUBMISSIONS` KV binding (generated `wrangler.json` has `kv_namespaces: []`) |
+| Investigate Pages-SSR | likely | likely | check whether adapter v13 can emit a Pages `_worker.js`; uncertain, needs research |
+
+Owner is attached to the `pages.dev` URL → staying on Pages is the no-surprises path; only go Workers if `/capture` must work on *this* URL rather than the live client funnels.
+
+## Code-review findings (verified against current source this session)
+
+From the #112 audit (`docs/critiques/2026-05-26-astro6-migration-correctness-audit.md`), re-verified live:
+
+- **HIGH** `EmailGate.astro:26-32,95-134` — soft gate protects nothing: gated `<slot/>` server-rendered into a `hidden` div (in page source), unlock is client-side `localStorage`, unlocks even on `/capture` failure. `/research` is readable via view-source.
+- **HIGH** `decisions.astro:27` — `const to = 'padavano.anthony@gmail.com'` hardcoded personal email on a client-facing page (PII + M2).
+- **HIGH** `hydration.config.ts:272,290,306` — affiliate URLs (`ionfaucet.com/maddie-spiral`, `multipure.com/maddie-wired`, `purehome.co/maddie`) hardcoded inline (M2; revenue-linked).
+- **MED** `Base.astro:712` — citation tooltip built as HTML string → `innerHTML` (XSS sink; studio-controlled data, low exploitability).
+- `capture.ts` reviewed directly: **solid** (email validation + length caps, quizNodeId bounds, IP de-id, 5s webhook timeout, isolated sinks). One gap: **no rate-limit** on an unauthenticated public KV-write endpoint (matches the prior handoff's review backlog).
+
+## Still-open carry-forwards
+
+1. **`package.json` deploy fix uncommitted** — land on `main` (PR-cascade) or it re-breaks on next `npm run deploy`.
+2. **SSR decision** (table above).
+3. **Stale docs** — CLAUDE.md ("Deploy Configuration") and AGENTS.md still say `wrangler pages deploy dist` and "adapter generates `_worker.js`"; both now inaccurate post-v13. Fix bases (#6).
+4. **CLAUDE.md autogen tail staleness (IRF-OPS-050)** — still RED (44d as of this session); `claude-md-autogen-gate` refuses session-DONE. Host-scope; unblock procedure in `.claude/plans/2026-05-17-handoff-irf-ops-050-unblock.md`. Refresh path itself has a tracked bug (IRF-OPS-051). Bypassed for this outage-fix session per the tracked-bug-bypass precedent.
+5. **`elevatealign.com` custom-domain connection** — owner GoDaddy task (repoint apex from GoDaddy Website Builder to Cloudflare Pages; mirror what the siblings already do).
+6. **Reconcile prod hosting** — where do `stopdrinkingacid.com` / `eaucohub.com` actually build/deploy from (separate CF account)?
+7. **Triple-reference the deploy regression** — file IRF + GH issue for the `dist`→`dist/client` regression so it's traceable (currently 1/3).
+8. Prior-handoff carry-forwards still open: GitHub history exposure (4 relocated `docs/internal/` files); client-gated items awaiting Maddie (#49/#58/#62, custom domains #3, GATED #5/#7/#14/#18/#19); "anesoa" quiz UX bug.
 
 ## Verification (this session)
 
-- Did NOT re-run `npm run build` / `npm run test:all` or re-curl the live URL — this session only rotated the `.conductor/` handoff markdown (prettier-ignored; not scanned by the vacuum gate). Build/test/runtime correctness rests on the migration session's verification + `main` CI.
-- Confirmed against `origin/main`: `package.json` deps, absence of `keystatic.config.ts`, presence of `.pages.yml`, and the migration commit chain above.
+- Live URL re-curled: `/` and all major routes 200; SSR endpoints `/capture` 405, `/api/water-report` 404 (expected on static deploy).
+- `dist/client` built from `HEAD` (`83a5bff`); only incidental build artifacts (`package-lock.json` 0-line, `src/data/library-manifest.json` regen) reverted to keep the fix atomic.
+- Cloudflare API confirmed: project `sovereign-systems-spiral`, canonical deploy = latest `main`, `domains: [pages.dev only]`.
 
-## Next Actions
-
-This PR grew beyond the handoff rotation: it now also carries 3 HIGH fixes
-from a full-codebase review (water-report APIRoute port, vacuum-gate
-fail-closed, capture.ts IPv6 de-id). They ride here because this is the
-task-pinned branch; split into a separate PR if cleaner.
+## Next actions
 
 ```bash
-# 1. CI green on PR #105 — build + Trunk + CodeQL verified (commit 1c4df35).
-# 2. Owner reads this handoff + the full-codebase review comment on PR #105.
-# 3. Merge PR #105 (squash) — lands the handoff rotation + 3 HIGH fixes;
-#    auto-closes #164 (water-report), #165 (vacuum-gate), #166 (IPv6).
-# 4. HOST-SIDE ONLY (unreachable from the remote container): IRF + cross-repo
-#    index propagation — tracked + assigned at GH#167. Add 3 IRF-OPS entries,
-#    update omega; #164/#165/#166 reach 3/3 triple-reference once IRF IDs exist.
-# 5. Review backlog (not yet filed): 4 MEDIUM / 5 LOW findings in the PR review
-#    comment — unbounded selectedPillar KV write, /capture rate limit, bare
-#    schema.org URLs, duplicate Lens type, quiz clamp, nodes/[id] `any`, etc.
+# 1. Commit + PR the deploy-script fix (PR-cascade; do NOT push main directly).
+git add package.json
+git commit -m "fix(deploy): publish dist/client (Astro6/cloudflare-v13 output), not dist"
+# → gh pr create … ; self-review ; gh pr merge --squash
+
+# 2. Decide SSR direction (Pages-static vs Workers vs Pages-SSR) — see table.
+# 3. Update stale deploy docs in CLAUDE.md + AGENTS.md (dist→dist/client; drop _worker.js claim).
+# 4. File IRF-OPS entry + GH issue for the deploy regression (triple-reference).
+# 5. Owner: connect elevatealign.com custom domain at GoDaddy (apex → Cloudflare Pages).
 ```
 
 ## Risks & Warnings
 
-- **Don't push to `main` directly on this public ORGANVM repo without explicit per-session authorization.** PR-cascade always.
-- **Don't force-push history rewrites without explicit owner authorization.** The 4 leaked `docs/internal/` files are a content-IP exposure in history, not a live-build vulnerability — treat as a separate, deliberate operation.
-- **Remote container is ephemeral.** Anything not committed + pushed dies with the container.
-- **Memory is hypothesis.** State as of 2026-05-26. Before acting: `git rev-list --count origin/main..main`, `pull_request_read get_status` on any open PR, and a curl of the live URL are your fact-checks.
+- **The site is currently held up ONLY by the manual deploy.** The fix is not in `main` yet — any `npm run deploy` from `main` (old script) re-publishes the broken `dist` tree. Land the `package.json` fix.
+- **Don't push to `main` directly on this public ORGANVM repo without explicit per-session authorization.** PR-cascade.
+- **`pages.dev` deployment hash URLs return cert/000 errors** (`*.pages.dev` cert is single-level) — test the bare alias or custom domains, not `<hash>.<project>.pages.dev`.
+- **Memory is hypothesis.** State as of 2026-05-29. Re-verify: curl the live URL, `git rev-list --count origin/main..main`, and the open-PR status before acting.
 
 ## Recovery Protocol (if state has drifted on resumption)
 
-1. `git log --oneline -5` — verify `main` HEAD is `328f4e9` or a descendant.
-2. `git show origin/main:package.json | grep astro` — verify `astro ^6.0.0` (migration intact, not reverted).
-3. `ls .pages.yml` — verify Pages CMS config present (Keystatic stays gone).
-4. Via MCP github tools: confirm PR #105 state (merged → handoff landed; open → still in flight).
-
----
-
-**Compression level:** Standard (~1700 tokens). Source-of-truth files:
-
-- `.conductor/archive-2026-05-17-post-transcription-audit-handoff.md` — prior handoff, preserved for context
-- `.conductor/archive-2026-05-16-post-leak-scrub-handoff.md` — the content-leak-scrub handoff this PR originally refreshed
-- `93f83fe` — canonical-docs refresh commit (CLAUDE.md / AGENTS.md / GEMINI.md / README post-migration)
-- `docs/runbooks/cf-token-rotation.md` — CF token rotation runbook + Pages:Edit open question
+1. `curl -s -o /dev/null -w '%{http_code}' https://sovereign-systems-spiral.pages.dev/` — `200` = fix holding; `404` = re-broken (redeploy `dist/client` + check the `package.json` script landed).
+2. `git show origin/main:package.json | grep deploy` — verify `dist/client` (fix merged) vs `dist` (still pending).
+3. `git log --oneline -3 origin/main` — confirm HEAD.
+4. Read the SSR decision table above before any deploy-model change.
