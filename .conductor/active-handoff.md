@@ -40,7 +40,7 @@ Verified via: git (deploy command byte-identical across the migration), local bu
 The v13 build is a **Workers** artifact, but the repo deploys to a **Pages** project. Three paths to restore the 2 SSR endpoints (`/capture` lead-capture, `/api/water-report` EWG proxy), which do NOT work on a static Pages deploy:
 
 | Path | Keeps `pages.dev` URL? | SSR? | Notes |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | Stay on Pages (current) | yes | no | quiz still renders (capture is fire-and-forget); water funnel falls back to demo data |
 | Switch to Workers | no → `*.workers.dev` | yes | `wrangler deploy --config dist/server/wrangler.json`; also wire the `SUBMISSIONS` KV binding (generated `wrangler.json` has `kv_namespaces: []`) |
 | Investigate Pages-SSR | likely | likely | check whether adapter v13 can emit a Pages `_worker.js`; uncertain, needs research |

@@ -25,7 +25,7 @@
 ## Key Decisions
 
 | Decision | Rationale |
-|---|---|
+| --- | --- |
 | Restore via static Pages deploy of `dist/client` (not switch to Workers) | Owner is attached to the `pages.dev` URL; Workers deploy would change it to `*.workers.dev`. Stopgap keeps the URL; full SSR is a separate, deliberate choice. |
 | Fix `package.json` `dist`→`dist/client` rather than re-architect deploy | Minimal, correct change for the current v13 Pages-static reality; keeps the URL; prevents silent re-break. Workers migration deferred to an explicit decision. |
 | Revert incidental build artifacts (`package-lock.json`, `library-manifest.json`) | Keep the fix commit atomic to only the deploy-script change. The manifest regen (239/207) suggests committed-manifest drift — a separate, out-of-scope observation. |
