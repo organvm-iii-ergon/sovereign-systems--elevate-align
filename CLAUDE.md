@@ -285,40 +285,21 @@ Reference exemplar pattern: `~/.claude/projects/-Users-4jp-Workspace-<project-sl
 This protocol is the HARVEST phase of the FRAME→SHAPE→BUILD→PROVE→HARVEST conductor cycle — formalizing as `conductor_session_transition(target_phase="HARVEST")` is IRF-track work.
 
 <!-- ORGANVM:AUTO:START -->
-<!--
-  This auto-block was trimmed 2026-05-17 to bring CLAUDE.md under the 40K /doctor limit.
-  Unique-to-this-repo data preserved verbatim (System Context, project SOPs, Linked skills,
-  Dialect, Logos pointers). Generic system-wide sections removed (regenerable elsewhere):
-  - Active Directives system-scope rows (60+) → discover with `organvm sop lifecycle`
-  - Live System Variables (all `scope: global`) → `organvm ontologia status`
-  - System Density (whole-ecosystem density) → `organvm refresh` then inspect output
-  - System Library duplicate (already in parent ~/Code/organvm/CLAUDE.md)
-  - Generic Prompting boilerplate
-  Generator-level fix tracked separately — next `organvm refresh` may re-inflate this block.
--->
-
 ## System Context (auto-generated — do not edit)
 
 **Organ:** ORGAN-III (Commerce) | **Tier:** standard | **Status:** LOCAL
 **Org:** `organvm-iii-ergon` | **Repo:** `sovereign-systems--elevate-align`
 
 ### Edges
-
-- _No inter-repo edges declared in seed.yaml_
+- *No inter-repo edges declared in seed.yaml*
 
 ### Siblings in Commerce
-
 `classroom-rpg-aetheria`, `gamified-coach-interface`, `trade-perpetual-future`, `fetch-familiar-friends`, `sovereign-ecosystem--real-estate-luxury`, `public-record-data-scrapper`, `search-local--happy-hour`, `multi-camera--livestream--framework`, `universal-mail--automation`, `mirror-mirror`, `the-invisible-ledger`, `enterprise-plugin`, `virgil-training-overlay`, `tab-bookmark-manager`, `a-i-chat--exporter` ... and 16 more
 
 ### Governance
-
 - Strictly unidirectional flow: I→II→III. No dependencies on Theory (I).
 
-<!-- markdownlint-disable MD036 -->
-
-_Last synced: 2026-04-14T21:31:57Z_
-
-<!-- markdownlint-enable MD036 -->
+*Last synced: 2026-05-23T00:26:31Z*
 
 ## Active Handoff Protocol
 
@@ -332,41 +313,100 @@ NOT be trusted. A different agent will verify your output against these constrai
 ## Session Review Protocol
 
 At the end of each session that produces or modifies files:
-
 1. Run `organvm session review --latest` to get a session summary
 2. Check for unimplemented plans: `organvm session plans --project .`
 3. Export significant sessions: `organvm session export <id> --slug <slug>`
 4. Run `organvm prompts distill --dry-run` to detect uncovered operational patterns
 
 Transcripts are on-demand (never committed):
-
 - `organvm session transcript <id>` — conversation summary
 - `organvm session transcript <id> --unabridged` — full audit trail
 - `organvm session prompts <id>` — human prompts only
 
-## Project SOPs
 
-System-wide SOPs from `meta-organvm/praxis-perpetua/library/` are not duplicated here — discover them with `organvm sop lifecycle`. Project-specific SOPs (this repo) below.
+## System Library
 
-| Name                                                     | Description                           |
-| -------------------------------------------------------- | ------------------------------------- |
-| SOP-SS-ATM-001_001-atomic-decomposition                  | Atomic Decomposition & Coverage Proof |
-| SOP-SS-CLT-001_001-ontology_client_decisions             | Client decisions ontology             |
-| SOP-SS-CNT-001_001-content-extraction-and-node-injection | Content Extraction & Node Injection   |
-| SOP-SS-ISS-001-001-ontology-issue-specification          | Issue specification ontology          |
-| SOP-SS-PRC-001_001-ontology_meta_process                 | Meta-process ontology                 |
-| SOP-SS-QAB-001_001-project-board-qa                      | Project board QA                      |
-| SOP-SS-TRK-001_001-ontology_issue_tracking               | Issue tracking ontology               |
-| registry                                                 | SOP Registry — Sovereign Systems      |
+Plans: 269 indexed | Chains: 5 available | SOPs: 8 active
+Discover: `organvm plans search <query>` | `organvm chains list` | `organvm sop lifecycle`
+Library: `/Users/4jp/Code/organvm/praxis-perpetua/library`
 
-**Linked skills:** api-design-patterns, cicd-resilience-and-recovery, coding-standards-enforcer, continuous-learning-agent, contract-risk-analyzer, cross-agent-handoff, evaluation-to-growth, gdpr-compliance-check, genesis-dna, multi-agent-workforce-planner, planning-and-roadmapping, promotion-and-state-transitions, quality-gate-baseline-calibration, repo-onboarding-and-habitat-creation, security-threat-modeler, structural-integrity-audit
+
+## Active Directives
+
+| Scope | Phase | Name | Description |
+|-------|-------|------|-------------|
+| system | any | atomic-clock | The Atomic Clock |
+| system | any | execution-sequence | Execution Sequence |
+| system | any | multi-agent-dispatch | Multi-Agent Dispatch |
+| system | any | session-handoff-avalanche | Session Handoff Avalanche |
+| system | any | system-loops | System Loops |
+| system | any | prompting-standards | Prompting Standards |
+| system | foundation | agent-seeding-and-workforce-planning | agent-seeding-and-workforce-planning |
+| system | foundation | architecture-decision-records | architecture-decision-records |
+| system | any | background-task-resilience | background-task-resilience |
+| system | any | context-window-conservation | context-window-conservation |
+| system | foundation | legal-compliance-matrix | legal-compliance-matrix |
+| system | foundation | ontological-renaming | ontological-renaming |
+| system | foundation | readme-and-documentation | readme-and-documentation |
+| system | any | session-self-critique | session-self-critique |
+| system | any | the-descent-protocol | the-descent-protocol |
+| system | any | the-membrane-protocol | the-membrane-protocol |
+| system | any | theory-to-concrete-gate | theory-to-concrete-gate |
+| system | any | triangulation-protocol | triangulation-protocol |
+| unknown | any | SOP-SS-ATM-001_001-atomic-decomposition | SOP-SS-ATM-001_001: Atomic Decomposition & Coverage Proof |
+| unknown | any | SOP-SS-CLT-001_001-ontology_client_decisions | SOP-SS-CLT-001_001-ontology_client_decisions |
+| unknown | any | SOP-SS-CNT-001_001-content-extraction-and-node-injection | SOP-SS-CNT-001_001: Content Extraction & Node Injection |
+| unknown | any | SOP-SS-ISS-001-001-ontology-issue-specification | SOP-SS-ISS-001-001-ontology-issue-specification |
+| unknown | any | SOP-SS-PRC-001_001-ontology_meta_process | SOP-SS-PRC-001-001-ontology-meta-process |
+| unknown | any | SOP-SS-QAB-001_001-project-board-qa | SOP-SS-QAB-001_001-project-board-qa |
+| unknown | any | SOP-SS-REV-001_001-evaluation-to-growth-review-chain | SOP-SS-REV-001_001: Evaluation-to-Growth Review Chain |
+| unknown | any | SOP-SS-TRK-001_001-ontology_issue_tracking | SOP-SS-TRK-001_001-ontology_issue_tracking |
+| unknown | any | registry | SOP Registry — Sovereign Systems |
+
+Linked skills: SOP-TRIADIC-REVIEW-PROTOCOL, api-design-patterns, cicd-resilience-and-recovery, coding-standards-enforcer, continuous-learning-agent, contract-risk-analyzer, cross-agent-handoff, evaluation-to-growth, gdpr-compliance-check, genesis-dna, multi-agent-workforce-planner, planning-and-roadmapping, promotion-and-state-transitions, quality-gate-baseline-calibration, repo-onboarding-and-habitat-creation, security-threat-modeler, session-self-critique, structural-integrity-audit, the-membrane-protocol, triple-reference
+
+
+**Prompting (Anthropic)**: context 200K tokens, format: XML tags, thinking: extended thinking (budget_tokens)
+
+
+## Atomization Pipeline
+
+Run `organvm atoms pipeline --write && organvm atoms fanout --write` to generate task queue.
+
+
+## System Density (auto-generated)
+
+AMMOI: 25% | Edges: 0 | Tensions: 0 | Clusters: 0 | Adv: 27 | Events(24h): 37975
+Structure: 8 organs / 148 repos / 1654 components (depth 17) | Inference: 0% | Organs: META-ORGANVM:63%, ORGAN-I:53%, ORGAN-II:48%, ORGAN-III:54% +5 more
+Last pulse: 2026-05-23T00:26:28 | Δ24h: n/a | Δ7d: n/a
+
 
 ## Dialect Identity (Trivium)
 
-**Dialect:** EXECUTABLE_ALGORITHM | **Classical Parallel:** Arithmetic | **Translation Role:** The Engineering — proves that proofs compute. Strongest cross-organ translations: I (formal), II (structural), VII (structural). Scan: `organvm trivium scan III <OTHER>`.
+**Dialect:** EXECUTABLE_ALGORITHM | **Classical Parallel:** Arithmetic | **Translation Role:** The Engineering — proves that proofs compute
+
+Strongest translations: I (formal), II (structural), VII (structural)
+
+Scan: `organvm trivium scan III <OTHER>` | Matrix: `organvm trivium matrix` | Synthesize: `organvm trivium synthesize`
+
 
 ## Logos Documentation Layer
 
-**Symmetry:** 0.5 (GHOST). Narrative record in `docs/logos/`: [`telos.md`](../docs/logos/telos.md) (idealized form), [`pragma.md`](../docs/logos/pragma.md) (concrete state), [`praxis.md`](../docs/logos/praxis.md) (remediation), [`receptio.md`](../docs/logos/receptio.md) (reception), [`alchemical-io.md`](../docs/logos/alchemical-io.md) (source & transmutation).
+**Status:** ACTIVE | **Symmetry:** 0.5 (DREAM)
+
+Nature demands a documentation counterpart. This formation maintains its narrative record in `docs/logos/`.
+
+### The Tetradic Counterpart
+- **[Telos (Idealized Form)](../docs/logos/telos.md)** — The dream and theoretical grounding.
+- **[Pragma (Concrete State)](../docs/logos/pragma.md)** — The honest account of what exists.
+- **[Praxis (Remediation Plan)](../docs/logos/praxis.md)** — The attack vectors for evolution.
+- **[Receptio (Reception)](../docs/logos/receptio.md)** — The account of the constructed polis.
+
+### Alchemical I/O
+- **[Source & Transmutation](../docs/logos/alchemical-io.md)** — Narrative of inputs, process, and returns.
+
+
+
+*Compliance: Record exists without implementation.*
 
 <!-- ORGANVM:AUTO:END -->

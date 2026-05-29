@@ -128,3 +128,25 @@ GitHub Actions (`.github/workflows/ci.yml`):
 - **Empty affiliate URLs** — `Anespa DX` and `K8 Kangen` have `affiliateUrl: ''` in `hydration.config.ts` — these are client-gated (tracked in GH#49).
 - **`ghl.quizFormUrl` is empty** — local fallback to `/quiz`; affiliate routing tracked in GH#49 and GH#56.
 - **No lockfile committed** — `package-lock.json` exists but should be regenerated; use `npm ci` in CI, `npm install` locally.
+
+<!-- ORGANVM:AUTO:START -->
+## Agent Context (auto-generated — do not edit)
+
+This repo participates in the **ORGAN-III (Commerce)** swarm.
+
+### Active Subscriptions
+- *No active event subscriptions*
+
+### Production Responsibilities
+- *No production responsibilities*
+
+### External Dependencies
+- *No external dependencies*
+
+### Governance Constraints
+- Adhere to unidirectional flow: I→II→III
+- Never commit secrets or credentials
+
+*Last synced: 2026-05-23T00:26:31Z*
+<!-- ORGANVM:AUTO:END -->
+
