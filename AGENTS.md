@@ -4,55 +4,70 @@ This file provides guidance for AI coding agents operating in this repository.
 
 ## Project Overview
 
-**Sovereign Systems Spiral** — multi-domain Astro 6 website for a 4-pillar health and business brand. Hub-and-spoke across three domains:
+**Sovereign Systems Spiral** is a multi-domain Astro 6 website for a 4-pillar health and business brand. Hub-and-spoke across three domains:
 
 | Domain | Purpose |
 |--------|---------|
-| `elevatealign.com` | Central hub — spiral visualization, 4 pillars |
-| `stopdrinkingacid.com` | Physical Sovereignty — water education funnel |
-| `eaucohub.com` | Financial Sovereignty — business hub |
+| `elevatealign.com` | Central hub with spiral visualization and 4 pillars |
+| `stopdrinkingacid.com` | Physical Sovereignty water education funnel |
+| `eaucohub.com` | Financial Sovereignty business hub |
 
 **IP boundary:** content = client IP (do not distribute or reuse); code/architecture = studio IP.
 
 ## Tech Stack
 
-- **Astro 6** with Cloudflare adapter (`@astrojs/cloudflare` 13.x) — SSR via `prerender = false` on API routes; content via the Content Layer `glob()` loader. (Migrated from Astro 5 on 2026-05-24 — see `docs/design-proposals/2026-05-24-astro-6-migration-scope.md`.)
-- **Tailwind CSS 4** — via `@tailwindcss/vite` plugin (CSS-first, **no `tailwind.config.js`**)
-- **TypeScript strict**, `@/*` → `src/*`
-- **Three.js** — `src/components/spiral/spiral.ts` (~2,891 LOC): 13-node golden-angle helix, IconWorlds physics, post-processing bloom
-- **Pages CMS** (`.pages.yml`) — git-based content editor at app.pagescms.org for pillars + branches (replaced Keystatic, which has no Astro 6 support)
-- **Markdoc** — content format via `@astrojs/markdoc`
-- **`vite` pinned to `^7.3.3`** in `package.json` `overrides` — dedupes against `@tailwindcss/vite`'s vite 8 so the cloudflare vite-plugin runner-worker bundles correctly
+- **Astro 6** with `@astrojs/cloudflare` 13.x. SSR routes use `export const prerender = false`; content uses the Astro Content Layer `glob()` loader.
+- **Tailwind CSS 4** via `@tailwindcss/vite` (CSS-first, no `tailwind.config.js`).
+- **TypeScript strict**, `@/*` -> `src/*`, with `@cloudflare/workers-types` installed.
+- **Three.js** in `src/components/spiral/spiral.ts`: 13-node golden-angle helix, IconWorlds physics, post-processing bloom.
+- **Pages CMS** via `.pages.yml` for git-based editing of pillars and branches. Keystatic was replaced because it has no Astro 6 support.
+- **Markdoc** content via `@astrojs/markdoc`.
+- **Vite override** pins `vite` to `^7.3.3` so the Cloudflare runner-worker bundles correctly.
 
 ## Commands
 
 ```bash
-npm run dev              # Dev server at localhost:4321 (binds 0.0.0.0 for tunnel access)
-npm run build            # Production build → dist/ (prebuild generates public/citations.json)
+npm run dev              # Dev server at localhost:4321
+npm run build            # Production build; prebuild generates data files first
+npm run check            # Astro/TypeScript type check
+npm run test             # Node assertion suite for content/config/site contracts
+npm run test:all         # npm test && npm run check && npm run build
+npm run format           # Prettier write
+npm run format:check     # Prettier check
 npm run preview          # Preview production build locally
-npm run test             # Config↔content sync, spiral node invariants, quiz contracts
-npm run test:all         # npm test && npm run build
-npm run deploy           # Build + wrangler pages deploy dist --project-name sovereign-systems-spiral
 npm run parse-citations  # Parse citations from source documents
+npm run count-files      # File counting for system variables
+npm run deploy           # test:all + wrangler pages deploy
 ```
 
-**Important:** `prebuild` runs automatically before `build` — executes `scripts/generate-citations-json.js` to produce `public/citations.json`. Tests assert this file exists and is valid JSON.
+`prebuild` runs automatically before `build` and generates:
 
-### Testing
+- `public/citations.json` from `docs/corpus-canon.md`
+- `src/data/library-manifest.json` from `src/lib/docs-library.ts`
 
-Test suite: `scripts/test.mjs` (Node assert, no framework). Validates:
-- Pillar/branch config ↔ content file slug synchronization
-- 13 spiral nodes: contiguous IDs, 3 quiz themes each, unique EnvVar
-- Quiz page serializes node status, capture endpoint contract
-- Capture route validates email, bounds-checks quizNodeId 1–13, dispatches sinks in parallel
-- Citation JSON is non-empty and parseable
-- Annotated bibliography manifest exists with required fields
+Do not edit either generated file by hand.
 
-**No test filtering exists.** To run a focused check, temporarily comment out assertions in `scripts/test.mjs`.
+## Testing
 
-### Linting & Formatting
+Test suite: `scripts/test.mjs` (Node assert, no framework). It validates:
 
-**No linter or formatter configured.** Style is enforced by TypeScript strict mode only.
+- Pillar and branch config slugs stay in sync with content files.
+- All pillar and branch content frontmatter is public/live.
+- The 13 spiral nodes have contiguous IDs, exactly 3 quiz themes each, and unique EnvVars.
+- `/quiz` serializes node status and posts capture to `/capture`.
+- `QuizEmbed.astro` falls back to the local quiz instead of the old waitlist stub.
+- `/capture` validates email, bounds-checks quiz node IDs, and dispatches sinks in parallel.
+- `public/citations.json` is parseable and nonempty.
+- Annotated bibliography JSON and Markdown manifests exist.
+- `scripts/vacuum-gate.mjs` passes.
+
+No test filtering exists. To run a focused check, temporarily narrow assertions in `scripts/test.mjs`.
+
+## Linting & Formatting
+
+- Prettier is configured with `.prettierrc.json` and `.prettierignore`; use `npm run format:check` before broad formatting work.
+- CI runs `trunk-io/trunk-action@v1` on PR-scoped changed files. There is no committed `.trunk/` config in the current main branch.
+- `npm run check` is part of `test:all`; do not skip it just because `npm test` passes.
 
 ## Architecture
 
@@ -60,72 +75,109 @@ Test suite: `scripts/test.mjs` (Node assert, no framework). Validates:
 
 | File | Purpose |
 |------|---------|
-| `src/data/hub.config.ts` | Pillars, nodes, branches, domains, UI defaults (vessel mode, nav variant) |
+| `src/data/hub.config.ts` | Pillars, nodes, branches, domains, UI defaults, EnvVar types, QuizTheme types |
 | `src/data/hydration.config.ts` | 6-step funnel config, filter tiers, cost data, matching engine |
-| `src/content.config.ts` | Astro content collection schema (Content Layer `glob()` loader) |
-| `.pages.yml` | Pages CMS config for pillars + branches (replaced `keystatic.config.ts`) |
+| `src/data/quiz.config.ts` | Quiz questions, answer definitions, result copy, capture copy |
+| `src/data/decisions.ts` | Decision-board options and recommendations |
+| `src/content.config.ts` | Astro Content Layer schemas for branches, pillars, and nodes |
+| `.pages.yml` | Pages CMS config for editing pillars and branches |
+| `src/lib/docs-library.ts` | Source catalog for the generated `/library` manifest |
 
-### Pages
+### Routes
 
 | Route | Purpose |
 |-------|---------|
 | `/` | Hub homepage with spiral visualization |
 | `/pillars/[slug]` | Dynamic 4 pillar pages |
-| `/nodes/[id]` | 13 spiral node pages (id 1–13, **nodes 6–13 are locked**) |
+| `/nodes/[id]` | 13 spiral node pages; nodes 6-13 are locked |
 | `/quiz` | Node-placement quiz with affinity scoring |
-| `/water/` | Physical Sovereignty funnel (6-step hydration node) |
+| `/water/` | Physical Sovereignty funnel |
+| `/water/[slug]` | Branch-specific water pages |
+| `/water/quiz` | Water funnel quiz route |
 | `/business/` | Financial Sovereignty landing |
-| `/research` | Bibliography (263 gated citations) |
+| `/research` | Bibliography page |
 | `/lineage/[envvar]` | Cross-cultural naming chains per EnvVar |
-| `/for/` | Audience-targeted landing pages |
-| `/capture` (POST) | Multi-sink form capture (KV + GHL webhook) |
+| `/for/[persona]` | Audience-targeted landing pages |
+| `/decisions` | Decision board with option tracking |
+| `/aesthetics` | Aesthetics vocabulary showcase |
+| `/timeline` | Spiral/site version timeline |
+| `/library` | Generated documentation library index |
+| `/api/water-report` | Water report API route |
+| `/capture` (POST) | Multi-sink form capture |
 
 ### Key Components
 
-- `src/components/spiral/spiral.ts` — 13-node Three.js helix with `EffectComposer` post-processing
-- `src/components/QuizEmbed.astro` — quiz iframe wrapper with fallback to `/quiz`
-- `src/components/HydrateFlow.astro` — hydration funnel orchestrator
-- `src/pages/capture.ts` — API route (`prerender = false`), multi-sink dispatch (KV + GHL webhook)
+- `src/components/spiral/spiral.ts` - Three.js helix and IconWorlds interaction surface.
+- `src/components/QuizEmbed.astro` - quiz iframe wrapper with fallback to `/quiz`.
+- `src/components/HydrateFlow.astro` - hydration funnel orchestrator.
+- `src/pages/capture.ts` - Astro API route for KV + GHL capture.
 
-### Capture Endpoint (`/capture` POST)
+## Capture Endpoint
 
-Fire-and-forget form capture. Validates email syntax, bounds-checks quizNodeId 1–13, dispatches to KV namespace (`SUBMISSIONS`) and GHL webhook (`GHL_WEBHOOK_URL`) in parallel via `Promise.all`. Any sink failure is logged but never blocks the 200 response. In local dev, KV is unbound — degrades gracefully with a warning.
+`/capture` is a fire-and-forget form sink. It validates email syntax, bounds-checks `quizNodeId` 1-13, and dispatches to the optional `SUBMISSIONS` KV namespace and `GHL_WEBHOOK_URL` in parallel. Sink failures are logged but do not block a valid 200 response.
+
+Decision-board submissions use `source: "decision-board"` and can capture `decisionId`, chosen option, whether the choice matched the studio recommendation, suggestion text, category, and owner. If the decision-board caller omits email, the route uses a local synthetic email so KV writes still succeed.
 
 ## Content Management
 
-- Content lives in `src/content/pillars/` (4 pillars) and `src/content/branches/` (6 branches) as Markdoc
-- To add a pillar/branch: create `.md` file + add entry to `hub.config.ts` — **test suite will fail if out of sync**
-- `public/citations.json` is generated by `prebuild` — **never edit by hand**
+- Branch, pillar, and node content lives under `src/content/`.
+- Current content collections are `pillars`, `branches`, and `nodes`.
+- Pages CMS edits pillars and branches only; new pillars/branches remain code changes because `hub.config.ts` must receive the matching slug.
+- Node content lives in `src/content/nodes/` and is not part of the Pages CMS config.
 
 ## Governance Scripts
 
-Config: `.config/board.config.json`. All board operations flow through scripts — **never edit the board directly**.
+Config: `.config/board.config.json`. All board operations flow through scripts; never edit the board directly.
 
 | Script | Purpose |
 |--------|---------|
-| `bash scripts/transition-issue.sh <n> --status <STATUS> --reason "why"` | Gatekeeper — validates state transitions |
-| `bash scripts/sync-tracking-table.sh --write` | Generates tracking table from board |
-| `bash scripts/audit-board.sh` | Drift detection — expected vs actual board state |
-| `bash scripts/detect-redundancy.sh` | Duplicate issue detection |
-| `bash scripts/setup-board.sh --dry-run` | Board setup from config |
+| `bash scripts/transition-issue.sh <n> --status <STATUS> --reason "why"` | Gatekeeper for state transitions |
+| `bash scripts/sync-tracking-table.sh --write` | Generate tracking table from board |
+| `bash scripts/audit-board.sh` | Detect expected vs actual board drift |
+| `bash scripts/detect-redundancy.sh` | Detect duplicate issues |
+| `bash scripts/setup-board.sh --dry-run` | Dry-run board setup from config |
 
-Content genome scripts (Python): `excavate-atoms.py`, `grade-atoms.py`, `build-content-units.py`, `link-atoms-to-issues.py` — see `scripts/README.md`.
+Content genome scripts are documented in `scripts/README.md`.
 
 ## CI/CD
 
 GitHub Actions (`.github/workflows/ci.yml`):
-- Build: Node 22, `npm ci`, `npm run build` on push/PR to `main`
-- Deploy: Only on push to `main`, uses `cloudflare/wrangler-action@v3`
-- `CLOUDFLARE_API_TOKEN` secret required (Account > Cloudflare Pages > Edit permission)
+
+- Build job: Node 22, `npm ci`, Trunk lint, `npm run test:all` on push/PR to `main`.
+- Deploy job: only on push to `main`; reruns `npm run test:all` and deploys with `cloudflare/wrangler-action@v3`.
+- Deploy uses explicit Cloudflare `accountId` and the `CLOUDFLARE_API_TOKEN` secret.
+- Required Cloudflare token scope is tracked in `docs/runbooks/cf-token-rotation.md`; current workflow text requires Pages Edit plus Account Settings Read.
+- Workflow concurrency cancels in-flight deploys when a newer push arrives on the same ref.
 
 ## Gotchas
 
-- **Dev server binds 0.0.0.0** — required for tunnel access. `allowedHosts` in `astro.config.mjs` has explicit allowlist.
-- **Nodes 6–13 are locked** — `status: 'locked'` in `hub.config.ts`. Do not change without client approval.
-- **Node 5 → `/water/`** — Root Healing node routes to the hydration funnel, not `/nodes/5`.
-- **Vessel mode / nav variant** — querystring overrides available (`?vessel=visible`, `?nav=spiral-first`) for A/B testing. Defaults in `hub.config.ts` `ui` object.
-- **Functions vs API routes** — `functions/` directory is legacy. Use `src/pages/*.ts` with `export const prerender = false` for server routes.
-- **No `.env` committed** — env vars: `GHL_WEBHOOK_URL`, `CLOUDFLARE_API_TOKEN`, `CF_ANALYTICS_TOKEN`.
-- **Empty affiliate URLs** — `Anespa DX` and `K8 Kangen` have `affiliateUrl: ''` in `hydration.config.ts` — these are client-gated (tracked in GH#49).
-- **`ghl.quizFormUrl` is empty** — local fallback to `/quiz`; affiliate routing tracked in GH#49 and GH#56.
-- **No lockfile committed** — `package-lock.json` exists but should be regenerated; use `npm ci` in CI, `npm install` locally.
+- Dev server binds `0.0.0.0`; `astro.config.mjs` contains the tunnel host allowlist.
+- Nodes 6-13 are locked in `hub.config.ts`; do not unlock without client approval.
+- Node 5 routes to `/water/`, not `/nodes/5`.
+- Vessel mode and nav variant can be tested with `?vessel=visible` and `?nav=spiral-first`; defaults live in `hub.config.ts`.
+- `functions/` is legacy. Use Astro API routes in `src/pages/*.ts` with `prerender = false`.
+- Empty affiliate URLs for Anespa DX and K8 Kangen are intentional client-gated placeholders tracked in GH#49.
+- `ghl.quizFormUrl` is empty; local fallback is `/quiz`, with affiliate routing tracked in GH#49 and GH#56.
+- Three branches are currently hidden from navigation via `visible: false`: Fertility, Cancer Support, and Sustainability. Their routes still exist.
+- `package-lock.json` is committed; use `npm ci` in CI and `npm install` only when intentionally updating dependencies.
+
+<!-- ORGANVM:AUTO:START -->
+## Agent Context (auto-generated - do not edit)
+
+This repo participates in the **ORGAN-III (Commerce)** swarm.
+
+### Active Subscriptions
+- *No active event subscriptions*
+
+### Production Responsibilities
+- *No production responsibilities*
+
+### External Dependencies
+- *No external dependencies*
+
+### Governance Constraints
+- Adhere to unidirectional flow: I->II->III
+- Never commit secrets or credentials
+
+*Last synced: 2026-05-23T00:26:31Z*
+<!-- ORGANVM:AUTO:END -->
