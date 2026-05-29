@@ -46,16 +46,19 @@ When a new universal rule is established, save the feedback memory FIRST and add
 npm run dev              # Dev server at localhost:4321 (host:true; tunnel-friendly)
 npm run build            # Production build → dist/
 npm run preview          # Preview production build locally
-npm run deploy           # build + wrangler pages deploy dist (project: sovereign-systems-spiral)
+npm run deploy           # test:all + wrangler pages deploy dist/client (project: sovereign-systems-spiral)
 npm test                 # scripts/test.mjs — content-shape validator (frontmatter + schema invariants) + vacuum gate (scripts/vacuum-gate.mjs)
-npm run test:all         # test + production build (the CI-style gate)
+npm run check            # astro check — TypeScript / Astro diagnostics
+npm run test:all         # test + check + production build (the CI-style gate)
+npm run format           # prettier --write . (format all files)
+npm run format:check     # prettier --check . (Trunk runs this PR-scoped in CI)
 npm run parse-citations  # Regenerate citations from source bibliography
 npm run count-files      # Repo file census utility
 ```
 
-**`prebuild` auto-runs** `node scripts/generate-citations-json.js` before every `npm run build` (npm lifecycle hook in `package.json`). Citations JSON is rebuilt on every build — do not commit a stale snapshot expecting it to survive deploy.
+**`prebuild` auto-runs** `node scripts/generate-citations-json.js && node scripts/generate-library-manifest.mjs` before every `npm run build` (npm lifecycle hook in `package.json`). Citations JSON and the library manifest are rebuilt on every build — do not commit a stale snapshot expecting it to survive deploy.
 
-**No ESLint, Prettier, or Vitest.** The only quality gates are TypeScript strictness and `npm test` — a 118-line Node assertion script that validates content-collection frontmatter and schema invariants. There is no traditional lint/format tooling; don't search for `.eslintrc` or `prettier.config.*`.
+**No ESLint or Vitest — but Prettier IS configured** (`.prettierrc.json` + `.prettierignore`; `singleQuote`, `prettier-plugin-astro`). Quality gates: TypeScript strictness (`npm run check` / `astro check`), `npm test` (a Node assertion script validating content-collection frontmatter + schema invariants), and Prettier formatting — the last enforced PR-scoped via `trunk-io/trunk-action` in CI (`.github/workflows/ci.yml`), with no committed `.trunk/` config. Run `npm run format:check` before broad formatting work. There is no ESLint, and the Prettier config is `.prettierrc.json`, not `prettier.config.*`.
 
 ## Key Files
 
@@ -241,7 +244,7 @@ These are A/B flags wired into `src/data/hub.config.ts` defaults (`ui.spiralVess
 
 [Operating Board](https://github.com/orgs/organvm-iii-ergon/projects/5) — see board for live state. Recent closures: #57 (vessel modes), #56 (quiz node-placement), #55 (mobile polish), #53 (chakra stars).
 
-Critical path complete. Content genome processed. Deployed via local wrangler due to GH#52 auth failure.
+Critical path complete. Content genome processed. Auto-deploy on push to `main` is operational — the GH#52 token expiry was resolved 2026-05-16 and the `dist/client` publish-path regression was fixed in #170 (`58dc4ac`); recent `main` CI runs are green. Manual `npm run deploy` remains the fallback.
 
 ## Triple-Reference Law
 
@@ -254,14 +257,14 @@ Verify at session close. The principle is identity-by-triangulation: items whose
 ## Deploy Configuration
 
 - **Platform:** Cloudflare Pages (`sovereign-systems-spiral.pages.dev`); auto-deploy on push to `main`
-- **Build:** `npm run build` → `dist/`. Astro Cloudflare adapter generates `_worker.js`; `src/pages/*.ts` (e.g., `capture.ts`) become routes inside the worker bundle, _not_ separate Pages Functions.
-- **Manual deploy:** `npm run deploy` (= `npm run build && wrangler pages deploy dist --project-name sovereign-systems-spiral`); used when CF auth-on-push fails (see GH#52).
-- **`functions/` directory removed:** the EWG proxy now lives at `src/pages/api/water-report.ts` (Astro APIRoute, same pattern as `capture.ts`). The prior `functions/api/water-report.ts` was unreachable in production — the `_worker.js` bundle takes precedence over root `functions/`, which also isn't part of `dist/` — so it 404'd and the funnel silently served demo data. The worker bundle is authoritative for all routes.
+- **Build:** `npm run build` → `dist/`. The Astro Cloudflare adapter (v13, Workers output) produces `dist/client` (static assets — the Pages deploy root) + `dist/server/entry.mjs` (the SSR worker); `src/pages/*.ts` (e.g., `capture.ts`) are bundled into that server worker, _not_ separate Pages Functions. (Astro 5 / adapter 12 emitted a single `dist/_worker.js`; that model is gone — see #170.)
+- **Manual deploy:** `npm run deploy` (= `npm run test:all && wrangler pages deploy dist/client --project-name sovereign-systems-spiral`); the fallback when CF auth-on-push fails (the GH#52 token expiry that originally forced manual deploys was resolved 2026-05-16 — auto-deploy is green again).
+- **`functions/` directory removed:** the EWG proxy now lives at `src/pages/api/water-report.ts` (Astro APIRoute, same pattern as `capture.ts`). The prior `functions/api/water-report.ts` was unreachable in production — the server worker bundle takes precedence over root `functions/`, which also isn't part of `dist/` — so it 404'd and the funnel silently served demo data. The worker bundle is authoritative for all routes.
 - **Multi-domain story is metadata-only.** `src/data/hub.config.ts` declares `domains: { hub, water, business }` for content references; actual multi-domain routing is DNS-level (CNAMEs in Cloudflare), not Astro logic.
   - Primary: `elevatealign.com` (connect via CF dashboard → Custom Domains)
   - Secondary: `stopdrinkingacid.com`, `eaucohub.com` (connect when ready)
 - **Dev server (`astro.config.mjs`):** `host: true` + allowed hosts (`*.cloudflare.com`, `*.ngrok-free.app`, `localhost`) for tunnel-based dev with the client.
-- `netlify.toml` is legacy — kept for reference but deployment is on Cloudflare.
+- `.config/netlify.toml` is legacy (relocated from repo root in hygiene pass `294d071`) — kept for reference but deployment is on Cloudflare.
 
 ## Session Close
 
