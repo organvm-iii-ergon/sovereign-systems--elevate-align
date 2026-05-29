@@ -10,14 +10,17 @@
  * Add a new category by appending an entry here; the library page picks
  * it up automatically on the next build.
  */
-import { readdirSync, statSync, existsSync } from 'node:fs';
-import { join, basename, extname } from 'node:path';
+// NOTE: this module is imported by `src/pages/library.astro`, which prerenders
+// in workerd under @astrojs/cloudflare v13 (no host filesystem). It must stay
+// free of `node:fs`/`node:path`. The build-time file enumeration lives in
+// `scripts/generate-library-manifest.mjs`, which writes the manifest JSON the
+// page reads.
 
 export type LibraryGroup =
-  | 'client'         // client deliverables, decisions, inbound PDFs
-  | 'engineering'    // SOPs, runbooks, manifests, proofs
-  | 'product'        // design proposals, content, superpowers intakes
-  | 'session';       // raw session artifacts at repo root
+  | 'client' // client deliverables, decisions, inbound PDFs
+  | 'engineering' // SOPs, runbooks, manifests, proofs
+  | 'product' // design proposals, content, superpowers intakes
+  | 'session'; // raw session artifacts at repo root
 
 export interface LibraryEntry {
   /** URL-safe identifier (also used as fragment anchor in the library page). */
@@ -42,7 +45,8 @@ export const LIBRARY: LibraryEntry[] = [
   {
     slug: 'client-decisions',
     label: 'Client Decisions',
-    description: 'Authoritative decisions made with Maddie — locked architecture, accepted agreements, request audits.',
+    description:
+      'Authoritative decisions made with Maddie — locked architecture, accepted agreements, request audits.',
     group: 'client',
     kind: 'dir',
     path: 'docs/client-decisions',
@@ -50,7 +54,8 @@ export const LIBRARY: LibraryEntry[] = [
   {
     slug: 'client-deliverables',
     label: 'Client Deliverables',
-    description: 'Walkthrough docs, revenue agreements, anything shipped to the client.',
+    description:
+      'Walkthrough docs, revenue agreements, anything shipped to the client.',
     group: 'client',
     kind: 'dir',
     path: 'docs/client-deliverables',
@@ -64,7 +69,7 @@ export const LIBRARY: LibraryEntry[] = [
   {
     slug: 'superpowers-intakes',
     label: 'Superpowers — Intakes',
-    description: 'Maddie\'s dictated/written intake docs that seed the system.',
+    description: "Maddie's dictated/written intake docs that seed the system.",
     group: 'product',
     kind: 'dir',
     path: 'docs/superpowers/intakes',
@@ -88,7 +93,8 @@ export const LIBRARY: LibraryEntry[] = [
   {
     slug: 'design-proposals',
     label: 'Design Proposals',
-    description: 'Concrete design-direction docs (node shapes, vessel modes, etc).',
+    description:
+      'Concrete design-direction docs (node shapes, vessel modes, etc).',
     group: 'product',
     kind: 'dir',
     path: 'docs/design-proposals',
@@ -96,7 +102,8 @@ export const LIBRARY: LibraryEntry[] = [
   {
     slug: 'social-content-calendar',
     label: 'Social Content Calendar',
-    description: 'Reel, post, carousel, email, video — content asset library organized by format.',
+    description:
+      'Reel, post, carousel, email, video — content asset library organized by format.',
     group: 'product',
     kind: 'dir',
     path: 'docs/social-content-calendar',
@@ -104,7 +111,8 @@ export const LIBRARY: LibraryEntry[] = [
   {
     slug: 'critiques',
     label: 'Design Critiques',
-    description: 'Severity-rated architectural-critique passes — usability, hierarchy, accessibility findings.',
+    description:
+      'Severity-rated architectural-critique passes — usability, hierarchy, accessibility findings.',
     group: 'product',
     kind: 'dir',
     path: 'docs/critiques',
@@ -112,7 +120,8 @@ export const LIBRARY: LibraryEntry[] = [
   {
     slug: 'timelines',
     label: 'Evolution Timelines',
-    description: 'Chronological evolution transcripts of named artifacts (date / client request / studio prompt / shipped version).',
+    description:
+      'Chronological evolution transcripts of named artifacts (date / client request / studio prompt / shipped version).',
     group: 'product',
     kind: 'dir',
     path: 'docs/timelines',
@@ -122,7 +131,8 @@ export const LIBRARY: LibraryEntry[] = [
   {
     slug: 'sops',
     label: 'SOPs',
-    description: 'Standard operating procedures — atomic decomposition, board QA, issue tracking, review chains.',
+    description:
+      'Standard operating procedures — atomic decomposition, board QA, issue tracking, review chains.',
     group: 'engineering',
     kind: 'dir',
     path: 'docs/sops',
@@ -130,7 +140,8 @@ export const LIBRARY: LibraryEntry[] = [
   {
     slug: 'runbooks',
     label: 'Runbooks',
-    description: 'Operational runbooks — CF token rotation, deploy paths, recovery procedures.',
+    description:
+      'Operational runbooks — CF token rotation, deploy paths, recovery procedures.',
     group: 'engineering',
     kind: 'dir',
     path: 'docs/runbooks',
@@ -138,16 +149,18 @@ export const LIBRARY: LibraryEntry[] = [
   {
     slug: 'manifests',
     label: 'Project Manifests',
-    description: 'Dated annotated bibliographies of the entire repo corpus (deterministic UIDs, SHA-256 per file).',
+    description:
+      'Dated annotated bibliographies of the entire repo corpus (deterministic UIDs, SHA-256 per file).',
     group: 'engineering',
     kind: 'dir',
     path: 'docs/manifests',
-    exts: ['.md'],  // skip the .json twins on the index (still visible on GH)
+    exts: ['.md'], // skip the .json twins on the index (still visible on GH)
   },
   {
     slug: 'reports',
     label: 'Reports',
-    description: 'Cross-cutting reports — case studies, prompt-atom registries, implementation logs.',
+    description:
+      'Cross-cutting reports — case studies, prompt-atom registries, implementation logs.',
     group: 'engineering',
     kind: 'dir',
     path: 'docs/reports',
@@ -155,7 +168,8 @@ export const LIBRARY: LibraryEntry[] = [
   {
     slug: 'proofs',
     label: 'Proofs',
-    description: 'Diff proofs, deploy proofs, screenshot evidence of feature behavior.',
+    description:
+      'Diff proofs, deploy proofs, screenshot evidence of feature behavior.',
     group: 'engineering',
     kind: 'dir',
     path: 'docs/proofs',
@@ -163,7 +177,8 @@ export const LIBRARY: LibraryEntry[] = [
   {
     slug: 'decisions-docs',
     label: 'Decision Docs',
-    description: 'Markdown decision records (NOT the /decisions board — those live in src/data/decisions.ts).',
+    description:
+      'Markdown decision records (NOT the /decisions board — those live in src/data/decisions.ts).',
     group: 'engineering',
     kind: 'dir',
     path: 'docs/decisions',
@@ -197,7 +212,8 @@ export const LIBRARY: LibraryEntry[] = [
   {
     slug: 'session-export-2026-04-25',
     label: 'Session Export 2026-04-25T20:24',
-    description: 'Conversation transcript export captured 2026-04-25 20:24:30 UTC.',
+    description:
+      'Conversation transcript export captured 2026-04-25 20:24:30 UTC.',
     group: 'session',
     kind: 'single-file',
     path: 'export-2026-04-25T20-24-30.md',
@@ -213,77 +229,20 @@ export const GROUP_LABEL: Record<LibraryGroup, string> = {
 
 export const GROUP_DESCRIPTION: Record<LibraryGroup, string> = {
   client: 'Everything that originated from or was shipped to Maddie.',
-  product: 'The product-design surface — intakes, specs, plans, content, critiques.',
+  product:
+    'The product-design surface — intakes, specs, plans, content, critiques.',
   engineering: 'How the system is built, operated, and proven.',
-  session: 'Raw working-state captures left at the repo root by session-management tooling.',
+  session:
+    'Raw working-state captures left at the repo root by session-management tooling.',
 };
 
 export interface DiscoveredFile {
   name: string;
-  relPath: string;       // repo-relative
+  relPath: string; // repo-relative
   ext: string;
   sizeBytes: number;
   mtimeIso: string;
   isDir: boolean;
-}
-
-const DEFAULT_EXTS = ['.md', '.html', '.pdf', '.json', '.txt'];
-
-/**
- * Enumerate files for a library entry. Runs at build time.
- * For 'dir' entries, lists immediate children matching the entry's exts (default
- * to a useful subset). For 'single-file' entries, returns one-element array.
- * Sorted newest-first by mtime.
- */
-export function discoverFiles(entry: LibraryEntry, repoRoot: string): DiscoveredFile[] {
-  const absRoot = join(repoRoot, entry.path);
-  if (!existsSync(absRoot)) return [];
-
-  if (entry.kind === 'single-file') {
-    const st = statSync(absRoot);
-    return [{
-      name: basename(entry.path),
-      relPath: entry.path,
-      ext: extname(entry.path).toLowerCase(),
-      sizeBytes: st.size,
-      mtimeIso: st.mtime.toISOString(),
-      isDir: false,
-    }];
-  }
-
-  const exts = entry.exts ?? DEFAULT_EXTS;
-  const out: DiscoveredFile[] = [];
-
-  for (const child of readdirSync(absRoot)) {
-    if (child.startsWith('.')) continue;       // skip .DS_Store etc
-    const abs = join(absRoot, child);
-    const st = statSync(abs);
-    if (st.isDirectory()) {
-      out.push({
-        name: child,
-        relPath: join(entry.path, child),
-        ext: '',
-        sizeBytes: 0,
-        mtimeIso: st.mtime.toISOString(),
-        isDir: true,
-      });
-      continue;
-    }
-    const ext = extname(child).toLowerCase();
-    if (exts.length && !exts.includes(ext)) continue;
-    out.push({
-      name: child,
-      relPath: join(entry.path, child),
-      ext,
-      sizeBytes: st.size,
-      mtimeIso: st.mtime.toISOString(),
-      isDir: false,
-    });
-  }
-
-  // Newest first.
-  out.sort((a, b) => b.mtimeIso.localeCompare(a.mtimeIso));
-  return out;
 }
 
 export function libraryByGroup(): Record<LibraryGroup, LibraryEntry[]> {
@@ -304,5 +263,7 @@ export function formatBytes(n: number): string {
   return `${(n / 1024 / 1024).toFixed(1)} MB`;
 }
 
-export const GITHUB_BLOB_BASE = 'https://github.com/organvm-iii-ergon/sovereign-systems--elevate-align/blob/main';
-export const GITHUB_TREE_BASE = 'https://github.com/organvm-iii-ergon/sovereign-systems--elevate-align/tree/main';
+export const GITHUB_BLOB_BASE =
+  'https://github.com/organvm-iii-ergon/sovereign-systems--elevate-align/blob/main';
+export const GITHUB_TREE_BASE =
+  'https://github.com/organvm-iii-ergon/sovereign-systems--elevate-align/tree/main';

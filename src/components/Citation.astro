@@ -16,19 +16,41 @@ const isBiomedical = id.startsWith('B-');
 ---
 
 <span class="citation-wrapper group relative inline-block">
-  <sup class="text-[10px] text-ocean-400 cursor-help ml-0.5 font-medium px-1 py-0.5 rounded-sm bg-ocean-500/10 group-hover:bg-ocean-500/20 transition-colors">
+  <sup
+    class="text-[10px] text-ocean-400 cursor-help ml-0.5 font-medium px-1 py-0.5 rounded-sm bg-ocean-500/10 group-hover:bg-ocean-500/20 transition-colors"
+  >
     {id}
   </sup>
-  <span class="invisible group-hover:visible absolute bottom-full left-1/2 -translate-x-1/2 mb-2 w-64 p-3 bg-ocean-800 border border-ocean-500/30 rounded-lg shadow-2xl z-50 pointer-events-none">
-    <span class="block text-[11px] font-bold text-ocean-300 uppercase tracking-wider mb-1">{isBiomedical ? 'Peer-Reviewed Research' : 'Sacred/Philosophical Source'}</span>
-    <span class="block text-[13px] font-medium text-white mb-2 leading-snug">{citation.source}</span>
-    <span class="block text-[12px] text-white/60 leading-relaxed italic">"{citation.detail}"</span>
-    {citation.context.startsWith('http') || citation.context.startsWith('DOI') ? (
-      <span class="block mt-2 text-[10px] text-ocean-400 font-mono truncate">{citation.context}</span>
-    ) : (
-      <span class="block mt-2 text-[10px] text-ocean-400 leading-tight">{citation.context}</span>
-    )}
-    <span class="absolute top-full left-1/2 -translate-x-1/2 border-[6px] border-transparent border-t-ocean-800"></span>
+  <span
+    class="invisible group-hover:visible absolute bottom-full left-1/2 -translate-x-1/2 mb-2 w-64 p-3 bg-ocean-800 border border-ocean-500/30 rounded-lg shadow-2xl z-50 pointer-events-none"
+  >
+    <span
+      class="block text-[11px] font-bold text-ocean-300 uppercase tracking-wider mb-1"
+      >{
+        isBiomedical ? 'Peer-Reviewed Research' : 'Sacred/Philosophical Source'
+      }</span
+    >
+    <span class="block text-[13px] font-medium text-white mb-2 leading-snug"
+      >{citation.source}</span
+    >
+    <span class="block text-[12px] text-white/60 leading-relaxed italic"
+      >"{citation.detail}"</span
+    >
+    {
+      citation.context.startsWith('http') ||
+      citation.context.startsWith('DOI') ? (
+        <span class="block mt-2 text-[10px] text-ocean-400 font-mono truncate">
+          {citation.context}
+        </span>
+      ) : (
+        <span class="block mt-2 text-[10px] text-ocean-400 leading-tight">
+          {citation.context}
+        </span>
+      )
+    }
+    <span
+      class="absolute top-full left-1/2 -translate-x-1/2 border-[6px] border-transparent border-t-ocean-800"
+    ></span>
   </span>
 </span>
 

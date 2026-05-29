@@ -26,12 +26,25 @@ export const quizQuestions: QuizQuestion[] = [
     step: 1,
     axis: 'phase',
     text: 'Where does your energy want to start?',
-    subtitle: 'There\'s no wrong answer. Pick the one that feels truest right now.',
+    subtitle:
+      "There's no wrong answer. Pick the one that feels truest right now.",
     answers: [
-      { value: 'ELEVATE', text: 'I need to feel better in my body — physically grounded, energized, present.' },
-      { value: 'ALIGN', text: 'I\'m ready to do the inner work — patterns, identity, alignment.' },
-      { value: 'UNLOCK', text: 'I\'m ready for full expression and freedom — letting it all out.' },
-      { value: 'ALL', text: 'All of it — I want to integrate everything at once.' },
+      {
+        value: 'ELEVATE',
+        text: 'I need to feel better in my body — physically grounded, energized, present.',
+      },
+      {
+        value: 'ALIGN',
+        text: "I'm ready to do the inner work — patterns, identity, alignment.",
+      },
+      {
+        value: 'UNLOCK',
+        text: "I'm ready for full expression and freedom — letting it all out.",
+      },
+      {
+        value: 'ALL',
+        text: 'All of it — I want to integrate everything at once.',
+      },
     ],
   },
   {
@@ -40,10 +53,30 @@ export const quizQuestions: QuizQuestion[] = [
     text: 'Which pillar feels most alive in you right now?',
     subtitle: 'The one that pulls you, not the one you think you should pick.',
     answers: [
-      { value: 'physical', text: 'Physical', sublabel: 'body, energy, hydration, sleep', emoji: '🌊' },
-      { value: 'inner', text: 'Inner', sublabel: 'emotions, regulation, awareness', emoji: '🕊️' },
-      { value: 'identity', text: 'Identity', sublabel: 'who I am, how I show up', emoji: '✨' },
-      { value: 'financial', text: 'Financial', sublabel: 'sovereignty over time + money', emoji: '💠' },
+      {
+        value: 'physical',
+        text: 'Physical',
+        sublabel: 'body, energy, hydration, sleep',
+        emoji: '🌊',
+      },
+      {
+        value: 'inner',
+        text: 'Inner',
+        sublabel: 'emotions, regulation, awareness',
+        emoji: '🕊️',
+      },
+      {
+        value: 'identity',
+        text: 'Identity',
+        sublabel: 'who I am, how I show up',
+        emoji: '✨',
+      },
+      {
+        value: 'financial',
+        text: 'Financial',
+        sublabel: 'sovereignty over time + money',
+        emoji: '💠',
+      },
     ],
   },
   {
@@ -52,10 +85,22 @@ export const quizQuestions: QuizQuestion[] = [
     text: 'What does your system most need right now?',
     subtitle: 'If you could only do one thing for yourself this week.',
     answers: [
-      { value: 'state-shifting,baseline,simple-pleasure', text: 'To feel good and at ease — just to taste that again.' },
-      { value: 'witness,awareness,signal-reading', text: 'To understand what\'s happening to me — read my own signals.' },
-      { value: 'release,reclaim,unwiring', text: 'To release patterns I\'m tired of carrying.' },
-      { value: 'becoming,expression,life-fueling', text: 'To step fully into who I\'m becoming.' },
+      {
+        value: 'state-shifting,baseline,simple-pleasure',
+        text: 'To feel good and at ease — just to taste that again.',
+      },
+      {
+        value: 'witness,awareness,signal-reading',
+        text: "To understand what's happening to me — read my own signals.",
+      },
+      {
+        value: 'release,reclaim,unwiring',
+        text: "To release patterns I'm tired of carrying.",
+      },
+      {
+        value: 'becoming,life-fueling,power',
+        text: "To step fully into who I'm becoming.",
+      },
     ],
   },
   {
@@ -64,10 +109,22 @@ export const quizQuestions: QuizQuestion[] = [
     text: 'What feels foundational to address?',
     subtitle: 'The thing under the thing.',
     answers: [
-      { value: 'foundation,hydration,root-cause', text: 'Energy and absorption — my body\'s basic systems.' },
-      { value: 'regulation,balance,calm', text: 'Calm and regulation — my nervous system.' },
-      { value: 'ownership,gentleness,choice', text: 'Choice and ownership — taking responsibility, gently.' },
-      { value: 'clarity,intention,coherence', text: 'Coherence and clarity — knowing what I want.' },
+      {
+        value: 'foundation,hydration,root-cause',
+        text: "Energy and absorption — my body's basic systems.",
+      },
+      {
+        value: 'regulation,balance,calm',
+        text: 'Calm and regulation — my nervous system.',
+      },
+      {
+        value: 'ownership,gentleness,choice',
+        text: 'Choice and ownership — taking responsibility, gently.',
+      },
+      {
+        value: 'clarity,intention,coherence',
+        text: 'Coherence and clarity — knowing what I want.',
+      },
     ],
   },
   {
@@ -76,10 +133,23 @@ export const quizQuestions: QuizQuestion[] = [
     text: 'Where do you sense your growth edge?',
     subtitle: 'The honest one. Not the impressive one.',
     answers: [
-      { value: 'release,ownership,unwiring', text: 'I keep doing things that don\'t serve me.' },
-      { value: 'witness,regulation,awareness', text: 'I notice patterns but can\'t change them yet.' },
-      { value: 'awakening,what-now,integration', text: 'I\'m awake but unsure what to do with it.' },
-      { value: 'expression,freedom,full-flow', text: 'I\'m ready to act on what I know.' },
+      {
+        value: 'integration,wholeness,pulling-together',
+        text: "I keep doing things that don't serve me.",
+      },
+      {
+        value: 'awakening,what-now,post-awakening',
+        text: "I notice patterns but can't change them yet.",
+      },
+      {
+        value: 'expression,identity,loud-pride',
+        text: "I'm awake but unsure what to do with it.",
+      },
+      {
+        value:
+          'elevation,beyond-baseline,knowing-better,freedom,gifts-amplified,full-flow',
+        text: "I'm ready to act on what I know.",
+      },
     ],
   },
 ];
@@ -104,7 +174,8 @@ export type QuizResultCopy = typeof quizResultCopy;
 /** Copy used in the optional email capture section (quiz.astro) */
 export const quizCaptureCopy = {
   label: 'Stay connected (optional)',
-  description: 'Get notes from Maddie as your node deepens. No spam, only sovereignty.',
+  description:
+    'Get notes from Maddie as your node deepens. No spam, only sovereignty.',
   namePlaceholder: 'Your name',
   emailPlaceholder: 'your@email.com',
   submitLabel: 'Stay connected',
@@ -119,7 +190,8 @@ export type QuizCaptureCopy = typeof quizCaptureCopy;
 export const quizEmbedCopy = {
   loading: 'Loading quiz...',
   heading: 'Your assessment is ready',
-  description: 'Five questions place you on the spiral first, then you can stay connected after you receive your result.',
+  description:
+    'Five questions place you on the spiral first, then you can stay connected after you receive your result.',
   ctaLabel: 'Start the assessment',
   footnote: 'Result first. Email optional.',
 };

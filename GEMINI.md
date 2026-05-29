@@ -1,7 +1,7 @@
 # Sovereign Systems Spiral — Workspace Context
 
 ## Project Overview
-**Sovereign Systems Spiral** is a multi-domain Astro 5 hub-and-spoke website for Maddie's 4-pillar health and business brand. It centralizes three distinct domains into a single codebase and deployment architecture.
+**Sovereign Systems Spiral** is a multi-domain Astro 6 hub-and-spoke website for Maddie's 4-pillar health and business brand. It centralizes three distinct domains into a single codebase and deployment architecture.
 
 - **Hub (`elevatealign.com`):** Central entry point featuring the interactive 4-pillar spiral navigation.
 - **Water/Physical (`stopdrinkingacid.com`):** Documentary-first funnel, quiz, and 6 branch deep-dives.
@@ -12,7 +12,7 @@
 **Studio:** ORGANVM Studio
 
 ## Tech Stack
-- **Framework:** [Astro 5](https://astro.build/) (Static Site Generation)
+- **Framework:** [Astro 6](https://astro.build/) (Static Site Generation)
 - **Styling:** [Tailwind CSS 4](https://tailwindcss.com/) (using `@tailwindcss/vite`, CSS-first config)
 - **Language:** TypeScript (Strict mode, no `any`)
 - **Visuals:** Vanilla HTML5 Canvas for the Spiral animation (no external 3D/Canvas libs)

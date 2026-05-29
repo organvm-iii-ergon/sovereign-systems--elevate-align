@@ -1,0 +1,818 @@
+{
+  "client-decisions": {
+    "files": [
+      {
+        "name": "2026-04-04-node-architecture-locked.md",
+        "relPath": "docs/client-decisions/2026-04-04-node-architecture-locked.md",
+        "ext": ".md",
+        "sizeBytes": 3630,
+        "mtimeIso": "2026-05-24T15:10:25.982Z",
+        "isDir": false
+      },
+      {
+        "name": "2026-04-14-ghl-branch-delineation.md",
+        "relPath": "docs/client-decisions/2026-04-14-ghl-branch-delineation.md",
+        "ext": ".md",
+        "sizeBytes": 2012,
+        "mtimeIso": "2026-05-24T15:10:25.982Z",
+        "isDir": false
+      },
+      {
+        "name": "2026-04-14-revenue-agreement-accepted.md",
+        "relPath": "docs/client-decisions/2026-04-14-revenue-agreement-accepted.md",
+        "ext": ".md",
+        "sizeBytes": 1281,
+        "mtimeIso": "2026-05-24T15:10:25.982Z",
+        "isDir": false
+      },
+      {
+        "name": "2026-04-17-atomized-wants.md",
+        "relPath": "docs/client-decisions/2026-04-17-atomized-wants.md",
+        "ext": ".md",
+        "sizeBytes": 60857,
+        "mtimeIso": "2026-05-24T15:10:25.982Z",
+        "isDir": false
+      },
+      {
+        "name": "2026-04-17-comprehensive-pdf-extraction.md",
+        "relPath": "docs/client-decisions/2026-04-17-comprehensive-pdf-extraction.md",
+        "ext": ".md",
+        "sizeBytes": 12909,
+        "mtimeIso": "2026-05-24T15:10:25.982Z",
+        "isDir": false
+      },
+      {
+        "name": "2026-04-17-comprehensive-request-audit.md",
+        "relPath": "docs/client-decisions/2026-04-17-comprehensive-request-audit.md",
+        "ext": ".md",
+        "sizeBytes": 6896,
+        "mtimeIso": "2026-05-24T15:10:25.982Z",
+        "isDir": false
+      },
+      {
+        "name": "2026-04-17-hydration-node-flowchart.md",
+        "relPath": "docs/client-decisions/2026-04-17-hydration-node-flowchart.md",
+        "ext": ".md",
+        "sizeBytes": 4275,
+        "mtimeIso": "2026-05-24T15:10:25.982Z",
+        "isDir": false
+      },
+      {
+        "name": "2026-04-17-maddie-imessage-extraction.md",
+        "relPath": "docs/client-decisions/2026-04-17-maddie-imessage-extraction.md",
+        "ext": ".md",
+        "sizeBytes": 3750,
+        "mtimeIso": "2026-05-24T15:10:25.982Z",
+        "isDir": false
+      },
+      {
+        "name": "2026-04-25-maddie-spiral-v4-direction.md",
+        "relPath": "docs/client-decisions/2026-04-25-maddie-spiral-v4-direction.md",
+        "ext": ".md",
+        "sizeBytes": 7474,
+        "mtimeIso": "2026-05-24T15:10:25.982Z",
+        "isDir": false
+      },
+      {
+        "name": "2026-04-04-maddie-feedback-session.md",
+        "relPath": "docs/client-decisions/2026-04-04-maddie-feedback-session.md",
+        "ext": ".md",
+        "sizeBytes": 7756,
+        "mtimeIso": "2026-05-24T15:10:25.978Z",
+        "isDir": false
+      }
+    ],
+    "total": 10,
+    "shown": 10
+  },
+  "client-deliverables": {
+    "files": [
+      {
+        "name": "2026-04-14-revenue-agreement-draft.md",
+        "relPath": "docs/client-deliverables/2026-04-14-revenue-agreement-draft.md",
+        "ext": ".md",
+        "sizeBytes": 998,
+        "mtimeIso": "2026-05-24T15:10:25.985Z",
+        "isDir": false
+      },
+      {
+        "name": "2026-04-16-maddie-site-walkthrough-v2.md",
+        "relPath": "docs/client-deliverables/2026-04-16-maddie-site-walkthrough-v2.md",
+        "ext": ".md",
+        "sizeBytes": 5336,
+        "mtimeIso": "2026-05-24T15:10:25.985Z",
+        "isDir": false
+      },
+      {
+        "name": "2026-04-19-maddie-site-walkthrough-v3.md",
+        "relPath": "docs/client-deliverables/2026-04-19-maddie-site-walkthrough-v3.md",
+        "ext": ".md",
+        "sizeBytes": 5092,
+        "mtimeIso": "2026-05-24T15:10:25.985Z",
+        "isDir": false
+      },
+      {
+        "name": "2026-04-27-revenue-agreement-final.md",
+        "relPath": "docs/client-deliverables/2026-04-27-revenue-agreement-final.md",
+        "ext": ".md",
+        "sizeBytes": 1065,
+        "mtimeIso": "2026-05-24T15:10:25.985Z",
+        "isDir": false
+      },
+      {
+        "name": "2026-04-14-maddie-site-walkthrough.md",
+        "relPath": "docs/client-deliverables/2026-04-14-maddie-site-walkthrough.md",
+        "ext": ".md",
+        "sizeBytes": 3792,
+        "mtimeIso": "2026-05-24T15:10:25.982Z",
+        "isDir": false
+      }
+    ],
+    "total": 5,
+    "shown": 5
+  },
+  "superpowers-intakes": {
+    "files": [
+      {
+        "name": "2026-04-03-maddie-hydration-node-funnel-spec.md",
+        "relPath": "docs/superpowers/intakes/2026-04-03-maddie-hydration-node-funnel-spec.md",
+        "ext": ".md",
+        "sizeBytes": 8984,
+        "mtimeIso": "2026-05-24T15:10:28.516Z",
+        "isDir": false
+      },
+      {
+        "name": "2026-04-14-maddie-messages-apr5-apr14-extraction.md",
+        "relPath": "docs/superpowers/intakes/2026-04-14-maddie-messages-apr5-apr14-extraction.md",
+        "ext": ".md",
+        "sizeBytes": 5246,
+        "mtimeIso": "2026-05-24T15:10:28.516Z",
+        "isDir": false
+      },
+      {
+        "name": "2026-04-20-maddie-architecture-feedback-questionnaire.md",
+        "relPath": "docs/superpowers/intakes/2026-04-20-maddie-architecture-feedback-questionnaire.md",
+        "ext": ".md",
+        "sizeBytes": 2754,
+        "mtimeIso": "2026-05-24T15:10:28.516Z",
+        "isDir": false
+      },
+      {
+        "name": "2026-04-01-maddie-spiral-path-board-atomization.md",
+        "relPath": "docs/superpowers/intakes/2026-04-01-maddie-spiral-path-board-atomization.md",
+        "ext": ".md",
+        "sizeBytes": 6238,
+        "mtimeIso": "2026-05-24T15:10:28.515Z",
+        "isDir": false
+      }
+    ],
+    "total": 4,
+    "shown": 4
+  },
+  "superpowers-plans": {
+    "files": [
+      {
+        "name": "2026-03-27-purification.md",
+        "relPath": "docs/superpowers/plans/2026-03-27-purification.md",
+        "ext": ".md",
+        "sizeBytes": 15461,
+        "mtimeIso": "2026-05-24T15:10:28.517Z",
+        "isDir": false
+      },
+      {
+        "name": "2026-04-03-atomic-excavation.md",
+        "relPath": "docs/superpowers/plans/2026-04-03-atomic-excavation.md",
+        "ext": ".md",
+        "sizeBytes": 24355,
+        "mtimeIso": "2026-05-24T15:10:28.517Z",
+        "isDir": false
+      },
+      {
+        "name": "2026-04-03-atomic-verification-handoffs.md",
+        "relPath": "docs/superpowers/plans/2026-04-03-atomic-verification-handoffs.md",
+        "ext": ".md",
+        "sizeBytes": 13579,
+        "mtimeIso": "2026-05-24T15:10:28.517Z",
+        "isDir": false
+      },
+      {
+        "name": "2026-04-04-atom-grading-assembly-delivery.md",
+        "relPath": "docs/superpowers/plans/2026-04-04-atom-grading-assembly-delivery.md",
+        "ext": ".md",
+        "sizeBytes": 5980,
+        "mtimeIso": "2026-05-24T15:10:28.517Z",
+        "isDir": false
+      },
+      {
+        "name": "2026-04-04-na-vacuum-solutions.md",
+        "relPath": "docs/superpowers/plans/2026-04-04-na-vacuum-solutions.md",
+        "ext": ".md",
+        "sizeBytes": 2234,
+        "mtimeIso": "2026-05-24T15:10:28.517Z",
+        "isDir": false
+      },
+      {
+        "name": "2026-03-25-sovereign-systems-build.md",
+        "relPath": "docs/superpowers/plans/2026-03-25-sovereign-systems-build.md",
+        "ext": ".md",
+        "sizeBytes": 52268,
+        "mtimeIso": "2026-05-24T15:10:28.516Z",
+        "isDir": false
+      }
+    ],
+    "total": 6,
+    "shown": 6
+  },
+  "superpowers-specs": {
+    "files": [
+      {
+        "name": "2026-04-03-atomic-content-registry-design.md",
+        "relPath": "docs/superpowers/specs/2026-04-03-atomic-content-registry-design.md",
+        "ext": ".md",
+        "sizeBytes": 19855,
+        "mtimeIso": "2026-05-24T15:10:28.518Z",
+        "isDir": false
+      },
+      {
+        "name": "2026-04-03-spec-citation-correction.md",
+        "relPath": "docs/superpowers/specs/2026-04-03-spec-citation-correction.md",
+        "ext": ".md",
+        "sizeBytes": 1638,
+        "mtimeIso": "2026-05-24T15:10:28.518Z",
+        "isDir": false
+      },
+      {
+        "name": "2026-04-03-spec-creature-selves.md",
+        "relPath": "docs/superpowers/specs/2026-04-03-spec-creature-selves.md",
+        "ext": ".md",
+        "sizeBytes": 1327,
+        "mtimeIso": "2026-05-24T15:10:28.518Z",
+        "isDir": false
+      },
+      {
+        "name": "2026-04-03-spec-domain-connection.md",
+        "relPath": "docs/superpowers/specs/2026-04-03-spec-domain-connection.md",
+        "ext": ".md",
+        "sizeBytes": 2725,
+        "mtimeIso": "2026-05-24T15:10:28.518Z",
+        "isDir": false
+      },
+      {
+        "name": "2026-04-03-spec-editorial-review.md",
+        "relPath": "docs/superpowers/specs/2026-04-03-spec-editorial-review.md",
+        "ext": ".md",
+        "sizeBytes": 3142,
+        "mtimeIso": "2026-05-24T15:10:28.518Z",
+        "isDir": false
+      },
+      {
+        "name": "2026-04-03-spec-inner-child-book.md",
+        "relPath": "docs/superpowers/specs/2026-04-03-spec-inner-child-book.md",
+        "ext": ".md",
+        "sizeBytes": 1254,
+        "mtimeIso": "2026-05-24T15:10:28.518Z",
+        "isDir": false
+      },
+      {
+        "name": "2026-04-03-spec-keystatic-cms.md",
+        "relPath": "docs/superpowers/specs/2026-04-03-spec-keystatic-cms.md",
+        "ext": ".md",
+        "sizeBytes": 1889,
+        "mtimeIso": "2026-05-24T15:10:28.518Z",
+        "isDir": false
+      },
+      {
+        "name": "2026-04-03-spec-keystatic-oauth.md",
+        "relPath": "docs/superpowers/specs/2026-04-03-spec-keystatic-oauth.md",
+        "ext": ".md",
+        "sizeBytes": 2138,
+        "mtimeIso": "2026-05-24T15:10:28.518Z",
+        "isDir": false
+      },
+      {
+        "name": "2026-04-03-spec-physical-sovereignty-build.md",
+        "relPath": "docs/superpowers/specs/2026-04-03-spec-physical-sovereignty-build.md",
+        "ext": ".md",
+        "sizeBytes": 3500,
+        "mtimeIso": "2026-05-24T15:10:28.518Z",
+        "isDir": false
+      },
+      {
+        "name": "2026-04-03-spec-quiz-ghl-integration.md",
+        "relPath": "docs/superpowers/specs/2026-04-03-spec-quiz-ghl-integration.md",
+        "ext": ".md",
+        "sizeBytes": 2710,
+        "mtimeIso": "2026-05-24T15:10:28.518Z",
+        "isDir": false
+      },
+      {
+        "name": "2026-04-03-spec-revenue-agreement.md",
+        "relPath": "docs/superpowers/specs/2026-04-03-spec-revenue-agreement.md",
+        "ext": ".md",
+        "sizeBytes": 2595,
+        "mtimeIso": "2026-05-24T15:10:28.518Z",
+        "isDir": false
+      },
+      {
+        "name": "2026-04-03-spec-spiral-interaction.md",
+        "relPath": "docs/superpowers/specs/2026-04-03-spec-spiral-interaction.md",
+        "ext": ".md",
+        "sizeBytes": 2804,
+        "mtimeIso": "2026-05-24T15:10:28.518Z",
+        "isDir": false
+      },
+      {
+        "name": "2026-04-03-spec-spiral-merge.md",
+        "relPath": "docs/superpowers/specs/2026-04-03-spec-spiral-merge.md",
+        "ext": ".md",
+        "sizeBytes": 3086,
+        "mtimeIso": "2026-05-24T15:10:28.518Z",
+        "isDir": false
+      },
+      {
+        "name": "2026-04-03-spec-spiral-node-architecture.md",
+        "relPath": "docs/superpowers/specs/2026-04-03-spec-spiral-node-architecture.md",
+        "ext": ".md",
+        "sizeBytes": 2667,
+        "mtimeIso": "2026-05-24T15:10:28.518Z",
+        "isDir": false
+      },
+      {
+        "name": "2026-04-03-spec-store-buildout.md",
+        "relPath": "docs/superpowers/specs/2026-04-03-spec-store-buildout.md",
+        "ext": ".md",
+        "sizeBytes": 1574,
+        "mtimeIso": "2026-05-24T15:10:28.518Z",
+        "isDir": false
+      },
+      {
+        "name": "2026-04-03-spec-subscription-boundary.md",
+        "relPath": "docs/superpowers/specs/2026-04-03-spec-subscription-boundary.md",
+        "ext": ".md",
+        "sizeBytes": 1994,
+        "mtimeIso": "2026-05-24T15:10:28.518Z",
+        "isDir": false
+      },
+      {
+        "name": "2026-04-03-spec-video-asset-verification.md",
+        "relPath": "docs/superpowers/specs/2026-04-03-spec-video-asset-verification.md",
+        "ext": ".md",
+        "sizeBytes": 2451,
+        "mtimeIso": "2026-05-24T15:10:28.518Z",
+        "isDir": false
+      },
+      {
+        "name": "2026-04-03-spec-video-hosting.md",
+        "relPath": "docs/superpowers/specs/2026-04-03-spec-video-hosting.md",
+        "ext": ".md",
+        "sizeBytes": 1501,
+        "mtimeIso": "2026-05-24T15:10:28.518Z",
+        "isDir": false
+      },
+      {
+        "name": "2026-04-03-spec-water-hub-architecture.md",
+        "relPath": "docs/superpowers/specs/2026-04-03-spec-water-hub-architecture.md",
+        "ext": ".md",
+        "sizeBytes": 1690,
+        "mtimeIso": "2026-05-24T15:10:28.518Z",
+        "isDir": false
+      },
+      {
+        "name": "2026-03-25-sovereign-systems-design.md",
+        "relPath": "docs/superpowers/specs/2026-03-25-sovereign-systems-design.md",
+        "ext": ".md",
+        "sizeBytes": 22703,
+        "mtimeIso": "2026-05-24T15:10:28.517Z",
+        "isDir": false
+      }
+    ],
+    "total": 20,
+    "shown": 20
+  },
+  "design-proposals": {
+    "files": [
+      {
+        "name": "2026-05-24-astro-6-migration-scope.md",
+        "relPath": "docs/design-proposals/2026-05-24-astro-6-migration-scope.md",
+        "ext": ".md",
+        "sizeBytes": 5531,
+        "mtimeIso": "2026-05-24T17:03:31.459Z",
+        "isDir": false
+      },
+      {
+        "name": "2026-04-25-node-shapes.md",
+        "relPath": "docs/design-proposals/2026-04-25-node-shapes.md",
+        "ext": ".md",
+        "sizeBytes": 5733,
+        "mtimeIso": "2026-05-24T15:10:27.272Z",
+        "isDir": false
+      }
+    ],
+    "total": 2,
+    "shown": 2
+  },
+  "social-content-calendar": {
+    "files": [
+      {
+        "name": "carousel.md",
+        "relPath": "docs/social-content-calendar/carousel.md",
+        "ext": ".md",
+        "sizeBytes": 87041,
+        "mtimeIso": "2026-05-24T15:10:28.504Z",
+        "isDir": false
+      },
+      {
+        "name": "email.md",
+        "relPath": "docs/social-content-calendar/email.md",
+        "ext": ".md",
+        "sizeBytes": 12695,
+        "mtimeIso": "2026-05-24T15:10:28.504Z",
+        "isDir": false
+      },
+      {
+        "name": "guide.md",
+        "relPath": "docs/social-content-calendar/guide.md",
+        "ext": ".md",
+        "sizeBytes": 17914,
+        "mtimeIso": "2026-05-24T15:10:28.504Z",
+        "isDir": false
+      },
+      {
+        "name": "other.md",
+        "relPath": "docs/social-content-calendar/other.md",
+        "ext": ".md",
+        "sizeBytes": 18986,
+        "mtimeIso": "2026-05-24T15:10:28.504Z",
+        "isDir": false
+      },
+      {
+        "name": "post.md",
+        "relPath": "docs/social-content-calendar/post.md",
+        "ext": ".md",
+        "sizeBytes": 20982,
+        "mtimeIso": "2026-05-24T15:10:28.504Z",
+        "isDir": false
+      },
+      {
+        "name": "reel.md",
+        "relPath": "docs/social-content-calendar/reel.md",
+        "ext": ".md",
+        "sizeBytes": 64541,
+        "mtimeIso": "2026-05-24T15:10:28.504Z",
+        "isDir": false
+      },
+      {
+        "name": "video.md",
+        "relPath": "docs/social-content-calendar/video.md",
+        "ext": ".md",
+        "sizeBytes": 20380,
+        "mtimeIso": "2026-05-24T15:10:28.504Z",
+        "isDir": false
+      },
+      {
+        "name": "README.md",
+        "relPath": "docs/social-content-calendar/README.md",
+        "ext": ".md",
+        "sizeBytes": 931,
+        "mtimeIso": "2026-05-24T15:10:28.502Z",
+        "isDir": false
+      }
+    ],
+    "total": 8,
+    "shown": 8
+  },
+  "critiques": {
+    "files": [
+      {
+        "name": "2026-04-30-spiral-hero-polish-critique.md",
+        "relPath": "docs/critiques/2026-04-30-spiral-hero-polish-critique.md",
+        "ext": ".md",
+        "sizeBytes": 13570,
+        "mtimeIso": "2026-05-24T15:10:27.270Z",
+        "isDir": false
+      }
+    ],
+    "total": 1,
+    "shown": 1
+  },
+  "timelines": {
+    "files": [
+      {
+        "name": "2026-05-01-spiral-evolution-timeline.md",
+        "relPath": "docs/timelines/2026-05-01-spiral-evolution-timeline.md",
+        "ext": ".md",
+        "sizeBytes": 31155,
+        "mtimeIso": "2026-05-24T15:10:28.518Z",
+        "isDir": false
+      }
+    ],
+    "total": 1,
+    "shown": 1
+  },
+  "sops": {
+    "files": [
+      {
+        "name": "SOP-SS-ATM-001_001-atomic-decomposition.md",
+        "relPath": "docs/sops/SOP-SS-ATM-001_001-atomic-decomposition.md",
+        "ext": ".md",
+        "sizeBytes": 5328,
+        "mtimeIso": "2026-05-24T15:10:28.506Z",
+        "isDir": false
+      },
+      {
+        "name": "SOP-SS-CLT-001_001-ontology_client_decisions.md",
+        "relPath": "docs/sops/SOP-SS-CLT-001_001-ontology_client_decisions.md",
+        "ext": ".md",
+        "sizeBytes": 8992,
+        "mtimeIso": "2026-05-24T15:10:28.506Z",
+        "isDir": false
+      },
+      {
+        "name": "SOP-SS-CNT-001_001-content-extraction-and-node-injection.md",
+        "relPath": "docs/sops/SOP-SS-CNT-001_001-content-extraction-and-node-injection.md",
+        "ext": ".md",
+        "sizeBytes": 9767,
+        "mtimeIso": "2026-05-24T15:10:28.506Z",
+        "isDir": false
+      },
+      {
+        "name": "SOP-SS-ISS-001-001-ontology-issue-specification.md",
+        "relPath": "docs/sops/SOP-SS-ISS-001-001-ontology-issue-specification.md",
+        "ext": ".md",
+        "sizeBytes": 6943,
+        "mtimeIso": "2026-05-24T15:10:28.506Z",
+        "isDir": false
+      },
+      {
+        "name": "SOP-SS-PRC-001_001-ontology_meta_process.md",
+        "relPath": "docs/sops/SOP-SS-PRC-001_001-ontology_meta_process.md",
+        "ext": ".md",
+        "sizeBytes": 5986,
+        "mtimeIso": "2026-05-24T15:10:28.506Z",
+        "isDir": false
+      },
+      {
+        "name": "SOP-SS-QAB-001_001-project-board-qa.md",
+        "relPath": "docs/sops/SOP-SS-QAB-001_001-project-board-qa.md",
+        "ext": ".md",
+        "sizeBytes": 5360,
+        "mtimeIso": "2026-05-24T15:10:28.506Z",
+        "isDir": false
+      },
+      {
+        "name": "SOP-SS-REV-001_001-evaluation-to-growth-review-chain.md",
+        "relPath": "docs/sops/SOP-SS-REV-001_001-evaluation-to-growth-review-chain.md",
+        "ext": ".md",
+        "sizeBytes": 9272,
+        "mtimeIso": "2026-05-24T15:10:28.506Z",
+        "isDir": false
+      },
+      {
+        "name": "SOP-SS-TRK-001_001-ontology_issue_tracking.md",
+        "relPath": "docs/sops/SOP-SS-TRK-001_001-ontology_issue_tracking.md",
+        "ext": ".md",
+        "sizeBytes": 4933,
+        "mtimeIso": "2026-05-24T15:10:28.506Z",
+        "isDir": false
+      },
+      {
+        "name": "tracking",
+        "relPath": "docs/sops/tracking",
+        "ext": "",
+        "sizeBytes": 0,
+        "mtimeIso": "2026-05-24T15:10:28.506Z",
+        "isDir": true
+      }
+    ],
+    "total": 9,
+    "shown": 9
+  },
+  "runbooks": {
+    "files": [
+      {
+        "name": "deploy-paths.md",
+        "relPath": "docs/runbooks/deploy-paths.md",
+        "ext": ".md",
+        "sizeBytes": 6892,
+        "mtimeIso": "2026-05-24T15:10:28.502Z",
+        "isDir": false
+      },
+      {
+        "name": "cf-token-rotation.md",
+        "relPath": "docs/runbooks/cf-token-rotation.md",
+        "ext": ".md",
+        "sizeBytes": 6693,
+        "mtimeIso": "2026-05-24T15:10:28.499Z",
+        "isDir": false
+      }
+    ],
+    "total": 2,
+    "shown": 2
+  },
+  "manifests": {
+    "files": [
+      {
+        "name": "2026-04-30-project-manifest-annotated-bibliography.md",
+        "relPath": "docs/manifests/2026-04-30-project-manifest-annotated-bibliography.md",
+        "ext": ".md",
+        "sizeBytes": 5287938,
+        "mtimeIso": "2026-05-24T15:10:28.490Z",
+        "isDir": false
+      },
+      {
+        "name": "2026-04-29-project-manifest-annotated-bibliography.md",
+        "relPath": "docs/manifests/2026-04-29-project-manifest-annotated-bibliography.md",
+        "ext": ".md",
+        "sizeBytes": 2434519,
+        "mtimeIso": "2026-05-24T15:10:28.430Z",
+        "isDir": false
+      }
+    ],
+    "total": 2,
+    "shown": 2
+  },
+  "reports": {
+    "files": [
+      {
+        "name": "2026-04-04",
+        "relPath": "docs/reports/2026-04-04",
+        "ext": "",
+        "sizeBytes": 0,
+        "mtimeIso": "2026-05-24T15:10:28.499Z",
+        "isDir": true
+      },
+      {
+        "name": "2026-04-27-maddie-case-study.md",
+        "relPath": "docs/reports/2026-04-27-maddie-case-study.md",
+        "ext": ".md",
+        "sizeBytes": 3532,
+        "mtimeIso": "2026-05-24T15:10:28.499Z",
+        "isDir": false
+      },
+      {
+        "name": "2026-04-27-maddie-launch-checklist.md",
+        "relPath": "docs/reports/2026-04-27-maddie-launch-checklist.md",
+        "ext": ".md",
+        "sizeBytes": 1498,
+        "mtimeIso": "2026-05-24T15:10:28.499Z",
+        "isDir": false
+      },
+      {
+        "name": "2026-04-27-prompt-atom-registry.md",
+        "relPath": "docs/reports/2026-04-27-prompt-atom-registry.md",
+        "ext": ".md",
+        "sizeBytes": 26663,
+        "mtimeIso": "2026-05-24T15:10:28.499Z",
+        "isDir": false
+      },
+      {
+        "name": "2026-04-29-maddie-asks-from-stream-a.md",
+        "relPath": "docs/reports/2026-04-29-maddie-asks-from-stream-a.md",
+        "ext": ".md",
+        "sizeBytes": 7402,
+        "mtimeIso": "2026-05-24T15:10:28.499Z",
+        "isDir": false
+      },
+      {
+        "name": "2026-04-30-ingest-digest-implementation-log.md",
+        "relPath": "docs/reports/2026-04-30-ingest-digest-implementation-log.md",
+        "ext": ".md",
+        "sizeBytes": 6151,
+        "mtimeIso": "2026-05-24T15:10:28.499Z",
+        "isDir": false
+      }
+    ],
+    "total": 6,
+    "shown": 6
+  },
+  "proofs": {
+    "files": [
+      {
+        "name": "quiz-flow",
+        "relPath": "docs/proofs/quiz-flow",
+        "ext": "",
+        "sizeBytes": 0,
+        "mtimeIso": "2026-05-24T15:10:28.498Z",
+        "isDir": true
+      },
+      {
+        "name": "spiral-vessel-variants",
+        "relPath": "docs/proofs/spiral-vessel-variants",
+        "ext": "",
+        "sizeBytes": 0,
+        "mtimeIso": "2026-05-24T15:10:28.498Z",
+        "isDir": true
+      },
+      {
+        "name": "README.md",
+        "relPath": "docs/proofs/README.md",
+        "ext": ".md",
+        "sizeBytes": 2569,
+        "mtimeIso": "2026-05-24T15:10:28.497Z",
+        "isDir": false
+      },
+      {
+        "name": "nav-variants",
+        "relPath": "docs/proofs/nav-variants",
+        "ext": "",
+        "sizeBytes": 0,
+        "mtimeIso": "2026-05-24T15:10:28.497Z",
+        "isDir": true
+      },
+      {
+        "name": "2026-04-29-stream-a-deploy-diff.md",
+        "relPath": "docs/proofs/2026-04-29-stream-a-deploy-diff.md",
+        "ext": ".md",
+        "sizeBytes": 3776,
+        "mtimeIso": "2026-05-24T15:10:28.495Z",
+        "isDir": false
+      }
+    ],
+    "total": 5,
+    "shown": 5
+  },
+  "decisions-docs": {
+    "files": [
+      {
+        "name": "2026-04-04-node-architecture-decision-deck.md",
+        "relPath": "docs/decisions/2026-04-04-node-architecture-decision-deck.md",
+        "ext": ".md",
+        "sizeBytes": 4269,
+        "mtimeIso": "2026-05-24T15:10:27.272Z",
+        "isDir": false
+      },
+      {
+        "name": "2026-04-04-revenue-agreement-draft.md",
+        "relPath": "docs/decisions/2026-04-04-revenue-agreement-draft.md",
+        "ext": ".md",
+        "sizeBytes": 4365,
+        "mtimeIso": "2026-05-24T15:10:27.272Z",
+        "isDir": false
+      },
+      {
+        "name": "2026-04-04-water-hub-placement.md",
+        "relPath": "docs/decisions/2026-04-04-water-hub-placement.md",
+        "ext": ".md",
+        "sizeBytes": 3530,
+        "mtimeIso": "2026-05-24T15:10:27.272Z",
+        "isDir": false
+      },
+      {
+        "name": "2026-05-01-water-report-fluoride-bug-diagnosis.md",
+        "relPath": "docs/decisions/2026-05-01-water-report-fluoride-bug-diagnosis.md",
+        "ext": ".md",
+        "sizeBytes": 7623,
+        "mtimeIso": "2026-05-24T15:10:27.272Z",
+        "isDir": false
+      },
+      {
+        "name": "2026-04-04-ewg-api-feasibility.md",
+        "relPath": "docs/decisions/2026-04-04-ewg-api-feasibility.md",
+        "ext": ".md",
+        "sizeBytes": 3426,
+        "mtimeIso": "2026-05-24T15:10:27.270Z",
+        "isDir": false
+      }
+    ],
+    "total": 5,
+    "shown": 5
+  },
+  "triangle-irf-iii-033": {
+    "files": [
+      {
+        "name": "IRF-III-033.md",
+        "relPath": "docs/triangle/IRF-III-033.md",
+        "ext": ".md",
+        "sizeBytes": 5918,
+        "mtimeIso": "2026-05-24T15:10:28.518Z",
+        "isDir": false
+      }
+    ],
+    "total": 1,
+    "shown": 1
+  },
+  "session-working-on": {
+    "files": [],
+    "total": 0,
+    "shown": 0
+  },
+  "session-2251": {
+    "files": [],
+    "total": 0,
+    "shown": 0
+  },
+  "session-export-2026-04-25": {
+    "files": [
+      {
+        "name": "export-2026-04-25T20-24-30.md",
+        "relPath": "export-2026-04-25T20-24-30.md",
+        "ext": ".md",
+        "sizeBytes": 4906,
+        "mtimeIso": "2026-05-24T15:10:28.518Z",
+        "isDir": false
+      }
+    ],
+    "total": 1,
+    "shown": 1
+  }
+}

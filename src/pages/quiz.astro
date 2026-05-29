@@ -14,7 +14,11 @@
  */
 import Base from '../layouts/Base.astro';
 import { config } from '../data/hub.config';
-import { quizQuestions, quizResultCopy, quizCaptureCopy } from '../data/quiz.config';
+import {
+  quizQuestions,
+  quizResultCopy,
+  quizCaptureCopy,
+} from '../data/quiz.config';
 
 const resultCopyJson = JSON.stringify(quizResultCopy);
 const captureCopyJson = JSON.stringify(quizCaptureCopy);
@@ -49,77 +53,144 @@ const questionsJson = JSON.stringify(quizQuestions);
   title="Find Your Starting Point"
   description="Five questions to place you on the spiral. Your starting point is where the work meets you, not where you think you should begin."
 >
-  <section class="min-h-[80vh] flex items-center justify-center py-20 px-6 glow-bg">
-    <div class="max-w-xl mx-auto w-full" id="quiz-root" data-nodes={nodesJson} data-pillars={pillarsJson} data-questions={questionsJson} data-result-copy={resultCopyJson} data-capture-copy={captureCopyJson}>
+  <section
+    class="min-h-[80vh] flex items-center justify-center py-20 px-6 glow-bg"
+  >
+    <div
+      class="max-w-xl mx-auto w-full"
+      id="quiz-root"
+      data-nodes={nodesJson}
+      data-pillars={pillarsJson}
+      data-questions={questionsJson}
+      data-result-copy={resultCopyJson}
+      data-capture-copy={captureCopyJson}
+    >
       <!-- Progress dots -->
-      <div id="quiz-progress" class="flex justify-center gap-2 mb-10" aria-hidden="true"></div>
+      <div
+        id="quiz-progress"
+        class="flex justify-center gap-2 mb-10"
+        aria-hidden="true"
+      >
+      </div>
 
       <!-- Question stage (one step at a time) -->
       <div id="quiz-stage" class="min-h-[420px]">
-        {quizQuestions.map((q) => (
-          <div class="quiz-step hidden" data-step={q.step} data-axis={q.axis}>
-            <h1 class="font-heading text-[clamp(28px,4.5vw,40px)] font-light text-white mb-3 text-center">{q.text}</h1>
-            <p class="text-white/40 text-[14px] font-light text-center mb-8">{q.subtitle}</p>
-            {q.step === 2 ? (
-              <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                {q.answers.map((a) => (
-                  <button class="quiz-option glass-card p-5 text-left" data-value={a.value}>
-                    {a.emoji && <span class="text-2xl block mb-1">{a.emoji}</span>}
-                    <span class="block text-white text-[15px] font-light">{a.text}</span>
-                    {a.sublabel && <span class="block text-white/40 text-[12px] mt-1">{a.sublabel}</span>}
-                  </button>
-                ))}
-              </div>
-            ) : (
-              <div class="space-y-3">
-                {q.answers.map((a) => (
-                  <button class="quiz-option glass-card w-full p-5 text-left" data-value={a.value}>
-                    <span class="block text-white text-[15px] font-light leading-snug">{a.text}</span>
-                  </button>
-                ))}
-              </div>
-            )}
-          </div>
-        ))}
+        {
+          quizQuestions.map((q) => (
+            <div class="quiz-step hidden" data-step={q.step} data-axis={q.axis}>
+              <h1 class="font-heading text-[clamp(28px,4.5vw,40px)] font-light text-white mb-3 text-center">
+                {q.text}
+              </h1>
+              <p class="text-white/40 text-[14px] font-light text-center mb-8">
+                {q.subtitle}
+              </p>
+              {q.step === 2 ? (
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                  {q.answers.map((a) => (
+                    <button
+                      class="quiz-option glass-card p-5 text-left"
+                      data-value={a.value}
+                    >
+                      {a.emoji && (
+                        <span class="text-2xl block mb-1">{a.emoji}</span>
+                      )}
+                      <span class="block text-white text-[15px] font-light">
+                        {a.text}
+                      </span>
+                      {a.sublabel && (
+                        <span class="block text-white/40 text-[12px] mt-1">
+                          {a.sublabel}
+                        </span>
+                      )}
+                    </button>
+                  ))}
+                </div>
+              ) : (
+                <div class="space-y-3">
+                  {q.answers.map((a) => (
+                    <button
+                      class="quiz-option glass-card w-full p-5 text-left"
+                      data-value={a.value}
+                    >
+                      <span class="block text-white text-[15px] font-light leading-snug">
+                        {a.text}
+                      </span>
+                    </button>
+                  ))}
+                </div>
+              )}
+            </div>
+          ))
+        }
 
         <!-- Result panel -->
         <div class="quiz-step hidden" data-step="result">
-          <p class="text-white/40 text-[12px] uppercase tracking-[0.15em] text-center mb-3">{quizResultCopy.label}</p>
+          <p
+            class="text-white/40 text-[12px] uppercase tracking-[0.15em] text-center mb-3"
+          >
+            {quizResultCopy.label}
+          </p>
           <div id="result-card" class="glass-card p-8 text-center">
             <div id="result-emoji" class="text-5xl mb-4"></div>
-            <h2 id="result-title" class="font-heading text-[clamp(26px,4vw,36px)] font-light text-white mb-2"></h2>
-            <p id="result-tagline" class="text-white/55 text-[15px] font-light italic mb-6"></p>
-            <p id="result-why" class="text-white/40 text-[13px] font-light leading-relaxed mb-8 max-w-md mx-auto"></p>
+            <h2
+              id="result-title"
+              class="font-heading text-[clamp(26px,4vw,36px)] font-light text-white mb-2"
+            >
+            </h2>
+            <p
+              id="result-tagline"
+              class="text-white/55 text-[15px] font-light italic mb-6"
+            >
+            </p>
+            <p
+              id="result-why"
+              class="text-white/40 text-[13px] font-light leading-relaxed mb-8 max-w-md mx-auto"
+            >
+            </p>
             <a
               id="result-cta"
               href="/"
               class="inline-block bg-ocean-500 hover:bg-ocean-400 text-white font-medium py-3 px-8 rounded-lg transition-all shadow-lg shadow-ocean-500/10 active:scale-[0.98] text-[14px]"
-            >Visit your node →</a>
+              >Visit your node →</a
+            >
           </div>
 
           <!-- Optional capture (value already delivered above) -->
           <div class="mt-10 text-center">
-            <p class="text-white/35 text-[12px] uppercase tracking-[0.15em] mb-4">{quizCaptureCopy.label}</p>
-            <p class="text-white/30 text-[13px] font-light mb-5">{quizCaptureCopy.description}</p>
+            <p
+              class="text-white/35 text-[12px] uppercase tracking-[0.15em] mb-4"
+            >
+              {quizCaptureCopy.label}
+            </p>
+            <p class="text-white/30 text-[13px] font-light mb-5">
+              {quizCaptureCopy.description}
+            </p>
             <form id="quiz-capture-form" class="space-y-3 max-w-sm mx-auto">
               <input
                 type="text"
                 name="name"
+                aria-label={quizCaptureCopy.namePlaceholder}
                 placeholder={quizCaptureCopy.namePlaceholder}
                 class="w-full bg-ocean-800/50 border border-ocean-500/20 rounded-lg px-4 py-3 text-white placeholder:text-white/20 focus:outline-none focus:border-ocean-400 transition-colors text-[14px]"
               />
               <input
                 type="email"
                 name="email"
+                aria-label={quizCaptureCopy.emailPlaceholder}
                 placeholder={quizCaptureCopy.emailPlaceholder}
                 class="w-full bg-ocean-800/50 border border-ocean-500/20 rounded-lg px-4 py-3 text-white placeholder:text-white/20 focus:outline-none focus:border-ocean-400 transition-colors text-[14px]"
               />
               <button
                 type="submit"
                 class="w-full bg-transparent border border-ocean-500/30 hover:border-ocean-400 text-white/70 hover:text-white font-medium py-3 rounded-lg transition-all text-[13px]"
-              >{quizCaptureCopy.submitLabel}</button>
+                >{quizCaptureCopy.submitLabel}</button
+              >
             </form>
-            <p id="capture-status" class="mt-4 text-[11px] text-white/30 hidden"></p>
+            <p
+              id="capture-status"
+              class="mt-4 text-[11px] text-white/30 hidden"
+            >
+            </p>
           </div>
         </div>
       </div>
@@ -129,7 +200,8 @@ const questionsJson = JSON.stringify(quizQuestions);
         <button
           id="quiz-back"
           class="text-white/30 hover:text-white/60 text-[12px] font-light tracking-wide uppercase transition-colors hidden"
-        >&larr; Back</button>
+          >&larr; Back</button
+        >
       </div>
     </div>
   </section>
@@ -151,7 +223,11 @@ const questionsJson = JSON.stringify(quizQuestions);
 </style>
 
 <script>
-  import type { QuizQuestion, QuizResultCopy, QuizCaptureCopy } from '../data/quiz.config';
+  import type {
+    QuizQuestion,
+    QuizResultCopy,
+    QuizCaptureCopy,
+  } from '../data/quiz.config';
 
   // ---------------------------------------------------------------
   // Types & types-like (the script is plain JS at runtime; the
@@ -176,8 +252,12 @@ const questionsJson = JSON.stringify(quizQuestions);
 
   const nodes: QuizNode[] = JSON.parse(root.dataset.nodes ?? '[]');
   const questions: QuizQuestion[] = JSON.parse(root.dataset.questions ?? '[]');
-  const resultCopy: QuizResultCopy = JSON.parse(root.dataset.resultCopy ?? '{}');
-  const captureCopy: QuizCaptureCopy = JSON.parse(root.dataset.captureCopy ?? '{}');
+  const resultCopy: QuizResultCopy = JSON.parse(
+    root.dataset.resultCopy ?? '{}',
+  );
+  const captureCopy: QuizCaptureCopy = JSON.parse(
+    root.dataset.captureCopy ?? '{}',
+  );
   const TOTAL_STEPS = questions.length;
 
   // --- State ----------------------------------------------------
@@ -190,19 +270,24 @@ const questionsJson = JSON.stringify(quizQuestions);
   const progress = document.getElementById('quiz-progress')!;
   for (let i = 0; i < TOTAL_STEPS; i++) {
     const dot = document.createElement('span');
-    dot.className = 'inline-block w-2 h-2 rounded-full bg-white/15 transition-all';
+    dot.className =
+      'inline-block w-2 h-2 rounded-full bg-white/15 transition-all';
     dot.dataset.dot = String(i + 1);
     progress.appendChild(dot);
   }
   function paintProgress() {
-    progress.querySelectorAll<HTMLSpanElement>('span[data-dot]').forEach((d) => {
-      const n = Number(d.dataset.dot);
-      d.className = 'inline-block w-2 h-2 rounded-full transition-all ' + (
-        n < currentStep ? 'bg-ocean-500'
-        : n === currentStep ? 'bg-ocean-300 scale-125'
-        : 'bg-white/15'
-      );
-    });
+    progress
+      .querySelectorAll<HTMLSpanElement>('span[data-dot]')
+      .forEach((d) => {
+        const n = Number(d.dataset.dot);
+        d.className =
+          'inline-block w-2 h-2 rounded-full transition-all ' +
+          (n < currentStep
+            ? 'bg-ocean-500'
+            : n === currentStep
+              ? 'bg-ocean-300 scale-125'
+              : 'bg-white/15');
+      });
   }
 
   // --- Step navigation ------------------------------------------
@@ -237,7 +322,9 @@ const questionsJson = JSON.stringify(quizQuestions);
     const value = opt.dataset.value ?? '';
     answers[Number(step)] = value;
     // Visual select feedback
-    stepEl.querySelectorAll('.quiz-option').forEach((o) => o.classList.remove('selected'));
+    stepEl
+      .querySelectorAll('.quiz-option')
+      .forEach((o) => o.classList.remove('selected'));
     opt.classList.add('selected');
     // Auto-advance after a brief delay so the user sees their selection register
     setTimeout(() => {
@@ -270,7 +357,9 @@ const questionsJson = JSON.stringify(quizQuestions);
     if (pillarAns === node.pillarSlug) score += 3;
     const themeBundles = [answers[3], answers[4], answers[5]].filter(Boolean);
     const userThemes = new Set<string>();
-    themeBundles.forEach((b) => b.split(',').forEach((t) => userThemes.add(t.trim())));
+    themeBundles.forEach((b) =>
+      b.split(',').forEach((t) => userThemes.add(t.trim())),
+    );
     node.themes.forEach((t) => {
       if (userThemes.has(t)) score += 2;
     });
@@ -285,29 +374,39 @@ const questionsJson = JSON.stringify(quizQuestions);
   const MAX_SCORE = 12;
 
   function showResult() {
-    const ranked = nodes.map((n) => ({ node: n, score: scoreNode(n) }))
+    const ranked = nodes
+      .map((n) => ({ node: n, score: scoreNode(n) }))
       .sort((a, b) => b.score - a.score);
     const top = ranked[0];
     if (!top) return;
     const normalized = Math.round((top.score / MAX_SCORE) * 100);
-    paintResult(top.node, normalized, ranked.slice(0, 3));
+    paintResult(top.node, normalized);
     showStep('result');
     fireCapture(top.node, normalized);
   }
 
-  function paintResult(node: QuizNode, score: number, top3: { node: QuizNode; score: number }[]) {
-    (document.getElementById('result-emoji')!).textContent = node.emoji;
-    (document.getElementById('result-title')!).textContent = `Node ${node.id} — ${node.name}`;
-    (document.getElementById('result-tagline')!).textContent = node.tagline;
+  function paintResult(node: QuizNode, score: number) {
+    document.getElementById('result-emoji')!.textContent = node.emoji;
+    document.getElementById('result-title')!.textContent =
+      `Node ${node.id} — ${node.name}`;
+    document.getElementById('result-tagline')!.textContent = node.tagline;
     const cta = document.getElementById('result-cta') as HTMLAnchorElement;
     cta.href = node.url;
-    const ctaTemplate = node.status === 'locked' ? resultCopy.ctaPreviewTemplate : resultCopy.ctaVisitTemplate;
+    const ctaTemplate =
+      node.status === 'locked'
+        ? resultCopy.ctaPreviewTemplate
+        : resultCopy.ctaVisitTemplate;
     cta.textContent = ctaTemplate.replace('{nodeId}', String(node.id));
     const why = document.getElementById('result-why')!;
-    const phaseHit = answers[1] === node.phase || answers[1] === 'ALL' ? 'phase resonance' : '';
+    const phaseHit =
+      answers[1] === node.phase || answers[1] === 'ALL'
+        ? 'phase resonance'
+        : '';
     const pillarHit = answers[2] === node.pillarSlug ? 'pillar resonance' : '';
     const themeNames = node.themes.join(', ');
-    const reasons = [phaseHit, pillarHit].filter(Boolean).join(' + ') || resultCopy.whyReasonsFallback;
+    const reasons =
+      [phaseHit, pillarHit].filter(Boolean).join(' + ') ||
+      resultCopy.whyReasonsFallback;
     why.textContent = resultCopy.whyTemplate
       .replace('{score}', String(score))
       .replace('{reasons}', reasons)
@@ -319,16 +418,26 @@ const questionsJson = JSON.stringify(quizQuestions);
     // Capture happens automatically when result renders if the user
     // also fills in name+email. The capture form's submit is what
     // actually sends — this function is just the analytics ping.
-    console.log(`[EA] action=quiz_complete node=${node.id} score=${score} source=hub`);
+    console.log(
+      `[EA] action=quiz_complete node=${node.id} score=${score} source=hub`,
+    );
   }
 
-  const captureForm = document.getElementById('quiz-capture-form') as HTMLFormElement;
+  const captureForm = document.getElementById(
+    'quiz-capture-form',
+  ) as HTMLFormElement;
   const captureStatus = document.getElementById('capture-status')!;
   captureForm?.addEventListener('submit', async (e) => {
     e.preventDefault();
-    const nameInput = captureForm.querySelector('input[name="name"]') as HTMLInputElement;
-    const emailInput = captureForm.querySelector('input[name="email"]') as HTMLInputElement;
-    const button = captureForm.querySelector('button[type="submit"]') as HTMLButtonElement;
+    const nameInput = captureForm.querySelector(
+      'input[name="name"]',
+    ) as HTMLInputElement;
+    const emailInput = captureForm.querySelector(
+      'input[name="email"]',
+    ) as HTMLInputElement;
+    const button = captureForm.querySelector(
+      'button[type="submit"]',
+    ) as HTMLButtonElement;
     const name = nameInput.value.trim();
     const email = emailInput.value.trim();
     if (!email) {
@@ -340,10 +449,13 @@ const questionsJson = JSON.stringify(quizQuestions);
     button.textContent = captureCopy.statusSending;
     button.disabled = true;
 
-    const ranked = nodes.map((n) => ({ node: n, score: scoreNode(n) })).sort((a, b) => b.score - a.score);
+    const ranked = nodes
+      .map((n) => ({ node: n, score: scoreNode(n) }))
+      .sort((a, b) => b.score - a.score);
     const top = ranked[0];
     const normalized = top ? Math.round((top.score / MAX_SCORE) * 100) : 0;
-    const phaseAns = answers[1] === 'ALL' ? null : (answers[1] as Phase | undefined);
+    const phaseAns =
+      answers[1] === 'ALL' ? null : (answers[1] as Phase | undefined);
 
     try {
       await fetch('/capture', {

@@ -27,6 +27,7 @@
  * flow never blocks on capture latency or webhook availability.
  */
 import type { APIRoute } from 'astro';
+import { env as cfEnv } from 'cloudflare:workers';
 
 export const prerender = false;
 
@@ -39,10 +40,10 @@ interface CapturePayload {
   // Quiz extension — present when the call comes from the
   // node-placement quiz at /quiz (or any successor that uses
   // the same affinity-scoring contract).
-  quizNodeId?: number;        // 1..13
-  quizScore?: number;         // 0..100 (normalized affinity for top node)
-  quizPath?: string;          // serialized answers e.g. "ALIGN|inner|3,5,2,4,5"
-  selectedPillar?: string;    // pillar slug
+  quizNodeId?: number; // 1..13
+  quizScore?: number; // 0..100 (normalized affinity for top node)
+  quizPath?: string; // serialized answers e.g. "ALIGN|inner|3,5,2,4,5"
+  selectedPillar?: string; // pillar slug
   selectedPhase?: Phase;
   // Decision-board extension — present when the call comes from
   // /decisions option clicks. Each click captures (a) which decision
@@ -74,12 +75,14 @@ function randomId(): string {
 
 function ipHintFromHeaders(headers: Headers): string {
   // Cloudflare provides the connecting IP via CF-Connecting-IP. We keep
-  // only the last octet (or last :: segment for v6) — enough to
-  // de-duplicate aggressive resubmits, not enough to identify.
+  // only a coarse fragment — enough to de-duplicate aggressive resubmits,
+  // not enough to identify. For IPv4 that's the last octet; for IPv6 it's
+  // the FIRST hextet (part of the shared routing prefix) — never the
+  // trailing interface identifier, which would single out a host.
   const ip = headers.get('CF-Connecting-IP') ?? '';
   if (!ip) return '';
   if (ip.includes(':')) {
-    return ip.split(':').pop() ?? '';
+    return ip.split(':').find((seg) => seg.length > 0) ?? '';
   }
   return ip.split('.').pop() ?? '';
 }
@@ -89,12 +92,13 @@ interface Bindings {
   SUBMISSIONS?: KVNamespace;
 }
 
-function bindings(locals: App.Locals | undefined): Bindings {
-  // Astro Cloudflare adapter exposes Cloudflare bindings on
-  // `locals.runtime.env`. In `astro dev` (no Cloudflare runtime),
-  // `runtime` is undefined — degrade gracefully.
-  const env = (locals as { runtime?: { env?: Bindings } } | undefined)?.runtime?.env;
-  return env ?? {};
+function bindings(): Bindings {
+  // Astro v6 / @astrojs/cloudflare v13 removed `Astro.locals.runtime.env`
+  // (accessing it now throws); bindings come from the `cloudflare:workers`
+  // module instead. When a binding isn't provisioned (e.g. `astro dev`
+  // without wrangler bindings), the field is simply undefined and the
+  // matching sink degrades gracefully.
+  return cfEnv as unknown as Bindings;
 }
 
 async function persistToKv(
@@ -102,7 +106,9 @@ async function persistToKv(
   payload: Record<string, unknown>,
 ): Promise<void> {
   if (!env.SUBMISSIONS) {
-    console.warn('[capture] SUBMISSIONS KV not bound; skipping persistent sink');
+    console.warn(
+      '[capture] SUBMISSIONS KV not bound; skipping persistent sink',
+    );
     return;
   }
   const key = `submission:${new Date().toISOString()}:${randomId()}`;
@@ -119,18 +125,25 @@ async function dispatchToGhl(
 ): Promise<void> {
   const url = env.GHL_WEBHOOK_URL;
   if (!url) return;
+  // Bound the outbound call so a slow/hanging GHL endpoint can't pin the
+  // worker open — the client response should never wait on a flaky webhook.
+  const controller = new AbortController();
+  const timeout = setTimeout(() => controller.abort(), 5000);
   try {
     await fetch(url, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(payload),
+      signal: controller.signal,
     });
   } catch (err) {
     console.error('[capture] GHL webhook failed:', err);
+  } finally {
+    clearTimeout(timeout);
   }
 }
 
-export const POST: APIRoute = async ({ request, locals }) => {
+export const POST: APIRoute = async ({ request }) => {
   let data: CapturePayload;
   try {
     data = (await request.json()) as CapturePayload;
@@ -141,13 +154,18 @@ export const POST: APIRoute = async ({ request, locals }) => {
     });
   }
 
-  const rawEmail = typeof data.email === 'string' ? data.email.trim() : '';
-  const name = typeof data.name === 'string' ? data.name.trim() : '';
-  const source = typeof data.source === 'string' ? data.source : 'unknown';
+  const rawEmail =
+    typeof data.email === 'string' ? data.email.trim().slice(0, 254) : '';
+  const name =
+    typeof data.name === 'string' ? data.name.trim().slice(0, 120) : '';
+  const source =
+    typeof data.source === 'string' ? data.source.slice(0, 60) : 'unknown';
 
   // Decision-board submissions are self-attributing — synthesize an email
   // if one wasn't provided so KV writes still succeed.
-  const email = rawEmail || (source === DECISION_BOARD_SOURCE ? DECISION_BOARD_DEFAULT_EMAIL : '');
+  const email =
+    rawEmail ||
+    (source === DECISION_BOARD_SOURCE ? DECISION_BOARD_DEFAULT_EMAIL : '');
 
   if (!email || !EMAIL_RE.test(email)) {
     return new Response(JSON.stringify({ error: 'Valid email required' }), {
@@ -157,26 +175,42 @@ export const POST: APIRoute = async ({ request, locals }) => {
   }
 
   const quiz: Partial<CapturePayload> = {};
-  if (typeof data.quizNodeId === 'number' && data.quizNodeId >= 1 && data.quizNodeId <= 13) {
+  if (
+    typeof data.quizNodeId === 'number' &&
+    data.quizNodeId >= 1 &&
+    data.quizNodeId <= 13
+  ) {
     quiz.quizNodeId = data.quizNodeId;
   }
   if (typeof data.quizScore === 'number' && Number.isFinite(data.quizScore)) {
     quiz.quizScore = Math.max(0, Math.min(100, data.quizScore));
   }
-  if (typeof data.quizPath === 'string') quiz.quizPath = data.quizPath.slice(0, 200);
-  if (typeof data.selectedPillar === 'string') quiz.selectedPillar = data.selectedPillar;
-  if (data.selectedPhase === 'ELEVATE' || data.selectedPhase === 'ALIGN' || data.selectedPhase === 'UNLOCK') {
+  if (typeof data.quizPath === 'string')
+    quiz.quizPath = data.quizPath.slice(0, 200);
+  if (typeof data.selectedPillar === 'string')
+    quiz.selectedPillar = data.selectedPillar;
+  if (
+    data.selectedPhase === 'ELEVATE' ||
+    data.selectedPhase === 'ALIGN' ||
+    data.selectedPhase === 'UNLOCK'
+  ) {
     quiz.selectedPhase = data.selectedPhase;
   }
 
   const decision: Partial<CapturePayload> = {};
   if (source === DECISION_BOARD_SOURCE) {
-    if (typeof data.decisionId === 'string') decision.decisionId = data.decisionId.slice(0, 80);
-    if (typeof data.chosenOptionLabel === 'string') decision.chosenOptionLabel = data.chosenOptionLabel.slice(0, 120);
-    if (typeof data.chosenOptionRecommended === 'boolean') decision.chosenOptionRecommended = data.chosenOptionRecommended;
-    if (typeof data.studioSuggestion === 'string') decision.studioSuggestion = data.studioSuggestion.slice(0, 1000);
-    if (typeof data.decisionCategory === 'string') decision.decisionCategory = data.decisionCategory.slice(0, 40);
-    if (typeof data.decisionOwner === 'string') decision.decisionOwner = data.decisionOwner.slice(0, 40);
+    if (typeof data.decisionId === 'string')
+      decision.decisionId = data.decisionId.slice(0, 80);
+    if (typeof data.chosenOptionLabel === 'string')
+      decision.chosenOptionLabel = data.chosenOptionLabel.slice(0, 120);
+    if (typeof data.chosenOptionRecommended === 'boolean')
+      decision.chosenOptionRecommended = data.chosenOptionRecommended;
+    if (typeof data.studioSuggestion === 'string')
+      decision.studioSuggestion = data.studioSuggestion.slice(0, 1000);
+    if (typeof data.decisionCategory === 'string')
+      decision.decisionCategory = data.decisionCategory.slice(0, 40);
+    if (typeof data.decisionOwner === 'string')
+      decision.decisionOwner = data.decisionOwner.slice(0, 40);
   }
 
   const enriched = {
@@ -189,11 +223,8 @@ export const POST: APIRoute = async ({ request, locals }) => {
     ipHint: ipHintFromHeaders(request.headers),
   };
 
-  const env = bindings(locals);
-  await Promise.all([
-    persistToKv(env, enriched),
-    dispatchToGhl(env, enriched),
-  ]);
+  const env = bindings();
+  await Promise.all([persistToKv(env, enriched), dispatchToGhl(env, enriched)]);
 
   return new Response(JSON.stringify({ success: true }), {
     status: 200,

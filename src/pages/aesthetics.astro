@@ -253,7 +253,7 @@ const CATEGORIES_IN_ORDER: VocabularyCategory[] = ['structure', 'visual', 'langu
       </p>
       <div class="substrate-grid">
         {nodes.map((n) => (
-          <a class="substrate-card" href={`/lineage/${n.envVar}`} style={`--card-accent: ${n.color}`}>
+          <a class="substrate-card" href={`/lineage/${n.envVar.toLowerCase()}`} style={`--card-accent: ${n.color}`}>
             <header class="substrate-header">
               <span class="substrate-id">#{n.id}</span>
               <span class="substrate-glyph" aria-hidden="true">{n.emoji}</span>

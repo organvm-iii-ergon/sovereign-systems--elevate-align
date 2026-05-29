@@ -1,7 +1,8 @@
 import { defineCollection, z } from 'astro:content';
+import { glob } from 'astro/loaders';
 
 const branches = defineCollection({
-  type: 'content',
+  loader: glob({ pattern: '**/*.md', base: './src/content/branches' }),
   schema: z.object({
     title: z.string(),
     emoji: z.string(),
@@ -13,7 +14,7 @@ const branches = defineCollection({
 });
 
 const pillars = defineCollection({
-  type: 'content',
+  loader: glob({ pattern: '**/*.md', base: './src/content/pillars' }),
   schema: z.object({
     title: z.string(),
     emoji: z.string(),
@@ -41,7 +42,7 @@ const toolRowSchema = z.object({
 });
 
 const nodes = defineCollection({
-  type: 'content',
+  loader: glob({ pattern: '**/*.md', base: './src/content/nodes' }),
   schema: z.object({
     title: z.string(),
     nodeId: z.number(),

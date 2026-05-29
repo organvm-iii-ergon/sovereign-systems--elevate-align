@@ -14,170 +14,220 @@
  */
 
 export type Element =
-  | 'photon'  | 'plasma'   | 'fire'   | 'lava'    | 'smoke'
-  | 'water'   | 'ice'      | 'vapor'  | 'salt'
-  | 'mist'    | 'dew'      | 'pollen' | 'petals'
-  | 'dust'    | 'regolith' | 'moonbeam'
-  | 'quartz'  | 'prism'    | 'mineral'| 'gold'
-  | 'shadow'  | 'light'    | 'ion'    | 'air'     | 'earth';
+  | 'photon'
+  | 'plasma'
+  | 'fire'
+  | 'lava'
+  | 'smoke'
+  | 'water'
+  | 'ice'
+  | 'vapor'
+  | 'salt'
+  | 'mist'
+  | 'dew'
+  | 'pollen'
+  | 'petals'
+  | 'dust'
+  | 'regolith'
+  | 'moonbeam'
+  | 'quartz'
+  | 'prism'
+  | 'mineral'
+  | 'gold'
+  | 'shadow'
+  | 'light'
+  | 'ion'
+  | 'air'
+  | 'earth';
 
 export type Biology =
-  | 'organic' | 'mineral' | 'synthetic' | 'cosmic'
-  | 'aquatic' | 'volcanic' | 'lunar';
+  | 'organic'
+  | 'mineral'
+  | 'synthetic'
+  | 'cosmic'
+  | 'aquatic'
+  | 'volcanic'
+  | 'lunar';
 
 export type ParticleBehavior =
-  | 'floaty'           // zero-g drift
-  | 'crystalline'      // 4-fold cardinal anchors
-  | 'rising'           // upward respawn loop
-  | 'spiraling'        // helical motion
-  | 'lattice'          // snap to grid points
-  | 'tidal'            // sin-wave bias
-  | 'radial-emission'  // radiate outward from center
-  | 'dual-gyre';       // two counter-rotating populations
+  | 'floaty' // zero-g drift
+  | 'crystalline' // 4-fold cardinal anchors
+  | 'rising' // upward respawn loop
+  | 'spiraling' // helical motion
+  | 'lattice' // snap to grid points
+  | 'tidal' // sin-wave bias
+  | 'radial-emission' // radiate outward from center
+  | 'dual-gyre'; // two counter-rotating populations
 
 export interface IconWorld {
   id: number;
-  themeName: string;                    // poetic — "Forge of Dawn", "Crystal Vault"
+  themeName: string; // poetic — "Forge of Dawn", "Crystal Vault"
   elements: Element[];
   phaseMix: { gas: number; liquid: number; solid: number; plasma: number };
   biology: Biology;
-  gravity: { x: number; y: number; z: number };  // local-frame vector
+  gravity: { x: number; y: number; z: number }; // local-frame vector
   particleBehavior: ParticleBehavior;
-  accentPalette: number[];              // theme-specific accent (hex ints) layered over chakra base
-  thermalAmpMul: number;                // ×PHASE_THERMAL — Halloween hot, Christmas calm
+  accentPalette: number[]; // theme-specific accent (hex ints) layered over chakra base
+  thermalAmpMul: number; // ×PHASE_THERMAL — Halloween hot, Christmas calm
   sizeBias: 'micro' | 'mixed' | 'macro';
 }
 
 export const ICON_WORLDS: Record<number, IconWorld> = {
   1: {
-    id: 1, themeName: 'Forge of Dawn',
+    id: 1,
+    themeName: 'Forge of Dawn',
     elements: ['photon', 'plasma', 'fire'],
     phaseMix: { gas: 0.0, liquid: 0.0, solid: 0.05, plasma: 0.95 },
     biology: 'cosmic',
-    gravity: { x: 0, y: 0, z: 0 },                // zero-g — pure radiance
+    gravity: { x: 0, y: 0, z: 0 }, // zero-g — pure radiance
     particleBehavior: 'radial-emission',
-    accentPalette: [0xfff7d6, 0xffaa3c, 0xfff0aa, 0xff5e1a],   // gold + white-hot
-    thermalAmpMul: 1.6, sizeBias: 'micro',
+    accentPalette: [0xfff7d6, 0xffaa3c, 0xfff0aa, 0xff5e1a], // gold + white-hot
+    thermalAmpMul: 1.6,
+    sizeBias: 'micro',
   },
   2: {
-    id: 2, themeName: 'Lunar Observatorium',
+    id: 2,
+    themeName: 'Lunar Observatorium',
     elements: ['mist', 'light', 'water'],
-    phaseMix: { gas: 0.30, liquid: 0.55, solid: 0.15, plasma: 0.0 },
+    phaseMix: { gas: 0.3, liquid: 0.55, solid: 0.15, plasma: 0.0 },
     biology: 'aquatic',
-    gravity: { x: 0, y: 0, z: 0 },                // zero-g — observation
+    gravity: { x: 0, y: 0, z: 0 }, // zero-g — observation
     particleBehavior: 'floaty',
     accentPalette: [0xc9d4f5, 0x6c4cd6, 0xa0c8ff, 0x88a4c4],
-    thermalAmpMul: 0.55, sizeBias: 'mixed',
+    thermalAmpMul: 0.55,
+    sizeBias: 'mixed',
   },
   3: {
-    id: 3, themeName: 'Polarity Hall',
+    id: 3,
+    themeName: 'Polarity Hall',
     elements: ['shadow', 'light', 'ion'],
     phaseMix: { gas: 0.35, liquid: 0.15, solid: 0.45, plasma: 0.05 },
     biology: 'synthetic',
-    gravity: { x: 0, y: -0.04, z: 0 },            // very mild
+    gravity: { x: 0, y: -0.04, z: 0 }, // very mild
     particleBehavior: 'dual-gyre',
     accentPalette: [0xffffff, 0x101018, 0xc97ce8, 0x9966cc],
-    thermalAmpMul: 1.4, sizeBias: 'mixed',
+    thermalAmpMul: 1.4,
+    sizeBias: 'mixed',
   },
   4: {
-    id: 4, themeName: 'Volcanic Pyre',
+    id: 4,
+    themeName: 'Volcanic Pyre',
     elements: ['fire', 'lava', 'smoke'],
-    phaseMix: { gas: 0.50, liquid: 0.15, solid: 0.30, plasma: 0.05 },
+    phaseMix: { gas: 0.5, liquid: 0.15, solid: 0.3, plasma: 0.05 },
     biology: 'volcanic',
-    gravity: { x: 0, y: 0.18, z: 0 },             // POSITIVE = rising (heat lift)
+    gravity: { x: 0, y: 0.18, z: 0 }, // POSITIVE = rising (heat lift)
     particleBehavior: 'rising',
     accentPalette: [0xff3b3b, 0xff8a3c, 0x111111, 0xffaa44],
-    thermalAmpMul: 1.5, sizeBias: 'mixed',
+    thermalAmpMul: 1.5,
+    sizeBias: 'mixed',
   },
   5: {
-    id: 5, themeName: 'Aquarium',
+    id: 5,
+    themeName: 'Aquarium',
     elements: ['water', 'ice', 'vapor', 'salt'],
-    phaseMix: { gas: 0.25, liquid: 0.65, solid: 0.10, plasma: 0.0 },
+    phaseMix: { gas: 0.25, liquid: 0.65, solid: 0.1, plasma: 0.0 },
     biology: 'aquatic',
-    gravity: { x: 0, y: -0.10, z: 0 },            // mild downward (water settles)
+    gravity: { x: 0, y: -0.1, z: 0 }, // mild downward (water settles)
     particleBehavior: 'tidal',
     accentPalette: [0x3da9f5, 0x4ed1c5, 0xa0e6f0, 0x5ab8d6],
-    thermalAmpMul: 0.85, sizeBias: 'mixed',
+    thermalAmpMul: 0.85,
+    sizeBias: 'mixed',
   },
   6: {
-    id: 6, themeName: 'Mandorla Garden',
+    id: 6,
+    themeName: 'Mandorla Garden',
     elements: ['pollen', 'dew', 'petals'],
-    phaseMix: { gas: 0.30, liquid: 0.40, solid: 0.30, plasma: 0.0 },
+    phaseMix: { gas: 0.3, liquid: 0.4, solid: 0.3, plasma: 0.0 },
     biology: 'organic',
-    gravity: { x: 0, y: 0, z: 0 },                // zero-g — pollination drift
+    gravity: { x: 0, y: 0, z: 0 }, // zero-g — pollination drift
     particleBehavior: 'spiraling',
     accentPalette: [0xff9aaa, 0x88c878, 0xffd23b, 0xc97ce8],
-    thermalAmpMul: 0.95, sizeBias: 'mixed',
+    thermalAmpMul: 0.95,
+    sizeBias: 'mixed',
   },
   7: {
-    id: 7, themeName: 'Lunar Night',
+    id: 7,
+    themeName: 'Lunar Night',
     elements: ['dust', 'regolith', 'moonbeam'],
-    phaseMix: { gas: 0.30, liquid: 0.15, solid: 0.55, plasma: 0.0 },
+    phaseMix: { gas: 0.3, liquid: 0.15, solid: 0.55, plasma: 0.0 },
     biology: 'lunar',
-    gravity: { x: 0, y: -0.05, z: 0 },            // 1/6 gravity
+    gravity: { x: 0, y: -0.05, z: 0 }, // 1/6 gravity
     particleBehavior: 'tidal',
     accentPalette: [0xc9d4f5, 0x9ba9d6, 0xa0c8ff, 0x6688aa],
-    thermalAmpMul: 0.40, sizeBias: 'micro',
+    thermalAmpMul: 0.4,
+    sizeBias: 'micro',
   },
   8: {
-    id: 8, themeName: 'Crystal Cave',
+    id: 8,
+    themeName: 'Crystal Cave',
     elements: ['quartz', 'prism', 'mineral'],
-    phaseMix: { gas: 0.05, liquid: 0.10, solid: 0.85, plasma: 0.0 },
+    phaseMix: { gas: 0.05, liquid: 0.1, solid: 0.85, plasma: 0.0 },
     biology: 'mineral',
-    gravity: { x: 0, y: 0, z: 0 },                // lattice-locked
+    gravity: { x: 0, y: 0, z: 0 }, // lattice-locked
     particleBehavior: 'lattice',
     accentPalette: [0x6c4cd6, 0x4ed158, 0xffd23b, 0x3da9f5],
-    thermalAmpMul: 0.50, sizeBias: 'micro',
+    thermalAmpMul: 0.5,
+    sizeBias: 'micro',
   },
   9: {
-    id: 9, themeName: 'Spring Bloom',
+    id: 9,
+    themeName: 'Spring Bloom',
     elements: ['petals', 'dew', 'pollen'],
-    phaseMix: { gas: 0.25, liquid: 0.40, solid: 0.35, plasma: 0.0 },
+    phaseMix: { gas: 0.25, liquid: 0.4, solid: 0.35, plasma: 0.0 },
     biology: 'organic',
-    gravity: { x: 0, y: 0.05, z: 0 },             // mild upward (bloom)
+    gravity: { x: 0, y: 0.05, z: 0 }, // mild upward (bloom)
     particleBehavior: 'radial-emission',
     accentPalette: [0xff9aaa, 0x88c878, 0xfff0d6, 0xc97ce8],
-    thermalAmpMul: 1.0, sizeBias: 'mixed',
+    thermalAmpMul: 1.0,
+    sizeBias: 'mixed',
   },
   10: {
-    id: 10, themeName: 'Radiant Clarity',
+    id: 10,
+    themeName: 'Radiant Clarity',
     elements: ['photon', 'plasma', 'gold'],
-    phaseMix: { gas: 0.70, liquid: 0.0, solid: 0.10, plasma: 0.20 },
+    phaseMix: { gas: 0.7, liquid: 0.0, solid: 0.1, plasma: 0.2 },
     biology: 'cosmic',
     gravity: { x: 0, y: 0, z: 0 },
     particleBehavior: 'radial-emission',
     accentPalette: [0xffffff, 0xfff0aa, 0xffd23b, 0xc9a96e],
-    thermalAmpMul: 1.2, sizeBias: 'micro',
+    thermalAmpMul: 1.2,
+    sizeBias: 'micro',
   },
   11: {
-    id: 11, themeName: 'Cardinal Forge',
+    id: 11,
+    themeName: 'Cardinal Forge',
     elements: ['fire', 'water', 'earth', 'air'],
     phaseMix: { gas: 0.25, liquid: 0.25, solid: 0.25, plasma: 0.25 },
     biology: 'synthetic',
-    gravity: { x: 0, y: 0, z: 0 },                // 4-axis balanced
+    gravity: { x: 0, y: 0, z: 0 }, // 4-axis balanced
     particleBehavior: 'crystalline',
     accentPalette: [0xff3b3b, 0xffd23b, 0x4ed158, 0x6c4cd6],
-    thermalAmpMul: 0.95, sizeBias: 'mixed',
+    thermalAmpMul: 0.95,
+    sizeBias: 'mixed',
   },
   12: {
-    id: 12, themeName: 'Crystal Vault',
+    id: 12,
+    themeName: 'Crystal Vault',
     elements: ['mineral', 'prism', 'photon'],
     phaseMix: { gas: 0.05, liquid: 0.05, solid: 0.85, plasma: 0.05 },
     biology: 'mineral',
-    gravity: { x: 0, y: 0, z: 0 },                // anchored
+    gravity: { x: 0, y: 0, z: 0 }, // anchored
     particleBehavior: 'lattice',
     accentPalette: [0x9be3ff, 0xc9a96e, 0xe4f0ff, 0xa0c8d6],
-    thermalAmpMul: 0.45, sizeBias: 'macro',
+    thermalAmpMul: 0.45,
+    sizeBias: 'macro',
   },
   13: {
-    id: 13, themeName: 'Eternal Gold',
+    id: 13,
+    themeName: 'Eternal Gold',
     elements: ['plasma', 'gold', 'photon'],
-    phaseMix: { gas: 0.60, liquid: 0.0, solid: 0.10, plasma: 0.30 },
+    phaseMix: { gas: 0.6, liquid: 0.0, solid: 0.1, plasma: 0.3 },
     biology: 'cosmic',
-    gravity: { x: 0, y: 0.10, z: 0 },             // upward (ascending)
+    gravity: { x: 0, y: 0.1, z: 0 }, // upward (ascending)
     particleBehavior: 'spiraling',
     accentPalette: [0xffd23b, 0xffaa66, 0xc9a96e, 0xc97ce8],
-    thermalAmpMul: 1.1, sizeBias: 'mixed',
+    thermalAmpMul: 1.1,
+    sizeBias: 'mixed',
   },
 };
 

@@ -3,34 +3,42 @@ import Base from '../layouts/Base.astro';
 import {
   LIBRARY,
   libraryByGroup,
-  discoverFiles,
   formatBytes,
   GROUP_LABEL,
   GROUP_DESCRIPTION,
   GITHUB_BLOB_BASE,
   GITHUB_TREE_BASE,
-  type LibraryEntry,
   type DiscoveredFile,
 } from '../lib/docs-library';
+import libraryManifest from '../data/library-manifest.json';
 
-const repoRoot = process.cwd();
+// File listings are precomputed at build time by
+// scripts/generate-library-manifest.mjs — workerd prerender (Cloudflare v13)
+// has no host filesystem, so the page can't call node:fs at render time.
+type EntryFiles = { files: DiscoveredFile[]; total: number; shown: number };
+const manifest = libraryManifest as Record<string, EntryFiles>;
 
-// Discover files at build time. The map keeps order stable per entry.
-type EntryFiles = { entry: LibraryEntry; files: DiscoveredFile[]; total: number; shown: number };
-const populated: EntryFiles[] = LIBRARY.map((entry) => {
-  const all = discoverFiles(entry, repoRoot);
-  const max = entry.maxShown ?? 30;
-  return { entry, files: all.slice(0, max), total: all.length, shown: Math.min(max, all.length) };
-});
-
-const populatedBySlug = new Map(populated.map((p) => [p.entry.slug, p]));
+const populatedBySlug = new Map<string, EntryFiles>(
+  LIBRARY.map((entry) => [
+    entry.slug,
+    manifest[entry.slug] ?? { files: [], total: 0, shown: 0 },
+  ]),
+);
 const groups = libraryByGroup();
 const groupKeys = Object.keys(groups) as Array<keyof typeof groups>;
-const totalFiles = populated.reduce((acc, p) => acc + p.total, 0);
+const totalFiles = LIBRARY.reduce(
+  (acc, e) => acc + (manifest[e.slug]?.total ?? 0),
+  0,
+);
 
 function fmtDate(iso: string): string {
   const d = new Date(iso);
-  return d.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric', timeZone: 'UTC' });
+  return d.toLocaleDateString('en-US', {
+    year: 'numeric',
+    month: 'short',
+    day: 'numeric',
+    timeZone: 'UTC',
+  });
 }
 
 function linkFor(file: DiscoveredFile): string {
@@ -47,9 +55,9 @@ function linkFor(file: DiscoveredFile): string {
       <p class="eyebrow">Internal · Studio + Client</p>
       <h1>Library</h1>
       <p class="intro">
-        An index of every <code>docs/</code> category and notable repo-root
-        artifact, grouped by stream. Each entry shows what's there and links
-        out to the GitHub source so you can read, download, or share.
+        An index of every <code>docs/</code> category and notable repo-root artifact,
+        grouped by stream. Each entry shows what's there and links out to the GitHub
+        source so you can read, download, or share.
       </p>
       <p class="stats">
         <strong>{LIBRARY.length}</strong> entries ·
@@ -58,83 +66,104 @@ function linkFor(file: DiscoveredFile): string {
     </header>
 
     <nav class="library-toc">
-      {groupKeys.map((g) => (
-        <a href={`#${g}`}>{GROUP_LABEL[g]} <span>({groups[g].length})</span></a>
-      ))}
+      {
+        groupKeys.map((g) => (
+          <a href={`#${g}`}>
+            {GROUP_LABEL[g]} <span>({groups[g].length})</span>
+          </a>
+        ))
+      }
     </nav>
 
-    {groupKeys.map((g) => (
-      <section class="library-group" id={g}>
-        <header class="group-header">
-          <h2>{GROUP_LABEL[g]}</h2>
-          <p>{GROUP_DESCRIPTION[g]}</p>
-        </header>
+    {
+      groupKeys.map((g) => (
+        <section class="library-group" id={g}>
+          <header class="group-header">
+            <h2>{GROUP_LABEL[g]}</h2>
+            <p>{GROUP_DESCRIPTION[g]}</p>
+          </header>
 
-        <div class="entry-grid">
-          {groups[g].map((entry) => {
-            const ef = populatedBySlug.get(entry.slug);
-            return (
-              <article class="entry-card" id={entry.slug}>
-                <header class="entry-header">
-                  <h3>{entry.label}</h3>
-                  <span class="entry-kind">{entry.kind === 'single-file' ? 'file' : 'dir'}</span>
-                </header>
-                <p class="entry-desc">{entry.description}</p>
-                <p class="entry-path">
-                  <a
-                    href={`${entry.kind === 'single-file' ? GITHUB_BLOB_BASE : GITHUB_TREE_BASE}/${entry.path}`}
-                    target="_blank"
-                    rel="noopener"
-                  >
-                    <code>{entry.path}</code>
-                  </a>
-                </p>
-
-                {ef && ef.files.length > 0 && (
-                  <ul class="file-list">
-                    {ef.files.map((f) => (
-                      <li>
-                        <a href={linkFor(f)} target="_blank" rel="noopener" class={f.isDir ? 'is-dir' : ''}>
-                          <span class="file-name">{f.isDir ? `${f.name}/` : f.name}</span>
-                          <span class="file-meta">
-                            {!f.isDir && (
-                              <>
-                                <span>{formatBytes(f.sizeBytes)}</span>
-                                <span class="dot">·</span>
-                              </>
-                            )}
-                            <span>{fmtDate(f.mtimeIso)}</span>
-                          </span>
-                        </a>
-                      </li>
-                    ))}
-                  </ul>
-                )}
-
-                {ef && ef.total > ef.shown && (
-                  <p class="more-link">
-                    + {ef.total - ef.shown} more in this directory · <a
-                      href={`${GITHUB_TREE_BASE}/${entry.path}`}
+          <div class="entry-grid">
+            {groups[g].map((entry) => {
+              const ef = populatedBySlug.get(entry.slug);
+              return (
+                <article class="entry-card" id={entry.slug}>
+                  <header class="entry-header">
+                    <h3>{entry.label}</h3>
+                    <span class="entry-kind">
+                      {entry.kind === 'single-file' ? 'file' : 'dir'}
+                    </span>
+                  </header>
+                  <p class="entry-desc">{entry.description}</p>
+                  <p class="entry-path">
+                    <a
+                      href={`${entry.kind === 'single-file' ? GITHUB_BLOB_BASE : GITHUB_TREE_BASE}/${entry.path}`}
                       target="_blank"
                       rel="noopener"
-                    >view all on GitHub →</a>
+                    >
+                      <code>{entry.path}</code>
+                    </a>
                   </p>
-                )}
 
-                {ef && ef.files.length === 0 && (
-                  <p class="empty-note">No files match this category's filter yet.</p>
-                )}
-              </article>
-            );
-          })}
-        </div>
-      </section>
-    ))}
+                  {ef && ef.files.length > 0 && (
+                    <ul class="file-list">
+                      {ef.files.map((f) => (
+                        <li>
+                          <a
+                            href={linkFor(f)}
+                            target="_blank"
+                            rel="noopener"
+                            class={f.isDir ? 'is-dir' : ''}
+                          >
+                            <span class="file-name">
+                              {f.isDir ? `${f.name}/` : f.name}
+                            </span>
+                            <span class="file-meta">
+                              {!f.isDir && (
+                                <>
+                                  <span>{formatBytes(f.sizeBytes)}</span>
+                                  <span class="dot">·</span>
+                                </>
+                              )}
+                              <span>{fmtDate(f.mtimeIso)}</span>
+                            </span>
+                          </a>
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+
+                  {ef && ef.total > ef.shown && (
+                    <p class="more-link">
+                      + {ef.total - ef.shown} more in this directory ·{' '}
+                      <a
+                        href={`${GITHUB_TREE_BASE}/${entry.path}`}
+                        target="_blank"
+                        rel="noopener"
+                      >
+                        view all on GitHub →
+                      </a>
+                    </p>
+                  )}
+
+                  {ef && ef.files.length === 0 && (
+                    <p class="empty-note">
+                      No files match this category's filter yet.
+                    </p>
+                  )}
+                </article>
+              );
+            })}
+          </div>
+        </section>
+      ))
+    }
 
     <footer class="library-footer">
       <p>
-        This index is generated at build time from <code>src/lib/docs-library.ts</code>.
-        To add a new category, append a <code>LibraryEntry</code> there and rebuild.
+        This index is generated at build time from <code
+          >src/lib/docs-library.ts</code
+        >. To add a new category, append a <code>LibraryEntry</code> there and rebuild.
       </p>
     </footer>
   </main>
@@ -172,7 +201,8 @@ function linkFor(file: DiscoveredFile): string {
     line-height: 1.6;
     opacity: 0.85;
   }
-  .intro code, .library-footer code {
+  .intro code,
+  .library-footer code {
     font-family: ui-monospace, 'SF Mono', monospace;
     background: rgba(255, 255, 255, 0.05);
     padding: 0.15em 0.4em;
@@ -204,7 +234,9 @@ function linkFor(file: DiscoveredFile): string {
     padding: 0.4rem 0.85rem;
     border: 1px solid rgba(196, 168, 120, 0.25);
     border-radius: 999px;
-    transition: background 0.15s ease, border-color 0.15s ease;
+    transition:
+      background 0.15s ease,
+      border-color 0.15s ease;
   }
   .library-toc a span {
     opacity: 0.55;
@@ -244,7 +276,9 @@ function linkFor(file: DiscoveredFile): string {
     padding: 1.5rem;
     display: flex;
     flex-direction: column;
-    transition: border-color 0.2s ease, background 0.2s ease;
+    transition:
+      border-color 0.2s ease,
+      background 0.2s ease;
   }
   .entry-card:hover {
     border-color: rgba(196, 168, 120, 0.4);

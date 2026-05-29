@@ -1,113 +1,123 @@
-# Agent Handoff: post-transcription-audit-gap-closure
+# Agent Handoff: post-astro-6-migration
 
-**From:** Claude session (transcription-audit gap closure, "/cross-agent-handoff"), 2026-05-17 late afternoon UTC
-**Date:** 2026-05-17
-**Phase:** PROVE → HARVEST (audit deliverable shipped, 4 gaps closed across 2 surfaces + 3 GH issues)
+**From:** Claude session (remote container, web), 2026-05-25
+**Date:** 2026-05-25
+**Phase:** HARVEST (Astro 6 + Pages CMS migration shipped, deployed, runtime-verified; handoff catch-up + carry-forwards)
 **Repo:** `organvm-iii-ergon/sovereign-systems--elevate-align`
-**Path:** `/Users/4jp/Code/organvm/sovereign-systems--elevate-align`
+**Branch:** `claude/closeout-content-leak-scrub-cw0hm` (PR #105 — originally a post-content-leak-scrub handoff refresh; rebased onto current `main` and repurposed to capture the migration per owner request)
 
-Prior handoff (`post-triage-sweep` + /simplify reconciliation) is archived at `.conductor/archive-2026-05-17-post-triage-sweep-handoff.md`. This file replaces it.
+Prior handoff (`post-transcription-audit-gap-closure`, 2026-05-17) is archived at `.conductor/archive-2026-05-17-post-transcription-audit-handoff.md`. This file replaces it.
 
 ---
 
+## Why this handoff was repurposed
+
+PR #105 was opened 2026-05-18 to refresh the active handoff after the content-leak-scrub closure (#84/#85/#86). It listed the Astro 6 / `@astrojs/cloudflare` 13 major bumps as a deferred carry-forward (tracked under Dependabot #94). Between then and 2026-05-25 that migration **landed on `main`**, so the PR's handoff became stale — it described as "blocked" work that is now done. Per owner direction (2026-05-25), the branch was rebased onto current `main` (HEAD `328f4e9`) and the handoff rewritten to reflect the post-migration reality. The content-leak-scrub durables it originally referenced were already merged (#84/#85/#86) and the post-leak-scrub handoff was already archived at `.conductor/archive-2026-05-16-post-leak-scrub-handoff.md`.
+
 ## Current State
 
-- **Branch:** `main` after PR #101 squash-merge; this handoff file is being delivered via a follow-on PR (`handoff/post-transcription-audit-2026-05-17`).
-- **Main HEAD:** `7289511 feat(decisions): close 4 transcription-audit gaps (ghl-booking-url, ghl-page-buildout-status, doc-video-notes, v2-backlog GH#98-100) (#101)`. Parity: `origin/main..main = 0` / `main..origin/main = 0`. ✓ 1:1.
-- **CI on main:** in-progress at session close (post-#101 squash). This repo's branch protection does not block merge on required-checks; CI runs post-merge as observer (verified empirically on every recent PR).
-- **Live URL:** `https://sovereign-systems-spiral.pages.dev` — not re-verified this session (only `src/data/decisions.ts` + a `docs/internal/` markdown changed; no rendering-surface delta beyond `/decisions` adding 2 new items).
-- **Open PRs:** 0 (PR #101 merged; this handoff PR is the only one in flight).
-- **Vacuum gate:** `npm test` ✓ at last run mid-session.
-- **Code-scanning:** 0 open (last verified post-#92).
-- **Secret-scanning:** 0 open.
-- **Dependabot:** 9 open, still cataloged in **#94** awaiting explicit auth for the major-bump session.
-- **Decisions board:** 21 items (was 19; +2 this session — `ghl-booking-url`, `ghl-page-buildout-status`).
-- **Open issues total:** 24 (was 21; +3 v2 backlog this session — #98 node-as-picker UI, #99 constellation layout variant, #100 Sacred Symbols Canvas for nonprofit).
+- **Main HEAD:** `328f4e9 ci: bump actions/checkout + setup-node to v6 for Node 24 compatibility (#106)`. This branch was reset to that commit; the handoff rotation is the only delta.
+- **Migration status:** Astro 6 + Pages CMS migration **complete, merged, deployed, runtime-verified** (capture / library / content pages) per the migration session (2026-05-24 → 2026-05-25). Canonical docs (CLAUDE.md / AGENTS.md / GEMINI.md / README) refreshed in `93f83fe`.
+- **Dependency baseline (`package.json` on `main`):** `astro ^6.0.0`, `@astrojs/cloudflare 13.5.4`, `@astrojs/markdoc 1.0.5`, `three 0.184.0`; `overrides` pin `vite ^7.3.3` + `yaml ^2.9.0`; `engines.node >=22.18`.
+- **CMS:** Keystatic removed (`keystatic.config.ts` gone); **Pages CMS** config now lives at `.pages.yml`.
+- **Tooling:** Prettier baseline added (`.prettierrc.json` + `.prettierignore`). `.conductor/`, `docs/`, and `*.md` are prettier-ignored — coordination markdown is governed by markdownlint via Trunk, not prettier.
+- **`npm audit`:** 0 vulnerabilities (cleared during the migration; Dependabot #94's 9 alerts resolved).
+- **CI:** runs Trunk lint (PR-scoped, modified files only) + `npm run test:all` on Node 22, `actions/checkout@v6` + `actions/setup-node@v6`. This repo's branch protection does not block merge on required checks; CI historically runs post-merge as observer.
+- **Live URL:** `https://sovereign-systems-spiral.pages.dev` — verified by the migration session; not re-curled this session.
 
-## Completed Work (this session — transcription-audit slice)
+## Migration commit chain (for traceability)
 
-- [x] **Audit** of 22-screenshot Maddie iMessage thread (2026-04-30 → 2026-05-17) against four durable surfaces (transcript file, decisions.ts, GH issues, scope memory). Verdict: ~95% pre-captured by the 2026-05-16 transcript (`docs/internal/2026-05-16-maddie-imessage-transcript-and-signals.md`, 415 lines) + the 19-item decisions board. 4 small gaps identified.
-- [x] **PR #101** (`7289511`) — closed 4 gaps in one atomic commit:
-  - `ghl-booking-url` (binary, urgent · client-gated) — sourced from GHL admin slug-table "[your GHL calendar URL]" placeholder; notes that `hub.config.ts:279` has no `bookingUrl` field yet (doubly-undefined until Maddie sends URL)
-  - `ghl-page-buildout-status` (observation, studio-internal) — 12-row GHL slug snapshot 2026-05-17 (9/12 live or in-flight; 3 pending: Thank-you build [tracked separately by Maddie], Book-a-call URL [→ `ghl-booking-url`], 7 branches [→ `energy-branch-content-source` + `html-codes-delivery`])
-  - `documentary-video` notes annotated "two videos plural — second TBD with Maddie" per transcript line 180
-  - Transcript action register: "NEW issue" placeholders → GH#98/#99/#100 references (closes Triple-Reference Law loop for v2 backlog items)
-- [x] **3 GH issues filed:**
-  - **#98** [`spiral`,`v2`,`client-gated`,`roadmap`,`P3`,`enhancement`] node-as-picker UI for v2 — Maddie's "picker for me to design each node/lil star or universe" (transcript line 320). Substrate hook: extends `viewThroughLens` at `src/data/naming-chains.ts` into an admin editor; possibly Keystatic-hosted once node-shape is editable structure.
-  - **#99** [`spiral`,`v2`,`roadmap`,`P3`,`enhancement`] constellation node-layout variant — Maddie's "put the points as constellations" (transcript line 308). Suggested as `SpiralLayout: 'helix' | 'constellation'` alongside existing `VesselMode` and `NavVariant`.
-  - **#100** [`content`,`γ-tier`,`client-gated`,`roadmap`,`P3`] Sacred Symbols Canvas adaptation for nonprofit arm visual identity — Maddie's "THIS is what we need to do for non profit" (transcript line 281); sibling to GH#39.
-- [x] **Audit deliverable** at `~/.claude/plans/review-for-complete-transcription-everyt-wise-stardust.md` (closure mark added: EXECUTED via PR #101).
-- [x] **Close-out file** at `~/.claude/plans/closeout-2026-05-17-transcription-audit-gap-closure.md`.
-- [x] **Session memory** + MEMORY.md index updated (10 entries; 6 session-log lines).
-- [x] **trunk fmt** ran clean on both modified files (transcript markdown re-keyed for prettier; decisions.ts quote-style normalized — accounts for 831-line diff on a ~70-net-new-line change).
+```text
+f57e9c8  fix: resolve npm audit vulnerabilities
+35b4cef  fix: resolve issue-discovery findings + restore installability
+e9acd48  fix(deps): override undici/ws/yaml to patched releases (clears 8/12 audit vulns)
+e921bfc  docs(design): scope Astro 6 migration (Keystatic-blocked, clears osv-scanner)
+dfbb08e  feat: migrate to Astro 6 + replace Keystatic + Prettier baseline
+63723d9  fix(deps): dedupe vite to ^7.3.3 — fixes cloudflare v13 build crash
+93f83fe  docs: update canonical docs for Astro 6 + Pages CMS migration
+6e09e12  fix(capture): read bindings via cloudflare:workers (Astro v6 removed locals.runtime.env)
+def6f50  fix(build): repair /library under workerd + drop the v13 IMAGES binding default
+f1536f9  fix: opt out of v13 SESSION KV binding + complete Pages CMS config
+35a547c  fix: use sessionDrivers.memory() factory + pin Node >=22.18 engine
+02dc2a1  chore: post-migration cleanups + Maddie pending-inputs outbound
+328f4e9  ci: bump actions/checkout + setup-node to v6 for Node 24 compatibility (#106)
+```
+
+## Resolved by the migration (previously open carry-forwards)
+
+- [x] **Astro 6 / `@astrojs/cloudflare` 13 major bumps** (was carry-forward #3 in the post-leak-scrub handoff; Dependabot #94) — done.
+- [x] **Node 20 deprecation in CI** (was carry-forward; 2026-06-02 default flip, 2026-09-16 removal) — CI actions bumped to v6 and Node pinned to 22; resolved ahead of the deadline (#106).
+- [x] **`npm audit` / Dependabot #94** (9 alerts) — cleared to 0.
+- [x] **Keystatic → Pages CMS** — Keystatic was the prior blocker on the migration scoping (`e921bfc`); replaced.
+
+## v13 regressions found + fixed during migration (context for future build work)
+
+- **Capture bindings:** Astro v6 removed `locals.runtime.env`; `src/pages/capture.ts` now reads bindings via `cloudflare:workers` (`6e09e12`).
+- **/library route:** repaired under `workerd` (`node:fs` access); dropped the v13 `IMAGES` binding default (`def6f50`).
+- **SESSION KV binding:** opted out of the v13 default; Pages CMS config completed (`f1536f9`).
+- **Session driver:** switched to the `sessionDrivers.memory()` factory (`35a547c`).
 
 ## Key Decisions
 
 | Decision | Rationale |
-|----------|-----------|
-| Close all 4 gaps in a single PR rather than 4 separate PRs | User's AskUserQuestion selection of "Close all 4 gaps now (Recommended)". Trunk-fmt clean + no semantic conflict; single-commit closure preserves audit-followup atomicity. |
-| File v2 backlog items as `P3,roadmap,client-gated` (#98 + #100) vs `P3,roadmap,enhancement` (#99) | #98 needs Maddie's authoring engagement (picker UI replaces her current implicit authoring flow). #100 is downstream of her nonprofit-location/structure decisions (transcript line 90 Idaho/Tennessee + line 281 constructor/realtor). #99 is purely studio-side aesthetic exploration; no client gating. |
-| Do NOT add `bookingUrl` to `hub.config.ts:279` proactively | Mirrors `hub-quiz-form-url` pattern: vacuum exists in code AND in decisions surface; field added once URL is sent. Adding `bookingUrl: ''` now without a tracked URL would compound the vacuum without closing it. |
-| Leave 4 v2-backlog items at 2/3 Triple-Reference status (transcript + GH issue, no atomized-wants W-### entry) | v2 backlog items don't need W-### until they're prioritized into a build cycle. Per the user's stated "audit-followup-work" framing: gap-closure is about durability/triangulation, not about queueing execution. |
-| Do NOT touch the carry-forward untracked plan `.claude/plans/2026-05-17-handoff-irf-ops-050-unblock.md` | Pre-existing artifact from the prior /simplify session; not this session's scope. Per skill rule "Atoms are permanent — never batch-close" applied to plans-as-artifacts. |
+| --- | --- |
+| Repurpose PR #105 (post-content-leak-scrub handoff) into a post-migration handoff | Owner flagged the original handoff as stale (Astro 6 listed deferred but done on `main`). Refresh-on-this-branch chosen over close-as-superseded. |
+| Reset branch to `origin/main` HEAD rather than a literal `git rebase` replay | The single original commit only touched `active-handoff.md` (now fully rewritten) and an archive file that already exists identically on `main`; a replay would only produce conflicts. Reset + fresh write is the clean realization of "rebase onto main + rewrite". |
+| Archive the post-transcription-audit handoff under its own dated filename | Preserves the standing handoff-lineage convention (each active handoff archives its predecessor). |
 
-## Critical Context
+## Still-open carry-forwards (NOT resolved by the migration)
 
-- **Decisions board surface is the load-bearing client-interaction layer.** It went 19 → 21 items this session. After PR #88 wired option-clicks to `/capture` with `source='decision-board'`, every option the client selects creates a KV record pairing her choice with the studio's recommendation. This means each new decision item is BOTH a passive display AND an active capture surface.
-- **`src/data/hub.config.ts:279` has no `bookingUrl` field.** The `ghl` block at line 279 only has `quizFormUrl` + `productUrl`. The new `ghl-booking-url` decision documents this explicitly — when Maddie sends the URL, the implementer needs to add the field to the `GhlConfig` interface (line 117) AND the runtime value (line 279).
-- **Transcript at `docs/internal/2026-05-16-maddie-imessage-transcript-and-signals.md` is the canonical narrative source.** 415 lines, includes addendum for late-day 2026-05-16 follow-on. The action register in it now points to actual GH issue numbers (closes Triple-Reference for the 3 v2 items).
-- **CARRY-FORWARD: CLAUDE.md autogen tail is STILL 32 days stale.** Same state as session start; same state as the prior /simplify session. The `claude-md-autogen-gate` exits RED. Bypass requires explicit user authorization (`AUTOGEN_FRESHNESS_THRESHOLD_DAYS=999`). Root cause filed at **IRF-OPS-050** (registry path-drift after repo relocation from `~/Workspace/organvm-iii-ergon/` to `~/Code/organvm/`). The unblock procedure is documented in `.claude/plans/2026-05-17-handoff-irf-ops-050-unblock.md` (untracked, pre-existing from prior session — NOT introduced this session).
-- **22 GH issues open** (was 21; +3 this session: #98/#99/#100; -0 closed). #94 dep-bump tracker still awaiting auth. The hung-items breakdown carries forward unchanged from prior handoff (see Hung items below).
+1. **GitHub history exposure** — 4 relocated `docs/internal/` files remain in commit history (relocated, not destructively rewritten). Destructive `git filter-repo` still held for explicit per-session owner authorization.
+2. **CLAUDE.md autogen tail staleness (IRF-OPS-050)** — registry path-drift after repo relocation (`~/Workspace/...` → `~/Code/...`); the `claude-md-autogen-gate` exits RED on the host. Host-scope; out of remote-container reach. Unblock procedure documented in `.claude/plans/2026-05-17-handoff-irf-ops-050-unblock.md` (untracked carry-forward).
+3. **Pages:Edit-alone sufficiency test** — `docs/runbooks/cf-token-rotation.md` "Open question": whether the CF token needs `Account Settings:Read` or `Pages:Edit` alone suffices for `wrangler pages deploy`.
+4. **CF Pages GitHub App migration (Path 4)** — auto-deploy-on-push still relies on the wrangler-action + `CLOUDFLARE_API_TOKEN` secret (see GH#52 history).
+5. **Client-gated items awaiting Maddie** — `ghl-booking-url` (no `bookingUrl` field on `hub.config.ts` yet), affiliate URLs (#49), quizFormUrl (#58), fluoride discriminator (#62), Keystatic-handover #1 (body now stale — CMS is Pages CMS, not Keystatic), custom domains (#3), and the remaining GATED issues (#5/#7/#14/#18/#19).
+6. **"anesoa" quiz UX bug** — still needs Maddie clarification.
+
+## Verification (this session)
+
+- Did NOT re-run `npm run build` / `npm run test:all` or re-curl the live URL — this session only rotated the `.conductor/` handoff markdown (prettier-ignored; not scanned by the vacuum gate). Build/test/runtime correctness rests on the migration session's verification + `main` CI.
+- Confirmed against `origin/main`: `package.json` deps, absence of `keystatic.config.ts`, presence of `.pages.yml`, and the migration commit chain above.
 
 ## Next Actions
 
-1. **Land this handoff** — PR-cascade for the `.conductor/active-handoff.md` rotation + the project-mirror plan (per project CLAUDE.md no-direct-push rule).
-2. **Unblock the autogen-gate (IRF-OPS-050)** — diagnostic + fix steps documented in `.claude/plans/2026-05-17-handoff-irf-ops-050-unblock.md` (currently untracked; commit-and-execute or bypass-with-authorization per user preference). One-line diagnosis:
-   ```bash
-   grep -rn "sovereign-systems--elevate-align" ~/Code/organvm/organvm-corpvs-testamentvm/data/ 2>/dev/null | head -10
-   ```
-   Expected finding: registry path still `~/Workspace/organvm-iii-ergon/...` (pre-relocation).
-3. **Maddie thread** — paste the HOLD/CLEAR messages (already drafted at `docs/maddie/_hold-messages/2026-05-16-{HOLD,CLEAR}-html-exports.md`) when ready. NOT auto-sent. Also: the fluoride-discriminator question at `docs/maddie/2026-05-16-fluoride-discriminator-question.md` (one-question close for GH#62).
-4. **#94 major-bump session** — when authorized: tag baseline → feature branch → install astro@^6 + @astrojs/cloudflare@^13 + undici@^7 → test:all + smoke on 13 nodes + 6 branches + /quiz + /decisions + /capture → CF preview → PR-cascade. Failure-domain risk: `src/components/spiral/spiral.ts` OrbitControls/EffectComposer pipeline + `src/pages/capture.ts` APIRoute signature.
-5. **`/decisions` page render verification** post-deploy — confirm 21 items show (was 19), 2 new items render in correct categories (`ghl-booking-url` in URGENT, `ghl-page-buildout-status` in STUDIO-INTERNAL).
-6. **Resume prior Hung items** (see below) in priority order — mostly client-gated waiting on Maddie.
+This PR grew beyond the handoff rotation: it now also carries 3 HIGH fixes
+from a full-codebase review (water-report APIRoute port, vacuum-gate
+fail-closed, capture.ts IPv6 de-id). They ride here because this is the
+task-pinned branch; split into a separate PR if cleaner.
 
-## Hung items (carry-forward; not blocking)
-
-1. **6 GATED-on-Maddie issues** — #1 Keystatic-handover (`infra,client-gated,P2`; body slightly stale w.r.t. Netlify→CF migration), #3 custom domains, #7 subscription boundary, #14 reel access, #18 video hosting, #19 inner-child packaging. Cannot close without client action. (#17 dropped — closed 2026-04-19.)
-2. **4 P0 client-action items** — #5 revenue agreement (10% formalization), #49 affiliate URLs (3/5 done, K8 sourced via Maddie's rep link), #58 quizFormUrl, #62 fluoride bug (awaiting badge-state discriminator).
-3. **10 SPEC roadmap items** — P1–P3 awaiting future build cycles or client decisions (#10, #20, #30, #38, #39, #51, #61, #63, #64, #65).
-4. **3 NEW v2-backlog items this session** — #98 (node-as-picker UI), #99 (constellation layout variant), #100 (Sacred Symbols Canvas for nonprofit arm). All `P3,roadmap`. Not blocking V1.
-5. **#94 itself** — tracking 9 Dependabot alerts; awaiting auth.
-6. **GitHub history still exposes 4 `docs/internal/` files** — destructive git-rewrite held for explicit user auth (from prior-prior session).
-7. **CLAUDE.md autogen silent-skip (IRF-OPS-050)** — see Next Actions #2.
-8. **"anesoa" quiz UX bug** — still needs Maddie clarification.
-9. **Carry-forwards from CF-rotation handoff (still open):** Pages:Edit-alone sufficiency test; Node 20 deprecation in CI (2026-06-02 default flip; 2026-09-16 removal); `~/seed.yaml` stale-copy cleanup (IRF-OPS-040); CF Pages GitHub App migration (Path 4).
+```bash
+# 1. CI green on PR #105 — build + Trunk + CodeQL verified (commit 1c4df35).
+# 2. Owner reads this handoff + the full-codebase review comment on PR #105.
+# 3. Merge PR #105 (squash) — lands the handoff rotation + 3 HIGH fixes;
+#    auto-closes #164 (water-report), #165 (vacuum-gate), #166 (IPv6).
+# 4. HOST-SIDE ONLY (unreachable from the remote container): IRF + cross-repo
+#    index propagation — tracked + assigned at GH#167. Add 3 IRF-OPS entries,
+#    update omega; #164/#165/#166 reach 3/3 triple-reference once IRF IDs exist.
+# 5. Review backlog (not yet filed): 4 MEDIUM / 5 LOW findings in the PR review
+#    comment — unbounded selectedPillar KV write, /capture rate limit, bare
+#    schema.org URLs, duplicate Lens type, quiz clamp, nodes/[id] `any`, etc.
+```
 
 ## Risks & Warnings
 
-- **The autogen tail will keep showing stale on every close-out until IRF-OPS-050 is closed.** Expect the gate to fail; expect to bypass with `AUTOGEN_FRESHNESS_THRESHOLD_DAYS=999` until the silent-skip root cause is fixed. Filing the IRF entry is done (prior session); execution is the unblock step.
-- **Trunk-fmt pre-flight on any `.conductor/`, `.claude/plans/`, or `docs/critiques/` markdown edit.** Per `feedback_trunk_lint_on_handoff_rotation.md`. PR-scoped lint gate (post-#93) WILL flag prose-file MD-rule + prettier issues. Codified after PR #95 → #96 cascade. Pre-flight ran clean for THIS session's transcript edit (in `docs/internal/`, not in the gated paths, but pre-flighted anyway as belt-and-suspenders).
-- **Don't widen the lint ignore list reflexively.** Fix at source (PR #96 pattern). The 4 most common failures on coordination markdown: MD040 `text` lang hint, MD033 backtick-wrap angle-brackets, MD060 + prettier whitespace (`trunk fmt` handles automatically).
-- **Don't push to main on this public ORGANVM repo without explicit per-session authorization.** Hard project rule. PR-cascade always, or wait for explicit go.
-- **Decisions board diff was 831 lines because trunk fmt re-keyed quote-style + multi-line strings across the entire file.** Substantive change is ~70 net new lines. Useful to know when reading PR #101's diff: most of the noise is whitespace + quote normalization.
-- **Memory is hypothesis.** State as of 2026-05-17 session-close. Before acting on any path or claim: `git rev-list --count origin/main..main`, `gh run list --workflow CI --limit 3`, `~/.local/bin/claude-md-autogen-gate; echo $?`.
+- **Don't push to `main` directly on this public ORGANVM repo without explicit per-session authorization.** PR-cascade always.
+- **Don't force-push history rewrites without explicit owner authorization.** The 4 leaked `docs/internal/` files are a content-IP exposure in history, not a live-build vulnerability — treat as a separate, deliberate operation.
+- **Remote container is ephemeral.** Anything not committed + pushed dies with the container.
+- **Memory is hypothesis.** State as of 2026-05-26. Before acting: `git rev-list --count origin/main..main`, `pull_request_read get_status` on any open PR, and a curl of the live URL are your fact-checks.
 
 ## Recovery Protocol (if state has drifted on resumption)
 
-1. `git log --oneline -5` in `~/Code/organvm/sovereign-systems--elevate-align` — verify HEAD is `7289511` or descendant.
-2. `gh run list --branch main --limit 3` — verify CI green on whatever HEAD now is.
-3. `~/.local/bin/claude-md-autogen-gate; echo "EXIT=$?"` — if EXIT=0, IRF-OPS-050 was closed in a subsequent session; skip Next Actions #2.
-4. `gh issue list --state open --json number | jq length` — verify 24 (was 24 at session close; if delta, investigate which closed/opened).
-5. `grep -c '^  {$' src/data/decisions.ts` — verify 21 (was 21 at session close).
+1. `git log --oneline -5` — verify `main` HEAD is `328f4e9` or a descendant.
+2. `git show origin/main:package.json | grep astro` — verify `astro ^6.0.0` (migration intact, not reverted).
+3. `ls .pages.yml` — verify Pages CMS config present (Keystatic stays gone).
+4. Via MCP github tools: confirm PR #105 state (merged → handoff landed; open → still in flight).
 
 ---
 
-**Compression level:** Standard (~2400 tokens). Source-of-truth files:
+**Compression level:** Standard (~1700 tokens). Source-of-truth files:
 
-- `~/.claude/plans/review-for-complete-transcription-everyt-wise-stardust.md` — audit deliverable (EXECUTED)
-- `~/.claude/plans/closeout-2026-05-17-transcription-audit-gap-closure.md` — closeout summary
-- `docs/internal/2026-05-16-maddie-imessage-transcript-and-signals.md` — canonical narrative source (415 lines)
-- `src/data/decisions.ts` — 21-item decision registry (the lateral-translation surface)
-- `.conductor/archive-2026-05-17-post-triage-sweep-handoff.md` — prior handoff, preserved for context
-- `.claude/plans/2026-05-17-handoff-irf-ops-050-unblock.md` — IRF-OPS-050 unblock procedure (untracked carry-forward)
+- `.conductor/archive-2026-05-17-post-transcription-audit-handoff.md` — prior handoff, preserved for context
+- `.conductor/archive-2026-05-16-post-leak-scrub-handoff.md` — the content-leak-scrub handoff this PR originally refreshed
+- `93f83fe` — canonical-docs refresh commit (CLAUDE.md / AGENTS.md / GEMINI.md / README post-migration)
+- `docs/runbooks/cf-token-rotation.md` — CF token rotation runbook + Pages:Edit open question

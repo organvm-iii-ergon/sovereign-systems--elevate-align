@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## What This Is
 
-**Sovereign Systems Spiral** — multi-domain Astro 5 website for client Maddie's 4-pillar health and business brand. Hub-and-spoke architecture: `elevatealign.com` is the central hub; `stopdrinkingacid.com` powers the Water/Physical Sovereignty funnel; `eaucohub.com` hosts the Financial Sovereignty business arm.
+**Sovereign Systems Spiral** — multi-domain Astro 6 website for client Maddie's 4-pillar health and business brand. Hub-and-spoke architecture: `elevatealign.com` is the central hub; `stopdrinkingacid.com` powers the Water/Physical Sovereignty funnel; `eaucohub.com` hosts the Financial Sovereignty business arm.
 
 - **Organ:** III (Commerce / Ergon)
 - **Client IP boundary:** content = client's IP (do not distribute or reuse); code/architecture = studio IP
@@ -34,11 +34,11 @@ When a new universal rule is established, save the feedback memory FIRST and add
 
 ## Tech Stack
 
-- **Astro 5** — static site generator, zero JS by default; Cloudflare adapter (`@astrojs/cloudflare`)
+- **Astro 6** — static site generator, zero JS by default; Cloudflare adapter (`@astrojs/cloudflare` 13.x, which runs the dev server in workerd via `@cloudflare/vite-plugin`). Migrated from Astro 5 on 2026-05-24 to clear all dependency CVEs — see `docs/design-proposals/2026-05-24-astro-6-migration-scope.md`. Note: `vite` is pinned to `^7.3.3` in `package.json` `overrides` to dedupe against `@tailwindcss/vite`'s vite 8 (the duplicate broke the cloudflare vite-plugin runner-worker).
 - **Tailwind CSS 4** — via `@tailwindcss/vite` plugin (no `tailwind.config.js` — CSS-first config)
 - **TypeScript** — strict, no `any` (escapes were dropped in commit `0322e37`)
 - **Three.js** — `src/components/spiral/spiral.ts` drives the 3D helix visualization: tapered helix, `OrbitControls`, `MeshPhysicalMaterial` orbs, `FogExp2`, and a post-processing pipeline (`EffectComposer` → `RenderPass` → `UnrealBloomPass` → `OutputPass`). IconWorlds physics gives each node its own particle behavior (cohesion for symbol-mode, chaos for star-mode). Node colors map to a 13-step chakra-aligned spectrum via `chakraColorForNode` (spiral.ts:1248); default vessel mode is `'hybrid'` (`hub.config.ts:147` — `spiralVesselMode: 'hybrid'`). Source has no version marker; treat the file as authoritative.
-- **Markdoc + Keystatic CMS** — Markdoc renders rich content blocks; Keystatic (`@keystatic/astro`) provides an admin UI at `/keystatic` for editing pillars and branches collections.
+- **Markdoc + Pages CMS** — Markdoc renders rich content blocks. Content editing is via [Pages CMS](https://pagescms.org) (`.pages.yml` at repo root), a git-based hosted editor at app.pagescms.org for the pillars and branches collections. (Replaced Keystatic in the Astro 6 migration — no `@keystatic/astro` supports Astro 6; see `keystatic#1515`.)
 
 ## Commands
 
@@ -77,9 +77,9 @@ npm run count-files      # Repo file census utility
 | `src/pages/capture.ts`                       | Astro APIRoute — POST `/capture`; multi-sink dispatch (KV + GHL webhook + extension points). Replaces prior `functions/capture.ts`.                                                                                                                                                         |
 | `src/pages/quiz.astro`                       | 5-question affinity flow → node-placement scoring → result panel + optional capture                                                                                                                                                                                                         |
 | `src/pages/lineage/[envvar].astro`           | Naming chains substrate — renders all lens bindings for one `EnvVar`                                                                                                                                                                                                                        |
-| `content.config.ts`                          | Astro content collection schemas (`branches`, `pillars`, `nodes`)                                                                                                                                                                                                                           |
-| `keystatic.config.ts`                        | Keystatic CMS schema — `pillars` and `branches` collections; local + GitHub storage                                                                                                                                                                                                         |
-| `astro.config.mjs`                           | Cloudflare adapter; integrations: `sitemap`, `markdoc`, `keystatic`; dev tunneling allowlist (cloudflare, ngrok, localhost)                                                                                                                                                                 |
+| `src/content.config.ts`                      | Astro content collection schemas (`branches`, `pillars`, `nodes`) — Astro 6 Content Layer via the `glob()` loader (legacy `type: 'content'` removed in the migration)                                                                                                                       |
+| `.pages.yml`                                 | Pages CMS config — `pillars` + `branches` collections (git-based hosted editor at app.pagescms.org). Replaced `keystatic.config.ts` in the Astro 6 migration                                                                                                                                |
+| `astro.config.mjs`                           | Cloudflare adapter; integrations: `sitemap`, `markdoc`; dev tunneling allowlist (cloudflare, ngrok, localhost)                                                                                                                                                                              |
 
 ## Configuration Layering
 
@@ -101,7 +101,7 @@ The codebase separates **immutable identity** from **mutable surface** through a
 
 All client-editable content lives in Markdown files:
 
-```
+```text
 src/content/
   branches/    # 6 branch pages (gut-hormones, fertility, athletic, autoimmune, cancer-support, sustainability)
   pillars/     # 4 pillar pages (physical, inner, identity, financial)
@@ -235,7 +235,7 @@ These are A/B flags wired into `src/data/hub.config.ts` defaults (`ui.spiralVess
 - Edit Markdown files in `src/content/` for copy changes — no code knowledge required
 - To update pillar metadata (taglines, colors, URLs, GHL form URLs): edit `src/data/hub.config.ts`
 - To add a new branch: create `src/content/branches/<slug>.md` with correct frontmatter, then add an entry to the `branches` array in `hub.config.ts`
-- **Keystatic CMS** (`keystatic.config.ts`) provides a UI for editing pillars and branches collections. Local mode by default; GitHub mode is configured (repo: `organvm-iii-ergon/sovereign-systems--elevate-align`). Run `npm run dev` and navigate to `/keystatic` for the editor UI.
+- **Pages CMS** (`.pages.yml`) provides a GUI for editing pillars and branches collections — connect the repo at app.pagescms.org (git-based; commits straight to the Markdown files, GitHub OAuth handled by Pages CMS). Replaced Keystatic in the Astro 6 migration (no `@keystatic/astro` supports Astro 6).
 
 ## Project Board
 
@@ -256,7 +256,7 @@ Verify at session close. The principle is identity-by-triangulation: items whose
 - **Platform:** Cloudflare Pages (`sovereign-systems-spiral.pages.dev`); auto-deploy on push to `main`
 - **Build:** `npm run build` → `dist/`. Astro Cloudflare adapter generates `_worker.js`; `src/pages/*.ts` (e.g., `capture.ts`) become routes inside the worker bundle, _not_ separate Pages Functions.
 - **Manual deploy:** `npm run deploy` (= `npm run build && wrangler pages deploy dist --project-name sovereign-systems-spiral`); used when CF auth-on-push fails (see GH#52).
-- **Legacy `functions/` directory:** `functions/api/water-report.ts` (EWG proxy) still on disk but the Astro worker bundle takes precedence — treat the worker output as authoritative.
+- **`functions/` directory removed:** the EWG proxy now lives at `src/pages/api/water-report.ts` (Astro APIRoute, same pattern as `capture.ts`). The prior `functions/api/water-report.ts` was unreachable in production — the `_worker.js` bundle takes precedence over root `functions/`, which also isn't part of `dist/` — so it 404'd and the funnel silently served demo data. The worker bundle is authoritative for all routes.
 - **Multi-domain story is metadata-only.** `src/data/hub.config.ts` declares `domains: { hub, water, business }` for content references; actual multi-domain routing is DNS-level (CNAMEs in Cloudflare), not Astro logic.
   - Primary: `elevatealign.com` (connect via CF dashboard → Custom Domains)
   - Secondary: `stopdrinkingacid.com`, `eaucohub.com` (connect when ready)
