@@ -761,31 +761,12 @@ if (!isHome) {
       )
     }
     <script>
-      // Auto-track elements with data-ea-action attributes (production only)
-      if (import.meta.env.PROD) {
-        document
-          .querySelectorAll<HTMLElement>('[data-ea-action]')
-          .forEach((el) => {
-            el.addEventListener('click', () => {
-              const action = el.dataset.eaAction;
-              if (!action) return;
-              const data: Record<string, string> = {};
-              for (const [key, value] of Object.entries(el.dataset)) {
-                if (key.startsWith('ea') && key !== 'eaAction' && value) {
-                  const prop = key.slice(2, 3).toLowerCase() + key.slice(3);
-                  data[prop] = value;
-                }
-              }
-              if (el instanceof HTMLAnchorElement && el.href) {
-                data.href = el.getAttribute('href') || el.href;
-              }
-              const pairs = Object.entries(data)
-                .map(([k, v]) => `${k}=${v}`)
-                .join(' ');
-              console.log(`[EA] action=${action}${pairs ? ' ' + pairs : ''}`);
-            });
-          });
-      }
+      // Declarative click analytics: initAutoTrack() wires every
+      // [data-ea-action] element (see src/lib/analytics.ts). Production-only to
+      // keep dev consoles quiet. This logic was previously inlined here verbatim;
+      // now consolidated into the single analytics module (no duplication).
+      import { initAutoTrack } from '../lib/analytics';
+      if (import.meta.env.PROD) initAutoTrack();
     </script>
   </body>
 </html>
