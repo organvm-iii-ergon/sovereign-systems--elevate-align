@@ -17,11 +17,36 @@ import {
   writeFileSync,
   mkdirSync,
 } from 'node:fs';
+import { execFileSync } from 'node:child_process';
 import { join, basename, extname } from 'node:path';
 import { LIBRARY } from '../src/lib/docs-library.ts';
 
 const repoRoot = process.cwd();
 const DEFAULT_EXTS = ['.md', '.html', '.pdf', '.json', '.txt'];
+
+/**
+ * Last-modified date for a path, sourced from git (committer date of the most
+ * recent commit touching it) so the value is deterministic across checkouts.
+ * Filesystem mtime is NOT version-controlled — `git checkout` stamps every file
+ * with the current wall-clock time, which made the committed manifest churn on
+ * every build and rendered the displayed dates meaningless. Falls back to fs
+ * mtime only for files not yet committed (new/untracked) or when git is absent.
+ */
+function lastModifiedIso(relPath, st) {
+  try {
+    const out = execFileSync(
+      'git',
+      ['log', '-1', '--format=%cI', '--', relPath],
+      { cwd: repoRoot, encoding: 'utf8', stdio: ['ignore', 'pipe', 'ignore'] },
+    ).trim();
+    // Normalize to UTC 'Z' so dates sort chronologically by lexical compare
+    // regardless of the committer's timezone (and match the prior fs-mtime format).
+    if (out) return new Date(out).toISOString();
+  } catch {
+    // git unavailable or path untracked — fall through to fs mtime
+  }
+  return st.mtime.toISOString();
+}
 
 function discoverFiles(entry) {
   const absRoot = join(repoRoot, entry.path);
@@ -35,7 +60,7 @@ function discoverFiles(entry) {
         relPath: entry.path,
         ext: extname(entry.path).toLowerCase(),
         sizeBytes: st.size,
-        mtimeIso: st.mtime.toISOString(),
+        mtimeIso: lastModifiedIso(entry.path, st),
         isDir: false,
       },
     ];
@@ -46,14 +71,15 @@ function discoverFiles(entry) {
   for (const child of readdirSync(absRoot)) {
     if (child.startsWith('.')) continue;
     const abs = join(absRoot, child);
+    const relPath = join(entry.path, child);
     const st = statSync(abs);
     if (st.isDirectory()) {
       out.push({
         name: child,
-        relPath: join(entry.path, child),
+        relPath,
         ext: '',
         sizeBytes: 0,
-        mtimeIso: st.mtime.toISOString(),
+        mtimeIso: lastModifiedIso(relPath, st),
         isDir: true,
       });
       continue;
@@ -62,14 +88,19 @@ function discoverFiles(entry) {
     if (exts.length && !exts.includes(ext)) continue;
     out.push({
       name: child,
-      relPath: join(entry.path, child),
+      relPath,
       ext,
       sizeBytes: st.size,
-      mtimeIso: st.mtime.toISOString(),
+      mtimeIso: lastModifiedIso(relPath, st),
       isDir: false,
     });
   }
-  out.sort((a, b) => b.mtimeIso.localeCompare(a.mtimeIso));
+  // Newest first; relPath tiebreaker makes order independent of readdir order.
+  out.sort(
+    (a, b) =>
+      b.mtimeIso.localeCompare(a.mtimeIso) ||
+      a.relPath.localeCompare(b.relPath),
+  );
   return out;
 }
 
