@@ -223,6 +223,7 @@ const questionsJson = JSON.stringify(quizQuestions);
 </style>
 
 <script>
+  import { trackEvent } from '../lib/analytics';
   import type {
     QuizQuestion,
     QuizResultCopy,
@@ -418,9 +419,12 @@ const questionsJson = JSON.stringify(quizQuestions);
     // Capture happens automatically when result renders if the user
     // also fills in name+email. The capture form's submit is what
     // actually sends — this function is just the analytics ping.
-    console.log(
-      `[EA] action=quiz_complete node=${node.id} score=${score} source=hub`,
-    );
+    trackEvent({
+      action: 'quiz_complete',
+      nodeId: node.id,
+      score,
+      source: 'hub',
+    });
   }
 
   const captureForm = document.getElementById(
