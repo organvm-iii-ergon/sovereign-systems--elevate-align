@@ -43,6 +43,11 @@ jobs:
       deployments: write
     steps:
       - uses: actions/checkout@v6
+        with:
+          # test:all → prebuild → generate-library-manifest.mjs reads `git log` for
+          # per-file dates; a shallow checkout makes it fall back to fs mtime. Match
+          # the build job's full-history fetch so deployed /library dates are correct.
+          fetch-depth: 0
       - uses: actions/setup-node@v6
         with:
           node-version: 22
