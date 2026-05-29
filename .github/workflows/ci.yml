@@ -60,4 +60,8 @@ jobs:
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: e0921b840fd656d8ea46426f1f114c30
-          command: pages deploy dist --project-name sovereign-systems-spiral
+          # Deploy dist/client (the static root). @astrojs/cloudflare 13 (Astro 6)
+          # outputs dist/client + dist/server; deploying bare dist/ publishes a
+          # non-servable root that 404s on every path (the regression #170 fixed in
+          # package.json on 2026-05-24 but left here). Must match the "deploy" script.
+          command: pages deploy dist/client --project-name sovereign-systems-spiral
